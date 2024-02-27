@@ -16,22 +16,19 @@ const tokenNames = [
   "core/sizing",
   "semantic/global",
   "semantic/viewPort/default",
+  "semantic/theme/light",
+  "semantic/theme/dark",
+];
+
+const semanticTokenNames = [
   "semantic/viewPort/640-plus",
   "semantic/viewPort/768-plus",
   "semantic/viewPort/1024-plus",
   "semantic/viewPort/1280-plus",
   "semantic/viewPort/1440-plus",
-  "semantic/theme/light",
-  "semantic/theme/dark",
 ];
 
-clusteredTokens = [
-  "semantic-typography-heading",
-  "semantic-typography-body",
-  "semantic-typography-caption",
-  "semantic-typography-code",
-  "semantic-typography-icon",
-];
+clusteredTokens = ["semantic-typography"];
 
 const coreRules = {};
 
@@ -43,7 +40,14 @@ const isObject = (item) => typeof item === "object";
 const camelToKebab = (camelCase) =>
   camelCase.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 
-const extractCSSValues = (value) => {
+const extractCSSValues = (key, value) => {
+  const isClusteredToken = clusteredTokens.some((token) => key.includes(token));
+
+  if (isClusteredToken) {
+    handleClusteredTokens(key, value);
+    return "skip";
+  }
+
   const filteredKeys = ["type"];
 
   const CSSValues = [];
@@ -56,16 +60,16 @@ const extractCSSValues = (value) => {
   return CSSValues.join(" ");
 };
 
-const processCSSValue = (value) => {
+const processCSSValue = (key, value) => {
   if (Array.isArray(value)) {
     const cssGroupValue = [];
     value.map((cssValue) => {
-      cssGroupValue.push(extractCSSValues(cssValue));
+      cssGroupValue.push(extractCSSValues(key, cssValue));
     });
 
     return cssGroupValue.join(",");
   } else if (isObject(value)) {
-    return extractCSSValues(value);
+    return extractCSSValues(key, value);
   } else {
     return isNaN(value) ? value : `${value}px`;
   }
@@ -75,7 +79,7 @@ const handleClusteredTokens = (key, data) => {
   let clusteredSassClass = `(\n`;
 
   Object.keys(data).map((cssRuleKey) => {
-    const cssValue = data[cssRuleKey]?.value;
+    const cssValue = data[cssRuleKey];
     clusteredSassClass += `${camelToKebab(cssRuleKey)}: ${
       cssValue || '""'
     }, \n`;
@@ -85,12 +89,7 @@ const handleClusteredTokens = (key, data) => {
   coreRules[key] = clusteredSassClass;
 };
 
-const generateSassVariables = (
-  obj,
-  prefix = "",
-  origin = "",
-  prevData = null
-) => {
+const generateSassVariables = (obj, prefix = "", origin = "") => {
   const valueIdentifier = "value";
 
   for (const key in obj) {
@@ -100,30 +99,20 @@ const generateSassVariables = (
     keyName = tokenNames.some((item) => keyName.includes(item)) ? "" : keyName;
     const finalKey = prefix.substring(0, prefix.length - 1); // Remove "-" generated from the previous iteration
 
-    const isClusteredToken = clusteredTokens.some((value) =>
-      finalKey.includes(value)
-    );
-
-    if (isClusteredToken) {
-      // Check if the cluster have the "value" property
-      const itemKeys = Object.keys(cssValue);
-
-      if (itemKeys.includes(valueIdentifier)) {
-        handleClusteredTokens(finalKey, prevData);
-        return false;
-      }
-    }
-
     // Recursive call for nested objects
     if (isValueObject && key !== valueIdentifier) {
       // Non token variables are excluded
       if (!excludedKeys.includes(key)) {
-        generateSassVariables(obj[key], keyName, origin || key, cssValue);
+        generateSassVariables(obj[key], keyName, origin || key);
       }
     } else {
       if (key === valueIdentifier) {
         const cssKey = finalKey.replaceAll("-", ".");
-        coreRules[cssKey] = processCSSValue(cssValue);
+        const finalValue = processCSSValue(finalKey, cssValue);
+
+        if (finalValue !== "skip") {
+          coreRules[cssKey] = finalValue;
+        }
       }
     }
   }
@@ -131,18 +120,76 @@ const generateSassVariables = (
   return coreRules;
 };
 
-const mapSemanticValues = (designTokens) => {
+const generateSemanticValues = (objectTokens) => {
+  const newObjectTokens = { ...objectTokens };
+  const viewPortData = Object.keys(objectTokens).filter((key) =>
+    semanticTokenNames.some((token) => key.includes(token))
+  );
+
+  const viewPorts = semanticTokenNames.map((str) => {
+    const match = str.match(/(\d+)-plus/);
+    return match ? parseInt(match[1]) : null;
+  });
+
+  let semanticRules = ``;
+
+  viewPorts.map((viewPort) => {
+    const viewPortClassKeys = viewPortData.filter((e) => e.includes(viewPort));
+
+    semanticRules += `\n @media screen and (min-width: ${viewPort}px) {\n`;
+
+    viewPortClassKeys.map((ck) => {
+      const classKeyData = objectTokens[ck];
+      delete newObjectTokens[ck]; // delete so it won't get generated as a normal sass rule
+
+      const sassKey = semanticTokenNames
+        .reduce((modifiedString, token) => {
+          const regex = new RegExp(token.replace(/\+/g, "\\+"), "g");
+          return modifiedString.replace(regex, "");
+        }, ck)
+        .replace("-", "$");
+
+      semanticRules += `${sassKey}: ${classKeyData}; \n`;
+    });
+
+    semanticRules += `} \n`;
+  });
+
+  // Remove semantic items so it will not get iterated in the global viewport
+  semanticTokenNames.forEach((token) =>
+    Object.keys(newObjectTokens).forEach((key) => {
+      const sanitizedKey = key.replace(/[./-]/g, ""); // Remove dots, slashes, and hyphens
+      const sanitizedToken = token.replace(/[./-]/g, ""); // Remove dots, slashes, and hyphens
+
+      if (sanitizedKey.includes(sanitizedToken)) {
+        delete newObjectTokens[key];
+      }
+    })
+  );
+
+  return {
+    semanticRules,
+    newObjectTokens,
+  };
+};
+
+const mapSASSValues = (designTokens) => {
   const objectTokens = generateSassVariables(designTokens);
 
   let sassContent = ``;
 
-  Object.keys(objectTokens).map((tokenKey) => {
-    const tokenValue = objectTokens[tokenKey];
+  const { semanticRules, newObjectTokens } =
+    generateSemanticValues(objectTokens);
+
+  Object.keys(newObjectTokens).map((tokenKey) => {
+    const tokenValue = newObjectTokens[tokenKey];
     sassContent += `${convertCSSkey(tokenKey)}: ${tokenValue};\n`;
   });
 
+  sassContent += semanticRules;
+
   // Map token variables
-  Object.keys(coreRules).map((key) => {
+  Object.keys(newObjectTokens).map((key) => {
     sassContent = sassContent.replaceAll(`{${key}}`, convertCSSkey(key));
   });
 
@@ -150,7 +197,7 @@ const mapSemanticValues = (designTokens) => {
 };
 
 const generateSassFile = () => {
-  const sassContent = mapSemanticValues(designTokens);
+  const sassContent = mapSASSValues(designTokens);
 
   const sassFilePath = "css/quill.scss";
   const dirPath = path.dirname(sassFilePath);
