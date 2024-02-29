@@ -1,0 +1,5010 @@
+$core-borderRadius-50: 0px;
+$core-borderRadius-100: 2px;
+$core-borderRadius-200: 4px;
+$core-borderRadius-300: 6px;
+$core-borderRadius-400: 8px;
+$core-borderRadius-500: 10px;
+$core-borderRadius-600: 12px;
+$core-borderRadius-700: 14px;
+$core-borderRadius-800: 16px;
+$core-borderRadius-900: 18px;
+$core-borderRadius-1000: 20px;
+$core-borderRadius-1100: 22px;
+$core-borderRadius-1200: 24px;
+$core-borderRadius-1300: 26px;
+$core-borderRadius-1400: 28px;
+$core-borderRadius-1500: 30px;
+$core-borderRadius-1600: 32px;
+$core-borderRadius-1700: 34px;
+$core-borderRadius-1800: 36px;
+$core-borderRadius-1900: 38px;
+$core-borderRadius-2000: 40px;
+$core-borderRadius-2100: 42px;
+$core-borderRadius-2200: 44px;
+$core-borderRadius-2300: 46px;
+$core-borderRadius-2400: 48px;
+$core-borderRadius-2500: 50px;
+$core-borderRadius-2600: 52px;
+$core-borderRadius-2700: 54px;
+$core-borderRadius-2800: 56px;
+$core-borderRadius-2900: 58px;
+$core-borderRadius-3000: 60px;
+$core-borderRadius-3100: 62px;
+$core-borderRadius-3200: 64px;
+$core-borderRadius-3300: 66px;
+$core-borderRadius-3400: 68px;
+$core-borderRadius-3500: 70px;
+$core-borderRadius-3600: 72px;
+$core-borderRadius-3700: 74px;
+$core-borderRadius-3800: 76px;
+$core-borderRadius-3900: 78px;
+$core-borderRadius-4000: 80px;
+$core-borderRadius-4100: 82px;
+$core-borderRadius-4200: 84px;
+$core-borderRadius-4300: 86px;
+$core-borderRadius-4400: 88px;
+$core-borderRadius-4500: 90px;
+$core-borderRadius-4600: 92px;
+$core-borderRadius-4700: 94px;
+$core-borderRadius-4800: 96px;
+$core-borderRadius-4900: 98px;
+$core-borderRadius-5000: 100px;
+$core-borderWidth-50: 0px;
+$core-borderWidth-75: 1px;
+$core-borderWidth-100: 2px;
+$core-borderWidth-200: 4px;
+$core-borderWidth-300: 8px;
+$core-color-solid-red-100: #ffe6e6;
+$core-color-solid-red-200: #ffbfbf;
+$core-color-solid-red-300: #ff9999;
+$core-color-solid-red-400: #ff7373;
+$core-color-solid-red-500: #ff4d4d;
+$core-color-solid-red-600: #f92e26;
+$core-color-solid-red-700: #e6190e;
+$core-color-solid-red-800: #db0800;
+$core-color-solid-red-900: #c40000;
+$core-color-solid-red-1000: #a60000;
+$core-color-solid-red-1100: #880000;
+$core-color-solid-red-1200: #6a0000;
+$core-color-solid-red-1300: #4d0000;
+$core-color-solid-orange-100: #feefe7;
+$core-color-solid-orange-200: #fdd7c2;
+$core-color-solid-orange-300: #fbbf9d;
+$core-color-solid-orange-400: #faa778;
+$core-color-solid-orange-500: #f88f54;
+$core-color-solid-orange-600: #f7772f;
+$core-color-solid-orange-700: #f55f0a;
+$core-color-solid-orange-800: #d85409;
+$core-color-solid-orange-900: #bc4908;
+$core-color-solid-orange-1000: #9f3e07;
+$core-color-solid-orange-1100: #833305;
+$core-color-solid-orange-1200: #662804;
+$core-color-solid-orange-1300: #4a1d03;
+$core-color-solid-yellow-100: #fff7e6;
+$core-color-solid-yellow-200: #ffeabf;
+$core-color-solid-yellow-300: #ffdd99;
+$core-color-solid-yellow-400: #ffce73;
+$core-color-solid-yellow-500: #ffbe4d;
+$core-color-solid-yellow-600: #ffae26;
+$core-color-solid-yellow-700: #ff9c13;
+$core-color-solid-yellow-800: #e18d00;
+$core-color-solid-yellow-900: #c47d00;
+$core-color-solid-yellow-1000: #a66c00;
+$core-color-solid-yellow-1100: #885a00;
+$core-color-solid-yellow-1200: #6a4800;
+$core-color-solid-yellow-1300: #4d3500;
+$core-color-solid-mustard-100: #fef9e7;
+$core-color-solid-mustard-200: #fdf1c2;
+$core-color-solid-mustard-300: #fce89d;
+$core-color-solid-mustard-400: #fbe079;
+$core-color-solid-mustard-500: #f9d754;
+$core-color-solid-mustard-600: #f8cf30;
+$core-color-solid-mustard-700: #f7c60b;
+$core-color-solid-mustard-800: #daaf0a;
+$core-color-solid-mustard-900: #bd9808;
+$core-color-solid-mustard-1000: #a18107;
+$core-color-solid-mustard-1100: #846a06;
+$core-color-solid-mustard-1200: #675305;
+$core-color-solid-mustard-1300: #4a3b03;
+$core-color-solid-olive-100: #fcfbe6;
+$core-color-solid-olive-200: #f7f6c0;
+$core-color-solid-olive-300: #f3f09a;
+$core-color-solid-olive-400: #eeeb74;
+$core-color-solid-olive-500: #e9e54e;
+$core-color-solid-olive-600: #e5e028;
+$core-color-solid-olive-700: #e0da02;
+$core-color-solid-olive-800: #c6c102;
+$core-color-solid-olive-900: #aca702;
+$core-color-solid-olive-1000: #928e01;
+$core-color-solid-olive-1100: #787401;
+$core-color-solid-olive-1200: #5d5b01;
+$core-color-solid-olive-1300: #434101;
+$core-color-solid-green-100: #e6fae9;
+$core-color-solid-green-200: #bfefc8;
+$core-color-solid-green-300: #99e2a8;
+$core-color-solid-green-400: #73d089;
+$core-color-solid-green-500: #4dbc6b;
+$core-color-solid-green-600: #26a44e;
+$core-color-solid-green-700: #008832;
+$core-color-solid-green-800: #00822a;
+$core-color-solid-green-900: #007a22;
+$core-color-solid-green-1000: #006f1b;
+$core-color-solid-green-1100: #006114;
+$core-color-solid-green-1200: #00500f;
+$core-color-solid-green-1300: #003d0a;
+$core-color-solid-emerald-100: #e6fff9;
+$core-color-solid-emerald-200: #bfffed;
+$core-color-solid-emerald-300: #99ffdf;
+$core-color-solid-emerald-400: #73f9cf;
+$core-color-solid-emerald-500: #4decbc;
+$core-color-solid-emerald-600: #26daa7;
+$core-color-solid-emerald-700: #00c390;
+$core-color-solid-emerald-800: #00bb86;
+$core-color-solid-emerald-900: #00ae7a;
+$core-color-solid-emerald-1000: #009e6d;
+$core-color-solid-emerald-1100: #00885d;
+$core-color-solid-emerald-1200: #006a4c;
+$core-color-solid-emerald-1300: #004d39;
+$core-color-solid-tiffany-100: #e8fdf8;
+$core-color-solid-tiffany-200: #c5faef;
+$core-color-solid-tiffany-300: #a2f7e5;
+$core-color-solid-tiffany-400: #7ff3db;
+$core-color-solid-tiffany-500: #5df0d1;
+$core-color-solid-tiffany-600: #3aedc7;
+$core-color-solid-tiffany-700: #17eabd;
+$core-color-solid-tiffany-800: #14cfa7;
+$core-color-solid-tiffany-900: #12b391;
+$core-color-solid-tiffany-1000: #0f987b;
+$core-color-solid-tiffany-1100: #0c7d65;
+$core-color-solid-tiffany-1200: #0a624f;
+$core-color-solid-tiffany-1300: #074639;
+$core-color-solid-teal-100: #e6fafa;
+$core-color-solid-teal-200: #bff2f2;
+$core-color-solid-teal-300: #99ebeb;
+$core-color-solid-teal-400: #73e3e3;
+$core-color-solid-teal-500: #4ddbdb;
+$core-color-solid-teal-600: #26d4d4;
+$core-color-solid-teal-700: #00cccc;
+$core-color-solid-teal-800: #00b4b4;
+$core-color-solid-teal-900: #009c9c;
+$core-color-solid-teal-1000: #008585;
+$core-color-solid-teal-1100: #006d6d;
+$core-color-solid-teal-1200: #005555;
+$core-color-solid-teal-1300: #003d3d;
+$core-color-solid-seawater-100: #e7f6f7;
+$core-color-solid-seawater-200: #c2e7eb;
+$core-color-solid-seawater-300: #9dd9df;
+$core-color-solid-seawater-400: #78cbd4;
+$core-color-solid-seawater-500: #54bdc8;
+$core-color-solid-seawater-600: #2faebc;
+$core-color-solid-seawater-700: #0aa0b0;
+$core-color-solid-seawater-800: #098d9c;
+$core-color-solid-seawater-900: #087b87;
+$core-color-solid-seawater-1000: #076872;
+$core-color-solid-seawater-1100: #05555e;
+$core-color-solid-seawater-1200: #044349;
+$core-color-solid-seawater-1300: #033035;
+$core-color-solid-blue-100: #e6f5ff;
+$core-color-solid-blue-200: #bfe7ff;
+$core-color-solid-blue-300: #99d8ff;
+$core-color-solid-blue-400: #73c9ff;
+$core-color-solid-blue-500: #53b9ff;
+$core-color-solid-blue-600: #3daaff;
+$core-color-solid-blue-700: #2c9aff;
+$core-color-solid-blue-800: #1789e1;
+$core-color-solid-blue-900: #0777c4;
+$core-color-solid-blue-1000: #0066a6;
+$core-color-solid-blue-1100: #005488;
+$core-color-solid-blue-1200: #00426a;
+$core-color-solid-blue-1300: #00304d;
+$core-color-solid-sapphire-100: #e7eafe;
+$core-color-solid-sapphire-200: #c2c9fd;
+$core-color-solid-sapphire-300: #9ea9fc;
+$core-color-solid-sapphire-400: #7989fb;
+$core-color-solid-sapphire-500: #5569f9;
+$core-color-solid-sapphire-600: #3148f8;
+$core-color-solid-sapphire-700: #0c28f7;
+$core-color-solid-sapphire-800: #0b23da;
+$core-color-solid-sapphire-900: #091fbd;
+$core-color-solid-sapphire-1000: #081aa1;
+$core-color-solid-sapphire-1100: #061584;
+$core-color-solid-sapphire-1200: #051167;
+$core-color-solid-sapphire-1300: #040c4a;
+$core-color-solid-blueberry-100: #ede6fc;
+$core-color-solid-blueberry-200: #d2c0f7;
+$core-color-solid-blueberry-300: #b69af3;
+$core-color-solid-blueberry-400: #9b74ee;
+$core-color-solid-blueberry-500: #804ee9;
+$core-color-solid-blueberry-600: #6428e5;
+$core-color-solid-blueberry-700: #4902e0;
+$core-color-solid-blueberry-800: #4102c6;
+$core-color-solid-blueberry-900: #3802ac;
+$core-color-solid-blueberry-1000: #2f0192;
+$core-color-solid-blueberry-1100: #270178;
+$core-color-solid-blueberry-1200: #1e015d;
+$core-color-solid-blueberry-1300: #160143;
+$core-color-solid-grape-100: #f2e7fa;
+$core-color-solid-grape-200: #dfc3f3;
+$core-color-solid-grape-300: #cc9eec;
+$core-color-solid-grape-400: #b97ae5;
+$core-color-solid-grape-500: #a556dd;
+$core-color-solid-grape-600: #9231d6;
+$core-color-solid-grape-700: #7f0dcf;
+$core-color-solid-grape-800: #700cb7;
+$core-color-solid-grape-900: #610a9f;
+$core-color-solid-grape-1000: #530987;
+$core-color-solid-grape-1100: #44076e;
+$core-color-solid-grape-1200: #350556;
+$core-color-solid-grape-1300: #26043e;
+$core-color-solid-magenta-100: #fae7fe;
+$core-color-solid-magenta-200: #f2c3fd;
+$core-color-solid-magenta-300: #ea9efc;
+$core-color-solid-magenta-400: #e27afb;
+$core-color-solid-magenta-500: #db56f9;
+$core-color-solid-magenta-600: #d331f8;
+$core-color-solid-magenta-700: #cb0df7;
+$core-color-solid-magenta-800: #b30cda;
+$core-color-solid-magenta-900: #9c0abd;
+$core-color-solid-magenta-1000: #8409a1;
+$core-color-solid-magenta-1100: #6c0784;
+$core-color-solid-magenta-1200: #550567;
+$core-color-solid-magenta-1300: #3d044a;
+$core-color-solid-cherry-100: #ffe6e7;
+$core-color-solid-cherry-200: #ffbfc6;
+$core-color-solid-cherry-300: #ff99a6;
+$core-color-solid-cherry-400: #ff7389;
+$core-color-solid-cherry-500: #ff4d6e;
+$core-color-solid-cherry-600: #f32656;
+$core-color-solid-cherry-700: #de0040;
+$core-color-solid-cherry-800: #d40032;
+$core-color-solid-cherry-900: #c40025;
+$core-color-solid-cherry-1000: #a6001a;
+$core-color-solid-cherry-1100: #880011;
+$core-color-solid-cherry-1200: #6a000a;
+$core-color-solid-cherry-1300: #4d0005;
+$core-color-solid-coral-100: #ffe6e6;
+$core-color-solid-coral-200: #ffbfc2;
+$core-color-solid-coral-300: #ff9ba3;
+$core-color-solid-coral-400: #ff7e88;
+$core-color-solid-coral-500: #ff6671;
+$core-color-solid-coral-600: #ff535e;
+$core-color-solid-coral-700: #ff444f;
+$core-color-solid-coral-800: #e12e3a;
+$core-color-solid-coral-900: #c41c28;
+$core-color-solid-coral-1000: #a60e19;
+$core-color-solid-coral-1100: #88030d;
+$core-color-solid-coral-1200: #6a0004;
+$core-color-solid-coral-1300: #4d0000;
+$core-color-solid-slate-50: #ffffff;
+$core-color-solid-slate-75: #f6f7f8;
+$core-color-solid-slate-100: #ebecef;
+$core-color-solid-slate-200: #ced0d6;
+$core-color-solid-slate-300: #b1b4bc;
+$core-color-solid-slate-400: #9498a2;
+$core-color-solid-slate-500: #787d88;
+$core-color-solid-slate-600: #5c616d;
+$core-color-solid-slate-700: #414652;
+$core-color-solid-slate-800: #383d4a;
+$core-color-solid-slate-900: #303541;
+$core-color-solid-slate-1000: #282c38;
+$core-color-solid-slate-1100: #20242f;
+$core-color-solid-slate-1200: #181c25;
+$core-color-solid-slate-1300: #11141b;
+$core-color-solid-slate-1400: #000000;
+$core-opacity-50: 0%;
+$core-opacity-75: 4%;
+$core-opacity-100: 8%;
+$core-opacity-200: 16%;
+$core-opacity-300: 24%;
+$core-opacity-400: 32%;
+$core-opacity-500: 40%;
+$core-opacity-600: 48%;
+$core-opacity-700: 56%;
+$core-opacity-800: 64%;
+$core-opacity-900: 72%;
+$core-opacity-1000: 80%;
+$core-opacity-1100: 88%;
+$core-opacity-1200: 96%;
+$core-opacity-1300: 100%;
+$core-color-opacity-white-75: rgba(
+    $core-color-solid-slate-50,
+    $core-opacity-75
+);
+$core-color-opacity-white-100: rgba(
+    $core-color-solid-slate-50,
+    $core-opacity-100
+);
+$core-color-opacity-white-200: rgba(
+    $core-color-solid-slate-50,
+    $core-opacity-200
+);
+$core-color-opacity-white-300: rgba(
+    $core-color-solid-slate-50,
+    $core-opacity-300
+);
+$core-color-opacity-white-400: rgba(
+    $core-color-solid-slate-50,
+    $core-opacity-600
+);
+$core-color-opacity-white-500: rgba(
+    $core-color-solid-slate-50,
+    $core-opacity-700
+);
+$core-color-opacity-white-600: rgba(
+    $core-color-solid-slate-50,
+    $core-opacity-900
+);
+$core-color-opacity-white-700: rgba(
+    $core-color-solid-slate-50,
+    $core-opacity-1000
+);
+$core-color-opacity-white-800: rgba(
+    $core-color-solid-slate-50,
+    $core-opacity-1100
+);
+$core-color-opacity-black-75: rgba(
+    $core-color-solid-slate-1400,
+    $core-opacity-75
+);
+$core-color-opacity-black-100: rgba(
+    $core-color-solid-slate-1400,
+    $core-opacity-100
+);
+$core-color-opacity-black-200: rgba(
+    $core-color-solid-slate-1400,
+    $core-opacity-200
+);
+$core-color-opacity-black-300: rgba(
+    $core-color-solid-slate-1400,
+    $core-opacity-300
+);
+$core-color-opacity-black-400: rgba(
+    $core-color-solid-slate-1400,
+    $core-opacity-600
+);
+$core-color-opacity-black-500: rgba(
+    $core-color-solid-slate-1400,
+    $core-opacity-700
+);
+$core-color-opacity-black-600: rgba(
+    $core-color-solid-slate-1400,
+    $core-opacity-900
+);
+$core-color-opacity-black-700: rgba(
+    $core-color-solid-slate-1400,
+    $core-opacity-1000
+);
+$core-color-opacity-black-800: rgba(
+    $core-color-solid-slate-1400,
+    $core-opacity-1100
+);
+$core-color-opacity-red-100: rgba($core-color-solid-red-700, $core-opacity-100);
+$core-color-opacity-red-200: rgba($core-color-solid-red-700, $core-opacity-200);
+$core-color-opacity-red-300: rgba($core-color-solid-red-700, $core-opacity-300);
+$core-color-opacity-red-400: rgba($core-color-solid-red-700, $core-opacity-600);
+$core-color-opacity-red-500: rgba($core-color-solid-red-700, $core-opacity-700);
+$core-color-opacity-red-600: rgba($core-color-solid-red-700, $core-opacity-900);
+$core-color-opacity-red-700: rgba(
+    $core-color-solid-red-700,
+    $core-opacity-1000
+);
+$core-color-opacity-red-800: rgba(
+    $core-color-solid-red-700,
+    $core-opacity-1100
+);
+$core-color-opacity-orange-100: rgba(
+    $core-color-solid-orange-700,
+    $core-opacity-100
+);
+$core-color-opacity-orange-200: rgba(
+    $core-color-solid-orange-700,
+    $core-opacity-200
+);
+$core-color-opacity-orange-300: rgba(
+    $core-color-solid-orange-700,
+    $core-opacity-300
+);
+$core-color-opacity-orange-400: rgba(
+    $core-color-solid-orange-700,
+    $core-opacity-600
+);
+$core-color-opacity-orange-500: rgba(
+    $core-color-solid-orange-700,
+    $core-opacity-700
+);
+$core-color-opacity-orange-600: rgba(
+    $core-color-solid-orange-700,
+    $core-opacity-900
+);
+$core-color-opacity-orange-700: rgba(
+    $core-color-solid-orange-700,
+    $core-opacity-1000
+);
+$core-color-opacity-orange-800: rgba(
+    $core-color-solid-orange-700,
+    $core-opacity-1100
+);
+$core-color-opacity-yellow-100: rgba(
+    $core-color-solid-yellow-700,
+    $core-opacity-100
+);
+$core-color-opacity-yellow-200: rgba(
+    $core-color-solid-yellow-700,
+    $core-opacity-200
+);
+$core-color-opacity-yellow-300: rgba(
+    $core-color-solid-yellow-700,
+    $core-opacity-300
+);
+$core-color-opacity-yellow-400: rgba(
+    $core-color-solid-yellow-700,
+    $core-opacity-600
+);
+$core-color-opacity-yellow-500: rgba(
+    $core-color-solid-yellow-700,
+    $core-opacity-700
+);
+$core-color-opacity-yellow-600: rgba(
+    $core-color-solid-yellow-700,
+    $core-opacity-900
+);
+$core-color-opacity-yellow-700: rgba(
+    $core-color-solid-yellow-700,
+    $core-opacity-1000
+);
+$core-color-opacity-yellow-800: rgba(
+    $core-color-solid-yellow-700,
+    $core-opacity-1100
+);
+$core-color-opacity-mustard-100: rgba(
+    $core-color-solid-mustard-700,
+    $core-opacity-100
+);
+$core-color-opacity-mustard-200: rgba(
+    $core-color-solid-mustard-700,
+    $core-opacity-200
+);
+$core-color-opacity-mustard-300: rgba(
+    $core-color-solid-mustard-700,
+    $core-opacity-300
+);
+$core-color-opacity-mustard-400: rgba(
+    $core-color-solid-mustard-700,
+    $core-opacity-600
+);
+$core-color-opacity-mustard-500: rgba(
+    $core-color-solid-mustard-700,
+    $core-opacity-700
+);
+$core-color-opacity-mustard-600: rgba(
+    $core-color-solid-mustard-700,
+    $core-opacity-900
+);
+$core-color-opacity-mustard-700: rgba(
+    $core-color-solid-mustard-700,
+    $core-opacity-1000
+);
+$core-color-opacity-mustard-800: rgba(
+    $core-color-solid-mustard-700,
+    $core-opacity-1100
+);
+$core-color-opacity-olive-100: rgba(
+    $core-color-solid-olive-700,
+    $core-opacity-100
+);
+$core-color-opacity-olive-200: rgba(
+    $core-color-solid-olive-700,
+    $core-opacity-200
+);
+$core-color-opacity-olive-300: rgba(
+    $core-color-solid-olive-700,
+    $core-opacity-300
+);
+$core-color-opacity-olive-400: rgba(
+    $core-color-solid-olive-700,
+    $core-opacity-600
+);
+$core-color-opacity-olive-500: rgba(
+    $core-color-solid-olive-700,
+    $core-opacity-700
+);
+$core-color-opacity-olive-600: rgba(
+    $core-color-solid-olive-700,
+    $core-opacity-900
+);
+$core-color-opacity-olive-700: rgba(
+    $core-color-solid-olive-700,
+    $core-opacity-1000
+);
+$core-color-opacity-olive-800: rgba(
+    $core-color-solid-olive-700,
+    $core-opacity-1100
+);
+$core-color-opacity-green-100: rgba(
+    $core-color-solid-green-700,
+    $core-opacity-100
+);
+$core-color-opacity-green-200: rgba(
+    $core-color-solid-green-700,
+    $core-opacity-200
+);
+$core-color-opacity-green-300: rgba(
+    $core-color-solid-green-700,
+    $core-opacity-300
+);
+$core-color-opacity-green-400: rgba(
+    $core-color-solid-green-700,
+    $core-opacity-600
+);
+$core-color-opacity-green-500: rgba(
+    $core-color-solid-green-700,
+    $core-opacity-700
+);
+$core-color-opacity-green-600: rgba(
+    $core-color-solid-green-700,
+    $core-opacity-900
+);
+$core-color-opacity-green-700: rgba(
+    $core-color-solid-green-700,
+    $core-opacity-1000
+);
+$core-color-opacity-green-800: rgba(
+    $core-color-solid-green-700,
+    $core-opacity-1100
+);
+$core-color-opacity-emerald-100: rgba(
+    $core-color-solid-emerald-700,
+    $core-opacity-100
+);
+$core-color-opacity-emerald-200: rgba(
+    $core-color-solid-emerald-700,
+    $core-opacity-200
+);
+$core-color-opacity-emerald-300: rgba(
+    $core-color-solid-emerald-700,
+    $core-opacity-300
+);
+$core-color-opacity-emerald-400: rgba(
+    $core-color-solid-emerald-700,
+    $core-opacity-600
+);
+$core-color-opacity-emerald-500: rgba(
+    $core-color-solid-emerald-700,
+    $core-opacity-700
+);
+$core-color-opacity-emerald-600: rgba(
+    $core-color-solid-emerald-700,
+    $core-opacity-900
+);
+$core-color-opacity-emerald-700: rgba(
+    $core-color-solid-emerald-700,
+    $core-opacity-1000
+);
+$core-color-opacity-emerald-800: rgba(
+    $core-color-solid-emerald-700,
+    $core-opacity-1100
+);
+$core-color-opacity-tiffany-100: rgba(
+    $core-color-solid-tiffany-700,
+    $core-opacity-100
+);
+$core-color-opacity-tiffany-200: rgba(
+    $core-color-solid-tiffany-700,
+    $core-opacity-200
+);
+$core-color-opacity-tiffany-300: rgba(
+    $core-color-solid-tiffany-700,
+    $core-opacity-300
+);
+$core-color-opacity-tiffany-400: rgba(
+    $core-color-solid-tiffany-700,
+    $core-opacity-600
+);
+$core-color-opacity-tiffany-500: rgba(
+    $core-color-solid-tiffany-700,
+    $core-opacity-700
+);
+$core-color-opacity-tiffany-600: rgba(
+    $core-color-solid-tiffany-700,
+    $core-opacity-900
+);
+$core-color-opacity-tiffany-700: rgba(
+    $core-color-solid-tiffany-700,
+    $core-opacity-1000
+);
+$core-color-opacity-tiffany-800: rgba(
+    $core-color-solid-tiffany-700,
+    $core-opacity-1100
+);
+$core-color-opacity-teal-100: rgba(
+    $core-color-solid-teal-700,
+    $core-opacity-100
+);
+$core-color-opacity-teal-200: rgba(
+    $core-color-solid-teal-700,
+    $core-opacity-200
+);
+$core-color-opacity-teal-300: rgba(
+    $core-color-solid-teal-700,
+    $core-opacity-300
+);
+$core-color-opacity-teal-400: rgba(
+    $core-color-solid-teal-700,
+    $core-opacity-600
+);
+$core-color-opacity-teal-500: rgba(
+    $core-color-solid-teal-700,
+    $core-opacity-700
+);
+$core-color-opacity-teal-600: rgba(
+    $core-color-solid-teal-700,
+    $core-opacity-900
+);
+$core-color-opacity-teal-700: rgba(
+    $core-color-solid-teal-700,
+    $core-opacity-1000
+);
+$core-color-opacity-teal-800: rgba(
+    $core-color-solid-teal-700,
+    $core-opacity-1100
+);
+$core-color-opacity-seawater-100: rgba(
+    $core-color-solid-seawater-700,
+    $core-opacity-100
+);
+$core-color-opacity-seawater-200: rgba(
+    $core-color-solid-seawater-700,
+    $core-opacity-200
+);
+$core-color-opacity-seawater-300: rgba(
+    $core-color-solid-seawater-700,
+    $core-opacity-300
+);
+$core-color-opacity-seawater-400: rgba(
+    $core-color-solid-seawater-700,
+    $core-opacity-600
+);
+$core-color-opacity-seawater-500: rgba(
+    $core-color-solid-seawater-700,
+    $core-opacity-700
+);
+$core-color-opacity-seawater-600: rgba(
+    $core-color-solid-seawater-700,
+    $core-opacity-900
+);
+$core-color-opacity-seawater-700: rgba(
+    $core-color-solid-seawater-700,
+    $core-opacity-1000
+);
+$core-color-opacity-seawater-800: rgba(
+    $core-color-solid-seawater-700,
+    $core-opacity-1100
+);
+$core-color-opacity-blue-100: rgba(
+    $core-color-solid-blue-700,
+    $core-opacity-100
+);
+$core-color-opacity-blue-200: rgba(
+    $core-color-solid-blue-700,
+    $core-opacity-200
+);
+$core-color-opacity-blue-300: rgba(
+    $core-color-solid-blue-700,
+    $core-opacity-300
+);
+$core-color-opacity-blue-400: rgba(
+    $core-color-solid-blue-700,
+    $core-opacity-600
+);
+$core-color-opacity-blue-500: rgba(
+    $core-color-solid-blue-700,
+    $core-opacity-700
+);
+$core-color-opacity-blue-600: rgba(
+    $core-color-solid-blue-700,
+    $core-opacity-900
+);
+$core-color-opacity-blue-700: rgba(
+    $core-color-solid-blue-700,
+    $core-opacity-1000
+);
+$core-color-opacity-blue-800: rgba(
+    $core-color-solid-blue-700,
+    $core-opacity-1100
+);
+$core-color-opacity-sapphire-100: rgba(
+    $core-color-solid-sapphire-700,
+    $core-opacity-100
+);
+$core-color-opacity-sapphire-200: rgba(
+    $core-color-solid-sapphire-700,
+    $core-opacity-200
+);
+$core-color-opacity-sapphire-300: rgba(
+    $core-color-solid-sapphire-700,
+    $core-opacity-300
+);
+$core-color-opacity-sapphire-400: rgba(
+    $core-color-solid-sapphire-700,
+    $core-opacity-600
+);
+$core-color-opacity-sapphire-500: rgba(
+    $core-color-solid-sapphire-700,
+    $core-opacity-700
+);
+$core-color-opacity-sapphire-600: rgba(
+    $core-color-solid-sapphire-700,
+    $core-opacity-900
+);
+$core-color-opacity-sapphire-700: rgba(
+    $core-color-solid-sapphire-700,
+    $core-opacity-1000
+);
+$core-color-opacity-sapphire-800: rgba(
+    $core-color-solid-sapphire-700,
+    $core-opacity-1100
+);
+$core-color-opacity-blueberry-100: rgba(
+    $core-color-solid-blueberry-700,
+    $core-opacity-100
+);
+$core-color-opacity-blueberry-200: rgba(
+    $core-color-solid-blueberry-700,
+    $core-opacity-200
+);
+$core-color-opacity-blueberry-300: rgba(
+    $core-color-solid-blueberry-700,
+    $core-opacity-300
+);
+$core-color-opacity-blueberry-400: rgba(
+    $core-color-solid-blueberry-700,
+    $core-opacity-600
+);
+$core-color-opacity-blueberry-500: rgba(
+    $core-color-solid-blueberry-700,
+    $core-opacity-700
+);
+$core-color-opacity-blueberry-600: rgba(
+    $core-color-solid-blueberry-700,
+    $core-opacity-900
+);
+$core-color-opacity-blueberry-700: rgba(
+    $core-color-solid-blueberry-700,
+    $core-opacity-1000
+);
+$core-color-opacity-blueberry-800: rgba(
+    $core-color-solid-blueberry-700,
+    $core-opacity-1100
+);
+$core-color-opacity-grape-100: rgba(
+    $core-color-solid-grape-700,
+    $core-opacity-100
+);
+$core-color-opacity-grape-200: rgba(
+    $core-color-solid-grape-700,
+    $core-opacity-200
+);
+$core-color-opacity-grape-300: rgba(
+    $core-color-solid-grape-700,
+    $core-opacity-300
+);
+$core-color-opacity-grape-400: rgba(
+    $core-color-solid-grape-700,
+    $core-opacity-600
+);
+$core-color-opacity-grape-500: rgba(
+    $core-color-solid-grape-700,
+    $core-opacity-700
+);
+$core-color-opacity-grape-600: rgba(
+    $core-color-solid-grape-700,
+    $core-opacity-900
+);
+$core-color-opacity-grape-700: rgba(
+    $core-color-solid-grape-700,
+    $core-opacity-1000
+);
+$core-color-opacity-grape-800: rgba(
+    $core-color-solid-grape-700,
+    $core-opacity-1100
+);
+$core-color-opacity-magenta-100: rgba(
+    $core-color-solid-magenta-700,
+    $core-opacity-100
+);
+$core-color-opacity-magenta-200: rgba(
+    $core-color-solid-magenta-700,
+    $core-opacity-200
+);
+$core-color-opacity-magenta-300: rgba(
+    $core-color-solid-magenta-700,
+    $core-opacity-300
+);
+$core-color-opacity-magenta-400: rgba(
+    $core-color-solid-magenta-700,
+    $core-opacity-600
+);
+$core-color-opacity-magenta-500: rgba(
+    $core-color-solid-magenta-700,
+    $core-opacity-700
+);
+$core-color-opacity-magenta-600: rgba(
+    $core-color-solid-magenta-700,
+    $core-opacity-900
+);
+$core-color-opacity-magenta-700: rgba(
+    $core-color-solid-magenta-700,
+    $core-opacity-1000
+);
+$core-color-opacity-magenta-800: rgba(
+    $core-color-solid-magenta-700,
+    $core-opacity-1100
+);
+$core-color-opacity-cherry-100: rgba(
+    $core-color-solid-cherry-700,
+    $core-opacity-100
+);
+$core-color-opacity-cherry-200: rgba(
+    $core-color-solid-cherry-700,
+    $core-opacity-200
+);
+$core-color-opacity-cherry-300: rgba(
+    $core-color-solid-cherry-700,
+    $core-opacity-300
+);
+$core-color-opacity-cherry-400: rgba(
+    $core-color-solid-cherry-700,
+    $core-opacity-600
+);
+$core-color-opacity-cherry-500: rgba(
+    $core-color-solid-cherry-700,
+    $core-opacity-700
+);
+$core-color-opacity-cherry-600: rgba(
+    $core-color-solid-cherry-700,
+    $core-opacity-900
+);
+$core-color-opacity-cherry-700: rgba(
+    $core-color-solid-cherry-700,
+    $core-opacity-1000
+);
+$core-color-opacity-cherry-800: rgba(
+    $core-color-solid-cherry-700,
+    $core-opacity-1100
+);
+$core-color-opacity-coral-100: rgba(
+    $core-color-solid-coral-700,
+    $core-opacity-100
+);
+$core-color-opacity-coral-200: rgba(
+    $core-color-solid-coral-700,
+    $core-opacity-200
+);
+$core-color-opacity-coral-300: rgba(
+    $core-color-solid-coral-700,
+    $core-opacity-300
+);
+$core-color-opacity-coral-400: rgba(
+    $core-color-solid-coral-700,
+    $core-opacity-600
+);
+$core-color-opacity-coral-500: rgba(
+    $core-color-solid-coral-700,
+    $core-opacity-700
+);
+$core-color-opacity-coral-600: rgba(
+    $core-color-solid-coral-700,
+    $core-opacity-900
+);
+$core-color-opacity-coral-700: rgba(
+    $core-color-solid-coral-700,
+    $core-opacity-1000
+);
+$core-color-opacity-coral-800: rgba(
+    $core-color-solid-coral-700,
+    $core-opacity-1100
+);
+$core-color-opacity-slate-100: rgba(
+    $core-color-solid-slate-700,
+    $core-opacity-100
+);
+$core-color-opacity-slate-200: rgba(
+    $core-color-solid-slate-700,
+    $core-opacity-200
+);
+$core-color-opacity-slate-300: rgba(
+    $core-color-solid-slate-700,
+    $core-opacity-300
+);
+$core-color-opacity-slate-400: rgba(
+    $core-color-solid-slate-700,
+    $core-opacity-600
+);
+$core-color-opacity-slate-500: rgba(
+    $core-color-solid-slate-700,
+    $core-opacity-700
+);
+$core-color-opacity-slate-600: rgba(
+    $core-color-solid-slate-700,
+    $core-opacity-900
+);
+$core-color-opacity-slate-700: rgba(
+    $core-color-solid-slate-700,
+    $core-opacity-1000
+);
+$core-color-opacity-slate-800: rgba(
+    $core-color-solid-slate-700,
+    $core-opacity-1100
+);
+$core-color-opacity-overflow-100: rgba(
+    $core-color-solid-slate-50,
+    $core-opacity-50
+);
+$core-color-opacity-overflow-200: rgba(
+    $core-color-solid-slate-75,
+    $core-opacity-50
+);
+$core-color-opacity-overflow-300: rgba(
+    $core-color-solid-slate-1200,
+    $core-opacity-50
+);
+$core-color-opacity-overflow-400: rgba(
+    $core-color-solid-slate-1300,
+    $core-opacity-50
+);
+$core-color-gradient-slate-110: linear-gradient(
+    1.93deg,
+    $core-color-opacity-overflow-100 1.56%,
+    $core-color-solid-slate-50 49.91%
+);
+$core-color-gradient-slate-120: linear-gradient(
+    88.07deg,
+    $core-color-opacity-overflow-100 1.63%,
+    $core-color-solid-slate-50 50.02%
+);
+$core-color-gradient-slate-130: linear-gradient(
+    181.93deg,
+    $core-color-opacity-overflow-100 1.63%,
+    $core-color-solid-slate-50 50.01%
+);
+$core-color-gradient-slate-140: linear-gradient(
+    271.93deg,
+    $core-color-opacity-overflow-100 1.63%,
+    $core-color-solid-slate-50 49.98%
+);
+$core-color-gradient-slate-210: linear-gradient(
+    1.93deg,
+    $core-color-opacity-overflow-200 1.56%,
+    $core-color-solid-slate-75 49.91%
+);
+$core-color-gradient-slate-220: linear-gradient(
+    88.07deg,
+    $core-color-opacity-overflow-200 1.63%,
+    $core-color-solid-slate-75 50.02%
+);
+$core-color-gradient-slate-230: linear-gradient(
+    181.93deg,
+    $core-color-opacity-overflow-200 1.63%,
+    $core-color-solid-slate-75 50.01%
+);
+$core-color-gradient-slate-240: linear-gradient(
+    271.93deg,
+    $core-color-opacity-overflow-200 1.63%,
+    $core-color-solid-slate-75 49.98%
+);
+$core-color-gradient-slate-310: linear-gradient(
+    1.93deg,
+    $core-color-opacity-overflow-400 1.56%,
+    $core-color-solid-slate-1300 49.91%
+);
+$core-color-gradient-slate-320: linear-gradient(
+    88.07deg,
+    $core-color-opacity-overflow-400 1.63%,
+    $core-color-solid-slate-1300 50.02%
+);
+$core-color-gradient-slate-330: linear-gradient(
+    181.93deg,
+    $core-color-opacity-overflow-400 1.63%,
+    $core-color-solid-slate-1300 50.01%
+);
+$core-color-gradient-slate-340: linear-gradient(
+    271.93deg,
+    $core-color-opacity-overflow-400 1.63%,
+    $core-color-solid-slate-1300 49.98%
+);
+$core-color-gradient-slate-410: linear-gradient(
+    1.93deg,
+    $core-color-opacity-overflow-300 1.56%,
+    $core-color-solid-slate-1200 49.91%
+);
+$core-color-gradient-slate-420: linear-gradient(
+    88.07deg,
+    $core-color-opacity-overflow-300 1.63%,
+    $core-color-solid-slate-1200 50.02%
+);
+$core-color-gradient-slate-430: linear-gradient(
+    181.93deg,
+    $core-color-opacity-overflow-300 1.63%,
+    $core-color-solid-slate-1200 50.01%
+);
+$core-color-gradient-slate-440: linear-gradient(
+    271.93deg,
+    $core-color-opacity-overflow-300 1.63%,
+    $core-color-solid-slate-1200 49.98%
+);
+$core-elevation-shadow-50: 0 0 0 0;
+$core-elevation-shadow-110:
+    0 -1 2 0 rgba(0, 0, 0, 6%),
+    0 -1 2 0 rgba(0, 0, 0, 3%);
+$core-elevation-shadow-120:
+    1 0 2 0 rgba(0, 0, 0, 6%),
+    1 0 2 0 rgba(0, 0, 0, 3%);
+$core-elevation-shadow-130:
+    0 1 2 0 rgba(0, 0, 0, 6%),
+    0 1 2 0 rgba(0, 0, 0, 3%);
+$core-elevation-shadow-140:
+    -1 0 2 0 rgba(0, 0, 0, 6%),
+    -1 0 2 0 rgba(0, 0, 0, 3%);
+$core-elevation-shadow-210:
+    0 -1 4 0 rgba(0, 0, 0, 8%),
+    0 -1 4 0 rgba(0, 0, 0, 4%);
+$core-elevation-shadow-220:
+    1 0 4 0 rgba(0, 0, 0, 8%),
+    1 0 4 0 rgba(0, 0, 0, 4%);
+$core-elevation-shadow-230:
+    0 1 4 0 rgba(0, 0, 0, 8%),
+    0 1 4 0 rgba(0, 0, 0, 4%);
+$core-elevation-shadow-240:
+    -1 0 4 0 rgba(0, 0, 0, 8%),
+    -1 0 4 0 rgba(0, 0, 0, 4%);
+$core-elevation-shadow-310:
+    0 -4 8 2 rgba(0, 0, 0, 3%),
+    0 -4 8 2 rgba(0, 0, 0, 2%);
+$core-elevation-shadow-320:
+    4 0 8 2 rgba(0, 0, 0, 3%),
+    4 0 8 2 rgba(0, 0, 0, 2%);
+$core-elevation-shadow-330:
+    0 4 8 2 rgba(0, 0, 0, 3%),
+    0 4 8 2 rgba(0, 0, 0, 2%);
+$core-elevation-shadow-340:
+    -4 0 8 2 rgba(0, 0, 0, 3%),
+    -4 0 8 2 rgba(0, 0, 0, 2%);
+$core-elevation-shadow-410:
+    0 -8 16 2 rgba(0, 0, 0, 4%),
+    0 -8 16 2 rgba(0, 0, 0, 2%);
+$core-elevation-shadow-420:
+    8 0 16 2 rgba(0, 0, 0, 4%),
+    8 0 16 2 rgba(0, 0, 0, 2%);
+$core-elevation-shadow-430:
+    0 8 16 2 rgba(0, 0, 0, 4%),
+    0 8 16 2 rgba(0, 0, 0, 2%);
+$core-elevation-shadow-440:
+    -8 0 16 2 rgba(0, 0, 0, 4%),
+    -8 0 16 2 rgba(0, 0, 0, 2%);
+$core-elevation-shadow-510:
+    0 -16 24 4 rgba(0, 0, 0, 4%),
+    0 -16 24 4 rgba(0, 0, 0, 2%);
+$core-elevation-shadow-520:
+    16 0 24 4 rgba(0, 0, 0, 4%),
+    16 0 24 4 rgba(0, 0, 0, 2%);
+$core-elevation-shadow-530:
+    0 16 24 4 rgba(0, 0, 0, 4%),
+    0 16 24 4 rgba(0, 0, 0, 2%);
+$core-elevation-shadow-540:
+    -16 0 24 4 rgba(0, 0, 0, 4%),
+    -16 0 24 4 rgba(0, 0, 0, 2%);
+$core-elevation-shadow-610:
+    0 -24 48 8 rgba(0, 0, 0, 6%),
+    0 -24 48 8 rgba(0, 0, 0, 3%);
+$core-elevation-shadow-620:
+    24 0 48 8 rgba(0, 0, 0, 6%),
+    24 0 48 8 rgba(0, 0, 0, 3%);
+$core-elevation-shadow-630:
+    0 24 48 8 rgba(0, 0, 0, 6%),
+    0 24 48 8 rgba(0, 0, 0, 3%);
+$core-elevation-shadow-640:
+    -24 0 48 8 rgba(0, 0, 0, 6%),
+    -24 0 48 8 rgba(0, 0, 0, 3%);
+$core-elevation-shadow-710:
+    0 -32 64 12 rgba(0, 0, 0, 8%),
+    0 -32 64 12 rgba(0, 0, 0, 4%);
+$core-elevation-shadow-720:
+    32 0 64 12 rgba(0, 0, 0, 8%),
+    32 0 64 12 rgba(0, 0, 0, 4%);
+$core-elevation-shadow-730:
+    0 32 64 12 rgba(0, 0, 0, 8%),
+    0 32 64 12 rgba(0, 0, 0, 4%);
+$core-elevation-shadow-740:
+    -32 0 64 12 rgba(0, 0, 0, 8%),
+    -32 0 64 12 rgba(0, 0, 0, 4%);
+$core-spacing-50: 0px;
+$core-spacing-75: 1px;
+$core-spacing-100: 2px;
+$core-spacing-200: 4px;
+$core-spacing-300: 6px;
+$core-spacing-400: 8px;
+$core-spacing-500: 10px;
+$core-spacing-600: 12px;
+$core-spacing-700: 14px;
+$core-spacing-800: 16px;
+$core-spacing-900: 18px;
+$core-spacing-1000: 20px;
+$core-spacing-1100: 22px;
+$core-spacing-1200: 24px;
+$core-spacing-1300: 26px;
+$core-spacing-1400: 28px;
+$core-spacing-1500: 30px;
+$core-spacing-1600: 32px;
+$core-spacing-1700: 34px;
+$core-spacing-1800: 36px;
+$core-spacing-1900: 38px;
+$core-spacing-2000: 40px;
+$core-spacing-2100: 42px;
+$core-spacing-2200: 44px;
+$core-spacing-2300: 46px;
+$core-spacing-2400: 48px;
+$core-spacing-2500: 50px;
+$core-spacing-2600: 52px;
+$core-spacing-2700: 54px;
+$core-spacing-2800: 56px;
+$core-spacing-2900: 58px;
+$core-spacing-3000: 60px;
+$core-spacing-3100: 62px;
+$core-spacing-3200: 64px;
+$core-spacing-3300: 66px;
+$core-spacing-3400: 68px;
+$core-spacing-3500: 70px;
+$core-spacing-3600: 72px;
+$core-spacing-3700: 74px;
+$core-spacing-3800: 76px;
+$core-spacing-3900: 78px;
+$core-spacing-4000: 80px;
+$core-spacing-4100: 82px;
+$core-spacing-4200: 84px;
+$core-spacing-4300: 86px;
+$core-spacing-4400: 88px;
+$core-spacing-4500: 90px;
+$core-spacing-4600: 92px;
+$core-spacing-4700: 94px;
+$core-spacing-4800: 96px;
+$core-spacing-4900: 98px;
+$core-spacing-5000: 100px;
+$core-fontSize-50: 12px;
+$core-fontSize-75: 14px;
+$core-fontSize-100: 16px;
+$core-fontSize-200: 18px;
+$core-fontSize-300: 20px;
+$core-fontSize-400: 24px;
+$core-fontSize-500: 32px;
+$core-fontSize-600: 40px;
+$core-fontSize-700: 48px;
+$core-fontSize-800: 64px;
+$core-fontSize-900: 80px;
+$core-fontSize-1000: 128px;
+$core-fontSize-1100: 134px;
+$core-fontFamily-ubuntu: Ubuntu;
+$core-fontFamily-ibmPlex-mono: IBM Plex Mono;
+$core-fontFamily-ibmPlex-sans: IBM Plex Sans;
+$core-fontFamily-fontAwesome-pro: Font Awesome 6 Pro;
+$core-fontFamily-fontAwesome-brands: Font Awesome 6 Brands;
+$core-fontWeight-light: 300;
+$core-fontWeight-regular: 400;
+$core-fontWeight-bold: 700;
+$core-fontWeight-italic: Italic;
+$core-fontWeight-boldItalic: Bold Italic;
+$core-lineHeight-100: 18px;
+$core-lineHeight-200: 22px;
+$core-lineHeight-300: 24px;
+$core-lineHeight-400: 28px;
+$core-lineHeight-500: 30px;
+$core-lineHeight-600: 32px;
+$core-lineHeight-700: 36px;
+$core-lineHeight-800: 48px;
+$core-lineHeight-900: 64px;
+$core-lineHeight-1000: 96px;
+$core-lineHeight-auto: auto;
+$core-fontDecoration-underline: underline;
+$core-paragraphSpacing-50: 12px;
+$core-paragraphSpacing-75: 14px;
+$core-paragraphSpacing-100: 16px;
+$core-paragraphSpacing-200: 18px;
+$core-paragraphSpacing-300: 20px;
+$core-paragraphSpacing-400: 24px;
+$core-paragraphSpacing-500: 32px;
+$core-paragraphSpacing-600: 40px;
+$core-paragraphSpacing-700: 48px;
+$core-paragraphSpacing-800: 64px;
+$core-paragraphSpacing-900: 80px;
+$core-paragraphSpacing-1000: 28px;
+$core-paragraphSpacing-1100: 34px;
+$core-motion-ease-100: cubic-bezier(0, 0, 1, 1);
+$core-motion-ease-200: cubic-bezier(1, 0, 1, 1);
+$core-motion-ease-300: cubic-bezier(0, 0, 0, 1);
+$core-motion-ease-400: cubic-bezier(0.72, 0, 0.24, 1);
+$core-motion-duration-50: 0ms;
+$core-motion-duration-100: 80ms;
+$core-motion-duration-200: 160ms;
+$core-motion-duration-300: 240ms;
+$core-motion-duration-400: 480ms;
+$core-motion-duration-500: 720ms;
+$core-motion-duration-600: 960ms;
+$core-motion-duration-700: 1200ms;
+$core-motion-duration-800: 1440ms;
+$core-motion-duration-900: 1680ms;
+$core-motion-duration-1000: 1920ms;
+$core-motion-duration-1100: 2400ms;
+$core-motion-duration-1200: 2880ms;
+$core-motion-duration-1300: 3360ms;
+$core-motion-duration-1400: 3840ms;
+$core-motion-duration-1500: 4320ms;
+$core-size-50: 0px;
+$core-size-100: 2px;
+$core-size-200: 4px;
+$core-size-300: 6px;
+$core-size-400: 8px;
+$core-size-500: 10px;
+$core-size-600: 12px;
+$core-size-700: 14px;
+$core-size-800: 16px;
+$core-size-900: 18px;
+$core-size-1000: 20px;
+$core-size-1100: 22px;
+$core-size-1200: 24px;
+$core-size-1300: 26px;
+$core-size-1400: 28px;
+$core-size-1500: 30px;
+$core-size-1600: 32px;
+$core-size-1700: 34px;
+$core-size-1800: 36px;
+$core-size-1900: 38px;
+$core-size-2000: 40px;
+$core-size-2100: 42px;
+$core-size-2200: 44px;
+$core-size-2300: 46px;
+$core-size-2400: 48px;
+$core-size-2500: 50px;
+$core-size-2600: 52px;
+$core-size-2700: 54px;
+$core-size-2800: 56px;
+$core-size-2900: 58px;
+$core-size-3000: 60px;
+$core-size-3100: 62px;
+$core-size-3200: 64px;
+$core-size-3300: 66px;
+$core-size-3400: 68px;
+$core-size-3500: 70px;
+$core-size-3600: 72px;
+$core-size-3700: 74px;
+$core-size-3800: 76px;
+$core-size-3900: 78px;
+$core-size-4000: 80px;
+$core-size-4100: 82px;
+$core-size-4200: 84px;
+$core-size-4300: 86px;
+$core-size-4400: 88px;
+$core-size-4500: 90px;
+$core-size-4600: 92px;
+$core-size-4700: 94px;
+$core-size-4800: 96px;
+$core-size-4900: 98px;
+$core-size-5000: 100px;
+$core-size-8100: 600px;
+$core-size-9100: 1280px;
+$borderWidth-none: $core-borderWidth-50;
+$borderWidth-xs: $core-borderWidth-75;
+$borderWidth-sm: $core-borderWidth-100;
+$borderWidth-md: $core-borderWidth-200;
+$borderWidth-lg: $core-borderWidth-300;
+$size-generic-2xs: $core-size-400;
+$size-generic-xs: $core-size-800;
+$size-generic-sm: $core-size-1200;
+$size-generic-md: $core-size-1600;
+$size-generic-lg: $core-size-2000;
+$size-generic-xl: $core-size-2400;
+$size-generic-2xl: $core-size-2800;
+$size-generic-3xl: $core-size-3200;
+$size-generic-4xl: $core-size-3600;
+$size-generic-5xl: $core-size-4000;
+$opacity-overlay: $core-opacity-900;
+$opacity-disabled: $core-opacity-400;
+$motion-easing-linear: $core-motion-ease-100;
+$motion-easing-in: $core-motion-ease-200;
+$motion-easing-out: $core-motion-ease-300;
+$motion-easing-inandout: $core-motion-ease-400;
+$motion-duration-instant: $core-motion-duration-50;
+$motion-duration-snappy: $core-motion-duration-300;
+$motion-duration-moderate: $core-motion-duration-400;
+$motion-duration-relax: $core-motion-duration-500;
+$motion-duration-deliberate: $core-motion-duration-600;
+$semantic-elevation-shadow-dialog: $core-elevation-shadow-730;
+$semantic-elevation-shadow-notification: $core-elevation-shadow-630;
+$semantic-elevation-shadow-menu: $core-elevation-shadow-530;
+$semantic-elevation-shadow-card-default: $core-elevation-shadow-330;
+$semantic-elevation-shadow-card-hover: $core-elevation-shadow-530;
+$semantic-elevation-shadow-overflow-top: $core-elevation-shadow-310;
+$semantic-elevation-shadow-overflow-right: $core-elevation-shadow-320;
+$semantic-elevation-shadow-overflow-bottom: $core-elevation-shadow-330;
+$semantic-elevation-shadow-overflow-left: $core-elevation-shadow-340;
+$semantic-typography-heading-hero: (
+    font-family: $core-fontFamily-ubuntu,
+    font-size: $core-fontSize-800,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-auto,
+    paragraph-spacing: $core-paragraphSpacing-800,
+    letter-spacing: "",
+);
+$semantic-typography-heading-h1: (
+    font-family: $core-fontFamily-ubuntu,
+    font-size: $core-fontSize-1100,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-auto,
+    paragraph-spacing: $core-paragraphSpacing-1100,
+    letter-spacing: "",
+);
+$semantic-typography-heading-h2: (
+    font-family: $core-fontFamily-ubuntu,
+    font-size: $core-fontSize-1000,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-auto,
+    paragraph-spacing: $core-paragraphSpacing-1000,
+    letter-spacing: "",
+);
+$semantic-typography-heading-h3: (
+    font-family: $core-fontFamily-ubuntu,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-auto,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-heading-h4: (
+    font-family: $core-fontFamily-ubuntu,
+    font-size: $core-fontSize-200,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-auto,
+    paragraph-spacing: $core-paragraphSpacing-200,
+    letter-spacing: "",
+);
+$semantic-typography-heading-h5: (
+    font-family: $core-fontFamily-ubuntu,
+    font-size: $core-fontSize-100,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-auto,
+    paragraph-spacing: $core-paragraphSpacing-100,
+    letter-spacing: "",
+);
+$semantic-typography-heading-h6: (
+    font-family: $core-fontFamily-ubuntu,
+    font-size: $core-fontSize-75,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-auto,
+    paragraph-spacing: $core-paragraphSpacing-75,
+    letter-spacing: "",
+);
+$semantic-typography-body-xl-regular-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-regular,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-xl-regular-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-italic,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-xl-regular-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-regular,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+    text-decoration: $core-fontDecoration-underline,
+);
+$semantic-typography-body-xl-regular-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-italic,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+    text-decoration: $core-fontDecoration-underline,
+);
+$semantic-typography-body-xl-bold-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-xl-bold-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-xl-bold-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-xl-bold-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-lg-regular-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-lg-regular-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-lg-regular-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-lg-regular-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-lg-bold-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-lg-bold-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-lg-bold-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-lg-bold-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-300,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-300,
+    letter-spacing: "",
+);
+$semantic-typography-body-md-regular-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-100,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-100,
+    letter-spacing: "",
+);
+$semantic-typography-body-md-regular-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-100,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-100,
+    letter-spacing: "",
+);
+$semantic-typography-body-md-regular-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-100,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-100,
+    letter-spacing: "",
+);
+$semantic-typography-body-md-regular-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-100,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-100,
+    letter-spacing: "",
+);
+$semantic-typography-body-md-bold-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-100,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-100,
+    letter-spacing: "",
+);
+$semantic-typography-body-md-bold-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-100,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-100,
+    letter-spacing: "",
+);
+$semantic-typography-body-md-bold-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-100,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-100,
+    letter-spacing: "",
+);
+$semantic-typography-body-md-bold-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-100,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-100,
+    letter-spacing: "",
+);
+$semantic-typography-body-sm-regular-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-75,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-75,
+    letter-spacing: "",
+);
+$semantic-typography-body-sm-regular-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-75,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-75,
+    letter-spacing: "",
+);
+$semantic-typography-body-sm-regular-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-75,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-75,
+    letter-spacing: "",
+);
+$semantic-typography-body-sm-regular-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-75,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-75,
+    letter-spacing: "",
+);
+$semantic-typography-body-sm-bold-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-75,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-75,
+    letter-spacing: "",
+);
+$semantic-typography-body-sm-bold-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-75,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-75,
+    letter-spacing: "",
+);
+$semantic-typography-body-sm-bold-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-75,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-75,
+    letter-spacing: "",
+);
+$semantic-typography-body-sm-bold-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-75,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-75,
+    letter-spacing: "",
+);
+$semantic-typography-caption-regular-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-caption-regular-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-caption-regular-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-caption-regular-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-caption-bold-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-caption-bold-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-caption-bold-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-caption-bold-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-code-regular-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-code-regular-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-code-regular-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-code-regular-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-code-bold-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-code-bold-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-code-bold-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-code-bold-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-labelPaired-regular-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-labelPaired-regular-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-labelPaired-regular-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-labelPaired-regular-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-labelPaired-bold-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-labelPaired-bold-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-labelPaired-bold-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-labelPaired-bold-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-standalone-regular-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-standalone-regular-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-standalone-regular-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-standalone-regular-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-standalone-bold-default: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-standalone-bold-italic: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-standalone-bold-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-typography-icon-standalone-bold-italic-underline: (
+    font-family: $core-fontFamily-ibmPlex-sans,
+    font-size: $core-fontSize-50,
+    font-weight: $core-fontWeight-bold,
+    line-height: $core-lineHeight-500,
+    paragraph-spacing: $core-paragraphSpacing-50,
+    letter-spacing: "",
+);
+$semantic-spacing-general-none: $core-spacing-50;
+$semantic-spacing-general-3xs: $core-spacing-75;
+$semantic-spacing-general-2xs: $core-spacing-100;
+$semantic-spacing-general-xs: $core-spacing-200;
+$semantic-spacing-general-sm: $core-spacing-400;
+$semantic-spacing-general-md: $core-spacing-800;
+$semantic-spacing-general-lg: $core-spacing-1200;
+$semantic-spacing-general-xl: $core-spacing-1200;
+$semantic-spacing-general-2xl: $core-spacing-1600;
+$semantic-spacing-general-3xl: $core-spacing-1600;
+$semantic-spacing-general-4xl: $core-spacing-2400;
+$semantic-spacing-general-5xl: $core-spacing-2400;
+$semantic-spacing-gap-none: $core-spacing-50;
+$semantic-spacing-gap-2xs: $core-spacing-75;
+$semantic-spacing-gap-xs: $core-spacing-100;
+$semantic-spacing-gap-sm: $core-spacing-200;
+$semantic-spacing-gap-md: $core-spacing-400;
+$semantic-spacing-gap-lg: $core-spacing-800;
+$semantic-spacing-gap-xl: $core-spacing-1200;
+$semantic-spacing-gap-2xl: $core-spacing-1200;
+$semantic-spacing-gap-3xl: $core-spacing-1600;
+$semantic-spacing-gap-4xl: $core-spacing-1600;
+$semantic-borderRadius-none: $core-borderRadius-50;
+$semantic-borderRadius-xs: $core-borderRadius-100;
+$semantic-borderRadius-sm: $core-borderRadius-200;
+$semantic-borderRadius-md: $core-borderRadius-400;
+$semantic-borderRadius-lg: $core-borderRadius-800;
+$semantic-borderRadius-xl: $core-borderRadius-1200;
+$semantic-borderRadius-2xl: $core-borderRadius-2400;
+$semantic-borderRadius-pill: $core-borderRadius-4800;
+$semantic-fontSize-heading-hero: $core-fontSize-800;
+$semantic-fontSize-heading-h1: $core-fontSize-1100;
+$semantic-fontSize-heading-h2: $core-fontSize-1000;
+$semantic-fontSize-heading-h3: $core-fontSize-300;
+$semantic-fontSize-heading-h4: $core-fontSize-200;
+$semantic-fontSize-heading-h5: $core-fontSize-100;
+$semantic-fontSize-heading-h6: $core-fontSize-75;
+$semantic-fontSize-body-xl: $core-fontSize-300;
+$semantic-fontSize-body-lg: $core-fontSize-200;
+$semantic-fontSize-body-md: $core-fontSize-100;
+$semantic-fontSize-body-sm: $core-fontSize-75;
+$semantic-fontSize-caption: $core-fontSize-50;
+$semantic-fontSize-code-xl: $core-fontSize-300;
+$semantic-fontSize-code-lg: $core-fontSize-200;
+$semantic-fontSize-code-md: $core-fontSize-100;
+$semantic-fontSize-code-sm: $core-fontSize-75;
+$semantic-fontSize-icon-labelPaired-xl: $core-fontSize-300;
+$semantic-fontSize-icon-labelPaired-lg: $core-fontSize-200;
+$semantic-fontSize-icon-labelPaired-md: $core-fontSize-100;
+$semantic-fontSize-icon-labelPaired-sm: $core-fontSize-75;
+$semantic-fontSize-icon-labelPaired-caption: $core-fontSize-50;
+$semantic-fontSize-icon-standalone-2xl: $core-fontSize-800;
+$semantic-fontSize-icon-standalone-xl: $core-fontSize-600;
+$semantic-fontSize-icon-standalone-lg: $core-fontSize-500;
+$semantic-fontSize-icon-standalone-md: $core-fontSize-300;
+$semantic-fontSize-icon-standalone-sm: $core-fontSize-100;
+$semantic-paragraphSpacing-heading-hero: $core-paragraphSpacing-800;
+$semantic-paragraphSpacing-heading-h1: $core-paragraphSpacing-1100;
+$semantic-paragraphSpacing-heading-h2: $core-paragraphSpacing-1000;
+$semantic-paragraphSpacing-heading-h3: $core-paragraphSpacing-300;
+$semantic-paragraphSpacing-heading-h4: $core-paragraphSpacing-200;
+$semantic-paragraphSpacing-heading-h5: $core-paragraphSpacing-100;
+$semantic-paragraphSpacing-heading-h6: $core-paragraphSpacing-75;
+$semantic-paragraphSpacing-body-xl: $core-paragraphSpacing-300;
+$semantic-paragraphSpacing-body-lg: $core-paragraphSpacing-200;
+$semantic-paragraphSpacing-body-md: $core-paragraphSpacing-100;
+$semantic-paragraphSpacing-body-sm: $core-paragraphSpacing-75;
+$semantic-paragraphSpacing-caption: $core-paragraphSpacing-50;
+$semantic-paragraphSpacing-code-xl: $core-paragraphSpacing-300;
+$semantic-paragraphSpacing-code-lg: $core-paragraphSpacing-200;
+$semantic-paragraphSpacing-code-md: $core-paragraphSpacing-100;
+$semantic-paragraphSpacing-code-sm: $core-paragraphSpacing-75;
+$semantic-lineHeight-heading-hero: $core-lineHeight-auto;
+$semantic-lineHeight-heading-h1: $core-lineHeight-auto;
+$semantic-lineHeight-heading-h2: $core-lineHeight-auto;
+$semantic-lineHeight-heading-h3: $core-lineHeight-auto;
+$semantic-lineHeight-heading-h4: $core-lineHeight-auto;
+$semantic-lineHeight-heading-h5: $core-lineHeight-auto;
+$semantic-lineHeight-heading-h6: $core-lineHeight-auto;
+$semantic-lineHeight-body-xl: $core-lineHeight-500;
+$semantic-lineHeight-body-lg: $core-lineHeight-400;
+$semantic-lineHeight-body-md: $core-lineHeight-300;
+$semantic-lineHeight-body-sm: $core-lineHeight-200;
+$semantic-lineHeight-caption: $core-lineHeight-100;
+$semantic-lineHeight-code-xl: $core-lineHeight-500;
+$semantic-lineHeight-code-lg: $core-lineHeight-400;
+$semantic-lineHeight-code-md: $core-lineHeight-300;
+$semantic-lineHeight-code-sm: $core-lineHeight-200;
+$semantic-lineHeight-icon-labelPaired-xl: $core-lineHeight-500;
+$semantic-lineHeight-icon-labelPaired-lg: $core-lineHeight-400;
+$semantic-lineHeight-icon-labelPaired-md: $core-lineHeight-300;
+$semantic-lineHeight-icon-labelPaired-sm: $core-lineHeight-200;
+$semantic-lineHeight-icon-labelPaired-caption: $core-lineHeight-100;
+$semantic-lineHeight-icon-standalone-2xl: $core-lineHeight-1000;
+$semantic-lineHeight-icon-standalone-xl: $core-lineHeight-900;
+$semantic-lineHeight-icon-standalone-lg: $core-lineHeight-800;
+$semantic-lineHeight-icon-standalone-md: $core-lineHeight-600;
+$semantic-lineHeight-icon-standalone-sm: $core-lineHeight-300;
+$semantic-color-background-primary-base: $core-color-solid-slate-1300;
+$semantic-color-background-primary-container: $core-color-solid-slate-1200;
+$semantic-color-background-secondary-base: $core-color-solid-slate-1300;
+$semantic-color-background-secondary-container: $core-color-solid-slate-1200;
+$semantic-color-background-overflow-1-top: $core-color-gradient-slate-310;
+$semantic-color-background-overflow-1-right: $core-color-gradient-slate-320;
+$semantic-color-background-overflow-1-bottom: $core-color-gradient-slate-330;
+$semantic-color-background-overflow-1-left: $core-color-gradient-slate-340;
+$semantic-color-background-overflow-2-top: $core-color-gradient-slate-410;
+$semantic-color-background-overflow-2-right: $core-color-gradient-slate-420;
+$semantic-color-background-overflow-2-bottom: $core-color-gradient-slate-430;
+$semantic-color-background-overflow-2-left: $core-color-gradient-slate-440;
+$semantic-color-background-overlay: $core-color-opacity-black-600;
+$semantic-color-background-dialog: $core-color-solid-slate-1200;
+$semantic-color-typography-prominent: $core-color-solid-slate-50;
+$semantic-color-typography-default: $core-color-opacity-white-600;
+$semantic-color-typography-subtle: $core-color-opacity-white-400;
+$semantic-color-typography-disabled: $core-color-opacity-white-300;
+$semantic-color-typography-link: $core-color-solid-coral-700;
+$semantic-color-status-info: $core-color-solid-blue-600;
+$semantic-color-status-success: $core-color-solid-green-600;
+$semantic-color-status-warning: $core-color-solid-yellow-600;
+$semantic-color-status-danger: $core-color-solid-red-600;
+@mixin semantic-typography-heading-hero() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-800;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-800;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-800;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-800;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-800;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-800;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-800;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-800;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-800;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-800;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-heading-h1() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-1100;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-400;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-1100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-500;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-1100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-800;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-1100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-1000;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-1100;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-heading-h2() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-1000;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-1000;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-1000;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-1000;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-1000;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-1000;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-1000;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-1000;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-1000;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-1000;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-heading-h3() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-heading-h4() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-200;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-200;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-200;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-200;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-200;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-200;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-200;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-200;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-200;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-200;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-heading-h5() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-heading-h6() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ubuntu;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-auto;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-xl-regular-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-regular;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-regular;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-regular;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-regular;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-regular;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-xl-regular-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-italic;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-italic;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-italic;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-italic;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-italic;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-xl-regular-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-regular;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+        text-decoration: $core-fontDecoration-underline;
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-regular;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+        text-decoration: $core-fontDecoration-underline;
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-regular;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+        text-decoration: $core-fontDecoration-underline;
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-regular;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+        text-decoration: $core-fontDecoration-underline;
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-regular;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+        text-decoration: $core-fontDecoration-underline;
+    }
+}
+@mixin semantic-typography-body-xl-regular-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-italic;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+        text-decoration: $core-fontDecoration-underline;
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-italic;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+        text-decoration: $core-fontDecoration-underline;
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-italic;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+        text-decoration: $core-fontDecoration-underline;
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-italic;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+        text-decoration: $core-fontDecoration-underline;
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-italic;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+        text-decoration: $core-fontDecoration-underline;
+    }
+}
+@mixin semantic-typography-body-xl-bold-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-xl-bold-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-xl-bold-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-xl-bold-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-lg-regular-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-lg-regular-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-lg-regular-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-lg-regular-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-lg-bold-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-lg-bold-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-lg-bold-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-lg-bold-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-300;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-300;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-md-regular-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-md-regular-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-md-regular-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-md-regular-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-md-bold-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-md-bold-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-md-bold-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-md-bold-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-100;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-100;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-sm-regular-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-sm-regular-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-sm-regular-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-sm-regular-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-sm-bold-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-sm-bold-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-sm-bold-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-body-sm-bold-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-75;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-75;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-caption-regular-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-caption-regular-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-caption-regular-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-caption-regular-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-caption-bold-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-caption-bold-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-caption-bold-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-caption-bold-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-code-regular-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-code-regular-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-code-regular-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-code-regular-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-code-bold-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-code-bold-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-code-bold-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-code-bold-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-labelPaired-regular-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-labelPaired-regular-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-labelPaired-regular-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-labelPaired-regular-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-labelPaired-bold-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-labelPaired-bold-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-labelPaired-bold-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-labelPaired-bold-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-standalone-regular-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-standalone-regular-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-standalone-regular-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-standalone-regular-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-standalone-bold-default() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-standalone-bold-italic() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-standalone-bold-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
+@mixin semantic-typography-icon-standalone-bold-italic-underline() {
+    @media (min-width: 640px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 768px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1024px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1280px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+    @media (min-width: 1440px) {
+        font-family: $core-fontFamily-ibmPlex-sans;
+        font-size: $core-fontSize-50;
+        font-weight: $core-fontWeight-bold;
+        line-height: $core-lineHeight-500;
+        paragraph-spacing: $core-paragraphSpacing-50;
+        letter-spacing: "";
+    }
+}
