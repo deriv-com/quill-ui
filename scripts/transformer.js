@@ -22,8 +22,6 @@ const tokenNames = [
     "core/sizing",
     "semantic/global",
     "semantic/viewPort/default",
-    "semantic/theme/light",
-    "semantic/theme/dark",
 ];
 
 const semanticTokenNames = [
@@ -34,12 +32,22 @@ const semanticTokenNames = [
     "semantic/viewPort/1440-plus",
 ];
 
-const clusteredTokens = ["semantic-typography"];
+const themeTokenNames = ["semantic/theme/light", "semantic/theme/dark"];
 
-const coreRules = {};
+const allTokenNames = [
+    ...tokenNames,
+    ...semanticTokenNames,
+    ...themeTokenNames,
+];
 
-const convertCSSkey = (cssKey) => {
-    return `$${cssKey.replaceAll(".", "-")}`;
+const getTokenGroup = (group) =>
+    Object.fromEntries(
+        Object.entries(designTokens).filter(([key]) => group.includes(key)),
+    );
+
+const convertCSSkey = (cssKey, prefix = true) => {
+    const pref = prefix ? "--" : "";
+    return `${pref}${cssKey.replaceAll(".", "-")}`;
 };
 
 const isObject = (item) => typeof item === "object";
@@ -47,15 +55,6 @@ const camelToKebab = (camelCase) =>
     camelCase.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 
 const extractCSSValues = (key, value) => {
-    const isClusteredToken = clusteredTokens.some((token) =>
-        key.includes(token),
-    );
-
-    if (isClusteredToken) {
-        handleClusteredTokens(key, value);
-        return "skip";
-    }
-
     const filteredKeys = ["type"];
 
     const CSSValues = [];
@@ -89,28 +88,26 @@ const processCSSValue = (key, value) => {
     }
 };
 
-const handleClusteredTokens = (key, data) => {
-    let clusteredSassClass = `(\n`;
-
-    Object.keys(data).map((cssRuleKey) => {
-        const cssValue = data[cssRuleKey];
-        clusteredSassClass += `${camelToKebab(cssRuleKey)}: ${
-            cssValue || '""'
-        }, \n`;
-    });
-    clusteredSassClass += `)`;
-
-    coreRules[key] = clusteredSassClass;
-};
-
-const generateSassVariables = (obj, prefix = "", origin = "") => {
+let coreRules = {};
+const generateSassVariables = ({
+    data,
+    prefix = "",
+    origin = "",
+    reset = true,
+}) => {
     const valueIdentifier = "value";
 
-    for (const key in obj) {
-        const cssValue = obj[key];
+    if (reset) {
+        coreRules = {};
+    }
+
+    for (const key in data) {
+        const cssValue = data[key];
         const isValueObject = isObject(cssValue);
         let keyName = `${prefix}${key}-`;
-        keyName = tokenNames.some((item) => keyName.includes(item))
+
+        // Filter key name by removing token category
+        keyName = allTokenNames.some((item) => keyName.includes(item))
             ? ""
             : keyName;
         const finalKey = prefix.substring(0, prefix.length - 1); // Remove "-" generated from the previous iteration
@@ -119,16 +116,19 @@ const generateSassVariables = (obj, prefix = "", origin = "") => {
         if (isValueObject && key !== valueIdentifier) {
             // Non token variables are excluded
             if (!excludedKeys.includes(key)) {
-                generateSassVariables(obj[key], keyName, origin || key);
+                generateSassVariables({
+                    data: data[key],
+                    prefix: keyName,
+                    origin: origin || key,
+                    reset: false,
+                });
             }
         } else {
             if (key === valueIdentifier) {
                 const cssKey = finalKey.replaceAll("-", ".");
                 const finalValue = processCSSValue(finalKey, cssValue);
 
-                if (finalValue !== "skip") {
-                    coreRules[cssKey] = finalValue;
-                }
+                coreRules[cssKey] = finalValue;
             }
         }
     }
@@ -148,15 +148,24 @@ const generateSemanticValues = (objectTokens) => {
 
     viewPortData.map((ck) => {
         const classKeyData = objectTokens[ck];
-        const sassKey = semanticTokenNames
-            .reduce((modifiedString, token) => {
-                const regex = new RegExp(token.replace(/\+/g, "\\+"), "g");
-                return modifiedString.replace(regex, "");
-            }, ck)
-            .replace("-", " ");
+
+        const sassKey = convertCSSkey(
+            semanticTokenNames
+                .reduce((modifiedString, token) => {
+                    const regex = new RegExp(token.replace(/\+/g, "\\+"), "g");
+                    return modifiedString.replace(regex, "");
+                }, ck)
+                .replace("-", " ")
+                .replace(".plus.", ""),
+            false,
+        );
+
+        const processedKey = convertCSSkey(ck, false);
 
         const viewportNumber = ((match) =>
-            match ? parseInt(match[1], 10) : null)(ck.match(/\/(\d+)-/));
+            match ? parseInt(match[1], 10) : null)(
+            processedKey.match(/\/(\d+)-/),
+        );
 
         if (!mediaQueryData[sassKey]) {
             mediaQueryData[sassKey] = [];
@@ -176,10 +185,14 @@ const generateSemanticValues = (objectTokens) => {
         semanticRules += `@mixin ${classKey}() { \n`;
 
         queryData.map(({ viewport, data }) => {
-            const formattedData = data
+            let formattedData = data
                 .replace(/^(\()/, "{")
                 .replace(/(\))$/, "}")
                 .replace(/,/g, ";");
+
+            if (!formattedData.includes("\n")) {
+                formattedData = `{ ${formattedData} }`;
+            }
 
             semanticRules += `@media (min-width: ${viewport}px) \n
                 ${formattedData} \n`;
@@ -195,6 +208,7 @@ const generateSemanticValues = (objectTokens) => {
             const sanitizedToken = token.replace(/[./-]/g, ""); // Remove dots, slashes, and hyphens
 
             if (sanitizedKey.includes(sanitizedToken)) {
+                // console.log(`deleting.... ${key}`);
                 delete newObjectTokens[key];
             }
         }),
@@ -206,33 +220,100 @@ const generateSemanticValues = (objectTokens) => {
     };
 };
 
-const mapSASSValues = (designTokens) => {
-    const objectTokens = generateSassVariables(designTokens);
-
+const generateMediaQueryVariables = () => {
     let sassContent = ``;
 
-    const { semanticRules, newObjectTokens } =
-        generateSemanticValues(objectTokens);
+    sassContent += `\n
+    /* Media Queries for Semantic Tokens */ \n`;
 
-    Object.keys(newObjectTokens).map((tokenKey) => {
-        const tokenValue = newObjectTokens[tokenKey];
+    semanticTokenNames.map((name) => {
+        const semanticTokenGroup = getTokenGroup([name]);
+        const semanticObjectTokens = generateSassVariables({
+            data: semanticTokenGroup,
+        });
+
+        const viewportValue = (name.match(/\/(\d+)-plus$/) || [])[1];
+
+        sassContent += `\n
+    @media (min-width: ${viewportValue}px)  { \n
+    :root { \n    
+    `;
+
+        Object.keys(semanticObjectTokens).map((tokenKey) => {
+            const tokenValue = semanticObjectTokens[tokenKey];
+            sassContent += `${convertCSSkey(tokenKey)}: ${tokenValue};\n`;
+        });
+
+        sassContent += "}\n}\n";
+    });
+
+    return sassContent;
+};
+
+const generateThemeVariables = () => {
+    let sassContent = ``;
+
+    sassContent += `\n
+    /* Theme Styling */ \n
+    :root { \n    
+        `;
+
+    themeTokenNames.map((name) => {
+        const themeTokenGroup = getTokenGroup([name]);
+        const themeObjectTokens = generateSassVariables({
+            data: themeTokenGroup,
+        });
+
+        const themeName = name.replace(/^.*?\/(.*?)\/(.*)$/, "$1--$2");
+        console.log(themeName);
+
+        sassContent += `\n .${themeName} { \n
+    `;
+
+        Object.keys(themeObjectTokens).map((tokenKey) => {
+            const tokenValue = themeObjectTokens[tokenKey];
+            sassContent += `${convertCSSkey(tokenKey)}: ${tokenValue};\n`;
+        });
+
+        sassContent += "\n}\n";
+    });
+
+    sassContent += "\n}\n";
+
+    return sassContent;
+};
+
+const mapSASSValues = () => {
+    const tokenGroup = getTokenGroup(tokenNames);
+    const objectTokens = generateSassVariables({ data: tokenGroup });
+
+    let sassContent = `:root { \n`;
+
+    Object.keys(objectTokens).map((tokenKey) => {
+        const tokenValue = objectTokens[tokenKey];
         sassContent += `${convertCSSkey(tokenKey)}: ${tokenValue};\n`;
     });
 
-    sassContent += semanticRules;
+    sassContent += "}";
+
+    sassContent += generateMediaQueryVariables();
+    sassContent += generateThemeVariables();
 
     // Map token variables
-    Object.keys(newObjectTokens).map((key) => {
-        sassContent = sassContent.replaceAll(`{${key}}`, convertCSSkey(key));
+    Object.keys(objectTokens).map((key) => {
+        sassContent = sassContent.replaceAll(
+            `{${key}}`,
+            `var(${convertCSSkey(key)})`,
+        );
     });
 
     return sassContent;
 };
 
 const generateSassFile = () => {
-    const sassContent = mapSASSValues(designTokens);
+    const sassContent = mapSASSValues();
 
-    const sassFilePath = "lib/styles/quill.scss";
+    const sassFilePath = "lib/styles/quill.css";
     const dirPath = path.dirname(sassFilePath);
 
     if (!fs.existsSync(dirPath)) {
@@ -242,7 +323,7 @@ const generateSassFile = () => {
     fs.writeFileSync(sassFilePath, sassContent);
 
     console.log(
-        `Quill UI SASS variables was generated successfully: ${sassFilePath}`,
+        `Quill UI CSS variables was generated successfully: ${sassFilePath}`,
     );
 };
 

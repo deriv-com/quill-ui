@@ -1,60 +1,76 @@
-@import '../../styles/quill.scss';
+
+@import '../../styles/quill.css';
+
 
 
 .quill-typography {
     &__hero {
-        @each $property, $value in $semantic-typography-heading-hero {
-            #{$property}: $value;
-        }
-        @include semantic-typography-heading-hero();
+        font-family: var(--semantic-typography-heading-hero-fontFamily);
+        font-size: var(--semantic-typography-heading-hero-fontSize);
+        font-weight: var(--semantic-typography-heading-hero-fontWeight);
+        line-height: var(--semantic-typography-heading-hero-lineHeight);
+        padding-top: var(--semantic-typography-heading-hero-paragraphSpacing);
+        padding-bottom: var(--semantic-typography-heading-hero-paragraphSpacing);
+        letter-spacing: normal;
     }
 
     &__h1 {
-        @each $property, $value in $semantic-typography-heading-h1 {
-            #{$property}: $value;
-        }
-        @include semantic-typography-heading-h1();
+        // @each $property, $value in $semantic-typography-heading-h1 {
+        //     #{$property}: $value;
+        // }
+
+        // @include semantic-typography-heading-h1();
     }
 
     &__h2 {
-        @each $property, $value in $semantic-typography-heading-h2 {
-            #{$property}: $value;
-        }
-        @include semantic-typography-heading-h2();
+        // @each $property, $value in $semantic-typography-heading-h2 {
+        //     #{$property}: $value;
+        // }
+
+        // @include semantic-typography-heading-h2();
     }
+
     &__h3 {
-        @each $property, $value in $semantic-typography-heading-h3 {
-            #{$property}: $value;
-        }
-        @include semantic-typography-heading-h3();
+        // @each $property, $value in $semantic-typography-heading-h3 {
+        //     #{$property}: $value;
+        // }
+
+        // @include semantic-typography-heading-h3();
     }
+
     &__h4 {
-        @each $property, $value in $semantic-typography-heading-h4 {
-            #{$property}: $value;
-        }
-        @include semantic-typography-heading-h4();
+        // @each $property, $value in $semantic-typography-heading-h4 {
+        //     #{$property}: $value;
+        // }
+
+        // @include semantic-typography-heading-h4();
     }
+
     &__h5 {
-        @each $property, $value in $semantic-typography-heading-h5 {
-            #{$property}: $value;
-        }
-        @include semantic-typography-heading-h5();
+        // @each $property, $value in $semantic-typography-heading-h5 {
+        //     #{$property}: $value;
+        // }
+
+        // @include semantic-typography-heading-h5();
     }
+
     &__h6 {
-        @each $property, $value in $semantic-typography-heading-h6 {
-            #{$property}: $value;
-        }
-        @include semantic-typography-heading-h6();
+        // @each $property, $value in $semantic-typography-heading-h6 {
+        //     #{$property}: $value;
+        // }
+
+        // @include semantic-typography-heading-h6();
     }
+
     &__body-text {
         &__size--xl {
-            @each $property, $value in $semantic-typography-body-xl-regular-default {
-                #{$property}: $value;
-            }
+            // @each $property, $value in $semantic-typography-body-xl-regular-default {
+            //     #{$property}: $value;
+            // }
 
-            @include semantic-typography-body-xl-regular-default();
+            // @include semantic-typography-body-xl-regular-default();
 
-           // Add the Bold / Italic / Underline rules below. 
+            // Add the Bold / Italic / Underline rules below. 
 
 
         }
