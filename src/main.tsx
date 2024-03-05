@@ -9,6 +9,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <H1>Quill UI</H1>
         <H1 as="div">Quill UI - h1 as div</H1>
         <H1 as="span">Quill UI - h1 as span</H1>
-        <BodyText size="md">Test</BodyText>
     </React.StrictMode>,
 );
