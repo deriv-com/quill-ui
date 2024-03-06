@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 const designTokens = JSON.parse(
     fs.readFileSync(path.resolve(__dirname, "../data/tokens.json"), "utf-8"),
 );
+
 const excludedKeys = ["$themes", "$metadata"];
 const tokenNames = [
     "core/border",
@@ -51,8 +52,6 @@ const convertCSSkey = (cssKey, prefix = true) => {
 };
 
 const isObject = (item) => typeof item === "object";
-const camelToKebab = (camelCase) =>
-    camelCase.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 
 const extractCSSValues = (key, value) => {
     const filteredKeys = ["type"];
@@ -136,90 +135,6 @@ const generateSassVariables = ({
     return coreRules;
 };
 
-const generateSemanticValues = (objectTokens) => {
-    const newObjectTokens = { ...objectTokens };
-    const viewPortData = Object.keys(objectTokens).filter((key) =>
-        semanticTokenNames.some((token) => key.includes(token)),
-    );
-
-    let semanticRules = ``;
-
-    const mediaQueryData = {};
-
-    viewPortData.map((ck) => {
-        const classKeyData = objectTokens[ck];
-
-        const sassKey = convertCSSkey(
-            semanticTokenNames
-                .reduce((modifiedString, token) => {
-                    const regex = new RegExp(token.replace(/\+/g, "\\+"), "g");
-                    return modifiedString.replace(regex, "");
-                }, ck)
-                .replace("-", " ")
-                .replace(".plus.", ""),
-            false,
-        );
-
-        const processedKey = convertCSSkey(ck, false);
-
-        const viewportNumber = ((match) =>
-            match ? parseInt(match[1], 10) : null)(
-            processedKey.match(/\/(\d+)-/),
-        );
-
-        if (!mediaQueryData[sassKey]) {
-            mediaQueryData[sassKey] = [];
-        }
-
-        const newViewportData = {
-            viewport: viewportNumber,
-            data: classKeyData,
-        };
-
-        mediaQueryData[sassKey].push(newViewportData);
-    });
-
-    Object.keys(mediaQueryData).map((classKey) => {
-        const queryData = mediaQueryData[classKey];
-
-        semanticRules += `@mixin ${classKey}() { \n`;
-
-        queryData.map(({ viewport, data }) => {
-            let formattedData = data
-                .replace(/^(\()/, "{")
-                .replace(/(\))$/, "}")
-                .replace(/,/g, ";");
-
-            if (!formattedData.includes("\n")) {
-                formattedData = `{ ${formattedData} }`;
-            }
-
-            semanticRules += `@media (min-width: ${viewport}px) \n
-                ${formattedData} \n`;
-        });
-
-        semanticRules += `} \n`;
-    });
-
-    // Remove semantic items so it will not get iterated in the global viewport
-    semanticTokenNames.forEach((token) =>
-        Object.keys(newObjectTokens).forEach((key) => {
-            const sanitizedKey = key.replace(/[./-]/g, ""); // Remove dots, slashes, and hyphens
-            const sanitizedToken = token.replace(/[./-]/g, ""); // Remove dots, slashes, and hyphens
-
-            if (sanitizedKey.includes(sanitizedToken)) {
-                // console.log(`deleting.... ${key}`);
-                delete newObjectTokens[key];
-            }
-        }),
-    );
-
-    return {
-        semanticRules,
-        newObjectTokens,
-    };
-};
-
 const generateMediaQueryVariables = () => {
     let sassContent = ``;
 
@@ -265,7 +180,6 @@ const generateThemeVariables = () => {
         });
 
         const themeName = name.replace(/^.*?\/(.*?)\/(.*)$/, "$1--$2");
-        console.log(themeName);
 
         sassContent += `\n .${themeName} { \n
     `;
