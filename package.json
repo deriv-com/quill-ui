@@ -19,7 +19,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/deriv-com/ui"
+        "url": "https://github.com/deriv-com/quill-ui"
     },
     "scripts": {
         "dev": "vite",
