@@ -1,5 +1,8 @@
 @import "../../styles/quill.css";
 
+$headings: hero, h1, h2, h3, h4, h5, h6;
+$bodySizes: xl, lg, md, sm;
+
 .quill-typography {
     &__emphasis {
         &--bold {
@@ -11,170 +14,28 @@
         }
     }
 
-    &__hero {
-        font-family: var(--semantic-typography-heading-hero-fontFamily);
-        font-size: var(--semantic-typography-heading-hero-fontSize);
-        font-weight: var(--semantic-typography-heading-hero-fontWeight);
-        line-height: var(--semantic-typography-heading-hero-lineHeight);
-        padding-top: var(--semantic-typography-heading-hero-paragraphSpacing);
-        padding-bottom: var(
-            --semantic-typography-heading-hero-paragraphSpacing
-        );
-        letter-spacing: normal;
-    }
-
-    &__h1 {
-        font-family: var(--semantic-typography-heading-h1-fontFamily);
-        font-size: var(--semantic-typography-heading-h1-fontSize);
-        font-weight: var(--semantic-typography-heading-h1-fontWeight);
-        line-height: var(--semantic-typography-heading-h1-lineHeight);
-        padding-top: var(--semantic-typography-heading-h1-paragraphSpacing);
-        padding-bottom: var(--semantic-typography-heading-h1-paragraphSpacing);
-        letter-spacing: normal;
-    }
-
-    &__h2 {
-        font-family: var(--semantic-typography-heading-h2-fontFamily);
-        font-size: var(--semantic-typography-heading-h2-fontSize);
-        font-weight: var(--semantic-typography-heading-h2-fontWeight);
-        line-height: var(--semantic-typography-heading-h2-lineHeight);
-        padding-top: var(--semantic-typography-heading-h2-paragraphSpacing);
-        padding-bottom: var(--semantic-typography-heading-h2-paragraphSpacing);
-        letter-spacing: normal;
-    }
-
-    &__h3 {
-        font-family: var(--semantic-typography-heading-h3-fontFamily);
-        font-size: var(--semantic-typography-heading-h3-fontSize);
-        font-weight: var(--semantic-typography-heading-h3-fontWeight);
-        line-height: var(--semantic-typography-heading-h3-lineHeight);
-        padding-top: var(--semantic-typography-heading-h3-paragraphSpacing);
-        padding-bottom: var(--semantic-typography-heading-h3-paragraphSpacing);
-        letter-spacing: normal;
-    }
-
-    &__h4 {
-        font-family: var(--semantic-typography-heading-h4-fontFamily);
-        font-size: var(--semantic-typography-heading-h4-fontSize);
-        font-weight: var(--semantic-typography-heading-h4-fontWeight);
-        line-height: var(--semantic-typography-heading-h4-lineHeight);
-        padding-top: var(--semantic-typography-heading-h4-paragraphSpacing);
-        padding-bottom: var(--semantic-typography-heading-h4-paragraphSpacing);
-        letter-spacing: normal;
-    }
-
-    &__h5 {
-        font-family: var(--semantic-typography-heading-h5-fontFamily);
-        font-size: var(--semantic-typography-heading-h5-fontSize);
-        font-weight: var(--semantic-typography-heading-h5-fontWeight);
-        line-height: var(--semantic-typography-heading-h5-lineHeight);
-        padding-top: var(--semantic-typography-heading-h5-paragraphSpacing);
-        padding-bottom: var(--semantic-typography-heading-h5-paragraphSpacing);
-        letter-spacing: normal;
-    }
-
-    &__h6 {
-        font-family: var(--semantic-typography-heading-h6-fontFamily);
-        font-size: var(--semantic-typography-heading-h6-fontSize);
-        font-weight: var(--semantic-typography-heading-h6-fontWeight);
-        line-height: var(--semantic-typography-heading-h6-lineHeight);
-        padding-top: var(--semantic-typography-heading-h6-paragraphSpacing);
-        padding-bottom: var(--semantic-typography-heading-h6-paragraphSpacing);
-        letter-spacing: normal;
+    @each $heading in $headings {
+        &__#{$heading} {
+            font-family: var(--semantic-typography-heading-#{$heading}-fontFamily);
+            font-size: var(--semantic-typography-heading-#{$heading}-fontSize);
+            font-weight: var(--semantic-typography-heading-#{$heading}-fontWeight);
+            line-height: var(--semantic-typography-heading-#{$heading}-lineHeight);
+            padding-block: var(--semantic-typography-heading-#{$heading}-paragraphSpacing);
+            letter-spacing: normal;
+        }
     }
 
     &__body-text {
-        &__size--xl {
-            font-family: var(
-                --semantic-typography-body-xl-regular-default-fontFamily
-            );
-            font-size: var(
-                --semantic-typography-body-xl-regular-default-fontSize
-            );
-            font-weight: var(
-                --semantic-typography-body-xl-regular-default-fontWeight
-            );
-            line-height: var(
-                --semantic-typography-body-xl-regular-default-lineHeight
-            );
-            padding-top: var(
-                --semantic-typography-body-xl-regular-default-paragraphSpacing
-            );
-            padding-bottom: var(
-                --semantic-typography-body-xl-regular-default-paragraphSpacing
-            );
-            letter-spacing: var(
-                --semantic-typography-body-xl-regular-default-letterSpacing
-            );
-        }
-        &__size--lg {
-            font-family: var(
-                --semantic-typography-body-lg-regular-default-fontFamily
-            );
-            font-size: var(
-                --semantic-typography-body-lg-regular-default-fontSize
-            );
-            font-weight: var(
-                --semantic-typography-body-lg-regular-default-fontWeight
-            );
-            line-height: var(
-                --semantic-typography-body-lg-regular-default-lineHeight
-            );
-            padding-top: var(
-                --semantic-typography-body-lg-regular-default-paragraphSpacing
-            );
-            padding-bottom: var(
-                --semantic-typography-body-lg-regular-default-paragraphSpacing
-            );
-            letter-spacing: var(
-                --semantic-typography-body-lg-regular-default-letterSpacing
-            );
-        }
-        &__size--md {
-            font-family: var(
-                --semantic-typography-body-md-regular-default-fontFamily
-            );
-            font-size: var(
-                --semantic-typography-body-md-regular-default-fontSize
-            );
-            font-weight: var(
-                --semantic-typography-body-md-regular-default-fontWeight
-            );
-            line-height: var(
-                --semantic-typography-body-md-regular-default-lineHeight
-            );
-            padding-top: var(
-                --semantic-typography-body-md-regular-default-paragraphSpacing
-            );
-            padding-bottom: var(
-                --semantic-typography-body-md-regular-default-paragraphSpacing
-            );
-            letter-spacing: var(
-                --semantic-typography-body-md-regular-default-letterSpacing
-            );
-        }
-        &__size--sm {
-            font-family: var(
-                --semantic-typography-body-sm-regular-default-fontFamily
-            );
-            font-size: var(
-                --semantic-typography-body-sm-regular-default-fontSize
-            );
-            font-weight: var(
-                --semantic-typography-body-sm-regular-default-fontWeight
-            );
-            line-height: var(
-                --semantic-typography-body-sm-regular-default-lineHeight
-            );
-            padding-top: var(
-                --semantic-typography-body-sm-regular-default-paragraphSpacing
-            );
-            padding-bottom: var(
-                --semantic-typography-body-sm-regular-default-paragraphSpacing
-            );
-            letter-spacing: var(
-                --semantic-typography-body-sm-regular-default-letterSpacing
-            );
+        @each $size in $bodySizes {
+            &__size--#{$size} {
+                font-family: var(--semantic-typography-body-#{$size}-regular-default-fontFamily);
+                font-size: var(--semantic-typography-body-#{$size}-regular-default-fontSize);
+                font-weight: var(--semantic-typography-body-#{$size}-regular-default-fontWeight);
+                line-height: var(--semantic-typography-body-#{$size}-regular-default-lineHeight);
+                padding-top: var(--semantic-typography-body-#{$size}-regular-default-paragraphSpacing);
+                padding-bottom: var(--semantic-typography-body-#{$size}-regular-default-paragraphSpacing);
+                letter-spacing: var(--semantic-typography-body-#{$size}-regular-default-letterSpacing);
+            }
         }
     }
 }
