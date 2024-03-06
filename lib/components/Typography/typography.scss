@@ -1,16 +1,34 @@
+@import "../../styles/quill.scss";
 
-@import '../../styles/quill.css';
-
-
-
+$size-map: (
+    "xl": $semantic-typography-body-xl-regular-default,
+    "lg": $semantic-typography-body-lg-regular-default,
+    "md": $semantic-typography-body-md-regular-default,
+    "sm": $semantic-typography-body-sm-regular-default,
+);
 .quill-typography {
+    @each $key, $size in $size-map {
+        @each $key, $value in $size-map {
+            &__#{$key} {
+                font-family: map-get($value, font-family);
+                font-size: map-get($value, font-size);
+                font-weight: map-get($value, font-weight);
+                line-height: map-get($value, line-height);
+                paragraph-spacing: map-get($value, paragraph-spacing);
+                letter-spacing: map-get($value, letter-spacing);
+            }
+        }
+    }
+
     &__hero {
         font-family: var(--semantic-typography-heading-hero-fontFamily);
         font-size: var(--semantic-typography-heading-hero-fontSize);
         font-weight: var(--semantic-typography-heading-hero-fontWeight);
         line-height: var(--semantic-typography-heading-hero-lineHeight);
         padding-top: var(--semantic-typography-heading-hero-paragraphSpacing);
-        padding-bottom: var(--semantic-typography-heading-hero-paragraphSpacing);
+        padding-bottom: var(
+            --semantic-typography-heading-hero-paragraphSpacing
+        );
         letter-spacing: normal;
     }
 
@@ -64,16 +82,11 @@
 
     &__body-text {
         &__size--xl {
-            // @each $property, $value in $semantic-typography-body-xl-regular-default {
-            //     #{$property}: $value;
-            // }
-
-            // @include semantic-typography-body-xl-regular-default();
-
-            // Add the Bold / Italic / Underline rules below. 
-
-
+            @each $property,
+                $value in $semantic-typography-body-xl-regular-default
+            {
+                #{$property}: $value;
+            }
         }
     }
-
 }

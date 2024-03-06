@@ -29,7 +29,7 @@ const Typography = ({
         tag || "p",
         {
             className: clsx(
-                `quill-typography__size--${size}`,
+                `quill-typography__body-text__size--${size}`,
                 bold && `quill-typography__emphasis--bold`,
                 italic && `quill-typography__emphasis--italic`,
                 underlined && `quill-typography__emphasis--underlined`,
