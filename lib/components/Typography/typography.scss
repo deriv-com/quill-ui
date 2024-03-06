@@ -32,8 +32,7 @@ $bodySizes: xl, lg, md, sm;
                 font-size: var(--semantic-typography-body-#{$size}-regular-default-fontSize);
                 font-weight: var(--semantic-typography-body-#{$size}-regular-default-fontWeight);
                 line-height: var(--semantic-typography-body-#{$size}-regular-default-lineHeight);
-                padding-top: var(--semantic-typography-body-#{$size}-regular-default-paragraphSpacing);
-                padding-bottom: var(--semantic-typography-body-#{$size}-regular-default-paragraphSpacing);
+                padding-block: var(--semantic-typography-body-#{$size}-regular-default-paragraphSpacing);
                 letter-spacing: var(--semantic-typography-body-#{$size}-regular-default-letterSpacing);
             }
         }
