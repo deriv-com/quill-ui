@@ -1,31 +1,29 @@
-import { type ReactNode, useEffect, useState } from "react";
+import { useEffect, useState, PropsWithChildren } from "react";
 
 import { ThemeContext, initialThemeState } from "./themeContext";
 
-type Props = {
-    children: ReactNode;
-};
-
-export const ThemeProvider = ({ children }: Props) => {
-    const [theme, setTheme] = useState(initialThemeState.theme);
-
-    const localStorage = globalThis.window?.localStorage;
+export const ThemeProvider = ({ children }: PropsWithChildren) => {
+    const savedThemeLocal = window?.localStorage.getItem("globalTheme");
+    const [theme, setTheme] = useState(
+        savedThemeLocal ?? initialThemeState.theme,
+    );
 
     useEffect(() => {
-        const savedThemeLocal = localStorage.getItem(`globalTheme`);
-
         if (savedThemeLocal) {
             setTheme(savedThemeLocal);
         }
     }, []);
 
     useEffect(() => {
-        localStorage.setItem(`globalTheme`, theme);
+        window?.localStorage.setItem("globalTheme", theme);
+        document.body.classList.add(`theme--${theme}`);
+        document.body.style.backgroundColor =
+            "var(--semantic-color-background-secondary-base)";
     }, [theme]);
 
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}>
-            <div className={`theme--${theme}`}>{children}</div>
+            {children}
         </ThemeContext.Provider>
     );
 };

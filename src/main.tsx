@@ -6,17 +6,11 @@ import { ThemeProvider } from "../lib/components/providers/theme/themeProvider";
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
         <ThemeProvider>
-            <div
-                style={{
-                    background: `var(--semantic-color-background-secondary-base)`,
-                }}
-            >
-                <Typography as="span">Quill UI</Typography>
-                <Hero>Quill UI</Hero>
-                <H1>Quill UI</H1>
-                <H1 as="div">Quill UI - h1 as div</H1>
-                <H1 as="span">Quill UI - h1 as span</H1>
-            </div>
+            <Typography as="span">Quill UI</Typography>
+            <Hero>Quill UI</Hero>
+            <H1>Quill UI</H1>
+            <H1 as="div">Quill UI - h1 as div</H1>
+            <H1 as="span">Quill UI - h1 as span</H1>
         </ThemeProvider>
     </React.StrictMode>,
 );
