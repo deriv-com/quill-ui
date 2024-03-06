@@ -11,6 +11,7 @@
         line-height: var(--semantic-typography-heading-hero-lineHeight);
         padding-top: var(--semantic-typography-heading-hero-paragraphSpacing);
         padding-bottom: var(--semantic-typography-heading-hero-paragraphSpacing);
+        color: var(--semantic-color-typography-prominent);
         letter-spacing: normal;
     }
 
@@ -18,7 +19,7 @@
         // @each $property, $value in $semantic-typography-heading-h1 {
         //     #{$property}: $value;
         // }
-
+        color: var(--semantic-color-typography-prominent);
         // @include semantic-typography-heading-h1();
     }
 
@@ -26,7 +27,7 @@
         // @each $property, $value in $semantic-typography-heading-h2 {
         //     #{$property}: $value;
         // }
-
+        
         // @include semantic-typography-heading-h2();
     }
 
@@ -34,7 +35,7 @@
         // @each $property, $value in $semantic-typography-heading-h3 {
         //     #{$property}: $value;
         // }
-
+        
         // @include semantic-typography-heading-h3();
     }
 
@@ -42,7 +43,7 @@
         // @each $property, $value in $semantic-typography-heading-h4 {
         //     #{$property}: $value;
         // }
-
+        
         // @include semantic-typography-heading-h4();
     }
 
@@ -50,7 +51,7 @@
         // @each $property, $value in $semantic-typography-heading-h5 {
         //     #{$property}: $value;
         // }
-
+        
         // @include semantic-typography-heading-h5();
     }
 
@@ -58,7 +59,7 @@
         // @each $property, $value in $semantic-typography-heading-h6 {
         //     #{$property}: $value;
         // }
-
+        
         // @include semantic-typography-heading-h6();
     }
 
@@ -67,7 +68,7 @@
             // @each $property, $value in $semantic-typography-body-xl-regular-default {
             //     #{$property}: $value;
             // }
-
+            
             // @include semantic-typography-body-xl-regular-default();
 
             // Add the Bold / Italic / Underline rules below. 
