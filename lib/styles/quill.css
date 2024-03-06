@@ -1193,7 +1193,7 @@
     --core-lineHeight-800: 48px;
     --core-lineHeight-900: 64px;
     --core-lineHeight-1000: 96px;
-    --core-lineHeight-auto: auto;
+    --core-lineHeight-auto: normal;
     --core-fontDecoration-underline: underline;
     --core-paragraphSpacing-50: 12px;
     --core-paragraphSpacing-75: 14px;

@@ -29,7 +29,7 @@ const Typography = ({
         tag || "p",
         {
             className: clsx(
-                `quill-typography__body-text__size--${size}`,
+                // `quill-typography__size--${size}`,
                 bold && `quill-typography__emphasis--bold`,
                 italic && `quill-typography__emphasis--italic`,
                 underlined && `quill-typography__emphasis--underlined`,
@@ -129,12 +129,16 @@ const BodyText = ({
     children,
     className,
     as = "span",
+    size,
     ...rest
 }: TypographyProps) => {
     return (
         <Typography
             as={as}
-            className={clsx("quill-typography__body-text", className)}
+            className={clsx(
+                `quill-typography__body-text__size--${size}`,
+                className,
+            )}
             {...rest}
         >
             {children}
