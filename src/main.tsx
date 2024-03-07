@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BodyText, H1, Hero, Typography } from "../lib/components/Typography";
+import { Typography, H1, Hero, BodyText } from "../dist/components/Typography";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
