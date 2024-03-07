@@ -68,6 +68,11 @@ const extractCSSValues = (key, value) => {
 
 const processCSSValue = (key, value) => {
     const noUnitKeys = ["fontWeight"];
+    const propertyGroup = key.split("-");
+    const propertyName = propertyGroup[propertyGroup.length - 1];
+    const defaultValues = {
+        letterSpacing: "normal",
+    };
 
     if (Array.isArray(value)) {
         const cssGroupValue = [];
@@ -81,6 +86,14 @@ const processCSSValue = (key, value) => {
     } else {
         if (noUnitKeys.some((k) => key.includes(k))) {
             return value;
+        }
+
+        if (value === "") {
+            const defaultValue = defaultValues[propertyName];
+
+            if (defaultValue) {
+                return defaultValue;
+            }
         }
 
         return isNaN(value) ? value : `${value}px`;
