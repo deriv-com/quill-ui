@@ -1,28 +1,35 @@
 import { useEffect, useState, PropsWithChildren } from "react";
-
 import { ThemeContext, initialThemeState } from "./themeContext";
+import { Theme } from "./themeContext";
 
 export const ThemeProvider = ({ children }: PropsWithChildren) => {
-    const savedThemeLocal = window?.localStorage.getItem("globalTheme");
-    const [theme, setTheme] = useState(
+    const savedThemeLocal = window?.localStorage.getItem(
+        "globalTheme",
+    ) as Theme;
+    const [theme, setTheme] = useState<Theme>(
         savedThemeLocal ?? initialThemeState.theme,
     );
 
-    useEffect(() => {
-        if (savedThemeLocal) {
-            setTheme(savedThemeLocal);
-        }
-    }, []);
+    const applyThemeClass = (newTheme: Theme) => {
+        document.body.classList.remove(`theme--${theme}`);
+        document.body.classList.add(`theme--${newTheme}`);
+    };
+
+    const toggleTheme = () => {
+        const newTheme = theme === "dark" ? "light" : "dark";
+        setTheme(newTheme);
+        applyThemeClass(newTheme);
+    };
 
     useEffect(() => {
+        if (!document.body.classList.contains(`theme--${theme}`)) {
+            applyThemeClass(theme);
+        }
         window?.localStorage.setItem("globalTheme", theme);
-        document.body.classList.add(`theme--${theme}`);
-        document.body.style.backgroundColor =
-            "var(--semantic-color-background-secondary-base)";
     }, [theme]);
 
     return (
-        <ThemeContext.Provider value={{ theme, setTheme }}>
+        <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
             {children}
         </ThemeContext.Provider>
     );
