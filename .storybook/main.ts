@@ -1,8 +1,7 @@
 import type { StorybookConfig } from "@storybook/react-vite";
-import { withoutVitePlugins } from "@storybook/builder-vite";
 
 const config: StorybookConfig = {
-    stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+    stories: ["../lib/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
     addons: [
         "@storybook/addon-links",
         "@storybook/addon-essentials",
@@ -15,14 +14,7 @@ const config: StorybookConfig = {
     },
     docs: {
         autodocs: "tag",
-    },
-    async viteFinal(config) {
-        return {
-            ...config,
-            plugins: await withoutVitePlugins(config.plugins, [
-                "vite:lib-inject-css",
-            ]),
-        };
+        defaultName: "Documentation",
     },
 };
 export default config;
