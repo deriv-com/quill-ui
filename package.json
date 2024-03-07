@@ -1,7 +1,7 @@
 {
     "name": "@deriv-com/ui",
     "private": false,
-    "version": "1.8.9",
+    "version": "0.0.1",
     "type": "module",
     "main": "dist/main.js",
     "files": [
