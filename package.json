@@ -22,7 +22,7 @@
         "url": "https://github.com/deriv-com/quill-ui"
     },
     "scripts": {
-        "dev": "vite",
+        "dev": "vite --port 4321 --open",
         "build": "tsc -p ./tsconfig-build.json && vite build",
         "prepublish": "npm run build",
         "generate:style": "node scripts/transformer.js &&  npx prettier --write lib/styles/quill.css",
