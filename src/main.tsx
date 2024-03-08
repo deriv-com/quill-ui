@@ -1,23 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Heading, CodeText } from "../lib/components/Typography";
-// import { Typography, H1, Hero, BodyText } from "../dist/components/Typography";
+import {
+    CaptionText,
+    CodeText,
+    Heading,
+    Text,
+} from "../lib/components/Typography";
+// import {
+//     CaptionText,
+//     CodeText,
+//     Heading,
+//     Text,
+// } from "../dist/components/Typography";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <Heading.Hero>Quill UI</Heading.Hero>
-        <Heading.H1 size="xl">Quill UI</Heading.H1>
-        <Heading.H1 as="div">Quill UI - h1 as div</Heading.H1>
-        <Heading.H1 as="span">Quill UI - h1 as span</Heading.H1>
-        <Heading.H2>Quill UI - h2</Heading.H2>
-        <Heading.H3>Quill UI - h3</Heading.H3>
-        <Heading.H4>Quill UI - h4</Heading.H4>
-        <Heading.H5>Quill UI - h5</Heading.H5>
-        <Heading.H6>Quill UI - h6</Heading.H6>
-        <Text size="xl">XL</Text>
-        <Text size="lg">XL</Text>
-        <Text size="md">XL</Text>
-        <Text size="sm">XL</Text>
+        <Heading.Hero>Quill UI - Hero</Heading.Hero>
+        <Heading.H1>Quill UI - H1</Heading.H1>
+        <Heading.H2>Quill UI - H2</Heading.H2>
+        <Heading.H3>Quill UI - H3</Heading.H3>
+        <Heading.H4>Quill UI - H4</Heading.H4>
+        <Heading.H5>Quill UI - H5</Heading.H5>
+        <Heading.H6>Quill UI - H6</Heading.H6>
+
+        <Text size="xl">TEXT - XL</Text>
+        <br />
+        <Text size="lg">TEXT - LG</Text>
+        <br />
+        <Text size="md">TEXT - MD</Text>
+        <br />
+        <Text size="sm">TEXT - SM</Text>
         <br />
         <Text size="xl" bold>
             XL - bold
