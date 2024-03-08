@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Text from ".";
+import { Text } from ".";
 
 const meta = {
     title: "Typography/Text",
@@ -10,16 +10,6 @@ const meta = {
         italic: false,
         bold: false,
         underlined: false,
-    },
-    argTypes: {
-        size: {
-            description: " `sm` | `md` | `lg` | `xl`",
-            options: ["sm", "md", "lg", "xl"],
-            control: { type: "radio" },
-            table: {
-                defaultValue: { summary: "md" },
-            },
-        },
     },
 } satisfies Meta<typeof Text>;
 
