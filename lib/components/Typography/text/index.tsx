@@ -5,7 +5,7 @@ import {
     getTextWeight,
 } from "../../../utils/typography-utils";
 
-const Text = ({
+export const Text = ({
     children,
     className,
     as = "span",
@@ -22,7 +22,7 @@ const Text = ({
         <Typography
             as={as}
             className={clsx(
-                `quill-typography__body-text__size--${size}--${weight}--${decoration}`,
+                `quill-typography__body-text__size--${size}__weight--${weight}__decoration--${decoration}`,
                 className,
             )}
             {...rest}
@@ -31,5 +31,3 @@ const Text = ({
         </Typography>
     );
 };
-
-export default Text;

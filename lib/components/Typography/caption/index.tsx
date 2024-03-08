@@ -6,7 +6,7 @@ import {
     getTextWeight,
 } from "../../../utils/typography-utils";
 
-const CaptionText = ({
+export const CaptionText = ({
     children,
     className,
     as = "p",
@@ -22,7 +22,7 @@ const CaptionText = ({
         <Typography
             as={as}
             className={clsx(
-                `quill-typography__caption-text--${weight}--${decoration}`,
+                `quill-typography__caption-text__weight--${weight}__decoration--${decoration}`,
                 className,
             )}
             {...rest}
@@ -31,5 +31,3 @@ const CaptionText = ({
         </Typography>
     );
 };
-
-export default CaptionText;

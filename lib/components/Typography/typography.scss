@@ -64,9 +64,9 @@ $weights: regular, bold;
         @each $size in $sizes {
             &__size--#{$size} {
                 @each $weight in $weights {
-                    &--#{$weight} {
+                    &__weight--#{$weight} {
                         @each $decoration in $decorations {
-                            &--#{$decoration} {
+                            &__decoration--#{$decoration} {
                                 @include styleWithSizes(
                                     $type,
                                     $size,
@@ -82,9 +82,9 @@ $weights: regular, bold;
     }
 
     @each $weight in $weights {
-        &--#{$weight} {
+        &__weight--#{$weight} {
             @each $decoration in $decorations {
-                &--#{$decoration} {
+                &__decoration--#{$decoration} {
                     @include styleNoSizes($type, $weight, $decoration);
                 }
             }
@@ -93,20 +93,6 @@ $weights: regular, bold;
 }
 
 .quill-typography {
-    &__emphasis {
-        &--bold {
-            font-weight: var(--core-fontWeight-bold) !important;
-        }
-
-        &--italic {
-            font-style: var(--core-fontWeight-italic) !important;
-        }
-
-        &--underline {
-            font-style: var(--core-fontWeight-italic) !important;
-        }
-    }
-
     &__caption-text {
         @include customTypeTextStyles(caption);
     }

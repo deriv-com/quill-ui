@@ -5,7 +5,7 @@ import {
     getTextWeight,
 } from "../../../utils/typography-utils";
 
-const CodeText = ({
+export const CodeText = ({
     children,
     className,
     as = "p",
@@ -22,7 +22,7 @@ const CodeText = ({
         <Typography
             as={as}
             className={clsx(
-                `quill-typography__code-text__size--${size}--${weight}--${decoration}`,
+                `quill-typography__code-text__size--${size}__weight--${weight}__decoration--${decoration}`,
                 className,
             )}
             {...rest}
@@ -31,5 +31,3 @@ const CodeText = ({
         </Typography>
     );
 };
-
-export default CodeText;

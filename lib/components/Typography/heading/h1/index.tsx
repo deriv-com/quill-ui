@@ -1,7 +1,12 @@
 import clsx from "clsx";
 import { Typography, TypographyProps } from "../../base";
 
-const H1 = ({ children, className, as = "h1", ...rest }: TypographyProps) => {
+export type Heading = Omit<
+    TypographyProps,
+    "size" | "bold" | "italic" | "underlined"
+>;
+
+const H1 = ({ children, className, as = "h1", ...rest }: Heading) => {
     return (
         <Typography
             as={as}
