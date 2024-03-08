@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Typography } from "../lib/components/Typography/base";
 import Heading from "../lib/components/Typography/heading";
-import BodyText from "../lib/components/Typography/body-text";
+import Text from "../lib/components/Typography/body-text";
 import CaptionText from "../lib/components/Typography/caption";
 import CodeText from "../lib/components/Typography/code";
 
@@ -18,18 +18,18 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Heading.H4>Quill UI - h4</Heading.H4>
         <Heading.H5>Quill UI - h5</Heading.H5>
         <Heading.H6>Quill UI - h6</Heading.H6>
-        <BodyText size="xl">XL</BodyText>
-        <BodyText size="lg">XL</BodyText>
-        <BodyText size="md">XL</BodyText>
-        <BodyText size="sm">XL</BodyText>
+        <Text size="xl">XL</Text>
+        <Text size="lg">XL</Text>
+        <Text size="md">XL</Text>
+        <Text size="sm">XL</Text>
         <br />
-        <BodyText size="xl" bold>
+        <Text size="xl" bold>
             XL - bold
-        </BodyText>
+        </Text>
         <br />
-        <BodyText size="xl" italic>
+        <Text size="xl" italic>
             XL - Italic
-        </BodyText>
+        </Text>
         <CaptionText italic>XL - Italic</CaptionText>
         <CodeText size="xl">Code Text - xl</CodeText>
         <CodeText size="lg">Code Text - lg</CodeText>

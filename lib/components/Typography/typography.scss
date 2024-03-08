@@ -2,6 +2,95 @@
 
 $headings: hero, h1, h2, h3, h4, h5, h6;
 $sizes: xl, lg, md, sm;
+$decorations: default, italic, underline, italic-underline;
+$weights: regular, bold;
+
+@mixin styleWithSizes($type, $size, $weight, $decoration) {
+    font-family: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-fontFamily
+    );
+    font-size: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-fontSize
+    );
+    font-style: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-fontWeight
+    );
+    font-weight: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-fontWeight
+    );
+    line-height: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-lineHeight
+    );
+    padding-block: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-paragraphSpacing
+    );
+    letter-spacing: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-letterSpacing
+    );
+    text-decoration: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-textDecoration
+    );
+}
+
+@mixin styleNoSizes($type, $weight, $decoration) {
+    font-family: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-fontFamily
+    );
+    font-size: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-fontSize
+    );
+    font-style: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-fontWeight
+    );
+    font-weight: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-fontWeight
+    );
+    line-height: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-lineHeight
+    );
+    padding-block: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-paragraphSpacing
+    );
+    letter-spacing: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-letterSpacing
+    );
+    text-decoration: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-textDecoration
+    );
+}
+
+@mixin customTypeTextStyles($type, $useSize: false) {
+    @if $useSize {
+        @each $size in $sizes {
+            &__size--#{$size} {
+                @each $weight in $weights {
+                    &--#{$weight} {
+                        @each $decoration in $decorations {
+                            &--#{$decoration} {
+                                @include styleWithSizes(
+                                    $type,
+                                    $size,
+                                    $weight,
+                                    $decoration
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @each $weight in $weights {
+        &--#{$weight} {
+            @each $decoration in $decorations {
+                &--#{$decoration} {
+                    @include styleNoSizes($type, $weight, $decoration);
+                }
+            }
+        }
+    }
+}
 
 .quill-typography {
     &__emphasis {
@@ -19,22 +108,7 @@ $sizes: xl, lg, md, sm;
     }
 
     &__caption-text {
-        font-family: var(
-            --semantic-typography-caption-regular-default-fontFamily
-        );
-        font-size: var(--semantic-typography-caption-regular-default-fontSize);
-        font-weight: var(
-            --semantic-typography-caption-regular-default-fontWeight
-        );
-        line-height: var(
-            --semantic-typography-caption-regular-default-lineHeight
-        );
-        padding-block: var(
-            --semantic-typography-caption-regular-default-paragraphSpacing
-        );
-        letter-spacing: var(
-            --semantic-typography-caption-regular-default-letterSpacing
-        );
+        @include customTypeTextStyles(caption);
     }
 
     @each $heading in $headings {
@@ -57,52 +131,10 @@ $sizes: xl, lg, md, sm;
     }
 
     &__code-text {
-        @each $size in $sizes {
-            &__size--#{$size} {
-                font-family: var(
-                    --semantic-typography-code-#{$size}-regular-default-fontFamily
-                );
-                font-size: var(
-                    --semantic-typography-code-#{$size}-regular-default-fontSize
-                );
-                font-weight: var(
-                    --semantic-typography-code-#{$size}-regular-default-fontWeight
-                );
-                line-height: var(
-                    --semantic-typography-code-#{$size}-regular-default-lineHeight
-                );
-                padding-block: var(
-                    --semantic-typography-code-#{$size}-regular-default-paragraphSpacing
-                );
-                letter-spacing: var(
-                    --semantic-typography-code-#{$size}-regular-default-letterSpacing
-                );
-            }
-        }
+        @include customTypeTextStyles(code, true);
     }
 
     &__body-text {
-        @each $size in $sizes {
-            &__size--#{$size} {
-                font-family: var(
-                    --semantic-typography-body-#{$size}-regular-default-fontFamily
-                );
-                font-size: var(
-                    --semantic-typography-body-#{$size}-regular-default-fontSize
-                );
-                font-weight: var(
-                    --semantic-typography-body-#{$size}-regular-default-fontWeight
-                );
-                line-height: var(
-                    --semantic-typography-body-#{$size}-regular-default-lineHeight
-                );
-                padding-block: var(
-                    --semantic-typography-body-#{$size}-regular-default-paragraphSpacing
-                );
-                letter-spacing: var(
-                    --semantic-typography-body-#{$size}-regular-default-letterSpacing
-                );
-            }
-        }
+        @include customTypeTextStyles(body, true);
     }
 }

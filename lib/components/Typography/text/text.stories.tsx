@@ -1,12 +1,27 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import BodyText from ".";
+import Text from ".";
 
 const meta = {
-    title: "Typography/BodyText",
-    component: BodyText,
+    title: "Typography/Text",
+    component: Text,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
-} satisfies Meta<typeof BodyText>;
+    args: {
+        italic: false,
+        bold: false,
+        underlined: false,
+    },
+    argTypes: {
+        size: {
+            description: " `sm` | `md` | `lg` | `xl`",
+            options: ["sm", "md", "lg", "xl"],
+            control: { type: "radio" },
+            table: {
+                defaultValue: { summary: "md" },
+            },
+        },
+    },
+} satisfies Meta<typeof Text>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
