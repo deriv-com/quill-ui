@@ -1,7 +1,7 @@
 {
-    "name": "@deriv-com/ui",
+    "name": "@deriv-com/quill-ui",
     "private": false,
-    "version": "1.8.9",
+    "version": "0.0.2",
     "type": "module",
     "main": "dist/main.js",
     "files": [
@@ -19,10 +19,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/deriv-com/ui"
+        "url": "https://github.com/deriv-com/quill-ui"
     },
     "scripts": {
-        "dev": "vite",
+        "dev": "vite --port 4321 --open",
         "build": "tsc -p ./tsconfig-build.json && vite build",
         "prepublish": "npm run build",
         "generate:style": "node scripts/transformer.js &&  npx prettier --write lib/styles/quill.css",
