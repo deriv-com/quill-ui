@@ -1,15 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Typography } from "../lib/components/Typography/base";
-import Heading from "../lib/components/Typography/heading";
-import Text from "../lib/components/Typography/body-text";
-import CaptionText from "../lib/components/Typography/caption";
-import CodeText from "../lib/components/Typography/code";
+// import { Typography, H1, Hero, BodyText } from "../dist/components/Typography";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
         <Typography as="span">Quill UI</Typography>
-        <Heading.Hero>Quill UI</Heading.Hero>
+        {/* <Heading.Hero>Quill UI</Heading.Hero>
         <Heading.H1 size="xl">Quill UI</Heading.H1>
         <Heading.H1 as="div">Quill UI - h1 as div</Heading.H1>
         <Heading.H1 as="span">Quill UI - h1 as span</Heading.H1>
@@ -34,6 +31,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <CodeText size="xl">Code Text - xl</CodeText>
         <CodeText size="lg">Code Text - lg</CodeText>
         <CodeText>Code Text - md</CodeText>
-        <CodeText size="sm">Code Text - sm</CodeText>
+        <CodeText size="sm">Code Text - sm</CodeText> */}
     </React.StrictMode>,
 );
