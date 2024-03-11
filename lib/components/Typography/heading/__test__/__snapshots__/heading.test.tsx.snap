@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading Should render H1 Heading 1`] = `
+<div>
+  <h1
+    class="quill-typography__h1"
+  >
+    H1
+     heading
+  </h1>
+</div>
+`;
+
+exports[`Heading Should render H2 Heading 1`] = `
+<div>
+  <h2
+    class="quill-typography__h2"
+  >
+    H2
+     heading
+  </h2>
+</div>
+`;
+
+exports[`Heading Should render H3 Heading 1`] = `
+<div>
+  <h3
+    class="quill-typography__h3"
+  >
+    H3
+     heading
+  </h3>
+</div>
+`;
+
+exports[`Heading Should render H4 Heading 1`] = `
+<div>
+  <h4
+    class="quill-typography__h4"
+  >
+    H4
+     heading
+  </h4>
+</div>
+`;
+
+exports[`Heading Should render H5 Heading 1`] = `
+<div>
+  <h5
+    class="quill-typography__h5"
+  >
+    H5
+     heading
+  </h5>
+</div>
+`;
+
+exports[`Heading Should render H6 Heading 1`] = `
+<div>
+  <h6
+    class="quill-typography__h6"
+  >
+    H6
+     heading
+  </h6>
+</div>
+`;
+
+exports[`Heading Should render Hero Heading 1`] = `
+<div>
+  <h1
+    class="quill-typography__hero"
+  >
+    Hero
+     heading
+  </h1>
+</div>
+`;
