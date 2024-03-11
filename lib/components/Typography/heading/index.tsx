@@ -7,7 +7,7 @@ import H4 from "./h4";
 import H5 from "./h5";
 import H6 from "./h6";
 
-type HeadingVariants = {
+export type HeadingVariants = {
     Hero: typeof Hero;
     H1: typeof H1;
     H2: typeof H2;
