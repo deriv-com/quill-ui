@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { CaptionText } from ".";
+import { CaptionText } from "..";
 
 describe("CaptionText", () => {
     it("should display correct content", () => {
