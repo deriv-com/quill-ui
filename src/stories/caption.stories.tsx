@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CaptionText } from ".";
+import { CaptionText } from "../../lib/main";
 
 const meta = {
     title: "Typography/Caption",
