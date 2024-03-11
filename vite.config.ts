@@ -12,7 +12,14 @@ export default defineConfig({
     plugins: [
         react(),
         libInjectCss(),
-        dts({ include: ["lib"], exclude: ["lib/**/*.spec.tsx"] }),
+        dts({
+            include: ["lib"],
+            exclude: [
+                "lib/**/*.spec.tsx",
+                "lib/**/*.test.tsx",
+                "lib/**/*.stories.tsx",
+            ],
+        }),
     ],
     css: {
         preprocessorOptions: {
@@ -39,6 +46,8 @@ export default defineConfig({
                             "**/*.spec.ts",
                             "**/*.spec.tsx",
                             "**/__tests__/**",
+                            "**/*.stories.tsx",
+                            "**/*.stories.ts",
                         ],
                     })
                     .map((file) => {
