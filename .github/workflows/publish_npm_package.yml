@@ -34,7 +34,9 @@ jobs:
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
       - name: Prepublish
-        run: npm run prepublish
+        run: |
+            git push --dry-run --tags
+            npm run prepublish
       - name: Release
         if: success()
         env:
