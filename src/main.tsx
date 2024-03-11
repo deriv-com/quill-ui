@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Typography, H1, Hero } from "../dist/components/Typography";
-import { ThemeProvider } from "../lib/components/providers/theme/themeProvider";
+import { ThemeProvider } from "../lib/providers/theme/themeProvider";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
