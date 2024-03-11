@@ -1,80 +1,130 @@
+@import "../../styles/quill.css";
 
-@import '../../styles/quill.css';
+$headings: hero, h1, h2, h3, h4, h5, h6;
+$sizes: xl, lg, md, sm;
+$decorations: default, italic, underline, italic-underline;
+$weights: regular, bold;
 
+@mixin styleWithSizes($type, $size, $weight, $decoration) {
+    font-family: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-fontFamily
+    );
+    font-size: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-fontSize
+    );
+    font-style: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-fontWeight
+    );
+    font-weight: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-fontWeight
+    );
+    line-height: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-lineHeight
+    );
+    padding-block: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-paragraphSpacing
+    );
+    letter-spacing: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-letterSpacing
+    );
+    text-decoration: var(
+        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-textDecoration
+    );
+}
 
+@mixin styleNoSizes($type, $weight, $decoration) {
+    font-family: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-fontFamily
+    );
+    font-size: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-fontSize
+    );
+    font-style: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-fontWeight
+    );
+    font-weight: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-fontWeight
+    );
+    line-height: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-lineHeight
+    );
+    padding-block: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-paragraphSpacing
+    );
+    letter-spacing: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-letterSpacing
+    );
+    text-decoration: var(
+        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-textDecoration
+    );
+}
+
+@mixin customTypeTextStyles($type, $useSize: false) {
+    @if $useSize {
+        @each $size in $sizes {
+            &__size--#{$size} {
+                @each $weight in $weights {
+                    &__weight--#{$weight} {
+                        @each $decoration in $decorations {
+                            &__decoration--#{$decoration} {
+                                @include styleWithSizes(
+                                    $type,
+                                    $size,
+                                    $weight,
+                                    $decoration
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } @else {
+        @each $weight in $weights {
+            &__weight--#{$weight} {
+                @each $decoration in $decorations {
+                    &__decoration--#{$decoration} {
+                        @include styleNoSizes($type, $weight, $decoration);
+                    }
+                }
+            }
+        }
+    }
+}
 
 .quill-typography {
-    &__hero {
-        font-family: var(--semantic-typography-heading-hero-fontFamily);
-        font-size: var(--semantic-typography-heading-hero-fontSize);
-        font-weight: var(--semantic-typography-heading-hero-fontWeight);
-        line-height: var(--semantic-typography-heading-hero-lineHeight);
-        padding-top: var(--semantic-typography-heading-hero-paragraphSpacing);
-        padding-bottom: var(--semantic-typography-heading-hero-paragraphSpacing);
+    &__color {
         color: var(--semantic-color-typography-prominent);
-        letter-spacing: normal;
     }
 
-    &__h1 {
-        // @each $property, $value in $semantic-typography-heading-h1 {
-        //     #{$property}: $value;
-        // }
-        color: var(--semantic-color-typography-prominent);
-        // @include semantic-typography-heading-h1();
+    &__caption-text {
+        @include customTypeTextStyles(caption);
     }
 
-    &__h2 {
-        // @each $property, $value in $semantic-typography-heading-h2 {
-        //     #{$property}: $value;
-        // }
-        
-        // @include semantic-typography-heading-h2();
-    }
-
-    &__h3 {
-        // @each $property, $value in $semantic-typography-heading-h3 {
-        //     #{$property}: $value;
-        // }
-        
-        // @include semantic-typography-heading-h3();
-    }
-
-    &__h4 {
-        // @each $property, $value in $semantic-typography-heading-h4 {
-        //     #{$property}: $value;
-        // }
-        
-        // @include semantic-typography-heading-h4();
-    }
-
-    &__h5 {
-        // @each $property, $value in $semantic-typography-heading-h5 {
-        //     #{$property}: $value;
-        // }
-        
-        // @include semantic-typography-heading-h5();
-    }
-
-    &__h6 {
-        // @each $property, $value in $semantic-typography-heading-h6 {
-        //     #{$property}: $value;
-        // }
-        
-        // @include semantic-typography-heading-h6();
-    }
-
-    &__body-text {
-        &__size--xl {
-            // @each $property, $value in $semantic-typography-body-xl-regular-default {
-            //     #{$property}: $value;
-            // }
-            
-            // @include semantic-typography-body-xl-regular-default();
-
-            // Add the Bold / Italic / Underline rules below. 
-
-
+    @each $heading in $headings {
+        &__#{$heading} {
+            font-family: var(
+                --semantic-typography-heading-#{$heading}-fontFamily
+            );
+            font-size: var(--semantic-typography-heading-#{$heading}-fontSize);
+            font-weight: var(
+                --semantic-typography-heading-#{$heading}-fontWeight
+            );
+            line-height: var(
+                --semantic-typography-heading-#{$heading}-lineHeight
+            );
+            padding-block: var(
+                --semantic-typography-heading-#{$heading}-paragraphSpacing
+            );
+            letter-spacing: normal;
         }
     }
 
+    &__code-text {
+        @include customTypeTextStyles(code, true);
+    }
+
+    &__body-text {
+        @include customTypeTextStyles(body, true);
+    }
 }
