@@ -9,7 +9,7 @@ export const Text = ({
     children,
     className,
     as = "span",
-    size,
+    size = "md",
     italic = false,
     underlined = false,
     bold = false,

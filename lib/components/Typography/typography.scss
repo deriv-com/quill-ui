@@ -79,13 +79,13 @@ $weights: regular, bold;
                 }
             }
         }
-    }
-
-    @each $weight in $weights {
-        &__weight--#{$weight} {
-            @each $decoration in $decorations {
-                &__decoration--#{$decoration} {
-                    @include styleNoSizes($type, $weight, $decoration);
+    } @else {
+        @each $weight in $weights {
+            &__weight--#{$weight} {
+                @each $decoration in $decorations {
+                    &__decoration--#{$decoration} {
+                        @include styleNoSizes($type, $weight, $decoration);
+                    }
                 }
             }
         }
