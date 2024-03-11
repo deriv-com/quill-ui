@@ -31,6 +31,7 @@ export const Typography = ({
                 bold && `quill-typography__emphasis--bold`,
                 italic && `quill-typography__emphasis--italic`,
                 underlined && `quill-typography__emphasis--underlined`,
+                "quill-typography__color",
                 className,
             ),
             ...rest,

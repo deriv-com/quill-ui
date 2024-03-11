@@ -93,6 +93,10 @@ $weights: regular, bold;
 }
 
 .quill-typography {
+    &__color {
+        color: var(--semantic-color-typography-prominent);
+    }
+
     &__caption-text {
         @include customTypeTextStyles(caption);
     }

@@ -12,14 +12,7 @@ const meta = {
         underlined: false,
     },
     argTypes: {
-        size: {
-            description: " `sm` | `md` | `lg` | `xl`",
-            options: ["sm", "md", "lg", "xl"],
-            control: { type: "radio" },
-            table: {
-                defaultValue: { summary: "md" },
-            },
-        },
+        as: { table: { disable: true } },
     },
 } satisfies Meta<typeof CodeText>;
 

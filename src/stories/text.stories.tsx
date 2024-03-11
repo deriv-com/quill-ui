@@ -11,6 +11,9 @@ const meta = {
         bold: false,
         underlined: false,
     },
+    argTypes: {
+        as: { table: { disable: true } },
+    },
 } satisfies Meta<typeof Text>;
 
 export default meta;

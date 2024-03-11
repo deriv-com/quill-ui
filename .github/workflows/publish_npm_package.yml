@@ -2,6 +2,8 @@ name: Release
 on:
     release:
         types: [published]
+    push:
+        branches: [main]
 
 permissions:
   contents: read # for checkout
@@ -31,10 +33,12 @@ jobs:
         run: npm clean-install
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
-      - name: Publish
+      - name: Prepublish
+        run: npm run prepublish
+      - name: Release
+        if: success()
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-          npm publish --access public
-        shell: bash
+          CI: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN}}
+        run: npx semantic-release
