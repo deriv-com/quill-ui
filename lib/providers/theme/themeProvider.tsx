@@ -15,8 +15,9 @@ export const ThemeProvider = ({ children, theme }: ThemeProviderProps) => {
 
     const systemPrefersDark = useMediaQuery("(prefers-color-scheme: dark)");
 
-    const toggleTheme = (updatedTheme: Theme) => {
-        setSelectedTheme(updatedTheme);
+    const toggleTheme = () => {
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        setSelectedTheme(newTheme);
     };
 
     useEffect(() => {
@@ -25,18 +26,9 @@ export const ThemeProvider = ({ children, theme }: ThemeProviderProps) => {
         setCurrentTheme(theme);
     }, [selectedTheme, systemPrefersDark]);
 
-    useEffect(() => {
-        const root = document.documentElement;
-        if (currentTheme === "dark") {
-            root.classList.add("theme--dark");
-        } else {
-            root.classList.remove("theme--dark");
-        }
-    }, [currentTheme]);
-
     return (
         <ThemeContext.Provider value={{ theme: currentTheme, toggleTheme }}>
-            <div className={`theme--${currentTheme}`}>{children}</div>
+            <section className={`theme--${currentTheme}`}>{children}</section>
         </ThemeContext.Provider>
     );
 };
