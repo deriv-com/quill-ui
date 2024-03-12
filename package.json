@@ -117,5 +117,8 @@
             "\\.(css|less|scss|sass)$": "identity-obj-proxy",
             "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/__mocks__/fileMock.js"
         }
+    },
+    "dependencies": {
+        "usehooks-ts": "^3.0.1"
     }
 }

@@ -1,36 +1,44 @@
-import { useEffect, useState, PropsWithChildren } from "react";
-import { ThemeContext, initialThemeState } from "./themeContext";
-import { Theme } from "./themeContext";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "usehooks-ts";
+import { Theme, ThemeContext } from "./themeContext";
 
-export const ThemeProvider = ({ children }: PropsWithChildren) => {
-    const savedThemeLocal = window?.localStorage.getItem(
-        "globalTheme",
-    ) as Theme;
-    const [theme, setTheme] = useState<Theme>(
-        savedThemeLocal ?? initialThemeState.theme,
+export interface ThemeProviderProps {
+    children: React.ReactNode;
+    theme?: Theme;
+}
+
+export const ThemeProvider = ({ children, theme }: ThemeProviderProps) => {
+    const [selectedTheme, setSelectedTheme] = useState<Theme | undefined>(
+        theme,
     );
+    const [currentTheme, setCurrentTheme] = useState<Theme>(theme ?? "light");
 
-    const applyThemeClass = (newTheme: Theme) => {
-        document.body.classList.remove(`theme--${theme}`);
-        document.body.classList.add(`theme--${newTheme}`);
-    };
+    const systemPrefersDark = useMediaQuery("(prefers-color-scheme: dark)");
 
-    const toggleTheme = () => {
-        const newTheme = theme === "dark" ? "light" : "dark";
-        setTheme(newTheme);
-        applyThemeClass(newTheme);
+    const toggleTheme = (updatedTheme: Theme) => {
+        setSelectedTheme(updatedTheme);
     };
 
     useEffect(() => {
-        if (!document.body.classList.contains(`theme--${theme}`)) {
-            applyThemeClass(theme);
+        const theme = selectedTheme || (systemPrefersDark ? "dark" : "light");
+
+        setCurrentTheme(theme);
+    }, [selectedTheme, systemPrefersDark]);
+
+    useEffect(() => {
+        const root = document.documentElement;
+        if (currentTheme === "dark") {
+            root.classList.add("theme--dark");
+        } else {
+            root.classList.remove("theme--dark");
         }
-        window?.localStorage.setItem("globalTheme", theme);
-    }, [theme]);
+    }, [currentTheme]);
 
     return (
-        <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
-            {children}
+        <ThemeContext.Provider value={{ theme: currentTheme, toggleTheme }}>
+            <div className={`theme--${currentTheme}`}>{children}</div>
         </ThemeContext.Provider>
     );
 };
+
+export default ThemeProvider;
