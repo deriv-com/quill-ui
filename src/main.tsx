@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Text, Heading, ThemeProvider } from "../lib/main";
+import Button from "./home";
+import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
         <ThemeProvider>
+            <Button />
             <Text as="span">Quill UI</Text>
             <Heading.Hero>Quill UI</Heading.Hero>
             <Heading.H1>Quill UI</Heading.H1>
