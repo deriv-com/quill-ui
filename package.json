@@ -31,7 +31,8 @@
         "preview": "vite preview",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build --output-dir dist/storybook",
-        "test": "jest"
+        "test": "jest",
+        "clean:dist": "rm -rf dist"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.23.9",
