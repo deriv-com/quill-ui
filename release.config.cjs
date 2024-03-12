@@ -36,19 +36,7 @@ module.exports = {
                         release: "patch",
                     },
                     {
-                        type: "docs",
-                        release: "patch",
-                    },
-                    {
-                        type: "refactor",
-                        release: "patch",
-                    },
-                    {
-                        type: "style",
-                        release: "patch",
-                    },
-                    {
-                        type: "test",
+                        type: "fix",
                         release: "patch",
                     },
                 ],
