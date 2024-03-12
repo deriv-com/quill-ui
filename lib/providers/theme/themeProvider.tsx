@@ -26,15 +26,6 @@ export const ThemeProvider = ({ children, theme }: ThemeProviderProps) => {
         setCurrentTheme(theme);
     }, [selectedTheme, systemPrefersDark]);
 
-    useEffect(() => {
-        const root = document.documentElement;
-        if (currentTheme === "dark") {
-            root.classList.add("theme--dark");
-        } else {
-            root.classList.remove("theme--dark");
-        }
-    }, [currentTheme]);
-
     return (
         <ThemeContext.Provider value={{ theme: currentTheme, toggleTheme }}>
             <section className={`theme--${currentTheme}`}>{children}</section>

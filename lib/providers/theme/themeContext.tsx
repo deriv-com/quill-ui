@@ -2,9 +2,14 @@ import React from "react";
 
 export type Theme = "dark" | "light";
 
-export const initialThemeState = {
-    theme: "light" as Theme,
-    toggleTheme: (() => null) as () => void,
+export type ThemeContextValue = {
+    theme: Theme;
+    toggleTheme: () => void;
 };
 
-export const ThemeContext = React.createContext(initialThemeState);
+export const ThemeContext = React.createContext<ThemeContextValue>({
+    theme: "light",
+    toggleTheme: () => {},
+});
+
+export default ThemeContext;
