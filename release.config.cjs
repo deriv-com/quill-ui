@@ -16,6 +16,10 @@ module.exports = {
             {
                 releaseRules: [
                     {
+                        type: "bump",
+                        release: "major",
+                    },
+                    {
                         type: "feat",
                         release: "minor",
                     },
