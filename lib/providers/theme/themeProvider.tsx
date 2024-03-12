@@ -20,11 +20,9 @@ export const ThemeProvider = ({ children, theme }: ThemeProviderProps) => {
     };
 
     useEffect(() => {
-        if (!selectedTheme) {
-            setCurrentTheme(systemPrefersDark ? "dark" : "light");
-        } else {
-            setCurrentTheme(selectedTheme);
-        }
+        const theme = selectedTheme || (systemPrefersDark ? "dark" : "light");
+
+        setCurrentTheme(theme);
     }, [selectedTheme, systemPrefersDark]);
 
     useEffect(() => {
