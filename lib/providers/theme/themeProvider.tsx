@@ -28,7 +28,9 @@ export const ThemeProvider = ({ children, theme }: ThemeProviderProps) => {
 
     return (
         <ThemeContext.Provider value={{ theme: currentTheme, toggleTheme }}>
-            <section className={`theme--${currentTheme}`}>{children}</section>
+            <section className={`theme--${currentTheme} theme-background`}>
+                {children}
+            </section>
         </ThemeContext.Provider>
     );
 };
