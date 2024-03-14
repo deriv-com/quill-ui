@@ -1,1 +1,229 @@
 /* Global Styles */
+.quill {
+    &__color {
+        &--primary-coral {
+            background-color: var(--core-color-solid-coral-700);
+            color: var(--core-color-solid-slate-50);
+            border: none;
+            &:hover:not(:disabled){
+                background-color: var(--core-color-solid-coral-800);
+            }
+            &:active:not(:disabled){
+                background-color: var(--core-color-solid-coral-900);
+            }
+            &:disabled{
+                opacity: 0.4;
+            }
+        }
+        &--secondary-coral {
+        
+            border-style: solid;
+            border-color: var(--core-color-solid-coral-700);
+            color:  var(--core-color-solid-coral-700);
+            &:hover:not(:disabled){
+                background: var(--core-color-opacity-coral-100);
+            }
+            &:active:not(:disabled){
+                background-color: var(--core-color-solid-coral-900);
+            }
+            &:disabled{
+                opacity: 0.4;
+            }
+        }
+        &--tertiary-coral{
+            background-color: transparent;
+            color: var(--core-color-solid-coral-700);
+            text-decoration: underline;
+            border: none;
+            &:hover:not(:disabled){
+                background-color: var(--core-color-opacity-coral-100);
+            }
+            &:active:not(:disabled){
+                background-color: var(--core-color-opacity-coral-200);
+            }
+            &:disabled{
+                background-color: none;
+            }
+        }
+        &--primary-black{
+            background-color: var(--core-color-solid-slate-1400);
+            color: var(--core-color-solid-slate-50);
+            border: none;
+            &:hover:not(:disabled){
+                background-color: var(--core-color-solid-slate-700);
+            }
+            &:active:not(:disabled){
+                background-color: var(--core-color-opacity-black-800);
+            }
+            &:disabled{
+                opacity: 0.48;
+              
+            }
+        }
+        &--primary-white{
+            background-color: var(--core-color-solid-slate-50);
+            color: var(--core-color-solid-slate-1400);
+            border: none;
+            &:hover:not(:disabled){
+                background-color: var(--core-color-opacity-white-800);
+            }
+            &:active:not(:disabled){
+                background-color: var(--core-color-opacity-white-700);
+            }
+            &:disabled{
+                background-color: var(--core-color-solid-slate-50);
+            }
+        }
+       
+        &--secondary-black{
+            background-color:transparent;
+            border-style: solid;
+            border-color: var(--core-color-solid-black-1400);
+            color:  var(--core-color-solid-black-1400);
+            &:hover:not(:disabled){
+                background-color: var(--core-color-opacity-black-100);
+            }
+            &:active:not(:disabled){
+                background-color: var(--core-color-opacity-black-200);
+            }
+            &:disabled{
+                background-color: none;
+            }
+        }
+        &--secondary-white{
+            background-color:none;
+            border-style: solid;
+            border-color: var(--core-color-solid-slate-50);
+            color:  var(--core-color-solid-slate-50);
+            &:hover:not(:disabled){
+                background-color: var(--core-color-opacity-white-200);
+            }
+            &:active:not(:disabled){
+                background-color: var(--core-color-opacity-white-100);
+            }
+            &:disabled{
+                background-color: var(--core-color-opacity-white-100);
+            }
+        }
+       
+        &--tertiary-black{
+            background-color: none;
+            color: var(--core-color-solid-black-1400);
+            text-decoration: underline;
+            border: none;
+            &:hover:not(:disabled){
+                background-color: var(--core-color-opacity-black-100);
+            }
+            &:active:not(:disabled){
+                background-color: var(--core-color-opacity-black-200);
+            }
+            &:disabled{
+                opacity: 0.48;
+            }
+        }
+        &--tertiary-white{
+            background-color: none;
+            color: var(--core-color-solid-slate-50);
+            text-decoration: underline;
+            border: none;
+            &:hover:not(:disabled){
+                background-color: var(--core-color-opacity-white-200);
+            }
+            &:active:not(:disabled){
+                background-color: var(--core-color-opacity-white-100);
+            }
+            &:disabled{
+                opacity: 0.48;
+            }
+        }
+        &--primary-purchase {
+            background-color : var(--core-color-solid-emerald-700);
+            color: var(--core-color-solid-slate-50);
+            border: none;
+            &:hover:not(:disabled) {
+                background-color: var(--core-color-solid-emerald-800);
+            }
+            &:active:not(:disabled) {
+                background-color: var(--core-color-solid-emerald-900);
+            }
+            &:disabled{
+                opacity: 0.48;
+            }
+        }
+        &--primary-sell {
+            background-color: var(--core-color-solid-cherry-700);
+            color: var(--core-color-solid-slate-50);
+            border: none;
+            &:hover:not(:disabled) {
+                background-color: var(--core-color-solid-cherry-800);
+            }
+            &:active:not(:disabled) {
+                background-color: var(--core-color-solid-cherry-900);
+            }
+            &:disabled{
+                opacity: 0.48;
+            }
+        }
+        &--secondary-purchase {
+            background-color: none;
+            border-style: solid;
+            border-color: var(--core-color-solid-emerald-700);
+            color: var(--core-color-solid-emerald-700);
+            &:hover:not(:disabled) {
+                background-color:var(--core-color-solid-emerald-100);
+            }
+            &:active:not(:disabled) {
+                background-color: var(--core-color-opacity-emerald-200);
+            }
+            &:disabled{
+                opacity: 0.48;
+            }
+        }
+        &--secondary-sell{
+            background-color: none;
+            border-style: solid;
+            border-color: var(--core-color-solid-cherry-700);
+            color: var(--core-color-solid-cherry-700);
+            &:hover:not(:disabled) {
+                background-color: var(--core-color-solid-cherry-100);
+            }
+            &:active:not(:disabled) {
+                background-color: var(--core-color-opacity-cherry-200);
+            }
+            &:disabled{
+                opacity: 0.48;
+            }
+        }
+        &--tertiary-purchase{
+            background-color: none;
+            color: var(--core-color-solid-emerald-700);
+            text-decoration: underline;
+            border: none;
+            &:hover:not(:disabled) {
+                background-color: var(--core-color-solid-emerald-100);
+            }
+            &:active:not(:disabled) {
+                background-color: var(--core-color-opacity-emerald-200);
+            }
+            &:disabled{
+                opacity: 0.48;
+            }
+        }
+        &--tertiary-sell{
+            background-color: none;
+            color: var(--core-color-solid-cherry-700);
+            text-decoration: underline;
+            border: none;
+            &:hover:not(:disabled) {
+                background-color: var(--core-color-solid-cherry-100);
+            }
+            &:active:not(:disabled) {
+                background-color: var(--core-color-opacity-cherry-200);
+            }
+            &:disabled{
+                opacity: 0.48;
+            }
+        }
+    }
+
+}
