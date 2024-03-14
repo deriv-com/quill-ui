@@ -68,6 +68,7 @@ const extractCSSValues = (key, value) => {
 
 const processCSSValue = (key, value) => {
     const noUnitKeys = ["fontWeight"];
+    const percentageKeys = ["opacity"];
     const propertyGroup = key.split("-");
     const propertyName = propertyGroup[propertyGroup.length - 1];
     const defaultValues = {
@@ -86,6 +87,14 @@ const processCSSValue = (key, value) => {
     } else {
         if (noUnitKeys.some((k) => key.includes(k))) {
             return value;
+        }
+
+        if (percentageKeys.some((k) => key.includes(k))) {
+            if (value.includes("%")) {
+                const percentageValue = parseInt(value) * 0.01;
+
+                return percentageValue;
+            }
         }
 
         if (value === "") {
