@@ -249,7 +249,7 @@ const mapSASSValues = () => {
 const generateSassFile = () => {
     const sassContent = mapSASSValues();
 
-    const sassFilePath = "lib/styles/quill.css";
+    const sassFilePath = "lib/styles/quill.scss";
     const dirPath = path.dirname(sassFilePath);
 
     if (!fs.existsSync(dirPath)) {
