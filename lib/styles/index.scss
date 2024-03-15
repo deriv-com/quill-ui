@@ -1,5 +1,5 @@
 /* Global Styles */
-@import "/lib/styles/quill.css";
+@import "lib/styles/quill.css";
 
 @at-root {
     @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
@@ -7,6 +7,36 @@
     @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 }
 
-.theme-background {
-    background-color: var(--semantic-color-background-primary-base);
+.quill {
+    &__background {
+        @each $bg in primary, secondary {
+            &--#{$bg} {
+                @each $type in base, container {
+                    &__type--#{$type} {
+                        background-color: var(
+                            --semantic-color-background-#{$bg}-#{$type}
+                        );
+                    }
+                }
+            }
+        }
+
+        @each $bg in dialog, overlay {
+            &--#{$bg} {
+                background-color: var(--semantic-color-background-#{$bg});
+            }
+        }
+
+        &--overflow__number {
+            @each $number in 1, 2 {
+                &--#{$number} {
+                    @each $position in top, right, bottom, left {
+                        background-color: var(
+                            --semantic-color-background-overflow-#{$number}-#{$position}
+                        );
+                    }
+                }
+            }
+        }
+    }
 }
