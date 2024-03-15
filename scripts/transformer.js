@@ -236,14 +236,49 @@ const mapSASSValues = () => {
     sassContent += generateThemeVariables();
 
     // Map token variables
-    Object.keys(objectTokens).map((key) => {
-        sassContent = sassContent.replaceAll(
-            `{${key}}`,
-            `var(${convertCSSkey(key)})`,
-        );
-    });
+    sassContent = mapTokenValues(objectTokens, sassContent);
+
+    // Convert HEX values to RGBA
+    sassContent = convertHexes(sassContent);
 
     return sassContent;
+};
+
+const checkKeysExist = (objectTokens, str) => {
+    const keysArray = Object.keys(objectTokens);
+    const keyExists = keysArray.some((key) => str.includes(key));
+
+    return keyExists;
+};
+
+const mapTokenValues = (objectTokens, str) => {
+    Object.keys(objectTokens).map((key) => {
+        const tokenValue = objectTokens[key];
+
+        str = str.replaceAll(`{${key}}`, tokenValue);
+    });
+
+    if (checkKeysExist(objectTokens, str)) {
+        str = mapTokenValues(objectTokens, str);
+    }
+
+    return str;
+};
+
+const convertHexes = (str) => {
+    const rgbaRegex =
+        /rgba\(\s*#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})\s*,?\s*(\d*\.?\d+|0)\)/g;
+
+    const replaceRgba = (_, hexColor, opacity) => {
+        // Convert hex color to RGBA
+        const red = parseInt(hexColor.substring(0, 2), 16);
+        const green = parseInt(hexColor.substring(2, 4), 16);
+        const blue = parseInt(hexColor.substring(4, 6), 16);
+
+        return `rgba(${red}, ${green}, ${blue}, ${opacity})`;
+    };
+
+    return str.replaceAll(rgbaRegex, replaceRgba);
 };
 
 const generateSassFile = () => {
