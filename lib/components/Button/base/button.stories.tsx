@@ -17,6 +17,7 @@ const meta = {
         size: "md",
         isFullWidth: false,
         type: "button",
+        isDropDownMenu: true,
     },
 
     argTypes: {
