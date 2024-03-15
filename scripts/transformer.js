@@ -284,18 +284,20 @@ const convertHexes = (str) => {
 const generateSassFile = () => {
     const sassContent = mapSASSValues();
 
-    const sassFilePath = "lib/styles/quill.scss";
-    const dirPath = path.dirname(sassFilePath);
+    const filePaths = ["lib/styles/quill.scss", "lib/styles/quill.css"];
 
-    if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: true });
-    }
+    filePaths.map((item) => {
+        const dirPath = path.dirname(item);
+        if (!fs.existsSync(dirPath)) {
+            fs.mkdirSync(dirPath, { recursive: true });
+        }
 
-    fs.writeFileSync(sassFilePath, sassContent);
+        fs.writeFileSync(item, sassContent);
 
-    console.log(
-        `Quill UI CSS variables was generated successfully: ${sassFilePath}`,
-    );
+        console.log(
+            `Quill UI CSS variables was generated successfully: ${item}`,
+        );
+    });
 };
 
 generateSassFile();
