@@ -3,7 +3,7 @@
 exports[`CaptionText should have correct classnames with bold enabled 1`] = `
 <div>
   <p
-    class="quill-typography__code-text__size--md__weight--bold__decoration--default"
+    class="quill-typography__color quill-typography__code-text__size--md__weight--bold__decoration--default"
   >
     CaptionText content
   </p>
@@ -13,7 +13,7 @@ exports[`CaptionText should have correct classnames with bold enabled 1`] = `
 exports[`CaptionText should have correct classnames with default values 1`] = `
 <div>
   <p
-    class="quill-typography__code-text__size--md__weight--regular__decoration--default"
+    class="quill-typography__color quill-typography__code-text__size--md__weight--regular__decoration--default"
   >
     CodeText content
   </p>
@@ -23,7 +23,7 @@ exports[`CaptionText should have correct classnames with default values 1`] = `
 exports[`CaptionText should have correct classnames with italic enabled 1`] = `
 <div>
   <p
-    class="quill-typography__code-text__size--md__weight--regular__decoration--italic"
+    class="quill-typography__color quill-typography__code-text__size--md__weight--regular__decoration--italic"
   >
     CaptionText content
   </p>
@@ -33,7 +33,7 @@ exports[`CaptionText should have correct classnames with italic enabled 1`] = `
 exports[`CaptionText should have correct classnames with size lg 1`] = `
 <div>
   <p
-    class="quill-typography__code-text__size--lg__weight--regular__decoration--default"
+    class="quill-typography__color quill-typography__code-text__size--lg__weight--regular__decoration--default"
   >
     CodeText content
   </p>
@@ -43,7 +43,7 @@ exports[`CaptionText should have correct classnames with size lg 1`] = `
 exports[`CaptionText should have correct classnames with size md 1`] = `
 <div>
   <p
-    class="quill-typography__code-text__size--md__weight--regular__decoration--default"
+    class="quill-typography__color quill-typography__code-text__size--md__weight--regular__decoration--default"
   >
     CodeText content
   </p>
@@ -53,7 +53,7 @@ exports[`CaptionText should have correct classnames with size md 1`] = `
 exports[`CaptionText should have correct classnames with size sm 1`] = `
 <div>
   <p
-    class="quill-typography__code-text__size--sm__weight--regular__decoration--default"
+    class="quill-typography__color quill-typography__code-text__size--sm__weight--regular__decoration--default"
   >
     CodeText content
   </p>
@@ -63,7 +63,7 @@ exports[`CaptionText should have correct classnames with size sm 1`] = `
 exports[`CaptionText should have correct classnames with size xl 1`] = `
 <div>
   <p
-    class="quill-typography__code-text__size--xl__weight--regular__decoration--default"
+    class="quill-typography__color quill-typography__code-text__size--xl__weight--regular__decoration--default"
   >
     CodeText content
   </p>
@@ -73,7 +73,7 @@ exports[`CaptionText should have correct classnames with size xl 1`] = `
 exports[`CaptionText should have correct classnames with underline enabled 1`] = `
 <div>
   <p
-    class="quill-typography__code-text__size--md__weight--regular__decoration--underline"
+    class="quill-typography__color quill-typography__code-text__size--md__weight--regular__decoration--underline"
   >
     CaptionText content
   </p>
