@@ -13,6 +13,7 @@ const meta = {
     },
     argTypes: {
         as: { table: { disable: true } },
+        size: { table: { disable: true } },
     },
 } satisfies Meta<typeof CaptionText>;
 
