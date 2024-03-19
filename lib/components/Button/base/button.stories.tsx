@@ -1,6 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./index";
 
+import {
+    LabelPairedPlaceholderSmRegularIcon,
+    LabelPairedPlaceholderMdRegularIcon,
+    LabelPairedPlaceholderLgRegularIcon,
+    LabelPairedPlaceholderXlRegularIcon,
+    LabelPairedChevronDownSmRegularIcon,
+    LabelPairedChevronDownMdRegularIcon,
+    LabelPairedChevronDownLgRegularIcon,
+    LabelPairedChevronDownXlRegularIcon,
+} from "@deriv/quill-icons/LabelPaired";
+
 const meta = {
     title: "Components/Button",
     component: Button,
@@ -52,9 +63,24 @@ const meta = {
     },
 } satisfies Meta<typeof Button>;
 
+const iconSizes = {
+    sm: LabelPairedPlaceholderSmRegularIcon,
+    md: LabelPairedPlaceholderMdRegularIcon,
+    lg: LabelPairedPlaceholderLgRegularIcon,
+    xl: LabelPairedPlaceholderXlRegularIcon,
+};
+const chevronIconSizes = {
+    sm: LabelPairedChevronDownSmRegularIcon,
+    md: LabelPairedChevronDownMdRegularIcon,
+    lg: LabelPairedChevronDownLgRegularIcon,
+    xl: LabelPairedChevronDownXlRegularIcon,
+};
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Filled: Story = {
-    args: {},
+    args: {
+        icon: LabelPairedPlaceholderXlRegularIcon,
+        chevronIcon: LabelPairedChevronDownXlRegularIcon,
+    },
 };

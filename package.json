@@ -123,6 +123,7 @@
     },
     "dependencies": {
         "@deriv/quill-icons": "^1.19.2",
+        "@headlessui/react": "^1.7.18",
         "usehooks-ts": "^3.0.1"
     }
 }
