@@ -13,6 +13,7 @@ const meta = {
     },
     argTypes: {
         as: { table: { disable: true } },
+        size: { options: ["sm", "md", "lg", "xl"], control: { type: "radio" } },
     },
 } satisfies Meta<typeof CodeText>;
 
