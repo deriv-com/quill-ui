@@ -23,6 +23,7 @@ export const CodeText = ({
             as={as}
             className={clsx(
                 `quill-typography__code-text__size--${size}__weight--${weight}__decoration--${decoration}`,
+                "quill-typography__color--default",
                 className,
             )}
             {...rest}

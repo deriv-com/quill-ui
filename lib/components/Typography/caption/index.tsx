@@ -23,6 +23,7 @@ export const CaptionText = ({
             as={as}
             className={clsx(
                 `quill-typography__caption-text__weight--${weight}__decoration--${decoration}`,
+                "quill-typography__color--prominent",
                 className,
             )}
             {...rest}

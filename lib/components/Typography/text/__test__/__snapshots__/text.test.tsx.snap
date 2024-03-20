@@ -2,80 +2,80 @@
 
 exports[`Text should display content with default classnames 1`] = `
 <div>
-  <span
-    class="quill-typography__color quill-typography__body-text__size--md__weight--regular__decoration--default"
+  <p
+    class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
   >
     Text content
-  </span>
+  </p>
 </div>
 `;
 
 exports[`Text should have correct classnames with bold enabled 1`] = `
 <div>
-  <span
-    class="quill-typography__color quill-typography__body-text__size--md__weight--bold__decoration--default"
+  <p
+    class="quill-typography__body-text__size--md__weight--bold__decoration--default quill-typography__color--default"
   >
     Text content
-  </span>
+  </p>
 </div>
 `;
 
 exports[`Text should have correct classnames with italic enabled 1`] = `
 <div>
-  <span
-    class="quill-typography__color quill-typography__body-text__size--md__weight--regular__decoration--italic"
+  <p
+    class="quill-typography__body-text__size--md__weight--regular__decoration--italic quill-typography__color--default"
   >
     Text content
-  </span>
+  </p>
 </div>
 `;
 
 exports[`Text should have correct classnames with size lg 1`] = `
 <div>
-  <span
-    class="quill-typography__color quill-typography__body-text__size--lg__weight--regular__decoration--default"
+  <p
+    class="quill-typography__body-text__size--lg__weight--regular__decoration--default quill-typography__color--default"
   >
     Text content
-  </span>
+  </p>
 </div>
 `;
 
 exports[`Text should have correct classnames with size md 1`] = `
 <div>
-  <span
-    class="quill-typography__color quill-typography__body-text__size--md__weight--regular__decoration--default"
+  <p
+    class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
   >
     Text content
-  </span>
+  </p>
 </div>
 `;
 
 exports[`Text should have correct classnames with size sm 1`] = `
 <div>
-  <span
-    class="quill-typography__color quill-typography__body-text__size--sm__weight--regular__decoration--default"
+  <p
+    class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default"
   >
     Text content
-  </span>
+  </p>
 </div>
 `;
 
 exports[`Text should have correct classnames with size xl 1`] = `
 <div>
-  <span
-    class="quill-typography__color quill-typography__body-text__size--xl__weight--regular__decoration--default"
+  <p
+    class="quill-typography__body-text__size--xl__weight--regular__decoration--default quill-typography__color--default"
   >
     Text content
-  </span>
+  </p>
 </div>
 `;
 
 exports[`Text should have correct classnames with size xl and type underline 1`] = `
 <div>
-  <span
-    class="quill-typography__color quill-typography__body-text__size--xl__weight--regular__decoration--underline"
+  <p
+    class="quill-typography__body-text__size--xl__weight--regular__decoration--underline quill-typography__color--default"
   >
     Text content
-  </span>
+  </p>
 </div>
 `;

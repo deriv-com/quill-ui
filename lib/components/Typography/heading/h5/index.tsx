@@ -5,7 +5,11 @@ const H5 = ({ children, className, as = "h5", ...rest }: TypographyProps) => {
     return (
         <Typography
             as={as}
-            className={clsx("quill-typography__h5", className)}
+            className={clsx(
+                "quill-typography__h5",
+                "quill-typography__color--prominent",
+                className,
+            )}
             {...rest}
         >
             {children}
