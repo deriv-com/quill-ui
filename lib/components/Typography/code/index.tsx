@@ -8,7 +8,7 @@ import {
 export const CodeText = ({
     children,
     className,
-    as = "p",
+    as = "code",
     size = "md",
     italic = false,
     underlined = false,

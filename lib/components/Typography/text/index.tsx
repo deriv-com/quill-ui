@@ -8,7 +8,7 @@ import {
 export const Text = ({
     children,
     className,
-    as = "span",
+    as = "p",
     size = "md",
     italic = false,
     underlined = false,

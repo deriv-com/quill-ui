@@ -93,16 +93,14 @@ $weights: regular, bold;
 }
 
 .quill-typography {
-    &__color {
-        color: var(--semantic-color-typography-prominent);
-    }
-
     &__caption-text {
         @include customTypeTextStyles(caption);
+        color: var(--semantic-color-typography-prominent);
     }
 
     @each $heading in $headings {
         &__#{$heading} {
+            color: var(--semantic-color-typography-prominent);
             font-family: var(
                 --semantic-typography-heading-#{$heading}-fontFamily
             );
@@ -122,9 +120,11 @@ $weights: regular, bold;
 
     &__code-text {
         @include customTypeTextStyles(code, true);
+        color: var(--semantic-color-typography-default);
     }
 
     &__body-text {
         @include customTypeTextStyles(body, true);
+        color: var(--semantic-color-typography-default);
     }
 }
