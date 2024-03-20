@@ -1,13 +1,18 @@
 .quill-chip {
+    display: flex;
+
     &__size {
         &--sm {
             padding-inline: var(--core-spacing-600);
+            height: var(--semantic-spacing-general-lg);
         }
         &--md {
             padding-inline: var(--semantic-spacing-general-md);
+            height: var(--semantic-spacing-general-2xl);
         }
         &--lg {
             padding-inline: var(--semantic-spacing-general-lg);
+            height: var(--semantic-spacing-general-4xl);
         }
     }
 }

@@ -7,7 +7,9 @@ const meta = {
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
     args: {},
-    argTypes: {},
+    argTypes: {
+        size: { options: ["sm", "md", "lg"], control: { type: "radio" } },
+    },
 } satisfies Meta<typeof Base>;
 
 export default meta;
