@@ -1,33 +1,10 @@
-import React, { ComponentProps, ReactElement } from "react";
-import { TGenericSizes } from "../../../types";
+import React from "react";
 import clsx from "clsx";
 import "../button.scss";
 import "../../../styles/quill.css";
 import { Typography } from "../../Typography/base";
-import { QuillSvgProps } from "@deriv/quill-icons";
-
-export type TVariant = "primary" | "secondary" | "tertiary";
-
-export type TColor = "coral" | "black" | "white" | "purchase" | "sell";
-
-export type QuillIconComponent = React.ForwardRefExoticComponent<
-    Omit<QuillSvgProps, "ref">
->;
-export interface ButtonProps extends ComponentProps<"button"> {
-    variant?: TVariant;
-    color?: TColor;
-    icon?: QuillIconComponent;
-    chevronIcon?: QuillIconComponent;
-    isDropdownOpen: boolean;
-    size?: Extract<TGenericSizes, "xl" | "lg" | "md" | "sm">;
-    isDropDownMenu?: boolean;
-    isFullWidth?: boolean;
-    isLoading?: boolean;
-    iconPosition?: "start" | "end";
-    className?: string;
-    label?: string;
-    children?: ReactElement;
-}
+import {StandaloneChevronDownRegularIcon } from "@deriv/quill-icons";
+import { ButtonProps } from "../types";
 
 const ButtonSize = {
     xl: "quill-button__size--xl",
@@ -40,14 +17,14 @@ export const Button = ({
     className,
     color = "coral",
     icon: Icon,
-    chevronIcon: ChevronIcon,
+    isDropdownOpen,
+    dropdown = false,
     isFullWidth = false,
     isLoading = false,
-    size = "lg",
+    size = "md",
     label,
+    iconPosition,
     variant = "primary",
-    isDropDownMenu = false,
-    isDropdownOpen = false,
     ...rest
 }: ButtonProps) => {
     const buttonColorClass = `quill__color--${variant}-${color}`;
@@ -69,16 +46,17 @@ export const Button = ({
                 disabled={rest.disabled || isLoading}
                 {...rest}
             >
-                {Icon && !isLoading && <Icon iconSize={size} />}
-
+                {iconPosition == "start" && Icon && !isLoading && <Icon iconSize={size} />}
+                { /* To be Added isLoading based on requirement*/}
                 {label && !isLoading && (
-                    <Typography as="span">{label}</Typography>
+                    <Typography as="span" color={`${color}`}>{label}</Typography>
                 )}
-                {isDropDownMenu && ChevronIcon && (
-                    <ChevronIcon
+                {iconPosition == "end" && Icon && !isLoading && <Icon iconSize={size}/>}
+                {  dropdown && (
+                    <StandaloneChevronDownRegularIcon
                         iconSize={size}
                         data-state={isDropdownOpen ? "open" : "close"}
-                        className="transition-transform duration-300 data-[state=open]:rotate-180"
+                        
                     />
                 )}
             </button>
