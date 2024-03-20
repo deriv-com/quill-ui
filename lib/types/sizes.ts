@@ -11,3 +11,5 @@ export type TGenericSizes =
     | "sm"
     | "xl"
     | "xs";
+
+export type StandardSizes = Extract<TGenericSizes, "sm" | "md" | "lg">;

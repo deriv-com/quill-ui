@@ -1,0 +1,24 @@
+.quill-chip {
+    &__size {
+        &--sm {
+            padding-inline: var(--core-spacing-600);
+        }
+        &--md {
+            padding-inline: var(--semantic-spacing-general-md);
+        }
+        &--lg {
+            padding-inline: var(--semantic-spacing-general-lg);
+        }
+    }
+}
+
+.rotate {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    transform: rotate(0);
+
+    &[data-state="open"] {
+        transform: rotate(180deg);
+    }
+}
