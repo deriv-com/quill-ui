@@ -24,7 +24,6 @@ export const CaptionText = ({
             className={clsx(
                 `quill-typography__caption-text__weight--${weight}__decoration--${decoration}`,
                 "quill-typography__color--prominent",
-                "teting",
                 className,
             )}
             {...rest}
