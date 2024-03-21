@@ -1,5 +1,10 @@
 .quill-chip {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--semantic-spacing-gap-md);
+    border: var(--core-borderWidth-75) solid var(--core-color-opacity-black-100);
+    border-radius: var(--semantic-borderRadius-pill);
 
     &__size {
         &--sm {

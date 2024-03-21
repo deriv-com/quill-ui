@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { SelectableChipProps } from "../types";
 import { StandardSizes } from "../../../types";
 import {
@@ -7,6 +7,7 @@ import {
 } from "@deriv/quill-icons";
 import "../_chip.scss";
 import clsx from "clsx";
+import { CaptionText } from "../../Typography";
 
 export const ChipIconSizes: Record<
     StandardSizes,
@@ -29,7 +30,7 @@ export const ChipIconSizes: Record<
 export const Base = ({
     icon: Icon,
     size = "md",
-    children,
+    label,
     labelTag,
     dismissible = false,
     dropdown = false,
@@ -57,11 +58,15 @@ export const Base = ({
     return (
         <button
             onClick={handleClick}
-            className={clsx(`quill-chip__size--${size}`, className)}
+            className={clsx(
+                "quill-chip",
+                `quill-chip__size--${size}`,
+                className,
+            )}
             {...rest}
         >
             {Icon && <Icon {...ChipIconSizes[size]} />}
-            {children}
+            {label && <CaptionText size={size}>{label}</CaptionText>}
             {labelTag && <span className="">{labelTag}</span>}
             {dismissible && (
                 <StandaloneCircleXmarkRegularIcon

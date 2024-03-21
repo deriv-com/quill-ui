@@ -4,6 +4,7 @@ export interface BaseChipProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     dismissible?: boolean;
     icon?: QuillIconComponent;
+    label?: string;
     labelTag?: string;
     disabled?: boolean;
 }
