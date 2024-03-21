@@ -94,7 +94,18 @@ $weights: regular, bold;
 
 .quill-typography {
     &__color {
-        color: var(--semantic-color-typography-prominent);
+        &--prominent {
+            color: var(--semantic-color-typography-prominent);
+        }
+        &--default {
+            color: var(--semantic-color-typography-default);
+        }
+        &--subtle {
+            color: var(--semantic-color-typography-subtle);
+        }
+        &--disabled {
+            color: var(--semantic-color-typography-disabled);
+        }
     }
 
     &__caption-text {
