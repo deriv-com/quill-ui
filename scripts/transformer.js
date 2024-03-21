@@ -227,7 +227,7 @@ const mapSASSValues = () => {
 
     // Add temporary static values
     for (let i = 1; i <= 300; i++) {
-        sassContent += `--static-spacing-${i}: ${i}px;\n`;
+        sassContent += `--temp-static-spacing-${i}: ${i}px;\n`;
     }
 
     Object.keys(objectTokens).map((tokenKey) => {
