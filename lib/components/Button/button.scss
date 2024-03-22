@@ -1,5 +1,5 @@
 .quill-button{
-  
+    cursor: pointer ;
     &__size{
         display: inline-flex;
         align-items: center;
@@ -28,6 +28,12 @@
             font-size: 20px;
             gap:12px;
         }
+    }
+    &__transform {
+        transition-property: transform;
+        transition-duration: 300ms;
+        transform: rotate(180deg);
+        transition-timing-function: ease-in-out;
     }
 
     &__full-width {
