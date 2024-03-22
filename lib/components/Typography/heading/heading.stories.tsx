@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Heading } from ".";
 const meta = {
-    title: "Typography/Heading",
+    title: "Components/Typography/Heading",
     component: Heading.H1,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],

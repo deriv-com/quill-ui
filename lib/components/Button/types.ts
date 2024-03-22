@@ -18,6 +18,7 @@ export interface ButtonProps extends ComponentProps<"button"> {
     selected?: boolean;
     size?: Extract<TGenericSizes, "xl" | "lg" | "md" | "sm">;
     dropdown?: boolean;
+    disabled?: boolean;
     onItemSelect?: (
         event: React.MouseEvent<HTMLButtonElement>,
         value: boolean,

@@ -65,7 +65,7 @@ export const DropdownButton = forwardRef<
         console.log('selectedItem',selectedItem)
 
     return (
-      <div className="flex flex-col">
+      <div className="dropdown-menu__box">
         <Listbox value={selectedItem} onChange={handleItemSelect}>
           {({ open }) => (
             <>

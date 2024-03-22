@@ -1,4 +1,7 @@
 .dropdown-menu {
+    &__box{
+        width: fit-content;
+    }
     &__container{
         background-color: var(--core-color-solid-slate-50);
         border-radius: 24px;
@@ -9,7 +12,7 @@
         align-items: flex-start;
         max-height: 230px;
         overflow-y: scroll;
-        width: fit-content;
+        width: fit-content
 
     }
     &__item{

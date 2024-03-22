@@ -32,6 +32,8 @@
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build --output-dir dist/storybook",
         "test": "jest",
+        "test:update": "jest --updateSnapshot",
+        "test:staged": "jest --onlyChanged",
         "prepare": "husky install"
     },
     "devDependencies": {
@@ -78,6 +80,7 @@
         "identity-obj-proxy": "^3.0.0",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
+        "lint-staged": "^15.2.2",
         "prettier": "3.2.5",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -123,7 +126,7 @@
         }
     },
     "dependencies": {
-        "@deriv/quill-icons": "^1.19.5",
+        "@deriv/quill-icons": "^1.19.8",
         "@headlessui/react": "^1.7.18",
         "usehooks-ts": "^3.0.1"
     }

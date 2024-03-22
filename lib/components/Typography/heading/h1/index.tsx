@@ -10,7 +10,11 @@ const H1 = ({ children, className, as = "h1", ...rest }: Heading) => {
     return (
         <Typography
             as={as}
-            className={clsx("quill-typography__h1", className)}
+            className={clsx(
+                "quill-typography__h1",
+                "quill-typography__color--prominent",
+                className,
+            )}
             {...rest}
         >
             {children}

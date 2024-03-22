@@ -1,5 +1,8 @@
 .quill-button{
     cursor: pointer ;
+    &:disabled {
+        cursor: auto;
+      }
     &__size{
         display: inline-flex;
         align-items: center;

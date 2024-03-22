@@ -17,7 +17,7 @@ const iconSizes = {
 };
 
 const meta = {
-    title: "Components/Button",
+    title: "Components/Button/Basic",
     component: Button,
     parameters: {
         layout: "centered",

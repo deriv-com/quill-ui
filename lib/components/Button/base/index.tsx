@@ -22,7 +22,7 @@ export const Button = forwardRef<
         className,
         color = "coral",
             icon: Icon,
-        children,
+            children,
         isDropdownOpen,
         dropdown = false,
         selected,
@@ -56,15 +56,13 @@ export const Button = forwardRef<
         className={clsx(
             "quill-button",
             "quill-button__size",
-            ButtonSize[size],
+             ButtonSize[size],
             buttonColorClass,
-
-            {
-                "quill-button__full-width": isFullWidth,
-            },
             className,
             {...rest}
-        )}
+              )}
+  
+          disabled={rest.disabled}
           data-state={selected ? 'selected' : ''}
           ref={ref}
           onClick={handleClick}
