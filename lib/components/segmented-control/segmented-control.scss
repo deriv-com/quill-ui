@@ -1,0 +1,58 @@
+@import "../../styles/index.scss";
+
+// TODO: improve styles, use mixins for sizes, and vars instead of units
+.segmented-control {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    background: var(--core-color-opacity-black-75, rgba(0, 0, 0, 0.04));
+
+    .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 0 0;
+
+        .icon {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &--sm {
+        height: 40px;
+        padding: 4px;
+        border-radius: var(--semantic-borderRadius-md);
+
+        .item {
+            height: 32px;
+            padding: 5px 8px;
+            gap: var(--semantic-spacing-gap-sm);
+            border-radius: var(--semantic-borderRadius-sm);
+        }
+    }
+    &--md {
+        height: 56px;
+        padding: 8px;
+        border-radius: 16px;
+
+        .item {
+            height: 40px;
+            padding: 8px 16px;
+            gap: 8px;
+            border-radius: 8px;
+        }
+    }
+    &--lg {
+        height: 72px;
+        padding: 12px;
+        border-radius: 24px;
+
+        .item {
+            height: 48px;
+            padding: 9px 24px;
+            gap: 12px;
+            border-radius: 12px;
+            background: var(--core-color-solid-slate-50, #fff);
+        }
+    }
+}

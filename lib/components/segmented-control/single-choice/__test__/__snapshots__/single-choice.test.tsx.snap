@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SingleChoice Should render SingleChoice Group 1`] = `
+<div>
+  <div
+    class="segmented-control segmented-control--sm"
+  >
+    <div
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        ⛶
+      </span>
+      <span>
+        Label
+      </span>
+    </div>
+    <div
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        ⛶
+      </span>
+      <span>
+        Label
+      </span>
+    </div>
+    <div
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        ⛶
+      </span>
+      <span>
+        Label
+      </span>
+    </div>
+    <div
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        ⛶
+      </span>
+      <span>
+        Label
+      </span>
+    </div>
+    <div
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        ⛶
+      </span>
+      <span>
+        Label
+      </span>
+    </div>
+  </div>
+</div>
+`;
