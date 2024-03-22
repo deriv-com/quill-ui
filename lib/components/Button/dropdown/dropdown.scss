@@ -4,10 +4,10 @@
     }
     &__container{
         background-color: var(--core-color-solid-slate-50);
-        border-radius: 24px;
+        border-radius: var(--core-borderRadius-1200);
         box-shadow: 0px 16px 24px 4px rgba(0, 0, 0, 0.02), 0px 16px 24px 4px rgba(0, 0, 0, 0.04);
         display: flex;
-        padding: 8px;
+        padding: var(--core-spacing-400);
         flex-direction: column;
         align-items: flex-start;
         max-height: 230px;
@@ -18,11 +18,11 @@
     &__item{
         cursor: pointer ;
         display: flex;
-        padding: 0px 16px;
+        padding: var(--core-spacing-50) var(--core-spacing-800);
         align-items: center;
-        gap: 8px;
+        gap: var(--temp-static-spacing-8);
         align-self: stretch;
-        border-radius: 12px;
+        border-radius: var(--core-borderRadius-600);
         &:hover{
             background-color: var(--core-color-solid-slate-75);
         }

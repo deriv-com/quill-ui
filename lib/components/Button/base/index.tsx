@@ -21,8 +21,8 @@ export const Button = forwardRef<
       {
         className,
         color = "coral",
-            icon: Icon,
-            children,
+        icon: Icon,
+        children,
         isDropdownOpen,
         dropdown = false,
         selected,
@@ -31,24 +31,12 @@ export const Button = forwardRef<
         label,
         iconPosition,
         variant = "primary",
-        onItemSelect,
         ...rest
       },
       ref,
       ) => {
         const buttonColorClass = `quill__color--${variant}-${color}`;
-      const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        if (dropdown) return
-        if (selected === undefined) {
-          const target = event.currentTarget
-          const isSelected = target.getAttribute('data-state') === 'selected'
-          const selected_state = isSelected ? '' : 'selected'
-          target.setAttribute('data-state', selected_state)
-          onItemSelect?.(event, !isSelected)
-        } else {
-          onItemSelect?.(event, selected)
-        }
-      }
+    
   
       return (
         <button
@@ -64,12 +52,12 @@ export const Button = forwardRef<
           disabled={rest.disabled}
           data-state={selected ? 'selected' : ''}
           ref={ref}
-          onClick={handleClick}
+         
         >
           {iconPosition == "start" && Icon && !isLoading && <Icon iconSize={size} />}
               { /* To be Added isLoading based on requirement*/}
            
-                  <div  >{children}</div>
+                {children && <div>{children}</div>}  
         
                 {label && (
                     <Typography as="span" color={`${color}`}>{label}</Typography>

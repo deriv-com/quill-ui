@@ -61,7 +61,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const DropdownChipSingleSelect: Story = {
+export const DropdownMenu: Story = {
     args: {
     options: [
       { value: '1', label: 'Sample Item 1' },

@@ -8,28 +8,28 @@
         align-items: center;
         justify-content: center;
         &--sm{
-            padding: 3px 8px;
-            border-radius: 8px;
-            font-size: 12px;
-            gap: 4px;
+            padding: var(--temp-static-spacing-3) var(--core-spacing-400);
+            border-radius: var(--core-borderRadius-400);
+            font-size: var(--core-fontSize-50);
+            gap: var(--temp-static-spacing-4);
         }
         &--md{
-            padding: 5px 12px;
-            border-radius: 12px;
-            font-size: 14px;
-            gap: 6px;
+            padding: var(--temp-static-spacing-5) var(--core-spacing-600);
+            border-radius: var(--core-borderRadius-600);
+            font-size: var(--core-fontSize-75);
+            gap: var(--temp-static-spacing-6);
         }
         &--lg{
-            padding: 12px 16px;
-            border-radius: 16px;
-            font-size: 16px;
-            gap: 8px;
+            padding: var(--core-spacing-600) var(--core-spacing-800);
+            border-radius: var(--core-borderRadius-800);
+            font-size: var(--core-fontSize-100);
+            gap: var(--temp-static-spacing-8);
         }
         &--xl{
-            padding: 17px 24px;
-            border-radius: 24px;
-            font-size: 20px;
-            gap:12px;
+            padding: var(--temp-static-spacing-17) var(--core-spacing-1200);
+            border-radius: var(--core-borderRadius-1200);
+            font-size: var(--core-fontSize-300);
+            gap: var(--temp-static-spacing-12);
         }
     }
     &__transform {

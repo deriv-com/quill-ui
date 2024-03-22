@@ -23,15 +23,14 @@ const Options = ({ item }: { item: TSingleSelectItem }) => {
   return (
     <Listbox.Option value={item}>
       {({  selected }) => (
-        <li
+        <div
           className={clsx(
-
               'dropdown-menu__item',
               selected && `dropdown-menu__item--selected`,
           )}
         >
         <Typography> {item.label}</Typography> 
-        </li>
+        </div>
       )}
     </Listbox.Option>
   )
