@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { CaptionText } from ".";
 
 const meta = {
-    title: "Typography/Caption",
+    title: "Components/Typography/Caption",
     component: CaptionText,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
