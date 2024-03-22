@@ -15,7 +15,7 @@ export type TSingleSelectItem = {
   export interface SingleSelectChipProps extends ButtonProps {
     options: TSingleSelectItem[]
     defaultOption: TSingleSelectItem
-    onSelectionChange: (item: TSingleSelectItem) => void
+    onSelectionChange?: (item: TSingleSelectItem) => void
   }
 
   
@@ -58,11 +58,10 @@ export const DropdownButton = forwardRef<
     const [selectedItem, setSelectedItem] =
       useState<TSingleSelectItem>(defaultOption)
 
-    const handleItemSelect = (item: TSingleSelectItem) => {
-      setSelectedItem(item)
-      onSelectionChange?.(item)
-    }
-        console.log('selectedItem',selectedItem)
+        const handleItemSelect = (item: TSingleSelectItem) => {
+            setSelectedItem(item)
+            onSelectionChange?.(item)
+        }
 
     return (
       <div className="dropdown-menu__box">

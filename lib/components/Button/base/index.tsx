@@ -26,7 +26,6 @@ export const Button = forwardRef<
         isDropdownOpen,
         dropdown = false,
         selected,
-        isFullWidth = false,
         isLoading = false,
         size = "md",
         label,
