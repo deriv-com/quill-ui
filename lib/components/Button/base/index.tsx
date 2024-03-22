@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import "../button.scss";
   import "../../../styles/quill.css";
-  import { Typography } from "../../Typography/base";
+  import { Text } from "../../Typography/text";
   import {StandaloneChevronDownRegularIcon } from "@deriv/quill-icons";
   import { ButtonProps } from "../types";
   
@@ -54,24 +54,24 @@ export const Button = forwardRef<
           ref={ref}
          
         >
-          {iconPosition == "start" && Icon && !isLoading && <Icon iconSize={size} />}
+          {iconPosition === "start" && Icon && !isLoading && <Icon iconSize={size} />}
               { /* To be Added isLoading based on requirement*/}
            
                 {children && <div>{children}</div>}  
         
                 {label && (
-                    <Typography as="span" color={`${color}`}>{label}</Typography>
+                    <Text as="span" color={`${color}`}>{label}</Text>
                 )}
-                {iconPosition == "end" && Icon && !isLoading && <Icon iconSize={size}/>}
-          {dropdown && (
+                {iconPosition === "end" && Icon && !isLoading && <Icon iconSize={size}/>}
+        {dropdown && (
             <>
-                <StandaloneChevronDownRegularIcon
-                          iconSize={size}
-                          data-state={isDropdownOpen ? "open" : "close"}
-                          className={clsx(isDropdownOpen && "quill-button__transform")}
-                    />
+                    <StandaloneChevronDownRegularIcon
+                                        iconSize={size}
+                                        data-state={isDropdownOpen ? "open" : "close"}
+                                        className={`${isDropdownOpen && "quill-button__transform"}`}
+                            />
             </>
-          )}
+        )}
         </button>
       )
     },

@@ -11,3 +11,5 @@ export type TGenericSizes =
     | "sm"
     | "xl"
     | "xs";
+
+    export type TDefaultColor = "coral" | "black" | "white"

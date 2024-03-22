@@ -1,12 +1,13 @@
 .quill-button{
     cursor: pointer ;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     &:disabled {
         cursor: auto;
       }
     &__size{
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+      
         &--sm{
             padding: var(--temp-static-spacing-3) var(--core-spacing-400);
             border-radius: var(--core-borderRadius-400);

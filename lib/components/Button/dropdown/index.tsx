@@ -5,7 +5,7 @@ import { ButtonProps } from '../types'
 import clsx from 'clsx'
 import { Button } from '../base'
 import './dropdown.scss'
-import { Typography } from "../../Typography/base";
+import { Text } from "../../Typography/text";
 
 export type TSingleSelectItem = {
     value: number | string
@@ -29,7 +29,7 @@ const Options = ({ item }: { item: TSingleSelectItem }) => {
               selected && `dropdown-menu__item--selected`,
           )}
         >
-        <Typography> {item.label}</Typography> 
+        <Text as="p"> {item.label}</Text> 
         </div>
       )}
     </Listbox.Option>
@@ -80,7 +80,7 @@ export const DropdownButton = forwardRef<
                   isDropdownOpen={open}
                   disabled={disabled}
                 >
-                  <Typography as="span" color={`${color}`}>{selectedItem?.label}</Typography>
+                  <Text as="span" color={`${color}`}>{selectedItem?.label}</Text>
                 </Button>
               </Listbox.Button>
               <Transition

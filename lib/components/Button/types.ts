@@ -1,10 +1,10 @@
 import { QuillSvgProps } from "@deriv/quill-icons";
 import { ComponentProps, ReactElement, ReactNode } from "react";
-import { TGenericSizes } from "../../types";
+import { TDefaultColor, TGenericSizes } from "../../types";
 
 export type TVariant = "primary" | "secondary" | "tertiary";
 
-export type TColor = "coral" | "black" | "white" | "purchase" | "sell";
+export type TColor = TDefaultColor | "purchase" | "sell";
 
 export type QuillIconComponent = React.ForwardRefExoticComponent<
     Omit<QuillSvgProps, "ref">

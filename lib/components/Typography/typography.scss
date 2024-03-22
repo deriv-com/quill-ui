@@ -21,9 +21,9 @@ $weights: regular, bold;
     line-height: var(
         --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-lineHeight
     );
-    padding-block: var(
-        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-paragraphSpacing
-    );
+    //padding-block: var(
+    //    --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-paragraphSpacing
+    //);
     letter-spacing: var(
         --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-letterSpacing
     );
