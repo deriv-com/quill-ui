@@ -1,0 +1,68 @@
+:root {
+    --core-motion-ease-100: cubic-bezier(0, 0, 1, 1);
+    --core-motion-ease-200: cubic-bezier(1, 0, 1, 1);
+    --core-motion-ease-300: cubic-bezier(0, 0, 0, 1);
+    --core-motion-ease-400: cubic-bezier(0.72, 0, 0.24, 1);
+    --core-motion-duration-50: 0ms;
+    --core-motion-duration-100: 80ms;
+    --core-motion-duration-200: 160ms;
+    --core-motion-duration-300: 240ms;
+    --core-motion-duration-400: 480ms;
+    --core-motion-duration-500: 720ms;
+    --core-motion-duration-600: 960ms;
+    --core-motion-duration-700: 1200ms;
+    --core-motion-duration-800: 1440ms;
+    --core-motion-duration-900: 1680ms;
+    --core-motion-duration-1000: 1920ms;
+    --core-motion-duration-1100: 2400ms;
+    --core-motion-duration-1200: 2880ms;
+    --core-motion-duration-1300: 3360ms;
+    --core-motion-duration-1400: 3840ms;
+    --core-motion-duration-1500: 4320ms;
+    --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+    --motion-easing-in: cubic-bezier(1, 0, 1, 1);
+    --motion-easing-out: cubic-bezier(0, 0, 0, 1);
+    --motion-easing-inandout: cubic-bezier(0.72, 0, 0.24, 1);
+    --motion-duration-instant: 0ms;
+    --motion-duration-snappy: 240ms;
+    --motion-duration-moderate: 480ms;
+    --motion-duration-relax: 720ms;
+    --motion-duration-deliberate: 960ms;
+}
+
+/* Media Queries for Semantic Tokens */
+
+@media (min-width: 640px) {
+    :root {
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+    }
+}
+
+@media (min-width: 1280px) {
+    :root {
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+    }
+}
+
+/* Theme Styling */
+
+:root {
+    .theme--light {
+    }
+
+    .theme--dark {
+    }
+}

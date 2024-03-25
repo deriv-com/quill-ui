@@ -1,0 +1,276 @@
+:root {
+    --core-color-solid-red-100: #ffe6e6;
+    --core-color-solid-red-200: #ffbfbf;
+    --core-color-solid-red-300: #ff9999;
+    --core-color-solid-red-400: #ff7373;
+    --core-color-solid-red-500: #ff4d4d;
+    --core-color-solid-red-600: #f92e26;
+    --core-color-solid-red-700: #e6190e;
+    --core-color-solid-red-800: #db0800;
+    --core-color-solid-red-900: #c40000;
+    --core-color-solid-red-1000: #a60000;
+    --core-color-solid-red-1100: #880000;
+    --core-color-solid-red-1200: #6a0000;
+    --core-color-solid-red-1300: #4d0000;
+    --core-color-solid-orange-100: #feefe7;
+    --core-color-solid-orange-200: #fdd7c2;
+    --core-color-solid-orange-300: #fbbf9d;
+    --core-color-solid-orange-400: #faa778;
+    --core-color-solid-orange-500: #f88f54;
+    --core-color-solid-orange-600: #f7772f;
+    --core-color-solid-orange-700: #f55f0a;
+    --core-color-solid-orange-800: #d85409;
+    --core-color-solid-orange-900: #bc4908;
+    --core-color-solid-orange-1000: #9f3e07;
+    --core-color-solid-orange-1100: #833305;
+    --core-color-solid-orange-1200: #662804;
+    --core-color-solid-orange-1300: #4a1d03;
+    --core-color-solid-yellow-100: #fff7e6;
+    --core-color-solid-yellow-200: #ffeabf;
+    --core-color-solid-yellow-300: #ffdd99;
+    --core-color-solid-yellow-400: #ffce73;
+    --core-color-solid-yellow-500: #ffbe4d;
+    --core-color-solid-yellow-600: #ffae26;
+    --core-color-solid-yellow-700: #ff9c13;
+    --core-color-solid-yellow-800: #e18d00;
+    --core-color-solid-yellow-900: #c47d00;
+    --core-color-solid-yellow-1000: #a66c00;
+    --core-color-solid-yellow-1100: #885a00;
+    --core-color-solid-yellow-1200: #6a4800;
+    --core-color-solid-yellow-1300: #4d3500;
+    --core-color-solid-mustard-100: #fef9e7;
+    --core-color-solid-mustard-200: #fdf1c2;
+    --core-color-solid-mustard-300: #fce89d;
+    --core-color-solid-mustard-400: #fbe079;
+    --core-color-solid-mustard-500: #f9d754;
+    --core-color-solid-mustard-600: #f8cf30;
+    --core-color-solid-mustard-700: #f7c60b;
+    --core-color-solid-mustard-800: #daaf0a;
+    --core-color-solid-mustard-900: #bd9808;
+    --core-color-solid-mustard-1000: #a18107;
+    --core-color-solid-mustard-1100: #846a06;
+    --core-color-solid-mustard-1200: #675305;
+    --core-color-solid-mustard-1300: #4a3b03;
+    --core-color-solid-olive-100: #fcfbe6;
+    --core-color-solid-olive-200: #f7f6c0;
+    --core-color-solid-olive-300: #f3f09a;
+    --core-color-solid-olive-400: #eeeb74;
+    --core-color-solid-olive-500: #e9e54e;
+    --core-color-solid-olive-600: #e5e028;
+    --core-color-solid-olive-700: #e0da02;
+    --core-color-solid-olive-800: #c6c102;
+    --core-color-solid-olive-900: #aca702;
+    --core-color-solid-olive-1000: #928e01;
+    --core-color-solid-olive-1100: #787401;
+    --core-color-solid-olive-1200: #5d5b01;
+    --core-color-solid-olive-1300: #434101;
+    --core-color-solid-green-100: #e6fae9;
+    --core-color-solid-green-200: #bfefc8;
+    --core-color-solid-green-300: #99e2a8;
+    --core-color-solid-green-400: #73d089;
+    --core-color-solid-green-500: #4dbc6b;
+    --core-color-solid-green-600: #26a44e;
+    --core-color-solid-green-700: #008832;
+    --core-color-solid-green-800: #00822a;
+    --core-color-solid-green-900: #007a22;
+    --core-color-solid-green-1000: #006f1b;
+    --core-color-solid-green-1100: #006114;
+    --core-color-solid-green-1200: #00500f;
+    --core-color-solid-green-1300: #003d0a;
+    --core-color-solid-emerald-100: #e6fff9;
+    --core-color-solid-emerald-200: #bfffed;
+    --core-color-solid-emerald-300: #99ffdf;
+    --core-color-solid-emerald-400: #73f9cf;
+    --core-color-solid-emerald-500: #4decbc;
+    --core-color-solid-emerald-600: #26daa7;
+    --core-color-solid-emerald-700: #00c390;
+    --core-color-solid-emerald-800: #00bb86;
+    --core-color-solid-emerald-900: #00ae7a;
+    --core-color-solid-emerald-1000: #009e6d;
+    --core-color-solid-emerald-1100: #00885d;
+    --core-color-solid-emerald-1200: #006a4c;
+    --core-color-solid-emerald-1300: #004d39;
+    --core-color-solid-tiffany-100: #e8fdf8;
+    --core-color-solid-tiffany-200: #c5faef;
+    --core-color-solid-tiffany-300: #a2f7e5;
+    --core-color-solid-tiffany-400: #7ff3db;
+    --core-color-solid-tiffany-500: #5df0d1;
+    --core-color-solid-tiffany-600: #3aedc7;
+    --core-color-solid-tiffany-700: #17eabd;
+    --core-color-solid-tiffany-800: #14cfa7;
+    --core-color-solid-tiffany-900: #12b391;
+    --core-color-solid-tiffany-1000: #0f987b;
+    --core-color-solid-tiffany-1100: #0c7d65;
+    --core-color-solid-tiffany-1200: #0a624f;
+    --core-color-solid-tiffany-1300: #074639;
+    --core-color-solid-teal-100: #e6fafa;
+    --core-color-solid-teal-200: #bff2f2;
+    --core-color-solid-teal-300: #99ebeb;
+    --core-color-solid-teal-400: #73e3e3;
+    --core-color-solid-teal-500: #4ddbdb;
+    --core-color-solid-teal-600: #26d4d4;
+    --core-color-solid-teal-700: #00cccc;
+    --core-color-solid-teal-800: #00b4b4;
+    --core-color-solid-teal-900: #009c9c;
+    --core-color-solid-teal-1000: #008585;
+    --core-color-solid-teal-1100: #006d6d;
+    --core-color-solid-teal-1200: #005555;
+    --core-color-solid-teal-1300: #003d3d;
+    --core-color-solid-seawater-100: #e7f6f7;
+    --core-color-solid-seawater-200: #c2e7eb;
+    --core-color-solid-seawater-300: #9dd9df;
+    --core-color-solid-seawater-400: #78cbd4;
+    --core-color-solid-seawater-500: #54bdc8;
+    --core-color-solid-seawater-600: #2faebc;
+    --core-color-solid-seawater-700: #0aa0b0;
+    --core-color-solid-seawater-800: #098d9c;
+    --core-color-solid-seawater-900: #087b87;
+    --core-color-solid-seawater-1000: #076872;
+    --core-color-solid-seawater-1100: #05555e;
+    --core-color-solid-seawater-1200: #044349;
+    --core-color-solid-seawater-1300: #033035;
+    --core-color-solid-blue-100: #e6f5ff;
+    --core-color-solid-blue-200: #bfe7ff;
+    --core-color-solid-blue-300: #99d8ff;
+    --core-color-solid-blue-400: #73c9ff;
+    --core-color-solid-blue-500: #53b9ff;
+    --core-color-solid-blue-600: #3daaff;
+    --core-color-solid-blue-700: #2c9aff;
+    --core-color-solid-blue-800: #1789e1;
+    --core-color-solid-blue-900: #0777c4;
+    --core-color-solid-blue-1000: #0066a6;
+    --core-color-solid-blue-1100: #005488;
+    --core-color-solid-blue-1200: #00426a;
+    --core-color-solid-blue-1300: #00304d;
+    --core-color-solid-sapphire-100: #e7eafe;
+    --core-color-solid-sapphire-200: #c2c9fd;
+    --core-color-solid-sapphire-300: #9ea9fc;
+    --core-color-solid-sapphire-400: #7989fb;
+    --core-color-solid-sapphire-500: #5569f9;
+    --core-color-solid-sapphire-600: #3148f8;
+    --core-color-solid-sapphire-700: #0c28f7;
+    --core-color-solid-sapphire-800: #0b23da;
+    --core-color-solid-sapphire-900: #091fbd;
+    --core-color-solid-sapphire-1000: #081aa1;
+    --core-color-solid-sapphire-1100: #061584;
+    --core-color-solid-sapphire-1200: #051167;
+    --core-color-solid-sapphire-1300: #040c4a;
+    --core-color-solid-blueberry-100: #ede6fc;
+    --core-color-solid-blueberry-200: #d2c0f7;
+    --core-color-solid-blueberry-300: #b69af3;
+    --core-color-solid-blueberry-400: #9b74ee;
+    --core-color-solid-blueberry-500: #804ee9;
+    --core-color-solid-blueberry-600: #6428e5;
+    --core-color-solid-blueberry-700: #4902e0;
+    --core-color-solid-blueberry-800: #4102c6;
+    --core-color-solid-blueberry-900: #3802ac;
+    --core-color-solid-blueberry-1000: #2f0192;
+    --core-color-solid-blueberry-1100: #270178;
+    --core-color-solid-blueberry-1200: #1e015d;
+    --core-color-solid-blueberry-1300: #160143;
+    --core-color-solid-grape-100: #f2e7fa;
+    --core-color-solid-grape-200: #dfc3f3;
+    --core-color-solid-grape-300: #cc9eec;
+    --core-color-solid-grape-400: #b97ae5;
+    --core-color-solid-grape-500: #a556dd;
+    --core-color-solid-grape-600: #9231d6;
+    --core-color-solid-grape-700: #7f0dcf;
+    --core-color-solid-grape-800: #700cb7;
+    --core-color-solid-grape-900: #610a9f;
+    --core-color-solid-grape-1000: #530987;
+    --core-color-solid-grape-1100: #44076e;
+    --core-color-solid-grape-1200: #350556;
+    --core-color-solid-grape-1300: #26043e;
+    --core-color-solid-magenta-100: #fae7fe;
+    --core-color-solid-magenta-200: #f2c3fd;
+    --core-color-solid-magenta-300: #ea9efc;
+    --core-color-solid-magenta-400: #e27afb;
+    --core-color-solid-magenta-500: #db56f9;
+    --core-color-solid-magenta-600: #d331f8;
+    --core-color-solid-magenta-700: #cb0df7;
+    --core-color-solid-magenta-800: #b30cda;
+    --core-color-solid-magenta-900: #9c0abd;
+    --core-color-solid-magenta-1000: #8409a1;
+    --core-color-solid-magenta-1100: #6c0784;
+    --core-color-solid-magenta-1200: #550567;
+    --core-color-solid-magenta-1300: #3d044a;
+    --core-color-solid-cherry-100: #ffe6e7;
+    --core-color-solid-cherry-200: #ffbfc6;
+    --core-color-solid-cherry-300: #ff99a6;
+    --core-color-solid-cherry-400: #ff7389;
+    --core-color-solid-cherry-500: #ff4d6e;
+    --core-color-solid-cherry-600: #f32656;
+    --core-color-solid-cherry-700: #de0040;
+    --core-color-solid-cherry-800: #d40032;
+    --core-color-solid-cherry-900: #c40025;
+    --core-color-solid-cherry-1000: #a6001a;
+    --core-color-solid-cherry-1100: #880011;
+    --core-color-solid-cherry-1200: #6a000a;
+    --core-color-solid-cherry-1300: #4d0005;
+    --core-color-solid-coral-100: #ffe6e6;
+    --core-color-solid-coral-200: #ffbfc2;
+    --core-color-solid-coral-300: #ff9ba3;
+    --core-color-solid-coral-400: #ff7e88;
+    --core-color-solid-coral-500: #ff6671;
+    --core-color-solid-coral-600: #ff535e;
+    --core-color-solid-coral-700: #ff444f;
+    --core-color-solid-coral-800: #e12e3a;
+    --core-color-solid-coral-900: #c41c28;
+    --core-color-solid-coral-1000: #a60e19;
+    --core-color-solid-coral-1100: #88030d;
+    --core-color-solid-coral-1200: #6a0004;
+    --core-color-solid-coral-1300: #4d0000;
+    --core-color-solid-slate-50: #ffffff;
+    --core-color-solid-slate-75: #f6f7f8;
+    --core-color-solid-slate-100: #ebecef;
+    --core-color-solid-slate-200: #ced0d6;
+    --core-color-solid-slate-300: #b1b4bc;
+    --core-color-solid-slate-400: #9498a2;
+    --core-color-solid-slate-500: #787d88;
+    --core-color-solid-slate-600: #5c616d;
+    --core-color-solid-slate-700: #414652;
+    --core-color-solid-slate-800: #383d4a;
+    --core-color-solid-slate-900: #303541;
+    --core-color-solid-slate-1000: #282c38;
+    --core-color-solid-slate-1100: #20242f;
+    --core-color-solid-slate-1200: #181c25;
+    --core-color-solid-slate-1300: #11141b;
+    --core-color-solid-slate-1400: #000000;
+}
+
+/* Media Queries for Semantic Tokens */
+
+@media (min-width: 640px) {
+    :root {
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+    }
+}
+
+@media (min-width: 1280px) {
+    :root {
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+    }
+}
+
+/* Theme Styling */
+
+:root {
+    .theme--light {
+    }
+
+    .theme--dark {
+    }
+}

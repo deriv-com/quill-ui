@@ -35,6 +35,32 @@ const semanticTokenNames = [
 
 const themeTokenNames = ["semantic/theme/light", "semantic/theme/dark"];
 
+const styleCategoryNames = {
+    spacing: "spacing",
+    opacity: "core.opacity",
+    color: "color.solid",
+    "color.gradient": "color.gradient",
+    "color.opacity": "color.opacity",
+    "color.semantic": "semantic.color",
+    "font.size": "fontSize",
+    "font.weight": "fontWeight",
+    "font.family": "fontFamily",
+    "line.height": "lineHeight",
+    "letter.spacing": "letterSpacing",
+    "text.decoration": "textDecoration",
+    gap: "paragraphSpacing",
+    border: "border",
+    elevation: "elevation",
+    motion: "motion",
+    size: ".size.",
+    static: "temp",
+    others: "others",
+};
+
+const styleStrings = Object.fromEntries(
+    Object.keys(styleCategoryNames).map((key) => [key, ""]),
+);
+
 const allTokenNames = [
     ...tokenNames,
     ...semanticTokenNames,
@@ -157,96 +183,162 @@ const generateSassVariables = ({
     return coreRules;
 };
 
-const generateMediaQueryVariables = () => {
-    let sassContent = ``;
+const generateMediaQueryVariables = (styleStrings) => {
+    Object.keys(styleStrings).map((styleString) => {
+        const groupCode = styleCategoryNames[styleString];
 
-    sassContent += `\n
+        styleStrings[styleString] += `\n
     /* Media Queries for Semantic Tokens */ \n`;
 
-    semanticTokenNames.map((name) => {
-        const semanticTokenGroup = getTokenGroup([name]);
-        const semanticObjectTokens = generateSassVariables({
-            data: semanticTokenGroup,
-        });
+        semanticTokenNames.map((name) => {
+            const semanticTokenGroup = getTokenGroup([name]);
+            const semanticObjectTokens = generateSassVariables({
+                data: semanticTokenGroup,
+            });
 
-        const viewportValue = (name.match(/\/(\d+)-plus$/) || [])[1];
+            const viewportValue = (name.match(/\/(\d+)-plus$/) || [])[1];
 
-        sassContent += `\n
+            styleStrings[styleString] += `\n
     @media (min-width: ${viewportValue}px)  { \n
     :root { \n    
     `;
 
-        Object.keys(semanticObjectTokens).map((tokenKey) => {
-            const tokenValue = semanticObjectTokens[tokenKey];
-            sassContent += `${convertCSSkey(tokenKey)}: ${tokenValue};\n`;
-        });
+            Object.keys(semanticObjectTokens).map((tokenKey) => {
+                const convertedKey = convertCSSkey(tokenKey);
+                const tokenValue = semanticObjectTokens[tokenKey];
+                if (tokenKey.includes(groupCode)) {
+                    styleStrings[styleString] +=
+                        `${convertedKey}: ${tokenValue};\n`;
+                }
 
-        sassContent += "}\n}\n";
+                if (
+                    groupCode === "others" &&
+                    !Object.values(styleStrings).some((e) =>
+                        e.includes(convertedKey),
+                    )
+                ) {
+                    styleStrings.others += `${convertedKey}: ${tokenValue};\n`;
+                }
+            });
+
+            styleStrings[styleString] += "}\n}\n";
+        });
     });
 
-    return sassContent;
+    return styleStrings;
 };
 
-const generateThemeVariables = () => {
-    let sassContent = ``;
+const generateThemeVariables = (styleStrings) => {
+    Object.keys(styleStrings).map((styleString) => {
+        const groupCode = styleCategoryNames[styleString];
 
-    sassContent += `\n
+        styleStrings[styleString] += `\n
     /* Theme Styling */ \n
     :root { \n    
         `;
 
-    themeTokenNames.map((name) => {
-        const themeTokenGroup = getTokenGroup([name]);
-        const themeObjectTokens = generateSassVariables({
-            data: themeTokenGroup,
-        });
+        themeTokenNames.map((name) => {
+            const themeTokenGroup = getTokenGroup([name]);
+            const themeObjectTokens = generateSassVariables({
+                data: themeTokenGroup,
+            });
 
-        const themeName = name.replace(/^.*?\/(.*?)\/(.*)$/, "$1--$2");
+            const themeName = name.replace(/^.*?\/(.*?)\/(.*)$/, "$1--$2");
 
-        sassContent += `\n .${themeName} { \n
+            styleStrings[styleString] += `\n .${themeName} { \n
     `;
 
-        Object.keys(themeObjectTokens).map((tokenKey) => {
-            const tokenValue = themeObjectTokens[tokenKey];
-            sassContent += `${convertCSSkey(tokenKey)}: ${tokenValue};\n`;
+            Object.keys(themeObjectTokens).map((tokenKey) => {
+                const convertedKey = convertCSSkey(tokenKey);
+                const tokenValue = themeObjectTokens[tokenKey];
+                if (tokenKey.includes(groupCode)) {
+                    styleStrings[styleString] +=
+                        `${convertedKey}: ${tokenValue};\n`;
+                }
+                if (
+                    groupCode === "others" &&
+                    !Object.values(styleStrings).some((e) =>
+                        e.includes(convertedKey),
+                    )
+                ) {
+                    styleStrings.others += `${convertedKey}: ${tokenValue};\n`;
+                }
+            });
+
+            styleStrings[styleString] += "\n}\n";
         });
 
-        sassContent += "\n}\n";
+        styleStrings[styleString] += "\n}\n";
     });
 
-    sassContent += "\n}\n";
-
-    return sassContent;
+    return styleStrings;
 };
 
 const mapSASSValues = () => {
     const tokenGroup = getTokenGroup(tokenNames);
     const objectTokens = generateSassVariables({ data: tokenGroup });
 
-    let sassContent = `:root { \n`;
-
+    styleStrings.static = ``;
     // Add temporary static values
     for (let i = 1; i <= 300; i++) {
-        sassContent += `--temp-static-spacing-${i}: ${i}px;\n`;
+        styleStrings.static += `--temp-static-spacing-${i}: ${i}px;\n`;
     }
 
-    Object.keys(objectTokens).map((tokenKey) => {
-        const tokenValue = objectTokens[tokenKey];
-        sassContent += `${convertCSSkey(tokenKey)}: ${tokenValue};\n`;
+    styleStrings.static = `:root { \n  ${styleStrings.static}}`;
+
+    let sassContent = ``;
+
+    Object.keys(styleStrings).map((styleString) => {
+        const groupCode = styleCategoryNames[styleString];
+
+        styleStrings[styleString] += `:root { \n`;
+        sassContent += `:root { \n`;
+
+        Object.keys(objectTokens).map((tokenKey) => {
+            const tokenValue = objectTokens[tokenKey];
+            const convertedKey = convertCSSkey(tokenKey);
+
+            if (tokenKey.includes(groupCode)) {
+                sassContent += `${convertedKey}: ${tokenValue};\n`;
+                styleStrings[styleString] +=
+                    `${convertCSSkey(tokenKey)}: ${tokenValue};\n`;
+            }
+
+            if (
+                groupCode === "others" &&
+                !Object.values(styleStrings).some((e) =>
+                    e.includes(convertedKey),
+                )
+            ) {
+                styleStrings.others += `${convertedKey}: ${tokenValue};\n`;
+            }
+        });
+
+        sassContent += "}";
+        styleStrings[styleString] += "}";
     });
 
-    sassContent += "}";
+    // Generate Media query rules
+    let newStyleStrings = generateMediaQueryVariables(styleStrings);
 
-    sassContent += generateMediaQueryVariables();
-    sassContent += generateThemeVariables();
+    // Generate theme rules
+    newStyleStrings = generateThemeVariables(newStyleStrings);
 
-    // Map token variables
-    sassContent = mapTokenValues(objectTokens, sassContent);
+    // Do transformation on each files
+    Object.keys(newStyleStrings).map((styleString) => {
+        // Map token variables
+        newStyleStrings[styleString] = mapTokenValues(
+            objectTokens,
+            newStyleStrings[styleString],
+        );
 
-    // Convert HEX values to RGBA
-    sassContent = convertHexes(sassContent);
+        // Convert HEX values to RGBA
+        newStyleStrings[styleString] = convertHexes(
+            newStyleStrings[styleString],
+        );
+    });
 
-    return sassContent;
+    return { sassContent, styleStrings: newStyleStrings };
 };
 
 const checkKeysExist = (objectTokens, str) => {
@@ -286,22 +378,35 @@ const convertHexes = (str) => {
     return str.replaceAll(rgbaRegex, replaceRgba);
 };
 
+const trimEmptyRules = (string) => {
+    return string
+        .replace(/[\s\S]*?{[\s\n\r]+}/g, "")
+        .trim()
+        .replace("}", "");
+};
+
 const generateSassFile = () => {
-    const sassContent = mapSASSValues();
+    const { styleStrings } = mapSASSValues();
 
-    const filePaths = ["lib/styles/quill.scss", "lib/styles/quill.css"];
+    console.log("Successfully generated CSS files:");
 
-    filePaths.map((item) => {
-        const dirPath = path.dirname(item);
-        if (!fs.existsSync(dirPath)) {
-            fs.mkdirSync(dirPath, { recursive: true });
-        }
+    Object.keys(styleStrings).map((fileName) => {
+        const cssVariables = styleStrings[fileName];
+        const filePaths = [
+            `lib/styles/sass/${fileName}.scss`,
+            // `lib/styles/css/${fileName}.css`,
+        ];
 
-        fs.writeFileSync(item, sassContent);
+        filePaths.map((item) => {
+            const dirPath = path.dirname(item);
+            if (!fs.existsSync(dirPath)) {
+                fs.mkdirSync(dirPath, { recursive: true });
+            }
 
-        console.log(
-            `Quill UI CSS variables was generated successfully: ${item}`,
-        );
+            fs.writeFileSync(item, cssVariables);
+
+            console.log(`--${item}`);
+        });
     });
 };
 

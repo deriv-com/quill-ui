@@ -1,0 +1,743 @@
+:root {
+    --core-fontWeight-light: 300;
+    --core-fontWeight-regular: 400;
+    --core-fontWeight-bold: 700;
+    --core-fontWeight-italic: Italic;
+    --core-fontWeight-boldItalic: Bold Italic;
+    --semantic-typography-heading-hero-fontWeight: 700;
+    --semantic-typography-heading-h1-fontWeight: 700;
+    --semantic-typography-heading-h2-fontWeight: 700;
+    --semantic-typography-heading-h3-fontWeight: 700;
+    --semantic-typography-heading-h4-fontWeight: 700;
+    --semantic-typography-heading-h5-fontWeight: 700;
+    --semantic-typography-heading-h6-fontWeight: 700;
+    --semantic-typography-body-xl-regular-default-fontWeight: 400;
+    --semantic-typography-body-xl-regular-italic-fontWeight: Italic;
+    --semantic-typography-body-xl-regular-underline-fontWeight: 400;
+    --semantic-typography-body-xl-regular-italic-underline-fontWeight: Italic;
+    --semantic-typography-body-xl-bold-default-fontWeight: 700;
+    --semantic-typography-body-xl-bold-italic-fontWeight: Bold Italic;
+    --semantic-typography-body-xl-bold-underline-fontWeight: 700;
+    --semantic-typography-body-xl-bold-italic-underline-fontWeight: Bold Italic;
+    --semantic-typography-body-lg-regular-default-fontWeight: 400;
+    --semantic-typography-body-lg-regular-italic-fontWeight: Italic;
+    --semantic-typography-body-lg-regular-underline-fontWeight: 400;
+    --semantic-typography-body-lg-regular-italic-underline-fontWeight: Italic;
+    --semantic-typography-body-lg-bold-default-fontWeight: 700;
+    --semantic-typography-body-lg-bold-italic-fontWeight: Bold Italic;
+    --semantic-typography-body-lg-bold-underline-fontWeight: 700;
+    --semantic-typography-body-lg-bold-italic-underline-fontWeight: Bold Italic;
+    --semantic-typography-body-md-regular-default-fontWeight: 400;
+    --semantic-typography-body-md-regular-italic-fontWeight: Italic;
+    --semantic-typography-body-md-regular-underline-fontWeight: 400;
+    --semantic-typography-body-md-regular-italic-underline-fontWeight: Italic;
+    --semantic-typography-body-md-bold-default-fontWeight: 700;
+    --semantic-typography-body-md-bold-italic-fontWeight: Bold Italic;
+    --semantic-typography-body-md-bold-underline-fontWeight: 700;
+    --semantic-typography-body-md-bold-italic-underline-fontWeight: Bold Italic;
+    --semantic-typography-body-sm-regular-default-fontWeight: 400;
+    --semantic-typography-body-sm-regular-italic-fontWeight: Italic;
+    --semantic-typography-body-sm-regular-underline-fontWeight: 400;
+    --semantic-typography-body-sm-regular-italic-underline-fontWeight: Italic;
+    --semantic-typography-body-sm-bold-default-fontWeight: 700;
+    --semantic-typography-body-sm-bold-italic-fontWeight: Bold Italic;
+    --semantic-typography-body-sm-bold-underline-fontWeight: 700;
+    --semantic-typography-body-sm-bold-italic-underline-fontWeight: Bold Italic;
+    --semantic-typography-caption-regular-default-fontWeight: 400;
+    --semantic-typography-caption-regular-italic-fontWeight: Italic;
+    --semantic-typography-caption-regular-underline-fontWeight: 400;
+    --semantic-typography-caption-regular-italic-underline-fontWeight: Italic;
+    --semantic-typography-caption-bold-default-fontWeight: 700;
+    --semantic-typography-caption-bold-italic-fontWeight: Bold Italic;
+    --semantic-typography-caption-bold-underline-fontWeight: 700;
+    --semantic-typography-caption-bold-italic-underline-fontWeight: Bold Italic;
+    --semantic-typography-code-xl-regular-default-fontWeight: 400;
+    --semantic-typography-code-xl-regular-italic-fontWeight: Italic;
+    --semantic-typography-code-xl-regular-underline-fontWeight: 400;
+    --semantic-typography-code-xl-regular-italic-underline-fontWeight: Italic;
+    --semantic-typography-code-xl-bold-default-fontWeight: 700;
+    --semantic-typography-code-xl-bold-italic-fontWeight: Bold Italic;
+    --semantic-typography-code-xl-bold-underline-fontWeight: 700;
+    --semantic-typography-code-xl-bold-italic-underline-fontWeight: Bold Italic;
+    --semantic-typography-code-lg-regular-default-fontWeight: 400;
+    --semantic-typography-code-lg-regular-italic-fontWeight: Italic;
+    --semantic-typography-code-lg-regular-underline-fontWeight: 400;
+    --semantic-typography-code-lg-regular-italic-underline-fontWeight: Italic;
+    --semantic-typography-code-lg-bold-default-fontWeight: 700;
+    --semantic-typography-code-lg-bold-italic-fontWeight: Bold Italic;
+    --semantic-typography-code-lg-bold-underline-fontWeight: 700;
+    --semantic-typography-code-lg-bold-italic-underline-fontWeight: Bold Italic;
+    --semantic-typography-code-md-regular-default-fontWeight: 400;
+    --semantic-typography-code-md-regular-italic-fontWeight: Italic;
+    --semantic-typography-code-md-regular-underline-fontWeight: 400;
+    --semantic-typography-code-md-regular-italic-underline-fontWeight: Italic;
+    --semantic-typography-code-md-bold-default-fontWeight: 700;
+    --semantic-typography-code-md-bold-italic-fontWeight: Bold Italic;
+    --semantic-typography-code-md-bold-underline-fontWeight: 700;
+    --semantic-typography-code-md-bold-italic-underline-fontWeight: Bold Italic;
+    --semantic-typography-code-sm-regular-default-fontWeight: 400;
+    --semantic-typography-code-sm-regular-italic-fontWeight: Italic;
+    --semantic-typography-code-sm-regular-underline-fontWeight: 400;
+    --semantic-typography-code-sm-regular-italic-underline-fontWeight: Italic;
+    --semantic-typography-code-sm-bold-default-fontWeight: 700;
+    --semantic-typography-code-sm-bold-italic-fontWeight: Bold Italic;
+    --semantic-typography-code-sm-bold-underline-fontWeight: 700;
+    --semantic-typography-code-sm-bold-italic-underline-fontWeight: Bold Italic;
+    --semantic-typography-icon-labelPaired-regular-xl-fontWeight: 300;
+    --semantic-typography-icon-labelPaired-regular-lg-fontWeight: 300;
+    --semantic-typography-icon-labelPaired-regular-md-fontWeight: 300;
+    --semantic-typography-icon-labelPaired-regular-sm-fontWeight: 300;
+    --semantic-typography-icon-labelPaired-regular-caption-fontWeight: 300;
+    --semantic-typography-icon-labelPaired-bold-xl-fontWeight: 400;
+    --semantic-typography-icon-labelPaired-bold-lg-fontWeight: 400;
+    --semantic-typography-icon-labelPaired-bold-md-fontWeight: 400;
+    --semantic-typography-icon-labelPaired-bold-sm-fontWeight: 400;
+    --semantic-typography-icon-labelPaired-bold-caption-fontWeight: 400;
+    --semantic-typography-icon-labelPaired-brand-xl-fontWeight: ;
+    --semantic-typography-icon-labelPaired-brand-lg-fontWeight: ;
+    --semantic-typography-icon-labelPaired-brand-md-fontWeight: ;
+    --semantic-typography-icon-labelPaired-brand-sm-fontWeight: ;
+    --semantic-typography-icon-labelPaired-brand-caption-fontWeight: ;
+    --semantic-typography-icon-standalone-regular-2xl-fontWeight: 300;
+    --semantic-typography-icon-standalone-regular-xl-fontWeight: 300;
+    --semantic-typography-icon-standalone-regular-lg-fontWeight: 300;
+    --semantic-typography-icon-standalone-regular-md-fontWeight: 300;
+    --semantic-typography-icon-standalone-regular-sm-fontWeight: 300;
+    --semantic-typography-icon-standalone-bold-2xl-fontWeight: 400;
+    --semantic-typography-icon-standalone-bold-xl-fontWeight: 400;
+    --semantic-typography-icon-standalone-bold-lg-fontWeight: 400;
+    --semantic-typography-icon-standalone-bold-md-fontWeight: 400;
+    --semantic-typography-icon-standalone-bold-sm-fontWeight: 400;
+    --semantic-typography-icon-standalone-brand-2xl-fontWeight: ;
+    --semantic-typography-icon-standalone-brand-xl-fontWeight: ;
+    --semantic-typography-icon-standalone-brand-lg-fontWeight: ;
+    --semantic-typography-icon-standalone-brand-md-fontWeight: ;
+    --semantic-typography-icon-standalone-brand-sm-fontWeight: ;
+}
+
+/* Media Queries for Semantic Tokens */
+
+@media (min-width: 640px) {
+    :root {
+        --semantic-typography-heading-hero-fontWeight: 700;
+        --semantic-typography-heading-h1-fontWeight: 700;
+        --semantic-typography-heading-h2-fontWeight: 700;
+        --semantic-typography-heading-h3-fontWeight: 700;
+        --semantic-typography-heading-h4-fontWeight: 700;
+        --semantic-typography-heading-h5-fontWeight: 700;
+        --semantic-typography-heading-h6-fontWeight: 700;
+        --semantic-typography-body-xl-regular-default-fontWeight: 400;
+        --semantic-typography-body-xl-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-xl-regular-underline-fontWeight: 400;
+        --semantic-typography-body-xl-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-xl-bold-default-fontWeight: 700;
+        --semantic-typography-body-xl-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-xl-bold-underline-fontWeight: 700;
+        --semantic-typography-body-xl-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-lg-regular-default-fontWeight: 400;
+        --semantic-typography-body-lg-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-lg-regular-underline-fontWeight: 400;
+        --semantic-typography-body-lg-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-lg-bold-default-fontWeight: 700;
+        --semantic-typography-body-lg-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-lg-bold-underline-fontWeight: 700;
+        --semantic-typography-body-lg-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-md-regular-default-fontWeight: 400;
+        --semantic-typography-body-md-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-md-regular-underline-fontWeight: 400;
+        --semantic-typography-body-md-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-md-bold-default-fontWeight: 700;
+        --semantic-typography-body-md-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-md-bold-underline-fontWeight: 700;
+        --semantic-typography-body-md-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-sm-regular-default-fontWeight: 400;
+        --semantic-typography-body-sm-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-sm-regular-underline-fontWeight: 400;
+        --semantic-typography-body-sm-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-sm-bold-default-fontWeight: 700;
+        --semantic-typography-body-sm-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-sm-bold-underline-fontWeight: 700;
+        --semantic-typography-body-sm-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-caption-regular-default-fontWeight: 400;
+        --semantic-typography-caption-regular-italic-fontWeight: Italic;
+        --semantic-typography-caption-regular-underline-fontWeight: 400;
+        --semantic-typography-caption-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-caption-bold-default-fontWeight: 700;
+        --semantic-typography-caption-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-caption-bold-underline-fontWeight: 700;
+        --semantic-typography-caption-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-xl-regular-default-fontWeight: 400;
+        --semantic-typography-code-xl-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-xl-regular-underline-fontWeight: 400;
+        --semantic-typography-code-xl-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-xl-bold-default-fontWeight: 700;
+        --semantic-typography-code-xl-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-xl-bold-underline-fontWeight: 700;
+        --semantic-typography-code-xl-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-lg-regular-default-fontWeight: 400;
+        --semantic-typography-code-lg-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-lg-regular-underline-fontWeight: 400;
+        --semantic-typography-code-lg-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-lg-bold-default-fontWeight: 700;
+        --semantic-typography-code-lg-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-lg-bold-underline-fontWeight: 700;
+        --semantic-typography-code-lg-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-md-regular-default-fontWeight: 400;
+        --semantic-typography-code-md-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-md-regular-underline-fontWeight: 400;
+        --semantic-typography-code-md-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-md-bold-default-fontWeight: 700;
+        --semantic-typography-code-md-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-md-bold-underline-fontWeight: 700;
+        --semantic-typography-code-md-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-sm-regular-default-fontWeight: 400;
+        --semantic-typography-code-sm-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-sm-regular-underline-fontWeight: 400;
+        --semantic-typography-code-sm-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-sm-bold-default-fontWeight: 700;
+        --semantic-typography-code-sm-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-sm-bold-underline-fontWeight: 700;
+        --semantic-typography-code-sm-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-icon-labelPaired-regular-xl-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-lg-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-md-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-sm-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-caption-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-bold-xl-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-lg-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-md-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-sm-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-caption-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-brand-xl-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-lg-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-md-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-sm-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-caption-fontWeight: ;
+        --semantic-typography-icon-standalone-regular-2xl-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-xl-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-lg-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-md-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-sm-fontWeight: 300;
+        --semantic-typography-icon-standalone-bold-2xl-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-xl-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-lg-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-md-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-sm-fontWeight: 400;
+        --semantic-typography-icon-standalone-brand-2xl-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-xl-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-lg-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-md-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-sm-fontWeight: ;
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        --semantic-typography-heading-hero-fontWeight: 700;
+        --semantic-typography-heading-h1-fontWeight: 700;
+        --semantic-typography-heading-h2-fontWeight: 700;
+        --semantic-typography-heading-h3-fontWeight: 700;
+        --semantic-typography-heading-h4-fontWeight: 700;
+        --semantic-typography-heading-h5-fontWeight: 700;
+        --semantic-typography-heading-h6-fontWeight: 700;
+        --semantic-typography-body-xl-regular-default-fontWeight: 400;
+        --semantic-typography-body-xl-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-xl-regular-underline-fontWeight: 400;
+        --semantic-typography-body-xl-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-xl-bold-default-fontWeight: 700;
+        --semantic-typography-body-xl-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-xl-bold-underline-fontWeight: 700;
+        --semantic-typography-body-xl-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-lg-regular-default-fontWeight: 400;
+        --semantic-typography-body-lg-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-lg-regular-underline-fontWeight: 400;
+        --semantic-typography-body-lg-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-lg-bold-default-fontWeight: 700;
+        --semantic-typography-body-lg-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-lg-bold-underline-fontWeight: 700;
+        --semantic-typography-body-lg-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-md-regular-default-fontWeight: 400;
+        --semantic-typography-body-md-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-md-regular-underline-fontWeight: 400;
+        --semantic-typography-body-md-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-md-bold-default-fontWeight: 700;
+        --semantic-typography-body-md-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-md-bold-underline-fontWeight: 700;
+        --semantic-typography-body-md-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-sm-regular-default-fontWeight: 400;
+        --semantic-typography-body-sm-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-sm-regular-underline-fontWeight: 400;
+        --semantic-typography-body-sm-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-sm-bold-default-fontWeight: 700;
+        --semantic-typography-body-sm-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-sm-bold-underline-fontWeight: 700;
+        --semantic-typography-body-sm-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-caption-regular-default-fontWeight: 400;
+        --semantic-typography-caption-regular-italic-fontWeight: Italic;
+        --semantic-typography-caption-regular-underline-fontWeight: 400;
+        --semantic-typography-caption-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-caption-bold-default-fontWeight: 700;
+        --semantic-typography-caption-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-caption-bold-underline-fontWeight: 700;
+        --semantic-typography-caption-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-xl-regular-default-fontWeight: 400;
+        --semantic-typography-code-xl-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-xl-regular-underline-fontWeight: 400;
+        --semantic-typography-code-xl-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-xl-bold-default-fontWeight: 700;
+        --semantic-typography-code-xl-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-xl-bold-underline-fontWeight: 700;
+        --semantic-typography-code-xl-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-lg-regular-default-fontWeight: 400;
+        --semantic-typography-code-lg-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-lg-regular-underline-fontWeight: 400;
+        --semantic-typography-code-lg-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-lg-bold-default-fontWeight: 700;
+        --semantic-typography-code-lg-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-lg-bold-underline-fontWeight: 700;
+        --semantic-typography-code-lg-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-md-regular-default-fontWeight: 400;
+        --semantic-typography-code-md-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-md-regular-underline-fontWeight: 400;
+        --semantic-typography-code-md-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-md-bold-default-fontWeight: 700;
+        --semantic-typography-code-md-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-md-bold-underline-fontWeight: 700;
+        --semantic-typography-code-md-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-sm-regular-default-fontWeight: 400;
+        --semantic-typography-code-sm-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-sm-regular-underline-fontWeight: 400;
+        --semantic-typography-code-sm-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-sm-bold-default-fontWeight: 700;
+        --semantic-typography-code-sm-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-sm-bold-underline-fontWeight: 700;
+        --semantic-typography-code-sm-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-icon-labelPaired-regular-xl-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-lg-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-md-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-sm-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-caption-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-bold-xl-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-lg-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-md-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-sm-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-caption-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-brand-xl-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-lg-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-md-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-sm-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-caption-fontWeight: ;
+        --semantic-typography-icon-standalone-regular-2xl-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-xl-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-lg-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-md-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-sm-fontWeight: 300;
+        --semantic-typography-icon-standalone-bold-2xl-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-xl-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-lg-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-md-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-sm-fontWeight: 400;
+        --semantic-typography-icon-standalone-brand-2xl-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-xl-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-lg-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-md-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-sm-fontWeight: ;
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --semantic-typography-heading-hero-fontWeight: 700;
+        --semantic-typography-heading-h1-fontWeight: 700;
+        --semantic-typography-heading-h2-fontWeight: 700;
+        --semantic-typography-heading-h3-fontWeight: 700;
+        --semantic-typography-heading-h4-fontWeight: 700;
+        --semantic-typography-heading-h5-fontWeight: 700;
+        --semantic-typography-heading-h6-fontWeight: 700;
+        --semantic-typography-body-xl-regular-default-fontWeight: 400;
+        --semantic-typography-body-xl-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-xl-regular-underline-fontWeight: 400;
+        --semantic-typography-body-xl-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-xl-bold-default-fontWeight: 700;
+        --semantic-typography-body-xl-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-xl-bold-underline-fontWeight: 700;
+        --semantic-typography-body-xl-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-lg-regular-default-fontWeight: 400;
+        --semantic-typography-body-lg-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-lg-regular-underline-fontWeight: 400;
+        --semantic-typography-body-lg-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-lg-bold-default-fontWeight: 700;
+        --semantic-typography-body-lg-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-lg-bold-underline-fontWeight: 700;
+        --semantic-typography-body-lg-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-md-regular-default-fontWeight: 400;
+        --semantic-typography-body-md-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-md-regular-underline-fontWeight: 400;
+        --semantic-typography-body-md-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-md-bold-default-fontWeight: 700;
+        --semantic-typography-body-md-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-md-bold-underline-fontWeight: 700;
+        --semantic-typography-body-md-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-sm-regular-default-fontWeight: 400;
+        --semantic-typography-body-sm-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-sm-regular-underline-fontWeight: 400;
+        --semantic-typography-body-sm-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-sm-bold-default-fontWeight: 700;
+        --semantic-typography-body-sm-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-sm-bold-underline-fontWeight: 700;
+        --semantic-typography-body-sm-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-caption-regular-default-fontWeight: 400;
+        --semantic-typography-caption-regular-italic-fontWeight: Italic;
+        --semantic-typography-caption-regular-underline-fontWeight: 400;
+        --semantic-typography-caption-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-caption-bold-default-fontWeight: 700;
+        --semantic-typography-caption-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-caption-bold-underline-fontWeight: 700;
+        --semantic-typography-caption-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-xl-regular-default-fontWeight: 400;
+        --semantic-typography-code-xl-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-xl-regular-underline-fontWeight: 400;
+        --semantic-typography-code-xl-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-xl-bold-default-fontWeight: 700;
+        --semantic-typography-code-xl-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-xl-bold-underline-fontWeight: 700;
+        --semantic-typography-code-xl-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-lg-regular-default-fontWeight: 400;
+        --semantic-typography-code-lg-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-lg-regular-underline-fontWeight: 400;
+        --semantic-typography-code-lg-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-lg-bold-default-fontWeight: 700;
+        --semantic-typography-code-lg-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-lg-bold-underline-fontWeight: 700;
+        --semantic-typography-code-lg-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-md-regular-default-fontWeight: 400;
+        --semantic-typography-code-md-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-md-regular-underline-fontWeight: 400;
+        --semantic-typography-code-md-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-md-bold-default-fontWeight: 700;
+        --semantic-typography-code-md-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-md-bold-underline-fontWeight: 700;
+        --semantic-typography-code-md-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-sm-regular-default-fontWeight: 400;
+        --semantic-typography-code-sm-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-sm-regular-underline-fontWeight: 400;
+        --semantic-typography-code-sm-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-sm-bold-default-fontWeight: 700;
+        --semantic-typography-code-sm-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-sm-bold-underline-fontWeight: 700;
+        --semantic-typography-code-sm-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-icon-labelPaired-regular-xl-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-lg-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-md-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-sm-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-caption-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-bold-xl-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-lg-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-md-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-sm-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-caption-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-brand-xl-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-lg-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-md-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-sm-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-caption-fontWeight: ;
+        --semantic-typography-icon-standalone-regular-2xl-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-xl-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-lg-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-md-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-sm-fontWeight: 300;
+        --semantic-typography-icon-standalone-bold-2xl-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-xl-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-lg-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-md-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-sm-fontWeight: 400;
+        --semantic-typography-icon-standalone-brand-2xl-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-xl-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-lg-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-md-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-sm-fontWeight: ;
+    }
+}
+
+@media (min-width: 1280px) {
+    :root {
+        --semantic-typography-heading-hero-fontWeight: 700;
+        --semantic-typography-heading-h1-fontWeight: 700;
+        --semantic-typography-heading-h2-fontWeight: 700;
+        --semantic-typography-heading-h3-fontWeight: 700;
+        --semantic-typography-heading-h4-fontWeight: 700;
+        --semantic-typography-heading-h5-fontWeight: 700;
+        --semantic-typography-heading-h6-fontWeight: 700;
+        --semantic-typography-body-xl-regular-default-fontWeight: 400;
+        --semantic-typography-body-xl-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-xl-regular-underline-fontWeight: 400;
+        --semantic-typography-body-xl-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-xl-bold-default-fontWeight: 700;
+        --semantic-typography-body-xl-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-xl-bold-underline-fontWeight: 700;
+        --semantic-typography-body-xl-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-lg-regular-default-fontWeight: 400;
+        --semantic-typography-body-lg-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-lg-regular-underline-fontWeight: 400;
+        --semantic-typography-body-lg-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-lg-bold-default-fontWeight: 700;
+        --semantic-typography-body-lg-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-lg-bold-underline-fontWeight: 700;
+        --semantic-typography-body-lg-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-md-regular-default-fontWeight: 400;
+        --semantic-typography-body-md-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-md-regular-underline-fontWeight: 400;
+        --semantic-typography-body-md-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-md-bold-default-fontWeight: 700;
+        --semantic-typography-body-md-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-md-bold-underline-fontWeight: 700;
+        --semantic-typography-body-md-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-sm-regular-default-fontWeight: 400;
+        --semantic-typography-body-sm-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-sm-regular-underline-fontWeight: 400;
+        --semantic-typography-body-sm-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-sm-bold-default-fontWeight: 700;
+        --semantic-typography-body-sm-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-sm-bold-underline-fontWeight: 700;
+        --semantic-typography-body-sm-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-caption-regular-default-fontWeight: 400;
+        --semantic-typography-caption-regular-italic-fontWeight: Italic;
+        --semantic-typography-caption-regular-underline-fontWeight: 400;
+        --semantic-typography-caption-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-caption-bold-default-fontWeight: 700;
+        --semantic-typography-caption-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-caption-bold-underline-fontWeight: 700;
+        --semantic-typography-caption-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-xl-regular-default-fontWeight: 400;
+        --semantic-typography-code-xl-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-xl-regular-underline-fontWeight: 400;
+        --semantic-typography-code-xl-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-xl-bold-default-fontWeight: 700;
+        --semantic-typography-code-xl-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-xl-bold-underline-fontWeight: 700;
+        --semantic-typography-code-xl-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-lg-regular-default-fontWeight: 400;
+        --semantic-typography-code-lg-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-lg-regular-underline-fontWeight: 400;
+        --semantic-typography-code-lg-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-lg-bold-default-fontWeight: 700;
+        --semantic-typography-code-lg-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-lg-bold-underline-fontWeight: 700;
+        --semantic-typography-code-lg-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-md-regular-default-fontWeight: 400;
+        --semantic-typography-code-md-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-md-regular-underline-fontWeight: 400;
+        --semantic-typography-code-md-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-md-bold-default-fontWeight: 700;
+        --semantic-typography-code-md-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-md-bold-underline-fontWeight: 700;
+        --semantic-typography-code-md-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-sm-regular-default-fontWeight: 400;
+        --semantic-typography-code-sm-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-sm-regular-underline-fontWeight: 400;
+        --semantic-typography-code-sm-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-sm-bold-default-fontWeight: 700;
+        --semantic-typography-code-sm-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-sm-bold-underline-fontWeight: 700;
+        --semantic-typography-code-sm-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-icon-labelPaired-regular-xl-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-lg-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-md-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-sm-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-caption-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-bold-xl-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-lg-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-md-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-sm-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-caption-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-brand-xl-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-lg-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-md-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-sm-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-caption-fontWeight: ;
+        --semantic-typography-icon-standalone-regular-2xl-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-xl-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-lg-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-md-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-sm-fontWeight: 300;
+        --semantic-typography-icon-standalone-bold-2xl-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-xl-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-lg-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-md-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-sm-fontWeight: 400;
+        --semantic-typography-icon-standalone-brand-2xl-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-xl-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-lg-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-md-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-sm-fontWeight: ;
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --semantic-typography-heading-hero-fontWeight: 700;
+        --semantic-typography-heading-h1-fontWeight: 700;
+        --semantic-typography-heading-h2-fontWeight: 700;
+        --semantic-typography-heading-h3-fontWeight: 700;
+        --semantic-typography-heading-h4-fontWeight: 700;
+        --semantic-typography-heading-h5-fontWeight: 700;
+        --semantic-typography-heading-h6-fontWeight: 700;
+        --semantic-typography-body-xl-regular-default-fontWeight: 400;
+        --semantic-typography-body-xl-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-xl-regular-underline-fontWeight: 400;
+        --semantic-typography-body-xl-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-xl-bold-default-fontWeight: 700;
+        --semantic-typography-body-xl-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-xl-bold-underline-fontWeight: 700;
+        --semantic-typography-body-xl-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-lg-regular-default-fontWeight: 400;
+        --semantic-typography-body-lg-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-lg-regular-underline-fontWeight: 400;
+        --semantic-typography-body-lg-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-lg-bold-default-fontWeight: 700;
+        --semantic-typography-body-lg-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-lg-bold-underline-fontWeight: 700;
+        --semantic-typography-body-lg-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-md-regular-default-fontWeight: 400;
+        --semantic-typography-body-md-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-md-regular-underline-fontWeight: 400;
+        --semantic-typography-body-md-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-md-bold-default-fontWeight: 700;
+        --semantic-typography-body-md-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-md-bold-underline-fontWeight: 700;
+        --semantic-typography-body-md-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-body-sm-regular-default-fontWeight: 400;
+        --semantic-typography-body-sm-regular-italic-fontWeight: Italic;
+        --semantic-typography-body-sm-regular-underline-fontWeight: 400;
+        --semantic-typography-body-sm-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-body-sm-bold-default-fontWeight: 700;
+        --semantic-typography-body-sm-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-body-sm-bold-underline-fontWeight: 700;
+        --semantic-typography-body-sm-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-caption-regular-default-fontWeight: 400;
+        --semantic-typography-caption-regular-italic-fontWeight: Italic;
+        --semantic-typography-caption-regular-underline-fontWeight: 400;
+        --semantic-typography-caption-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-caption-bold-default-fontWeight: 700;
+        --semantic-typography-caption-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-caption-bold-underline-fontWeight: 700;
+        --semantic-typography-caption-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-xl-regular-default-fontWeight: 400;
+        --semantic-typography-code-xl-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-xl-regular-underline-fontWeight: 400;
+        --semantic-typography-code-xl-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-xl-bold-default-fontWeight: 700;
+        --semantic-typography-code-xl-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-xl-bold-underline-fontWeight: 700;
+        --semantic-typography-code-xl-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-lg-regular-default-fontWeight: 400;
+        --semantic-typography-code-lg-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-lg-regular-underline-fontWeight: 400;
+        --semantic-typography-code-lg-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-lg-bold-default-fontWeight: 700;
+        --semantic-typography-code-lg-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-lg-bold-underline-fontWeight: 700;
+        --semantic-typography-code-lg-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-md-regular-default-fontWeight: 400;
+        --semantic-typography-code-md-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-md-regular-underline-fontWeight: 400;
+        --semantic-typography-code-md-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-md-bold-default-fontWeight: 700;
+        --semantic-typography-code-md-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-md-bold-underline-fontWeight: 700;
+        --semantic-typography-code-md-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-code-sm-regular-default-fontWeight: 400;
+        --semantic-typography-code-sm-regular-italic-fontWeight: Italic;
+        --semantic-typography-code-sm-regular-underline-fontWeight: 400;
+        --semantic-typography-code-sm-regular-italic-underline-fontWeight: Italic;
+        --semantic-typography-code-sm-bold-default-fontWeight: 700;
+        --semantic-typography-code-sm-bold-italic-fontWeight: Bold Italic;
+        --semantic-typography-code-sm-bold-underline-fontWeight: 700;
+        --semantic-typography-code-sm-bold-italic-underline-fontWeight: Bold
+            Italic;
+        --semantic-typography-icon-labelPaired-regular-xl-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-lg-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-md-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-sm-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-regular-caption-fontWeight: 300;
+        --semantic-typography-icon-labelPaired-bold-xl-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-lg-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-md-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-sm-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-bold-caption-fontWeight: 400;
+        --semantic-typography-icon-labelPaired-brand-xl-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-lg-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-md-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-sm-fontWeight: ;
+        --semantic-typography-icon-labelPaired-brand-caption-fontWeight: ;
+        --semantic-typography-icon-standalone-regular-2xl-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-xl-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-lg-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-md-fontWeight: 300;
+        --semantic-typography-icon-standalone-regular-sm-fontWeight: 300;
+        --semantic-typography-icon-standalone-bold-2xl-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-xl-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-lg-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-md-fontWeight: 400;
+        --semantic-typography-icon-standalone-bold-sm-fontWeight: 400;
+        --semantic-typography-icon-standalone-brand-2xl-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-xl-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-lg-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-md-fontWeight: ;
+        --semantic-typography-icon-standalone-brand-sm-fontWeight: ;
+    }
+}
+
+/* Theme Styling */
+
+:root {
+    .theme--light {
+    }
+
+    .theme--dark {
+    }
+}
