@@ -20,16 +20,22 @@ const meta = {
     title: "Components/Button/Basic",
     component: Button,
     parameters: {
-        layout: "centered",
-    },
+        layout: 'centered',
+        docs: {
+          story: {
+            height: '350px',
+            width: '350px',
+          },
+        },
+      },
     tags: ["autodocs"],
     args: {
         variant: "primary",
         label: "Label",
-        color: "coral",
+        colorStyle: "coral",
         isLoading: false,
         disabled: false,
-        isFullWidth: false,
+        fullWidth: false,
         type: "button",
         size: "md",
     

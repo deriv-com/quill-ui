@@ -33,18 +33,16 @@
     &__transition {
         &--enter {
             transition: ease-out 300ms transform;
-            scale: 1;
             
         }
         &--enter-from {
-            transform: scaleY(0);
+            transform: scaleY(1) translateY(-50%);
         }
         &--enter-to {
             transform: scaleY(1);
         }
         &--leave {
             transition: ease-out 200ms transform;
-            scale: 1;
         }
         &--leave-from {
             transform: scaleY(0) translateY(0);

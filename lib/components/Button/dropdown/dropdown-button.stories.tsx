@@ -4,14 +4,13 @@ import  { DropdownButton } from '.'
 const meta = {
   title: 'Components/Button/Dropdown Button',
     component: DropdownButton,
-    parameters: {
+  parameters: {
+ 
         docs: {
           story: {
             height: '350px',
+            width: '350px',
           },
-        },
-        controls: {
-          exclude: ['dismissible'],
         },
       },
 

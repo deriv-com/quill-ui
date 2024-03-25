@@ -46,7 +46,8 @@ export const DropdownButton = forwardRef<
       size,
       icon,
       label,
-      color,
+      colorStyle,
+      variant,
       disabled,
       options,
       onSelectionChange,
@@ -72,15 +73,17 @@ export const DropdownButton = forwardRef<
                   {...rest}
                   icon={icon}
                   size={size}
-                  color={color}
+                  colorStyle={colorStyle}
                   label={label}
+                  variant={variant}
                   ref={ref}
                   dropdown
                   selected={selectedItem.value !== defaultOption.value}
                   isDropdownOpen={open}
                   disabled={disabled}
                 >
-                  <Text as="span" color={`${color}`}>{selectedItem?.label}</Text>
+                  <span className={clsx(`quill-button__size--${size}-font-size`,
+                    `quill__color--${variant}-${colorStyle}-color`)}>{selectedItem?.label}</span>
                 </Button>
               </Listbox.Button>
               <Transition
