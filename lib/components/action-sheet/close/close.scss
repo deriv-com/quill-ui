@@ -1,0 +1,13 @@
+.quill-action-sheet--close {
+    pointer-events: auto;
+    position: sticky;
+    top: var(--semantic-spacing-general-md);
+    z-index: 20;
+    margin-left: auto;
+    display: none;
+    cursor: pointer;
+
+    @media (min-width: 1024px) {
+        display: block;
+    }
+}
