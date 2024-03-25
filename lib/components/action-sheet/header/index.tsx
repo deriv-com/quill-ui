@@ -1,21 +1,21 @@
-import { ComponentPropsWithoutRef, useContext } from 'react'
-import { qtJoin } from 'qtMerge'
-import { ActionSheetContext } from '../root'
+import { ComponentPropsWithoutRef, useContext } from "react";
+import { ActionSheetContext } from "../root";
+import clsx from "clsx";
 
-type HeaderProps = ComponentPropsWithoutRef<'div'>
+type HeaderProps = ComponentPropsWithoutRef<"div">;
 
 const Header = ({ className, ...rest }: HeaderProps) => {
-  const { expandable } = useContext(ActionSheetContext)
-  return (
-    <div
-      className={qtJoin(
-        'sticky left-50 bg-solid-slate-50',
-        expandable ? 'top-1000' : 'top-50',
-        className,
-      )}
-      {...rest}
-    />
-  )
-}
+    const { expandable } = useContext(ActionSheetContext);
+    return (
+        <div
+            className={clsx(
+                "quill-action-sheet--header",
+                `quill-action-sheet--header__expandable--${expandable}`,
+                className,
+            )}
+            {...rest}
+        />
+    );
+};
 
-export default Header
+export default Header;

@@ -1,0 +1,15 @@
+.quill-action-sheet--header {
+    position: sticky;
+    left: var(--semantic-spacing-general-none);
+    background-color: var(--core-color-solid-slate-50);
+
+    &__expandable {
+        &--true {
+            top: var(--semantic-spacing-general-lg);
+        }
+
+        &--false {
+            top: var(--semantic-spacing-general-none);
+        }
+    }
+}
