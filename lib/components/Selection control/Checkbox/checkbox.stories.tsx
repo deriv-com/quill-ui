@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-// import { Ref } from "react";
 import { Checkbox } from "./index";
 
 const meta = {
@@ -16,7 +15,6 @@ const meta = {
         wrapperClassName: "",
         onChange: () => {},
         id: "demo_checkbox",
-        // ref: Ref,
     },
     argTypes: {
         checked: {

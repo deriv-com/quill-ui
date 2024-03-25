@@ -95,7 +95,6 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                             )}
                         />
                     )}
-                    {/* </span> */}
                 </div>
                 <label htmlFor={rest.id ?? name}>
                     <Text
