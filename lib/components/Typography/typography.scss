@@ -21,9 +21,6 @@ $weights: regular, bold;
     line-height: var(
         --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-lineHeight
     );
-    //padding-block: var(
-    //    --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-paragraphSpacing
-    //);
     letter-spacing: var(
         --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-letterSpacing
     );
@@ -47,9 +44,6 @@ $weights: regular, bold;
     );
     line-height: var(
         --semantic-typography-#{$type}-#{$weight}-#{$decoration}-lineHeight
-    );
-    padding-block: var(
-        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-paragraphSpacing
     );
     letter-spacing: var(
         --semantic-typography-#{$type}-#{$weight}-#{$decoration}-letterSpacing
@@ -123,9 +117,6 @@ $weights: regular, bold;
             );
             line-height: var(
                 --semantic-typography-heading-#{$heading}-lineHeight
-            );
-            padding-block: var(
-                --semantic-typography-heading-#{$heading}-paragraphSpacing
             );
             letter-spacing: normal;
         }
