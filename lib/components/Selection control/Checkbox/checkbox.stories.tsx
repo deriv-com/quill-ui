@@ -9,6 +9,7 @@ const meta = {
     args: {
         checked: false,
         disabled: false,
+        fontSize: "sm",
         label: "Selection control checkbox",
         labelClassName: "",
         name: "demo_checkbox",
@@ -24,6 +25,10 @@ const meta = {
         disabled: {
             options: ["true", "false"],
             control: { type: "boolean" },
+        },
+        fontSize: {
+            options: ["sm", "md"],
+            control: { type: "radio" },
         },
         label: { control: { type: "text" } },
         labelClassName: { control: { type: "text" } },

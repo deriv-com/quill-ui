@@ -15,6 +15,7 @@ import { Text } from "../../Typography";
 
 interface CheckboxProps
     extends Omit<ComponentProps<"input">, "placeholder" | "defaultChecked"> {
+    fontSize?: "sm" | "md" | "lg" | "xl";
     label: ReactNode | string;
     labelClassName?: string;
     onChange?: (
@@ -30,6 +31,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         {
             checked = false,
             disabled = false,
+            fontSize = "sm",
             label,
             labelClassName,
             name,
@@ -98,7 +100,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                 </div>
                 <label htmlFor={rest.id ?? name}>
                     <Text
-                        size="sm"
+                        size={fontSize}
                         as="span"
                         className={clsx(
                             "quill-checkbox__label",
