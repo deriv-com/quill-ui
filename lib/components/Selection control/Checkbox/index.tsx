@@ -66,9 +66,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                 <div className="quill-checkbox__wrapper">
                     <input
                         id={rest.id ?? name}
-                        className={clsx("quill-checkbox__box", {
-                            "quill-checkbox__box--disabled": disabled,
-                        })}
+                        className="quill-checkbox__box"
                         type="checkbox"
                         checked={is_checked}
                         disabled={disabled}
@@ -81,7 +79,9 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                     {is_checked ? (
                         <StandaloneSquareCheckFillIcon
                             iconSize="sm"
-                            className="quill-checkbox__icon"
+                            className={clsx("quill-checkbox__icon", {
+                                "quill-checkbox__icon--disabled": disabled,
+                            })}
                         />
                     ) : (
                         <StandaloneSquareBoldIcon
