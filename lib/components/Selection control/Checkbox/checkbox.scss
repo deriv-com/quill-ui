@@ -13,15 +13,12 @@
 
     &__box {
         position: absolute;
-        appearance: none;
         cursor: pointer;
-        height: 13px;
-        width: 13px;
+        height: 14px;
+        width: 14px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        margin: auto;
-        z-index: 0;
 
         &:hover ~ .quill-checkbox__icon:not(.quill-checkbox__icon--disabled) {
             opacity: var(--core-opacity-900);
@@ -32,25 +29,22 @@
             opacity: var(--core-opacity-1300);
         }
 
-        // &:focus {
-        //     outline: 3px solid #0d69d4;
-        // }
-
-        // &:focus {
-        //     outline: none;
-        //     &:after {
-        //         content: "";
-        //         width: 18px;
-        //         height: 18px;
-        //         display: block;
-        //         border: 1px solid #0d69d4;
-        //         border-radius: 4px;
-        //         position: absolute;
-        //         top: 50%;
-        //         left: 50%;
-        //         transform: translate(-50%, -50%);
-        //     }
-        // }
+        &:focus {
+            outline: none;
+            &:after {
+                content: "";
+                width: 19px;
+                height: 19px;
+                display: block;
+                border: 2px solid var(--core-color-solid-blue-700);
+                border-radius: 4px;
+                position: absolute;
+                top: calc(50% + 0.5px);
+                left: 50%;
+                transform: translate(-50%, -50%);
+                box-sizing: border-box;
+            }
+        }
 
         &--disabled {
             cursor: default;
@@ -67,5 +61,9 @@
         &--disabled {
             opacity: var(--core-opacity-300);
         }
+    }
+
+    &__label {
+        cursor: default;
     }
 }
