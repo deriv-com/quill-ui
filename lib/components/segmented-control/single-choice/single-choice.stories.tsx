@@ -1,19 +1,42 @@
-import type { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 import { SingleChoice } from ".";
 
 const meta = {
     title: "Components/SegmentedControl/SingleChoice",
-    component: SingleChoice.Group,
+    component: SingleChoice.GroupWithIconsOnly,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
-    argTypes: {
-        as: { table: { disable: true } },
+    args: {
+        onChange: fn(),
+        selectedItemIndex: 0,
+        size: "sm",
     },
-} satisfies Meta<typeof SingleChoice.Group>;
+    argTypes: {
+        onChange: {
+            control: { type: null },
+            description: "type: (selectedItemIndex: number) => void",
+        },
+        selectedItemIndex: {
+            options: [0, 1, 2, 3, 4],
+            control: { type: "radio" },
+        },
+        size: { options: ["sm", "md", "lg"], control: { type: "radio" } },
+    },
+} satisfies Meta<typeof SingleChoice.GroupWithIconsOnly>;
 
 export default meta;
 
-// type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>;
 
-// TODO: to create more stories with different props
-export const Group = () => <SingleChoice.Group />;
+export const SingleChoiceGroupWithIconsOnly = (args: Story) => (
+    <SingleChoice.GroupWithIconsOnly {...args} />
+);
+
+export const SingleChoiceGroupWithLabelsOnly = (args: Story) => (
+    <SingleChoice.GroupWithLabelsOnly {...args} />
+);
+
+export const SingleChoiceGroupWithIconsAndLabels = (args: Story) => (
+    <SingleChoice.GroupWithIconsAndLabels {...args} />
+);

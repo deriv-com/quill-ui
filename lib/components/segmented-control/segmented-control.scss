@@ -4,15 +4,17 @@
 .segmented-control {
     display: flex;
     align-items: center;
-    flex-shrink: 0;
+    width: fit-content;
     background: var(--core-color-opacity-black-75, rgba(0, 0, 0, 0.04));
 
     .item {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex: 1 0 0;
 
+        &.selected {
+            background: var(--core-color-solid-slate-50, #fff);
+        }
         .icon {
             display: flex;
             align-items: center;
@@ -52,7 +54,6 @@
             padding: 9px 24px;
             gap: 12px;
             border-radius: 12px;
-            background: var(--core-color-solid-slate-50, #fff);
         }
     }
 }
