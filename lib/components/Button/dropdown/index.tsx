@@ -1,9 +1,9 @@
-import { forwardRef } from 'react'
+import { Fragment, forwardRef } from 'react'
 import { useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { ButtonProps } from '../types'
 import clsx from 'clsx'
-import { Button } from '../base'
+import { Button, ButtonSize } from '../base'
 import './dropdown.scss'
 import { Text } from "../../Typography/text";
 import {  CaptionText } from "../../Typography/caption";
@@ -11,6 +11,7 @@ import {  CaptionText } from "../../Typography/caption";
 export type TSingleSelectItem = {
     value: number | string
     label: string | React.ReactNode
+    size?: 'sm' | 'md' | 'lg' | 'xl';
   }
   
   export interface SingleSelectChipProps extends ButtonProps {
@@ -22,16 +23,17 @@ export type TSingleSelectItem = {
   
 const Options = ({ item }: { item: TSingleSelectItem }) => {
   return (
-    <Listbox.Option value={item}>
+    <Listbox.Option value={item} as={Fragment}>
       {({  selected }) => (
-        <div
+        <li
           className={clsx(
               'dropdown-menu__item',
-              selected && `dropdown-menu__item--selected`,
+            selected && `dropdown-menu__item--selected`,
+            ButtonSize[item.size],
           )}
         >
         <Text as="span"> {item.label}</Text> 
-        </div>
+        </li>
       )}
     </Listbox.Option>
   )
@@ -66,11 +68,11 @@ export const DropdownButton = forwardRef<
         }
 
     return (
-      <div className="dropdown-menu__box">
+      <div>
         <Listbox value={selectedItem} onChange={handleItemSelect}>
           {({ open }) => (
             <>
-              <Listbox.Button as="div">
+              <Listbox.Button as="div" className='dropdown-menu__box'>
                 <Button
                   {...rest}
                   icon={icon}
@@ -101,7 +103,7 @@ export const DropdownButton = forwardRef<
                 >
                   <Options item={defaultOption} />
                   {options.map((item) => (
-                    <Options
+                    <Options 
                       item={item}
                           key={item.value}
                           
