@@ -33,6 +33,8 @@ const semanticTokenNames = [
     "semantic/viewPort/1440-plus",
 ];
 
+const breakpointNames = ["sm", "md", "lg", "xl", "xl2"];
+
 const themeTokenNames = ["semantic/theme/light", "semantic/theme/dark"];
 
 const styleCategoryNames = {
@@ -338,6 +340,9 @@ const mapSASSValues = () => {
         );
     });
 
+    // Generate Breakpoint Mixins
+    newStyleStrings.breakpoints = generateBreakpoints();
+
     return { sassContent, styleStrings: newStyleStrings };
 };
 
@@ -378,7 +383,13 @@ const convertHexes = (str) => {
     return str.replaceAll(rgbaRegex, replaceRgba);
 };
 
-const trimEmptyDeclarations = (cssString) => {
+const trimEmptyDeclarations = (cssString, fileName) => {
+    const skipFiles = ["breakpoints"];
+
+    if (skipFiles.includes(fileName)) {
+        return cssString;
+    }
+
     // Remove all indentations, white spaces, and newlines
     cssString = cssString.replace(/\s+/g, "");
 
@@ -401,13 +412,47 @@ const trimEmptyDeclarations = (cssString) => {
     return cssString;
 };
 
+const generateBreakpoints = () => {
+    const breakpointMap = {};
+
+    semanticTokenNames.forEach((tokenName, index) => {
+        const parts = tokenName.split("/");
+        const minWidth = parseInt(parts[2].split("-")[0]); // Extract the minWidth and convert it to an integer
+        const breakpoint = breakpointNames[index];
+
+        breakpointMap[minWidth] = breakpoint;
+    });
+
+    let sassString = `@mixin breakpoint($breakpoint) {\n`;
+
+    // Generate the Sass mixin string using the dynamically populated breakpointMap
+    Object.entries(breakpointMap).forEach(([minWidth, breakpoint]) => {
+        sassString += `@if $breakpoint == "${breakpoint}" {
+                            @media (min-width: ${minWidth}px) {
+                            @content;
+                            }
+                        }\n`;
+    });
+
+    sassString += `  @else {
+                            @warn "Unknown breakpoint: #{$breakpoint}.";
+                        }
+                    }\n\n`;
+
+    return sassString;
+};
+
 const generateSassFile = () => {
     const { styleStrings } = mapSASSValues();
 
     console.log("Successfully generated CSS files:");
 
     Object.keys(styleStrings).map((fileName) => {
-        const cssVariables = trimEmptyDeclarations(styleStrings[fileName]);
+        const cssVariables = trimEmptyDeclarations(
+            styleStrings[fileName],
+            fileName,
+        );
+
         const filePaths = [`lib/styles/sass/${fileName}.scss`];
 
         filePaths.map((item) => {
