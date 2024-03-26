@@ -5,467 +5,466 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const designTokens = JSON.parse(
-    fs.readFileSync(path.resolve(__dirname, "../data/tokens.json"), "utf-8"),
-);
+class Transformer {
+    constructor() {
+        this.semanticTokenNames = [
+            "semantic/viewPort/640-plus",
+            "semantic/viewPort/768-plus",
+            "semantic/viewPort/1024-plus",
+            "semantic/viewPort/1280-plus",
+            "semantic/viewPort/1440-plus",
+        ];
+        this.themeTokenNames = ["semantic/theme/light", "semantic/theme/dark"];
+        this.tokenNames = [
+            "core/border",
+            "core/color/solid",
+            "core/color/opacity",
+            "core/color/gradients",
+            "core/boxShadow",
+            "core/opacity",
+            "core/spacing",
+            "core/typography",
+            "core/motion",
+            "core/sizing",
+            "semantic/global",
+            "semantic/viewPort/default",
+        ];
+        this.allTokenNames = [
+            ...this.tokenNames,
+            ...this.semanticTokenNames,
+            ...this.themeTokenNames,
+        ];
+        this.breakpointNames = ["sm", "md", "lg", "xl", "xl2"];
+        this.coreRules = {};
+        this.designTokens = JSON.parse(
+            fs.readFileSync(
+                path.resolve(__dirname, "../data/tokens.json"),
+                "utf-8",
+            ),
+        );
+        this.excludedKeys = ["$themes", "$metadata"];
 
-const excludedKeys = ["$themes", "$metadata"];
-const tokenNames = [
-    "core/border",
-    "core/color/solid",
-    "core/color/opacity",
-    "core/color/gradients",
-    "core/boxShadow",
-    "core/opacity",
-    "core/spacing",
-    "core/typography",
-    "core/motion",
-    "core/sizing",
-    "semantic/global",
-    "semantic/viewPort/default",
-];
-
-const semanticTokenNames = [
-    "semantic/viewPort/640-plus",
-    "semantic/viewPort/768-plus",
-    "semantic/viewPort/1024-plus",
-    "semantic/viewPort/1280-plus",
-    "semantic/viewPort/1440-plus",
-];
-
-const breakpointNames = ["sm", "md", "lg", "xl", "xl2"];
-
-const themeTokenNames = ["semantic/theme/light", "semantic/theme/dark"];
-
-const styleCategoryNames = {
-    spacing: "spacing",
-    opacity: "core.opacity",
-    color: "color.solid",
-    "color.gradient": "color.gradient",
-    "color.opacity": "color.opacity",
-    "color.semantic": "semantic.color",
-    "font.size": "fontSize",
-    "font.weight": "fontWeight",
-    "font.family": "fontFamily",
-    "line.height": "lineHeight",
-    "letter.spacing": "letterSpacing",
-    "text.decoration": "textDecoration",
-    gap: "paragraphSpacing",
-    border: "border",
-    elevation: "elevation",
-    motion: "motion",
-    size: ".size.",
-    static: "temp",
-    others: "others",
-};
-
-const styleStrings = Object.fromEntries(
-    Object.keys(styleCategoryNames).map((key) => [key, ""]),
-);
-
-const allTokenNames = [
-    ...tokenNames,
-    ...semanticTokenNames,
-    ...themeTokenNames,
-];
-
-const getTokenGroup = (group) =>
-    Object.fromEntries(
-        Object.entries(designTokens).filter(([key]) => group.includes(key)),
-    );
-
-const convertCSSkey = (cssKey, prefix = true) => {
-    const pref = prefix ? "--" : "";
-    return `${pref}${cssKey.replaceAll(".", "-")}`;
-};
-
-const isObject = (item) => typeof item === "object";
-
-const extractCSSValues = (key, value) => {
-    const filteredKeys = ["type"];
-
-    const CSSValues = [];
-    Object.keys(value).map((k) => {
-        if (!filteredKeys.includes(k)) {
-            CSSValues.push(value[k]);
-        }
-    });
-
-    return CSSValues.join(" ");
-};
-
-const processCSSValue = (key, value) => {
-    const noUnitKeys = ["fontWeight"];
-    const percentageKeys = ["opacity"];
-    const propertyGroup = key.split("-");
-    const propertyName = propertyGroup[propertyGroup.length - 1];
-    const defaultValues = {
-        letterSpacing: "normal",
-    };
-
-    if (Array.isArray(value)) {
-        const cssGroupValue = [];
-        value.map((cssValue) => {
-            cssGroupValue.push(extractCSSValues(key, cssValue));
-        });
-
-        return cssGroupValue.join(",");
-    } else if (isObject(value)) {
-        return extractCSSValues(key, value);
-    } else {
-        if (noUnitKeys.some((k) => key.includes(k))) {
-            return value;
-        }
-
-        if (percentageKeys.some((k) => key.includes(k))) {
-            if (value.includes("%")) {
-                const percentageValue = parseInt(value) * 0.01;
-
-                return percentageValue;
-            }
-        }
-
-        if (value === "") {
-            const defaultValue = defaultValues[propertyName];
-
-            if (defaultValue) {
-                return defaultValue;
-            }
-        }
-
-        return isNaN(value) ? value : `${value}px`;
-    }
-};
-
-let coreRules = {};
-const generateSassVariables = ({
-    data,
-    prefix = "",
-    origin = "",
-    reset = true,
-}) => {
-    const valueIdentifier = "value";
-
-    if (reset) {
-        coreRules = {};
-    }
-
-    for (const key in data) {
-        const cssValue = data[key];
-        const isValueObject = isObject(cssValue);
-        let keyName = `${prefix}${key}-`;
-
-        // Filter key name by removing token category
-        keyName = allTokenNames.some((item) => keyName.includes(item))
-            ? ""
-            : keyName;
-        const finalKey = prefix.substring(0, prefix.length - 1); // Remove "-" generated from the previous iteration
-
-        // Recursive call for nested objects
-        if (isValueObject && key !== valueIdentifier) {
-            // Non token variables are excluded
-            if (!excludedKeys.includes(key)) {
-                generateSassVariables({
-                    data: data[key],
-                    prefix: keyName,
-                    origin: origin || key,
-                    reset: false,
-                });
-            }
-        } else {
-            if (key === valueIdentifier) {
-                const cssKey = finalKey.replaceAll("-", ".");
-                const finalValue = processCSSValue(finalKey, cssValue);
-
-                coreRules[cssKey] = finalValue;
-            }
-        }
-    }
-
-    return coreRules;
-};
-
-const generateMediaQueryVariables = (styleStrings) => {
-    Object.keys(styleStrings).map((styleString) => {
-        const groupCode = styleCategoryNames[styleString];
-
-        styleStrings[styleString] += `\n
-    /* Media Queries for Semantic Tokens */ \n`;
-
-        semanticTokenNames.map((name) => {
-            const semanticTokenGroup = getTokenGroup([name]);
-            const semanticObjectTokens = generateSassVariables({
-                data: semanticTokenGroup,
-            });
-
-            const viewportValue = (name.match(/\/(\d+)-plus$/) || [])[1];
-
-            styleStrings[styleString] += `\n
-    @media (min-width: ${viewportValue}px)  { \n
-    :root { \n    
-    `;
-
-            Object.keys(semanticObjectTokens).map((tokenKey) => {
-                const convertedKey = convertCSSkey(tokenKey);
-                const tokenValue = semanticObjectTokens[tokenKey];
-                if (tokenKey.includes(groupCode)) {
-                    styleStrings[styleString] +=
-                        `${convertedKey}: ${tokenValue};\n`;
-                }
-
-                if (
-                    groupCode === "others" &&
-                    !Object.values(styleStrings).some((e) =>
-                        e.includes(convertedKey),
-                    )
-                ) {
-                    styleStrings.others += `${convertedKey}: ${tokenValue};\n`;
-                }
-            });
-
-            styleStrings[styleString] += "}\n}\n";
-        });
-    });
-
-    return styleStrings;
-};
-
-const generateThemeVariables = (styleStrings) => {
-    Object.keys(styleStrings).map((styleString) => {
-        const groupCode = styleCategoryNames[styleString];
-
-        styleStrings[styleString] += `\n
-    /* Theme Styling */ \n
-    :root { \n    
-        `;
-
-        themeTokenNames.map((name) => {
-            const themeTokenGroup = getTokenGroup([name]);
-            const themeObjectTokens = generateSassVariables({
-                data: themeTokenGroup,
-            });
-
-            const themeName = name.replace(/^.*?\/(.*?)\/(.*)$/, "$1--$2");
-
-            styleStrings[styleString] += `\n .${themeName} { \n
-    `;
-
-            Object.keys(themeObjectTokens).map((tokenKey) => {
-                const convertedKey = convertCSSkey(tokenKey);
-                const tokenValue = themeObjectTokens[tokenKey];
-                if (tokenKey.includes(groupCode)) {
-                    styleStrings[styleString] +=
-                        `${convertedKey}: ${tokenValue};\n`;
-                }
-                if (
-                    groupCode === "others" &&
-                    !Object.values(styleStrings).some((e) =>
-                        e.includes(convertedKey),
-                    )
-                ) {
-                    styleStrings.others += `${convertedKey}: ${tokenValue};\n`;
-                }
-            });
-
-            styleStrings[styleString] += "\n}\n";
-        });
-
-        styleStrings[styleString] += "\n}\n";
-    });
-
-    return styleStrings;
-};
-
-const mapSASSValues = () => {
-    const tokenGroup = getTokenGroup(tokenNames);
-    const objectTokens = generateSassVariables({ data: tokenGroup });
-
-    styleStrings.static = ``;
-    // Add temporary static values
-    for (let i = 1; i <= 300; i++) {
-        styleStrings.static += `--temp-static-spacing-${i}: ${i}px;\n`;
-    }
-
-    styleStrings.static = `:root { \n  ${styleStrings.static}}`;
-
-    let sassContent = ``;
-
-    Object.keys(styleStrings).map((styleString) => {
-        const groupCode = styleCategoryNames[styleString];
-
-        styleStrings[styleString] += `:root { \n`;
-        sassContent += `:root { \n`;
-
-        Object.keys(objectTokens).map((tokenKey) => {
-            const tokenValue = objectTokens[tokenKey];
-            const convertedKey = convertCSSkey(tokenKey);
-
-            if (tokenKey.includes(groupCode)) {
-                sassContent += `${convertedKey}: ${tokenValue};\n`;
-                styleStrings[styleString] +=
-                    `${convertCSSkey(tokenKey)}: ${tokenValue};\n`;
-            }
-
-            if (
-                groupCode === "others" &&
-                !Object.values(styleStrings).some((e) =>
-                    e.includes(convertedKey),
-                )
-            ) {
-                styleStrings.others += `${convertedKey}: ${tokenValue};\n`;
-            }
-        });
-
-        sassContent += "}";
-        styleStrings[styleString] += "}";
-    });
-
-    // Generate Media query rules
-    let newStyleStrings = generateMediaQueryVariables(styleStrings);
-
-    // Generate theme rules
-    newStyleStrings = generateThemeVariables(newStyleStrings);
-
-    // Do transformation on each files
-    Object.keys(newStyleStrings).map((styleString) => {
-        // Map token variables
-        newStyleStrings[styleString] = mapTokenValues(
-            objectTokens,
-            newStyleStrings[styleString],
+        this.styleCategoryNames = {
+            spacing: "spacing",
+            opacity: "core.opacity",
+            color: "color.solid",
+            "color.gradient": "color.gradient",
+            "color.opacity": "color.opacity",
+            "color.semantic": "semantic.color",
+            "font.size": "fontSize",
+            "font.weight": "fontWeight",
+            "font.family": "fontFamily",
+            "line.height": "lineHeight",
+            "letter.spacing": "letterSpacing",
+            "text.decoration": "textDecoration",
+            gap: "paragraphSpacing",
+            border: "border",
+            elevation: "elevation",
+            motion: "motion",
+            size: ".size.",
+            static: "temp",
+            others: "others",
+        };
+        this.styleStrings = Object.fromEntries(
+            Object.keys(this.styleCategoryNames).map((key) => [key, ""]),
         );
 
-        // Convert HEX values to RGBA
-        newStyleStrings[styleString] = convertHexes(
-            newStyleStrings[styleString],
-        );
-    });
-
-    // Generate Breakpoint Mixins
-    newStyleStrings.breakpoints = generateBreakpoints();
-
-    return { sassContent, styleStrings: newStyleStrings };
-};
-
-const checkKeysExist = (objectTokens, str) => {
-    const keysArray = Object.keys(objectTokens);
-    const keyExists = keysArray.some((key) => str.includes(key));
-
-    return keyExists;
-};
-
-const mapTokenValues = (objectTokens, str) => {
-    Object.keys(objectTokens).map((key) => {
-        const tokenValue = objectTokens[key];
-
-        str = str.replaceAll(`{${key}}`, tokenValue);
-    });
-
-    if (checkKeysExist(objectTokens, str)) {
-        str = mapTokenValues(objectTokens, str);
+        this.mapSASSValues();
+        this.generateFiles();
     }
 
-    return str;
-};
+    checkKeysExist = (objectTokens, str) => {
+        const keysArray = Object.keys(objectTokens);
+        const keyExists = keysArray.some((key) => str.includes(key));
 
-const convertHexes = (str) => {
-    const rgbaRegex =
-        /rgba\(\s*#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})\s*,?\s*(\d*\.?\d+|0)\)/g;
-
-    const replaceRgba = (_, hexColor, opacity) => {
-        // Convert hex color to RGBA
-        const red = parseInt(hexColor.substring(0, 2), 16);
-        const green = parseInt(hexColor.substring(2, 4), 16);
-        const blue = parseInt(hexColor.substring(4, 6), 16);
-
-        return `rgba(${red}, ${green}, ${blue}, ${opacity})`;
+        return keyExists;
     };
 
-    return str.replaceAll(rgbaRegex, replaceRgba);
-};
+    convertCSSkey = (cssKey, prefix = true) => {
+        const pref = prefix ? "--" : "";
+        return `${pref}${cssKey.replaceAll(".", "-")}`;
+    };
 
-const trimEmptyDeclarations = (cssString, fileName) => {
-    const skipFiles = ["breakpoints"];
+    convertHexes = (str) => {
+        const rgbaRegex =
+            /rgba\(\s*#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})\s*,?\s*(\d*\.?\d+|0)\)/g;
 
-    if (skipFiles.includes(fileName)) {
-        return cssString;
-    }
+        const replaceRgba = (_, hexColor, opacity) => {
+            // Convert hex color to RGBA
+            const red = parseInt(hexColor.substring(0, 2), 16);
+            const green = parseInt(hexColor.substring(2, 4), 16);
+            const blue = parseInt(hexColor.substring(4, 6), 16);
 
-    // Remove all indentations, white spaces, and newlines
-    cssString = cssString.replace(/\s+/g, "");
+            return `rgba(${red}, ${green}, ${blue}, ${opacity})`;
+        };
 
-    // Remove empty media query declarations with empty root
-    cssString = cssString.replace(/@media\(min-width:\d+px\){:root{}}/g, "");
+        return str.replaceAll(rgbaRegex, replaceRgba);
+    };
 
-    // Remove empty class declarations
-    cssString = cssString.replace(/\.([^{}]+){}/g, "");
+    extractCSSValues = (key, value) => {
+        const filteredKeys = ["type"];
 
-    // Remove empty root declarations
-    cssString = cssString.replace(/:root{}+/g, "");
+        const CSSValues = [];
+        Object.keys(value).map((k) => {
+            if (!filteredKeys.includes(k)) {
+                CSSValues.push(value[k]);
+            }
+        });
 
-    // Remove hanging comments
-    cssString = cssString.replace(/\/\*[^*]*\*+([^/*][^*]*\*+)*\//g, "");
+        return CSSValues.join(" ");
+    };
 
-    /***  Handle specifc token issues  ***/
-    // Convert empty fontWeight to normal
-    cssString = cssString.replace(/fontWeight:\s*;/g, "fontWeight: normal;");
+    generateBreakpoints = () => {
+        const breakpointMap = {};
 
-    return cssString;
-};
+        this.semanticTokenNames.forEach((tokenName, index) => {
+            const parts = tokenName.split("/");
+            const minWidth = parseInt(parts[2].split("-")[0]); // Extract the minWidth and convert it to an integer
+            const breakpoint = this.breakpointNames[index];
 
-const generateBreakpoints = () => {
-    const breakpointMap = {};
+            breakpointMap[minWidth] = breakpoint;
+        });
 
-    semanticTokenNames.forEach((tokenName, index) => {
-        const parts = tokenName.split("/");
-        const minWidth = parseInt(parts[2].split("-")[0]); // Extract the minWidth and convert it to an integer
-        const breakpoint = breakpointNames[index];
+        let sassString = `@mixin breakpoint($breakpoint) {\n`;
 
-        breakpointMap[minWidth] = breakpoint;
-    });
-
-    let sassString = `@mixin breakpoint($breakpoint) {\n`;
-
-    // Generate the Sass mixin string using the dynamically populated breakpointMap
-    Object.entries(breakpointMap).forEach(([minWidth, breakpoint]) => {
-        sassString += `@if $breakpoint == "${breakpoint}" {
+        // Generate the Sass mixin string using the dynamically populated breakpointMap
+        Object.entries(breakpointMap).forEach(([minWidth, breakpoint]) => {
+            sassString += `@if $breakpoint == "${breakpoint}" {
                             @media (min-width: ${minWidth}px) {
                             @content;
                             }
                         }\n`;
-    });
+        });
 
-    sassString += `  @else {
+        sassString += `  @else {
                             @warn "Unknown breakpoint: #{$breakpoint}.";
                         }
                     }\n\n`;
 
-    return sassString;
-};
+        return sassString;
+    };
 
-const generateSassFile = () => {
-    const { styleStrings } = mapSASSValues();
+    generateFiles = () => {
+        console.log("Successfully generated CSS files:");
 
-    console.log("Successfully generated CSS files:");
+        Object.keys(this.styleStrings).map((fileName) => {
+            const cssVariables = this.trimEmptyDeclarations(
+                this.styleStrings[fileName],
+                fileName,
+            );
 
-    Object.keys(styleStrings).map((fileName) => {
-        const cssVariables = trimEmptyDeclarations(
-            styleStrings[fileName],
-            fileName,
+            const filePaths = [`lib/styles/sass/${fileName}.scss`];
+
+            filePaths.map((item) => {
+                const dirPath = path.dirname(item);
+                if (!fs.existsSync(dirPath)) {
+                    fs.mkdirSync(dirPath, { recursive: true });
+                }
+
+                fs.writeFileSync(item, cssVariables);
+
+                console.log(`--${item}`);
+            });
+        });
+    };
+
+    generateMediaQueryVariables = () => {
+        Object.keys(this.styleStrings).map((styleString) => {
+            const groupCode = this.styleCategoryNames[styleString];
+
+            this.styleStrings[styleString] += `\n
+             /* Media Queries for Semantic Tokens */ \n`;
+
+            this.semanticTokenNames.map((name) => {
+                const semanticTokenGroup = this.getTokenGroup([name]);
+                const semanticObjectTokens = this.generateSassVariables({
+                    data: semanticTokenGroup,
+                });
+
+                const viewportValue = (name.match(/\/(\d+)-plus$/) || [])[1];
+
+                this.styleStrings[styleString] += `\n
+                            @media (min-width: ${viewportValue}px)  { \n
+                            :root { \n    
+                            `;
+
+                Object.keys(semanticObjectTokens).map((tokenKey) => {
+                    const convertedKey = this.convertCSSkey(tokenKey);
+                    const tokenValue = semanticObjectTokens[tokenKey];
+                    if (tokenKey.includes(groupCode)) {
+                        this.styleStrings[styleString] +=
+                            `${convertedKey}: ${tokenValue};\n`;
+                    }
+
+                    if (
+                        groupCode === "others" &&
+                        !Object.values(this.styleStrings).some((e) =>
+                            e.includes(convertedKey),
+                        )
+                    ) {
+                        this.styleStrings.others += `${convertedKey}: ${tokenValue};\n`;
+                    }
+                });
+
+                this.styleStrings[styleString] += "}\n}\n";
+            });
+        });
+    };
+
+    generateSassVariables = ({
+        data,
+        prefix = "",
+        origin = "",
+        reset = true,
+    }) => {
+        const valueIdentifier = "value";
+
+        if (reset) {
+            this.coreRules = {};
+        }
+
+        for (const key in data) {
+            const cssValue = data[key];
+            const isValueObject = this.isObject(cssValue);
+            let keyName = `${prefix}${key}-`;
+
+            // Filter key name by removing token category
+            keyName = this.allTokenNames.some((item) => keyName.includes(item))
+                ? ""
+                : keyName;
+            const finalKey = prefix.substring(0, prefix.length - 1); // Remove "-" generated from the previous iteration
+
+            // Recursive call for nested objects
+            if (isValueObject && key !== valueIdentifier) {
+                // Non token variables are excluded
+                if (!this.excludedKeys.includes(key)) {
+                    this.generateSassVariables({
+                        data: data[key],
+                        prefix: keyName,
+                        origin: origin || key,
+                        reset: false,
+                    });
+                }
+            } else {
+                if (key === valueIdentifier) {
+                    const cssKey = finalKey.replaceAll("-", ".");
+                    const finalValue = this.processCSSValue(finalKey, cssValue);
+
+                    this.coreRules[cssKey] = finalValue;
+                }
+            }
+        }
+
+        return this.coreRules;
+    };
+
+    generateThemeVariables = () => {
+        Object.keys(this.styleStrings).map((styleString) => {
+            const groupCode = this.styleCategoryNames[styleString];
+
+            this.styleStrings[styleString] += `\n
+                /* Theme Styling */ \n
+                :root { \n    
+                    `;
+
+            this.themeTokenNames.map((name) => {
+                const themeTokenGroup = this.getTokenGroup([name]);
+                const themeObjectTokens = this.generateSassVariables({
+                    data: themeTokenGroup,
+                });
+
+                const themeName = name.replace(/^.*?\/(.*?)\/(.*)$/, "$1--$2");
+
+                this.styleStrings[styleString] += `\n .${themeName} { \n
+    `;
+
+                Object.keys(themeObjectTokens).map((tokenKey) => {
+                    const convertedKey = this.convertCSSkey(tokenKey);
+                    const tokenValue = themeObjectTokens[tokenKey];
+                    if (tokenKey.includes(groupCode)) {
+                        this.styleStrings[styleString] +=
+                            `${convertedKey}: ${tokenValue};\n`;
+                    }
+                    if (
+                        groupCode === "others" &&
+                        !Object.values(this.styleStrings).some((e) =>
+                            e.includes(convertedKey),
+                        )
+                    ) {
+                        this.styleStrings.others += `${convertedKey}: ${tokenValue};\n`;
+                    }
+                });
+
+                this.styleStrings[styleString] += "\n}\n";
+            });
+
+            this.styleStrings[styleString] += "\n}\n";
+        });
+    };
+
+    getTokenGroup = (group) =>
+        Object.fromEntries(
+            Object.entries(this.designTokens).filter(([key]) =>
+                group.includes(key),
+            ),
         );
 
-        const filePaths = [`lib/styles/sass/${fileName}.scss`];
+    isObject = (item) => typeof item === "object";
 
-        filePaths.map((item) => {
-            const dirPath = path.dirname(item);
-            if (!fs.existsSync(dirPath)) {
-                fs.mkdirSync(dirPath, { recursive: true });
+    mapSASSValues = () => {
+        const tokenGroup = this.getTokenGroup(this.tokenNames);
+        const objectTokens = this.generateSassVariables({ data: tokenGroup });
+
+        this.styleStrings.static = ``;
+        // Add temporary static values
+        for (let i = 1; i <= 300; i++) {
+            this.styleStrings.static += `--temp-static-spacing-${i}: ${i}px;\n`;
+        }
+
+        this.styleStrings.static = `:root { \n  ${this.styleStrings.static}}`;
+
+        Object.keys(this.styleStrings).map((styleString) => {
+            const groupCode = this.styleCategoryNames[styleString];
+
+            this.styleStrings[styleString] += `:root { \n`;
+
+            Object.keys(objectTokens).map((tokenKey) => {
+                const tokenValue = objectTokens[tokenKey];
+                const convertedKey = this.convertCSSkey(tokenKey);
+
+                if (tokenKey.includes(groupCode)) {
+                    this.styleStrings[styleString] +=
+                        `${this.convertCSSkey(tokenKey)}: ${tokenValue};\n`;
+                }
+
+                if (
+                    groupCode === "others" &&
+                    !Object.values(this.styleStrings).some((e) =>
+                        e.includes(convertedKey),
+                    )
+                ) {
+                    this.styleStrings.others += `${convertedKey}: ${tokenValue};\n`;
+                }
+            });
+
+            this.styleStrings[styleString] += "}";
+        });
+
+        // Generate Media query rules
+        this.generateMediaQueryVariables();
+
+        // Generate theme rules
+        this.generateThemeVariables();
+
+        // Do transformation on each files
+        Object.keys(this.styleStrings).map((styleString) => {
+            // Map token variables
+            this.styleStrings[styleString] = this.mapTokenValues(
+                objectTokens,
+                this.styleStrings[styleString],
+            );
+
+            // Convert HEX values to RGBA
+            this.styleStrings[styleString] = this.convertHexes(
+                this.styleStrings[styleString],
+            );
+        });
+
+        // Generate Breakpoint Mixins
+        this.styleStrings.breakpoints = this.generateBreakpoints();
+    };
+
+    mapTokenValues = (objectTokens, str) => {
+        Object.keys(objectTokens).map((key) => {
+            const tokenValue = objectTokens[key];
+
+            str = str.replaceAll(`{${key}}`, tokenValue);
+        });
+
+        if (this.checkKeysExist(objectTokens, str)) {
+            str = this.mapTokenValues(objectTokens, str);
+        }
+
+        return str;
+    };
+
+    processCSSValue = (key, value) => {
+        const noUnitKeys = ["fontWeight"];
+        const percentageKeys = ["opacity"];
+        const propertyGroup = key.split("-");
+        const propertyName = propertyGroup[propertyGroup.length - 1];
+        const defaultValues = {
+            letterSpacing: "normal",
+        };
+
+        if (Array.isArray(value)) {
+            const cssGroupValue = [];
+            value.map((cssValue) => {
+                cssGroupValue.push(this.extractCSSValues(key, cssValue));
+            });
+
+            return cssGroupValue.join(",");
+        } else if (this.isObject(value)) {
+            return this.extractCSSValues(key, value);
+        } else {
+            if (noUnitKeys.some((k) => key.includes(k))) {
+                return value;
             }
 
-            fs.writeFileSync(item, cssVariables);
+            if (percentageKeys.some((k) => key.includes(k))) {
+                if (value.includes("%")) {
+                    const percentageValue = parseInt(value) * 0.01;
 
-            console.log(`--${item}`);
-        });
-    });
-};
+                    return percentageValue;
+                }
+            }
 
-generateSassFile();
+            if (value === "") {
+                const defaultValue = defaultValues[propertyName];
+
+                if (defaultValue) {
+                    return defaultValue;
+                }
+            }
+
+            return isNaN(value) ? value : `${value}px`;
+        }
+    };
+
+    trimEmptyDeclarations = (cssString, fileName) => {
+        const skipFiles = ["breakpoints"];
+
+        if (skipFiles.includes(fileName)) {
+            return cssString;
+        }
+
+        // Remove all indentations, white spaces, and newlines
+        cssString = cssString.replace(/\s+/g, "");
+
+        // Remove empty media query declarations with empty root
+        cssString = cssString.replace(
+            /@media\(min-width:\d+px\){:root{}}/g,
+            "",
+        );
+
+        // Remove empty class declarations
+        cssString = cssString.replace(/\.([^{}]+){}/g, "");
+
+        // Remove empty root declarations
+        cssString = cssString.replace(/:root{}+/g, "");
+
+        // Remove hanging comments
+        cssString = cssString.replace(/\/\*[^*]*\*+([^/*][^*]*\*+)*\//g, "");
+
+        /***  Handle specifc token issues  ***/
+        // Convert empty fontWeight to normal
+        cssString = cssString.replace(
+            /fontWeight:\s*;/g,
+            "fontWeight: normal;",
+        );
+
+        return cssString;
+    };
+}
+
+new Transformer();
