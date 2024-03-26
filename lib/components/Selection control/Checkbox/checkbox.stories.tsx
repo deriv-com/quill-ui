@@ -20,44 +20,53 @@ const meta = {
     },
     argTypes: {
         checked: {
+            table: { type: { summary: "boolean | undefined" } },
             description: "Flag for setting initial state",
             options: ["true", "false"],
             control: { type: "boolean" },
         },
         disabled: {
+            table: { type: { summary: "boolean | undefined" } },
             description: "Flag for setting accessibility",
             options: ["true", "false"],
             control: { type: "boolean" },
         },
         size: {
+            table: { type: { summary: "string | undefined" } },
             description: "Size of the label",
             options: ["sm", "md"],
             control: { type: "radio" },
         },
         label: {
+            table: { type: { summary: "string | React.Node | undefined" } },
             description: "Label content (string or React.Node)",
             control: { type: "text" },
         },
         labelClassName: {
+            table: { type: { summary: "string | undefined" } },
             description:
                 "ClassName for label, which will be passed to Text component",
             control: { type: "text" },
         },
         name: {
+            table: { type: { summary: "string | undefined" } },
             description:
                 "Input attribute value. Is used as one of the ways to bind input tag with its label",
             control: { type: "text" },
         },
         wrapperClassName: {
+            table: { type: { summary: "string | undefined" } },
             description: "ClassName for external tag of the component",
             control: { type: "text" },
         },
         onChange: {
+            table: { type: { summary: "function | undefined" } },
             description:
                 "Callback function, which will be called as a part of onChange and onKeyDown",
             control: { type: null },
         },
         id: {
+            table: { type: { summary: "string | undefined" } },
             description:
                 "Input attribute value. Is used as one of the ways to bind input tag with its label",
             control: { type: "text" },
@@ -90,6 +99,14 @@ export const CheckboxDisabled: Story = {
     args: {
         disabled: true,
         label: "Selection control checkbox disabled",
+    },
+};
+
+export const CheckboxDisabledChecked: Story = {
+    args: {
+        checked: true,
+        disabled: true,
+        label: "Selection control checkbox disabled and checked",
     },
 };
 
