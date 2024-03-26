@@ -394,6 +394,10 @@ const trimEmptyDeclarations = (cssString) => {
     // Remove hanging comments
     cssString = cssString.replace(/\/\*[^*]*\*+([^/*][^*]*\*+)*\//g, "");
 
+    /***  Handle specifc token issues  ***/
+    // Convert empty fontWeight to normal
+    cssString = cssString.replace(/fontWeight:\s*;/g, "fontWeight: normal;");
+
     return cssString;
 };
 
