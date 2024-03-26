@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should apply id if it was passed 1`] = `
+<div>
+  <div
+    class="quill-checkbox"
+  >
+    <div
+      class="quill-checkbox__wrapper"
+    >
+      <input
+        class="quill-checkbox__box"
+        id="mock_id"
+        type="checkbox"
+      />
+      <svg
+        class="quill-checkbox__icon quill-checkbox__icon--default"
+        height="24"
+        role="img"
+        viewBox="0 0 32 32"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22.25 9.625H9.75a.64.64 0 0 0-.625.625v12.5c0 .352.273.625.625.625h12.5a.64.64 0 0 0 .625-.625v-12.5c0-.312-.312-.625-.625-.625M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5"
+        />
+      </svg>
+    </div>
+    <label
+      for="mock_id"
+    >
+      <span
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+      >
+        Checkbox label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox should apply labelClassName if it was passed 1`] = `
+<div>
+  <div
+    class="quill-checkbox"
+  >
+    <div
+      class="quill-checkbox__wrapper"
+    >
+      <input
+        class="quill-checkbox__box"
+        type="checkbox"
+      />
+      <svg
+        class="quill-checkbox__icon quill-checkbox__icon--default"
+        height="24"
+        role="img"
+        viewBox="0 0 32 32"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22.25 9.625H9.75a.64.64 0 0 0-.625.625v12.5c0 .352.273.625.625.625h12.5a.64.64 0 0 0 .625-.625v-12.5c0-.312-.312-.625-.625-.625M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5"
+        />
+      </svg>
+    </div>
+    <label>
+      <span
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label label_className"
+      >
+        Checkbox label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox should apply name if it was passed 1`] = `
+<div>
+  <div
+    class="quill-checkbox"
+  >
+    <div
+      class="quill-checkbox__wrapper"
+    >
+      <input
+        class="quill-checkbox__box"
+        id="mock_name"
+        name="mock_name"
+        type="checkbox"
+      />
+      <svg
+        class="quill-checkbox__icon quill-checkbox__icon--default"
+        height="24"
+        role="img"
+        viewBox="0 0 32 32"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22.25 9.625H9.75a.64.64 0 0 0-.625.625v12.5c0 .352.273.625.625.625h12.5a.64.64 0 0 0 .625-.625v-12.5c0-.312-.312-.625-.625-.625M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5"
+        />
+      </svg>
+    </div>
+    <label
+      for="mock_name"
+    >
+      <span
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+      >
+        Checkbox label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox should apply wrapperClassName if it was passed 1`] = `
+<div>
+  <div
+    class="quill-checkbox wrapper_className"
+  >
+    <div
+      class="quill-checkbox__wrapper"
+    >
+      <input
+        class="quill-checkbox__box"
+        type="checkbox"
+      />
+      <svg
+        class="quill-checkbox__icon quill-checkbox__icon--default"
+        height="24"
+        role="img"
+        viewBox="0 0 32 32"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22.25 9.625H9.75a.64.64 0 0 0-.625.625v12.5c0 .352.273.625.625.625h12.5a.64.64 0 0 0 .625-.625v-12.5c0-.312-.312-.625-.625-.625M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5"
+        />
+      </svg>
+    </div>
+    <label>
+      <span
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+      >
+        Checkbox label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox should render correct attribute of input if checked === true 1`] = `
+<div>
+  <div
+    class="quill-checkbox"
+  >
+    <div
+      class="quill-checkbox__wrapper"
+    >
+      <input
+        checked=""
+        class="quill-checkbox__box"
+        type="checkbox"
+      />
+      <svg
+        class="quill-checkbox__icon"
+        height="24"
+        role="img"
+        viewBox="0 0 32 32"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5m10.664 6.914h-.039c.39-.351.39-.937 0-1.328a.92.92 0 0 0-1.29 0L14.75 17.71l-1.836-1.836c-.39-.39-.976-.39-1.328 0a.856.856 0 0 0 0 1.29l2.5 2.5c.351.39.937.39 1.328 0z"
+        />
+      </svg>
+    </div>
+    <label>
+      <span
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+      >
+        Checkbox label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox should render correct attribute of input if disabled === true 1`] = `
+<div>
+  <div
+    class="quill-checkbox"
+  >
+    <div
+      class="quill-checkbox__wrapper"
+    >
+      <input
+        class="quill-checkbox__box"
+        disabled=""
+        type="checkbox"
+      />
+      <svg
+        class="quill-checkbox__icon quill-checkbox__icon--default quill-checkbox__icon--disabled"
+        height="24"
+        role="img"
+        viewBox="0 0 32 32"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22.25 9.625H9.75a.64.64 0 0 0-.625.625v12.5c0 .352.273.625.625.625h12.5a.64.64 0 0 0 .625-.625v-12.5c0-.312-.312-.625-.625-.625M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5"
+        />
+      </svg>
+    </div>
+    <label>
+      <span
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-typography__color--disabled quill-checkbox__label"
+      >
+        Checkbox label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox should render correct label size if size === 'md' 1`] = `
+<div>
+  <div
+    class="quill-checkbox"
+  >
+    <div
+      class="quill-checkbox__wrapper"
+    >
+      <input
+        class="quill-checkbox__box"
+        type="checkbox"
+      />
+      <svg
+        class="quill-checkbox__icon quill-checkbox__icon--default"
+        height="24"
+        role="img"
+        viewBox="0 0 32 32"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22.25 9.625H9.75a.64.64 0 0 0-.625.625v12.5c0 .352.273.625.625.625h12.5a.64.64 0 0 0 .625-.625v-12.5c0-.312-.312-.625-.625-.625M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5"
+        />
+      </svg>
+    </div>
+    <label>
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+      >
+        Checkbox label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox should render with default values if optional ones were not passed 1`] = `
+<div>
+  <div
+    class="quill-checkbox"
+  >
+    <div
+      class="quill-checkbox__wrapper"
+    >
+      <input
+        class="quill-checkbox__box"
+        type="checkbox"
+      />
+      <svg
+        class="quill-checkbox__icon quill-checkbox__icon--default"
+        height="24"
+        role="img"
+        viewBox="0 0 32 32"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22.25 9.625H9.75a.64.64 0 0 0-.625.625v12.5c0 .352.273.625.625.625h12.5a.64.64 0 0 0 .625-.625v-12.5c0-.312-.312-.625-.625-.625M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5"
+        />
+      </svg>
+    </div>
+    <label>
+      <span
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+      >
+        Checkbox label
+      </span>
+    </label>
+  </div>
+</div>
+`;
