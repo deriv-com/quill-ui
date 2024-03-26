@@ -378,11 +378,23 @@ const convertHexes = (str) => {
     return str.replaceAll(rgbaRegex, replaceRgba);
 };
 
-const trimEmptyRules = (string) => {
-    return string
-        .replace(/[\s\S]*?{[\s\n\r]+}/g, "")
-        .trim()
-        .replace("}", "");
+const trimEmptyDeclarations = (cssString) => {
+    // Remove all indentations, white spaces, and newlines
+    cssString = cssString.replace(/\s+/g, "");
+
+    // Remove empty media query declarations with empty root
+    cssString = cssString.replace(/@media\(min-width:\d+px\){:root{}}/g, "");
+
+    // Remove empty class declarations
+    cssString = cssString.replace(/\.([^{}]+){}/g, "");
+
+    // Remove empty root declarations
+    cssString = cssString.replace(/:root{}+/g, "");
+
+    // Remove hanging comments
+    cssString = cssString.replace(/\/\*[^*]*\*+([^/*][^*]*\*+)*\//g, "");
+
+    return cssString;
 };
 
 const generateSassFile = () => {
@@ -391,7 +403,7 @@ const generateSassFile = () => {
     console.log("Successfully generated CSS files:");
 
     Object.keys(styleStrings).map((fileName) => {
-        const cssVariables = styleStrings[fileName];
+        const cssVariables = trimEmptyDeclarations(styleStrings[fileName]);
         const filePaths = [
             `lib/styles/sass/${fileName}.scss`,
             // `lib/styles/css/${fileName}.css`,
@@ -403,6 +415,7 @@ const generateSassFile = () => {
                 fs.mkdirSync(dirPath, { recursive: true });
             }
 
+            fs.writeFileSync(item, cssVariables);
             fs.writeFileSync(item, cssVariables);
 
             console.log(`--${item}`);

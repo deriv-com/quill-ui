@@ -69,9 +69,6 @@
     --semantic-borderRadius-2xl: 48px;
     --semantic-borderRadius-pill: 96px;
 }
-
-/* Media Queries for Semantic Tokens */
-
 @media (min-width: 640px) {
     :root {
         --semantic-borderRadius-none: 0px;
@@ -84,7 +81,6 @@
         --semantic-borderRadius-pill: 96px;
     }
 }
-
 @media (min-width: 768px) {
     :root {
         --semantic-borderRadius-none: 0px;
@@ -97,7 +93,6 @@
         --semantic-borderRadius-pill: 96px;
     }
 }
-
 @media (min-width: 1024px) {
     :root {
         --semantic-borderRadius-none: 0px;
@@ -110,7 +105,6 @@
         --semantic-borderRadius-pill: 96px;
     }
 }
-
 @media (min-width: 1280px) {
     :root {
         --semantic-borderRadius-none: 0px;
@@ -123,7 +117,6 @@
         --semantic-borderRadius-pill: 96px;
     }
 }
-
 @media (min-width: 1440px) {
     :root {
         --semantic-borderRadius-none: 0px;
@@ -134,15 +127,5 @@
         --semantic-borderRadius-xl: 24px;
         --semantic-borderRadius-2xl: 48px;
         --semantic-borderRadius-pill: 96px;
-    }
-}
-
-/* Theme Styling */
-
-:root {
-    .theme--light {
-    }
-
-    .theme--dark {
     }
 }

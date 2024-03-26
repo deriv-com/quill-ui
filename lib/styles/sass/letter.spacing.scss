@@ -109,9 +109,6 @@
     --semantic-typography-icon-standalone-brand-md-letterSpacing: normal;
     --semantic-typography-icon-standalone-brand-sm-letterSpacing: normal;
 }
-
-/* Media Queries for Semantic Tokens */
-
 @media (min-width: 640px) {
     :root {
         --semantic-typography-heading-hero-letterSpacing: normal;
@@ -225,7 +222,6 @@
         --semantic-typography-icon-standalone-brand-sm-letterSpacing: normal;
     }
 }
-
 @media (min-width: 768px) {
     :root {
         --semantic-typography-heading-hero-letterSpacing: normal;
@@ -339,7 +335,6 @@
         --semantic-typography-icon-standalone-brand-sm-letterSpacing: normal;
     }
 }
-
 @media (min-width: 1024px) {
     :root {
         --semantic-typography-heading-hero-letterSpacing: normal;
@@ -453,7 +448,6 @@
         --semantic-typography-icon-standalone-brand-sm-letterSpacing: normal;
     }
 }
-
 @media (min-width: 1280px) {
     :root {
         --semantic-typography-heading-hero-letterSpacing: normal;
@@ -567,7 +561,6 @@
         --semantic-typography-icon-standalone-brand-sm-letterSpacing: normal;
     }
 }
-
 @media (min-width: 1440px) {
     :root {
         --semantic-typography-heading-hero-letterSpacing: normal;
@@ -679,15 +672,5 @@
         --semantic-typography-icon-standalone-brand-lg-letterSpacing: normal;
         --semantic-typography-icon-standalone-brand-md-letterSpacing: normal;
         --semantic-typography-icon-standalone-brand-sm-letterSpacing: normal;
-    }
-}
-
-/* Theme Styling */
-
-:root {
-    .theme--light {
-    }
-
-    .theme--dark {
     }
 }

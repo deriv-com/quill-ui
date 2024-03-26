@@ -74,9 +74,6 @@
     --semantic-spacing-gap-3xl: 32px;
     --semantic-spacing-gap-4xl: 32px;
 }
-
-/* Media Queries for Semantic Tokens */
-
 @media (min-width: 640px) {
     :root {
         --semantic-spacing-general-none: 0px;
@@ -103,7 +100,6 @@
         --semantic-spacing-gap-4xl: 32px;
     }
 }
-
 @media (min-width: 768px) {
     :root {
         --semantic-spacing-general-none: 0px;
@@ -130,7 +126,6 @@
         --semantic-spacing-gap-4xl: 32px;
     }
 }
-
 @media (min-width: 1024px) {
     :root {
         --semantic-spacing-general-none: 0px;
@@ -157,7 +152,6 @@
         --semantic-spacing-gap-4xl: 32px;
     }
 }
-
 @media (min-width: 1280px) {
     :root {
         --semantic-spacing-general-none: 0px;
@@ -184,7 +178,6 @@
         --semantic-spacing-gap-4xl: 64px;
     }
 }
-
 @media (min-width: 1440px) {
     :root {
         --semantic-spacing-general-none: 0px;
@@ -209,15 +202,5 @@
         --semantic-spacing-gap-2xl: 32px;
         --semantic-spacing-gap-3xl: 48px;
         --semantic-spacing-gap-4xl: 64px;
-    }
-}
-
-/* Theme Styling */
-
-:root {
-    .theme--light {
-    }
-
-    .theme--dark {
     }
 }

@@ -36,9 +36,6 @@
     --semantic-typography-code-sm-bold-underline-textDecoration: underline;
     --semantic-typography-code-sm-bold-italic-underline-textDecoration: underline;
 }
-
-/* Media Queries for Semantic Tokens */
-
 @media (min-width: 640px) {
     :root {
         --semantic-typography-body-xl-regular-underline-textDecoration: underline;
@@ -79,7 +76,6 @@
         --semantic-typography-code-sm-bold-italic-underline-textDecoration: underline;
     }
 }
-
 @media (min-width: 768px) {
     :root {
         --semantic-typography-body-xl-regular-underline-textDecoration: underline;
@@ -120,7 +116,6 @@
         --semantic-typography-code-sm-bold-italic-underline-textDecoration: underline;
     }
 }
-
 @media (min-width: 1024px) {
     :root {
         --semantic-typography-body-xl-regular-underline-textDecoration: underline;
@@ -161,7 +156,6 @@
         --semantic-typography-code-sm-bold-italic-underline-textDecoration: underline;
     }
 }
-
 @media (min-width: 1280px) {
     :root {
         --semantic-typography-body-xl-regular-underline-textDecoration: underline;
@@ -202,7 +196,6 @@
         --semantic-typography-code-sm-bold-italic-underline-textDecoration: underline;
     }
 }
-
 @media (min-width: 1440px) {
     :root {
         --semantic-typography-body-xl-regular-underline-textDecoration: underline;
@@ -241,15 +234,5 @@
         --semantic-typography-code-sm-regular-italic-underline-textDecoration: underline;
         --semantic-typography-code-sm-bold-underline-textDecoration: underline;
         --semantic-typography-code-sm-bold-italic-underline-textDecoration: underline;
-    }
-}
-
-/* Theme Styling */
-
-:root {
-    .theme--light {
-    }
-
-    .theme--dark {
     }
 }

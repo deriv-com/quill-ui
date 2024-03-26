@@ -148,9 +148,6 @@
     --semantic-fontSize-icon-standalone-md: 20px;
     --semantic-fontSize-icon-standalone-sm: 16px;
 }
-
-/* Media Queries for Semantic Tokens */
-
 @media (min-width: 640px) {
     :root {
         --semantic-typography-heading-hero-fontSize: 64px;
@@ -290,7 +287,6 @@
         --semantic-fontSize-icon-standalone-sm: 16px;
     }
 }
-
 @media (min-width: 768px) {
     :root {
         --semantic-typography-heading-hero-fontSize: 64px;
@@ -430,7 +426,6 @@
         --semantic-fontSize-icon-standalone-sm: 16px;
     }
 }
-
 @media (min-width: 1024px) {
     :root {
         --semantic-typography-heading-hero-fontSize: 64px;
@@ -570,7 +565,6 @@
         --semantic-fontSize-icon-standalone-sm: 16px;
     }
 }
-
 @media (min-width: 1280px) {
     :root {
         --semantic-typography-heading-hero-fontSize: 80px;
@@ -710,7 +704,6 @@
         --semantic-fontSize-icon-standalone-sm: 16px;
     }
 }
-
 @media (min-width: 1440px) {
     :root {
         --semantic-typography-heading-hero-fontSize: 80px;
@@ -848,15 +841,5 @@
         --semantic-fontSize-icon-standalone-lg: 32px;
         --semantic-fontSize-icon-standalone-md: 20px;
         --semantic-fontSize-icon-standalone-sm: 16px;
-    }
-}
-
-/* Theme Styling */
-
-:root {
-    .theme--light {
-    }
-
-    .theme--dark {
     }
 }
