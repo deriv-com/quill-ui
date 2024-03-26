@@ -1,3 +1,5 @@
+import { QuillSvgProps } from "@deriv/quill-icons";
+
 export type TGenericSizes =
     | "2xl"
     | "2xs"
@@ -11,3 +13,7 @@ export type TGenericSizes =
     | "sm"
     | "xl"
     | "xs";
+
+export type QuillIconComponent = React.ForwardRefExoticComponent<
+    Omit<QuillSvgProps, "ref">
+>;

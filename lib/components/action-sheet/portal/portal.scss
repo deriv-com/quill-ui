@@ -1,0 +1,27 @@
+.quill-action-sheet--portal {
+    position: fixed;
+    inset: var(--semantic-spacing-general-none);
+    transition-property: all;
+    transition-duration: var(--core-motion-duration-200);
+    transition-timing-function: var(--core-motion-ease-400);
+
+    &--wrapper {
+        pointer-events: none;
+        z-index: 50;
+        display: flex;
+        user-select: none;
+        align-items: flex-end;
+        justify-content: center;
+        overflow-x: hidden;
+
+        &[data-state="close"] {
+            visibility: hidden;
+        }
+    }
+
+    &__variant--modal {
+        background-color: var(--core-color-opacity-black-500);
+        pointer-events: auto;
+        z-index: -10;
+    }
+}

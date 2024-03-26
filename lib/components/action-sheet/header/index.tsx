@@ -1,6 +1,7 @@
 import { ComponentPropsWithoutRef, useContext } from "react";
 import { ActionSheetContext } from "../root";
 import clsx from "clsx";
+import "./header.scss";
 
 type HeaderProps = ComponentPropsWithoutRef<"div">;
 

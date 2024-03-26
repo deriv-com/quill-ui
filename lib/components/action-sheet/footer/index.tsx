@@ -1,5 +1,5 @@
 import { FooterProps } from "../types";
-import Button from "../../button/basic";
+// import Button from "../../button/basic";
 import { useContext } from "react";
 import { ActionSheetContext } from "../root";
 import clsx from "clsx";
@@ -35,25 +35,25 @@ const Footer = ({
             {...restProps}
         >
             {primaryAction && (
-                <Button
+                <button
                     onClick={primaryActionHandler}
-                    colorStyle="black"
-                    size="lg"
-                    fullWidth
+                    // colorStyle="black"
+                    // size="lg"
+                    // fullWidth
                 >
                     {primaryAction.content}
-                </Button>
+                </button>
             )}
             {secondaryAction && (
-                <Button
+                <button
                     onClick={secondaryActionHandler}
-                    variant="secondary"
-                    colorStyle="black"
-                    size="lg"
-                    fullWidth
+                    // variant="secondary"
+                    // colorStyle="black"
+                    // size="lg"
+                    // fullWidth
                 >
                     {secondaryAction.content}
-                </Button>
+                </button>
             )}
         </div>
     );
