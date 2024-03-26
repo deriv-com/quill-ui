@@ -10,32 +10,37 @@ const meta = {
     tags: ["autodocs"],
     args: {
         onChange: fn(),
+        selectedItemIndex: 0,
         size: "sm",
     },
     argTypes: {
         className: {
             control: { type: null },
+            description: "Optional.",
             table: {
                 type: { summary: "string | undefined" },
             },
         },
+        onChange: {
+            description:
+                "Optional. You can use it to react to selection change.",
+            control: { type: null },
+        },
         options: {
             control: { type: null },
             description:
-                "Required. The first element in `options` is selected by default. You can pass `selectedItemIndex` to make another element selected. `icon` can be a component or a string name of an icon from `@deriv/quill-icons`. `label` is a string.",
-        },
-        onChange: {
-            control: { type: null },
+                "Required. The first element in `options` is selected by default. You can pass `selectedItemIndex` prop to make another element selected. `icon` can be a component or a string, e.g. the name of an icon from `@deriv/quill-icons`.",
         },
         selectedItemIndex: {
             options: [0, 1, 2, 3, 4],
             control: { type: "radio" },
             description:
-                "Optional. You can pass this index and `onChange` to control the selection using external state in the parent.",
+                "Optional. Index of one of the elements in `options` array. You can use `selectedItemIndex` and `onChange` to control selection.",
         },
         size: {
             options: ["sm", "md", "lg"],
             control: { type: "radio" },
+            description: "Optional.",
             table: {
                 type: { summary: "string | undefined" },
             },
