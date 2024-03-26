@@ -6,6 +6,8 @@ export type TVariant = "primary" | "secondary" | "tertiary";
 
 export type TColor = TDefaultColor | "purchase" | "sell";
 
+export type TSocial = "google" | "facebook" | "apple";
+
 export type QuillIconComponent = React.ForwardRefExoticComponent<
     Omit<QuillSvgProps, "ref">
 >;
@@ -28,7 +30,7 @@ export interface ButtonProps extends ComponentProps<"button"> {
 
 export interface SocialButtonProps extends ComponentProps<"button"> {
     variant?: "primary" | "secondary"
-    social ? : "google" | "facebook" | "apple"
+    social ? : TSocial
     size: Extract<TGenericSizes, "xl" | "lg" | "md">;
     colorStyle?: TDefaultColor;
     hideLabel?: boolean;

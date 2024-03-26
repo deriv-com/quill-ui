@@ -39,7 +39,7 @@ const meta = {
             control: { type: "radio" },
         },
         
-        color: {
+        colorStyle: {
             options: ["coral", "black", "white", "purchase", "sell"],
             control: { type: "radio" },
         },

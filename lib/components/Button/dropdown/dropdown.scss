@@ -1,6 +1,6 @@
 .dropdown-menu {
     &__box{
-        width: fit-content;
+        gap: 4px;
     }
     &__container{
         background-color: var(--core-color-solid-slate-50);
@@ -10,7 +10,7 @@
         padding: var(--core-spacing-400);
         flex-direction: column;
         align-items: flex-start;
-        max-height: 230px;
+        max-height: 258px;
         overflow-y: scroll;
         width: fit-content
 
@@ -22,6 +22,8 @@
         align-items: center;
         gap: var(--temp-static-spacing-8);
         align-self: stretch;
+        min-height: 48px;
+        
         border-radius: var(--core-borderRadius-600);
         &:hover{
             background-color: var(--core-color-solid-slate-75);
@@ -32,14 +34,13 @@
     }
     &__transition {
         &--enter {
-            transition: ease-out 300ms transform;
-            
+            transition: ease-out 300ms transform;         
         }
         &--enter-from {
-            transform: scaleY(1) translateY(-50%);
+            transform: scaleY(0) translateY(-10%);
         }
         &--enter-to {
-            transform: scaleY(1);
+            transform: scaleY(0);
         }
         &--leave {
             transition: ease-out 200ms transform;

@@ -56,7 +56,7 @@
                 background-color: var(--core-color-solid-coral-900);
             }
             &:disabled{
-                opacity: 0.4;
+                opacity: var(--core-opacity-600);
             }
         }
         &--primary-black{
@@ -71,7 +71,7 @@
                 background-color: var(--core-color-opacity-black-800);
             }
             &:disabled{
-                opacity: 0.48;
+                opacity: var(--core-opacity-600);
               
             }
         }
@@ -87,7 +87,7 @@
                 background-color: var(--core-color-opacity-white-700);
             }
             &:disabled{
-                background-color: var(--core-color-solid-slate-50);
+                opacity: var(--core-opacity-600);
             }
         }
         &--primary-purchase {
@@ -102,7 +102,7 @@
                 background-color: var(--core-color-solid-emerald-900);
             }
             &:disabled{
-                opacity: 0.48;
+                opacity: var(--core-opacity-600);
             }
         }
         &--primary-sell {
@@ -117,7 +117,7 @@
                 background-color: var(--core-color-solid-cherry-900);
             }
             &:disabled{
-                opacity: 0.48;
+                opacity: var(--core-opacity-600);
             }
         }
         &--secondary-coral {
@@ -133,7 +133,7 @@
                 background-color: var(--core-color-opacity-coral-200);
             }
             &:disabled{
-                opacity: 0.4;
+                opacity: var(--core-opacity-600);
             }
         }
         &--secondary-black{
@@ -149,7 +149,7 @@
                 background-color: var(--core-color-opacity-black-200);
             }
             &:disabled{
-                opacity: 0.4;
+                opacity: var(--core-opacity-600);
             }
         }
         &--secondary-white{
@@ -165,7 +165,7 @@
                 background-color: var(--core-color-opacity-white-100);
             }
             &:disabled{
-                opacity: 0.4;
+                opacity: var(--core-opacity-600);
             }
         }
         &--secondary-purchase {
@@ -181,7 +181,7 @@
                 background-color: var(--core-color-opacity-emerald-200);
             }
             &:disabled{
-                opacity: 0.48;
+                opacity: var(--core-opacity-600);
             }
         }
         &--secondary-sell{
@@ -197,7 +197,7 @@
                 background-color: var(--core-color-opacity-cherry-200);
             }
             &:disabled{
-                opacity: 0.48;
+                opacity: var(--core-opacity-600);
             }
         }
         &--tertiary-coral{
@@ -213,7 +213,7 @@
                 background-color: var(--core-color-opacity-coral-200);
             }
             &:disabled{
-                opacity: 0.4;
+                opacity: var(--core-opacity-600);
             }
         }
         &--tertiary-black{
@@ -229,7 +229,7 @@
                 background-color: var(--core-color-opacity-black-200);
             }
             &:disabled{
-                opacity: 0.48;
+                opacity: var(--core-opacity-600);
             }
         }
         &--tertiary-white{
@@ -245,7 +245,7 @@
                 background-color: var(--core-color-opacity-white-100);
             }
             &:disabled{
-                opacity: 0.48;
+                opacity: var(--core-opacity-600);
             }
         }
         &--tertiary-purchase{
@@ -261,7 +261,7 @@
                 background-color: var(--core-color-opacity-emerald-200);
             }
             &:disabled{
-                opacity: 0.48;
+                opacity: var(--core-opacity-600);
             }
         }
         &--tertiary-sell{
@@ -277,7 +277,7 @@
                 background-color: var(--core-color-opacity-cherry-200);
             }
             &:disabled{
-                opacity: 0.48;
+                opacity: var(--core-opacity-600);
             }
         }
    

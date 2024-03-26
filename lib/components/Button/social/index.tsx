@@ -7,6 +7,7 @@ import clsx from 'clsx'
 import { ButtonSize } from '../base'
 import './social.scss'
 import '../button.scss'
+import { Text } from "../../Typography/text";
 
 export const socialButtonIconSize = {
   md: {
@@ -39,14 +40,15 @@ export const SocialButton = forwardRef<
     },
     ref,
     ) => {
-        const buttonColorClass = variant === 'primary' ? `social-button__variant--${social}--primary` : `social_button__variant--secondary`;
+        const buttonColorClass = variant === 'primary' ? `social-button__variant--${social}--primary` : 'social-button__variant--secondary';
         const socialButtonName = social.charAt(0).toUpperCase() + social.slice(1)
-       
+        const labelSize = size === "md" ? "sm" : size === "lg" ? "md" : "xl";
+        const labelColor = `social-button__variant--${social}--${variant}-color`
+
     return (
       <button
         className={clsx(
             "quill-button",
-            "quill-button__size",
              ButtonSize[size],
             buttonColorClass,
             className,
@@ -61,9 +63,8 @@ export const SocialButton = forwardRef<
             {social === 'apple' &&
                 variant === 'primary' ? <SocialAppleWhiteIcon {...socialButtonIconSize[size]} /> :
                 social === 'apple' && variant === 'secondary' ? <SocialAppleBlackIcon {...socialButtonIconSize[size]} /> : null}
-            {!hideLabel && <span className={clsx(`quill-button__size--${size}-font-size`,
-                    `social-button__variant--${social}--${variant}-color`, 'social-button__weight--bold')} >{socialButtonName}</span>}
-      </button>
+            {!hideLabel && <Text size={labelSize} bold color={labelColor}>{socialButtonName}</Text>}
+        </button>
     )
   },
 )

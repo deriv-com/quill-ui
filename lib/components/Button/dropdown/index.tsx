@@ -6,6 +6,7 @@ import clsx from 'clsx'
 import { Button } from '../base'
 import './dropdown.scss'
 import { Text } from "../../Typography/text";
+import {  CaptionText } from "../../Typography/caption";
 
 export type TSingleSelectItem = {
     value: number | string
@@ -29,7 +30,7 @@ const Options = ({ item }: { item: TSingleSelectItem }) => {
               selected && `dropdown-menu__item--selected`,
           )}
         >
-        <Text as="p"> {item.label}</Text> 
+        <Text as="span"> {item.label}</Text> 
         </div>
       )}
     </Listbox.Option>
@@ -46,7 +47,7 @@ export const DropdownButton = forwardRef<
       size,
       icon,
       label,
-      colorStyle,
+      colorStyle='coral',
       variant,
       disabled,
       options,
@@ -55,6 +56,7 @@ export const DropdownButton = forwardRef<
     },
     ref,
   ) => {
+    const labelSize = size === "md" ? "sm" : size === "lg" ? "md" : "xl";
     const [selectedItem, setSelectedItem] =
       useState<TSingleSelectItem>(defaultOption)
 
@@ -82,8 +84,8 @@ export const DropdownButton = forwardRef<
                   isDropdownOpen={open}
                   disabled={disabled}
                 >
-                  <span className={clsx(`quill-button__size--${size}-font-size`,
-                    `quill__color--${variant}-${colorStyle}-color`)}>{selectedItem?.label}</span>
+                  {size === "sm" ? <CaptionText color={colorStyle} bold>{selectedItem.label}</CaptionText> : <Text size={labelSize} bold color={colorStyle}>{selectedItem.label}</Text>}
+
                 </Button>
               </Listbox.Button>
               <Transition
@@ -105,8 +107,8 @@ export const DropdownButton = forwardRef<
                           
                     />
                   ))}
-                            </Listbox.Options>
-                            </Transition>
+                  </Listbox.Options>
+              </Transition>
            
             </>
           )}

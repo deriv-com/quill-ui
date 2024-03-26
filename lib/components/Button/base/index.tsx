@@ -1,25 +1,32 @@
+import { forwardRef } from 'react';
+import clsx from "clsx";
+import { ButtonProps } from "../types";
+import { Text, CaptionText } from "../../Typography";
+import {
+    LabelPairedChevronDownLgRegularIcon,
+    LabelPairedChevronDownMdRegularIcon,
+    LabelPairedChevronDownSmRegularIcon,
+    LabelPairedChevronDownXlRegularIcon
+} from "@deriv/quill-icons";
+import "../button.scss";
+import "../../../styles/quill.css";
 
-  import { forwardRef } from 'react'
-  import clsx from "clsx";
-  import "../button.scss";
-  import "../../../styles/quill.css";
-  import {LabelPairedChevronDownLgRegularIcon, LabelPairedChevronDownMdRegularIcon, LabelPairedChevronDownSmRegularIcon, LabelPairedChevronDownXlRegularIcon } from "@deriv/quill-icons";
-  import { ButtonProps } from "../types";
-  
-export  const ButtonSize = {
+export const ButtonSize = {
     xl: "quill-button__size--xl",
     lg: "quill-button__size--lg",
     md: "quill-button__size--md",
     sm: "quill-button__size--sm",
-    
 } as const;
 
-export const Button = forwardRef<
-    HTMLButtonElement,
-    ButtonProps
-  >(
-    (
-      {
+const dropdownIcons = {
+    sm: LabelPairedChevronDownSmRegularIcon,
+    md: LabelPairedChevronDownMdRegularIcon,
+    lg: LabelPairedChevronDownLgRegularIcon,
+    xl: LabelPairedChevronDownXlRegularIcon
+};
+
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+    ({
         className,
         colorStyle = "coral",
         icon: Icon,
@@ -34,59 +41,48 @@ export const Button = forwardRef<
         iconPosition,
         variant = "primary",
         ...rest
-      },
-      ref,
-      ) => {
+    }, ref) => {
         const buttonColorClass = `quill__color--${variant}-${colorStyle}`;
-    
-  
-      return (
-        <button
-        className={clsx(
-            "quill-button",
-            "quill-button__size",
-             ButtonSize[size],
-            buttonColorClass,
-            className,
-            fullWidth && "quill-button__full-width",
-            {...rest}
-              )}
-  
-          disabled={rest.disabled}
-          data-state={selected ? 'selected' : ''}
-          ref={ref}
-         
-        >
-          {iconPosition === "start" && Icon && !isLoading && <Icon iconSize={size} />}
-              { /* To be Added isLoading based on requirement*/}
-           
-                {children && <div>{children}</div>}  
-        
-                {label && (
-                    <span className={clsx(`quill-button__size--${size}-font-size`,
-                    `quill__color--${variant}-${colorStyle}-color`)}>{label}</span>
+        const labelSize = size === "md" ? "sm" : size === "lg" ? "md" : "xl";
+        const DropdownIcon = dropdownIcons[size];
+
+        return (
+            <button
+                className={clsx(
+                    "quill-button",
+                    ButtonSize[size],
+                    buttonColorClass,
+                    className,
+                    fullWidth && "quill-button__full-width"
                 )}
-                {iconPosition === "end" && Icon && !isLoading && <Icon iconSize={size}/>}
-        {dropdown && (
-            <>
-              {size === "sm" && <LabelPairedChevronDownSmRegularIcon data-state={isDropdownOpen ? "open" : "close"}
-                                        className={clsx(`${isDropdownOpen && "quill-button__transform"}`)}/>}
-              {size === "md" && <LabelPairedChevronDownMdRegularIcon data-state={isDropdownOpen ? "open" : "close"}
-                                        className={clsx(`${isDropdownOpen && "quill-button__transform"}`)}/>}
-              {size === "lg" && <LabelPairedChevronDownLgRegularIcon data-state={isDropdownOpen ? "open" : "close"}
-                                        className={clsx(`${isDropdownOpen && "quill-button__transform"}`)}/>}
-              {size === "xl" && <LabelPairedChevronDownXlRegularIcon data-state={isDropdownOpen ? "open" : "close"}
-                                        className={clsx(`${isDropdownOpen && "quill-button__transform"}`)}/>}
-            
-              
-            </>
-        )}
-        </button>
-      )
-    },
-  )
-  
-  Button.displayName = 'Button'
-  
-  export default Button
-  
+                disabled={rest.disabled}
+                data-state={selected ? 'selected' : ''}
+                ref={ref}
+                {...rest}
+            >
+                {iconPosition === "start" && Icon && !isLoading && <Icon iconSize={size} />}
+                {/* To be Added isLoading based on requirement*/}
+                {children && <div>{children}</div>}
+                {label && (
+                    <span className="button-label">
+                        {size === "sm" ?
+                            <CaptionText color={colorStyle} bold>{label}</CaptionText> :
+                            <Text size={labelSize} bold color={colorStyle}>{label}</Text>
+                        }
+                    </span>
+                )}
+                {iconPosition === "end" && Icon && !isLoading && <Icon iconSize={size} />}
+                {dropdown && DropdownIcon && (
+                    <DropdownIcon
+                        data-state={isDropdownOpen ? "open" : "close"}
+                        className={clsx(isDropdownOpen && "quill-button__transform")}
+                    />
+                )}
+            </button>
+        )
+    }
+);
+
+Button.displayName = 'Button'
+
+export default Button
