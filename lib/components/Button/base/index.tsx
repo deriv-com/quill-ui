@@ -9,7 +9,6 @@ import {
     LabelPairedChevronDownXlRegularIcon
 } from "@deriv/quill-icons";
 import "../button.scss";
-import "../../../styles/quill.css";
 
 export const ButtonSize = {
     xl: "quill-button__size--xl",
