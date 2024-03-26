@@ -404,10 +404,7 @@ const generateSassFile = () => {
 
     Object.keys(styleStrings).map((fileName) => {
         const cssVariables = trimEmptyDeclarations(styleStrings[fileName]);
-        const filePaths = [
-            `lib/styles/sass/${fileName}.scss`,
-            // `lib/styles/css/${fileName}.css`,
-        ];
+        const filePaths = [`lib/styles/sass/${fileName}.scss`];
 
         filePaths.map((item) => {
             const dirPath = path.dirname(item);
@@ -415,7 +412,6 @@ const generateSassFile = () => {
                 fs.mkdirSync(dirPath, { recursive: true });
             }
 
-            fs.writeFileSync(item, cssVariables);
             fs.writeFileSync(item, cssVariables);
 
             console.log(`--${item}`);
