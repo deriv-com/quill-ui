@@ -1,22 +1,22 @@
-import React, {
-    Children,
-    PropsWithChildren,
-    cloneElement,
-    useEffect,
-} from "react";
+import React from "react";
 import clsx from "clsx";
 import { Text } from "../Typography";
 import { TGenericSizes } from "../../types";
+import * as quillIcons from "@deriv/quill-icons";
 import "./segmented-control.scss";
 
 export interface SegmentedControlProps {
     className?: string;
-    onChange?: (idx: number) => void;
-    selectedItemIndex?: number;
+    options: Array<{
+        icon?: string | React.ReactNode;
+        label?: string;
+        selected?: boolean;
+    }>;
+    onChange?: (selectedItemIndex: number) => void;
     size?: Extract<TGenericSizes, "lg" | "md" | "sm">;
 }
 
-export interface SegmentedControlItemProps {
+interface SegmentProps {
     className?: string;
     icon?: string | React.ReactNode;
     isSelected?: boolean;
@@ -25,59 +25,24 @@ export interface SegmentedControlItemProps {
     size?: SegmentedControlProps["size"];
 }
 
-export const SegmentedControl = ({
-    children,
-    className = "segmented-control",
-    onChange,
-    selectedItemIndex = 0,
-    size = "md",
-    ...rest
-}: PropsWithChildren<SegmentedControlProps>) => {
-    const [selectedItemIdx, setSelectedItemIdx] =
-        React.useState<number>(selectedItemIndex);
-
-    const handleItemClick = (idx: number) => {
-        setSelectedItemIdx(idx);
-        onChange?.(idx);
-    };
-
-    useEffect(() => {
-        if (selectedItemIndex !== selectedItemIdx) {
-            setSelectedItemIdx(selectedItemIndex);
-        }
-    }, [selectedItemIndex]);
-
-    return (
-        <div className={clsx(className, `${className}--${size}`)} {...rest}>
-            {children &&
-                Children.map(children, (child, idx) =>
-                    cloneElement(child as JSX.Element, {
-                        size:
-                            (child as { props: SegmentedControlItemProps })
-                                ?.props?.size ?? size,
-                        onClick: () => handleItemClick(idx),
-                        isSelected: idx === selectedItemIdx,
-                    }),
-                )}
-        </div>
-    );
-};
-
-// TODO: need to import placeholder icons from quill-icons
-const Item = ({
+const Segment = ({
     className,
     icon,
     isSelected,
     label,
     onClick,
     size,
-}: SegmentedControlItemProps) => {
+}: SegmentProps) => {
+    const QuillIcon =
+        typeof icon === "string" &&
+        (quillIcons[icon as keyof typeof quillIcons] as React.ElementType);
+    const Icon = QuillIcon ? <QuillIcon /> : icon;
     return (
         <div
             className={clsx("item", isSelected && "selected", className)}
             onClick={onClick}
         >
-            {icon && <span className="icon">{icon}</span>}
+            {icon && <span className="icon">{Icon}</span>}
             {label && (
                 <Text size={size} as="span">
                     {label}
@@ -87,4 +52,28 @@ const Item = ({
     );
 };
 
-SegmentedControl.Item = Item;
+export const SegmentedControl = ({
+    className,
+    options = [],
+    onChange,
+    size = "md",
+}: SegmentedControlProps) => (
+    <div
+        className={clsx(
+            "segmented-control",
+            `segmented-control--${size}`,
+            className,
+        )}
+    >
+        {options.map(({ icon, label, selected }, idx) => (
+            <Segment
+                key={`${idx}_${label}`}
+                icon={icon}
+                isSelected={selected}
+                label={label}
+                onClick={() => onChange?.(idx)}
+                size={size}
+            />
+        ))}
+    </div>
+);

@@ -1,25 +1,58 @@
-import { ReactNode } from "react";
-import GroupWithIconsOnly from "./group-with-icons-only";
-import GroupWithLabelsOnly from "./group-with-labels-only";
-import GroupWithIconsAndLabels from "./group-with-icons-and-labels";
+import React, { useEffect } from "react";
+import { SegmentedControl } from "../base";
+import type { SegmentedControlProps } from "../base";
 
-export type SingleChoiceVariants = {
-    GroupWithIconsOnly: typeof GroupWithIconsOnly;
-    GroupWithLabelsOnly: typeof GroupWithLabelsOnly;
-    GroupWithIconsAndLabels: typeof GroupWithIconsAndLabels;
+export interface SegmentedControlSingleChoiceProps
+    extends SegmentedControlProps {
+    options: Array<{ icon?: string | React.ReactNode; label?: string }>;
+    selectedItemIndex?: number;
+}
+
+const SegmentedControlSingleChoice = ({
+    className,
+    options = [],
+    onChange,
+    selectedItemIndex = 0,
+    size = "md",
+}: SegmentedControlSingleChoiceProps) => {
+    const [items, setItems] =
+        React.useState<SegmentedControlProps["options"]>(options);
+
+    const updateItems = (
+        new_options: SegmentedControlProps["options"],
+        idx: number,
+    ) => {
+        setItems([
+            ...new_options.map((item, i) => ({
+                ...item,
+                selected: i === idx,
+            })),
+        ]);
+    };
+
+    const handleItemClick = (idx: number) => {
+        updateItems(items, idx);
+        onChange?.(idx);
+    };
+
+    useEffect(() => {
+        const selected = items.findIndex((i) => i.selected);
+        if (selectedItemIndex !== selected) {
+            updateItems(items, selectedItemIndex);
+        } else {
+            updateItems(options, selected !== -1 ? selected : 0);
+        }
+    }, [options, selectedItemIndex]);
+
+    if (!options.length) return null;
+    return (
+        <SegmentedControl
+            className={className}
+            options={items}
+            onChange={handleItemClick}
+            size={size}
+        />
+    );
 };
 
-// TODO: to re-consider the necessity of this component
-export const SingleChoice: SingleChoiceVariants = ({
-    children,
-}: {
-    children: ReactNode;
-}) => {
-    return <>{children}</>;
-};
-
-SingleChoice.GroupWithIconsOnly = GroupWithIconsOnly;
-SingleChoice.GroupWithLabelsOnly = GroupWithLabelsOnly;
-SingleChoice.GroupWithIconsAndLabels = GroupWithIconsAndLabels;
-
-export default SingleChoice;
+export default SegmentedControlSingleChoice;

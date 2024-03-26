@@ -1,19 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SingleChoice Should render SingleChoice Group 1`] = `
+exports[`SegmentedControl.SingleChoice should render segments with icons and labels 1`] = `
 <div>
   <div
-    class="segmented-control segmented-control--sm"
+    class="segmented-control segmented-control--md"
   >
     <div
-      class="item"
+      class="item selected"
     >
       <span
         class="icon"
       >
-        ⛶
+        IconComponent
       </span>
-      <span>
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
         Label
       </span>
     </div>
@@ -23,9 +25,11 @@ exports[`SingleChoice Should render SingleChoice Group 1`] = `
       <span
         class="icon"
       >
-        ⛶
+        IconComponent
       </span>
-      <span>
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
         Label
       </span>
     </div>
@@ -35,9 +39,11 @@ exports[`SingleChoice Should render SingleChoice Group 1`] = `
       <span
         class="icon"
       >
-        ⛶
+        IconComponent
       </span>
-      <span>
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
         Label
       </span>
     </div>
@@ -47,9 +53,11 @@ exports[`SingleChoice Should render SingleChoice Group 1`] = `
       <span
         class="icon"
       >
-        ⛶
+        IconComponent
       </span>
-      <span>
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
         Label
       </span>
     </div>
@@ -59,9 +67,119 @@ exports[`SingleChoice Should render SingleChoice Group 1`] = `
       <span
         class="icon"
       >
-        ⛶
+        IconComponent
       </span>
-      <span>
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SegmentedControl.SingleChoice should render segments with icons only 1`] = `
+<div>
+  <div
+    class="segmented-control segmented-control--md"
+  >
+    <div
+      class="item selected"
+    >
+      <span
+        class="icon"
+      >
+        IconComponent
+      </span>
+    </div>
+    <div
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        IconComponent
+      </span>
+    </div>
+    <div
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        IconComponent
+      </span>
+    </div>
+    <div
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        IconComponent
+      </span>
+    </div>
+    <div
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        IconComponent
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SegmentedControl.SingleChoice should render segments with labels only 1`] = `
+<div>
+  <div
+    class="segmented-control segmented-control--md"
+  >
+    <div
+      class="item selected"
+    >
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </div>
+    <div
+      class="item"
+    >
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </div>
+    <div
+      class="item"
+    >
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </div>
+    <div
+      class="item"
+    >
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </div>
+    <div
+      class="item"
+    >
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
         Label
       </span>
     </div>

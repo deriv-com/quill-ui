@@ -11,6 +11,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
 
         &.selected {
             background: var(--core-color-solid-slate-50, #fff);

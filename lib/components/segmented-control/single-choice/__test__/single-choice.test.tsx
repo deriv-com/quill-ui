@@ -1,17 +1,36 @@
 import { render } from "@testing-library/react";
-import SingleChoice from "..";
+import SegmentedControlSingleChoice from "..";
 
-describe("SingleChoice", () => {
-    it("Should render SingleChoice Group With Icons Only", () => {
-        const { container } = render(<SingleChoice.GroupWithIconsOnly />);
+describe("SegmentedControl.SingleChoice", () => {
+    it("should render segments with icons only", () => {
+        const { container } = render(
+            <SegmentedControlSingleChoice
+                options={new Array(5).fill({
+                    icon: "IconComponent",
+                })}
+            />,
+        );
         expect(container).toMatchSnapshot();
     });
-    it("Should render SingleChoice Group With Labels Only", () => {
-        const { container } = render(<SingleChoice.GroupWithLabelsOnly />);
+    it("should render segments with labels only", () => {
+        const { container } = render(
+            <SegmentedControlSingleChoice
+                options={new Array(5).fill({
+                    label: "Label",
+                })}
+            />,
+        );
         expect(container).toMatchSnapshot();
     });
-    it("Should render SingleChoice Group With Icons and Labels", () => {
-        const { container } = render(<SingleChoice.GroupWithIconsAndLabels />);
+    it("should render segments with icons and labels", () => {
+        const { container } = render(
+            <SegmentedControlSingleChoice
+                options={new Array(5).fill({
+                    icon: "IconComponent",
+                    label: "Label",
+                })}
+            />,
+        );
         expect(container).toMatchSnapshot();
     });
 });
