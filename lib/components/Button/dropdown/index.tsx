@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { ButtonProps } from '../types'
 import clsx from 'clsx'
-import { Button, ButtonSize } from '../base'
+import { Button} from '../base'
 import './dropdown.scss'
 import { Text } from "../../Typography/text";
 import {  CaptionText } from "../../Typography/caption";
@@ -11,7 +11,6 @@ import {  CaptionText } from "../../Typography/caption";
 export type TSingleSelectItem = {
     value: number | string
     label: string | React.ReactNode
-    size?: 'sm' | 'md' | 'lg' | 'xl';
   }
   
   export interface SingleSelectChipProps extends ButtonProps {
@@ -29,7 +28,6 @@ const Options = ({ item }: { item: TSingleSelectItem }) => {
           className={clsx(
               'dropdown-menu__item',
             selected && `dropdown-menu__item--selected`,
-            ButtonSize[item.size],
           )}
         >
         <Text as="span"> {item.label}</Text> 
@@ -92,7 +90,6 @@ export const DropdownButton = forwardRef<
               </Listbox.Button>
               <Transition
                 enter={clsx('dropdown-menu__transition--enter')}
-                enterFrom={clsx('dropdown-menu__transition--enter-from')}
                 enterTo={clsx('dropdown-menu__transition--enter-to')}
                 leave={clsx('dropdown-menu__transition--leave')}
                 leaveFrom={clsx('dropdown-menu__transition--leave-from')}
