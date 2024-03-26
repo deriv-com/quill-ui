@@ -109,7 +109,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                             "quill-checkbox__label",
                             labelClassName,
                         )}
-                        is_disabled={disabled}
+                        disabled={disabled}
                     >
                         {label}
                     </Text>
