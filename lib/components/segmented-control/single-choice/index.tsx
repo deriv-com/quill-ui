@@ -4,7 +4,11 @@ import type { SegmentedControlProps } from "../base";
 
 export interface SegmentedControlSingleChoiceProps
     extends SegmentedControlProps {
-    options: Array<{ icon?: string | React.ReactNode; label?: string }>;
+    options: Array<{
+        icon?: string | React.ReactNode;
+        label?: string;
+        disabled?: boolean;
+    }>;
     selectedItemIndex?: number;
 }
 
@@ -27,7 +31,7 @@ const SegmentedControlSingleChoice = ({
         setItems([
             ...new_options.map((item, i) => ({
                 ...item,
-                selected: i === idx,
+                selected: !item.disabled && i === idx,
             })),
         ]);
     };

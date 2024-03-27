@@ -82,9 +82,7 @@ export const SingleChoiceGroupWithLabelsOnly = (
 ) => (
     <SegmentedControlSingleChoice
         {...args}
-        options={new Array(5).fill({
-            label: "Label",
-        })}
+        options={new Array(5).fill({ label: "Label" })}
     />
 );
 
@@ -107,4 +105,13 @@ export const SingleChoiceGroupWithContainerWidth = (
             options={new Array(2).fill(optionWithIconAndLabel)}
         />
     </div>
+);
+
+export const SingleChoiceGroupWithOneDisabledOption = (
+    args: ComponentProps<typeof SegmentedControlSingleChoice>,
+) => (
+    <SegmentedControlSingleChoice
+        {...args}
+        options={[{ label: "Label" }, { label: "Label", disabled: true }]}
+    />
 );
