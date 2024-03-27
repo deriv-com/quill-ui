@@ -1,0 +1,33 @@
+.tabs {
+    border-bottom: 2px solid var(--core-color-opacity-black-200);
+    display: inline-flex;
+    align-items: center;
+    &:active:not(:disabled){
+        border-bottom-color:2px solid var(--core-color-opacity-black-300);
+    }
+    &:hover:not(:disabled){
+        border-bottom-color: var(--core-color-opacity-black-600);
+    }
+    &:disabled{
+        opacity: var(--core-opacity-600);
+    }
+    &__selected-tab {
+        border-bottom: 2px solid var(--semantic-color-typography-prominent);
+    }
+    &__variants {
+        &--size {
+            &-sm {
+                font-size: var(--core-font-size-75);
+                padding: var(--core-spacing-400) var(--core-spacing-200);
+                gap: var(--core-spacing-200);
+            }
+            &-md {
+                font-size: var(--core-font-size-100);
+                padding: var(--core-spacing-800) var(--core-spacing-600);
+                gap: var(--core-spacing-400);
+            }
+           
+        }
+    }
+
+}
