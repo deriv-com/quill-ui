@@ -1,11 +1,10 @@
 @import "../../styles/index.scss";
 
-// TODO: improve styles, use mixins for sizes, and vars instead of units
 .segmented-control {
     display: flex;
     align-items: center;
     width: fit-content;
-    background: var(--core-color-opacity-black-75, rgba(0, 0, 0, 0.04));
+    background: var(--core-color-opacity-black-75);
 
     .item {
         display: flex;
@@ -14,7 +13,7 @@
         cursor: pointer;
 
         &.selected {
-            background: var(--core-color-solid-slate-50, #fff);
+            background: var(--core-color-solid-slate-50);
         }
         .icon {
             display: flex;
@@ -22,39 +21,42 @@
         }
     }
     &--sm {
-        height: 40px;
-        padding: 4px;
+        height: var(--size-generic-lg);
+        padding: var(--semantic-spacing-general-xs);
         border-radius: var(--semantic-borderRadius-md);
 
         .item {
-            height: 32px;
-            padding: 5px 8px;
+            height: var(--size-generic-md);
+            padding: var(--temp-static-spacing-5)
+                var(--semantic-spacing-general-sm);
             gap: var(--semantic-spacing-gap-sm);
             border-radius: var(--semantic-borderRadius-sm);
         }
     }
     &--md {
-        height: 56px;
-        padding: 8px;
-        border-radius: 16px;
+        height: var(--size-generic-2xl);
+        padding: var(--semantic-spacing-general-sm);
+        border-radius: var(--semantic-borderRadius-lg);
 
         .item {
-            height: 40px;
-            padding: 8px 16px;
-            gap: 8px;
-            border-radius: 8px;
+            height: var(--size-generic-lg);
+            padding: var(--semantic-spacing-general-sm)
+                var(--semantic-spacing-general-md);
+            gap: var(--semantic-spacing-gap-md);
+            border-radius: var(--semantic-borderRadius-md);
         }
     }
     &--lg {
-        height: 72px;
-        padding: 12px;
-        border-radius: 24px;
+        height: var(--size-generic-4xl);
+        padding: var(--core-spacing-600);
+        border-radius: var(--semantic-borderRadius-xl);
 
         .item {
-            height: 48px;
-            padding: 9px 24px;
-            gap: 12px;
-            border-radius: 12px;
+            height: var(--size-generic-xl);
+            padding: var(--temp-static-spacing-9)
+                var(--semantic-spacing-general-lg);
+            gap: var(--core-spacing-600);
+            border-radius: var(--core-borderRadius-600);
         }
     }
 }
