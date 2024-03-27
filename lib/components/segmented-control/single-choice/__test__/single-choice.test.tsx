@@ -33,4 +33,27 @@ describe("SegmentedControl.SingleChoice", () => {
         );
         expect(container).toMatchSnapshot();
     });
+    it("should inherit container width", () => {
+        const { container } = render(
+            <div style={{ width: "328px" }}>
+                <SegmentedControlSingleChoice
+                    hasContainerWidth
+                    options={new Array(2).fill({ label: "Label" })}
+                />
+            </div>,
+        );
+        expect(container).toMatchSnapshot();
+    });
+    it("should render with one disabled option", () => {
+        const { container } = render(
+            <SegmentedControlSingleChoice
+                options={[
+                    { label: "Label" },
+                    { label: "Label", disabled: true },
+                    { label: "Label" },
+                ]}
+            />,
+        );
+        expect(container).toMatchSnapshot();
+    });
 });

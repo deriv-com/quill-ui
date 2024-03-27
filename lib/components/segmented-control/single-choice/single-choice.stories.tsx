@@ -112,6 +112,10 @@ export const SingleChoiceGroupWithOneDisabledOption = (
 ) => (
     <SegmentedControlSingleChoice
         {...args}
-        options={[{ label: "Label" }, { label: "Label", disabled: true }]}
+        options={[
+            { label: "Label" },
+            { label: "Label", disabled: true },
+            { label: "Label" },
+        ]}
     />
 );
