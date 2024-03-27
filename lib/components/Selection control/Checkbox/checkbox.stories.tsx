@@ -11,6 +11,7 @@ const meta = {
         checked: false,
         disabled: false,
         indeterminate: false,
+        isLabelPaired: false,
         size: "sm",
         label: "Selection control checkbox",
         name: "demo_checkbox",
@@ -37,9 +38,15 @@ const meta = {
             options: ["true", "false"],
             control: { type: "boolean" },
         },
+        isLabelPaired: {
+            table: { type: { summary: "boolean | undefined" } },
+            description: "Flag for adding info icon",
+            options: ["true", "false"],
+            control: { type: "boolean" },
+        },
         size: {
             table: { type: { summary: "string | undefined" } },
-            description: "Size of the label",
+            description: "Size of the label and info icon",
             options: ["sm", "md"],
             control: { type: "radio" },
         },
@@ -122,9 +129,23 @@ export const CheckboxDisabledChecked: Story = {
     },
 };
 
+export const CheckboxWithInfoIconSm: Story = {
+    args: {
+        isLabelPaired: true,
+        label: "Selection control checkbox with info icon sm",
+    },
+};
+
+export const CheckboxWithInfoIconMd: Story = {
+    args: {
+        isLabelPaired: true,
+        size: "md",
+        label: "Selection control checkbox with info icon md",
+    },
+};
+
 export const CheckboxSm: Story = {
     args: {
-        size: "sm",
         label: "Selection control checkbox sm size",
     },
 };

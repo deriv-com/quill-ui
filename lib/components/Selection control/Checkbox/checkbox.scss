@@ -64,5 +64,20 @@
 
     &__label {
         cursor: pointer;
+
+        &--disabled{
+            cursor: default;
+        }
+    }
+
+    &__info-icon {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+
+        &--disabled{
+            opacity: var(--core-opacity-300);
+            cursor: default;
+        }
     }
 }

@@ -11,6 +11,8 @@ import {
     StandaloneSquareCheckFillIcon,
     StandaloneSquareBoldIcon,
     StandaloneSquareMinusFillIcon,
+    LabelPairedCircleInfoSmRegularIcon,
+    LabelPairedCircleInfoMdRegularIcon,
 } from "@deriv/quill-icons";
 import { Text } from "../../Typography";
 
@@ -20,7 +22,9 @@ interface CheckboxProps
         "placeholder" | "defaultChecked" | "size"
     > {
     indeterminate?: boolean;
-    size?: "sm" | "md" | "lg" | "xl";
+    isLabelPaired?: boolean;
+    infoIconClassName?: string;
+    size?: "sm" | "md";
     label: ReactNode | string;
     labelClassName?: string;
     onChange?: (
@@ -37,6 +41,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             checked = false,
             disabled = false,
             indeterminate = false,
+            isLabelPaired = false,
+            infoIconClassName,
             size = "sm",
             label,
             labelClassName,
@@ -101,6 +107,13 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             />
         );
 
+        const infoIcon =
+            size === "sm" ? (
+                <LabelPairedCircleInfoSmRegularIcon />
+            ) : (
+                <LabelPairedCircleInfoMdRegularIcon />
+            );
+
         return (
             <div className={clsx("quill-checkbox", wrapperClassName)}>
                 <div className="quill-checkbox__wrapper">
@@ -133,6 +146,9 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                         as="span"
                         className={clsx(
                             "quill-checkbox__label",
+                            {
+                                "quill-checkbox__label--disabled": disabled,
+                            },
                             labelClassName,
                         )}
                         disabled={disabled}
@@ -140,6 +156,19 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                         {label}
                     </Text>
                 </label>
+                {isLabelPaired && (
+                    <span
+                        className={clsx(
+                            "quill-checkbox__info-icon",
+                            {
+                                "quill-checkbox__info-icon--disabled": disabled,
+                            },
+                            infoIconClassName,
+                        )}
+                    >
+                        {infoIcon}
+                    </span>
+                )}
             </div>
         );
     },

@@ -30,6 +30,12 @@ describe("Checkbox", () => {
         expect(container).toMatchSnapshot();
     });
 
+    it("should render info icon if isLabelPaired === true", () => {
+        const { container } = render(<Checkbox {...mockProps} isLabelPaired />);
+
+        expect(container).toMatchSnapshot();
+    });
+
     it("should render correct label size if size === 'md'", () => {
         const { container } = render(<Checkbox {...mockProps} size="md" />);
 
