@@ -14,6 +14,7 @@ import {
     LabelPairedCircleInfoSmRegularIcon,
     LabelPairedCircleInfoMdRegularIcon,
 } from "@deriv/quill-icons";
+import { TMediumSizes } from "../../../types";
 import { Text } from "../../Typography";
 
 interface CheckboxProps
@@ -24,7 +25,7 @@ interface CheckboxProps
     indeterminate?: boolean;
     isLabelPaired?: boolean;
     infoIconClassName?: string;
-    size?: "sm" | "md";
+    size?: TMediumSizes;
     label: ReactNode | string;
     labelClassName?: string;
     onChange?: (
