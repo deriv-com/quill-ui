@@ -34,24 +34,9 @@
     }
     &__transition {
         &--enter {
-            transition: transform 200ms ease-out;
             transform-origin: top;
-            transform: scaleY(0);
-        }
-     
-        &--enter-to {
-            transform: scaleY(1);
-        }
-        &--leave {
-            transition: transform 100ms ease-out;
-        }
-        &--leave-from {
-            transform: scaleY(1);
-        }
-        &--leave-to {
-            transition: transform 200ms ease-out;
-            transform: scaleY(0) translateY(50%);
-            transform-origin: top;
+            animation-timing-function: cubic-bezier(0.72, 0, 0.24, 1);
+            animation-duration: 160ms;
         }
 
     }
