@@ -59,13 +59,17 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 
         useEffect(() => {
             setIsChecked(checked);
+        }, [checked]);
+
+        useEffect(() => {
             setIsIndeterminate(indeterminate);
-        }, [checked, indeterminate]);
+        }, [indeterminate]);
 
         const onInputChange: React.ChangeEventHandler<HTMLInputElement> = (
             e,
         ) => {
             e.stopPropagation();
+
             if (is_indeterminate) {
                 setIsIndeterminate(!is_indeterminate);
                 setIsChecked(false);
@@ -77,7 +81,9 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 
         const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
             e.stopPropagation();
-            if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+
+            if (e.key === "Enter" || e.code === "Space") {
                 if (is_indeterminate) {
                     setIsIndeterminate(!is_indeterminate);
                     setIsChecked(false);
@@ -98,7 +104,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                 iconSize="sm"
                 className={clsx(
                     "quill-checkbox__box-icon",
-                    "quill-checkbox__box-icon--default",
+                    "quill-checkbox__box-icon--pale",
                 )}
             />
         );

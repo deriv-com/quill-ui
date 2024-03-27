@@ -18,17 +18,17 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
+        
         &:disabled {
             cursor: default;
         }
 
         &:hover:not(:disabled) ~ .quill-checkbox__box-icon {
-            fill: var(--core-color-opacity-black-600);
+            fill: color-mix(in srgb, var(--semantic-color-typography-prominent) 72%, transparent);
         }
 
         &:active:not(:disabled) ~ .quill-checkbox__box-icon {
-            fill: var(--core-color-solid-slate-1400);
+            fill: var(--semantic-color-typography-default);
         }
 
         &:focus-visible {
@@ -38,24 +38,23 @@
                 content: "";
                 width: var(--size-generic-xs);
                 height: var(--size-generic-xs);
-                display: block;
-                outline:var(--core-borderWidth-100) solid
+                outline: var(--core-borderWidth-100) solid
                 var(--core-color-solid-blue-700);
                 border-radius: var(--core-borderRadius-200);
                 position: absolute;
-                top: 50%;
+                top: 52%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                box-sizing: border-box;
             }
         }
     }
 
     &__box-icon {
         pointer-events: none;
+        fill: var(--semantic-color-typography-prominent);
 
-        &--default {
-            fill: var(--core-color-opacity-black-400);
+        &--pale {
+            fill: color-mix(in srgb, var(--semantic-color-typography-prominent) 48%, transparent)
         }
     }
 
@@ -63,19 +62,23 @@
         cursor: pointer;
     }
 
+    &__info-icon {
+        fill: var(--semantic-color-typography-default);
+    }
+
     &--disabled {
         .quill-checkbox {
             &__box-icon {
-            fill: var(--core-color-opacity-black-300);
+                fill: color-mix(in srgb, var(--semantic-color-typography-prominent) 24%, transparent);
             }
 
             &__label {
-                cursor: default;
                 color: var(--semantic-color-typography-disabled);
+                cursor: default;
             }
 
             &__info-icon {
-                fill: var(--core-color-opacity-black-300);
+                fill: color-mix(in srgb, var(--semantic-color-typography-prominent) 24%, transparent);
                 cursor: default;
             }
         }
