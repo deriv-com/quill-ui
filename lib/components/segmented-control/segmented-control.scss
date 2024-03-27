@@ -12,6 +12,12 @@
         align-items: center;
         cursor: pointer;
 
+        &:hover {
+            background: var(--core-color-opacity-black-100);
+        }
+        &:active {
+            background: var(--core-color-opacity-black-200);
+        }
         &.selected {
             background: var(--core-color-solid-slate-50);
         }
