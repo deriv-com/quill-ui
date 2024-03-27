@@ -10,11 +10,10 @@ const meta = {
     args: {
         checked: false,
         disabled: false,
+        indeterminate: false,
         size: "sm",
         label: "Selection control checkbox",
-        labelClassName: "",
         name: "demo_checkbox",
-        wrapperClassName: "",
         onChange: fn(),
         id: "demo_checkbox",
     },
@@ -28,6 +27,13 @@ const meta = {
         disabled: {
             table: { type: { summary: "boolean | undefined" } },
             description: "Flag for setting accessibility",
+            options: ["true", "false"],
+            control: { type: "boolean" },
+        },
+        indeterminate: {
+            table: { type: { summary: "boolean | undefined" } },
+            description:
+                "Flag for setting indeterminate state if input is unchecked",
             options: ["true", "false"],
             control: { type: "boolean" },
         },
@@ -81,6 +87,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const CheckboxUnchecked: Story = {
+    args: {
+        label: "Selection control checkbox",
+    },
+};
+
 export const CheckboxChecked: Story = {
     args: {
         checked: true,
@@ -88,10 +100,10 @@ export const CheckboxChecked: Story = {
     },
 };
 
-export const CheckboxUnchecked: Story = {
+export const CheckboxIndeterminate: Story = {
     args: {
-        checked: false,
-        label: "Selection control checkbox unchecked",
+        indeterminate: true,
+        label: "Selection control checkbox indeterminate",
     },
 };
 

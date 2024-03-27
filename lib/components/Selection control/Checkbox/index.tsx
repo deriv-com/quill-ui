@@ -10,6 +10,7 @@ import "./checkbox.scss";
 import {
     StandaloneSquareCheckFillIcon,
     StandaloneSquareBoldIcon,
+    StandaloneSquareMinusFillIcon,
 } from "@deriv/quill-icons";
 import { Text } from "../../Typography";
 
@@ -18,6 +19,7 @@ interface CheckboxProps
         ComponentProps<"input">,
         "placeholder" | "defaultChecked" | "size"
     > {
+    indeterminate?: boolean;
     size?: "sm" | "md" | "lg" | "xl";
     label: ReactNode | string;
     labelClassName?: string;
@@ -34,6 +36,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         {
             checked = false,
             disabled = false,
+            indeterminate = false,
             size = "sm",
             label,
             labelClassName,
@@ -45,26 +48,58 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         ref,
     ) => {
         const [is_checked, setIsChecked] = useState(checked);
+        const [is_indeterminate, setIsIndeterminate] = useState(indeterminate);
 
         useEffect(() => {
             setIsChecked(checked);
-        }, [checked]);
+            setIsIndeterminate(indeterminate);
+        }, [checked, indeterminate]);
 
         const onInputChange: React.ChangeEventHandler<HTMLInputElement> = (
             e,
         ) => {
             e.stopPropagation();
-            setIsChecked(!is_checked);
+            if (is_indeterminate) {
+                setIsIndeterminate(!is_indeterminate);
+                setIsChecked(false);
+            } else {
+                setIsChecked(!is_checked);
+            }
             onChange?.(e);
         };
 
         const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
             e.stopPropagation();
             if (e.key === "Enter" || e.key === " ") {
-                setIsChecked(!is_checked);
+                if (is_indeterminate) {
+                    setIsIndeterminate(!is_indeterminate);
+                    setIsChecked(false);
+                } else {
+                    setIsChecked(!is_checked);
+                }
                 onChange?.(e);
             }
         };
+
+        const uncheckedIcon = is_indeterminate ? (
+            <StandaloneSquareMinusFillIcon
+                iconSize="sm"
+                className={clsx("quill-checkbox__icon", {
+                    "quill-checkbox__icon--disabled": disabled,
+                })}
+            />
+        ) : (
+            <StandaloneSquareBoldIcon
+                iconSize="sm"
+                className={clsx(
+                    "quill-checkbox__icon",
+                    "quill-checkbox__icon--default",
+                    {
+                        "quill-checkbox__icon--disabled": disabled,
+                    },
+                )}
+            />
+        );
 
         return (
             <div className={clsx("quill-checkbox", wrapperClassName)}>
@@ -89,16 +124,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                             })}
                         />
                     ) : (
-                        <StandaloneSquareBoldIcon
-                            iconSize="sm"
-                            className={clsx(
-                                "quill-checkbox__icon",
-                                "quill-checkbox__icon--default",
-                                {
-                                    "quill-checkbox__icon--disabled": disabled,
-                                },
-                            )}
-                        />
+                        uncheckedIcon
                     )}
                 </div>
                 <label htmlFor={rest.id ?? name}>

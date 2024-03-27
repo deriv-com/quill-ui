@@ -24,6 +24,12 @@ describe("Checkbox", () => {
         expect(container).toMatchSnapshot();
     });
 
+    it("should render correct icon if indeterminate === true", () => {
+        const { container } = render(<Checkbox {...mockProps} indeterminate />);
+
+        expect(container).toMatchSnapshot();
+    });
+
     it("should render correct label size if size === 'md'", () => {
         const { container } = render(<Checkbox {...mockProps} size="md" />);
 

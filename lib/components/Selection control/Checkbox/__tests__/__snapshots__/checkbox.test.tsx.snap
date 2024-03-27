@@ -225,6 +225,42 @@ exports[`Checkbox should render correct attribute of input if disabled === true 
 </div>
 `;
 
+exports[`Checkbox should render correct icon if indeterminate === true 1`] = `
+<div>
+  <div
+    class="quill-checkbox"
+  >
+    <div
+      class="quill-checkbox__wrapper"
+    >
+      <input
+        class="quill-checkbox__box"
+        type="checkbox"
+      />
+      <svg
+        class="quill-checkbox__icon"
+        height="24"
+        role="img"
+        viewBox="0 0 32 32"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5m3.438 7.813a.925.925 0 0 0-.938.937c0 .547.39.938.938.938h5.624c.508 0 .938-.391.938-.938a.95.95 0 0 0-.937-.937z"
+        />
+      </svg>
+    </div>
+    <label>
+      <span
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+      >
+        Checkbox label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
 exports[`Checkbox should render correct label size if size === 'md' 1`] = `
 <div>
   <div
