@@ -4,7 +4,7 @@
     }
     &__container{
         background-color: var(--core-color-solid-slate-50);
-        border-radius: var(--core-borderRadius-1200);
+        border-radius: var(--core-borderRadius-400);
         box-shadow: 0px 16px 24px 4px rgba(0, 0, 0, 0.02), 0px 16px 24px 4px rgba(0, 0, 0, 0.04);
         display: flex;
         min-width: 350px;
@@ -18,13 +18,13 @@
     &__item{
         cursor: pointer ;
         display: flex;
-        padding: var(--core-spacing-50) var(--core-spacing-800);
+        padding: var(--core-spacing-50) var(--core-spacing-600);
         align-items: center;
         gap: var(--core-spacing-400);
         align-self: stretch;
         min-height: 48px;
         
-        border-radius: var(--core-borderRadius-600);
+        border-radius: var(--core-borderRadius-200);
         &:hover{
             background-color: var(--core-color-solid-slate-75);
         }
