@@ -23,16 +23,17 @@
             cursor: default;
         }
 
-        &:hover:not(:disabled) ~ .quill-checkbox__icon {
+        &:hover:not(:disabled) ~ .quill-checkbox__box-icon {
             fill: var(--core-color-opacity-black-600);
         }
 
-        &:active:not(:disabled) ~ .quill-checkbox__icon__icon {
+        &:active:not(:disabled) ~ .quill-checkbox__box-icon {
             fill: var(--core-color-solid-slate-1400);
         }
 
         &:focus-visible {
             outline: none;
+
             &:after {
                 content: "";
                 width: var(--size-generic-xs);
@@ -50,32 +51,33 @@
         }
     }
 
-    &__icon {
+    &__box-icon {
         pointer-events: none;
 
         &--default {
             fill: var(--core-color-opacity-black-400);
         }
-
-        &--disabled {
-            fill: var(--core-color-opacity-black-300);
-        }
     }
 
-    &__label {
+    &__label, &__info-icon {
         cursor: pointer;
-
-        &--disabled{
-            cursor: default;
-        }
     }
 
-    &__info-icon {
-        cursor: pointer;
-
-        &--disabled{
+    &--disabled {
+        .quill-checkbox {
+            &__box-icon {
             fill: var(--core-color-opacity-black-300);
-            cursor: default;
+            }
+
+            &__label {
+                cursor: default;
+                color: var(--semantic-color-typography-disabled);
+            }
+
+            &__info-icon {
+                fill: var(--core-color-opacity-black-300);
+                cursor: default;
+            }
         }
     }
 }

@@ -7,7 +7,6 @@ export interface TypographyProps extends ComponentProps<THeaders> {
     as?: ElementType | keyof THeaders;
     bold?: boolean;
     italic?: boolean;
-    disabled?: boolean;
     underlined?: boolean;
 }
 

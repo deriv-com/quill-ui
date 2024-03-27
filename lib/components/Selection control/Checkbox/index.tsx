@@ -91,19 +91,14 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         const unIndeterminateIcon = is_checked ? (
             <StandaloneSquareCheckFillIcon
                 iconSize="sm"
-                className={clsx("quill-checkbox__icon", {
-                    "quill-checkbox__icon--disabled": disabled,
-                })}
+                className="quill-checkbox__box-icon"
             />
         ) : (
             <StandaloneSquareBoldIcon
                 iconSize="sm"
                 className={clsx(
-                    "quill-checkbox__icon",
-                    "quill-checkbox__icon--default",
-                    {
-                        "quill-checkbox__icon--disabled": disabled,
-                    },
+                    "quill-checkbox__box-icon",
+                    "quill-checkbox__box-icon--default",
                 )}
             />
         );
@@ -113,9 +108,6 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                 <LabelPairedCircleInfoSmRegularIcon
                     className={clsx(
                         "quill-checkbox__info-icon",
-                        {
-                            "quill-checkbox__info-icon--disabled": disabled,
-                        },
                         infoIconClassName,
                     )}
                 />
@@ -123,16 +115,21 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                 <LabelPairedCircleInfoMdRegularIcon
                     className={clsx(
                         "quill-checkbox__info-icon",
-                        {
-                            "quill-checkbox__info-icon--disabled": disabled,
-                        },
                         infoIconClassName,
                     )}
                 />
             );
 
         return (
-            <div className={clsx("quill-checkbox", wrapperClassName)}>
+            <div
+                className={clsx(
+                    "quill-checkbox",
+                    {
+                        "quill-checkbox--disabled": disabled,
+                    },
+                    wrapperClassName,
+                )}
+            >
                 <div className="quill-checkbox__wrapper">
                     <input
                         id={rest.id ?? name}
@@ -149,9 +146,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                     {is_indeterminate ? (
                         <StandaloneSquareMinusFillIcon
                             iconSize="sm"
-                            className={clsx("quill-checkbox__icon", {
-                                "quill-checkbox__icon--disabled": disabled,
-                            })}
+                            className="quill-checkbox__box-icon"
                         />
                     ) : (
                         unIndeterminateIcon
@@ -163,12 +158,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                         as="span"
                         className={clsx(
                             "quill-checkbox__label",
-                            {
-                                "quill-checkbox__label--disabled": disabled,
-                            },
                             labelClassName,
                         )}
-                        disabled={disabled}
                     >
                         {label}
                     </Text>

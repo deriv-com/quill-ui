@@ -33,8 +33,7 @@ const meta = {
         },
         indeterminate: {
             table: { type: { summary: "boolean | undefined" } },
-            description:
-                "Flag for setting indeterminate state if input is unchecked",
+            description: "Flag for setting indeterminate state",
             options: ["true", "false"],
             control: { type: "boolean" },
         },
