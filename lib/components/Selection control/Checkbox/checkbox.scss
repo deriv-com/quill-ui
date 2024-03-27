@@ -5,16 +5,16 @@
     gap: var(--semantic-spacing-gap-md);
 
     &__wrapper {
-        height: 24px;
-        width: 24px;
+        height: var(--size-generic-sm);
+        width: var(--size-generic-sm);
         position: relative;
     }
 
     &__box {
         position: absolute;
         cursor: pointer;
-        height: 14px;
-        width: 14px;
+        height: var(--size-generic-xs);
+        width: var(--size-generic-xs);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -35,14 +35,14 @@
             outline: none;
             &:after {
                 content: "";
-                width: 19px;
-                height: 19px;
+                width: var(--size-generic-xs);
+                height: var(--size-generic-xs);
                 display: block;
-                border: var(--core-borderWidth-100) solid
-                    var(--core-color-solid-blue-700);
+                outline:var(--core-borderWidth-100) solid
+                var(--core-color-solid-blue-700);
                 border-radius: var(--core-borderRadius-200);
                 position: absolute;
-                top: calc(50% + 0.5px);
+                top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 box-sizing: border-box;
