@@ -34,7 +34,7 @@ class Transformer {
             ...this.semanticTokenNames,
             ...this.themeTokenNames,
         ];
-        this.breakpointNames = ["sm", "md", "lg", "xl", "xl2"];
+        this.breakpointNames = ["sm", "md", "lg", "xl", "2xl"];
         this.coreRules = {};
         this.designTokens = JSON.parse(
             fs.readFileSync(

@@ -19,7 +19,7 @@
             @content;
         }
     }
-    @if $breakpoint == "xl2" {
+    @if $breakpoint == "2xl" {
         @media (min-width: 1440px) {
             @content;
         }
