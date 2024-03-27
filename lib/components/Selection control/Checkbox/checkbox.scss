@@ -24,11 +24,11 @@
         }
 
         &:hover:not(:disabled) ~ .quill-checkbox__icon {
-            opacity: var(--core-opacity-900);
+            fill: var(--core-color-opacity-black-600);
         }
 
         &:active:not(:disabled) ~ .quill-checkbox__icon__icon {
-            opacity: var(--core-opacity-1300);
+            fill: var(--core-color-solid-slate-1400);
         }
 
         &:focus-visible {
@@ -54,11 +54,11 @@
         pointer-events: none;
 
         &--default {
-            opacity: var(--core-opacity-600);
+            fill: var(--core-color-opacity-black-400);
         }
 
         &--disabled {
-            opacity: var(--core-opacity-300);
+            fill: var(--core-color-opacity-black-300);
         }
     }
 
@@ -74,7 +74,7 @@
         cursor: pointer;
 
         &--disabled{
-            opacity: var(--core-opacity-300);
+            fill: var(--core-color-opacity-black-300);
             cursor: default;
         }
     }

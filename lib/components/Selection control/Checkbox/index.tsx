@@ -88,8 +88,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             }
         };
 
-        const uncheckedIcon = is_indeterminate ? (
-            <StandaloneSquareMinusFillIcon
+        const unIndeterminateIcon = is_checked ? (
+            <StandaloneSquareCheckFillIcon
                 iconSize="sm"
                 className={clsx("quill-checkbox__icon", {
                     "quill-checkbox__icon--disabled": disabled,
@@ -146,15 +146,15 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                         onKeyDown={onKeyDown}
                         {...rest}
                     />
-                    {is_checked ? (
-                        <StandaloneSquareCheckFillIcon
+                    {is_indeterminate ? (
+                        <StandaloneSquareMinusFillIcon
                             iconSize="sm"
                             className={clsx("quill-checkbox__icon", {
                                 "quill-checkbox__icon--disabled": disabled,
                             })}
                         />
                     ) : (
-                        uncheckedIcon
+                        unIndeterminateIcon
                     )}
                 </div>
                 <label htmlFor={rest.id ?? name}>
