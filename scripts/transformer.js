@@ -153,7 +153,7 @@ class Transformer {
                 fileName,
             );
 
-            const filePaths = [`lib/styles/sass/${fileName}.scss`];
+            const filePaths = [`lib/styles/quill/${fileName}.scss`];
 
             filePaths.map((item) => {
                 const dirPath = path.dirname(item);
