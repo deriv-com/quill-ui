@@ -37,7 +37,7 @@ const meta = {
         options: {
             control: { type: null },
             description:
-                "Required. The first element in `options` is selected by default. You can pass `selectedItemIndex` prop to make another element selected. `icon` can be a component or a string, e.g. the name of an icon from `@deriv/quill-icons`.",
+                "Required. The first element in `options` is selected by default. You can pass `selectedItemIndex` prop to make another element selected. `icon` accepts a component or a string, e.g. 'placeholder' value will load a placeholder icon from `@deriv/quill-icons`.",
         },
         selectedItemIndex: {
             options: [0, 1, 2, 3, 4],
@@ -62,7 +62,7 @@ const meta = {
 export default meta;
 
 const optionWithIconAndLabel = {
-    icon: "StandalonePlaceholderRegularIcon",
+    icon: "placeholder",
     label: "Label",
 };
 
@@ -72,7 +72,7 @@ export const SingleChoiceGroupWithIconsOnly = (
     <SegmentedControlSingleChoice
         {...args}
         options={new Array(5).fill({
-            icon: "StandalonePlaceholderRegularIcon",
+            icon: "placeholder",
         })}
     />
 );

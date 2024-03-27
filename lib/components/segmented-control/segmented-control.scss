@@ -4,7 +4,11 @@
     display: flex;
     align-items: center;
     width: fit-content;
-    background: var(--core-color-opacity-black-75);
+    background: color-mix(
+        in srgb,
+        var(--semantic-color-typography-prominent) 4%,
+        transparent
+    );
 
     .item {
         display: flex;
@@ -13,22 +17,34 @@
         cursor: pointer;
 
         &:hover:not(.disabled) {
-            background: var(--core-color-opacity-black-100);
+            background: color-mix(
+                in srgb,
+                var(--semantic-color-typography-prominent) 8%,
+                transparent
+            );
         }
         &:active:not(.disabled) {
-            background: var(--core-color-opacity-black-200);
+            background: color-mix(
+                in srgb,
+                var(--semantic-color-typography-prominent) 16%,
+                transparent
+            );
         }
         &.disabled {
-            opacity: 0.24;
+            opacity: var(--core-opacity-300);
             cursor: not-allowed;
             pointer-events: none;
         }
         &.selected:not(.disabled) {
-            background: var(--core-color-solid-slate-50);
+            background: var(--semantic-color-background-secondary-base);
         }
         .icon {
             display: flex;
             align-items: center;
+
+            svg {
+                fill: var(--semantic-color-typography-default);
+            }
         }
     }
     &--has-container-width {

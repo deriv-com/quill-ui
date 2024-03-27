@@ -1,7 +1,11 @@
 import React from "react";
 import clsx from "clsx";
+import {
+    LabelPairedPlaceholderLgRegularIcon,
+    LabelPairedPlaceholderMdRegularIcon,
+    LabelPairedPlaceholderSmRegularIcon,
+} from "@deriv/quill-icons";
 import { Text } from "../Typography";
-import * as quillIcons from "@deriv/quill-icons";
 import { SegmentedControlProps } from "./base";
 
 interface SegmentProps {
@@ -14,6 +18,12 @@ interface SegmentProps {
     size?: SegmentedControlProps["size"];
 }
 
+const placeholder = {
+    sm: <LabelPairedPlaceholderSmRegularIcon />,
+    md: <LabelPairedPlaceholderMdRegularIcon />,
+    lg: <LabelPairedPlaceholderLgRegularIcon />,
+};
+
 export const Segment = ({
     className,
     icon,
@@ -23,10 +33,10 @@ export const Segment = ({
     onClick,
     size,
 }: SegmentProps) => {
-    const QuillIcon =
-        typeof icon === "string" &&
-        (quillIcons[icon as keyof typeof quillIcons] as React.ElementType);
-    const Icon = QuillIcon ? <QuillIcon iconSize={size} /> : icon;
+    const Icon =
+        icon === "placeholder"
+            ? placeholder[size as keyof typeof placeholder]
+            : icon;
     return (
         <div
             className={clsx(
