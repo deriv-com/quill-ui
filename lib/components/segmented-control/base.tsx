@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { TGenericSizes } from "../../types";
+import { TRegularSizes } from "../../types";
 import { Segment } from "./segment";
 import "./segmented-control.scss";
 
@@ -14,7 +14,7 @@ export interface SegmentedControlProps {
     }>;
     onChange?: (selectedItemIndex: number) => void;
     hasContainerWidth?: boolean;
-    size?: Extract<TGenericSizes, "lg" | "md" | "sm">;
+    size?: TRegularSizes;
 }
 
 export const SegmentedControl = ({

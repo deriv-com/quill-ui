@@ -16,6 +16,11 @@
         align-items: center;
         cursor: pointer;
 
+        &.disabled {
+            opacity: var(--core-opacity-300);
+            cursor: not-allowed;
+            pointer-events: none;
+        }
         &:hover:not(.disabled) {
             background: color-mix(
                 in srgb,
@@ -30,13 +35,16 @@
                 transparent
             );
         }
-        &.disabled {
-            opacity: var(--core-opacity-300);
-            cursor: not-allowed;
-            pointer-events: none;
-        }
         &.selected:not(.disabled) {
-            background: var(--semantic-color-background-secondary-base);
+            // colors should stay the same for both themes:
+            background: var(--core-color-solid-slate-50);
+
+            * {
+                color: var(--core-color-solid-slate-1400);
+            }
+            svg {
+                fill: var(--core-color-solid-slate-1400);
+            }
         }
         .icon {
             display: flex;
