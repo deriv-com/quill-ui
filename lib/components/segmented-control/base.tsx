@@ -13,6 +13,7 @@ export interface SegmentedControlProps {
         selected?: boolean;
     }>;
     onChange?: (selectedItemIndex: number) => void;
+    hasContainerWidth?: boolean;
     size?: Extract<TGenericSizes, "lg" | "md" | "sm">;
 }
 
@@ -36,7 +37,7 @@ const Segment = ({
     const QuillIcon =
         typeof icon === "string" &&
         (quillIcons[icon as keyof typeof quillIcons] as React.ElementType);
-    const Icon = QuillIcon ? <QuillIcon /> : icon;
+    const Icon = QuillIcon ? <QuillIcon iconSize={size} /> : icon;
     return (
         <div
             className={clsx("item", isSelected && "selected", className)}
@@ -56,12 +57,14 @@ export const SegmentedControl = ({
     className,
     options = [],
     onChange,
+    hasContainerWidth,
     size = "md",
 }: SegmentedControlProps) => (
     <div
         className={clsx(
             "segmented-control",
             `segmented-control--${size}`,
+            hasContainerWidth && "segmented-control--has-container-width",
             className,
         )}
     >

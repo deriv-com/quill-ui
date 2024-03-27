@@ -20,6 +20,14 @@
             align-items: center;
         }
     }
+    &--has-container-width {
+        width: inherit;
+        min-width: fit-content;
+
+        .item {
+            flex: 1;
+        }
+    }
     &--sm {
         height: var(--size-generic-lg);
         padding: var(--semantic-spacing-general-xs);

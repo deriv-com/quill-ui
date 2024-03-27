@@ -12,6 +12,7 @@ const SegmentedControlSingleChoice = ({
     className,
     options = [],
     onChange,
+    hasContainerWidth,
     selectedItemIndex = 0,
     size = "md",
 }: SegmentedControlSingleChoiceProps) => {
@@ -22,6 +23,7 @@ const SegmentedControlSingleChoice = ({
         new_options: SegmentedControlProps["options"],
         idx: number,
     ) => {
+        if (idx >= new_options.length) return;
         setItems([
             ...new_options.map((item, i) => ({
                 ...item,
@@ -50,6 +52,7 @@ const SegmentedControlSingleChoice = ({
             className={className}
             options={items}
             onChange={handleItemClick}
+            hasContainerWidth={hasContainerWidth}
             size={size}
         />
     );

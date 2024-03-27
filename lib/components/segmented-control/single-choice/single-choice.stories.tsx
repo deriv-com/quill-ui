@@ -11,7 +11,7 @@ const meta = {
     args: {
         onChange: fn(),
         selectedItemIndex: 0,
-        size: "sm",
+        size: "md",
     },
     argTypes: {
         className: {
@@ -19,6 +19,14 @@ const meta = {
             description: "Optional.",
             table: {
                 type: { summary: "string | undefined" },
+            },
+        },
+        hasContainerWidth: {
+            control: { type: null },
+            description:
+                "Optional. Makes the component inherit the full width of its container.",
+            table: {
+                type: { summary: "boolean | undefined" },
             },
         },
         onChange: {
@@ -46,14 +54,16 @@ const meta = {
             },
         },
     },
+    parameters: {
+        layout: "centered",
+    },
 } satisfies Meta<typeof SegmentedControlSingleChoice>;
 
 export default meta;
 
-const placeholder = {
-    sm: "LabelPairedPlaceholderSmRegularIcon",
-    md: "LabelPairedPlaceholderMdRegularIcon",
-    lg: "LabelPairedPlaceholderLgRegularIcon",
+const optionWithIconAndLabel = {
+    icon: "StandalonePlaceholderRegularIcon",
+    label: "Label",
 };
 
 export const SingleChoiceGroupWithIconsOnly = (
@@ -62,7 +72,7 @@ export const SingleChoiceGroupWithIconsOnly = (
     <SegmentedControlSingleChoice
         {...args}
         options={new Array(5).fill({
-            icon: placeholder[args.size as keyof typeof placeholder],
+            icon: "StandalonePlaceholderRegularIcon",
         })}
     />
 );
@@ -83,9 +93,18 @@ export const SingleChoiceGroupWithIconsAndLabels = (
 ) => (
     <SegmentedControlSingleChoice
         {...args}
-        options={new Array(5).fill({
-            icon: placeholder[args.size as keyof typeof placeholder],
-            label: "Label",
-        })}
+        options={new Array(5).fill(optionWithIconAndLabel)}
     />
+);
+
+export const SingleChoiceGroupWithContainerWidth = (
+    args: ComponentProps<typeof SegmentedControlSingleChoice>,
+) => (
+    <div style={{ width: "328px" }}>
+        <SegmentedControlSingleChoice
+            {...args}
+            hasContainerWidth
+            options={new Array(2).fill(optionWithIconAndLabel)}
+        />
+    </div>
 );
