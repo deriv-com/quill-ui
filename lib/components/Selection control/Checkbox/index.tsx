@@ -109,9 +109,25 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 
         const infoIcon =
             size === "sm" ? (
-                <LabelPairedCircleInfoSmRegularIcon />
+                <LabelPairedCircleInfoSmRegularIcon
+                    className={clsx(
+                        "quill-checkbox__info-icon",
+                        {
+                            "quill-checkbox__info-icon--disabled": disabled,
+                        },
+                        infoIconClassName,
+                    )}
+                />
             ) : (
-                <LabelPairedCircleInfoMdRegularIcon />
+                <LabelPairedCircleInfoMdRegularIcon
+                    className={clsx(
+                        "quill-checkbox__info-icon",
+                        {
+                            "quill-checkbox__info-icon--disabled": disabled,
+                        },
+                        infoIconClassName,
+                    )}
+                />
             );
 
         return (
@@ -156,19 +172,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                         {label}
                     </Text>
                 </label>
-                {isLabelPaired && (
-                    <span
-                        className={clsx(
-                            "quill-checkbox__info-icon",
-                            {
-                                "quill-checkbox__info-icon--disabled": disabled,
-                            },
-                            infoIconClassName,
-                        )}
-                    >
-                        {infoIcon}
-                    </span>
-                )}
+                {isLabelPaired && infoIcon}
             </div>
         );
     },
