@@ -29,9 +29,9 @@ export interface ButtonProps extends ComponentProps<"button"> {
 }
 
 export interface SocialButtonProps extends ComponentProps<"button"> {
-    variant?: "primary" | "secondary"
-    social ? : TSocial
-    size: Extract<TGenericSizes, "xl" | "lg" | "md">;
+    variant?: "primary" | "secondary";
+    social?: TSocial;
+    size?: Extract<TGenericSizes, "xl" | "lg" | "md">;
     colorStyle?: TDefaultColor;
     hideLabel?: boolean;
     fullWidth?: boolean;
