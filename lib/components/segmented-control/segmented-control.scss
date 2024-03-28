@@ -1,4 +1,11 @@
 @import "../../styles/index.scss";
+@import "../../styles/quill/border.scss";
+@import "../../styles/quill/color.scss";
+@import "../../styles/quill/color.semantic.scss";
+@import "../../styles/quill/opacity.scss";
+@import "../../styles/quill/others.scss";
+@import "../../styles/quill/spacing.scss";
+@import "../../styles/quill/static.scss";
 
 .segmented-control {
     &-single {
