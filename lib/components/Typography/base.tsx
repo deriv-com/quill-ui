@@ -8,6 +8,7 @@ export interface TypographyProps extends ComponentProps<THeaders> {
     bold?: boolean;
     italic?: boolean;
     underlined?: boolean;
+    color?: string;
 }
 
 type THeaders = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
