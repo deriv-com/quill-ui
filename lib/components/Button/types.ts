@@ -36,4 +36,5 @@ export interface SocialButtonProps extends ComponentProps<"button"> {
     hideLabel?: boolean;
     fullWidth?: boolean;
     isLoading?: boolean;
+    disabled?: boolean;
 }

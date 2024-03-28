@@ -1,10 +1,16 @@
+
+@import '../../../styles/quill/color.semantic.scss';
+@import '../../../styles/quill/color.scss';
+@import '../../../styles/quill/color.opacity.scss';
+@import '../../../styles/quill/opacity.scss';
+
 .social-button { 
     &__variant {
         &--google{
             &--primary {
                 border-color: transparent;
                 background-color: var(--core-color-opacity-black-75);
-                color: var(--core-color-opacity-black-600);
+                color: var(--semantic-color-typography-default);
                 &:hover:not(:disabled) {
                     background-color: var(--core-color-opacity-black-100);
                 }

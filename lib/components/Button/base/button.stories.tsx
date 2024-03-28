@@ -46,7 +46,7 @@ const meta = {
         },
         "aria-label": {
             table: {
-                disable: true,
+                disabled: true,
             },
         },
         isLoading: {

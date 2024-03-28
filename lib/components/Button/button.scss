@@ -1,3 +1,8 @@
+@import '../../styles/quill/spacing.scss';
+@import '../../styles/quill/size.scss';
+@import '../../styles/quill/border.scss';
+@import '../../styles/quill/motion.scss';
+
 .quill-button{
     cursor: pointer ;
     display: inline-flex;
@@ -12,25 +17,25 @@
             padding-inline: var(--core-spacing-400);
             height: var(--core-size-1200);
             border-radius: var(--core-borderRadius-400);
-            gap: var(--temp-static-spacing-4);
+            gap: var(--core-spacing-200);
         }
         &--md{
             padding-inline: var(--core-spacing-600);
             height: var(--core-size-1600);
             border-radius: var(--core-borderRadius-600);
-            gap: var(--temp-static-spacing-6);
+            gap: var(--core-spacing-300);
         }
         &--lg{
             padding-inline: var(--core-spacing-800);
             height: var(--core-size-2400);
             border-radius: var(--core-borderRadius-800);
-            gap: var(--temp-static-spacing-8);
+            gap: var(--core-spacing-400);
         }
         &--xl{
             padding-inline: var(--core-spacing-1200);
             height: var(--core-size-3200);
             border-radius: var(--core-borderRadius-1200);
-            gap: var(--temp-static-spacing-12);
+            gap: var(--core-spacing-600);
         }
     }
     &__transform {
