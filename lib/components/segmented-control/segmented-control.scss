@@ -1,112 +1,114 @@
 @import "../../styles/index.scss";
 
 .segmented-control {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-    width: fit-content;
-    background: color-mix(
-        in srgb,
-        var(--semantic-color-typography-prominent) 4%,
-        transparent
-    );
+    &-single {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        width: fit-content;
+        background: color-mix(
+            in srgb,
+            var(--semantic-color-typography-prominent) 4%,
+            transparent
+        );
 
-    .item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-
-        &.disabled {
-            opacity: var(--core-opacity-300);
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-        &.focused {
-            // not using default :focus since we are customizing focus state
-            box-sizing: border-box;
-            border: var(--core-color-solid-blue-700) solid var(--borderWidth-xs);
-        }
-        &:hover:not(.disabled) {
-            background: color-mix(
-                in srgb,
-                var(--semantic-color-typography-prominent) 8%,
-                transparent
-            );
-        }
-        &:active:not(.disabled) {
-            border: none;
-            background: color-mix(
-                in srgb,
-                var(--semantic-color-typography-prominent) 16%,
-                transparent
-            );
-        }
-        &.selected:not(.disabled) {
-            // colors should stay the same for both themes:
-            background: var(--core-color-solid-slate-50);
-
-            * {
-                color: var(--core-color-solid-slate-1400);
-            }
-            svg {
-                fill: var(--core-color-solid-slate-1400);
-            }
-        }
-        .icon {
+        .item {
             display: flex;
+            justify-content: center;
             align-items: center;
+            cursor: pointer;
 
-            svg {
-                fill: var(--semantic-color-typography-default);
+            &.disabled {
+                opacity: var(--core-opacity-300);
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+            &.focused {
+                // not using default :focus since we are customizing focus state
+                box-shadow: 0 0 0 var(--borderWidth-xs)
+                    var(--core-color-solid-blue-700) inset;
+            }
+            &:hover:not(.disabled) {
+                background: color-mix(
+                    in srgb,
+                    var(--semantic-color-typography-prominent) 8%,
+                    transparent
+                );
+            }
+            &:active:not(.disabled) {
+                border: none;
+                background: color-mix(
+                    in srgb,
+                    var(--semantic-color-typography-prominent) 16%,
+                    transparent
+                );
+            }
+            &.selected:not(.disabled) {
+                // colors should stay the same for both themes:
+                background: var(--core-color-solid-slate-50);
+
+                * {
+                    color: var(--core-color-solid-slate-1400);
+                }
+                svg {
+                    fill: var(--core-color-solid-slate-1400);
+                }
+            }
+            .icon {
+                display: flex;
+                align-items: center;
+
+                svg {
+                    fill: var(--semantic-color-typography-default);
+                }
             }
         }
-    }
-    &--has-container-width {
-        width: inherit;
-        min-width: fit-content;
+        &--has-container-width {
+            width: inherit;
+            min-width: fit-content;
 
-        .item {
-            flex: 1;
+            .item {
+                flex: 1;
+            }
         }
-    }
-    &--sm {
-        height: var(--size-generic-lg);
-        padding: var(--semantic-spacing-general-xs);
-        border-radius: var(--semantic-borderRadius-md);
-
-        .item {
-            height: var(--size-generic-md);
-            padding: var(--temp-static-spacing-5)
-                var(--semantic-spacing-general-sm);
-            gap: var(--semantic-spacing-gap-sm);
-            border-radius: var(--semantic-borderRadius-sm);
-        }
-    }
-    &--md {
-        height: var(--size-generic-2xl);
-        padding: var(--semantic-spacing-general-sm);
-        border-radius: var(--semantic-borderRadius-lg);
-
-        .item {
+        &--sm {
             height: var(--size-generic-lg);
-            padding: var(--semantic-spacing-general-sm)
-                var(--semantic-spacing-general-md);
-            gap: var(--semantic-spacing-gap-md);
+            padding: var(--semantic-spacing-general-xs);
             border-radius: var(--semantic-borderRadius-md);
-        }
-    }
-    &--lg {
-        height: var(--size-generic-4xl);
-        padding: var(--core-spacing-600);
-        border-radius: var(--semantic-borderRadius-xl);
 
-        .item {
-            height: var(--size-generic-xl);
-            padding: var(--temp-static-spacing-9)
-                var(--semantic-spacing-general-lg);
-            gap: var(--core-spacing-600);
-            border-radius: var(--core-borderRadius-600);
+            .item {
+                height: var(--size-generic-md);
+                padding: var(--temp-static-spacing-5)
+                    var(--semantic-spacing-general-sm);
+                gap: var(--semantic-spacing-gap-sm);
+                border-radius: var(--semantic-borderRadius-sm);
+            }
+        }
+        &--md {
+            height: var(--size-generic-2xl);
+            padding: var(--semantic-spacing-general-sm);
+            border-radius: var(--semantic-borderRadius-lg);
+
+            .item {
+                height: var(--size-generic-lg);
+                padding: var(--semantic-spacing-general-sm)
+                    var(--semantic-spacing-general-md);
+                gap: var(--semantic-spacing-gap-md);
+                border-radius: var(--semantic-borderRadius-md);
+            }
+        }
+        &--lg {
+            height: var(--size-generic-4xl);
+            padding: var(--core-spacing-600);
+            border-radius: var(--semantic-borderRadius-xl);
+
+            .item {
+                height: var(--size-generic-xl);
+                padding: var(--temp-static-spacing-9)
+                    var(--semantic-spacing-general-lg);
+                gap: var(--core-spacing-600);
+                border-radius: var(--core-borderRadius-600);
+            }
         }
     }
 }

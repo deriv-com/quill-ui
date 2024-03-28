@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
+import clsx from "clsx";
 import { SegmentedControl } from "../base";
 import type { SegmentedControlProps } from "../base";
 
 export interface SegmentedControlSingleChoiceProps
     extends SegmentedControlProps {
+    hasContainerWidth?: boolean;
     options: Array<{
         icon?: string | React.ReactNode;
         label?: string;
@@ -53,10 +55,15 @@ const SegmentedControlSingleChoice = ({
     if (!options.length) return null;
     return (
         <SegmentedControl
-            className={className}
+            className={clsx(
+                "segmented-control-single",
+                `segmented-control-single--${size}`,
+                hasContainerWidth &&
+                    "segmented-control-single--has-container-width",
+                className,
+            )}
             options={items}
             onChange={handleItemClick}
-            hasContainerWidth={hasContainerWidth}
             size={size}
         />
     );

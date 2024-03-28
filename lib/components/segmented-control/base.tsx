@@ -1,5 +1,4 @@
 import React from "react";
-import clsx from "clsx";
 import { TRegularSizes } from "../../types";
 import { Segment } from "./segment";
 import "./segmented-control.scss";
@@ -15,15 +14,21 @@ export interface SegmentedControlProps {
     className?: string;
     options: Array<Option>;
     onChange?: (selectedItemIndex: number) => void;
-    hasContainerWidth?: boolean;
     size?: TRegularSizes;
 }
+
+const KEY = {
+    ARROW_LEFT: "ArrowLeft",
+    ARROW_RIGHT: "ArrowRight",
+    ENTER: "Enter",
+    SPACE: " ",
+    TAB: "Tab",
+};
 
 export const SegmentedControl = ({
     className,
     options = [],
     onChange,
-    hasContainerWidth,
     size = "md",
 }: SegmentedControlProps) => {
     const [allowFocus, setAllowFocus] = React.useState(true);
@@ -35,21 +40,19 @@ export const SegmentedControl = ({
         const selectedOptionIdx = options.findIndex(
             (option) => option.selected,
         );
-        setAllowFocus(["Tab", "Enter", " "].includes(e.key));
-        if (!options[idx].disabled && ["Enter", " "].includes(e.key)) {
+        setAllowFocus([KEY.TAB, KEY.ENTER, KEY.SPACE].includes(e.key));
+        if (!options[idx].disabled && [KEY.ENTER, KEY.SPACE].includes(e.key)) {
             onChange?.(idx);
         }
-        if (e.key === "ArrowLeft") {
-            // @ts-expect-error: es2023 supports findLastIndex, it works but TS doesn't recognize it
+        if (e.key === KEY.ARROW_LEFT) {
             const previousEnabledOptionIdx = options.findLastIndex(
-                (option: Option, i: number) =>
-                    i < selectedOptionIdx && !option.disabled,
+                (option, i) => i < selectedOptionIdx && !option.disabled,
             );
             if (previousEnabledOptionIdx !== -1) {
                 onChange?.(previousEnabledOptionIdx);
             }
         }
-        if (e.key === "ArrowRight") {
+        if (e.key === KEY.ARROW_RIGHT) {
             const nextEnabledOptionIdx = options.findIndex(
                 (option, i) => i > selectedOptionIdx && !option.disabled,
             );
@@ -60,14 +63,7 @@ export const SegmentedControl = ({
     };
 
     return (
-        <div
-            className={clsx(
-                "segmented-control",
-                `segmented-control--${size}`,
-                hasContainerWidth && "segmented-control--has-container-width",
-                className,
-            )}
-        >
+        <div className={className}>
             {options.map(({ disabled, icon, label, selected }, idx) => {
                 const segmentRef = React.useRef<HTMLButtonElement>(null);
                 return (
