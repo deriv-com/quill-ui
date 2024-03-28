@@ -1,23 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import  { DropdownButton } from '.'
+import type { Meta, StoryObj } from "@storybook/react";
+import { DropdownButton } from ".";
 
 const meta = {
-  title: 'Components/Button/Dropdown Button',
+    title: "Components/Button/Dropdown Button",
     component: DropdownButton,
-  parameters: {
- 
+    parameters: {
         docs: {
-          story: {
-            height: '350px',
-            width: '350px',
-          },
+            story: {
+                height: "350px",
+                width: "350px",
+            },
         },
-      },
+    },
 
-  args: {
-    defaultOption: { value: '', label: 'Dropdown menu' },
-    disabled: false,
-  
+    args: {
+        defaultOption: { value: "", label: "Dropdown menu" },
+        disabled: false,
     },
     argTypes: {
         variant: {
@@ -38,8 +36,8 @@ const meta = {
             options: ["sm", "md", "lg", "xl"],
             control: { type: "radio" },
         },
-        
-        colorStyle: {
+
+        color: {
             options: ["coral", "black", "white", "purchase", "sell"],
             control: { type: "radio" },
         },
@@ -54,36 +52,37 @@ const meta = {
             },
         },
     },
-  tags: ['autodocs'],
-} satisfies Meta<typeof DropdownButton>
+    tags: ["autodocs"],
+} satisfies Meta<typeof DropdownButton>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const DropdownMenu: Story = {
     args: {
-    options: [
-      { value: '1', label: 'Sample Item 1' },
-      {
-        value: '2',
-        label: 'Sample Item 2',
-      },
-      { value: '3', label: 'Sample Item 3' },
-            { value: '4', label: 'Sample Item 4' },
-            { value: '1', label: 'Sample Item 1' },
+        size: "md",
+        options: [
+            { value: "1", label: "Sample Item 1" },
             {
-              value: '2',
-              label: 'Sample Item 2',
+                value: "2",
+                label: "Sample Item 2",
             },
-            { value: '3', label: 'Sample Item 3' },
-            { value: '4', label: 'Sample Item 4' },
-            { value: '1', label: 'Sample Item 1' },
-      {
-        value: '2',
-        label: 'Sample Item 2',
-      },
-      { value: '3', label: 'Sample Item 3' },
-      { value: '4', label: 'Sample Item 4' },
-    ],
-  },
-}
+            { value: "3", label: "Sample Item 3" },
+            { value: "4", label: "Sample Item 4" },
+            { value: "1", label: "Sample Item 1" },
+            {
+                value: "2",
+                label: "Sample Item 2",
+            },
+            { value: "3", label: "Sample Item 3" },
+            { value: "4", label: "Sample Item 4" },
+            { value: "1", label: "Sample Item 1" },
+            {
+                value: "2",
+                label: "Sample Item 2",
+            },
+            { value: "3", label: "Sample Item 3" },
+            { value: "4", label: "Sample Item 4" },
+        ],
+    },
+};

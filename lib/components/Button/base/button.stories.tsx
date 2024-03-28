@@ -6,7 +6,6 @@ import {
     LabelPairedPlaceholderMdRegularIcon,
     LabelPairedPlaceholderLgRegularIcon,
     LabelPairedPlaceholderXlRegularIcon,
-
 } from "@deriv/quill-icons/LabelPaired";
 
 const iconSizes = {
@@ -20,25 +19,24 @@ const meta = {
     title: "Components/Button/Basic",
     component: Button,
     parameters: {
-        layout: 'centered',
+        layout: "centered",
         docs: {
-          story: {
-            height: '350px',
-            width: '350px',
-          },
+            story: {
+                height: "350px",
+                width: "350px",
+            },
         },
-      },
+    },
     tags: ["autodocs"],
     args: {
         variant: "primary",
         label: "Label",
-        colorStyle: "coral",
+        color: "coral",
         isLoading: false,
         disabled: false,
         fullWidth: false,
         type: "button",
         size: "md",
-    
     },
 
     argTypes: {
@@ -60,8 +58,8 @@ const meta = {
             options: ["sm", "md", "lg", "xl"],
             control: { type: "radio" },
         },
-        
-        colorStyle: {
+
+        color: {
             options: ["coral", "black", "white", "purchase", "sell"],
             control: { type: "radio" },
         },
@@ -71,12 +69,12 @@ const meta = {
             },
         },
         icon: {
-            description: 'Icon to display on the left side of the chip',
-      options: Object.keys(iconSizes),
-      mapping: iconSizes,
-      control: {
-        type: 'select',
-      },
+            description: "Icon to display on the left side of the chip",
+            options: Object.keys(iconSizes),
+            mapping: iconSizes,
+            control: {
+                type: "select",
+            },
         },
         className: {
             table: {
@@ -99,7 +97,7 @@ export const BasicSecondaryButton: Story = {
     args: {
         variant: "secondary",
         size: "xl",
-        label  : "Basic Secondary Button",
+        label: "Basic Secondary Button",
     },
 };
 export const BasicTertiaryButton: Story = {
@@ -112,16 +110,15 @@ export const BasicTertiaryButton: Story = {
 
 export const ButtonWithLabelIconAtStart: Story = {
     args: {
-         icon: LabelPairedPlaceholderMdRegularIcon,
-         iconPosition: "start"
+        size: "lg",
+        icon: LabelPairedPlaceholderMdRegularIcon,
+        iconPosition: "start",
     },
-   
 };
 export const ButtonWithLabelIconAtEnd: Story = {
     args: {
-         icon: LabelPairedPlaceholderMdRegularIcon,
-         iconPosition: "end"
+        size: "lg",
+        icon: LabelPairedPlaceholderMdRegularIcon,
+        iconPosition: "end",
     },
-   
 };
-

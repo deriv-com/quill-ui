@@ -46,7 +46,7 @@ export const DropdownButton = forwardRef<
             size,
             icon,
             label,
-            colorStyle = "coral",
+            color = "coral",
             variant,
             disabled,
             options,
@@ -77,7 +77,7 @@ export const DropdownButton = forwardRef<
                                     {...rest}
                                     icon={icon}
                                     size={size}
-                                    colorStyle={colorStyle}
+                                    color={color}
                                     label={label}
                                     variant={variant}
                                     ref={ref}
@@ -90,14 +90,14 @@ export const DropdownButton = forwardRef<
                                     disabled={disabled}
                                 >
                                     {size === "sm" ? (
-                                        <CaptionText color={colorStyle} bold>
+                                        <CaptionText color={color} bold>
                                             {selectedItem.label}
                                         </CaptionText>
                                     ) : (
                                         <Text
                                             size={labelSize}
                                             bold
-                                            color={colorStyle}
+                                            color={color}
                                         >
                                             {selectedItem.label}
                                         </Text>

@@ -13,7 +13,7 @@ export type QuillIconComponent = React.ForwardRefExoticComponent<
 >;
 export interface ButtonProps extends ComponentProps<"button"> {
     variant?: TVariant;
-    colorStyle?: TColor;
+    color?: TColor;
     icon?: QuillIconComponent;
     isDropdownOpen?: boolean;
     selected?: boolean;
@@ -32,7 +32,7 @@ export interface SocialButtonProps extends ComponentProps<"button"> {
     variant?: "primary" | "secondary";
     social?: TSocial;
     size?: Extract<TGenericSizes, "xl" | "lg" | "md">;
-    colorStyle?: TDefaultColor;
+    color?: TDefaultColor;
     hideLabel?: boolean;
     fullWidth?: boolean;
     isLoading?: boolean;
