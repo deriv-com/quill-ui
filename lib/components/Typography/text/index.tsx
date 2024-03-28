@@ -11,6 +11,7 @@ export const Text = ({
     as = "p",
     size = "md",
     italic = false,
+    color,
     underlined = false,
     bold = false,
     ...rest
@@ -23,7 +24,7 @@ export const Text = ({
             as={as}
             className={clsx(
                 `quill-typography__body-text__size--${size}__weight--${weight}__decoration--${decoration}`,
-                "quill-typography__color--default",
+                color ? color : "quill-typography__color--default",
                 className,
             )}
             {...rest}

@@ -1,0 +1,13 @@
+.tab-trigger{
+    &__icon-position {
+        align-items: center;
+        &--left {
+            display: flex;
+            flex-direction: row;
+        }
+        &--top {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

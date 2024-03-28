@@ -1,0 +1,17 @@
+.tab-list{
+    &--container{
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    &--item{
+        display: flex;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+}
