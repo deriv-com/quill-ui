@@ -54,8 +54,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         },
         ref,
     ) => {
-        const [is_checked, setIsChecked] = useState(checked);
-        const [is_indeterminate, setIsIndeterminate] = useState(indeterminate);
+        const [isChecked, setIsChecked] = useState(checked);
+        const [isIndeterminate, setIsIndeterminate] = useState(indeterminate);
 
         useEffect(() => {
             setIsChecked(checked);
@@ -70,11 +70,11 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         ) => {
             e.stopPropagation();
 
-            if (is_indeterminate) {
-                setIsIndeterminate(!is_indeterminate);
+            if (isIndeterminate) {
+                setIsIndeterminate(!isIndeterminate);
                 setIsChecked(false);
             } else {
-                setIsChecked(!is_checked);
+                setIsChecked(!isChecked);
             }
             onChange?.(e);
         };
@@ -84,17 +84,17 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             e.preventDefault();
 
             if (e.key === "Enter" || e.key === " ") {
-                if (is_indeterminate) {
-                    setIsIndeterminate(!is_indeterminate);
+                if (isIndeterminate) {
+                    setIsIndeterminate(!isIndeterminate);
                     setIsChecked(false);
                 } else {
-                    setIsChecked(!is_checked);
+                    setIsChecked(!isChecked);
                 }
                 onChange?.(e);
             }
         };
 
-        const unIndeterminateIcon = is_checked ? (
+        const unIndeterminateIcon = isChecked ? (
             <StandaloneSquareCheckFillIcon
                 iconSize="sm"
                 className="quill-checkbox__box-icon"
@@ -141,7 +141,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                         id={rest.id ?? name}
                         className="quill-checkbox__box"
                         type="checkbox"
-                        checked={is_checked}
+                        checked={isChecked}
                         disabled={disabled}
                         ref={ref}
                         name={name}
@@ -149,7 +149,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                         onKeyDown={onKeyDown}
                         {...rest}
                     />
-                    {is_indeterminate ? (
+                    {isIndeterminate ? (
                         <StandaloneSquareMinusFillIcon
                             iconSize="sm"
                             className="quill-checkbox__box-icon"
