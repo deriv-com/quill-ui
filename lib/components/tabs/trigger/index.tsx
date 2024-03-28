@@ -37,11 +37,10 @@ export const TabTrigger = ({
     const ref = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
-        // to set default aria-selected
         if (ref.current && ref.current?.parentElement) {
             const items = Array.from(ref.current.parentElement?.children);
             const idx = items.indexOf(ref.current);
-            // Set aria-selected
+
             if (activeTab === idx) {
                 ref.current.setAttribute("aria-selected", "true");
                 setSelectedTab(true);
@@ -49,7 +48,7 @@ export const TabTrigger = ({
                 ref.current.setAttribute("aria-selected", "false");
                 setSelectedTab(false);
             }
-            // Set unique ID
+
             items.forEach((item, i) => {
                 item.id = `${id}-trigger-${i}`;
             });
