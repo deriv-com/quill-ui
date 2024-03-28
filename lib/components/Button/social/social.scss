@@ -12,7 +12,7 @@
                     background-color: var(--core-color-opacity-black-200);
                 }
                 &:disabled{
-                    opacity: 0.4;
+                    opacity: var(--core-opacity-600);
                 }
             }
         }
@@ -28,7 +28,7 @@
                 background-color: #1464CB;
                 }
                 &:disabled {
-                opacity: 0.4;
+                opacity: var(--core-opacity-600);
                 }
             }
         }
@@ -61,7 +61,7 @@
                 background-color: var(--core-color-opacity-black-200);
             }
             &:disabled{
-                opacity: 0.4;
+                opacity: var(--core-opacity-600);
             }
         }  
     }
