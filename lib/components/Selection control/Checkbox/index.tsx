@@ -83,7 +83,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             e.stopPropagation();
             e.preventDefault();
 
-            if (e.key === "Enter" || e.code === "Space") {
+            if (e.key === "Enter" || e.key === " ") {
                 if (is_indeterminate) {
                     setIsIndeterminate(!is_indeterminate);
                     setIsChecked(false);
