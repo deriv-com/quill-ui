@@ -119,3 +119,12 @@ export const SingleChoiceGroupWithOneDisabledOption = (
         ]}
     />
 );
+
+export const SingleChoiceGroupWithUnequalContentLength = (
+    args: ComponentProps<typeof SegmentedControlSingleChoice>,
+) => (
+    <SegmentedControlSingleChoice
+        {...args}
+        options={[{ label: "Label" }, { label: "Very Very Very Long Label" }]}
+    />
+);

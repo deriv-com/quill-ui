@@ -1,17 +1,19 @@
-import React, { RefObject } from "react";
+import React from "react";
 import clsx from "clsx";
 import { TRegularSizes } from "../../types";
 import { Segment } from "./segment";
 import "./segmented-control.scss";
 
+interface Option {
+    disabled?: boolean;
+    icon?: string | React.ReactNode;
+    label?: string;
+    selected?: boolean;
+}
+
 export interface SegmentedControlProps {
     className?: string;
-    options: Array<{
-        disabled?: boolean;
-        icon?: string | React.ReactNode;
-        label?: string;
-        selected?: boolean;
-    }>;
+    options: Array<Option>;
     onChange?: (selectedItemIndex: number) => void;
     hasContainerWidth?: boolean;
     size?: TRegularSizes;
@@ -24,19 +26,36 @@ export const SegmentedControl = ({
     hasContainerWidth,
     size = "md",
 }: SegmentedControlProps) => {
+    const [allowFocus, setAllowFocus] = React.useState(true);
+
     const handleKeyboardEvents = (
         e: React.KeyboardEvent<HTMLButtonElement>,
         idx: number,
-        ref: RefObject<HTMLButtonElement>,
     ) => {
-        if (!options[idx].disabled && (e.key === "Enter" || e.key === " ")) {
+        const selectedOptionIdx = options.findIndex(
+            (option) => option.selected,
+        );
+        setAllowFocus(["Tab", "Enter", " "].includes(e.key));
+        if (!options[idx].disabled && ["Enter", " "].includes(e.key)) {
             onChange?.(idx);
         }
         if (e.key === "ArrowLeft") {
-            (ref?.current?.previousElementSibling as HTMLElement)?.focus();
+            // @ts-expect-error: es2023 supports findLastIndex, it works but TS doesn't recognize it
+            const previousEnabledOptionIdx = options.findLastIndex(
+                (option: Option, i: number) =>
+                    i < selectedOptionIdx && !option.disabled,
+            );
+            if (previousEnabledOptionIdx !== -1) {
+                onChange?.(previousEnabledOptionIdx);
+            }
         }
         if (e.key === "ArrowRight") {
-            (ref?.current?.nextElementSibling as HTMLElement)?.focus();
+            const nextEnabledOptionIdx = options.findIndex(
+                (option, i) => i > selectedOptionIdx && !option.disabled,
+            );
+            if (nextEnabledOptionIdx !== -1) {
+                onChange?.(nextEnabledOptionIdx);
+            }
         }
     };
 
@@ -53,6 +72,7 @@ export const SegmentedControl = ({
                 const segmentRef = React.useRef<HTMLButtonElement>(null);
                 return (
                     <Segment
+                        allowFocus={allowFocus}
                         key={`${idx}_${label}`}
                         icon={icon}
                         isDisabled={disabled}
@@ -61,7 +81,7 @@ export const SegmentedControl = ({
                         onClick={() => onChange?.(idx)}
                         onKeyDown={(
                             e: React.KeyboardEvent<HTMLButtonElement>,
-                        ) => handleKeyboardEvents(e, idx, segmentRef)}
+                        ) => handleKeyboardEvents(e, idx)}
                         size={size}
                         ref={segmentRef}
                     />

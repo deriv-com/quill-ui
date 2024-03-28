@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { RefObject, forwardRef, useEffect } from "react";
 import clsx from "clsx";
 import {
     LabelPairedPlaceholderLgRegularIcon,
@@ -9,13 +9,14 @@ import { Text } from "../Typography";
 import { SegmentedControlProps } from "./base";
 
 interface SegmentProps {
+    allowFocus?: boolean;
     className?: string;
     icon?: string | React.ReactNode;
     isDisabled?: boolean;
     isSelected?: boolean;
     label?: string;
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-    onKeyDown?: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
+    onClick: () => void;
+    onKeyDown: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
     size?: SegmentedControlProps["size"];
 }
 
@@ -28,6 +29,7 @@ const placeholder = {
 export const Segment = forwardRef<HTMLButtonElement, SegmentProps>(
     (
         {
+            allowFocus,
             className,
             icon,
             isDisabled,
@@ -39,20 +41,45 @@ export const Segment = forwardRef<HTMLButtonElement, SegmentProps>(
         },
         ref,
     ) => {
+        const [focused, setFocused] = React.useState(false);
         const Icon =
             icon === "placeholder"
                 ? placeholder[size as keyof typeof placeholder]
                 : icon;
+
+        const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+            if (e.key !== "Tab") setFocused(false);
+            onKeyDown(e);
+        };
+
+        const handleClick = () => {
+            setFocused(false);
+            onClick();
+        };
+
+        useEffect(() => {
+            if (
+                isSelected &&
+                !allowFocus &&
+                (ref as RefObject<HTMLButtonElement>)?.current
+            ) {
+                (ref as RefObject<HTMLButtonElement>)?.current?.focus();
+            }
+        }, [isSelected]);
+
         return (
             <button
                 className={clsx(
                     "item",
                     isDisabled && "disabled",
+                    focused && allowFocus && "focused",
                     isSelected && "selected",
                     className,
                 )}
-                onClick={isDisabled ? undefined : onClick}
-                onKeyDown={onKeyDown}
+                onClick={isDisabled ? undefined : handleClick}
+                onKeyDown={handleKeyDown}
+                onFocus={() => setFocused(true)}
+                onBlur={() => setFocused(false)}
                 ref={ref}
             >
                 {icon && <span className="icon">{Icon}</span>}

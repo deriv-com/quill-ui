@@ -1,8 +1,9 @@
 @import "../../styles/index.scss";
 
 .segmented-control {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
     width: fit-content;
     background: color-mix(
         in srgb,
@@ -21,7 +22,9 @@
             cursor: not-allowed;
             pointer-events: none;
         }
-        &:focus {
+        &.focused {
+            // not using default :focus since we are customizing focus state
+            box-sizing: border-box;
             border: var(--core-color-solid-blue-700) solid var(--borderWidth-xs);
         }
         &:hover:not(.disabled) {
@@ -32,6 +35,7 @@
             );
         }
         &:active:not(.disabled) {
+            border: none;
             background: color-mix(
                 in srgb,
                 var(--semantic-color-typography-prominent) 16%,
