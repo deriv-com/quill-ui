@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import clsx from "clsx";
 import {
     LabelPairedPlaceholderLgRegularIcon,
@@ -14,7 +14,8 @@ interface SegmentProps {
     isDisabled?: boolean;
     isSelected?: boolean;
     label?: string;
-    onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
     size?: SegmentedControlProps["size"];
 }
 
@@ -24,35 +25,43 @@ const placeholder = {
     lg: <LabelPairedPlaceholderLgRegularIcon />,
 };
 
-export const Segment = ({
-    className,
-    icon,
-    isDisabled,
-    isSelected,
-    label,
-    onClick,
-    size,
-}: SegmentProps) => {
-    const Icon =
-        icon === "placeholder"
-            ? placeholder[size as keyof typeof placeholder]
-            : icon;
-    return (
-        <div
-            className={clsx(
-                "item",
-                isDisabled && "disabled",
-                isSelected && "selected",
-                className,
-            )}
-            onClick={isDisabled ? undefined : onClick}
-        >
-            {icon && <span className="icon">{Icon}</span>}
-            {label && (
-                <Text size={size} as="span">
-                    {label}
-                </Text>
-            )}
-        </div>
-    );
-};
+export const Segment = forwardRef<HTMLButtonElement, SegmentProps>(
+    (
+        {
+            className,
+            icon,
+            isDisabled,
+            isSelected,
+            label,
+            onClick,
+            onKeyDown,
+            size,
+        },
+        ref,
+    ) => {
+        const Icon =
+            icon === "placeholder"
+                ? placeholder[size as keyof typeof placeholder]
+                : icon;
+        return (
+            <button
+                className={clsx(
+                    "item",
+                    isDisabled && "disabled",
+                    isSelected && "selected",
+                    className,
+                )}
+                onClick={isDisabled ? undefined : onClick}
+                onKeyDown={onKeyDown}
+                ref={ref}
+            >
+                {icon && <span className="icon">{Icon}</span>}
+                {label && (
+                    <Text size={size} as="span">
+                        {label}
+                    </Text>
+                )}
+            </button>
+        );
+    },
+);

@@ -21,6 +21,9 @@
             cursor: not-allowed;
             pointer-events: none;
         }
+        &:focus {
+            border: var(--core-color-solid-blue-700) solid var(--borderWidth-xs);
+        }
         &:hover:not(.disabled) {
             background: color-mix(
                 in srgb,
