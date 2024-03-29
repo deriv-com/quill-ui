@@ -1,5 +1,5 @@
 import { QuillSvgProps } from "@deriv/quill-icons";
-import { ComponentProps, ReactElement, ReactNode } from "react";
+import { ComponentProps, ReactNode } from "react";
 import { TDefaultColor, TGenericSizes } from "../../types";
 
 export type TVariant = "primary" | "secondary" | "tertiary";
@@ -24,7 +24,7 @@ export interface ButtonProps extends ComponentProps<"button"> {
     isLoading?: boolean;
     iconPosition?: "start" | "end";
     className?: string;
-    label?: string | ReactElement;
+    label?: string | ReactNode;
     children?: ReactNode | string;
 }
 
