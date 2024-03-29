@@ -44,7 +44,7 @@ const Portal = ({ children, ...restProps }: PortalProps) => {
                                 data-testid="dt-actionsheet-overlay"
                                 onClick={handleClose}
                                 className="quill-action-sheet--portal quill-action-sheet--portal__variant--modal"
-                            ></div>
+                            />
                         )}
                         <div
                             className={clsx(

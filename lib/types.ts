@@ -17,3 +17,7 @@ export type TGenericSizes =
 export type QuillIconComponent = React.ForwardRefExoticComponent<
     Omit<QuillSvgProps, "ref">
 >;
+
+export type ExcludeAllNull<T> = {
+    [K in keyof T]: Exclude<T[K], null>;
+};

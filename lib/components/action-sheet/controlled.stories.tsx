@@ -11,7 +11,6 @@ const meta: Meta = {
     },
     argTypes: {
         show: { table: { disable: true } },
-        defaultVariants: { table: { disable: true } },
         handleOpen: { table: { disable: true } },
         handleClose: { table: { disable: true } },
         isOpen: {
