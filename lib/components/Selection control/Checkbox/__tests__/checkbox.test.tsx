@@ -30,8 +30,8 @@ describe("Checkbox", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("should render info icon if isLabelPaired === true", () => {
-        const { container } = render(<Checkbox {...mockProps} isLabelPaired />);
+    it("should render info icon if showInfoIcon === true", () => {
+        const { container } = render(<Checkbox {...mockProps} showInfoIcon />);
 
         expect(container).toMatchSnapshot();
     });
@@ -50,9 +50,9 @@ describe("Checkbox", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("should apply wrapperClassName if it was passed", () => {
+    it("should apply className if it was passed", () => {
         const { container } = render(
-            <Checkbox {...mockProps} wrapperClassName="wrapper_className" />,
+            <Checkbox {...mockProps} className="wrapper_className" />,
         );
 
         expect(container).toMatchSnapshot();
