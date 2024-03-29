@@ -438,29 +438,38 @@ class Transformer {
             return cssString;
         }
 
-        // Remove all indentations, white spaces, and newlines
-        cssString = cssString.replace(/\s+/g, "");
+        // Remove hanging comments
+        cssString = cssString.replace(/\/\*[^*]*\*+([^/*][^*]*\*+)*\//g, "");
 
-        // Remove empty media query declarations with empty root
+        /***  Handle specific token issues  ***/
+        // Convert empty fontWeight to normal
         cssString = cssString.replace(
-            /@media\(min-width:\d+px\){:root{}}/g,
-            "",
+            /fontWeight:\s*;/g,
+            "fontWeight: normal;",
         );
+
+        // Preserve spaces for fontFamily property
+        cssString = cssString.replace(
+            /fontFamily:[^;]+/g,
+            (match) => match.replace(/\s+/g, " "), // Replace only spaces within the value
+        );
+
+        // Remove unnecessary spaces, tabs, and newlines
+        cssString = cssString.replace(/\s*([{}:;,])\s*/g, "$1");
+
+        // Remove empty media query declarations
+        cssString = cssString.replace(/@media\s*\(.*?\)\s*{\s*}\s*/g, "");
 
         // Remove empty class declarations
         cssString = cssString.replace(/\.([^{}]+){}/g, "");
 
         // Remove empty root declarations
-        cssString = cssString.replace(/:root{}+/g, "");
+        cssString = cssString.replace(/:root\s*{\s*}/g, "");
 
-        // Remove hanging comments
-        cssString = cssString.replace(/\/\*[^*]*\*+([^/*][^*]*\*+)*\//g, "");
-
-        /***  Handle specifc token issues  ***/
-        // Convert empty fontWeight to normal
+        // Remove additional empty @media queries
         cssString = cssString.replace(
-            /fontWeight:\s*;/g,
-            "fontWeight: normal;",
+            /@media\s*\(min-width:[^}]*\)\s*{\s*}\s*/g,
+            "",
         );
 
         return cssString;
