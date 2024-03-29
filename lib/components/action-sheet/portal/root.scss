@@ -38,11 +38,16 @@ $translations: (
     @media (min-width: 1024px) {
         max-width: 360px;
         border-radius: var(--semantic-spacing-general-none);
+        max-height: 100vh;
 
         @each $position, $translations in $translations {
             @each $show, $translation in $translations {
                 &__position--#{$position}__show--#{$show} {
+                    transition-property: all;
+                    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                    transition-duration: 150ms;
                     transform: translateX($translation);
+                    height: 100%;
                 }
             }
         }

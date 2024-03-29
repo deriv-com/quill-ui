@@ -1,9 +1,7 @@
 .quill-action-sheet--portal {
     position: fixed;
     inset: var(--semantic-spacing-general-none);
-    transition-property: all;
-    transition-duration: var(--core-motion-duration-200);
-    transition-timing-function: var(--core-motion-ease-400);
+    transition: all var(--core-motion-duration-200) var(--core-motion-ease-400);
 
     &--wrapper {
         pointer-events: none;

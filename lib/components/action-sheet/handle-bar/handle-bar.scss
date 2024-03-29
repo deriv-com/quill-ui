@@ -11,7 +11,7 @@
     background-color: var(--core-color-solid-slate-50);
 
     @media (min-width: 1024px) {
-        display: hidden;
+        display: none;
     }
 
     &--line {
