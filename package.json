@@ -126,6 +126,7 @@
         }
     },
     "dependencies": {
+        "@deriv/quill-icons": "^1.19.10",
         "usehooks-ts": "^3.0.1"
     }
 }
