@@ -19,13 +19,13 @@ const MockTab = ({
             </Tab.List>
             <Tab.Content>
                 <Tab.Panel>
-                    <Text size={size}>Forex Tab</Text>
+                    <Text>Forex Tab</Text>
                 </Tab.Panel>
                 <Tab.Panel>
-                    <Text size={size}>Derived indices Tab</Text>
+                    <Text>Derived indices Tab</Text>
                 </Tab.Panel>
                 <Tab.Panel>
-                    <Text size={size}>Stocks Tab</Text>
+                    <Text>Stocks Tab</Text>
                 </Tab.Panel>
             </Tab.Content>
         </Tab.Container>
