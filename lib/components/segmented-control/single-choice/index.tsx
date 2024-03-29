@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { ReactNode, useEffect } from "react";
 import clsx from "clsx";
 import { SegmentedControl } from "../base";
 import type { SegmentedControlProps } from "../base";
@@ -7,8 +7,8 @@ export interface SegmentedControlSingleChoiceProps
     extends SegmentedControlProps {
     hasContainerWidth?: boolean;
     options: Array<{
-        icon?: string | React.ReactNode;
-        label?: string;
+        icon?: ReactNode;
+        label?: ReactNode;
         disabled?: boolean;
     }>;
     selectedItemIndex?: number;

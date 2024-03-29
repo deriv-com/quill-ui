@@ -1,31 +1,20 @@
-import React, { RefObject, forwardRef, useEffect } from "react";
+import React, { ReactNode, RefObject, forwardRef, useEffect } from "react";
 import clsx from "clsx";
-import {
-    LabelPairedPlaceholderLgRegularIcon,
-    LabelPairedPlaceholderMdRegularIcon,
-    LabelPairedPlaceholderSmRegularIcon,
-} from "@deriv/quill-icons";
 import { Text } from "../Typography";
 import { SegmentedControlProps } from "./base";
 
 interface SegmentProps {
     allowFocus?: boolean;
     className?: string;
-    icon?: string | React.ReactNode;
+    icon?: ReactNode;
     isAnimated?: boolean;
     isDisabled?: boolean;
     isSelected?: boolean;
-    label?: string;
+    label?: ReactNode;
     onClick: () => void;
     onKeyDown: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
     size?: SegmentedControlProps["size"];
 }
-
-const placeholder = {
-    sm: <LabelPairedPlaceholderSmRegularIcon />,
-    md: <LabelPairedPlaceholderMdRegularIcon />,
-    lg: <LabelPairedPlaceholderLgRegularIcon />,
-};
 
 export const Segment = forwardRef<HTMLButtonElement, SegmentProps>(
     (
@@ -44,10 +33,6 @@ export const Segment = forwardRef<HTMLButtonElement, SegmentProps>(
         ref,
     ) => {
         const [focused, setFocused] = React.useState(false);
-        const Icon =
-            icon === "placeholder"
-                ? placeholder[size as keyof typeof placeholder]
-                : icon;
 
         const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
             if (e.key !== "Tab") setFocused(false);
@@ -74,18 +59,18 @@ export const Segment = forwardRef<HTMLButtonElement, SegmentProps>(
                 className={clsx(
                     "item",
                     isAnimated && "animated",
-                    isDisabled && "disabled",
                     focused && allowFocus && "focused",
                     isSelected && !isAnimated && "selected",
                     className,
                 )}
-                onClick={isDisabled ? undefined : handleClick}
+                disabled={isDisabled}
+                onClick={handleClick}
                 onKeyDown={handleKeyDown}
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
                 ref={ref}
             >
-                {icon && <span className="icon">{Icon}</span>}
+                {icon && <span className="icon">{icon}</span>}
                 {label && (
                     <Text size={size} as="span">
                         {label}

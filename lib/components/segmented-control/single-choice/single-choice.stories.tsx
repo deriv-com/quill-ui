@@ -1,5 +1,10 @@
 import type { Meta } from "@storybook/react";
 import { fn } from "@storybook/test";
+import {
+    LabelPairedPlaceholderLgRegularIcon,
+    LabelPairedPlaceholderMdRegularIcon,
+    LabelPairedPlaceholderSmRegularIcon,
+} from "@deriv/quill-icons";
 import SegmentedControlSingleChoice from ".";
 import { ComponentProps } from "react";
 
@@ -37,7 +42,7 @@ const meta = {
         options: {
             control: { type: null },
             description:
-                "Required. The first element in `options` is selected by default. You can pass `selectedItemIndex` prop to make another element selected. `icon` accepts a component or a string, e.g. 'placeholder' value will load a placeholder icon from `@deriv/quill-icons`.",
+                "Required. The first element in `options` is selected by default. You can pass `selectedItemIndex` prop to make another element selected. `ReactNode` type includes `string`, so `icon` and `label` can be passed as a string.",
         },
         selectedItemIndex: {
             options: [0, 1, 2, 3, 4],
@@ -61,9 +66,10 @@ const meta = {
 
 export default meta;
 
-const optionWithIconAndLabel = {
-    icon: "placeholder",
-    label: "Label",
+const placeholder = {
+    sm: <LabelPairedPlaceholderSmRegularIcon />,
+    md: <LabelPairedPlaceholderMdRegularIcon />,
+    lg: <LabelPairedPlaceholderLgRegularIcon />,
 };
 
 export const SingleChoiceGroupWithIconsOnly = (
@@ -72,7 +78,7 @@ export const SingleChoiceGroupWithIconsOnly = (
     <SegmentedControlSingleChoice
         {...args}
         options={new Array(5).fill({
-            icon: "placeholder",
+            icon: placeholder[args?.size as keyof typeof placeholder],
         })}
     />
 );
@@ -91,7 +97,10 @@ export const SingleChoiceGroupWithIconsAndLabels = (
 ) => (
     <SegmentedControlSingleChoice
         {...args}
-        options={new Array(5).fill(optionWithIconAndLabel)}
+        options={new Array(5).fill({
+            icon: placeholder[args?.size as keyof typeof placeholder],
+            label: "Label",
+        })}
     />
 );
 
@@ -102,7 +111,10 @@ export const SingleChoiceGroupWithContainerWidth = (
         <SegmentedControlSingleChoice
             {...args}
             hasContainerWidth
-            options={new Array(2).fill(optionWithIconAndLabel)}
+            options={new Array(2).fill({
+                icon: placeholder[args?.size as keyof typeof placeholder],
+                label: "Label",
+            })}
         />
     </div>
 );

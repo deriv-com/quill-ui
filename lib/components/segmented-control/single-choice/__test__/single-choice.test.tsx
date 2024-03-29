@@ -29,14 +29,6 @@ describe("SegmentedControlSingleChoice", () => {
         );
         expect(container).toMatchSnapshot();
     });
-    it("should render segments with placeholder icons", () => {
-        const { container } = render(
-            <SegmentedControlSingleChoice
-                options={new Array(5).fill({ icon: "placeholder" })}
-            />,
-        );
-        expect(container).toMatchSnapshot();
-    });
     it("should inherit container width", () => {
         const { container } = render(
             <div style={{ width: "328px" }}>

@@ -1,12 +1,18 @@
-import React, { KeyboardEvent, RefObject, useEffect, useState } from "react";
+import React, {
+    KeyboardEvent,
+    ReactNode,
+    RefObject,
+    useEffect,
+    useState,
+} from "react";
 import { TRegularSizes } from "../../types";
 import { Segment } from "./segment";
 import "./segmented-control.scss";
 
 interface Option {
     disabled?: boolean;
-    icon?: string | React.ReactNode;
-    label?: string;
+    icon?: ReactNode;
+    label?: ReactNode;
     selected?: boolean;
 }
 

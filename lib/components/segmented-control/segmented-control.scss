@@ -31,7 +31,7 @@
             * {
                 z-index: 2;
             }
-            &.disabled {
+            &:disabled {
                 opacity: var(--core-opacity-300);
                 cursor: not-allowed;
                 pointer-events: none;
@@ -42,15 +42,15 @@
                 box-shadow: 0 0 0 var(--borderWidth-xs)
                     var(--core-color-solid-blue-700) inset;
             }
-            &:hover:not(.disabled) {
+            &:hover:not(:disabled) {
                 background: color-mix(
                     in srgb,
                     var(--semantic-color-typography-prominent) 8%,
                     transparent
                 );
             }
-            &:active:not(.disabled),
-            &:active:not(.disabled)::before {
+            &:active:not(:disabled),
+            &:active:not(:disabled)::before {
                 box-shadow: unset;
                 background: color-mix(
                     in srgb,
@@ -58,11 +58,11 @@
                     transparent
                 );
             }
-            &.selected:not(.disabled) {
+            &.selected:not(:disabled) {
                 // colors should stay the same for both themes:
                 background: var(--core-color-solid-slate-50);
             }
-            &.selected:not(.disabled),
+            &.selected:not(:disabled),
             &.animated {
                 // colors should stay the same for both themes:
                 * {
