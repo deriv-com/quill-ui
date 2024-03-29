@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleSwitch matches snapshot when blurred 1`] = `
+<DocumentFragment>
+  <div
+    aria-disabled="false"
+    aria-pressed="false"
+    class="toggle-switch"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="toggle-switch__slider"
+    >
+      <svg
+        class="toggle-switch__knob"
+        height="20"
+        viewBox="0 0 20 20"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="10"
+          cy="10"
+          r="10"
+        />
+      </svg>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ToggleSwitch matches snapshot when focused 1`] = `
+<DocumentFragment>
+  <div
+    aria-disabled="false"
+    aria-pressed="false"
+    class="toggle-switch"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="toggle-switch__slider"
+    >
+      <svg
+        class="toggle-switch__knob"
+        height="20"
+        viewBox="0 0 20 20"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="10"
+          cy="10"
+          r="10"
+        />
+      </svg>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ToggleSwitch renders correctly when defaultChecked 1`] = `
+<DocumentFragment>
+  <div
+    aria-disabled="false"
+    aria-pressed="true"
+    class="toggle-switch"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="toggle-switch__slider enabled"
+    >
+      <svg
+        class="toggle-switch__knob enabled"
+        height="20"
+        viewBox="0 0 20 20"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="10"
+          cy="10"
+          r="10"
+        />
+      </svg>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ToggleSwitch renders correctly when disabled 1`] = `
+<DocumentFragment>
+  <div
+    aria-disabled="true"
+    aria-pressed="false"
+    class="toggle-switch disabled"
+    role="button"
+    tabindex="-1"
+  >
+    <div
+      class="toggle-switch__slider"
+    >
+      <svg
+        class="toggle-switch__knob disabled"
+        height="20"
+        viewBox="0 0 20 20"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="10"
+          cy="10"
+          r="10"
+        />
+      </svg>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ToggleSwitch renders correctly with default props 1`] = `
+<DocumentFragment>
+  <div
+    aria-disabled="false"
+    aria-pressed="false"
+    class="toggle-switch"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="toggle-switch__slider"
+    >
+      <svg
+        class="toggle-switch__knob"
+        height="20"
+        viewBox="0 0 20 20"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="10"
+          cy="10"
+          r="10"
+        />
+      </svg>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ToggleSwitch toggles from off to on and matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    aria-disabled="false"
+    aria-pressed="true"
+    class="toggle-switch"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="toggle-switch__slider enabled"
+    >
+      <svg
+        class="toggle-switch__knob enabled"
+        height="20"
+        viewBox="0 0 20 20"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="10"
+          cy="10"
+          r="10"
+        />
+      </svg>
+    </div>
+  </div>
+</DocumentFragment>
+`;
