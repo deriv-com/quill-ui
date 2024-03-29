@@ -45,9 +45,12 @@ const SegmentedControlSingleChoice = ({
 
     useEffect(() => {
         const selected = items.findIndex((i) => i.selected);
-        if (selectedItemIndex !== selected) {
+        if (
+            selectedItemIndex !== selected &&
+            !items[selectedItemIndex]?.disabled
+        ) {
             updateItems(items, selectedItemIndex);
-        } else {
+        } else if (selectedItemIndex === selected) {
             updateItems(options, selected !== -1 ? selected : 0);
         }
     }, [options, selectedItemIndex]);
