@@ -1,0 +1,29 @@
+@mixin breakpoint($breakpoint) {
+    @if $breakpoint == "sm" {
+        @media (min-width: 640px) {
+            @content;
+        }
+    }
+    @if $breakpoint == "md" {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+    @if $breakpoint == "lg" {
+        @media (min-width: 1024px) {
+            @content;
+        }
+    }
+    @if $breakpoint == "xl" {
+        @media (min-width: 1280px) {
+            @content;
+        }
+    }
+    @if $breakpoint == "2xl" {
+        @media (min-width: 1440px) {
+            @content;
+        }
+    } @else {
+        @warn "Unknown breakpoint: #{$breakpoint}.";
+    }
+}
