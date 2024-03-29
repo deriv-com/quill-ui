@@ -1,0 +1,45 @@
+@import "../../styles/quill/border.scss";
+@import "../../styles/quill/color.scss";
+@import "../../styles/quill/color.semantic.scss";
+@import "../../styles/quill/motion.scss";
+@import "../../styles/quill/opacity.scss";
+@import "../../styles/quill/others.scss";
+@import "../../styles/quill/spacing.scss";
+@import "../../styles/quill/static.scss";
+// TODO: remove unnecessary imports
+
+.notification {
+    &-banner {
+        // desktop
+        position: relative;
+        width: fit-content;
+        min-width: 360px;
+        min-height: 72px;
+        padding: 16px 32px 16px 16px;
+        border-radius: 16px;
+        border: 1px solid
+            color-mix(
+                in srgb,
+                var(--semantic-color-typography-prominent) 8%,
+                transparent
+            );
+        box-shadow: 0px 4px 8px 2px
+            color-mix(
+                in srgb,
+                var(--semantic-color-typography-prominent) 3%,
+                transparent
+            );
+        background-color: var(--semantic-color-background-dialog);
+
+        .body {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .close-button {
+            position: absolute;
+            right: 16px;
+            top: 16px;
+        }
+    }
+}
