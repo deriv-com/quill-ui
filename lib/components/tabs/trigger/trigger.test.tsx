@@ -33,7 +33,7 @@ describe("<Tab.Trigger/>", () => {
     it("should render the quill icon as children", () => {
         render(
             <Tab.Container id="tab">
-                <Tab.Trigger icon={LabelPairedPlaceholderMdRegularIcon}>
+                <Tab.Trigger icon={<LabelPairedPlaceholderMdRegularIcon />}>
                     trigger
                 </Tab.Trigger>
             </Tab.Container>,

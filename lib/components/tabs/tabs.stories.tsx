@@ -1,50 +1,46 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import {
-  LabelPairedPlaceholderMdRegularIcon,
-} from '@deriv/quill-icons/LabelPaired'
-import MockTab from './mocks/index'
-import { QuillIconComponent } from './types'
+import type { Meta } from "@storybook/react";
+import {} from "@deriv/quill-icons/LabelPaired";
+import MockTab from "./mocks/index";
+import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons";
+import { ComponentProps } from "react";
 
-const icons: Record<string, QuillIconComponent | undefined> = {
-  placeholder: LabelPairedPlaceholderMdRegularIcon,
-}
 const meta = {
-  title: 'Components/Tabs',
-  component: MockTab,
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'centered',
-  },
-  argTypes: {
-    size: {
-      options: ['sm', 'md'],
-      control: { type: 'radio' },
-      description: 'To select the size of icon and font-size',
+    title: "Components/Tabs",
+    component: MockTab,
+    tags: ["autodocs"],
+    parameters: {
+        layout: "centered",
     },
-    icon: {
-      options: Object.keys(icons),
-      defaultValue: icons['placeholder'],
-      mapping: icons,
-      description: 'To select the icon required',
-      control: {
-        type: 'select',
-      },
+    args: {
+        size: "sm",
+        iconPosition: "left",
     },
-    iconPosition: {
-      options: ['left', 'top'],
-      control: { type: 'radio' },
-      description: 'Icon position is displayed either on the top or left',
+    argTypes: {
+        size: {
+            options: ["sm", "md"],
+            control: { type: "radio" },
+            description: "To select the size of icon and font-size",
+        },
     },
-  },
-} satisfies Meta<typeof MockTab>
+} satisfies Meta<typeof MockTab>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
 
-export const Default: Story = {
-  args: {
-    size: 'md',
-    icon: LabelPairedPlaceholderMdRegularIcon,
-    iconPosition: 'left',
-  },
-}
+const placeholder = {
+    sm: <StandalonePlaceholderRegularIcon iconSize="sm" />,
+    md: <StandalonePlaceholderRegularIcon iconSize="md" />,
+};
+export const TabWithIconsOnLeft = (args: ComponentProps<typeof MockTab>) => (
+    <MockTab
+        {...args}
+        iconPosition="left"
+        icon={placeholder[args?.size as keyof typeof placeholder]}
+    />
+);
+export const TabWithIconsOnTop = (args: ComponentProps<typeof MockTab>) => (
+    <MockTab
+        {...args}
+        iconPosition="top"
+        icon={placeholder[args?.size as keyof typeof placeholder]}
+    />
+);

@@ -1,7 +1,6 @@
 .tabs {
     border-bottom: var(--core-borderRadius-100) solid var(--core-color-opacity-black-200);
     display: inline-flex;
-    align-items: center;
     &:active:not(:disabled){
         border-bottom-color: var(--core-borderRadius-100) solid var(--core-color-opacity-black-300);
     }

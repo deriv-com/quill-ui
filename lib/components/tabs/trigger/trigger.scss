@@ -1,13 +1,21 @@
 .tab-trigger{
     &__icon-position {
-        align-items: center;
         &--left {
             display: flex;
             flex-direction: row;
+            align-items: center;
         }
         &--top {
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
     }
 }
+.tab__icon {
+    display: inline-flex;
+        svg {
+            fill: var(--semantic-color-typography-prominent);
+        }  
+}
+    

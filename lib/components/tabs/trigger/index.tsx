@@ -1,6 +1,6 @@
 import { useContext, useEffect, MouseEvent, useRef, useState } from "react";
 import { TabContext } from "../container";
-import { TabProps, TTabSize } from "../types";
+import { TabProps } from "../types";
 import { Text } from "../../Typography";
 import clsx from "clsx";
 import "./trigger.scss";
@@ -8,20 +8,10 @@ import "../tabs.scss";
 
 export const TabTrigger = ({
     children,
-    icon: Icon,
+    icon,
     className,
     ...rest
 }: TabProps) => {
-    const IconSize: Record<TTabSize, { width: number; height: number }> = {
-        sm: {
-            width: 24,
-            height: 24,
-        },
-        md: {
-            width: 32,
-            height: 32,
-        },
-    };
     const [selectedTab, setSelectedTab] = useState(false);
     const { activeTab, handleToggle, id, size, iconPosition } =
         useContext(TabContext);
@@ -73,13 +63,10 @@ export const TabTrigger = ({
                 className,
             )}
         >
-            {Icon && size && iconPosition && (
-                <Icon
-                    data-testid="dt-tab-trigger-icon"
-                    {...IconSize[size as TTabSize]}
-                    className={clsx("tab-trigger")}
-                    fill="var(--semantic-color-typography-prominent)"
-                />
+            {icon && size && iconPosition && (
+                <div data-testid="dt-tab-trigger-icon" className="tab__icon">
+                    {icon}
+                </div>
             )}
             <Text size={size} color={labelColor}>
                 {children}
