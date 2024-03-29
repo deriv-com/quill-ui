@@ -1,9 +1,9 @@
 :root {
     --core-fontFamily-ubuntu: Ubuntu;
-    --core-fontFamily-ibmPlex-mono: IBMPlexMono;
-    --core-fontFamily-ibmPlex-sans: IBMPlexSans;
-    --core-fontFamily-fontAwesome-pro: FontAwesome6Pro;
-    --core-fontFamily-fontAwesome-brands: FontAwesome6Brands;
+    --core-fontFamily-ibmPlex-mono: IBM Plex Mono;
+    --core-fontFamily-ibmPlex-sans: IBM Plex Sans;
+    --core-fontFamily-fontAwesome-pro: Font Awesome 6 Pro;
+    --core-fontFamily-fontAwesome-brands: Font Awesome 6 Brands;
     --semantic-typography-heading-hero-fontFamily: Ubuntu;
     --semantic-typography-heading-h1-fontFamily: Ubuntu;
     --semantic-typography-heading-h2-fontFamily: Ubuntu;
@@ -11,108 +11,152 @@
     --semantic-typography-heading-h4-fontFamily: Ubuntu;
     --semantic-typography-heading-h5-fontFamily: Ubuntu;
     --semantic-typography-heading-h6-fontFamily: Ubuntu;
-    --semantic-typography-body-xl-regular-default-fontFamily: IBMPlexSans;
-    --semantic-typography-body-xl-regular-italic-fontFamily: IBMPlexSans;
-    --semantic-typography-body-xl-regular-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-xl-regular-italic-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-xl-bold-default-fontFamily: IBMPlexSans;
-    --semantic-typography-body-xl-bold-italic-fontFamily: IBMPlexSans;
-    --semantic-typography-body-xl-bold-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-xl-bold-italic-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-lg-regular-default-fontFamily: IBMPlexSans;
-    --semantic-typography-body-lg-regular-italic-fontFamily: IBMPlexSans;
-    --semantic-typography-body-lg-regular-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-lg-regular-italic-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-lg-bold-default-fontFamily: IBMPlexSans;
-    --semantic-typography-body-lg-bold-italic-fontFamily: IBMPlexSans;
-    --semantic-typography-body-lg-bold-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-lg-bold-italic-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-md-regular-default-fontFamily: IBMPlexSans;
-    --semantic-typography-body-md-regular-italic-fontFamily: IBMPlexSans;
-    --semantic-typography-body-md-regular-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-md-regular-italic-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-md-bold-default-fontFamily: IBMPlexSans;
-    --semantic-typography-body-md-bold-italic-fontFamily: IBMPlexSans;
-    --semantic-typography-body-md-bold-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-md-bold-italic-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-sm-regular-default-fontFamily: IBMPlexSans;
-    --semantic-typography-body-sm-regular-italic-fontFamily: IBMPlexSans;
-    --semantic-typography-body-sm-regular-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-sm-regular-italic-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-sm-bold-default-fontFamily: IBMPlexSans;
-    --semantic-typography-body-sm-bold-italic-fontFamily: IBMPlexSans;
-    --semantic-typography-body-sm-bold-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-body-sm-bold-italic-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-caption-regular-default-fontFamily: IBMPlexSans;
-    --semantic-typography-caption-regular-italic-fontFamily: IBMPlexSans;
-    --semantic-typography-caption-regular-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-caption-regular-italic-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-caption-bold-default-fontFamily: IBMPlexSans;
-    --semantic-typography-caption-bold-italic-fontFamily: IBMPlexSans;
-    --semantic-typography-caption-bold-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-caption-bold-italic-underline-fontFamily: IBMPlexSans;
-    --semantic-typography-code-xl-regular-default-fontFamily: IBMPlexMono;
-    --semantic-typography-code-xl-regular-italic-fontFamily: IBMPlexMono;
-    --semantic-typography-code-xl-regular-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-xl-regular-italic-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-xl-bold-default-fontFamily: IBMPlexMono;
-    --semantic-typography-code-xl-bold-italic-fontFamily: IBMPlexMono;
-    --semantic-typography-code-xl-bold-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-xl-bold-italic-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-lg-regular-default-fontFamily: IBMPlexMono;
-    --semantic-typography-code-lg-regular-italic-fontFamily: IBMPlexMono;
-    --semantic-typography-code-lg-regular-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-lg-regular-italic-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-lg-bold-default-fontFamily: IBMPlexMono;
-    --semantic-typography-code-lg-bold-italic-fontFamily: IBMPlexMono;
-    --semantic-typography-code-lg-bold-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-lg-bold-italic-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-md-regular-default-fontFamily: IBMPlexMono;
-    --semantic-typography-code-md-regular-italic-fontFamily: IBMPlexMono;
-    --semantic-typography-code-md-regular-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-md-regular-italic-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-md-bold-default-fontFamily: IBMPlexMono;
-    --semantic-typography-code-md-bold-italic-fontFamily: IBMPlexMono;
-    --semantic-typography-code-md-bold-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-md-bold-italic-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-sm-regular-default-fontFamily: IBMPlexMono;
-    --semantic-typography-code-sm-regular-italic-fontFamily: IBMPlexMono;
-    --semantic-typography-code-sm-regular-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-sm-regular-italic-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-sm-bold-default-fontFamily: IBMPlexMono;
-    --semantic-typography-code-sm-bold-italic-fontFamily: IBMPlexMono;
-    --semantic-typography-code-sm-bold-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-code-sm-bold-italic-underline-fontFamily: IBMPlexMono;
-    --semantic-typography-icon-labelPaired-regular-xl-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-labelPaired-regular-lg-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-labelPaired-regular-md-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-labelPaired-regular-sm-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-labelPaired-regular-caption-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-labelPaired-bold-xl-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-labelPaired-bold-lg-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-labelPaired-bold-md-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-labelPaired-bold-sm-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-labelPaired-bold-caption-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-labelPaired-brand-xl-fontFamily: FontAwesome6Brands;
-    --semantic-typography-icon-labelPaired-brand-lg-fontFamily: FontAwesome6Brands;
-    --semantic-typography-icon-labelPaired-brand-md-fontFamily: FontAwesome6Brands;
-    --semantic-typography-icon-labelPaired-brand-sm-fontFamily: FontAwesome6Brands;
-    --semantic-typography-icon-labelPaired-brand-caption-fontFamily: FontAwesome6Brands;
-    --semantic-typography-icon-standalone-regular-2xl-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-standalone-regular-xl-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-standalone-regular-lg-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-standalone-regular-md-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-standalone-regular-sm-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-standalone-bold-2xl-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-standalone-bold-xl-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-standalone-bold-lg-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-standalone-bold-md-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-standalone-bold-sm-fontFamily: FontAwesome6Pro;
-    --semantic-typography-icon-standalone-brand-2xl-fontFamily: FontAwesome6Brands;
-    --semantic-typography-icon-standalone-brand-xl-fontFamily: FontAwesome6Brands;
-    --semantic-typography-icon-standalone-brand-lg-fontFamily: FontAwesome6Brands;
-    --semantic-typography-icon-standalone-brand-md-fontFamily: FontAwesome6Brands;
-    --semantic-typography-icon-standalone-brand-sm-fontFamily: FontAwesome6Brands;
+    --semantic-typography-body-xl-regular-default-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-xl-regular-italic-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-xl-regular-underline-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-xl-regular-italic-underline-fontFamily: IBM Plex
+        Sans;
+    --semantic-typography-body-xl-bold-default-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-xl-bold-italic-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-xl-bold-underline-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-xl-bold-italic-underline-fontFamily: IBM Plex
+        Sans;
+    --semantic-typography-body-lg-regular-default-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-lg-regular-italic-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-lg-regular-underline-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-lg-regular-italic-underline-fontFamily: IBM Plex
+        Sans;
+    --semantic-typography-body-lg-bold-default-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-lg-bold-italic-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-lg-bold-underline-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-lg-bold-italic-underline-fontFamily: IBM Plex
+        Sans;
+    --semantic-typography-body-md-regular-default-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-md-regular-italic-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-md-regular-underline-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-md-regular-italic-underline-fontFamily: IBM Plex
+        Sans;
+    --semantic-typography-body-md-bold-default-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-md-bold-italic-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-md-bold-underline-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-md-bold-italic-underline-fontFamily: IBM Plex
+        Sans;
+    --semantic-typography-body-sm-regular-default-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-sm-regular-italic-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-sm-regular-underline-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-sm-regular-italic-underline-fontFamily: IBM Plex
+        Sans;
+    --semantic-typography-body-sm-bold-default-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-sm-bold-italic-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-sm-bold-underline-fontFamily: IBM Plex Sans;
+    --semantic-typography-body-sm-bold-italic-underline-fontFamily: IBM Plex
+        Sans;
+    --semantic-typography-caption-regular-default-fontFamily: IBM Plex Sans;
+    --semantic-typography-caption-regular-italic-fontFamily: IBM Plex Sans;
+    --semantic-typography-caption-regular-underline-fontFamily: IBM Plex Sans;
+    --semantic-typography-caption-regular-italic-underline-fontFamily: IBM Plex
+        Sans;
+    --semantic-typography-caption-bold-default-fontFamily: IBM Plex Sans;
+    --semantic-typography-caption-bold-italic-fontFamily: IBM Plex Sans;
+    --semantic-typography-caption-bold-underline-fontFamily: IBM Plex Sans;
+    --semantic-typography-caption-bold-italic-underline-fontFamily: IBM Plex
+        Sans;
+    --semantic-typography-code-xl-regular-default-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-xl-regular-italic-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-xl-regular-underline-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-xl-regular-italic-underline-fontFamily: IBM Plex
+        Mono;
+    --semantic-typography-code-xl-bold-default-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-xl-bold-italic-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-xl-bold-underline-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-xl-bold-italic-underline-fontFamily: IBM Plex
+        Mono;
+    --semantic-typography-code-lg-regular-default-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-lg-regular-italic-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-lg-regular-underline-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-lg-regular-italic-underline-fontFamily: IBM Plex
+        Mono;
+    --semantic-typography-code-lg-bold-default-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-lg-bold-italic-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-lg-bold-underline-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-lg-bold-italic-underline-fontFamily: IBM Plex
+        Mono;
+    --semantic-typography-code-md-regular-default-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-md-regular-italic-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-md-regular-underline-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-md-regular-italic-underline-fontFamily: IBM Plex
+        Mono;
+    --semantic-typography-code-md-bold-default-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-md-bold-italic-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-md-bold-underline-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-md-bold-italic-underline-fontFamily: IBM Plex
+        Mono;
+    --semantic-typography-code-sm-regular-default-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-sm-regular-italic-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-sm-regular-underline-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-sm-regular-italic-underline-fontFamily: IBM Plex
+        Mono;
+    --semantic-typography-code-sm-bold-default-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-sm-bold-italic-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-sm-bold-underline-fontFamily: IBM Plex Mono;
+    --semantic-typography-code-sm-bold-italic-underline-fontFamily: IBM Plex
+        Mono;
+    --semantic-typography-icon-labelPaired-regular-xl-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-labelPaired-regular-lg-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-labelPaired-regular-md-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-labelPaired-regular-sm-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-labelPaired-regular-caption-fontFamily: Font
+        Awesome 6 Pro;
+    --semantic-typography-icon-labelPaired-bold-xl-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-labelPaired-bold-lg-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-labelPaired-bold-md-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-labelPaired-bold-sm-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-labelPaired-bold-caption-fontFamily: Font Awesome
+        6 Pro;
+    --semantic-typography-icon-labelPaired-brand-xl-fontFamily: Font Awesome 6
+        Brands;
+    --semantic-typography-icon-labelPaired-brand-lg-fontFamily: Font Awesome 6
+        Brands;
+    --semantic-typography-icon-labelPaired-brand-md-fontFamily: Font Awesome 6
+        Brands;
+    --semantic-typography-icon-labelPaired-brand-sm-fontFamily: Font Awesome 6
+        Brands;
+    --semantic-typography-icon-labelPaired-brand-caption-fontFamily: Font
+        Awesome 6 Brands;
+    --semantic-typography-icon-standalone-regular-2xl-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-standalone-regular-xl-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-standalone-regular-lg-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-standalone-regular-md-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-standalone-regular-sm-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-standalone-bold-2xl-fontFamily: Font Awesome 6
+        Pro;
+    --semantic-typography-icon-standalone-bold-xl-fontFamily: Font Awesome 6 Pro;
+    --semantic-typography-icon-standalone-bold-lg-fontFamily: Font Awesome 6 Pro;
+    --semantic-typography-icon-standalone-bold-md-fontFamily: Font Awesome 6 Pro;
+    --semantic-typography-icon-standalone-bold-sm-fontFamily: Font Awesome 6 Pro;
+    --semantic-typography-icon-standalone-brand-2xl-fontFamily: Font Awesome 6
+        Brands;
+    --semantic-typography-icon-standalone-brand-xl-fontFamily: Font Awesome 6
+        Brands;
+    --semantic-typography-icon-standalone-brand-lg-fontFamily: Font Awesome 6
+        Brands;
+    --semantic-typography-icon-standalone-brand-md-fontFamily: Font Awesome 6
+        Brands;
+    --semantic-typography-icon-standalone-brand-sm-fontFamily: Font Awesome 6
+        Brands;
 }
 @media (min-width: 640px) {
     :root {
@@ -123,108 +167,165 @@
         --semantic-typography-heading-h4-fontFamily: Ubuntu;
         --semantic-typography-heading-h5-fontFamily: Ubuntu;
         --semantic-typography-heading-h6-fontFamily: Ubuntu;
-        --semantic-typography-body-xl-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-code-xl-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-icon-labelPaired-regular-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-caption-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-caption-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-brand-xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-lg-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-md-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-sm-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-caption-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-regular-2xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-2xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-brand-2xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-lg-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-md-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-sm-fontFamily: FontAwesome6Brands;
+        --semantic-typography-body-xl-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-xl-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-xl-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-lg-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-lg-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-lg-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-md-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-md-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-md-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-sm-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-sm-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-sm-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-caption-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-caption-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-caption-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-code-xl-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-xl-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-xl-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-lg-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-lg-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-lg-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-md-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-md-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-md-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-sm-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-sm-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-sm-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-icon-labelPaired-regular-xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-lg-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-md-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-sm-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-caption-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-bold-xl-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-lg-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-md-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-sm-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-caption-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-brand-xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-lg-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-md-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-sm-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-caption-fontFamily: Font
+            Awesome 6 Brands;
+        --semantic-typography-icon-standalone-regular-2xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-lg-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-md-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-sm-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-bold-2xl-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-standalone-bold-xl-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-lg-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-md-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-sm-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-brand-2xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-lg-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-md-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-sm-fontFamily: Font Awesome
+            6 Brands;
     }
 }
 @media (min-width: 768px) {
@@ -236,108 +337,165 @@
         --semantic-typography-heading-h4-fontFamily: Ubuntu;
         --semantic-typography-heading-h5-fontFamily: Ubuntu;
         --semantic-typography-heading-h6-fontFamily: Ubuntu;
-        --semantic-typography-body-xl-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-code-xl-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-icon-labelPaired-regular-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-caption-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-caption-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-brand-xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-lg-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-md-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-sm-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-caption-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-regular-2xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-2xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-brand-2xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-lg-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-md-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-sm-fontFamily: FontAwesome6Brands;
+        --semantic-typography-body-xl-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-xl-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-xl-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-lg-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-lg-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-lg-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-md-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-md-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-md-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-sm-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-sm-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-sm-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-caption-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-caption-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-caption-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-code-xl-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-xl-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-xl-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-lg-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-lg-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-lg-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-md-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-md-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-md-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-sm-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-sm-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-sm-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-icon-labelPaired-regular-xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-lg-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-md-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-sm-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-caption-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-bold-xl-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-lg-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-md-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-sm-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-caption-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-brand-xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-lg-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-md-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-sm-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-caption-fontFamily: Font
+            Awesome 6 Brands;
+        --semantic-typography-icon-standalone-regular-2xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-lg-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-md-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-sm-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-bold-2xl-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-standalone-bold-xl-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-lg-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-md-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-sm-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-brand-2xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-lg-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-md-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-sm-fontFamily: Font Awesome
+            6 Brands;
     }
 }
 @media (min-width: 1024px) {
@@ -349,108 +507,165 @@
         --semantic-typography-heading-h4-fontFamily: Ubuntu;
         --semantic-typography-heading-h5-fontFamily: Ubuntu;
         --semantic-typography-heading-h6-fontFamily: Ubuntu;
-        --semantic-typography-body-xl-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-code-xl-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-icon-labelPaired-regular-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-caption-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-caption-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-brand-xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-lg-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-md-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-sm-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-caption-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-regular-2xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-2xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-brand-2xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-lg-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-md-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-sm-fontFamily: FontAwesome6Brands;
+        --semantic-typography-body-xl-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-xl-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-xl-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-lg-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-lg-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-lg-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-md-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-md-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-md-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-sm-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-sm-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-sm-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-caption-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-caption-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-caption-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-code-xl-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-xl-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-xl-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-lg-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-lg-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-lg-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-md-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-md-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-md-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-sm-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-sm-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-sm-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-icon-labelPaired-regular-xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-lg-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-md-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-sm-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-caption-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-bold-xl-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-lg-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-md-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-sm-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-caption-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-brand-xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-lg-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-md-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-sm-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-caption-fontFamily: Font
+            Awesome 6 Brands;
+        --semantic-typography-icon-standalone-regular-2xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-lg-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-md-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-sm-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-bold-2xl-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-standalone-bold-xl-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-lg-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-md-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-sm-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-brand-2xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-lg-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-md-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-sm-fontFamily: Font Awesome
+            6 Brands;
     }
 }
 @media (min-width: 1280px) {
@@ -462,108 +677,165 @@
         --semantic-typography-heading-h4-fontFamily: Ubuntu;
         --semantic-typography-heading-h5-fontFamily: Ubuntu;
         --semantic-typography-heading-h6-fontFamily: Ubuntu;
-        --semantic-typography-body-xl-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-code-xl-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-icon-labelPaired-regular-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-caption-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-caption-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-brand-xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-lg-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-md-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-sm-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-caption-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-regular-2xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-2xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-brand-2xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-lg-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-md-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-sm-fontFamily: FontAwesome6Brands;
+        --semantic-typography-body-xl-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-xl-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-xl-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-lg-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-lg-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-lg-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-md-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-md-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-md-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-sm-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-sm-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-sm-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-caption-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-caption-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-caption-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-code-xl-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-xl-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-xl-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-lg-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-lg-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-lg-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-md-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-md-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-md-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-sm-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-sm-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-sm-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-icon-labelPaired-regular-xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-lg-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-md-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-sm-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-caption-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-bold-xl-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-lg-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-md-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-sm-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-caption-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-brand-xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-lg-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-md-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-sm-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-caption-fontFamily: Font
+            Awesome 6 Brands;
+        --semantic-typography-icon-standalone-regular-2xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-lg-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-md-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-sm-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-bold-2xl-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-standalone-bold-xl-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-lg-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-md-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-sm-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-brand-2xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-lg-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-md-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-sm-fontFamily: Font Awesome
+            6 Brands;
     }
 }
 @media (min-width: 1440px) {
@@ -575,107 +847,164 @@
         --semantic-typography-heading-h4-fontFamily: Ubuntu;
         --semantic-typography-heading-h5-fontFamily: Ubuntu;
         --semantic-typography-heading-h6-fontFamily: Ubuntu;
-        --semantic-typography-body-xl-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-xl-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-lg-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-md-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-body-sm-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-default-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-regular-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-default-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-italic-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-caption-bold-italic-underline-fontFamily: IBMPlexSans;
-        --semantic-typography-code-xl-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-xl-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-lg-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-md-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-regular-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-default-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-italic-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-code-sm-bold-italic-underline-fontFamily: IBMPlexMono;
-        --semantic-typography-icon-labelPaired-regular-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-regular-caption-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-bold-caption-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-labelPaired-brand-xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-lg-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-md-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-sm-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-labelPaired-brand-caption-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-regular-2xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-regular-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-2xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-xl-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-lg-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-md-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-bold-sm-fontFamily: FontAwesome6Pro;
-        --semantic-typography-icon-standalone-brand-2xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-xl-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-lg-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-md-fontFamily: FontAwesome6Brands;
-        --semantic-typography-icon-standalone-brand-sm-fontFamily: FontAwesome6Brands;
+        --semantic-typography-body-xl-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-xl-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-xl-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-xl-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-lg-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-lg-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-lg-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-lg-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-md-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-md-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-md-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-md-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-sm-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-body-sm-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-body-sm-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-body-sm-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-caption-regular-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-regular-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-regular-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-caption-regular-italic-underline-fontFamily: IBM
+            Plex Sans;
+        --semantic-typography-caption-bold-default-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-italic-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-underline-fontFamily: IBM Plex Sans;
+        --semantic-typography-caption-bold-italic-underline-fontFamily: IBM Plex
+            Sans;
+        --semantic-typography-code-xl-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-xl-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-xl-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-xl-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-lg-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-lg-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-lg-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-lg-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-md-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-md-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-md-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-md-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-sm-regular-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-regular-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-regular-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-code-sm-regular-italic-underline-fontFamily: IBM
+            Plex Mono;
+        --semantic-typography-code-sm-bold-default-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-italic-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-underline-fontFamily: IBM Plex Mono;
+        --semantic-typography-code-sm-bold-italic-underline-fontFamily: IBM Plex
+            Mono;
+        --semantic-typography-icon-labelPaired-regular-xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-lg-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-md-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-sm-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-regular-caption-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-bold-xl-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-lg-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-md-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-sm-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-labelPaired-bold-caption-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-labelPaired-brand-xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-lg-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-md-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-sm-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-labelPaired-brand-caption-fontFamily: Font
+            Awesome 6 Brands;
+        --semantic-typography-icon-standalone-regular-2xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-xl-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-lg-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-md-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-regular-sm-fontFamily: Font
+            Awesome 6 Pro;
+        --semantic-typography-icon-standalone-bold-2xl-fontFamily: Font Awesome
+            6 Pro;
+        --semantic-typography-icon-standalone-bold-xl-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-lg-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-md-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-bold-sm-fontFamily: Font Awesome 6
+            Pro;
+        --semantic-typography-icon-standalone-brand-2xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-xl-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-lg-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-md-fontFamily: Font Awesome
+            6 Brands;
+        --semantic-typography-icon-standalone-brand-sm-fontFamily: Font Awesome
+            6 Brands;
     }
 }
