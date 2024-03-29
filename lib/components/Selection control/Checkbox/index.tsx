@@ -23,7 +23,7 @@ interface CheckboxProps
         "placeholder" | "defaultChecked" | "size"
     > {
     indeterminate?: boolean;
-    isLabelPaired?: boolean;
+    showInfoIcon?: boolean;
     infoIconClassName?: string;
     size?: TMediumSizes;
     label: ReactNode | string;
@@ -33,7 +33,7 @@ interface CheckboxProps
             | React.ChangeEvent<HTMLInputElement>
             | React.KeyboardEvent<HTMLSpanElement>,
     ) => void;
-    wrapperClassName?: string;
+    className?: string;
 }
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
@@ -42,14 +42,14 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             checked = false,
             disabled = false,
             indeterminate = false,
-            isLabelPaired = false,
+            showInfoIcon = false,
             infoIconClassName,
             size = "sm",
             label,
             labelClassName,
             name,
             onChange,
-            wrapperClassName,
+            className,
             ...rest
         },
         ref,
@@ -65,11 +65,11 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             setIsIndeterminate(indeterminate);
         }, [indeterminate]);
 
-        const onInputChange: React.ChangeEventHandler<HTMLInputElement> = (
-            e,
+        const onChangeHandler = (
+            e:
+                | React.ChangeEvent<HTMLInputElement>
+                | React.KeyboardEvent<HTMLSpanElement>,
         ) => {
-            e.stopPropagation();
-
             if (isIndeterminate) {
                 setIsIndeterminate(!isIndeterminate);
                 setIsChecked(false);
@@ -79,19 +79,18 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             onChange?.(e);
         };
 
+        const onInputChange: React.ChangeEventHandler<HTMLInputElement> = (
+            e,
+        ) => {
+            e.stopPropagation();
+            onChangeHandler(e);
+        };
+
         const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
             e.stopPropagation();
             e.preventDefault();
 
-            if (e.key === "Enter" || e.key === " ") {
-                if (isIndeterminate) {
-                    setIsIndeterminate(!isIndeterminate);
-                    setIsChecked(false);
-                } else {
-                    setIsChecked(!isChecked);
-                }
-                onChange?.(e);
-            }
+            if (e.key === "Enter" || e.key === " ") onChangeHandler(e);
         };
 
         const unIndeterminateIcon = isChecked ? (
@@ -109,22 +108,16 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             />
         );
 
-        const infoIcon =
-            size === "sm" ? (
-                <LabelPairedCircleInfoSmRegularIcon
-                    className={clsx(
-                        "quill-checkbox__info-icon",
-                        infoIconClassName,
-                    )}
-                />
-            ) : (
-                <LabelPairedCircleInfoMdRegularIcon
-                    className={clsx(
-                        "quill-checkbox__info-icon",
-                        infoIconClassName,
-                    )}
-                />
-            );
+        const InfoIcon =
+            size === "sm"
+                ? LabelPairedCircleInfoSmRegularIcon
+                : LabelPairedCircleInfoMdRegularIcon;
+
+        const infoIcon = (
+            <InfoIcon
+                className={clsx("quill-checkbox__info-icon", infoIconClassName)}
+            />
+        );
 
         return (
             <div
@@ -133,7 +126,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                     {
                         "quill-checkbox--disabled": disabled,
                     },
-                    wrapperClassName,
+                    className,
                 )}
             >
                 <div className="quill-checkbox__wrapper">
@@ -170,7 +163,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                         {label}
                     </Text>
                 </label>
-                {isLabelPaired && infoIcon}
+                {showInfoIcon && infoIcon}
             </div>
         );
     },

@@ -11,7 +11,7 @@ const meta = {
         checked: false,
         disabled: false,
         indeterminate: false,
-        isLabelPaired: false,
+        showInfoIcon: false,
         size: "sm",
         label: "Selection control checkbox",
         name: "demo_checkbox",
@@ -37,7 +37,12 @@ const meta = {
             options: ["true", "false"],
             control: { type: "boolean" },
         },
-        isLabelPaired: {
+        infoIconClassName: {
+            table: { type: { summary: "string | undefined" } },
+            description: "ClassName for info icon",
+            control: { type: "text" },
+        },
+        showInfoIcon: {
             table: { type: { summary: "boolean | undefined" } },
             description: "Flag for adding info icon",
             options: ["true", "false"],
@@ -66,7 +71,7 @@ const meta = {
                 "Input attribute value. Is used as one of the ways to bind input tag with its label",
             control: { type: "text" },
         },
-        wrapperClassName: {
+        className: {
             table: { type: { summary: "string | undefined" } },
             description: "ClassName for external tag of the component",
             control: { type: "text" },
@@ -130,14 +135,14 @@ export const CheckboxDisabledChecked: Story = {
 
 export const CheckboxWithInfoIconSm: Story = {
     args: {
-        isLabelPaired: true,
+        showInfoIcon: true,
         label: "Selection control checkbox with info icon sm",
     },
 };
 
 export const CheckboxWithInfoIconMd: Story = {
     args: {
-        isLabelPaired: true,
+        showInfoIcon: true,
         size: "md",
         label: "Selection control checkbox with info icon md",
     },
