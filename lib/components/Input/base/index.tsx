@@ -66,8 +66,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         className,
                         `quill-input__wrapper`,
                         `quill-input__wrapper__variant--${variant}`,
-                        variant === "fill" &&
-                            `quill-input__wrapper__variant--fill--${status}`,
+                        variant === "fill" && `status--${status}`,
                         `quill-input__wrapper__size--${inputSize}`,
                         `quill-input__wrapper__status--${status}`,
                     )}

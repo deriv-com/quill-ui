@@ -25,6 +25,7 @@ $statuses: neutral, success, fail;
             &__text {
                 padding-block: var(--semantic-spacing-general-none);
                 padding-inline: var(--semantic-spacing-general-md);
+                font-size: var(--core-fontSize-50);
                 line-height: var(--core-lineHeight-100);
                 font-weight: var(--core-fontWeight-regular);
                 animation-name: dropIn;
@@ -71,63 +72,23 @@ $statuses: neutral, success, fail;
         &:has(input:disabled) {
             cursor: not-allowed;
         }
-
         &:hover {
             transition-property: border;
             transition-timing-function: var(--core-motion-ease-400);
             transition-duration: var(--core-motion-duration-200);
         }
-
         &:focus-within {
             &:has(label) {
                 padding-top: var(--core-spacing-600);
             }
         }
-
-        [data-has-value="true"] {
+        &[data-has-value="true"] {
             &:has(label) {
                 padding-top: var(--core-spacing-600);
             }
         }
-
         &__variant {
             &--fill {
-                &--success {
-                    background-color: var(--core-color-opacity-green-100);
-                    border-color: var(--core-color-opacity-green-100);
-                    &:focus-within {
-                        background-color: var(--core-color-opacity-green-100);
-                    }
-                    &:has(input:enabled) {
-                        &:hover {
-                            &:not(:focus-within) {
-                                background-color: var(
-                                    --core-color-opacity-green-200
-                                );
-                                border-color: var(
-                                    --core-color-opacity-green-200
-                                );
-                            }
-                        }
-                    }
-                }
-                &--error {
-                    background-color: var(--core-color-opacity-red-100);
-                    border-color: var(--core-color-opacity-red-100);
-                    &:focus-within {
-                        background-color: var(--core-color-opacity-red-100);
-                    }
-                    &:has(input:enabled) {
-                        &:hover {
-                            &:not(:focus-within) {
-                                background-color: var(
-                                    --core-color-opacity-red-200
-                                );
-                                border-color: var(--core-color-opacity-red-200);
-                            }
-                        }
-                    }
-                }
                 &:focus-within {
                     background-color: var(--core-color-opacity-black-75);
                     color: var(--semantic-color-typography-prominent);
@@ -272,7 +233,6 @@ $statuses: neutral, success, fail;
                 width: 0;
                 height: 0;
             }
-
             &__align {
                 &--left {
                     text-align: left;
@@ -283,7 +243,6 @@ $statuses: neutral, success, fail;
                     }
                 }
             }
-
             &__size {
                 &--sm {
                     height: var(--core-size-1100);
@@ -310,26 +269,25 @@ $statuses: neutral, success, fail;
                     color: var(--core-color-opacity-red-900);
                 }
             }
-            //need to check this peer further
-            .peer {
-                &:placeholder-shown {
-                    font-size: var(--core-fontSize-100);
-                    transform: translateY(0);
-                }
-                &:focus {
-                    transform: translateY(100%);
-                    line-height: var(--core-lineHeight-100);
-                    font-size: var(--core-fontSize-50);
-                    height: var(--core-size-900);
-                    gap: var(--semantic-spacing-gap-sm);
-                }
-                &:not(placeholder-shown) {
-                    transform: translateY(-100%);
-                    line-height: var(--core-lineHeight-100);
-                    font-size: var(--core-fontSize-50);
-                }
-            }
         }
+
+        .peer:placeholder-shown + .label {
+            font-size: var(--core-fontSize-100);
+            transform: translateY(0);
+        }
+        .peer:focus + .label {
+            transform: translateY(-100%);
+            line-height: var(--core-lineHeight-100);
+            font-size: var(--core-fontSize-50);
+            height: var(--core-size-900);
+            gap: var(--semantic-spacing-gap-sm);
+        }
+        .peer:not(placeholder-shown) + .label {
+            transform: translateY(-100%);
+            line-height: var(--core-lineHeight-100);
+            font-size: var(--core-fontSize-50);
+        }
+
         .status-icon {
             &--neutral {
                 fill: var(--semantic-color-typography-default);
@@ -339,6 +297,41 @@ $statuses: neutral, success, fail;
             }
             &--error {
                 fill: var(--core-color-solid-red-900);
+            }
+        }
+    }
+}
+
+.quill-input__wrapper__variant--fill.status {
+    &--success {
+        background-color: var(--core-color-opacity-green-100);
+        border-color: var(--core-color-opacity-green-100);
+        &:focus-within {
+            background-color: var(--core-color-opacity-green-100);
+            border-color: var(--core-color-solid-green-900);
+        }
+        &:has(input:enabled) {
+            &:hover {
+                &:not(:focus-within) {
+                    background-color: var(--core-color-opacity-green-200);
+                    border-color: var(--core-color-opacity-green-200);
+                }
+            }
+        }
+    }
+    &--error {
+        background-color: var(--core-color-opacity-red-100);
+        border-color: var(--core-color-opacity-red-100);
+        &:focus-within {
+            background-color: var(--core-color-opacity-red-100);
+            border-color: var(--core-color-solid-red-900);
+        }
+        &:has(input:enabled) {
+            &:hover {
+                &:not(:focus-within) {
+                    background-color: var(--core-color-opacity-red-200);
+                    border-color: var(--core-color-opacity-red-200);
+                }
             }
         }
     }
