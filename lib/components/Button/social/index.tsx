@@ -2,9 +2,9 @@ import { forwardRef } from "react";
 import {
     SocialAppleWhiteIcon,
     SocialGoogleBrandIcon,
+    SocialFacebookBrandIcon,
+    SocialAppleBlackIcon,
 } from "@deriv/quill-icons/Social";
-import { SocialFacebookBrandIcon } from "@deriv/quill-icons/Social";
-import { SocialAppleBlackIcon } from "@deriv/quill-icons/Social";
 import { SocialButtonProps } from "../types";
 import clsx from "clsx";
 import { ButtonSize } from "../base";

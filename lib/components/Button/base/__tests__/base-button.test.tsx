@@ -28,7 +28,9 @@ describe("Button component", () => {
 
     it("Should render BasicButton with Icon", () => {
         const { container } = render(
-            <Button icon={LabelPairedPlaceholderMdRegularIcon}>Label</Button>,
+            <Button icon={<LabelPairedPlaceholderMdRegularIcon />}>
+                Label
+            </Button>,
         );
         expect(container).toMatchSnapshot();
     });
