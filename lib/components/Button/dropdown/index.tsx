@@ -22,11 +22,12 @@ export interface SingleSelectChipProps extends ButtonProps {
 const Options = ({ item }: { item: TSingleSelectItem }) => {
     return (
         <Listbox.Option value={item} as={Fragment}>
-            {({ selected }) => (
+            {({ selected, active }) => (
                 <li
                     className={clsx(
                         "dropdown-menu__item",
                         selected && `dropdown-menu__item--selected`,
+                        active && `dropdown-menu__item--active`,
                     )}
                 >
                     <Text as="span"> {item.label}</Text>

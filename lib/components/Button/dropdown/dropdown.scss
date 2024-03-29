@@ -20,6 +20,7 @@
         flex-direction: column;
         align-items: flex-start;
         max-height: 258px;
+        width: fit-content;
         overflow-y: scroll;
     }
     &__item{
@@ -37,6 +38,10 @@
         }
         &--selected{
             background-color: var(--semantic-color-background-primary-base);
+        }
+        &--active{
+            background-color: var(--semantic-color-background-primary-base);
+        
         }
     }
     &__transition {
