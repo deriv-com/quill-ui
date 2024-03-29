@@ -62,6 +62,7 @@ const SegmentedControlSingleChoice = ({
                     "segmented-control-single--has-container-width",
                 className,
             )}
+            hasAnimation
             options={items}
             onChange={handleItemClick}
             size={size}

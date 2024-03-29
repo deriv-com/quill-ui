@@ -1,4 +1,4 @@
-import React from "react";
+import React, { KeyboardEvent, RefObject, useEffect, useState } from "react";
 import { TRegularSizes } from "../../types";
 import { Segment } from "./segment";
 import "./segmented-control.scss";
@@ -12,6 +12,7 @@ interface Option {
 
 export interface SegmentedControlProps {
     className?: string;
+    hasAnimation?: boolean;
     options: Array<Option>;
     onChange?: (selectedItemIndex: number) => void;
     size?: TRegularSizes;
@@ -27,14 +28,35 @@ const KEY = {
 
 export const SegmentedControl = ({
     className,
+    hasAnimation,
     options = [],
     onChange,
     size = "md",
 }: SegmentedControlProps) => {
-    const [allowFocus, setAllowFocus] = React.useState(true);
+    const [allowFocus, setAllowFocus] = useState(true);
+    const [animatedOptionIdx, setAnimatedOptionIdx] = useState<number | null>(
+        null,
+    );
+    const selectedRef = React.useRef<HTMLButtonElement | null>(null);
+
+    const animate = (idx: number, ref: RefObject<HTMLButtonElement>) => {
+        if (hasAnimation && ref?.current) {
+            const x =
+                selectedRef?.current === null
+                    ? "0%"
+                    : selectedRef?.current?.offsetLeft -
+                      ref.current.offsetLeft +
+                      "px";
+            if (selectedRef?.current !== null) {
+                selectedRef.current.style.removeProperty("--x");
+            }
+            ref.current.style.setProperty("--x", x);
+            setAnimatedOptionIdx(idx);
+        }
+    };
 
     const handleKeyboardEvents = (
-        e: React.KeyboardEvent<HTMLButtonElement>,
+        e: KeyboardEvent<HTMLButtonElement>,
         idx: number,
     ) => {
         const selectedOptionIdx = options.findIndex(
@@ -62,24 +84,41 @@ export const SegmentedControl = ({
         }
     };
 
+    useEffect(() => {
+        if (selectedRef?.current && hasAnimation) {
+            setTimeout(() => {
+                selectedRef.current?.style.removeProperty("--x");
+            }, 150);
+        }
+    }, [options]);
+
     return (
         <div className={className}>
             {options.map(({ disabled, icon, label, selected }, idx) => {
                 const segmentRef = React.useRef<HTMLButtonElement>(null);
+
                 return (
                     <Segment
                         allowFocus={allowFocus}
                         key={`${idx}_${label}`}
                         icon={icon}
+                        isAnimated={
+                            selected &&
+                            animatedOptionIdx === idx &&
+                            hasAnimation
+                        }
                         isDisabled={disabled}
                         isSelected={selected}
                         label={label}
-                        onClick={() => onChange?.(idx)}
+                        onClick={() => {
+                            animate(idx, segmentRef);
+                            onChange?.(idx);
+                        }}
                         onKeyDown={(
                             e: React.KeyboardEvent<HTMLButtonElement>,
                         ) => handleKeyboardEvents(e, idx)}
                         size={size}
-                        ref={segmentRef}
+                        ref={selected ? selectedRef : segmentRef}
                     />
                 );
             })}

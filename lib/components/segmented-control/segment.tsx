@@ -12,6 +12,7 @@ interface SegmentProps {
     allowFocus?: boolean;
     className?: string;
     icon?: string | React.ReactNode;
+    isAnimated?: boolean;
     isDisabled?: boolean;
     isSelected?: boolean;
     label?: string;
@@ -32,6 +33,7 @@ export const Segment = forwardRef<HTMLButtonElement, SegmentProps>(
             allowFocus,
             className,
             icon,
+            isAnimated,
             isDisabled,
             isSelected,
             label,
@@ -71,9 +73,10 @@ export const Segment = forwardRef<HTMLButtonElement, SegmentProps>(
             <button
                 className={clsx(
                     "item",
+                    isAnimated && "animated",
                     isDisabled && "disabled",
                     focused && allowFocus && "focused",
-                    isSelected && "selected",
+                    isSelected && !isAnimated && "selected",
                     className,
                 )}
                 onClick={isDisabled ? undefined : handleClick}
