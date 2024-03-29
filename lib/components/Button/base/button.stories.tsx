@@ -7,13 +7,7 @@ import {
     LabelPairedPlaceholderLgRegularIcon,
     LabelPairedPlaceholderXlRegularIcon,
 } from "@deriv/quill-icons/LabelPaired";
-
-const iconSizes = {
-    sm: LabelPairedPlaceholderSmRegularIcon,
-    md: LabelPairedPlaceholderMdRegularIcon,
-    lg: LabelPairedPlaceholderLgRegularIcon,
-    xl: LabelPairedPlaceholderXlRegularIcon,
-};
+import { ComponentProps } from "react";
 
 const meta = {
     title: "Components/Button/Basic",
@@ -68,14 +62,6 @@ const meta = {
                 disable: true,
             },
         },
-        icon: {
-            description: "Icon to display on the left side of the chip",
-            options: Object.keys(iconSizes),
-            mapping: iconSizes,
-            control: {
-                type: "select",
-            },
-        },
         className: {
             table: {
                 disable: true,
@@ -107,18 +93,30 @@ export const BasicTertiaryButton: Story = {
         label: "Basic Teritary Button",
     },
 };
+const placeholder = {
+    sm: <LabelPairedPlaceholderSmRegularIcon />,
+    md: <LabelPairedPlaceholderMdRegularIcon />,
+    lg: <LabelPairedPlaceholderLgRegularIcon />,
+    xl: <LabelPairedPlaceholderXlRegularIcon />,
+};
 
-export const ButtonWithLabelIconAtStart: Story = {
-    args: {
-        size: "lg",
-        icon: LabelPairedPlaceholderMdRegularIcon,
-        iconPosition: "start",
-    },
-};
-export const ButtonWithLabelIconAtEnd: Story = {
-    args: {
-        size: "lg",
-        icon: LabelPairedPlaceholderMdRegularIcon,
-        iconPosition: "end",
-    },
-};
+export const ButtonWithLabelIconAtStart = (
+    args: ComponentProps<typeof Button>,
+) => (
+    <Button
+        {...args}
+        size="lg"
+        iconPosition="start"
+        icon={placeholder[args?.size as keyof typeof placeholder]}
+    />
+);
+export const ButtonWithLabelIconAtEnd = (
+    args: ComponentProps<typeof Button>,
+) => (
+    <Button
+        {...args}
+        size="lg"
+        iconPosition="end"
+        icon={placeholder[args?.size as keyof typeof placeholder]}
+    />
+);

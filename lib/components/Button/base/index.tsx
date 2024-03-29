@@ -29,7 +29,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {
             className,
             color = "coral",
-            icon: Icon,
+            icon,
             children,
             isDropdownOpen,
             dropdown = false,
@@ -62,9 +62,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 ref={ref}
                 {...rest}
             >
-                {iconPosition === "start" && Icon && !isLoading && (
-                    <Icon iconSize={size} />
-                )}
+                {iconPosition === "start" && icon && !isLoading && icon}
                 {/* To be Added isLoading based on requirement*/}
                 {children && <div>{children}</div>}
                 {label && (
@@ -80,9 +78,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                         )}
                     </span>
                 )}
-                {iconPosition === "end" && Icon && !isLoading && (
-                    <Icon iconSize={size} />
-                )}
+                {iconPosition === "end" && icon && !isLoading && icon}
                 {dropdown && DropdownIcon && (
                     <DropdownIcon
                         data-state={isDropdownOpen ? "open" : "close"}
