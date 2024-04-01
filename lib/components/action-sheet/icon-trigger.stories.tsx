@@ -4,7 +4,7 @@ import { ActionSheetExampleWithIconTrigger } from "./mocks/example";
 import { fn } from "@storybook/test";
 
 const meta: Meta = {
-    title: "Action Sheet/Icon Trigger",
+    title: "Components/Action Sheet/Icon Trigger",
     component: ActionSheetExampleWithIconTrigger,
     tags: ["autodocs"],
     parameters: {

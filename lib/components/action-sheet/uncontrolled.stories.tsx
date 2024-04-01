@@ -3,7 +3,7 @@ import { fn } from "@storybook/test";
 import { ActionSheetExample } from "./mocks/example";
 
 const meta: Meta = {
-    title: "Action Sheet/Uncontrolled",
+    title: "Components/Action Sheet/Uncontrolled",
     component: ActionSheetExample,
     tags: ["autodocs"],
     parameters: {
