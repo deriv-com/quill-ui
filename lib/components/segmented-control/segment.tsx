@@ -40,6 +40,7 @@ export const Segment = forwardRef<HTMLButtonElement, SegmentProps>(
         };
 
         const handleClick = () => {
+            if (isSelected) return;
             setFocused(false);
             onClick();
         };

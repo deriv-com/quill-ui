@@ -1,11 +1,11 @@
-@import "../../styles/quill/border.scss";
-@import "../../styles/quill/color.scss";
-@import "../../styles/quill/color.semantic.scss";
-@import "../../styles/quill/motion.scss";
-@import "../../styles/quill/opacity.scss";
-@import "../../styles/quill/others.scss";
-@import "../../styles/quill/spacing.scss";
-@import "../../styles/quill/static.scss";
+@import "@quill/border.scss";
+@import "@quill/color.scss";
+@import "@quill/color.semantic.scss";
+@import "@quill/motion.scss";
+@import "@quill/opacity.scss";
+@import "@quill/others.scss";
+@import "@quill/spacing.scss";
+@import "@quill/static.scss";
 
 .segmented-control {
     &-single {
@@ -48,8 +48,8 @@
                     transparent
                 );
             }
-            &:active:not(:disabled),
-            &:active:not(:disabled)::before {
+            &:active:not(:disabled, .selected),
+            &:active:not(:disabled, .animated)::before {
                 box-shadow: unset;
                 background: color-mix(
                     in srgb,

@@ -121,6 +121,7 @@ export const SegmentedControl = ({
                         onClick={() => {
                             animate(idx, segmentRef);
                             onChange?.(idx);
+                            setAllowFocus(false);
                         }}
                         onKeyDown={(
                             e: React.KeyboardEvent<HTMLButtonElement>,
