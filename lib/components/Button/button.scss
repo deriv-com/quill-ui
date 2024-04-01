@@ -1,51 +1,58 @@
-@import '../../styles/quill/spacing.scss';
-@import '../../styles/quill/size.scss';
-@import '../../styles/quill/border.scss';
-@import '../../styles/quill/motion.scss';
+@import '@quill/spacing.scss';
+@import '@quill/size.scss';
+@import '@quill/border.scss';
+@import '@quill/motion.scss';
 
-.quill-button{
-    cursor: pointer ;
+.quill-button {
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     &:disabled {
         cursor: auto;
-      }
-    &__size{
-      
-        &--sm{
+    }
+
+    &__size {
+
+        &--sm {
             padding-inline: var(--core-spacing-400);
             height: var(--core-size-1200);
             border-radius: var(--core-borderRadius-400);
             gap: var(--core-spacing-200);
         }
-        &--md{
+
+        &--md {
             padding-inline: var(--core-spacing-600);
             height: var(--core-size-1600);
             border-radius: var(--core-borderRadius-600);
             gap: var(--core-spacing-300);
         }
-        &--lg{
+
+        &--lg {
             padding-inline: var(--core-spacing-800);
             height: var(--core-size-2400);
             border-radius: var(--core-borderRadius-800);
             gap: var(--core-spacing-400);
         }
-        &--xl{
+
+        &--xl {
             padding-inline: var(--core-spacing-1200);
             height: var(--core-size-3200);
             border-radius: var(--core-borderRadius-1200);
             gap: var(--core-spacing-600);
         }
     }
+
     &__transform {
         transition-property: transform;
         transition-duration: var(--core-motion-duration-200);
         transform: rotate(180deg);
         transition-timing-function: ease-in-out;
     }
+
     &__full-width {
         width: 100%;
     }
-   
+
 }
