@@ -9,12 +9,13 @@ import {
 } from "react";
 import "./base.scss";
 import React from "react";
+import { TMediumSizes } from "../../../types";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type?: HTMLInputTypeAttribute;
     icon?: ForwardRefExoticComponent<Omit<QuillSvgProps, "ref">>;
     statusIcon?: ForwardRefExoticComponent<Omit<QuillSvgProps, "ref">>;
-    inputSize?: "sm" | "md";
+    inputSize?: TMediumSizes;
     status?: "neutral" | "success" | "error";
     disabled?: boolean;
     variant?: "fill" | "outline";
@@ -130,6 +131,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             key={rightStatusMessage}
                             className={clsx(
                                 "self-end",
+                                "message__container__text",
                                 `message__container__text__status--${status}`,
                             )}
                         >

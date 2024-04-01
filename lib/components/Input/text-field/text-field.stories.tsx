@@ -12,6 +12,57 @@ const meta = {
         layout: "centered",
     },
     tags: ["autodocs"],
+    args: {
+        inputSize: "md",
+        status: "neutral",
+        disabled: false,
+        variant: "fill",
+        textAlignment: "left",
+        label: "",
+        leftStatusMessage: "",
+        rightStatusMessage: "",
+    },
+    argTypes: {
+        inputSize: {
+            control: {
+                type: "radio",
+            },
+            options: ["sm", "md"],
+        },
+        status: {
+            control: {
+                type: "radio",
+            },
+            options: ["neutral", "success", "error"],
+        },
+        variant: {
+            control: {
+                type: "radio",
+            },
+            options: ["fill", "outline"],
+        },
+        label: {
+            control: {
+                type: "text",
+            },
+        },
+        textAlignment: {
+            control: {
+                type: "radio",
+            },
+            options: ["left", "center"],
+        },
+        leftStatusMessage: {
+            control: {
+                type: "text",
+            },
+        },
+        rightStatusMessage: {
+            control: {
+                type: "text",
+            },
+        },
+    },
 } satisfies Meta<typeof TextField>;
 
 export default meta;
@@ -21,13 +72,6 @@ type Story = StoryObj<typeof meta>;
 export const DefaultTextField: Story = {
     args: {
         placeholder: "Placeholder",
-    },
-};
-export const DisabledTextField: Story = {
-    args: {
-        placeholder: "Placeholder",
-        disabled: true,
-        variant: "outline",
     },
 };
 export const SuccessTextField: Story = {
@@ -42,6 +86,13 @@ export const ErrorTextField: Story = {
         placeholder: "Placeholder",
         variant: "outline",
         status: "error",
+    },
+};
+export const DisabledTextField: Story = {
+    args: {
+        placeholder: "Placeholder",
+        disabled: true,
+        variant: "outline",
     },
 };
 

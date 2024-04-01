@@ -1,7 +1,14 @@
-@import "../../../styles/quill.scss";
+@import "../../../styles/quill/spacing.scss";
+@import "../../../styles/quill/font.size.scss";
+@import "../../../styles/quill/color.scss";
+@import "../../../styles/quill/color.semantic.scss";
+@import "../../../styles/quill/color.opacity.scss";
+@import "../../../styles/quill/motion.scss";
+@import "../../../styles/quill/font.weight.scss";
+@import "../../../styles/quill/border.scss";
+@import "../../../styles/quill/line.height.scss";
+@import "../../../styles/quill/size.scss";
 
-$statuses: neutral, success, fail;
-// $variants: outline, fill;
 @keyframes dropIn {
     from {
         transform: translateY(-50%);
@@ -21,6 +28,7 @@ $statuses: neutral, success, fail;
             display: flex;
             justify-content: space-between;
             padding-top: var(--semantic-spacing-general-sm);
+            font-family: "IBM Plex Sans";
 
             &__text {
                 padding-block: var(--semantic-spacing-general-none);
@@ -113,9 +121,13 @@ $statuses: neutral, success, fail;
                 }
             }
             &--outline {
-                background-color: var(--core-color-solid-slate-50);
+                background-color: var(
+                    --semantic-color-background-primary-container
+                );
                 &:has(input:disabled) {
-                    background-color: var(--core-color-solid-slate-50);
+                    background-color: var(
+                        --semantic-color-background-primary-container
+                    );
                     color: var(--core-color-opacity-black-100);
                     border-color: var(--core-color-opacity-black-100);
                 }
@@ -270,7 +282,6 @@ $statuses: neutral, success, fail;
                 }
             }
         }
-
         .peer:placeholder-shown + .label {
             font-size: var(--core-fontSize-100);
             transform: translateY(0);
