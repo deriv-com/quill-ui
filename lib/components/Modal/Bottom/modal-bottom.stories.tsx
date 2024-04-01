@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+// import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { fn } from "@storybook/test";
 import { useEffect, useState } from "react";
 import { ModalBottom } from "./index";
@@ -8,6 +9,10 @@ const meta = {
     component: ModalBottom,
     parameters: {
         layout: "centered",
+        // viewport: {
+        //     viewports: INITIAL_VIEWPORTS,
+        //     defaultViewport: "mobile1",
+        // },
     },
     tags: ["autodocs"],
     args: {
@@ -17,14 +22,16 @@ const meta = {
                 <button>Close Modal</button>
             </div>
         ),
+        hasImage: false,
         isOpened: false,
         isContentLong: false,
         toggleModal: fn(),
-        title: "Title",
     },
     argTypes: {
         children: {
-            description: "Modal content",
+            table: { type: { summary: "ReactNode" } },
+            description:
+                "Modal's content. Can be wrapped with the `<Modal.Title/>` and `<Modal.Body/>` components in order to organize the content inside the modal.",
             control: { type: null },
         },
         isOpened: {
@@ -33,6 +40,13 @@ const meta = {
             description: "Controls the visibility of the modal",
             control: { type: "boolean" },
         },
+        hasImage: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            description: "Flag for the component spacing adjustment",
+            control: { type: "boolean" },
+        },
+        // TODO: expand the description of this prop
         isContentLong: {
             table: { type: { summary: "boolean | undefined" } },
             options: ["true", "false"],
@@ -50,11 +64,6 @@ const meta = {
                 "Function for changing state of the visibility of the modal",
             control: { type: null },
         },
-        title: {
-            table: { type: { summary: "ReactNode" } },
-            description: "Title of the Modal",
-            control: { type: "ReactNode" },
-        },
         portalId: {
             table: { type: { summary: "string | undefined" } },
             description: "ID of the modal container",
@@ -68,10 +77,14 @@ type Story = StoryObj<typeof meta>;
 
 export const ModalCollapsed: Story = {
     name: "Collapsed Modal",
+    // parameters: {
+    //     viewport: {
+    //         defaultViewport: "iphone6",
+    //     },
+    // },
     args: {
         isOpened: false,
         toggleModal: fn(),
-        title: "Title",
         portalId: "modal-root",
     },
     render: (args) => {
@@ -88,7 +101,7 @@ export const ModalCollapsed: Story = {
                         width: "360px",
                         height: "740px",
                         boxShadow: "10px 5px 5px black",
-                        borderRadius: "8px",
+                        borderRadius: "30px",
                         backgroundColor: "white",
                         position: "relative",
                         display: "flex",
@@ -116,14 +129,9 @@ export const ModalCollapsed: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    {/* <ModalBottom.Header>
-                        <div>Some Image</div>
-                    </ModalBottom.Header> */}
+                    <ModalBottom.Title>Title</ModalBottom.Title>
                     <ModalBottom.Body>
-                        <p>Hi!</p>
-                        <p>
-                            This is some amazing placeholder text for Modal Body
-                        </p>
+                        This is some amazing placeholder text.
                     </ModalBottom.Body>
                 </ModalBottom>
             </>
