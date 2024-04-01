@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 import { useEffect, useState } from "react";
 import { ModalBottom } from "./index";
 
@@ -17,6 +18,7 @@ const meta = {
             </div>
         ),
         isOpened: false,
+        isContentLong: false,
     },
     argTypes: {
         children: {
@@ -29,10 +31,27 @@ const meta = {
             description: "Controls the visibility of the modal",
             control: { type: "boolean" },
         },
+        isContentLong: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            description: "Flag for expanding modal",
+            control: { type: "boolean" },
+        },
         className: {
             table: { type: { summary: "string | undefined" } },
             description: "ClassName for external tag of the component",
             control: { type: "text" },
+        },
+        toggleModal: {
+            table: { type: { summary: "(isOpened: boolean) => void" } },
+            description:
+                "Function for changing state of the visibility of the modal",
+            control: { type: null },
+        },
+        portalId: {
+            table: { type: { summary: "string | undefined" } },
+            description: "ID of the modal container",
+            control: { type: "string" },
         },
     },
 } satisfies Meta<typeof ModalBottom>;
@@ -40,11 +59,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// TODO: rename after
-export const Default: Story = {
-    name: "Default Modal",
+export const ModalCollapsed: Story = {
+    name: "Collapsed Modal",
     args: {
         isOpened: false,
+        toggleModal: fn(),
+        portalId: "modal-root",
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);
@@ -59,26 +79,35 @@ export const Default: Story = {
                     style={{
                         width: "360px",
                         height: "740px",
-                        border: "1px solid black",
+                        boxShadow: "10px 5px 5px black",
                         borderRadius: "8px",
                         backgroundColor: "white",
                         position: "relative",
-                    }}
-                />
-                <button
-                    onClick={() => setIsOpen(true)}
-                    style={{
-                        margin: "20px auto",
-                        padding: "8px 10px",
-                        backgroundColor: "red",
-                        borderRadius: "8px",
-                        cursor: "pointer",
-                        color: "white",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        overflow: "hidden",
                     }}
                 >
-                    Open Modal
-                </button>
-                <ModalBottom isOpened={isOpen}>
+                    <button
+                        onClick={() => setIsOpen(true)}
+                        style={{
+                            margin: "20px auto",
+                            padding: "8px 10px",
+                            backgroundColor: "red",
+                            borderRadius: "8px",
+                            cursor: "pointer",
+                            color: "white",
+                        }}
+                    >
+                        Open Modal
+                    </button>
+                </div>
+                <ModalBottom
+                    {...args}
+                    isOpened={isOpen}
+                    toggleModal={setIsOpen}
+                >
                     <div>
                         <p>Hi!</p>
                         <p>
