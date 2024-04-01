@@ -30,18 +30,6 @@ export const ModalBottom = ({
 
     useEffect(() => {
         setIsVisible(isOpened);
-        // TODO: remove if we don't need scroll blocker
-        // if (isOpened) {
-        //     document.body.classList.add("modal--no-scroll");
-        //     document.body.style.top = `-${window.scrollY}px`;
-        //     // Width of the scroll
-        //     document.body.style.paddingRight = `${window.innerWidth - document.body.offsetWidth}px`;
-        //     document.documentElement.style.scrollBehavior = "unset";
-        // } else {
-        //     document.body.classList.remove("modal--no-scroll");
-        //     window.scroll({ top: window.scrollY });
-        //     document.documentElement.style.scrollBehavior = "";
-        // }
     }, [isOpened]);
 
     useEffect(() => {
@@ -49,10 +37,7 @@ export const ModalBottom = ({
     }, [isContentLong]);
 
     useEffect(() => {
-        return () => {
-            clearTimeout(animationTimerRef.current);
-            document.body.classList.remove("modal--no-scroll");
-        };
+        return () => clearTimeout(animationTimerRef.current);
     }, []);
 
     const toggleHandler = () => {
