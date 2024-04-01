@@ -1,7 +1,8 @@
-@import "../../../styles/quill.color.scss";
-@import "../../../styles/quill/spacing.scss";
-@import "../../../styles/quill/border.scss";
-@import "../../../styles/quill/others.scss";
+@import "@quill-bundle/typhography.scss";
+@import "@quill-bundle/color.scss";
+@import "@quill/spacing.scss";
+@import "@quill/border.scss";
+@import "@quill/others.scss";
 
 .quill-checkbox {
     display: inline-flex;
