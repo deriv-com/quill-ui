@@ -1,4 +1,4 @@
-import { ComponentProps, useContext, useEffect, useState } from "react";
+import { ComponentProps, useContext } from "react";
 import { createPortal } from "react-dom";
 import HandleBar from "../handle-bar";
 import "./portal.scss";
@@ -16,17 +16,6 @@ const Portal = ({ children, ...restProps }: PortalProps) => {
             show,
             onClose: handleClose,
         });
-
-    // TODO: This is a temp implementation
-    const [isMounted, setIsMounted] = useState(false);
-
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
-
-    if (!isMounted) {
-        return null;
-    }
 
     return (
         <>

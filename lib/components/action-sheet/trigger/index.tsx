@@ -21,7 +21,6 @@ type TriggerProps = ButtonTriggerProps | IconTriggerProps;
 
 const Trigger = ({
     iconComponent: Icon,
-    iconSize,
     iconClassName,
     ...restProps
 }: TriggerProps) => {
@@ -32,7 +31,6 @@ const Trigger = ({
                 <Icon
                     data-testid="dt-actionsheet-icon-button"
                     className={iconClassName}
-                    iconSize={iconSize}
                 />
             </button>
         );
