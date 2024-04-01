@@ -1,6 +1,10 @@
 import { QuillSvgProps } from "@deriv/quill-icons";
 import { ComponentProps, ReactNode } from "react";
-import { TDefaultColor, TGenericSizes } from "../../types";
+import {
+    TDefaultColor,
+    TRegularSizesWithExtraLarge,
+    TSemiRegularSizes,
+} from "../../types";
 
 export type TVariant = "primary" | "secondary" | "tertiary";
 
@@ -17,7 +21,7 @@ export interface ButtonProps extends ComponentProps<"button"> {
     icon?: ReactNode;
     isDropdownOpen?: boolean;
     selected?: boolean;
-    size?: Extract<TGenericSizes, "xl" | "lg" | "md" | "sm">;
+    size?: TRegularSizesWithExtraLarge;
     dropdown?: boolean;
     disabled?: boolean;
     fullWidth?: boolean;
@@ -31,7 +35,7 @@ export interface ButtonProps extends ComponentProps<"button"> {
 export interface SocialButtonProps extends ComponentProps<"button"> {
     variant?: "primary" | "secondary";
     social?: TSocial;
-    size?: Extract<TGenericSizes, "xl" | "lg" | "md">;
+    size?: TSemiRegularSizes;
     color?: TDefaultColor;
     hideLabel?: boolean;
     fullWidth?: boolean;
