@@ -2,12 +2,16 @@ import ReactDOM from "react-dom";
 import { useState, useEffect, useRef } from "react";
 import clsx from "clsx";
 import "./modal-bottom.scss";
+import { ModalHeader } from "./modal-header";
+import { ModalBody } from "./modal-body";
+import { Heading, Text } from "../../Typography";
 
 interface ModalBottomProps {
     isOpened?: boolean;
     isContentLong?: boolean;
     className?: string;
     toggleModal: (isOpened: boolean) => void;
+    title: React.ReactNode;
     portalId?: string;
 }
 
@@ -17,6 +21,7 @@ export const ModalBottom = ({
     className,
     children,
     toggleModal,
+    title,
     portalId,
 }: React.PropsWithChildren<ModalBottomProps>) => {
     const [isVisible, setIsVisible] = useState(isOpened);
@@ -51,7 +56,7 @@ export const ModalBottom = ({
     if (!isOpened) return null;
 
     return ReactDOM.createPortal(
-        <div className="quill-modal-bottom__wrapper" onClick={toggleHandler}>
+        <div className="quill-modal-bottom__overlay" onClick={toggleHandler}>
             <div
                 className={clsx(
                     "quill-modal-bottom__container",
@@ -63,9 +68,20 @@ export const ModalBottom = ({
                 )}
                 onClick={(e) => e.stopPropagation()}
             >
-                {children && children}
+                <div className="quill-modal-bottom__handle-bar" />
+                <div className="quill-modal-bottom__content-wrapper">
+                    <Heading.H4 className="quill-modal-bottom__content-title">
+                        {title}
+                    </Heading.H4>
+                    <Text size="md" as="div">
+                        {children}
+                    </Text>
+                </div>
             </div>
         </div>,
         modalRoot,
     );
 };
+
+ModalBottom.Header = ModalHeader;
+ModalBottom.Body = ModalBody;

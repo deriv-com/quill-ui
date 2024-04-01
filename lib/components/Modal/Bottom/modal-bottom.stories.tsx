@@ -19,6 +19,8 @@ const meta = {
         ),
         isOpened: false,
         isContentLong: false,
+        toggleModal: fn(),
+        title: "Title",
     },
     argTypes: {
         children: {
@@ -48,6 +50,11 @@ const meta = {
                 "Function for changing state of the visibility of the modal",
             control: { type: null },
         },
+        title: {
+            table: { type: { summary: "ReactNode" } },
+            description: "Title of the Modal",
+            control: { type: "ReactNode" },
+        },
         portalId: {
             table: { type: { summary: "string | undefined" } },
             description: "ID of the modal container",
@@ -64,6 +71,7 @@ export const ModalCollapsed: Story = {
     args: {
         isOpened: false,
         toggleModal: fn(),
+        title: "Title",
         portalId: "modal-root",
     },
     render: (args) => {
@@ -108,13 +116,15 @@ export const ModalCollapsed: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <div>
+                    {/* <ModalBottom.Header>
+                        <div>Some Image</div>
+                    </ModalBottom.Header> */}
+                    <ModalBottom.Body>
                         <p>Hi!</p>
                         <p>
-                            This is some amazing placeholder text for Modal
-                            Bottom
+                            This is some amazing placeholder text for Modal Body
                         </p>
-                    </div>
+                    </ModalBottom.Body>
                 </ModalBottom>
             </>
         );

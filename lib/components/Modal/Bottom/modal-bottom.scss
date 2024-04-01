@@ -2,9 +2,11 @@
 @import "@quill-bundle/animation.scss";
 @import "@quill/border.scss";
 @import "@quill/spacing.scss";
+@import "@quill/size.scss";
+@import "@quill/opacity.scss";
 
 .quill-modal-bottom {
-    &__wrapper {
+    &__overlay {
         //TODO: check, if it will work in IOS
         // position: fixed;
         position: absolute;
@@ -33,7 +35,6 @@
         background-color: var(--core-color-solid-slate-50);
         border-top-left-radius: var(--core-borderRadius-800);
         border-top-right-radius: var(--core-borderRadius-800);
-        padding: var(--semantic-spacing-general-lg);
         opacity: var(--core-opacity-50);
         transform: translateY(100%);
         pointer-events: none;
@@ -50,6 +51,27 @@
 
         &--expanded {
             height: 90%;
+        }
+    }
+
+    &__handle-bar {
+        position: absolute;
+        cursor: pointer;
+        top: var(--semantic-spacing-general-sm);
+        left: calc(50% - (var(--core-size-2400) / 2));
+        width: var(--core-size-2400);
+        height: var(--core-size-200);
+        background-color: var(--core-color-opacity-black-300);
+        border-radius: var(--core-borderRadius-100);
+    }
+
+    &__content {
+        &-wrapper {
+            padding: var(--semantic-spacing-general-lg);
+        }
+
+        &-title {
+            margin-bottom: var(--semantic-spacing-general-lg);
         }
     }
 }
