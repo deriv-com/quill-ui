@@ -132,7 +132,7 @@ exports[`NotificationBanner should have correct title 1`] = `
 </div>
 `;
 
-exports[`NotificationBanner should render correct icon 1`] = `
+exports[`NotificationBanner should render correct icon based on the notification type 1`] = `
 <div>
   <div
     class="notification-banner"

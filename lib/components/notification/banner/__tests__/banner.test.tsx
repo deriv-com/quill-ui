@@ -22,8 +22,8 @@ describe("NotificationBanner", () => {
 
         expect(container).toMatchSnapshot();
     });
-    it("should render correct icon", () => {
-        const { container } = render(<NotificationBanner icon="warning" />);
+    it("should render correct icon based on the notification type", () => {
+        const { container } = render(<NotificationBanner type="warning" />);
 
         expect(container).toMatchSnapshot();
     });

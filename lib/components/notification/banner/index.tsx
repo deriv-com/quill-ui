@@ -4,28 +4,26 @@ import type { NotificationProps } from "../base";
 import clsx from "clsx";
 
 export interface NotificationBannerProps
-    extends Omit<NotificationProps, "icon"> {
+    extends Omit<NotificationProps, "icon" | "status" | "hasCloseButton"> {
     className?: string;
-    icon?: "info" | "failure" | "success" | "warning";
+    type?: "info" | "failure" | "success" | "warning";
     isMobile?: boolean;
 }
 
 const NotificationBanner = ({
     className,
-    icon = "info",
+    type = "info",
     isMobile,
     message,
-    status = "unread",
     title,
 }: NotificationBannerProps) => {
     return (
         <Notification
             className={clsx("notification-banner", className)}
             hasCloseButton={!isMobile}
-            icon={icon}
+            icon={type}
             message={message}
             title={title}
-            status={status}
         />
     );
 };

@@ -18,7 +18,14 @@ const meta = {
                 type: { summary: "string | undefined" },
             },
         },
-        icon: {
+        isMobile: {
+            control: { type: "boolean" },
+            description: "Optional.",
+            table: {
+                type: { summary: "boolean | undefined" },
+            },
+        },
+        type: {
             options: ["info", "failure", "success", "warning"],
             control: { type: "radio" },
             description: "Optional.",
@@ -26,14 +33,6 @@ const meta = {
                 type: {
                     summary: "info | failure | success | warning | undefined",
                 },
-            },
-        },
-        status: {
-            options: ["read", "unread"],
-            control: { type: "radio" },
-            description: "Optional.",
-            table: {
-                type: { summary: "read | unread | undefined" },
             },
         },
     },

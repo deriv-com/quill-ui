@@ -20,7 +20,7 @@ export const Notification = ({
     icon,
     message,
     title,
-    status,
+    status = "unread",
 }: NotificationProps) => {
     return (
         <div className={className}>

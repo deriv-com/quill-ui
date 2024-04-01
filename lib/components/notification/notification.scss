@@ -13,6 +13,8 @@
     &-banner {
         // desktop
         position: relative;
+        display: flex;
+        align-items: center;
         width: fit-content;
         min-width: 360px;
         min-height: 72px;
