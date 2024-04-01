@@ -1,11 +1,13 @@
-@import '../../../styles/quill/color.semantic.scss';
-.tab-trigger{
+@import '@quill/color.semantic.scss';
+
+.tab-trigger {
     &__icon-position {
         &--left {
             display: flex;
             flex-direction: row;
             align-items: center;
         }
+
         &--top {
             display: flex;
             flex-direction: column;
@@ -13,10 +15,11 @@
         }
     }
 }
+
 .tab__icon {
     display: inline-flex;
-        svg {
-            fill: var(--semantic-color-typography-prominent);
-        }  
+
+    svg {
+        fill: var(--semantic-color-typography-prominent);
+    }
 }
-    

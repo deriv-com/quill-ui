@@ -1,16 +1,18 @@
-.tab-list{
-    &--container{
+.tab-list {
+    &--container {
         position: relative;
         display: flex;
         justify-content: center;
     }
-    &--item{
+
+    &--item {
         display: flex;
         overflow-x: auto;
         overscroll-behavior-x: contain;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        &::-webkit-scrollbar{
+
+        &::-webkit-scrollbar {
             display: none;
         }
     }
