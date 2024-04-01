@@ -1,7 +1,7 @@
-@import "../../../styles/quill.color.scss";
-@import "../../../styles/quill/border.scss";
-@import "../../../styles/quill/spacing.scss";
-@import "../../../styles/quill.animation.scss";
+@import "@quill-bundle/color.scss";
+@import "@quill-bundle/animation.scss";
+@import "@quill/border.scss";
+@import "@quill/spacing.scss";
 
 .quill-modal-bottom {
     &__wrapper {
