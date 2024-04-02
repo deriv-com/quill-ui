@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { ActionSheetContext } from "../root";
 import clsx from "clsx";
 import "./footer.scss";
+import { Button } from "../../Button";
 
 const Footer = ({
     primaryAction,
@@ -35,25 +36,25 @@ const Footer = ({
             {...restProps}
         >
             {primaryAction && (
-                <button
+                <Button
                     onClick={primaryActionHandler}
-                    // colorStyle="black"
-                    // size="lg"
-                    // fullWidth
+                    color="black"
+                    size="lg"
+                    fullWidth
                 >
                     {primaryAction.content}
-                </button>
+                </Button>
             )}
             {secondaryAction && (
-                <button
+                <Button
                     onClick={secondaryActionHandler}
-                    // variant="secondary"
-                    // colorStyle="black"
-                    // size="lg"
-                    // fullWidth
+                    variant="secondary"
+                    color="black"
+                    size="lg"
+                    fullWidth
                 >
                     {secondaryAction.content}
-                </button>
+                </Button>
             )}
         </div>
     );

@@ -80,7 +80,6 @@ export const ActionSheetExampleWithIconTrigger = ({
                 <ActionSheet.Trigger
                     iconComponent={LabelPairedBarsSmBoldIcon}
                     iconClassName="fill-solid-red-500"
-                    iconSize="sm"
                 />
                 <ActionSheet.Portal>
                     <ActionSheet.Header

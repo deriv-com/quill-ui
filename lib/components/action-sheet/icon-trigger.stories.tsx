@@ -83,11 +83,11 @@ export const IconTrigger: Story = {
         type: "modal",
         position: "right",
         primaryAction: {
-            content: "Primary Action",
+            content: "Primary",
             onAction: () => null,
         },
         secondaryAction: {
-            content: "Secondary Action",
+            content: "Secondary",
             onAction: () => null,
         },
         alignment: "vertical",
