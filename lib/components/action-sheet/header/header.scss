@@ -44,11 +44,11 @@
             height: var(--semantic-spacing-general-2xl);
             justify-content: center;
             align-items: center;
-            cursor: pointer;
             fill: var(--semantic-color-typography-prominent);
 
             &--close {
                 visibility: hidden;
+                cursor: pointer;
 
                 @media (min-width: 1040px) {
                     visibility: visible;

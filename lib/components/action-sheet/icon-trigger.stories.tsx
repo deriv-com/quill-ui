@@ -2,6 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ActionSheetExampleWithIconTrigger } from "./mocks/example";
 import { fn } from "@storybook/test";
+import {
+    LabelPairedPlaceholderCaptionBoldIcon,
+    StandaloneXmarkRegularIcon,
+} from "@deriv/quill-icons";
 
 const meta: Meta = {
     title: "Components/Action Sheet/Icon Trigger",
@@ -12,6 +16,10 @@ const meta: Meta = {
     },
     args: {
         onClose: fn(),
+        title: "Title",
+        description: "Description",
+        closeIcon: <StandaloneXmarkRegularIcon />,
+        icon: <LabelPairedPlaceholderCaptionBoldIcon />,
     },
     argTypes: {
         isOpen: { table: { disable: true } },
@@ -69,7 +77,7 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof ActionSheetExampleWithIconTrigger>;
 
-export const Uncontrolled: Story = {
+export const IconTrigger: Story = {
     args: {
         expandable: true,
         type: "modal",

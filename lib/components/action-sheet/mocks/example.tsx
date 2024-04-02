@@ -11,9 +11,10 @@ import "./mock.scss";
 
 type ExampleProps = ActionSheetContextType &
     ComponentProps<typeof ActionSheet.Root> &
-    ComponentProps<typeof ActionSheet.Footer>;
+    ComponentProps<typeof ActionSheet.Footer> &
+    ComponentProps<typeof ActionSheet.Header>;
 
-export const ActionSheetExample = ({
+export const ActionSheetExampleFour = ({
     primaryAction,
     secondaryAction,
     alignment,
@@ -63,10 +64,14 @@ export const ActionSheetExample = ({
     );
 };
 
-export const ActionSheetExampleTwo = ({
+export const ActionSheetExample = ({
     primaryAction,
     secondaryAction,
     alignment,
+    description,
+    title,
+    closeIcon,
+    icon,
     ...props
 }: ExampleProps) => {
     const [open, setOpen] = useState<boolean>();
@@ -79,9 +84,10 @@ export const ActionSheetExampleTwo = ({
                 <ActionSheet.Trigger>Click Here</ActionSheet.Trigger>
                 <ActionSheet.Portal>
                     <ActionSheet.Header
-                        title="Title"
-                        description="Description"
-                        closeIcon={<StandaloneXmarkRegularIcon />}
+                        title={title}
+                        description={description}
+                        closeIcon={closeIcon}
+                        icon={icon}
                     />
                     <ActionSheet.Content className="mock-action-sheet--content">
                         <Text size="sm">
@@ -115,6 +121,10 @@ export const ActionSheetExampleWithIconTrigger = ({
     primaryAction,
     secondaryAction,
     alignment,
+    description,
+    title,
+    closeIcon,
+    icon,
     ...props
 }: ExampleProps) => {
     return (
@@ -126,33 +136,28 @@ export const ActionSheetExampleWithIconTrigger = ({
                     iconSize="sm"
                 />
                 <ActionSheet.Portal>
-                    <ActionSheet.Header className="py-400 text-center">
-                        <div className="relative py-1100">
-                            <h3 className="ml-auto">Title</h3>
-                        </div>
-                        <p>Description</p>
-                    </ActionSheet.Header>
-                    <ActionSheet.Content className="flex flex-col gap-500 py-800">
-                        <p>
+                    <ActionSheet.Header
+                        title={title}
+                        description={description}
+                        closeIcon={closeIcon}
+                        icon={icon}
+                    />
+                    <ActionSheet.Content className="mock-action-sheet--content">
+                        <Text size="sm">
                             Bottom sheet is a surface fixed at the bottom of the
                             screen which includes content related to the
                             previous screen.
-                        </p>
-                        <p>
+                        </Text>
+                        <Text size="sm">
                             Bottom sheet is a surface fixed at the bottom of the
                             screen which includes content related to the
                             previous screen.
-                        </p>
-                        <p>
+                        </Text>
+                        <Text size="sm">
                             Bottom sheet is a surface fixed at the bottom of the
                             screen which includes content related to the
                             previous screen.
-                        </p>
-                        <p>
-                            Bottom sheet is a surface fixed at the bottom of the
-                            screen which includes content related to the
-                            previous screen.
-                        </p>
+                        </Text>
                     </ActionSheet.Content>
                     <ActionSheet.Footer
                         primaryAction={primaryAction}
