@@ -6,7 +6,8 @@ import './toggle-switch.scss';
 export default {
   title: 'Components/ToggleSwitch',
   component: ToggleSwitch,
-} as Meta;
+} as Meta<SwitchToggleProps>;
+
 
 const Template: StoryFn<SwitchToggleProps> = (args) => <ToggleSwitch {...args} />;
 
@@ -25,5 +26,12 @@ Disabled.args = {
 export const Checked = Template.bind({});
 Checked.args = {
   disabled: false,
+  defaultChecked: true,
+};
+
+
+export const DisabledChecked = Template.bind({});
+DisabledChecked.args = {
+  disabled: true,
   defaultChecked: true,
 };

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./toggle-switch.scss";
 import clsx from "clsx";
+import { LabelPairedCircleLgFillIcon } from "@deriv/quill-icons";
 
 export interface SwitchToggleProps {
     disabled?: boolean;
@@ -25,9 +26,9 @@ const ToggleSwitch = ({
 
     const toggleSwitch = () => {
         if (!disabled) {
-            const newState = !isEnabled;
-            setIsEnabled(newState);
-            onChange?.(newState);
+            const toggleEnable = !isEnabled;
+            setIsEnabled(toggleEnable);
+            onChange?.(toggleEnable);
         }
     };
 
@@ -56,18 +57,12 @@ const ToggleSwitch = ({
                     enabled: isEnabled,
                 })}
             >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
+                <LabelPairedCircleLgFillIcon
                     className={clsx("toggle-switch__knob", {
                         enabled: isEnabled,
                         disabled,
                     })}
-                >
-                    <circle cx="10" cy="10" r="10" />
-                </svg>
+                />
             </div>
         </div>
     );
