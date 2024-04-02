@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-// import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { fn } from "@storybook/test";
 import { useEffect, useState } from "react";
 import { ModalBottom } from "./index";
@@ -9,10 +8,9 @@ const meta = {
     component: ModalBottom,
     parameters: {
         layout: "centered",
-        // viewport: {
-        //     viewports: INITIAL_VIEWPORTS,
-        //     defaultViewport: "mobile1",
-        // },
+        viewport: {
+            defaultViewport: "mobile2",
+        },
     },
     tags: ["autodocs"],
     args: {
@@ -24,6 +22,8 @@ const meta = {
         ),
         hasImage: false,
         isOpened: false,
+        showHandleBar: true,
+        showSecondaryButton: true,
         isContentLong: false,
         toggleModal: fn(),
     },
@@ -58,6 +58,18 @@ const meta = {
             description: "ClassName for external tag of the component",
             control: { type: "text" },
         },
+        showHandleBar: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            description: "Controls the visibility of the handlebar",
+            control: { type: "boolean" },
+        },
+        showSecondaryButton: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            description: "Controls the visibility of the secondary button",
+            control: { type: "boolean" },
+        },
         toggleModal: {
             table: { type: { summary: "(isOpened: boolean) => void" } },
             description:
@@ -77,13 +89,10 @@ type Story = StoryObj<typeof meta>;
 
 export const ModalCollapsed: Story = {
     name: "Collapsed Modal",
-    // parameters: {
-    //     viewport: {
-    //         defaultViewport: "iphone6",
-    //     },
-    // },
     args: {
         isOpened: false,
+        showHandleBar: true,
+        showSecondaryButton: true,
         toggleModal: fn(),
         portalId: "modal-root",
     },
@@ -97,18 +106,18 @@ export const ModalCollapsed: Story = {
             <>
                 <div
                     id="modal-root"
-                    style={{
-                        width: "360px",
-                        height: "740px",
-                        boxShadow: "10px 5px 5px black",
-                        borderRadius: "30px",
-                        backgroundColor: "white",
-                        position: "relative",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        overflow: "hidden",
-                    }}
+                    // style={{
+                    //     width: "360px",
+                    //     height: "740px",
+                    //     boxShadow: "10px 5px 5px black",
+                    //     borderRadius: "30px",
+                    //     backgroundColor: "white",
+                    //     position: "relative",
+                    //     display: "flex",
+                    //     justifyContent: "center",
+                    //     alignItems: "center",
+                    //     overflow: "hidden",
+                    // }}
                 >
                     <button
                         onClick={() => setIsOpen(true)}

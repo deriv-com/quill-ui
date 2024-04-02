@@ -10,6 +10,8 @@ interface ModalBottomProps {
     hasImage?: React.ReactNode;
     isContentLong?: boolean;
     className?: string;
+    showHandleBar?: boolean;
+    showSecondaryButton?: boolean;
     toggleModal: (isOpened: boolean) => void;
     portalId?: string;
 }
@@ -20,6 +22,8 @@ export const ModalBottom = ({
     hasImage = false,
     className,
     children,
+    showHandleBar = false,
+    showSecondaryButton = false,
     toggleModal,
     portalId,
 }: React.PropsWithChildren<ModalBottomProps>) => {
@@ -67,7 +71,9 @@ export const ModalBottom = ({
                 )}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className="quill-modal-bottom__handle-bar" />
+                {showHandleBar && (
+                    <div className="quill-modal-bottom__handle-bar" />
+                )}
                 <div
                     className={clsx("quill-modal-bottom__content-wrapper", {
                         "quill-modal-bottom__content-wrapper--has-image":
@@ -81,9 +87,11 @@ export const ModalBottom = ({
                     <button className="quill-modal-bottom__button quill-modal-bottom__button-1">
                         Label 1
                     </button>
-                    <button className="quill-modal-bottom__button quill-modal-bottom__button-2">
-                        Label 2
-                    </button>
+                    {showSecondaryButton && (
+                        <button className="quill-modal-bottom__button quill-modal-bottom__button-2">
+                            Label 2
+                        </button>
+                    )}
                 </div>
             </div>
         </div>,
