@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { TYPE } from "@utils/notification-utils";
 import NotificationBanner from ".";
 
@@ -7,6 +8,21 @@ const meta = {
     component: NotificationBanner,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
+    parameters: {
+        viewport: {
+            viewports: {
+                ...MINIMAL_VIEWPORTS,
+                desktop: {
+                    name: "desktop",
+                    styles: {
+                        width: "100%",
+                        height: "100%",
+                    },
+                },
+            },
+            defaultViewport: "desktop",
+        },
+    },
     args: {
         message: "This is a notification message",
         title: "Title",
@@ -53,5 +69,5 @@ export const NotificationBannerMobile: Story = {
     args: {
         isMobile: true,
     },
-    parameters: { viewport: { defaultViewport: "mobile2" } },
+    parameters: { viewport: { defaultViewport: "mobile1" } },
 };

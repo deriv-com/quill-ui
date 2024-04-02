@@ -11,7 +11,7 @@ export interface NotificationProps
     className?: string;
     hasCloseButton?: boolean;
     message?: React.ReactNode;
-    onClose?: () => void;
+    onClose?: React.MouseEventHandler<HTMLButtonElement>;
     status?: (typeof STATUS)[keyof typeof STATUS];
     title?: React.ReactNode;
     type?: (typeof TYPE)[keyof typeof TYPE];
