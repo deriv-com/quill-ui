@@ -1,5 +1,6 @@
 @import "@quill-bundle/typhography.scss";
 @import "@quill-bundle/color.scss";
+@import "@quill/color.semantic.scss";
 @import "@quill/spacing.scss";
 @import "@quill/border.scss";
 @import "@quill/others.scss";
@@ -38,7 +39,7 @@
         }
 
         &:active:not(:disabled) ~ .quill-checkbox__box-icon {
-            fill: var(--semantic-color-typography-default);
+            fill: var(--semantic-color-typography-prominent);
         }
 
         &:focus-visible {
