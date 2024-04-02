@@ -55,7 +55,7 @@ const meta = {
             control: { type: "radio" },
         },
         label: {
-            table: { type: { summary: "string | React.Node" } },
+            table: { type: { summary: "React.Node" } },
             description: "Label content (string or React.Node)",
             control: { type: "text" },
         },

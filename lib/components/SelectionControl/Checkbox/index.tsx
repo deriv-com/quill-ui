@@ -26,7 +26,7 @@ interface CheckboxProps
     showInfoIcon?: boolean;
     infoIconClassName?: string;
     size?: TMediumSizes;
-    label: ReactNode | string;
+    label: ReactNode;
     labelClassName?: string;
     onChange?: (
         e:
