@@ -5,6 +5,7 @@ import ActionSheet from "..";
 import { ActionSheetContextType } from "../root";
 import { Text } from "../../Typography";
 import "./mock.scss";
+import { Button } from "../../Button";
 
 type ExampleProps = ActionSheetContextType &
     ComponentProps<typeof ActionSheet.Root> &
@@ -28,7 +29,9 @@ export const ActionSheetExample = ({
     return (
         <>
             <ActionSheet.Root {...props} isOpen={open} onOpen={openHandler}>
-                <ActionSheet.Trigger>Click Here</ActionSheet.Trigger>
+                <ActionSheet.Trigger>
+                    <Button>Click Here</Button>
+                </ActionSheet.Trigger>
                 <ActionSheet.Portal>
                     <ActionSheet.Header
                         title={title}
@@ -79,7 +82,7 @@ export const ActionSheetExampleWithIconTrigger = ({
             <ActionSheet.Root {...props}>
                 <ActionSheet.Trigger
                     iconComponent={LabelPairedBarsSmBoldIcon}
-                    iconClassName="fill-solid-red-500"
+                    iconClassName="mock-action-sheet--trigger"
                 />
                 <ActionSheet.Portal>
                     <ActionSheet.Header

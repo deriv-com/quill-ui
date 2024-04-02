@@ -1,10 +1,11 @@
-import { ButtonHTMLAttributes, useContext } from "react";
+import { useContext } from "react";
 // import { Button } from "../../button";
 import { ActionSheetContext } from "../root";
 import { IconSize } from "@deriv/quill-icons";
 import { QuillIconComponent } from "../../../types";
+import { Button, ButtonProps } from "../../Button";
 
-interface ButtonTriggerProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonTriggerProps extends ButtonProps {
     iconComponent?: never;
     iconSize?: never;
     iconClassName?: never;
@@ -27,12 +28,12 @@ const Trigger = ({
     const { handleOpen } = useContext(ActionSheetContext);
     if (Icon) {
         return (
-            <button onClick={handleOpen} {...restProps}>
+            <Button onClick={handleOpen} {...restProps}>
                 <Icon
                     data-testid="dt-actionsheet-icon-button"
                     className={iconClassName}
                 />
-            </button>
+            </Button>
         );
     }
     return <button onClick={handleOpen} {...restProps} />;
