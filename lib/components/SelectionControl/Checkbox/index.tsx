@@ -113,12 +113,6 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                 ? LabelPairedCircleInfoSmRegularIcon
                 : LabelPairedCircleInfoMdRegularIcon;
 
-        const infoIcon = (
-            <InfoIcon
-                className={clsx("quill-checkbox__info-icon", infoIconClassName)}
-            />
-        );
-
         return (
             <div
                 className={clsx(
@@ -163,7 +157,14 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                         {label}
                     </Text>
                 </label>
-                {showInfoIcon && infoIcon}
+                {showInfoIcon && (
+                    <InfoIcon
+                        className={clsx(
+                            "quill-checkbox__info-icon",
+                            infoIconClassName,
+                        )}
+                    />
+                )}
             </div>
         );
     },
