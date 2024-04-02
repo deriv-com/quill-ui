@@ -10,9 +10,11 @@
 // TODO: remove unnecessary imports
 
 .notification {
-    &-banner {
-        // desktop
-        position: relative;
+    &-banner,
+    &-banner__mobile {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
         display: flex;
         align-items: center;
         width: 360px;
@@ -69,6 +71,11 @@
             display: flex;
             align-items: center;
             gap: 16px;
+        }
+        &__mobile {
+            top: 8px;
+            bottom: unset;
+            width: calc(100vw - 16px);
         }
     }
 }

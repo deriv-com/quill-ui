@@ -3,7 +3,7 @@ import { LabelPairedXmarkSmRegularIcon } from "@deriv/quill-icons";
 import clsx from "clsx";
 import { CaptionText, Text } from "../Typography";
 import { NotificationIcon } from "./notification-icon";
-import { TYPE } from "@utils/notification-utils";
+import { STATUS, TYPE } from "@utils/notification-utils";
 import "./notification.scss";
 
 export interface NotificationProps
@@ -11,7 +11,8 @@ export interface NotificationProps
     className?: string;
     hasCloseButton?: boolean;
     message?: React.ReactNode;
-    status?: "unread" | "read";
+    onClose?: () => void;
+    status?: (typeof STATUS)[keyof typeof STATUS];
     title?: React.ReactNode;
     type?: (typeof TYPE)[keyof typeof TYPE];
 }
@@ -20,6 +21,7 @@ export const Notification = ({
     className,
     hasCloseButton,
     message,
+    onClose,
     status = "unread",
     title,
     type,
@@ -34,7 +36,7 @@ export const Notification = ({
                 <div className="content">
                     <Text
                         className="title"
-                        bold={status === "unread"}
+                        bold={status === STATUS.UNREAD}
                         size="sm"
                     >
                         {title}
@@ -45,7 +47,7 @@ export const Notification = ({
                 </div>
             </div>
             {hasCloseButton && (
-                <button className={clsx("icon", "close")}>
+                <button className={clsx("icon", "close")} onClick={onClose}>
                     <LabelPairedXmarkSmRegularIcon />
                 </button>
             )}

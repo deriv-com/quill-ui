@@ -19,7 +19,10 @@ const NotificationBanner = ({
 }: NotificationBannerProps) => {
     return (
         <Notification
-            className={clsx("notification-banner", className)}
+            className={clsx(
+                `notification-banner${isMobile ? "__mobile" : ""}`,
+                className,
+            )}
             hasCloseButton={!isMobile}
             type={type}
             {...rest}
