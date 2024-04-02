@@ -14,6 +14,7 @@ export const Text = ({
     color,
     underlined = false,
     bold = false,
+    color,
     ...rest
 }: TypographyProps) => {
     const decoration = getTextDecoration(italic, underlined);
