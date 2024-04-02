@@ -162,7 +162,7 @@ export const DefaultModalBottom: Story = {
                 >
                     <ModalBottom.Title>Title</ModalBottom.Title>
                     <ModalBottom.Body>
-                        This is some amazing placeholder text.
+                        This is some amazing placeholder.
                     </ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -196,7 +196,7 @@ export const ModalBottomWithoutHandleBar: Story = {
                 >
                     <ModalBottom.Title>Title</ModalBottom.Title>
                     <ModalBottom.Body>
-                        This is some amazing placeholder text.
+                        This is some amazing placeholder.
                     </ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -229,7 +229,7 @@ export const ModalBottomWithoutSecondaryButton: Story = {
                 >
                     <ModalBottom.Title>Title</ModalBottom.Title>
                     <ModalBottom.Body>
-                        This is some amazing placeholder text.
+                        This is some amazing placeholder.
                     </ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -262,7 +262,7 @@ export const ClosingModalBottomOnPrimaryButtonClick: Story = {
                 >
                     <ModalBottom.Title>Title</ModalBottom.Title>
                     <ModalBottom.Body>
-                        This is some amazing placeholder text.
+                        This is some amazing placeholder.
                     </ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -295,7 +295,11 @@ export const ModalBottomExpanded: Story = {
                 >
                     <ModalBottom.Title>Title</ModalBottom.Title>
                     <ModalBottom.Body>
-                        This is some amazing placeholder text.
+                        This is some amazing long long long long long long long
+                        long long long long long long long long long long long
+                        long long long long long long long long long long long
+                        long long long long long long long long long long long
+                        placeholder.
                     </ModalBottom.Body>
                 </ModalBottom>
             </>

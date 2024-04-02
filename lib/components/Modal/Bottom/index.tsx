@@ -2,6 +2,7 @@ import ReactDOM from "react-dom";
 import { useState, useEffect, useRef } from "react";
 import clsx from "clsx";
 import "./modal-bottom.scss";
+import { useSwipeable } from "react-swipeable";
 import { ModalTitle } from "./modal-title";
 import { ModalBody } from "./modal-body";
 import { Button } from "../../Button";
@@ -22,6 +23,13 @@ interface ModalBottomProps {
     secondaryButtonLabel?: React.ReactNode;
 }
 
+const swipeConfig = {
+    delta: 10,
+    trackTouch: true,
+    trackMouse: true,
+    preventScrollOnSwipe: true,
+};
+
 export const ModalBottom = ({
     isOpened = false,
     hasImage = false,
@@ -38,10 +46,12 @@ export const ModalBottom = ({
     secondaryButtonLabel,
 }: React.PropsWithChildren<ModalBottomProps>) => {
     const [isVisible, setIsVisible] = useState(isOpened);
-    //TODO: add check for content length
     const [isExpanded, setIsExpanded] = useState(shouldExpand);
+    const [isSwiping, setIsSwiping] = useState(false);
 
     const animationTimerRef = useRef<ReturnType<typeof setTimeout>>();
+    const swipingTimerRef = useRef<ReturnType<typeof setTimeout>>();
+
     const modalRoot =
         (portalId && document.getElementById(portalId)) ||
         document.getElementById("modal-root") ||
@@ -56,15 +66,18 @@ export const ModalBottom = ({
     }, [shouldExpand]);
 
     useEffect(() => {
-        return () => clearTimeout(animationTimerRef.current);
+        return () => {
+            clearTimeout(animationTimerRef.current);
+            clearTimeout(swipingTimerRef.current);
+        };
     }, []);
 
     const toggleHandler = () => {
         setIsVisible(!isVisible);
-        animationTimerRef.current = setTimeout(
-            () => toggleModal(!isOpened),
-            300,
-        );
+        animationTimerRef.current = setTimeout(() => {
+            setIsExpanded(false);
+            toggleModal(!isOpened);
+        }, 300);
     };
 
     const primaryButtonFunctionHandler = () => {
@@ -72,10 +85,24 @@ export const ModalBottom = ({
         if (shouldCloseOnPrimaryButtonClick) toggleHandler();
     };
 
+    const swipeHandlers = useSwipeable({
+        onSwipedUp: () => setIsExpanded(true),
+        onSwipedDown: () => setIsExpanded(false),
+        onSwipeStart: () => setIsSwiping(true),
+        onSwiped: () =>
+            (swipingTimerRef.current = setTimeout(
+                () => setIsSwiping(false),
+                300,
+            )),
+        ...swipeConfig,
+    });
     if (!isOpened) return null;
 
     return ReactDOM.createPortal(
-        <div className="quill-modal-bottom__overlay" onClick={toggleHandler}>
+        <div
+            className="quill-modal-bottom__overlay"
+            onClick={isSwiping ? undefined : toggleHandler}
+        >
             <div
                 className={clsx(
                     "quill-modal-bottom__container",
@@ -88,7 +115,10 @@ export const ModalBottom = ({
                 onClick={(e) => e.stopPropagation()}
             >
                 {showHandleBar && (
-                    <div className="quill-modal-bottom__handle-bar" />
+                    <div
+                        className="quill-modal-bottom__handle-bar"
+                        {...swipeHandlers}
+                    />
                 )}
                 <div
                     className={clsx("quill-modal-bottom__content-wrapper", {

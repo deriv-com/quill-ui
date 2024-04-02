@@ -7,8 +7,7 @@
 
 .quill-modal-bottom {
     &__overlay {
-        //TODO: check, if it will work in IOS
-        // position: fixed;
+        //TODO: check, if position: fixed works in IOS
         position: fixed;
         left: 0;
         right: 0;
@@ -26,6 +25,7 @@
         width: 100%;
         // TODO: add overflow
         max-height: 90%;
+        min-height: 289px;
         display: flex;
         align-items: stretch;
         justify-content: space-evenly;
@@ -36,10 +36,8 @@
         opacity: var(--core-opacity-50);
         transform: translateY(100%);
         pointer-events: none;
-        transition:
-            transform var(--core-motion-duration-300)
-                var(--motion-easing-linear),
-            opacity var(--core-motion-duration-300) var(--motion-easing-linear);
+        transition: all var(--core-motion-duration-300)
+            var(--motion-easing-linear);
 
         &--visible {
             opacity: var(--core-opacity-1300);
@@ -48,7 +46,8 @@
         }
 
         &--expanded {
-            height: 90%;
+            min-height: 90%;
+            max-height: 90%;
         }
     }
 
@@ -61,6 +60,18 @@
         height: var(--core-size-200);
         background-color: var(--core-color-opacity-black-300);
         border-radius: var(--core-borderRadius-100);
+
+        // Pseudo element for increasing swipeable area
+        &:before {
+            content: "";
+            display: block;
+            height: var(--core-size-1500);
+            width: 100vw;
+            // Half of the screen and half of the handle-bar width
+            left: calc((-100vw / 2) + (var(--core-size-2400) / 2));
+            top: calc(var(--core-size-50) - var(--semantic-spacing-general-sm));
+            position: absolute;
+        }
     }
 
     &__content {
