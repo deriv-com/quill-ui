@@ -1,6 +1,6 @@
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import Close from ".";
+import Close from "..";
 
 describe("<ActionSheet.Close/>", () => {
     it("should render correctly with children", () => {

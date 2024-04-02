@@ -15,6 +15,4 @@ const Close = ({ ...restProps }: CloseProps) => {
     );
 };
 
-Close.displayName = "Close";
-
 export default Close;

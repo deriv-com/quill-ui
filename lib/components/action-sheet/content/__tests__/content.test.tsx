@@ -1,5 +1,5 @@
 import { screen, render } from "@testing-library/react";
-import ActionSheet from "..";
+import ActionSheet from "../..";
 
 describe("<ActionSheet.Content/>", () => {
     it("should render correctly with className and children", () => {

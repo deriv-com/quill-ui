@@ -59,6 +59,4 @@ const Portal = ({ children, ...restProps }: PortalProps) => {
     );
 };
 
-Portal.displayName = "Portal";
-
 export default Portal;

@@ -1,9 +1,13 @@
-import { ComponentPropsWithoutRef } from 'react'
+import clsx from "clsx";
+import { ComponentPropsWithoutRef } from "react";
+import "./content.scss";
 
-type ContentProps = ComponentPropsWithoutRef<'div'>
+type ContentProps = ComponentPropsWithoutRef<"div">;
 
-const Content = (props: ContentProps) => {
-  return <div {...props} />
-}
+const Content = ({ className, ...props }: ContentProps) => {
+    return (
+        <div className={clsx("action-sheet--content", className)} {...props} />
+    );
+};
 
-export default Content
+export default Content;

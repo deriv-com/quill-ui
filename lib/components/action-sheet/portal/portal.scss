@@ -1,4 +1,9 @@
-@import "../../../styles/quill.scss";
+@import "@quill/spacing.scss";
+@import "@quill/elevation.scss";
+@import "@quill/motion.scss";
+@import "@quill/color.opacity.scss";
+@import "@quill/color.scss";
+@import "@quill/border.scss";
 
 .quill-action-sheet {
     &--portal {
@@ -45,9 +50,8 @@
         border-top-left-radius: var(--semantic-borderRadius-lg);
         border-top-right-radius: var(--semantic-borderRadius-lg);
         background-color: var(--semantic-color-background-dialog);
-        padding-left: var(--semantic-spacing-general-md);
-        padding-right: var(--semantic-spacing-general-md);
-        padding-bottom: var(--semantic-spacing-general-md);
+        padding-left: var(--semantic-spacing-general-lg);
+        padding-right: var(--semantic-spacing-general-lg);
         transition-property: all;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;

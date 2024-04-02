@@ -1,7 +1,7 @@
 import { screen, render } from "@testing-library/react";
-import ActionSheet from "..";
+import ActionSheet from "../..";
 import userEvent from "@testing-library/user-event";
-import { FooterAlignment } from "../types";
+import { FooterAlignment } from "../../types";
 
 describe("<ActionSheet.Footer/>", () => {
     it("should not render footer if no action passed", () => {

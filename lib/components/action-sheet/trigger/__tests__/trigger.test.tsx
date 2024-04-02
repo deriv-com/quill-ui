@@ -1,7 +1,7 @@
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { LabelPairedAndroidSmIcon } from "@deriv/quill-icons/LabelPaired";
-import Trigger from ".";
+import Trigger from "..";
 
 describe("<ActionSheet.Trigger/>", () => {
     it("should render correctly with children", () => {

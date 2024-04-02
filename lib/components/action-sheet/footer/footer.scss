@@ -1,7 +1,10 @@
+@import "@quill/spacing.scss";
+
 .quill-action-sheet--footer {
     display: flex;
     gap: var(--semantic-spacing-gap-md);
-    padding-top: var(--semantic-spacing-general-md);
+    padding-top: var(--semantic-spacing-general-lg);
+    padding-bottom: var(--semantic-spacing-general-lg);
     margin-top: auto;
 
     &__variant {

@@ -5,9 +5,8 @@ import {
     RenderOptions,
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { RootPosition } from "../types";
-import ActionSheet from "..";
-import { RootProps } from "../types";
+import { RootPosition, RootProps } from "../../types";
+import ActionSheet from "../..";
 
 const render = (
     ui: React.ReactElement,

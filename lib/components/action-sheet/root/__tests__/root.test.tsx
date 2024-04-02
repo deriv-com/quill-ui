@@ -1,5 +1,5 @@
 import { screen, render } from "@testing-library/react";
-import ActionSheet from "..";
+import ActionSheet from "../..";
 
 describe("<ActionSheet.Root/>", () => {
     it("should render correctly with default props", async () => {

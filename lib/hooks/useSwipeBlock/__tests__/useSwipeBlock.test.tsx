@@ -1,5 +1,5 @@
 import { renderHook, act } from "@testing-library/react";
-import { useSwipeBlock } from ".";
+import { useSwipeBlock } from "..";
 
 describe("useSwipeBlock", () => {
     it('should set height to "100%" when isLg is true', () => {
