@@ -93,7 +93,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             if (e.key === "Enter" || e.key === " ") onChangeHandler(e);
         };
 
-        const unIndeterminateIcon = isChecked ? (
+        const determinateIcon = isChecked ? (
             <StandaloneSquareCheckFillIcon
                 iconSize="sm"
                 className="quill-checkbox__box-icon"
@@ -142,7 +142,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                             className="quill-checkbox__box-icon"
                         />
                     ) : (
-                        unIndeterminateIcon
+                        determinateIcon
                     )}
                 </div>
                 <label htmlFor={rest.id ?? name}>
