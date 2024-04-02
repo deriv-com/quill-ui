@@ -8,11 +8,10 @@
 
 
 .dropdown-menu {
-    &__box {
-        padding-bottom: var(--core-spacing-200);
+    &__box{
+        padding-bottom:  var(--core-spacing-200);
     }
-
-    &__container {
+    &__container{
         background-color: var(--semantic-color-background-primary-container);
         border-radius: var(--core-borderRadius-400);
         box-shadow: var(--semantic-elevation-shadow-card-hover);
@@ -24,32 +23,28 @@
         width: fit-content;
         overflow-y: scroll;
     }
-
-    &__item {
-        cursor: pointer;
+    &__item{
         display: flex;
         padding: var(--core-spacing-50) var(--core-spacing-600);
         align-items: center;
         gap: var(--core-spacing-400);
         align-self: stretch;
         min-height: var(--core-size-2400);
-
+        
         border-radius: var(--core-borderRadius-200);
-
-        &:hover {
+        &:hover{
+            background-color: var(--semantic-color-background-primary-base);
+            cursor: pointer ;
+      
+        }
+        &--selected{
             background-color: var(--semantic-color-background-primary-base);
         }
-
-        &--selected {
+        &--active{
             background-color: var(--semantic-color-background-primary-base);
-        }
-
-        &--active {
-            background-color: var(--semantic-color-background-primary-base);
-
+        
         }
     }
-
     &__transition {
         &--enter {
             transform-origin: top;
