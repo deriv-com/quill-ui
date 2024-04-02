@@ -1,10 +1,18 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import SegmentedControlSingleChoice from "..";
 
 describe("SegmentedControlSingleChoice", () => {
     const label = "Label";
     const icon = <div>IconComponent</div>;
 
+    it("should render segments with correct labels", () => {
+        render(
+            <SegmentedControlSingleChoice
+                options={new Array(5).fill({ label })}
+            />,
+        );
+        expect(screen.getAllByRole("button", { name: label })).toHaveLength(5);
+    });
     it("should render segments with icons only", () => {
         const { container } = render(
             <SegmentedControlSingleChoice

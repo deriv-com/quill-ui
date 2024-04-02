@@ -65,6 +65,7 @@ export const Segment = forwardRef<HTMLButtonElement, SegmentProps>(
                     className,
                 )}
                 disabled={isDisabled}
+                onMouseDown={(e) => e.preventDefault()}
                 onClick={handleClick}
                 onKeyDown={handleKeyDown}
                 onFocus={() => setFocused(true)}
