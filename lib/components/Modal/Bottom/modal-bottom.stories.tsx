@@ -34,7 +34,7 @@ const meta = {
         children: {
             table: { type: { summary: "ReactNode" } },
             description:
-                "Modal's content. Can be wrapped with the `<Modal.Title/>` and `<Modal.Body/>` components in order to organize the content inside the modal.",
+                "Modal's content. Can be wrapped with the `<ModalBottom.Title/>` and `<ModalBottom.Body/>` components in order to organize the content inside the modal.",
             control: { type: null },
         },
         isOpened: {
@@ -137,6 +137,9 @@ const StoryButton = ({ onClick }: TStoryButton) => {
     );
 };
 
+const bodyPlaceHolderText = "This is some amazing placeholder.";
+const titlePlaceHolderText = "Title";
+
 export const DefaultModalBottom: Story = {
     name: "Default Modal Bottom",
     args: {
@@ -160,10 +163,10 @@ export const DefaultModalBottom: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Title>Title</ModalBottom.Title>
-                    <ModalBottom.Body>
-                        This is some amazing placeholder.
-                    </ModalBottom.Body>
+                    <ModalBottom.Title>
+                        {titlePlaceHolderText}
+                    </ModalBottom.Title>
+                    <ModalBottom.Body>{bodyPlaceHolderText}</ModalBottom.Body>
                 </ModalBottom>
             </>
         );
@@ -194,10 +197,10 @@ export const ModalBottomWithoutHandleBar: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Title>Title</ModalBottom.Title>
-                    <ModalBottom.Body>
-                        This is some amazing placeholder.
-                    </ModalBottom.Body>
+                    <ModalBottom.Title>
+                        {titlePlaceHolderText}
+                    </ModalBottom.Title>
+                    <ModalBottom.Body>{bodyPlaceHolderText}</ModalBottom.Body>
                 </ModalBottom>
             </>
         );
@@ -227,10 +230,10 @@ export const ModalBottomWithoutSecondaryButton: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Title>Title</ModalBottom.Title>
-                    <ModalBottom.Body>
-                        This is some amazing placeholder.
-                    </ModalBottom.Body>
+                    <ModalBottom.Title>
+                        {titlePlaceHolderText}
+                    </ModalBottom.Title>
+                    <ModalBottom.Body>{bodyPlaceHolderText}</ModalBottom.Body>
                 </ModalBottom>
             </>
         );
@@ -260,10 +263,10 @@ export const ClosingModalBottomOnPrimaryButtonClick: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Title>Title</ModalBottom.Title>
-                    <ModalBottom.Body>
-                        This is some amazing placeholder.
-                    </ModalBottom.Body>
+                    <ModalBottom.Title>
+                        {titlePlaceHolderText}
+                    </ModalBottom.Title>
+                    <ModalBottom.Body>{bodyPlaceHolderText}</ModalBottom.Body>
                 </ModalBottom>
             </>
         );
@@ -293,13 +296,49 @@ export const ModalBottomExpanded: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Title>Title</ModalBottom.Title>
+                    <ModalBottom.Title>
+                        {titlePlaceHolderText}
+                    </ModalBottom.Title>
                     <ModalBottom.Body>
-                        This is some amazing long long long long long long long
-                        long long long long long long long long long long long
-                        long long long long long long long long long long long
-                        long long long long long long long long long long long
-                        placeholder.
+                        Lorem ipsum dolor sit amet consectetur. Venenatis
+                        malesuada nibh sed ornare id suspendisse sed. Accumsan
+                        leo ultrices risus feugiat tempor consectetur
+                        pellentesque quis nulla. Laoreet libero donec vel
+                        sagittis augue arcu. Consectetur neque orci neque urna
+                        tortor accumsan feugiat. Nulla amet malesuada vitae
+                        facilisis malesuada egestas tristique. Odio nam nulla
+                        sollicitudin magna amet sed a tortor sapien. Porttitor
+                        et sed gravida egestas vel. At at eget in lacus
+                        vulputate elementum elit. Senectus elementum aliquet
+                        massa auctor sollicitudin lacus lacus pellentesque est.
+                        Et sed odio amet nisl. Nunc viverra gravida tristique in
+                        in iaculis eget lacus pellentesque. Sit volutpat lectus
+                        eget condimentum tempor pretium in. Ac tortor euismod
+                        senectus tristique. Sagittis nullam mattis ante nisl
+                        venenatis diam hac fames risus. Neque a dui dui pharetra
+                        arcu tincidunt ornare in. Neque nibh enim nunc vitae non
+                        ultricies. Suscipit cursus nullam donec sociis interdum
+                        donec odio feugiat. Eu congue malesuada sed
+                        pellentesque. Etiam condimentum adipiscing ut elit morbi
+                        blandit at. At enim mauris diam eget facilisis mauris
+                        etiam ac lectus. Massa nulla morbi eleifend a. Donec
+                        mauris ornare varius nullam morbi ornare in iaculis. Sed
+                        et massa auctor non velit leo sed elementum curabitur.
+                        Diam cursus montes imperdiet diam posuere nunc cras.
+                        Lobortis dolor malesuada laoreet et. Feugiat nunc cras
+                        urna feugiat elit adipiscing sodales eros. Ornare
+                        feugiat nibh elementum pulvinar euismod risus aliquam
+                        feugiat. Nulla varius velit enim curabitur orci. Gravida
+                        quis gravida ut donec arcu tincidunt dictumst. Metus
+                        augue duis odio ante libero mi interdum. Commodo tortor
+                        eget etiam id vulputate lorem. Faucibus velit arcu nibh
+                        elementum eget risus auctor quis donec. Adipiscing
+                        pellentesque massa elit tellus massa pellentesque porta
+                        ultrices. Ultricies ac dictumst sed et amet fringilla
+                        bibendum. Cursus quam sed in cursus diam a nulla elit.
+                        Et convallis a tortor sagittis ac sagittis sed id. Erat
+                        neque viverra consectetur maecenas quisque arcu sagittis
+                        diam. Quis ut nam molestie eu amet orci pellentesque.
                     </ModalBottom.Body>
                 </ModalBottom>
             </>

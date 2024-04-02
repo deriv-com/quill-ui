@@ -23,9 +23,9 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        // TODO: add overflow
         max-height: 90%;
         min-height: 289px;
+        overflow: hidden;
         display: flex;
         align-items: stretch;
         justify-content: space-evenly;
@@ -79,6 +79,7 @@
             padding: 0 var(--semantic-spacing-general-lg)
                 var(--semantic-spacing-general-lg);
             flex-grow: 1;
+            overflow-y: scroll;
 
             // &--has-image {
             //     TODO
