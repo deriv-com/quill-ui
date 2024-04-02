@@ -4,28 +4,31 @@ import { useEffect, useState } from "react";
 import { ModalBottom } from "./index";
 
 const meta = {
-    title: "Components/ModalBottom",
+    title: "Components/Modal/Bottom",
     component: ModalBottom,
+    tags: ["autodocs"],
     parameters: {
         layout: "centered",
         viewport: {
-            defaultViewport: "mobile2",
+            defaultViewport: "mobile1",
+        },
+        docs: {
+            height: "200px",
+            width: "200px",
         },
     },
-    tags: ["autodocs"],
     args: {
-        children: (
-            <div>
-                <p>Hi</p>
-                <button>Close Modal</button>
-            </div>
-        ),
+        children: <div>This is some amazing placeholder text.</div>,
         hasImage: false,
         isOpened: false,
         showHandleBar: true,
         showSecondaryButton: true,
+        shouldCloseOnPrimaryButtonClick: false,
         isContentLong: false,
         toggleModal: fn(),
+        primaryButtonLabel: "Primary Button Label",
+        primaryButtonFunction: fn(),
+        secondaryButtonLabel: "Secondary Button Label",
     },
     argTypes: {
         children: {
@@ -40,6 +43,7 @@ const meta = {
             description: "Controls the visibility of the modal",
             control: { type: "boolean" },
         },
+        // TODO: expand the description of this prop
         hasImage: {
             table: { type: { summary: "boolean | undefined" } },
             options: ["true", "false"],
@@ -70,6 +74,13 @@ const meta = {
             description: "Controls the visibility of the secondary button",
             control: { type: "boolean" },
         },
+        shouldCloseOnPrimaryButtonClick: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            description:
+                "Flag for controlling modal behavior. If it's true, then the modal will be closed after user clicks on primary button.",
+            control: { type: "boolean" },
+        },
         toggleModal: {
             table: { type: { summary: "(isOpened: boolean) => void" } },
             description:
@@ -79,6 +90,22 @@ const meta = {
         portalId: {
             table: { type: { summary: "string | undefined" } },
             description: "ID of the modal container",
+            control: { type: "string" },
+        },
+        primaryButtonLabel: {
+            table: { type: { summary: "ReactNode | undefined" } },
+            description: "ILabel for the primary button",
+            control: { type: "string" },
+        },
+        primaryButtonFunction: {
+            table: { type: { summary: "() => void | undefined" } },
+            description:
+                "Function which will be called on clicking on primary button",
+            control: { type: null },
+        },
+        secondaryButtonLabel: {
+            table: { type: { summary: "ReactNode | undefined" } },
+            description: "ILabel for the secondary button",
             control: { type: "string" },
         },
     },
@@ -95,6 +122,8 @@ export const ModalCollapsed: Story = {
         showSecondaryButton: true,
         toggleModal: fn(),
         portalId: "modal-root",
+        primaryButtonLabel: "Primary Button Label",
+        secondaryButtonLabel: "Secondary Button Label",
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);
@@ -104,35 +133,19 @@ export const ModalCollapsed: Story = {
         }, [args.isOpened]);
         return (
             <>
-                <div
-                    id="modal-root"
-                    // style={{
-                    //     width: "360px",
-                    //     height: "740px",
-                    //     boxShadow: "10px 5px 5px black",
-                    //     borderRadius: "30px",
-                    //     backgroundColor: "white",
-                    //     position: "relative",
-                    //     display: "flex",
-                    //     justifyContent: "center",
-                    //     alignItems: "center",
-                    //     overflow: "hidden",
-                    // }}
+                <button
+                    onClick={() => setIsOpen(true)}
+                    style={{
+                        margin: "20px auto",
+                        padding: "8px 10px",
+                        backgroundColor: "red",
+                        borderRadius: "8px",
+                        cursor: "pointer",
+                        color: "white",
+                    }}
                 >
-                    <button
-                        onClick={() => setIsOpen(true)}
-                        style={{
-                            margin: "20px auto",
-                            padding: "8px 10px",
-                            backgroundColor: "red",
-                            borderRadius: "8px",
-                            cursor: "pointer",
-                            color: "white",
-                        }}
-                    >
-                        Open Modal
-                    </button>
-                </div>
+                    Open Modal
+                </button>
                 <ModalBottom
                     {...args}
                     isOpened={isOpen}

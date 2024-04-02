@@ -4,16 +4,22 @@ import clsx from "clsx";
 import "./modal-bottom.scss";
 import { ModalTitle } from "./modal-title";
 import { ModalBody } from "./modal-body";
+import { Button } from "../../Button";
 
 interface ModalBottomProps {
     isOpened?: boolean;
-    hasImage?: React.ReactNode;
+    //TODO: refactor image position and style
+    hasImage?: boolean;
     isContentLong?: boolean;
     className?: string;
     showHandleBar?: boolean;
     showSecondaryButton?: boolean;
+    shouldCloseOnPrimaryButtonClick?: boolean;
     toggleModal: (isOpened: boolean) => void;
     portalId?: string;
+    primaryButtonLabel?: React.ReactNode;
+    primaryButtonFunction?: () => void;
+    secondaryButtonLabel?: React.ReactNode;
 }
 
 export const ModalBottom = ({
@@ -24,10 +30,15 @@ export const ModalBottom = ({
     children,
     showHandleBar = false,
     showSecondaryButton = false,
+    shouldCloseOnPrimaryButtonClick = false,
     toggleModal,
     portalId,
+    primaryButtonLabel,
+    primaryButtonFunction,
+    secondaryButtonLabel,
 }: React.PropsWithChildren<ModalBottomProps>) => {
     const [isVisible, setIsVisible] = useState(isOpened);
+    //TODO: add check for content length
     const [isExpanded, setIsExpanded] = useState(isContentLong);
 
     const animationTimerRef = useRef<ReturnType<typeof setTimeout>>();
@@ -56,6 +67,11 @@ export const ModalBottom = ({
         );
     };
 
+    const primaryButtonFunctionHandler = () => {
+        primaryButtonFunction?.();
+        if (shouldCloseOnPrimaryButtonClick) toggleHandler();
+    };
+
     if (!isOpened) return null;
 
     return ReactDOM.createPortal(
@@ -82,15 +98,24 @@ export const ModalBottom = ({
                 >
                     {children}
                 </div>
-                {/* TODO: refactor when component button will be merged */}
                 <div className="quill-modal-bottom__button-wrapper">
-                    <button className="quill-modal-bottom__button quill-modal-bottom__button-1">
-                        Label 1
-                    </button>
+                    <Button
+                        color="black"
+                        fullWidth
+                        size="lg"
+                        label={primaryButtonLabel}
+                        onClick={primaryButtonFunctionHandler}
+                    />
                     {showSecondaryButton && (
-                        <button className="quill-modal-bottom__button quill-modal-bottom__button-2">
-                            Label 2
-                        </button>
+                        <Button
+                            color="black"
+                            fullWidth
+                            size="lg"
+                            label={secondaryButtonLabel}
+                            variant="secondary"
+                            className="quill-modal-bottom__button"
+                            onClick={toggleHandler}
+                        />
                     )}
                 </div>
             </div>
