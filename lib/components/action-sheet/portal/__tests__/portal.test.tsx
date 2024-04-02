@@ -49,7 +49,7 @@ describe("<ActionSheet.Portal/>", () => {
             <>
                 <ActionSheet.Trigger>Trigger</ActionSheet.Trigger>
                 <ActionSheet.Portal>
-                    <ActionSheet.Close>Close</ActionSheet.Close>
+                    <ActionSheet.Header closeIcon="Close" />
                 </ActionSheet.Portal>
             </>,
         );
