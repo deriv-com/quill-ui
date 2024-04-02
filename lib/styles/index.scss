@@ -68,7 +68,7 @@
             fill: var(--core-color-solid-slate-50);
             border: none;
             &:hover:not(:disabled){
-                background-color: var(--core-color-solid-slate-700);
+                background-color: var(--core-color-opacity-black-700);
             }
             &:active:not(:disabled){
                 background-color: var(--core-color-opacity-black-800);
