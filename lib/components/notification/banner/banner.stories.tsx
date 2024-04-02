@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { TYPE } from "@utils/notification-utils";
 import NotificationBanner from ".";
 
 const meta = {
@@ -26,12 +27,12 @@ const meta = {
             },
         },
         type: {
-            options: ["info", "failure", "success", "warning"],
+            options: [TYPE.INFO, TYPE.ERROR, TYPE.SUCCESS, TYPE.WARNING],
             control: { type: "radio" },
             description: "Optional.",
             table: {
                 type: {
-                    summary: "info | failure | success | warning | undefined",
+                    summary: "info | error | success | warning | undefined",
                 },
             },
         },

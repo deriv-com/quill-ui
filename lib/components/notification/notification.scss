@@ -1,12 +1,12 @@
-@import "../../styles/quill/border.scss";
-@import "../../styles/quill/color.scss";
-@import "../../styles/quill/color.opacity.scss";
-@import "../../styles/quill/color.semantic.scss";
-@import "../../styles/quill/motion.scss";
-@import "../../styles/quill/opacity.scss";
-@import "../../styles/quill/others.scss";
-@import "../../styles/quill/spacing.scss";
-@import "../../styles/quill/static.scss";
+@import "@quill/border.scss";
+@import "@quill/color.scss";
+@import "@quill/color.opacity.scss";
+@import "@quill/color.semantic.scss";
+@import "@quill/motion.scss";
+@import "@quill/opacity.scss";
+@import "@quill/others.scss";
+@import "@quill/spacing.scss";
+@import "@quill/static.scss";
 // TODO: remove unnecessary imports
 
 .notification {
@@ -15,8 +15,8 @@
         position: relative;
         display: flex;
         align-items: center;
-        width: fit-content;
-        min-width: 360px;
+        width: 360px;
+        height: fit-content;
         min-height: 72px;
         padding: 16px 32px 16px 16px;
         border-radius: 16px;
@@ -33,6 +33,7 @@
                 transparent
             );
         background-color: var(--semantic-color-background-dialog);
+        cursor: pointer;
 
         .icon {
             display: flex;
@@ -41,11 +42,12 @@
             width: 32px;
             height: 32px;
             border-radius: var(--semantic-borderRadius-pill);
+            cursor: pointer;
 
             &.info {
                 background-color: var(--core-color-opacity-blue-100);
             }
-            &.failure {
+            &.error {
                 background-color: var(--core-color-opacity-red-100);
             }
             &.success {

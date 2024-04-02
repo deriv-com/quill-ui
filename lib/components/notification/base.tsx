@@ -1,32 +1,35 @@
 import React from "react";
-import "./notification.scss";
-import { CaptionText, Text } from "../Typography";
-import { NotificationIcon } from "./notification-icon";
 import { LabelPairedXmarkSmRegularIcon } from "@deriv/quill-icons";
 import clsx from "clsx";
+import { CaptionText, Text } from "../Typography";
+import { NotificationIcon } from "./notification-icon";
+import { TYPE } from "@utils/notification-utils";
+import "./notification.scss";
 
-export interface NotificationProps {
+export interface NotificationProps
+    extends Omit<React.HTMLAttributes<HTMLAnchorElement>, "title"> {
     className?: string;
     hasCloseButton?: boolean;
-    icon: "info" | "failure" | "success" | "warning";
     message?: React.ReactNode;
-    title?: React.ReactNode;
     status?: "unread" | "read";
+    title?: React.ReactNode;
+    type?: (typeof TYPE)[keyof typeof TYPE];
 }
 
 export const Notification = ({
     className,
     hasCloseButton,
-    icon,
     message,
-    title,
     status = "unread",
+    title,
+    type,
+    ...rest
 }: NotificationProps) => {
     return (
-        <div className={className}>
+        <a className={className} {...rest}>
             <div className="body">
-                <div className={clsx("icon", icon)}>
-                    <NotificationIcon icon={icon} />
+                <div className={clsx("icon", type)}>
+                    <NotificationIcon type={type} />
                 </div>
                 <div className="content">
                     <Text
@@ -46,6 +49,6 @@ export const Notification = ({
                     <LabelPairedXmarkSmRegularIcon />
                 </button>
             )}
-        </div>
+        </a>
     );
 };
