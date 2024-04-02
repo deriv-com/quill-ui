@@ -10,7 +10,7 @@ interface ModalBottomProps {
     isOpened?: boolean;
     //TODO: refactor image position and style
     hasImage?: boolean;
-    isContentLong?: boolean;
+    shouldExpand?: boolean;
     className?: string;
     showHandleBar?: boolean;
     showSecondaryButton?: boolean;
@@ -24,13 +24,13 @@ interface ModalBottomProps {
 
 export const ModalBottom = ({
     isOpened = false,
-    isContentLong = false,
     hasImage = false,
     className,
     children,
-    showHandleBar = false,
-    showSecondaryButton = false,
+    showHandleBar = true,
+    showSecondaryButton = true,
     shouldCloseOnPrimaryButtonClick = false,
+    shouldExpand = false,
     toggleModal,
     portalId,
     primaryButtonLabel,
@@ -39,7 +39,7 @@ export const ModalBottom = ({
 }: React.PropsWithChildren<ModalBottomProps>) => {
     const [isVisible, setIsVisible] = useState(isOpened);
     //TODO: add check for content length
-    const [isExpanded, setIsExpanded] = useState(isContentLong);
+    const [isExpanded, setIsExpanded] = useState(shouldExpand);
 
     const animationTimerRef = useRef<ReturnType<typeof setTimeout>>();
     const modalRoot =
@@ -52,8 +52,8 @@ export const ModalBottom = ({
     }, [isOpened]);
 
     useEffect(() => {
-        setIsExpanded(isContentLong);
-    }, [isContentLong]);
+        setIsExpanded(shouldExpand);
+    }, [shouldExpand]);
 
     useEffect(() => {
         return () => clearTimeout(animationTimerRef.current);
