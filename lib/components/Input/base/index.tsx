@@ -1,20 +1,13 @@
-import { QuillSvgProps } from "@deriv/quill-icons";
 import clsx from "clsx";
-import {
-    ForwardRefExoticComponent,
-    HTMLInputTypeAttribute,
-    InputHTMLAttributes,
-    forwardRef,
-    useState,
-} from "react";
+import { InputHTMLAttributes, ReactNode, forwardRef, useState } from "react";
 import "./base.scss";
 import React from "react";
 import { TMediumSizes } from "../../../types";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-    type?: HTMLInputTypeAttribute;
-    icon?: ForwardRefExoticComponent<Omit<QuillSvgProps, "ref">>;
-    statusIcon?: ForwardRefExoticComponent<Omit<QuillSvgProps, "ref">>;
+    type: "text";
+    icon?: ReactNode;
+    statusIcon?: ReactNode;
     inputSize?: TMediumSizes;
     status?: "neutral" | "success" | "error";
     disabled?: boolean;
@@ -25,11 +18,6 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     value?: string;
 }
-
-const IconSize = {
-    sm: { width: 24, height: 24 },
-    md: { width: 24, height: 24 },
-};
 
 const statusIconColors = {
     neutral: "status-icon--neutral",
@@ -72,11 +60,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         `quill-input__wrapper__status--${status}`,
                     )}
                 >
-                    {Icon && (
-                        <div>
-                            <Icon {...IconSize[inputSize]} />
-                        </div>
-                    )}
+                    {Icon && <span className="icon_wrapper">{Icon}</span>}
                     <input
                         {...rest}
                         type={type}
@@ -98,18 +82,21 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             className={clsx(
                                 "label",
                                 `label__status--${status}`,
+                                Icon && `label__hasIcon`,
                             )}
                         >
                             {label}
                         </label>
                     )}
                     {StatusIcon && (
-                        <div>
-                            <StatusIcon
-                                {...IconSize[inputSize]}
-                                className={statusIconColors[status]}
-                            />
-                        </div>
+                        <span
+                            className={clsx(
+                                "icon_wrapper",
+                                statusIconColors[status],
+                            )}
+                        >
+                            {StatusIcon}
+                        </span>
                     )}
                 </div>
                 <div className="message__container">

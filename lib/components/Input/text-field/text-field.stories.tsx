@@ -2,6 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import TextField from ".";
 import {
     StandaloneCircleCheckBoldIcon,
+    StandaloneCircleUserRegularIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons";
 
@@ -13,14 +14,12 @@ const meta = {
     },
     tags: ["autodocs"],
     args: {
+        type: "text",
         inputSize: "md",
         status: "neutral",
         disabled: false,
         variant: "fill",
         textAlignment: "left",
-        label: "",
-        leftStatusMessage: "",
-        rightStatusMessage: "",
     },
     argTypes: {
         inputSize: {
@@ -103,12 +102,20 @@ export const TextFieldWithLabel: Story = {
     },
 };
 
+export const TextFieldWithIconAndLabel: Story = {
+    args: {
+        placeholder: "Placeholder",
+        label: "Label",
+        icon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
+    },
+};
+
 export const SuccessStatusIconTextField: Story = {
     args: {
         placeholder: "Placeholder",
         variant: "outline",
         status: "success",
-        statusIcon: StandaloneCircleCheckBoldIcon,
+        statusIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     },
     argTypes: {
         status: {
@@ -145,7 +152,7 @@ export const SuccessMessageTextFieldWithIcons: Story = {
         status: "success",
         leftStatusMessage: "Status message goes here",
         rightStatusMessage: "0/0",
-        statusIcon: StandaloneCircleCheckBoldIcon,
+        statusIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     },
 };
 export const ErrorMessageTextFieldWithIcons: Story = {
@@ -155,6 +162,6 @@ export const ErrorMessageTextFieldWithIcons: Story = {
         status: "error",
         leftStatusMessage: "Status message goes here",
         rightStatusMessage: "0/0",
-        statusIcon: StandaloneTriangleExclamationBoldIcon,
+        statusIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
     },
 };
