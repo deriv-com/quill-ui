@@ -12,7 +12,7 @@ export const ModalBody = ({
     <Text
         size="md"
         as="div"
-        className={clsx("quill-modal-bottom__body", className)}
+        className={clsx("quill-modal-bottom__content-body", className)}
     >
         {children}
     </Text>

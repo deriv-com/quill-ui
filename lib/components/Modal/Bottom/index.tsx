@@ -3,14 +3,13 @@ import { useState, useEffect, useRef } from "react";
 import clsx from "clsx";
 import "./modal-bottom.scss";
 import { useSwipeable } from "react-swipeable";
+import { ModalImage } from "./modal-image";
 import { ModalTitle } from "./modal-title";
 import { ModalBody } from "./modal-body";
 import { Button } from "../../Button";
 
 interface ModalBottomProps {
     isOpened?: boolean;
-    //TODO: refactor image position and style
-    hasImage?: boolean;
     className?: string;
     showHandleBar?: boolean;
     showSecondaryButton?: boolean;
@@ -33,7 +32,6 @@ const maxExpandedHeight = 85;
 
 export const ModalBottom = ({
     isOpened = false,
-    hasImage = false,
     className,
     children,
     showHandleBar = true,
@@ -128,12 +126,7 @@ export const ModalBottom = ({
                         {...swipeHandlers}
                     />
                 )}
-                <div
-                    className={clsx("quill-modal-bottom__content-wrapper", {
-                        "quill-modal-bottom__content-wrapper--has-image":
-                            !!hasImage,
-                    })}
-                >
+                <div className="quill-modal-bottom__content-wrapper">
                     {children}
                 </div>
                 <div className="quill-modal-bottom__button-wrapper">
@@ -164,3 +157,4 @@ export const ModalBottom = ({
 
 ModalBottom.Title = ModalTitle;
 ModalBottom.Body = ModalBody;
+ModalBottom.Image = ModalImage;

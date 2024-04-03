@@ -4,10 +4,10 @@
 @import "@quill/spacing.scss";
 @import "@quill/size.scss";
 @import "@quill/opacity.scss";
+@import "@quill/static.scss";
 
 .quill-modal-bottom {
     &__overlay {
-        //TODO: check, if position: fixed works in IOS
         position: fixed;
         left: 0;
         right: 0;
@@ -24,7 +24,7 @@
         bottom: 0;
         width: 100%;
         max-height: 90%;
-        min-height: 289px;
+        min-height: var(--temp-static-spacing-289);
         overflow: hidden;
         display: flex;
         align-items: stretch;
@@ -76,23 +76,30 @@
 
     &__content {
         &-wrapper {
-            padding: 0 var(--semantic-spacing-general-lg)
-                var(--semantic-spacing-general-lg);
             flex-grow: 1;
             overflow-y: scroll;
+        }
 
-            // &--has-image {
-            //     TODO
-            // }
+        &-image {
+            width: 100%;
+            min-height: var(--temp-static-spacing-144);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & + .quill-modal-bottom__content-title {
+                margin-top: var(--semantic-spacing-general-lg);
+            }
         }
 
         &-title {
-            margin-top: var(--core-spacing-2200);
-            margin-bottom: var(--semantic-spacing-general-lg);
+            margin: var(--core-spacing-2200) var(--semantic-spacing-general-lg)
+                0;
+        }
 
-            &--has-image {
-                margin-top: var(--semantic-spacing-general-lg);
-            }
+        &-body {
+            margin: var(--semantic-spacing-general-lg)
+                var(--semantic-spacing-general-lg);
         }
     }
 
@@ -106,7 +113,18 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            gap: 8px;
+            gap: var(--semantic-spacing-gap-md);
         }
+    }
+}
+
+//Styles for class which was used in storybook as an example
+.indicator {
+    &--success {
+        background-color: var(--core-color-solid-green-100);
+    }
+
+    &--danger {
+        background-color: var(--core-color-solid-red-100);
     }
 }

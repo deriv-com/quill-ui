@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { useEffect, useState } from "react";
+import {
+    StandaloneCircleSterlingRegularIcon,
+    StandaloneTrashRegularIcon,
+} from "@deriv/quill-icons";
 import { ModalBottom } from "./index";
 
 const meta = {
@@ -12,14 +16,9 @@ const meta = {
         viewport: {
             defaultViewport: "mobile1",
         },
-        docs: {
-            height: "200px",
-            width: "200px",
-        },
     },
     args: {
         children: <div>This is some amazing placeholder text.</div>,
-        hasImage: false,
         isOpened: false,
         showHandleBar: true,
         showSecondaryButton: true,
@@ -40,13 +39,6 @@ const meta = {
             table: { type: { summary: "boolean | undefined" } },
             options: ["true", "false"],
             description: "Controls the visibility of the modal",
-            control: { type: "boolean" },
-        },
-        // TODO: expand the description of this prop
-        hasImage: {
-            table: { type: { summary: "boolean | undefined" } },
-            options: ["true", "false"],
-            description: "Flag for the component spacing adjustment.",
             control: { type: "boolean" },
         },
         className: {
@@ -129,8 +121,14 @@ const StoryButton = ({ onClick }: TStoryButton) => {
     );
 };
 
-const bodyPlaceHolderText = "This is some amazing placeholder.";
+const shortTextContent = "This is some amazing placeholder.";
+const placeHolderText =
+    "Lorem ipsum dolor sit amet consectetur. Venenatis malesuada nibh sed ornare rnare id suspendisse sed.";
+const mediumTextContent = placeHolderText.padStart(200, placeHolderText);
+const longTextContent = placeHolderText.padStart(600, placeHolderText);
 const titlePlaceHolderText = "Title";
+const imageSRC =
+    "https://s3-alpha-sig.figma.com/img/0142/120e/ea5dfd0e3c7e47afe2065bc8ede54619?Expires=1713139200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bOD8Qd164Vg-bVj6aDGYW~z5O~b-l7rZjiGDOv8f4wV3r6m2Uyd8hQE7YJ6GaWdpk3SdepU7K-G1pnDaY98Ad3f7JNxXCcINWLow1taHSPRLY7geAUvrrTzWifBTsAdVzPN0bdxWyRZzf5hwpDI1nUhEeOFi2~AZfjc108ZxsInrnheatnC7hQoEQRtYv4biN8gMC1PANCI1l1kVk1vySLvl8CR0Yf6xOmlIl-wXo4k8lR7RWZ-SpEDQjWRIKQFwl9KlTdJuW0YU4XyBi0TeIiBsNefXlc~pQNSdXrBQQDqLhAS1eYFZY~71GDujq1vLbkoYmBn5K0f9DLWqjmghwQ__";
 
 export const DefaultModalBottom: Story = {
     name: "Default Modal Bottom",
@@ -158,7 +156,7 @@ export const DefaultModalBottom: Story = {
                     <ModalBottom.Title>
                         {titlePlaceHolderText}
                     </ModalBottom.Title>
-                    <ModalBottom.Body>{bodyPlaceHolderText}</ModalBottom.Body>
+                    <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
         );
@@ -166,7 +164,7 @@ export const DefaultModalBottom: Story = {
 };
 
 export const ModalBottomWithoutHandleBar: Story = {
-    name: "Modal Bottom without handle-bar",
+    name: "Modal Bottom without handle-bar (no swiping)",
     args: {
         isOpened: false,
         showHandleBar: false,
@@ -192,7 +190,7 @@ export const ModalBottomWithoutHandleBar: Story = {
                     <ModalBottom.Title>
                         {titlePlaceHolderText}
                     </ModalBottom.Title>
-                    <ModalBottom.Body>{bodyPlaceHolderText}</ModalBottom.Body>
+                    <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
         );
@@ -225,7 +223,7 @@ export const ModalBottomWithoutSecondaryButton: Story = {
                     <ModalBottom.Title>
                         {titlePlaceHolderText}
                     </ModalBottom.Title>
-                    <ModalBottom.Body>{bodyPlaceHolderText}</ModalBottom.Body>
+                    <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
         );
@@ -233,7 +231,7 @@ export const ModalBottomWithoutSecondaryButton: Story = {
 };
 
 export const ClosingModalBottomOnPrimaryButtonClick: Story = {
-    name: "Closing Modal Bottom on Primary Button click",
+    name: "Modal Bottom with closing option on Primary Button click",
     args: {
         isOpened: false,
         shouldCloseOnPrimaryButtonClick: true,
@@ -258,12 +256,7 @@ export const ClosingModalBottomOnPrimaryButtonClick: Story = {
                     <ModalBottom.Title>
                         {titlePlaceHolderText}
                     </ModalBottom.Title>
-                    <ModalBottom.Body>
-                        Lorem ipsum dolor sit amet consectetur. Venenatis
-                        malesuada nibh sed ornare id suspendisse sed. Accumsan
-                        leo ultrices risus feugiat tempor consectetur
-                        pellentesque quis nulla.
-                    </ModalBottom.Body>
+                    <ModalBottom.Body>{mediumTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
         );
@@ -271,7 +264,7 @@ export const ClosingModalBottomOnPrimaryButtonClick: Story = {
 };
 
 export const ModalBottomExpanded: Story = {
-    name: "Modal Bottom expanded",
+    name: "Modal Bottom with long content (expanded by default)",
     args: {
         isOpened: false,
         toggleModal: fn(),
@@ -295,47 +288,186 @@ export const ModalBottomExpanded: Story = {
                     <ModalBottom.Title>
                         {titlePlaceHolderText}
                     </ModalBottom.Title>
-                    <ModalBottom.Body>
-                        Lorem ipsum dolor sit amet consectetur. Venenatis
-                        malesuada nibh sed ornare id suspendisse sed. Accumsan
-                        leo ultrices risus feugiat tempor consectetur
-                        pellentesque quis nulla. Laoreet libero donec vel
-                        sagittis augue arcu. Consectetur neque orci neque urna
-                        tortor accumsan feugiat. Nulla amet malesuada vitae
-                        facilisis malesuada egestas tristique. Odio nam nulla
-                        sollicitudin magna amet sed a tortor sapien. Porttitor
-                        et sed gravida egestas vel. At at eget in lacus
-                        vulputate elementum elit. Senectus elementum aliquet
-                        massa auctor sollicitudin lacus lacus pellentesque est.
-                        Et sed odio amet nisl. Nunc viverra gravida tristique in
-                        in iaculis eget lacus pellentesque. Sit volutpat lectus
-                        eget condimentum tempor pretium in. Ac tortor euismod
-                        senectus tristique. Sagittis nullam mattis ante nisl
-                        venenatis diam hac fames risus. Neque a dui dui pharetra
-                        arcu tincidunt ornare in. Neque nibh enim nunc vitae non
-                        ultricies. Suscipit cursus nullam donec sociis interdum
-                        donec odio feugiat. Eu congue malesuada sed
-                        pellentesque. Etiam condimentum adipiscing ut elit morbi
-                        blandit at. At enim mauris diam eget facilisis mauris
-                        etiam ac lectus. Massa nulla morbi eleifend a. Donec
-                        mauris ornare varius nullam morbi ornare in iaculis. Sed
-                        et massa auctor non velit leo sed elementum curabitur.
-                        Diam cursus montes imperdiet diam posuere nunc cras.
-                        Lobortis dolor malesuada laoreet et. Feugiat nunc cras
-                        urna feugiat elit adipiscing sodales eros. Ornare
-                        feugiat nibh elementum pulvinar euismod risus aliquam
-                        feugiat. Nulla varius velit enim curabitur orci. Gravida
-                        quis gravida ut donec arcu tincidunt dictumst. Metus
-                        augue duis odio ante libero mi interdum. Commodo tortor
-                        eget etiam id vulputate lorem. Faucibus velit arcu nibh
-                        elementum eget risus auctor quis donec. Adipiscing
-                        pellentesque massa elit tellus massa pellentesque porta
-                        ultrices. Ultricies ac dictumst sed et amet fringilla
-                        bibendum. Cursus quam sed in cursus diam a nulla elit.
-                        Et convallis a tortor sagittis ac sagittis sed id. Erat
-                        neque viverra consectetur maecenas quisque arcu sagittis
-                        diam. Quis ut nam molestie eu amet orci pellentesque.
-                    </ModalBottom.Body>
+                    <ModalBottom.Body>{longTextContent}</ModalBottom.Body>
+                </ModalBottom>
+            </>
+        );
+    },
+};
+
+export const ModalBottomWithImage: Story = {
+    name: "Modal Bottom with Image passed as ReactNode (height is not fixed)",
+    args: {
+        isOpened: false,
+        toggleModal: fn(),
+        primaryButtonLabel: "Primary Button Label",
+    },
+    render: (args) => {
+        const [isOpen, setIsOpen] = useState(args.isOpened);
+
+        useEffect(() => {
+            setIsOpen(args.isOpened);
+        }, [args.isOpened]);
+
+        return (
+            <>
+                <StoryButton onClick={() => setIsOpen(true)} />
+                <ModalBottom
+                    {...args}
+                    isOpened={isOpen}
+                    toggleModal={setIsOpen}
+                >
+                    <ModalBottom.Image>
+                        <img src={imageSRC} alt="Oranges" />
+                    </ModalBottom.Image>
+                    <ModalBottom.Title>
+                        {titlePlaceHolderText}
+                    </ModalBottom.Title>
+                    <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
+                </ModalBottom>
+            </>
+        );
+    },
+};
+
+export const ModalBottomWithImageAndLongContent: Story = {
+    name: "Modal Bottom with Image as ReactNode (height is not fixed) and long content",
+    args: {
+        isOpened: false,
+        toggleModal: fn(),
+        primaryButtonLabel: "Primary Button Label",
+    },
+    render: (args) => {
+        const [isOpen, setIsOpen] = useState(args.isOpened);
+
+        useEffect(() => {
+            setIsOpen(args.isOpened);
+        }, [args.isOpened]);
+
+        return (
+            <>
+                <StoryButton onClick={() => setIsOpen(true)} />
+                <ModalBottom
+                    {...args}
+                    isOpened={isOpen}
+                    toggleModal={setIsOpen}
+                >
+                    <ModalBottom.Image>
+                        <img src={imageSRC} alt="Oranges" />
+                    </ModalBottom.Image>
+                    <ModalBottom.Title>
+                        {titlePlaceHolderText}
+                    </ModalBottom.Title>
+                    <ModalBottom.Body>{longTextContent}</ModalBottom.Body>
+                </ModalBottom>
+            </>
+        );
+    },
+};
+
+export const ModalBottomWithImageSRC: Story = {
+    name: "Modal Bottom with Image src and fixed height",
+    args: {
+        isOpened: false,
+        toggleModal: fn(),
+        primaryButtonLabel: "Primary Button Label",
+    },
+    render: (args) => {
+        const [isOpen, setIsOpen] = useState(args.isOpened);
+
+        useEffect(() => {
+            setIsOpen(args.isOpened);
+        }, [args.isOpened]);
+
+        return (
+            <>
+                <StoryButton onClick={() => setIsOpen(true)} />
+                <ModalBottom
+                    {...args}
+                    isOpened={isOpen}
+                    toggleModal={setIsOpen}
+                >
+                    <ModalBottom.Image src={imageSRC} />
+                    <ModalBottom.Title>
+                        {titlePlaceHolderText}
+                    </ModalBottom.Title>
+                    <ModalBottom.Body>{mediumTextContent}</ModalBottom.Body>
+                </ModalBottom>
+            </>
+        );
+    },
+};
+
+export const ModalBottomWithIcon: Story = {
+    name: "Modal Bottom with Icon",
+    args: {
+        isOpened: false,
+        toggleModal: fn(),
+        primaryButtonLabel: "Primary Button Label",
+    },
+    render: (args) => {
+        const [isOpen, setIsOpen] = useState(args.isOpened);
+
+        useEffect(() => {
+            setIsOpen(args.isOpened);
+        }, [args.isOpened]);
+
+        return (
+            <>
+                <StoryButton onClick={() => setIsOpen(true)} />
+                <ModalBottom
+                    {...args}
+                    isOpened={isOpen}
+                    toggleModal={setIsOpen}
+                >
+                    <ModalBottom.Image className="indicator--danger">
+                        <StandaloneTrashRegularIcon
+                            fill="var(--core-color-solid-red-900)"
+                            iconSize="2xl"
+                        />
+                    </ModalBottom.Image>
+                    <ModalBottom.Title>
+                        {titlePlaceHolderText}
+                    </ModalBottom.Title>
+                    <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
+                </ModalBottom>
+            </>
+        );
+    },
+};
+
+export const ModalBottomWithIconAndLongContent: Story = {
+    name: "Modal Bottom with Icon and Long Content",
+    args: {
+        isOpened: false,
+        toggleModal: fn(),
+        primaryButtonLabel: "Primary Button Label",
+    },
+    render: (args) => {
+        const [isOpen, setIsOpen] = useState(args.isOpened);
+
+        useEffect(() => {
+            setIsOpen(args.isOpened);
+        }, [args.isOpened]);
+
+        return (
+            <>
+                <StoryButton onClick={() => setIsOpen(true)} />
+                <ModalBottom
+                    {...args}
+                    isOpened={isOpen}
+                    toggleModal={setIsOpen}
+                >
+                    <ModalBottom.Image className="indicator--success">
+                        <StandaloneCircleSterlingRegularIcon
+                            fill="var(--core-color-solid-green-900)"
+                            iconSize="2xl"
+                        />
+                    </ModalBottom.Image>
+                    <ModalBottom.Title>
+                        {titlePlaceHolderText}
+                    </ModalBottom.Title>
+                    <ModalBottom.Body>{longTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
         );
