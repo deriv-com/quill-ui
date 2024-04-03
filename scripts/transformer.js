@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 
 class Transformer {
     constructor() {
+        this.allRules = {};
         this.semanticTokenNames = [
             "semantic/viewPort/640-plus",
             "semantic/viewPort/768-plus",
@@ -36,6 +37,7 @@ class Transformer {
         ];
         this.breakpointNames = ["sm", "md", "lg", "xl", "2xl"];
         this.coreRules = {};
+
         this.designTokens = JSON.parse(
             fs.readFileSync(
                 path.resolve(__dirname, "../data/tokens.json"),
@@ -72,13 +74,6 @@ class Transformer {
         this.mapSASSValues();
         this.generateFiles();
     }
-
-    checkKeysExist = (objectTokens, str) => {
-        const keysArray = Object.keys(objectTokens);
-        const keyExists = keysArray.some((key) => str.includes(key));
-
-        return keyExists;
-    };
 
     convertCSSkey = (cssKey, prefix = true) => {
         const pref = prefix ? "--" : "";
@@ -251,6 +246,7 @@ class Transformer {
                     const finalValue = this.processCSSValue(finalKey, cssValue);
 
                     this.coreRules[cssKey] = finalValue;
+                    this.allRules[cssKey] = finalValue;
                 }
             }
         }
@@ -356,6 +352,8 @@ class Transformer {
         // Generate theme rules
         this.generateThemeVariables();
 
+        this.resolveTokenValues();
+
         // Do transformation on each files
         Object.keys(this.styleStrings).map((styleString) => {
             // Map token variables
@@ -374,16 +372,51 @@ class Transformer {
         this.styleStrings.breakpoints = this.generateBreakpoints();
     };
 
+    resolveTokenValues = () => {
+        // Regular expression pattern to match {variable}
+        const pattern = /\{([^\{\}]*)\}/g;
+
+        // Array to store values that requires to be resolved based on core token values
+        const valuesToResolve = [];
+
+        for (const [_, value] of Object.entries(this.allRules)) {
+            // Find all occurrences of the pattern in the value
+
+            if (typeof value === "string") {
+                const matches = value.match(pattern);
+
+                if (matches) {
+                    matches.forEach((match) => {
+                        // Remove curly braces and push into the occurrences array
+                        valuesToResolve.push(
+                            match.substring(1, match.length - 1),
+                        );
+                    });
+                }
+            }
+        }
+
+        valuesToResolve.map((vKey) => {
+            const tokenValue = this.allRules[vKey];
+            Object.keys(this.allRules).map((ak) => {
+                const oldValue = this.allRules[ak];
+
+                if (typeof oldValue === "string") {
+                    this.allRules[ak] = oldValue.replaceAll(
+                        `{${vKey}}`,
+                        tokenValue,
+                    );
+                }
+            });
+        });
+    };
+
     mapTokenValues = (objectTokens, str) => {
         Object.keys(objectTokens).map((key) => {
-            const tokenValue = objectTokens[key];
+            const tokenValue = this.allRules[key];
 
             str = str.replaceAll(`{${key}}`, tokenValue);
         });
-
-        if (this.checkKeysExist(objectTokens, str)) {
-            str = this.mapTokenValues(objectTokens, str);
-        }
 
         return str;
     };
