@@ -5,7 +5,7 @@ import React from "react";
 import { TMediumSizes } from "../../../types";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-    type: "text";
+    type?: "text" | "email" | "password";
     icon?: ReactNode;
     statusIcon?: ReactNode;
     inputSize?: TMediumSizes;
@@ -50,10 +50,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         return (
             <div className="quill-input__container">
                 <div
-                    data-has-value={hasValue}
                     className={clsx(
                         className,
                         `quill-input__wrapper`,
+                        hasValue && `quill-input__wrapper--has-value`,
                         `quill-input__wrapper__variant--${variant}`,
                         variant === "fill" && `status--${status}`,
                         `quill-input__wrapper__size--${inputSize}`,
@@ -102,7 +102,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 <div className="message__container">
                     {leftStatusMessage && (
                         <p
-                            key={leftStatusMessage}
                             className={clsx(
                                 "message__container__text",
                                 `message__container__text__status--${status}`,
@@ -115,7 +114,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     )}
                     {rightStatusMessage && (
                         <p
-                            key={rightStatusMessage}
                             className={clsx(
                                 "self-end",
                                 "message__container__text",
