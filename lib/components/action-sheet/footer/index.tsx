@@ -40,10 +40,9 @@ const Footer = ({
                     onClick={primaryActionHandler}
                     color="black"
                     size="lg"
+                    label={primaryAction.content}
                     fullWidth
-                >
-                    {primaryAction.content}
-                </Button>
+                />
             )}
             {secondaryAction && (
                 <Button
@@ -51,10 +50,9 @@ const Footer = ({
                     variant="secondary"
                     color="black"
                     size="lg"
+                    label={secondaryAction.content}
                     fullWidth
-                >
-                    {secondaryAction.content}
-                </Button>
+                />
             )}
         </div>
     );
