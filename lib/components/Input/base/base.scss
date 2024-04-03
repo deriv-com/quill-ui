@@ -276,7 +276,7 @@
             pointer-events: none;
 
             &__hasIcon {
-                left: 40px;
+                left: var(--core-spacing-2000);
             }
             &__status {
                 &--neutral {
