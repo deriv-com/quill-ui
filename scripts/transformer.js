@@ -150,7 +150,7 @@ class Transformer {
 
             const filePaths = [
                 `lib/styles/quill/${fileName}.scss`,
-                `dist/quill/${fileName}.scss`,
+                `dist/quill/${fileName}.css`,
             ];
 
             filePaths.map((item) => {
