@@ -61,16 +61,6 @@
                 // colors should stay the same for both themes:
                 background: var(--core-color-solid-slate-50);
             }
-            &.selected:not(:disabled),
-            &.animated {
-                // colors should stay the same for both themes:
-                * {
-                    color: var(--core-color-solid-slate-1400);
-                }
-                svg {
-                    fill: var(--core-color-solid-slate-1400);
-                }
-            }
             &.animated::before {
                 content: "";
                 position: absolute;
@@ -91,6 +81,16 @@
 
                 svg {
                     fill: var(--semantic-color-typography-default);
+                }
+            }
+            &.selected:not(:disabled),
+            &.animated {
+                // colors should stay the same for both themes:
+                * {
+                    color: var(--core-color-solid-slate-1400);
+                }
+                svg {
+                    fill: var(--core-color-solid-slate-1400);
                 }
             }
         }
