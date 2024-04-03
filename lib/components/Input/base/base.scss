@@ -28,14 +28,10 @@
             display: flex;
             justify-content: space-between;
             padding-top: var(--semantic-spacing-general-sm);
-            font-family: "IBM Plex Sans";
 
             &__text {
                 padding-block: var(--semantic-spacing-general-none);
                 padding-inline: var(--semantic-spacing-general-md);
-                font-size: var(--core-fontSize-50);
-                line-height: var(--core-lineHeight-100);
-                font-weight: var(--core-fontWeight-regular);
                 animation-name: dropIn;
                 transition-timing-function: var(--core-motion-ease-400);
                 animation-duration: var(--core-motion-duration-200);

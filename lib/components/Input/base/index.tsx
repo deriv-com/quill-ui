@@ -3,6 +3,7 @@ import { InputHTMLAttributes, ReactNode, forwardRef, useState } from "react";
 import "./base.scss";
 import React from "react";
 import { TMediumSizes } from "../../../types";
+import { CaptionText } from "../../Typography";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type?: "text" | "email" | "password";
@@ -101,7 +102,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 </div>
                 <div className="message__container">
                     {leftStatusMessage && (
-                        <p
+                        <CaptionText
                             className={clsx(
                                 "message__container__text",
                                 `message__container__text__status--${status}`,
@@ -110,10 +111,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             )}
                         >
                             {leftStatusMessage}
-                        </p>
+                        </CaptionText>
                     )}
                     {rightStatusMessage && (
-                        <p
+                        <CaptionText
                             className={clsx(
                                 "self-end",
                                 "message__container__text",
@@ -121,7 +122,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             )}
                         >
                             {rightStatusMessage}
-                        </p>
+                        </CaptionText>
                     )}
                 </div>
             </div>
