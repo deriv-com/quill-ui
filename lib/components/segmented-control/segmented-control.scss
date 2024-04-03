@@ -87,6 +87,7 @@
             .icon {
                 display: flex;
                 align-items: center;
+                justify-content: center;
 
                 svg {
                     fill: var(--semantic-color-typography-default);
@@ -109,9 +110,15 @@
             .item {
                 height: var(--size-generic-md);
                 padding: var(--temp-static-spacing-5)
+                    var(--semantic-spacing-general-sm)
+                    var(--temp-static-spacing-5)
                     var(--semantic-spacing-general-sm);
                 gap: var(--semantic-spacing-gap-sm);
                 border-radius: var(--semantic-borderRadius-sm);
+
+                .icon {
+                    width: var(--size-generic-sm);
+                }
             }
         }
         &--md {
@@ -122,6 +129,8 @@
             .item {
                 height: var(--size-generic-lg);
                 padding: var(--semantic-spacing-general-sm)
+                    var(--semantic-spacing-general-md)
+                    var(--semantic-spacing-general-sm)
                     var(--semantic-spacing-general-md);
                 gap: var(--semantic-spacing-gap-md);
                 border-radius: var(--semantic-borderRadius-md);
@@ -135,6 +144,8 @@
             .item {
                 height: var(--size-generic-xl);
                 padding: var(--temp-static-spacing-9)
+                    var(--semantic-spacing-general-lg)
+                    var(--temp-static-spacing-9)
                     var(--semantic-spacing-general-lg);
                 gap: var(--core-spacing-600);
                 border-radius: var(--core-borderRadius-600);
