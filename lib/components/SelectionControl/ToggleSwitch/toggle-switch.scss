@@ -1,5 +1,10 @@
 @import "@quill/color.scss";
 @import "@quill/color.opacity.scss";
+@import "@quill/others.scss";
+@import "@quill/border.scss";
+@import "@quill/motion.scss";
+@import "@quill/size.scss";
+@import "@quill/spacing.scss";
 
 .toggle-switch {
     display: flex;
@@ -7,23 +12,22 @@
     justify-content: center;
     position: relative;
     user-select: none;
-    width: 48px;
-    height: 28px;
-    border-radius: 18px;
-    border-width: 2px;
-    &.disabled .toggle-switch__slider {
+    width: var(--core-size-2400);
+    height: var(--core-size-1400);
+    border-width: var(--core-borderRadius-100);
+    &__disabled .toggle-switch__slider {
         pointer-events: none;
         background: var(--core-color-opacity-black-200);
     }
-    .toggle-switch__slider {
+    &__slider {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        width: 44px;
-        height: 24px;
+        width: var(--core-size-2200);
+        height: var(--size-generic-sm);
         background-color: var(--core-color-opacity-black-200);
-        border-radius: 16px;
-        transition: background-color 0.3s ease;
+        border-radius: var(--semantic-borderRadius-lg);
+        transition: background-color var(--core-motion-duration-300) ease;
         cursor: pointer;
         position: relative;
         &:hover:not(.disabled) {
@@ -36,7 +40,6 @@
 
         &.enabled {
             background-color: var(--core-color-opacity-green-600);
-
             &:hover {
                 background-color: var(--core-color-opacity-green-800);
             }
@@ -45,22 +48,24 @@
                 background-color: var(--core-color-solid-green-900);
             }
         }
+    }
+    &__knob {
+        position: absolute;
+        width: var(--core-size-1000);
+        height: var(--core-size-1000);
+        border-radius: var(--core-borderRadius-2500);
+        background-color: var(--core-color-solid-slate-50);
+        transition: left var(--core-motion-duration-300) ease;
+        top: 50%;
+        transform: translateY(-50%);
+        left: var(--core-spacing-100);
 
-        .toggle-switch__knob {
-            position: absolute;
-            left: 2px;
-            top: -3.4px;
-            transition:
-                left 0.3s ease,
-                background-color 0.3s ease;
-            fill: var(--core-color-solid-slate-50);
+        &.enabled {
+            left: calc(100% - 22px);
+        }
 
-            &.enabled {
-                left: 22px;
-            }
-            &.disabled {
-                fill: var(--core-color-opacity-white-400);
-            }
+        &.disabled {
+            background-color: var(--core-color-opacity-white-400);
         }
     }
 }

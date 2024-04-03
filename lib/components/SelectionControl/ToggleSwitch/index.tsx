@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import "./toggle-switch.scss";
+import "./toggle-switch.scss"; // Ensure your SCSS file path is correct
 import clsx from "clsx";
-import { LabelPairedCircleLgFillIcon } from "@deriv/quill-icons";
 
 export interface SwitchToggleProps {
     disabled?: boolean;
     defaultChecked?: boolean;
     onChange?: (isEnabled: boolean) => void;
-    wrapperClassName?: string;
+    className?: string;
     id?: string;
     onFocus?: () => void;
     onBlur?: () => void;
@@ -16,7 +15,7 @@ export interface SwitchToggleProps {
 const ToggleSwitch = ({
     disabled = false,
     onChange,
-    wrapperClassName,
+    className,
     defaultChecked,
     onFocus,
     onBlur,
@@ -41,7 +40,7 @@ const ToggleSwitch = ({
 
     return (
         <div
-            className={clsx("toggle-switch", wrapperClassName, { disabled })}
+            className={clsx("toggle-switch", className, { disabled })}
             tabIndex={disabled ? -1 : 0}
             onClick={toggleSwitch}
             onKeyDown={handleKeyDown}
@@ -57,12 +56,7 @@ const ToggleSwitch = ({
                     enabled: isEnabled,
                 })}
             >
-                <LabelPairedCircleLgFillIcon
-                    className={clsx("toggle-switch__knob", {
-                        enabled: isEnabled,
-                        disabled,
-                    })}
-                />
+                <div className={clsx("toggle-switch__knob", { enabled: isEnabled, disabled })}></div>
             </div>
         </div>
     );

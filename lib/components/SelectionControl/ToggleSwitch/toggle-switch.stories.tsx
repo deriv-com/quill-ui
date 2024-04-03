@@ -14,7 +14,7 @@ const meta = {
         onChange: fn(),
         onFocus: fn(),
         onBlur: fn(),
-        wrapperClassName: "",
+        className: "",
     },
     argTypes: {
         defaultChecked: {
@@ -27,7 +27,7 @@ const meta = {
             description: "Flag for setting component's disabled state",
             control: { type: "boolean" },
         },
-        wrapperClassName: {
+        className: {
             table: { type: { summary: "string | undefined" } },
             description: "ClassName for the switch's wrapper",
             control: { type: "text" },
