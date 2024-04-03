@@ -7,6 +7,17 @@ import {
 } from "@deriv/quill-icons";
 import { ModalBottom } from "./index";
 
+const primaryButtonLabel = "Primary Button Label";
+const secondaryButtonLabel = "Secondary Button Label";
+const shortTextContent = "This is some amazing placeholder.";
+const placeHolderText =
+    "Lorem ipsum dolor sit amet consectetur. Venenatis malesuada nibh sed ornare rnare id suspendisse sed.";
+const mediumTextContent = placeHolderText.padStart(200, placeHolderText);
+const longTextContent = placeHolderText.padStart(600, placeHolderText);
+const titlePlaceHolderText = "Title";
+const imageSRC =
+    "https://s3-alpha-sig.figma.com/img/0142/120e/ea5dfd0e3c7e47afe2065bc8ede54619?Expires=1713139200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bOD8Qd164Vg-bVj6aDGYW~z5O~b-l7rZjiGDOv8f4wV3r6m2Uyd8hQE7YJ6GaWdpk3SdepU7K-G1pnDaY98Ad3f7JNxXCcINWLow1taHSPRLY7geAUvrrTzWifBTsAdVzPN0bdxWyRZzf5hwpDI1nUhEeOFi2~AZfjc108ZxsInrnheatnC7hQoEQRtYv4biN8gMC1PANCI1l1kVk1vySLvl8CR0Yf6xOmlIl-wXo4k8lR7RWZ-SpEDQjWRIKQFwl9KlTdJuW0YU4XyBi0TeIiBsNefXlc~pQNSdXrBQQDqLhAS1eYFZY~71GDujq1vLbkoYmBn5K0f9DLWqjmghwQ__";
+
 const meta = {
     title: "Components/Modal/Bottom",
     component: ModalBottom,
@@ -18,21 +29,21 @@ const meta = {
         },
     },
     args: {
-        children: <div>This is some amazing placeholder text.</div>,
+        children: <div>{shortTextContent}</div>,
         isOpened: false,
         showHandleBar: true,
         showSecondaryButton: true,
         shouldCloseOnPrimaryButtonClick: false,
         toggleModal: fn(),
-        primaryButtonLabel: "Primary Button Label",
-        primaryButtonFunction: fn(),
-        secondaryButtonLabel: "Secondary Button Label",
+        primaryButtonLabel: primaryButtonLabel,
+        primaryButtonCallback: fn(),
+        secondaryButtonLabel: secondaryButtonLabel,
     },
     argTypes: {
         children: {
             table: { type: { summary: "ReactNode" } },
             description:
-                "Modal's content. Can be wrapped with the `<ModalBottom.Title/>` and `<ModalBottom.Body/>` components in order to organize the content inside the modal.",
+                "Modal's content. Can be wrapped with the `<ModalBottom.Image/>`,`<ModalBottom.Title/>` and `<ModalBottom.Body/>` components in order to organize the content inside the modal. Each of them accepts className for customization and `<ModalBottom.Image/>` can also be passed scr and height properties.",
             control: { type: null },
         },
         isOpened: {
@@ -75,7 +86,7 @@ const meta = {
         portalId: {
             table: { type: { summary: "string | undefined" } },
             description:
-                "ID of the modal container. If it wasn't passed, the modal will try to find any container with 'modal-root' className. If there is no container with 'modal-root' className the modal will be insert inside document.body.",
+                "ID of the modal container. If it wasn't passed, the modal will try to find any container with 'modal-root' ID. If there is no container with 'modal-root' ID the modal will be insert inside document.body.",
             control: { type: "string" },
         },
         primaryButtonLabel: {
@@ -83,8 +94,8 @@ const meta = {
             description: "Label for the primary button.",
             control: { type: "string" },
         },
-        primaryButtonFunction: {
-            table: { type: { summary: "() => void | undefined" } },
+        primaryButtonCallback: {
+            table: { type: { summary: "(() => void) | undefined" } },
             description:
                 "Function which will be called on clicking on primary button.",
             control: { type: null },
@@ -121,22 +132,10 @@ const StoryButton = ({ onClick }: TStoryButton) => {
     );
 };
 
-const shortTextContent = "This is some amazing placeholder.";
-const placeHolderText =
-    "Lorem ipsum dolor sit amet consectetur. Venenatis malesuada nibh sed ornare rnare id suspendisse sed.";
-const mediumTextContent = placeHolderText.padStart(200, placeHolderText);
-const longTextContent = placeHolderText.padStart(600, placeHolderText);
-const titlePlaceHolderText = "Title";
-const imageSRC =
-    "https://s3-alpha-sig.figma.com/img/0142/120e/ea5dfd0e3c7e47afe2065bc8ede54619?Expires=1713139200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bOD8Qd164Vg-bVj6aDGYW~z5O~b-l7rZjiGDOv8f4wV3r6m2Uyd8hQE7YJ6GaWdpk3SdepU7K-G1pnDaY98Ad3f7JNxXCcINWLow1taHSPRLY7geAUvrrTzWifBTsAdVzPN0bdxWyRZzf5hwpDI1nUhEeOFi2~AZfjc108ZxsInrnheatnC7hQoEQRtYv4biN8gMC1PANCI1l1kVk1vySLvl8CR0Yf6xOmlIl-wXo4k8lR7RWZ-SpEDQjWRIKQFwl9KlTdJuW0YU4XyBi0TeIiBsNefXlc~pQNSdXrBQQDqLhAS1eYFZY~71GDujq1vLbkoYmBn5K0f9DLWqjmghwQ__";
-
 export const DefaultModalBottom: Story = {
     name: "Default Modal Bottom",
     args: {
         isOpened: false,
-        toggleModal: fn(),
-        primaryButtonLabel: "Primary Button Label",
-        secondaryButtonLabel: "Secondary Button Label",
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);
@@ -168,9 +167,6 @@ export const ModalBottomWithoutHandleBar: Story = {
     args: {
         isOpened: false,
         showHandleBar: false,
-        toggleModal: fn(),
-        primaryButtonLabel: "Primary Button Label",
-        secondaryButtonLabel: "Secondary Button Label",
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);
@@ -202,8 +198,6 @@ export const ModalBottomWithoutSecondaryButton: Story = {
     args: {
         isOpened: false,
         showSecondaryButton: false,
-        toggleModal: fn(),
-        primaryButtonLabel: "Primary Button Label",
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);
@@ -235,8 +229,6 @@ export const ClosingModalBottomOnPrimaryButtonClick: Story = {
     args: {
         isOpened: false,
         shouldCloseOnPrimaryButtonClick: true,
-        toggleModal: fn(),
-        primaryButtonLabel: "Primary Button Label",
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);
@@ -267,8 +259,6 @@ export const ModalBottomExpanded: Story = {
     name: "Modal Bottom with long content (expanded by default)",
     args: {
         isOpened: false,
-        toggleModal: fn(),
-        primaryButtonLabel: "Primary Button Label",
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);
@@ -299,8 +289,6 @@ export const ModalBottomWithImage: Story = {
     name: "Modal Bottom with Image passed as ReactNode (height is not fixed)",
     args: {
         isOpened: false,
-        toggleModal: fn(),
-        primaryButtonLabel: "Primary Button Label",
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);
@@ -334,8 +322,6 @@ export const ModalBottomWithImageAndLongContent: Story = {
     name: "Modal Bottom with Image as ReactNode (height is not fixed) and long content",
     args: {
         isOpened: false,
-        toggleModal: fn(),
-        primaryButtonLabel: "Primary Button Label",
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);
@@ -369,8 +355,6 @@ export const ModalBottomWithImageSRC: Story = {
     name: "Modal Bottom with Image src and fixed height",
     args: {
         isOpened: false,
-        toggleModal: fn(),
-        primaryButtonLabel: "Primary Button Label",
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);
@@ -402,8 +386,6 @@ export const ModalBottomWithIcon: Story = {
     name: "Modal Bottom with Icon",
     args: {
         isOpened: false,
-        toggleModal: fn(),
-        primaryButtonLabel: "Primary Button Label",
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);
@@ -440,8 +422,6 @@ export const ModalBottomWithIconAndLongContent: Story = {
     name: "Modal Bottom with Icon and Long Content",
     args: {
         isOpened: false,
-        toggleModal: fn(),
-        primaryButtonLabel: "Primary Button Label",
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);

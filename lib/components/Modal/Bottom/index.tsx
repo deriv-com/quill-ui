@@ -17,7 +17,7 @@ interface ModalBottomProps {
     toggleModal: (isOpened: boolean) => void;
     portalId?: string;
     primaryButtonLabel?: React.ReactNode;
-    primaryButtonFunction?: () => void;
+    primaryButtonCallback?: () => void;
     secondaryButtonLabel?: React.ReactNode;
 }
 
@@ -28,7 +28,7 @@ const swipeConfig = {
     preventScrollOnSwipe: true,
 };
 
-const maxExpandedHeight = 85;
+const MAX_HEIGHT = 85;
 
 export const ModalBottom = ({
     isOpened = false,
@@ -40,7 +40,7 @@ export const ModalBottom = ({
     toggleModal,
     portalId,
     primaryButtonLabel,
-    primaryButtonFunction,
+    primaryButtonCallback,
     secondaryButtonLabel,
 }: React.PropsWithChildren<ModalBottomProps>) => {
     const [isVisible, setIsVisible] = useState(isOpened);
@@ -62,7 +62,7 @@ export const ModalBottom = ({
                   (scrollableContainerRef?.current?.offsetHeight /
                       window.innerHeight) *
                       100,
-              ) < maxExpandedHeight
+              ) < MAX_HEIGHT
             : true;
 
     useEffect(() => {
@@ -85,7 +85,7 @@ export const ModalBottom = ({
     };
 
     const primaryButtonFunctionHandler = () => {
-        primaryButtonFunction?.();
+        primaryButtonCallback?.();
         if (shouldCloseOnPrimaryButtonClick) toggleHandler();
     };
 

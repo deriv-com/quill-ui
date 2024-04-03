@@ -64,7 +64,6 @@
         // Pseudo element for increasing swipeable area
         &:before {
             content: "";
-            display: block;
             height: var(--core-size-1500);
             width: 100vw;
             // Half of the screen and half of the handle-bar width
@@ -81,7 +80,6 @@
         }
 
         &-image {
-            width: 100%;
             min-height: var(--temp-static-spacing-144);
             display: flex;
             justify-content: center;
