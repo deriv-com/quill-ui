@@ -24,7 +24,6 @@ const meta = {
         showHandleBar: true,
         showSecondaryButton: true,
         shouldCloseOnPrimaryButtonClick: false,
-        shouldExpand: false,
         toggleModal: fn(),
         primaryButtonLabel: "Primary Button Label",
         primaryButtonFunction: fn(),
@@ -73,13 +72,6 @@ const meta = {
             options: ["true", "false"],
             description:
                 "Flag for controlling modal behavior. If it's true, then the modal will be closed after user clicks on the primary button.",
-            control: { type: "boolean" },
-        },
-        shouldExpand: {
-            table: { type: { summary: "boolean | undefined" } },
-            options: ["true", "false"],
-            description:
-                "Flag for expanding modal. If it's expanded, it will take 90% of the screen.",
             control: { type: "boolean" },
         },
         toggleModal: {
@@ -266,7 +258,12 @@ export const ClosingModalBottomOnPrimaryButtonClick: Story = {
                     <ModalBottom.Title>
                         {titlePlaceHolderText}
                     </ModalBottom.Title>
-                    <ModalBottom.Body>{bodyPlaceHolderText}</ModalBottom.Body>
+                    <ModalBottom.Body>
+                        Lorem ipsum dolor sit amet consectetur. Venenatis
+                        malesuada nibh sed ornare id suspendisse sed. Accumsan
+                        leo ultrices risus feugiat tempor consectetur
+                        pellentesque quis nulla.
+                    </ModalBottom.Body>
                 </ModalBottom>
             </>
         );
@@ -277,7 +274,6 @@ export const ModalBottomExpanded: Story = {
     name: "Modal Bottom expanded",
     args: {
         isOpened: false,
-        shouldExpand: true,
         toggleModal: fn(),
         primaryButtonLabel: "Primary Button Label",
     },

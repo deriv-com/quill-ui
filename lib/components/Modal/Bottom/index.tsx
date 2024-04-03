@@ -11,7 +11,6 @@ interface ModalBottomProps {
     isOpened?: boolean;
     //TODO: refactor image position and style
     hasImage?: boolean;
-    shouldExpand?: boolean;
     className?: string;
     showHandleBar?: boolean;
     showSecondaryButton?: boolean;
@@ -30,6 +29,8 @@ const swipeConfig = {
     preventScrollOnSwipe: true,
 };
 
+const maxExpandedHeight = 85;
+
 export const ModalBottom = ({
     isOpened = false,
     hasImage = false,
@@ -38,7 +39,6 @@ export const ModalBottom = ({
     showHandleBar = true,
     showSecondaryButton = true,
     shouldCloseOnPrimaryButtonClick = false,
-    shouldExpand = false,
     toggleModal,
     portalId,
     primaryButtonLabel,
@@ -46,24 +46,30 @@ export const ModalBottom = ({
     secondaryButtonLabel,
 }: React.PropsWithChildren<ModalBottomProps>) => {
     const [isVisible, setIsVisible] = useState(isOpened);
-    const [isExpanded, setIsExpanded] = useState(shouldExpand);
+    const [isExpanded, setIsExpanded] = useState(false);
     const [isSwiping, setIsSwiping] = useState(false);
 
     const animationTimerRef = useRef<ReturnType<typeof setTimeout>>();
     const swipingTimerRef = useRef<ReturnType<typeof setTimeout>>();
+    const scrollableContainerRef = useRef<HTMLDivElement>(null);
 
     const modalRoot =
         (portalId && document.getElementById(portalId)) ||
         document.getElementById("modal-root") ||
         document.body;
 
+    const shouldExpand =
+        scrollableContainerRef?.current?.offsetHeight && !isExpanded
+            ? Math.round(
+                  (scrollableContainerRef?.current?.offsetHeight /
+                      window.innerHeight) *
+                      100,
+              ) < maxExpandedHeight
+            : true;
+
     useEffect(() => {
         setIsVisible(isOpened);
     }, [isOpened]);
-
-    useEffect(() => {
-        setIsExpanded(shouldExpand);
-    }, [shouldExpand]);
 
     useEffect(() => {
         return () => {
@@ -86,8 +92,9 @@ export const ModalBottom = ({
     };
 
     const swipeHandlers = useSwipeable({
-        onSwipedUp: () => setIsExpanded(true),
-        onSwipedDown: () => setIsExpanded(false),
+        onSwipedUp: () => (shouldExpand ? setIsExpanded(true) : null),
+        onSwipedDown: () =>
+            shouldExpand ? setIsExpanded(false) : toggleHandler(),
         onSwipeStart: () => setIsSwiping(true),
         onSwiped: () =>
             (swipingTimerRef.current = setTimeout(
@@ -113,6 +120,7 @@ export const ModalBottom = ({
                     className,
                 )}
                 onClick={(e) => e.stopPropagation()}
+                ref={scrollableContainerRef}
             >
                 {showHandleBar && (
                     <div
