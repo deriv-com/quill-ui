@@ -74,7 +74,6 @@
         font-family: "IBM Plex Sans";
         overflow: hidden;
         position: relative;
-        cursor: pointer;
         border-style: solid;
 
         &:has(input:disabled) {
@@ -269,7 +268,10 @@
             transition-property: all;
             transition-timing-function: var(--core-motion-ease-400);
             transition-duration: var(--core-motion-duration-200);
-            pointer-events: none;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            cursor: pointer;
 
             &__hasIcon {
                 left: var(--core-spacing-2000);
@@ -290,6 +292,7 @@
             &:placeholder-shown + .label {
                 font-size: var(--core-fontSize-100);
                 transform: translateY(0);
+                height: 100%;
             }
             &:focus + .label {
                 transform: translateY(-100%);
@@ -302,6 +305,7 @@
                 transform: translateY(-100%);
                 line-height: var(--core-lineHeight-100);
                 font-size: var(--core-fontSize-50);
+                height: var(--core-size-900);
             }
         }
 

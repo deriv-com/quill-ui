@@ -76,6 +76,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             setHasValue(!!e.target.value);
                             onChange?.(e);
                         }}
+                        id={label}
                         ref={ref}
                     />
                     {label && inputSize === "md" && (
@@ -85,6 +86,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 `label__status--${status}`,
                                 Icon && `label__hasIcon`,
                             )}
+                            htmlFor={label}
                         >
                             {label}
                         </label>
