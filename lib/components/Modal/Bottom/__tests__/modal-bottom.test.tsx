@@ -10,7 +10,7 @@ describe("ModalBottom", () => {
     const secondaryButtonLabel = "Secondary Button Label";
     const shortTextContent = "This is some amazing placeholder.";
     const imageSRC =
-        "https://s3-alpha-sig.figma.com/img/0142/120e/ea5dfd0e3c7e47afe2065bc8ede54619?Expires=1713139200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bOD8Qd164Vg-bVj6aDGYW~z5O~b-l7rZjiGDOv8f4wV3r6m2Uyd8hQE7YJ6GaWdpk3SdepU7K-G1pnDaY98Ad3f7JNxXCcINWLow1taHSPRLY7geAUvrrTzWifBTsAdVzPN0bdxWyRZzf5hwpDI1nUhEeOFi2~AZfjc108ZxsInrnheatnC7hQoEQRtYv4biN8gMC1PANCI1l1kVk1vySLvl8CR0Yf6xOmlIl-wXo4k8lR7RWZ-SpEDQjWRIKQFwl9KlTdJuW0YU4XyBi0TeIiBsNefXlc~pQNSdXrBQQDqLhAS1eYFZY~71GDujq1vLbkoYmBn5K0f9DLWqjmghwQ__";
+        "https://live.staticflickr.com/603/21947667154_e63cc9252b_b.jpg";
 
     const children = (
         <>
@@ -129,7 +129,7 @@ describe("ModalBottom", () => {
         const { container } = render(
             <ModalBottom {...mockProps}>
                 <ModalBottom.Image>
-                    <img src={imageSRC} alt="Oranges" />
+                    <img src={imageSRC} alt="Apples" />
                 </ModalBottom.Image>
             </ModalBottom>,
         );
