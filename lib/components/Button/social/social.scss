@@ -6,19 +6,19 @@
 .social-button {
     &__icon-only {
         &--md{
-            width: 32px;
+            width: var(--core-size-1600);
             padding-inline: var(--core-spacing-50);
             height: var(--core-size-1600);
             border-radius: var(--core-borderRadius-600);
         }
         &--lg{
-            width: 48px;
+            width: var(--core-size-2400);
             padding-inline: var(--core-spacing-50);
             height: var(--core-size-2400);
             border-radius: var(--core-borderRadius-800);
         }
         &--xl{
-            width: 64px;
+            width: var(--core-size-3200);
             padding-inline: var(--core-spacing-50);
             height: var(--core-size-3200);
             border-radius: var(--core-borderRadius-1200);
