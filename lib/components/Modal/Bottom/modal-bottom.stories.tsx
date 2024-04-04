@@ -6,7 +6,9 @@ import {
     StandaloneTrashRegularIcon,
 } from "@deriv/quill-icons";
 import { ModalBottom } from "./index";
+import { Button } from "../../Button";
 
+const openModalButtonLabel = "Open Modal";
 const primaryButtonLabel = "Primary Button Label";
 const secondaryButtonLabel = "Secondary Button Label";
 const shortTextContent = "This is some amazing placeholder.";
@@ -111,27 +113,6 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-type TStoryButton = {
-    onClick: () => void;
-};
-const StoryButton = ({ onClick }: TStoryButton) => {
-    return (
-        <button
-            onClick={onClick}
-            style={{
-                margin: "20px auto",
-                padding: "8px 10px",
-                backgroundColor: "red",
-                borderRadius: "8px",
-                cursor: "pointer",
-                color: "white",
-            }}
-        >
-            Open Modal
-        </button>
-    );
-};
-
 export const DefaultModalBottom: Story = {
     name: "Default Modal Bottom",
     args: {
@@ -146,7 +127,11 @@ export const DefaultModalBottom: Story = {
 
         return (
             <>
-                <StoryButton onClick={() => setIsOpen(true)} />
+                <Button
+                    size="lg"
+                    label={openModalButtonLabel}
+                    onClick={() => setIsOpen(true)}
+                />
                 <ModalBottom
                     {...args}
                     isOpened={isOpen}
@@ -177,7 +162,11 @@ export const ModalBottomWithoutHandleBar: Story = {
 
         return (
             <>
-                <StoryButton onClick={() => setIsOpen(true)} />
+                <Button
+                    size="lg"
+                    label={openModalButtonLabel}
+                    onClick={() => setIsOpen(true)}
+                />
                 <ModalBottom
                     {...args}
                     isOpened={isOpen}
@@ -208,7 +197,11 @@ export const ModalBottomWithoutSecondaryButton: Story = {
 
         return (
             <>
-                <StoryButton onClick={() => setIsOpen(true)} />
+                <Button
+                    size="lg"
+                    label={openModalButtonLabel}
+                    onClick={() => setIsOpen(true)}
+                />
                 <ModalBottom
                     {...args}
                     isOpened={isOpen}
@@ -239,7 +232,11 @@ export const ClosingModalBottomOnPrimaryButtonClick: Story = {
 
         return (
             <>
-                <StoryButton onClick={() => setIsOpen(true)} />
+                <Button
+                    size="lg"
+                    label={openModalButtonLabel}
+                    onClick={() => setIsOpen(true)}
+                />
                 <ModalBottom
                     {...args}
                     isOpened={isOpen}
@@ -269,7 +266,11 @@ export const ModalBottomExpanded: Story = {
 
         return (
             <>
-                <StoryButton onClick={() => setIsOpen(true)} />
+                <Button
+                    size="lg"
+                    label={openModalButtonLabel}
+                    onClick={() => setIsOpen(true)}
+                />
                 <ModalBottom
                     {...args}
                     isOpened={isOpen}
@@ -299,7 +300,11 @@ export const ModalBottomWithImage: Story = {
 
         return (
             <>
-                <StoryButton onClick={() => setIsOpen(true)} />
+                <Button
+                    size="lg"
+                    label={openModalButtonLabel}
+                    onClick={() => setIsOpen(true)}
+                />
                 <ModalBottom
                     {...args}
                     isOpened={isOpen}
@@ -332,7 +337,11 @@ export const ModalBottomWithImageAndLongContent: Story = {
 
         return (
             <>
-                <StoryButton onClick={() => setIsOpen(true)} />
+                <Button
+                    size="lg"
+                    label={openModalButtonLabel}
+                    onClick={() => setIsOpen(true)}
+                />
                 <ModalBottom
                     {...args}
                     isOpened={isOpen}
@@ -365,7 +374,11 @@ export const ModalBottomWithImageSRC: Story = {
 
         return (
             <>
-                <StoryButton onClick={() => setIsOpen(true)} />
+                <Button
+                    size="lg"
+                    label={openModalButtonLabel}
+                    onClick={() => setIsOpen(true)}
+                />
                 <ModalBottom
                     {...args}
                     isOpened={isOpen}
@@ -396,7 +409,11 @@ export const ModalBottomWithIcon: Story = {
 
         return (
             <>
-                <StoryButton onClick={() => setIsOpen(true)} />
+                <Button
+                    size="lg"
+                    label={openModalButtonLabel}
+                    onClick={() => setIsOpen(true)}
+                />
                 <ModalBottom
                     {...args}
                     isOpened={isOpen}
@@ -432,7 +449,11 @@ export const ModalBottomWithIconAndLongContent: Story = {
 
         return (
             <>
-                <StoryButton onClick={() => setIsOpen(true)} />
+                <Button
+                    size="lg"
+                    label={openModalButtonLabel}
+                    onClick={() => setIsOpen(true)}
+                />
                 <ModalBottom
                     {...args}
                     isOpened={isOpen}
