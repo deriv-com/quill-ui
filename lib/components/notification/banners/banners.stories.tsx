@@ -1,15 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
-import { TYPE } from "../../../utils/notification-utils";
-import NotificationBanner from ".";
+import NotificationBanners from ".";
 
 const meta = {
-    title: "Components/Notification/NotificationBanner",
-    component: NotificationBanner,
+    title: "Components/Notification/NotificationBanners",
+    component: NotificationBanners,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
     parameters: {
-        layout: "centered",
         viewport: {
             viewports: {
                 ...MINIMAL_VIEWPORTS,
@@ -25,8 +23,7 @@ const meta = {
         },
     },
     args: {
-        message: "This is a notification message",
-        title: "Title",
+        banners: [],
     },
     argTypes: {
         className: {
@@ -36,51 +33,31 @@ const meta = {
                 type: { summary: "string | undefined" },
             },
         },
-        isMobile: {
-            control: { type: "boolean" },
-            description: "Optional.",
-            table: {
-                type: { summary: "boolean | undefined" },
-            },
-        },
-        type: {
-            options: [TYPE.INFO, TYPE.ERROR, TYPE.SUCCESS, TYPE.WARNING],
-            control: { type: "radio" },
-            description: "Optional.",
+        banners: {
+            description: "Required.",
             table: {
                 type: {
-                    summary: "info | error | success | warning | undefined",
+                    summary:
+                        "Array<{ id: string; message?: ReactNode; title?: string; type?: info | error | success | warning; }>",
                 },
             },
         },
     },
-} satisfies Meta<typeof NotificationBanner>;
+} satisfies Meta<typeof NotificationBanners>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NotificationBannerDesktop: Story = {
+export const NotificationBannersDesktop: Story = {
     args: {
-        isMobile: false,
+        banners: [],
     },
     parameters: { viewport: { defaultViewport: "desktop" } },
 };
 
-export const NotificationBannerMobile: Story = {
+export const NotificationBannersMobile: Story = {
     args: {
-        isMobile: true,
+        banners: [],
     },
     parameters: { viewport: { defaultViewport: "mobile1" } },
-    render: (args) => (
-        <div
-            style={{
-                position: "absolute",
-                top: "8px",
-                left: "8px",
-                width: "calc(100vw - 16px)",
-            }}
-        >
-            <NotificationBanner {...args} />
-        </div>
-    ),
 };

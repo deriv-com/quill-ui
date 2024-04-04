@@ -12,9 +12,9 @@
 .notification {
     &-banner,
     &-banner__mobile {
-        position: absolute;
-        bottom: 8px;
-        left: 8px;
+        position: relative;
+        // bottom: 8px;
+        // left: 8px;
         display: flex;
         align-items: center;
         width: 360px;
@@ -73,9 +73,10 @@
             gap: 16px;
         }
         &__mobile {
-            top: 8px;
-            bottom: unset;
-            width: calc(100vw - 16px);
+            //     top: 8px;
+            //     bottom: unset;
+            //     width: calc(100vw - 16px);
+            width: inherit;
         }
     }
 }

@@ -3,7 +3,7 @@ import { LabelPairedXmarkSmRegularIcon } from "@deriv/quill-icons";
 import clsx from "clsx";
 import { CaptionText, Text } from "../Typography";
 import { NotificationIcon } from "./notification-icon";
-import { STATUS, TYPE } from "@utils/notification-utils";
+import { STATUS, TYPE } from "../../utils/notification-utils";
 import "./notification.scss";
 
 export interface NotificationProps

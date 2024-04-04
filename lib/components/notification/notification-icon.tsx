@@ -5,7 +5,7 @@ import {
     StandaloneCircleInfoBoldIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons";
-import { TYPE } from "@utils/notification-utils";
+import { TYPE } from "../../utils/notification-utils";
 
 interface NotificationIconProps {
     type?: (typeof TYPE)[keyof typeof TYPE];
