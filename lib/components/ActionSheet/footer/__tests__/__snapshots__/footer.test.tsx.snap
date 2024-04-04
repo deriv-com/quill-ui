@@ -5,8 +5,19 @@ exports[`<ActionSheet.Footer/> should render correctly with horizontal 1`] = `
   aria-label="horizontal footer"
   class="quill-action-sheet--footer quill-action-sheet--footer__variant--horizontal"
 >
-  <button>
-    action
+  <button
+    class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
+    data-state=""
+  >
+    <span
+      class="button-label"
+    >
+      <p
+        class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+      >
+        action
+      </p>
+    </span>
   </button>
 </div>
 `;
@@ -16,8 +27,19 @@ exports[`<ActionSheet.Footer/> should render correctly with vertical 1`] = `
   aria-label="vertical footer"
   class="quill-action-sheet--footer quill-action-sheet--footer__variant--vertical"
 >
-  <button>
-    action
+  <button
+    class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
+    data-state=""
+  >
+    <span
+      class="button-label"
+    >
+      <p
+        class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+      >
+        action
+      </p>
+    </span>
   </button>
 </div>
 `;
