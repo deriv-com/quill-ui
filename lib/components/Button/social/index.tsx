@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import {
     SocialAppleWhiteIcon,
     SocialGoogleBrandIcon,
-    SocialFacebookBrandIcon,
+    SocialFacebookBrandDarkIcon,
     SocialAppleBlackIcon,
 } from "@deriv/quill-icons/Social";
 import { SocialButtonProps } from "../types";
@@ -26,6 +26,11 @@ export const socialButtonIconSize = {
         height: 32,
     },
 };
+export const SocialButtonSize = {
+    md: "social-button__icon-only--md",
+    lg: "social-button__icon-only--lg",
+    xl: "social-button__icon-only--xl",
+} as const;
 
 export const SocialButton = forwardRef<HTMLButtonElement, SocialButtonProps>(
     (
@@ -54,10 +59,12 @@ export const SocialButton = forwardRef<HTMLButtonElement, SocialButtonProps>(
             <button
                 className={clsx(
                     "quill-button",
-                    ButtonSize[size],
                     buttonColorClass,
                     className,
                     fullWidth && "quill-button__full-width",
+                    !fullWidth && hideLabel
+                        ? SocialButtonSize[size]
+                        : ButtonSize[size],
 
                     { ...rest },
                 )}
@@ -69,7 +76,7 @@ export const SocialButton = forwardRef<HTMLButtonElement, SocialButtonProps>(
                     <SocialGoogleBrandIcon {...socialButtonIconSize[size]} />
                 )}
                 {social === "facebook" && (
-                    <SocialFacebookBrandIcon
+                    <SocialFacebookBrandDarkIcon
                         {...socialButtonIconSize[size]}
                         fill="#fff"
                     />
