@@ -16,6 +16,7 @@ export const ModalImage = ({
         {src ? (
             <div
                 className={clsx("quill-modal-bottom__content-image", className)}
+                data-testid="dt_modal_image"
                 style={{
                     background: `url(${src}) lightgray 50% / cover no-repeat`,
                     height: `${height}`,

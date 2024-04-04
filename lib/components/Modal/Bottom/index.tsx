@@ -16,7 +16,7 @@ interface ModalBottomProps {
     shouldCloseOnPrimaryButtonClick?: boolean;
     toggleModal: (isOpened: boolean) => void;
     portalId?: string;
-    primaryButtonLabel?: React.ReactNode;
+    primaryButtonLabel: React.ReactNode;
     primaryButtonCallback?: () => void;
     secondaryButtonLabel?: React.ReactNode;
 }
@@ -35,7 +35,7 @@ export const ModalBottom = ({
     className,
     children,
     showHandleBar = true,
-    showSecondaryButton = true,
+    showSecondaryButton = false,
     shouldCloseOnPrimaryButtonClick = false,
     toggleModal,
     portalId,
@@ -106,6 +106,7 @@ export const ModalBottom = ({
     return ReactDOM.createPortal(
         <div
             className="quill-modal-bottom__overlay"
+            data-testid="dt_overlay"
             onClick={isSwiping ? undefined : toggleHandler}
         >
             <div
@@ -123,6 +124,7 @@ export const ModalBottom = ({
                 {showHandleBar && (
                     <div
                         className="quill-modal-bottom__handle-bar"
+                        data-testid="dt_handlebar"
                         {...swipeHandlers}
                     />
                 )}

@@ -63,7 +63,7 @@ const meta = {
             table: { type: { summary: "boolean | undefined" } },
             options: ["true", "false"],
             description:
-                "Controls the visibility of the handlebar. If handlebar is visible, the modal can be expanded/collapsed by swiping up/down handlebar.",
+                "Controls the visibility of the handlebar. If handlebar is visible, the modal can be expanded/collapsed by swiping up/down handlebar. Default value is true.",
             control: { type: "boolean" },
         },
         showSecondaryButton: {
@@ -92,7 +92,7 @@ const meta = {
             control: { type: "string" },
         },
         primaryButtonLabel: {
-            table: { type: { summary: "ReactNode | undefined" } },
+            table: { type: { summary: "ReactNode" } },
             description: "Label for the primary button.",
             control: { type: "string" },
         },
