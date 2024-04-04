@@ -32,6 +32,16 @@ describe("ToggleSwitch", () => {
         expect(onChange).not.toHaveBeenCalled();
     });
 
+    it("should not toggle when checked is true", () => {
+        const onChange = jest.fn();
+        const { getByRole } = render(
+            <ToggleSwitch checked onChange={onChange} />,
+        );
+        const switchEl = getByRole("button");
+        fireEvent.click(switchEl);
+        expect(onChange).toHaveBeenCalledWith(false);
+    });
+
     it("should be focusable and trigger onFocus and onBlur", () => {
         const onFocus = jest.fn();
         const onBlur = jest.fn();
