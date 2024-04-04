@@ -65,13 +65,13 @@ const ToggleSwitch = ({
         >
             <div
                 className={clsx("toggle-switch__slider", {
-                    enabled: isEnabled,
+                    __enabled: isEnabled,
                 })}
             >
                 <div
                     className={clsx("toggle-switch__knob", {
-                        enabled: isEnabled,
-                        disabled,
+                        __enabled: isEnabled,
+                        __disabled: disabled,
                     })}
                 ></div>
             </div>
