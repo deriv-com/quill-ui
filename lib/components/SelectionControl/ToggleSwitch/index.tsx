@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./toggle-switch.scss"; // Ensure your SCSS file path is correct
+import React, { useEffect, useState } from "react";
+import "./toggle-switch.scss";
 import clsx from "clsx";
 
 export interface SwitchToggleProps {
@@ -10,6 +10,7 @@ export interface SwitchToggleProps {
     id?: string;
     onFocus?: () => void;
     onBlur?: () => void;
+    checked?: boolean;
 }
 
 const ToggleSwitch = ({
@@ -20,14 +21,25 @@ const ToggleSwitch = ({
     onFocus,
     onBlur,
     id,
+    checked,
 }: SwitchToggleProps) => {
     const [isEnabled, setIsEnabled] = useState(defaultChecked || false);
 
+    useEffect(() => {
+        if (checked !== undefined) {
+            setIsEnabled(checked);
+        }
+    }, [checked]);
+
     const toggleSwitch = () => {
         if (!disabled) {
-            const toggleEnable = !isEnabled;
-            setIsEnabled(toggleEnable);
-            onChange?.(toggleEnable);
+            if (checked === undefined) {
+                const toggleEnable = !isEnabled;
+                setIsEnabled(toggleEnable);
+                onChange?.(toggleEnable);
+            } else {
+                onChange?.(!checked);
+            }
         }
     };
 
@@ -56,7 +68,12 @@ const ToggleSwitch = ({
                     enabled: isEnabled,
                 })}
             >
-                <div className={clsx("toggle-switch__knob", { enabled: isEnabled, disabled })}></div>
+                <div
+                    className={clsx("toggle-switch__knob", {
+                        enabled: isEnabled,
+                        disabled,
+                    })}
+                ></div>
             </div>
         </div>
     );

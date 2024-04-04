@@ -22,6 +22,11 @@ const meta = {
             description: "Flag for setting initial state",
             control: { type: "boolean" },
         },
+        checked: {
+            table: { type: { summary: "boolean | undefined" } },
+            description: "Setting the switch state from outside the component and manage it outside, It enforces whichever state is coming",
+            control: { type: "boolean" },
+        },
         disabled: {
             table: { type: { summary: "boolean | undefined" } },
             description: "Flag for setting component's disabled state",
@@ -61,11 +66,19 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Enabled: Story = {
+export const Default: Story = {
     args: {
         disabled: false,
         defaultChecked: false,
     },
+};
+
+export const DefaultOn: Story = {
+    args: {
+        disabled: false,
+        defaultChecked: true,
+    },
+    name:'Checked (DefaultChecked is true)'
 };
 
 export const Disabled: Story = {
@@ -75,16 +88,17 @@ export const Disabled: Story = {
     },
 };
 
-export const Checked: Story = {
-    args: {
-        disabled: false,
-        defaultChecked: true,
-    },
-};
-
-export const DisabledChecked: Story = {
+export const DisabledOn: Story = {
     args: {
         disabled: true,
         defaultChecked: true,
     },
+};
+
+export const Checked_StayAlwaysChecked: Story = {
+    args: {
+        checked:true,
+        disabled: false,
+    },
+    name:'Checked (Stay Always Checked)'
 };

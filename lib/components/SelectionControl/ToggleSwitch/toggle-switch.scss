@@ -5,6 +5,25 @@
 @import "@quill/motion.scss";
 @import "@quill/size.scss";
 @import "@quill/spacing.scss";
+@import "@quill/color.semantic.scss";
+
+:root {
+    .theme--light {
+        --switch-background-color: var(--core-color-opacity-black-200);
+        --switch-active-color: var(--core-color-opacity-black-400);
+        --switch-enabled: var(--core-color-opacity-green-600);
+        --switch-active-enabled-color: var(--core-color-solid-green-900);
+        --switch-hover-enabled-color: var(--core-color-opacity-green-800);
+
+    }
+    .theme--dark {
+        --switch-background-color: var(--core-color-opacity-white-400);;
+        --switch-active-color:var(--core-color-opacity-white-200);
+        --switch-enabled: var(--core-color-opacity-green-800);
+        --switch-active-enabled-color: var(--core-color-opacity-green-400);
+        --switch-hover-enabled-color: var(--core-color-opacity-green-600);
+    }
+}
 
 .toggle-switch {
     display: flex;
@@ -17,7 +36,7 @@
     border-width: var(--core-borderRadius-100);
     &__disabled .toggle-switch__slider {
         pointer-events: none;
-        background: var(--core-color-opacity-black-200);
+        background: var(--semantic-color-typography-bg);
     }
     &__slider {
         display: flex;
@@ -25,27 +44,27 @@
         justify-content: flex-start;
         width: var(--core-size-2200);
         height: var(--size-generic-sm);
-        background-color: var(--core-color-opacity-black-200);
+        background-color: var(--switch-background-color);
         border-radius: var(--semantic-borderRadius-lg);
         transition: background-color var(--core-motion-duration-300) ease;
         cursor: pointer;
         position: relative;
         &:hover:not(.disabled) {
-            background-color: var(--core-color-opacity-black-300);
+            background-color: var(--semantic-color-typography-disabled);
         }
 
         &:active:not(.disabled) {
-            background-color: var(--core-color-opacity-black-400);
+            background-color: var(--switch-active-color);
         }
 
         &.enabled {
-            background-color: var(--core-color-opacity-green-600);
+            background-color: var(--switch-enabled);
             &:hover {
-                background-color: var(--core-color-opacity-green-800);
+                background-color: var(--switch-hover-enabled-color);
             }
 
             &:active {
-                background-color: var(--core-color-solid-green-900);
+                background-color: var(--switch-active-enabled-color);
             }
         }
     }
