@@ -4,6 +4,26 @@
 @import '@quill/opacity.scss';
 
 .social-button {
+    &__icon-only {
+        &--md{
+            width: 32px;
+            padding-inline: var(--core-spacing-50);
+            height: var(--core-size-1600);
+            border-radius: var(--core-borderRadius-600);
+        }
+        &--lg{
+            width: 48px;
+            padding-inline: var(--core-spacing-50);
+            height: var(--core-size-2400);
+            border-radius: var(--core-borderRadius-800);
+        }
+        &--xl{
+            width: 64px;
+            padding-inline: var(--core-spacing-50);
+            height: var(--core-size-3200);
+            border-radius: var(--core-borderRadius-1200);
+        }
+    }
     &__variant {
         &--google {
             &--primary {
