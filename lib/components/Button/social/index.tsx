@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import {
     SocialAppleWhiteIcon,
     SocialGoogleBrandIcon,
-    SocialFacebookBrandIcon,
+    SocialFacebookBrandDarkIcon,
     SocialAppleBlackIcon,
 } from "@deriv/quill-icons/Social";
 import { SocialButtonProps } from "../types";
@@ -69,7 +69,7 @@ export const SocialButton = forwardRef<HTMLButtonElement, SocialButtonProps>(
                     <SocialGoogleBrandIcon {...socialButtonIconSize[size]} />
                 )}
                 {social === "facebook" && (
-                    <SocialFacebookBrandIcon
+                    <SocialFacebookBrandDarkIcon
                         {...socialButtonIconSize[size]}
                         fill="#fff"
                     />
