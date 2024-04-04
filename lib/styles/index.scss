@@ -1,7 +1,7 @@
 /* Global Styles */
 @import "@quill/color.scss";
 @import "@quill/opacity.scss";
-@import '@quill/color.opacity.scss';
+@import "@quill/color.opacity.scss";
 @import "@quill/color.semantic.scss";
 @import "./reset.scss";
 
@@ -50,51 +50,50 @@
         &--primary-coral {
             background-color: var(--core-color-solid-coral-700);
             color: var(--core-color-solid-slate-50);
-            fill:  var(--core-color-solid-slate-50);
+            fill: var(--core-color-solid-slate-50);
             border: none;
-            &:hover:not(:disabled){
+            &:hover:not(:disabled) {
                 background-color: var(--core-color-solid-coral-800);
             }
-            &:active:not(:disabled){
+            &:active:not(:disabled) {
                 background-color: var(--core-color-solid-coral-900);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
-        &--primary-black{
+        &--primary-black {
             background-color: var(--core-color-solid-slate-1400);
             color: var(--core-color-solid-slate-50);
             fill: var(--core-color-solid-slate-50);
             border: none;
-            &:hover:not(:disabled){
+            &:hover:not(:disabled) {
                 background-color: var(--core-color-opacity-black-700);
             }
-            &:active:not(:disabled){
+            &:active:not(:disabled) {
                 background-color: var(--core-color-opacity-black-800);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
-              
             }
         }
-        &--primary-white{
+        &--primary-white {
             background-color: var(--core-color-solid-slate-50);
             color: var(--core-color-solid-slate-1400);
             fill: var(--core-color-solid-slate-1400);
             border: none;
-            &:hover:not(:disabled){
+            &:hover:not(:disabled) {
                 background-color: var(--core-color-opacity-white-800);
             }
-            &:active:not(:disabled){
+            &:active:not(:disabled) {
                 background-color: var(--core-color-opacity-white-700);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
         &--primary-purchase {
-            background-color : var(--core-color-solid-emerald-700);
+            background-color: var(--core-color-solid-emerald-700);
             color: var(--core-color-solid-slate-50);
             fill: var(--core-color-solid-slate-50);
             border: none;
@@ -104,7 +103,7 @@
             &:active:not(:disabled) {
                 background-color: var(--core-color-solid-emerald-900);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
@@ -119,76 +118,76 @@
             &:active:not(:disabled) {
                 background-color: var(--core-color-solid-cherry-900);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
         &--secondary-coral {
-            background-color :transparent;
+            background-color: transparent;
             border-style: solid;
             border-color: var(--core-color-solid-coral-700);
-            color:  var(--core-color-solid-coral-700);
+            color: var(--core-color-solid-coral-700);
             fill: var(--core-color-solid-coral-700);
-            &:hover:not(:disabled){
+            &:hover:not(:disabled) {
                 background-color: var(--core-color-opacity-coral-100);
             }
-            &:active:not(:disabled){
+            &:active:not(:disabled) {
                 background-color: var(--core-color-opacity-coral-200);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
-        &--secondary-black{
-            background-color:transparent;
+        &--secondary-black {
+            background-color: transparent;
             border-style: solid;
             border-color: var(--core-color-solid-black-1400);
-            color:  var(--core-color-solid-black-1400);
-            fill:  var(--core-color-solid-black-1400);
-            &:hover:not(:disabled){
+            color: var(--core-color-solid-black-1400);
+            fill: var(--core-color-solid-black-1400);
+            &:hover:not(:disabled) {
                 background-color: var(--core-color-opacity-black-100);
             }
-            &:active:not(:disabled){
+            &:active:not(:disabled) {
                 background-color: var(--core-color-opacity-black-200);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
-        &--secondary-white{
-            background-color:transparent;
+        &--secondary-white {
+            background-color: transparent;
             border-style: solid;
             border-color: var(--core-color-solid-slate-50);
-            color:  var(--core-color-solid-slate-50);
-            fill:  var(--core-color-solid-slate-50);
-            &:hover:not(:disabled){
+            color: var(--core-color-solid-slate-50);
+            fill: var(--core-color-solid-slate-50);
+            &:hover:not(:disabled) {
                 background-color: var(--core-color-opacity-white-200);
             }
-            &:active:not(:disabled){
+            &:active:not(:disabled) {
                 background-color: var(--core-color-opacity-white-100);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
         &--secondary-purchase {
-            background-color :transparent;
+            background-color: transparent;
             border-style: solid;
             border-color: var(--core-color-solid-emerald-700);
             color: var(--core-color-solid-emerald-700);
             fill: var(--core-color-solid-emerald-700);
             &:hover:not(:disabled) {
-                background-color:var(--core-color-solid-emerald-100);
+                background-color: var(--core-color-solid-emerald-100);
             }
             &:active:not(:disabled) {
                 background-color: var(--core-color-opacity-emerald-200);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
-        &--secondary-sell{
-            background-color :transparent;
+        &--secondary-sell {
+            background-color: transparent;
             border-style: solid;
             border-color: var(--core-color-solid-cherry-700);
             color: var(--core-color-solid-cherry-700);
@@ -199,60 +198,60 @@
             &:active:not(:disabled) {
                 background-color: var(--core-color-opacity-cherry-200);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
-        &--tertiary-coral{
-            background-color :transparent;
+        &--tertiary-coral {
+            background-color: transparent;
             color: var(--core-color-solid-coral-700);
             fill: var(--core-color-solid-coral-700);
             text-decoration: underline;
             border: none;
-            &:hover:not(:disabled){
+            &:hover:not(:disabled) {
                 background-color: var(--core-color-opacity-coral-100);
             }
-            &:active:not(:disabled){
+            &:active:not(:disabled) {
                 background-color: var(--core-color-opacity-coral-200);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
-        &--tertiary-black{
-            background-color :transparent;
+        &--tertiary-black {
+            background-color: transparent;
             color: var(--core-color-solid-black-1400);
             fill: var(--core-color-solid-black-1400);
             text-decoration: underline;
             border: none;
-            &:hover:not(:disabled){
+            &:hover:not(:disabled) {
                 background-color: var(--core-color-opacity-black-100);
             }
-            &:active:not(:disabled){
+            &:active:not(:disabled) {
                 background-color: var(--core-color-opacity-black-200);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
-        &--tertiary-white{
-            background-color :transparent;
+        &--tertiary-white {
+            background-color: transparent;
             color: var(--core-color-solid-slate-50);
             fill: var(--core-color-solid-slate-50);
             text-decoration: underline;
             border: none;
-            &:hover:not(:disabled){
+            &:hover:not(:disabled) {
                 background-color: var(--core-color-opacity-white-200);
             }
-            &:active:not(:disabled){
+            &:active:not(:disabled) {
                 background-color: var(--core-color-opacity-white-100);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
-        &--tertiary-purchase{
-            background-color :transparent;
+        &--tertiary-purchase {
+            background-color: transparent;
             color: var(--core-color-solid-emerald-700);
             fill: var(--core-color-solid-emerald-700);
             text-decoration: underline;
@@ -263,12 +262,12 @@
             &:active:not(:disabled) {
                 background-color: var(--core-color-opacity-emerald-200);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
-        &--tertiary-sell{
-            background-color :transparent;
+        &--tertiary-sell {
+            background-color: transparent;
             color: var(--core-color-solid-cherry-700);
             fill: var(--core-color-solid-cherry-700);
             text-decoration: underline;
@@ -279,11 +278,9 @@
             &:active:not(:disabled) {
                 background-color: var(--core-color-opacity-cherry-200);
             }
-            &:disabled{
+            &:disabled {
                 opacity: var(--core-opacity-600);
             }
         }
-   
     }
-
 }
