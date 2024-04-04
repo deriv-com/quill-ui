@@ -48,21 +48,21 @@
         transition: background-color var(--core-motion-duration-300) ease;
         cursor: pointer;
         position: relative;
-        &:hover:not(.disabled) {
+        &:hover:not(.__disabled) {
             background-color: var(--semantic-color-typography-disabled);
         }
 
-        &:active:not(.disabled) {
+        &:active:not(.__disabled) {
             background-color: var(--switch-active-color);
         }
 
         &.__enabled {
             background-color: var(--switch-enabled);
-            &:hover {
+            &:hover:not(.__disabled) {
                 background-color: var(--switch-hover-enabled-color);
             }
 
-            &:active {
+            &:active:not(.__disabled) {
                 background-color: var(--switch-active-enabled-color);
             }
         }
