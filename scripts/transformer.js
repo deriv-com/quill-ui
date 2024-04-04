@@ -317,6 +317,12 @@ class Transformer {
             this.styleStrings.static += `--temp-static-spacing-${i}: ${i}px;\n`;
         }
 
+        // Add temporary color values
+        const tempColors = ["#1877F2", "#166DDF", "#1464CB"];
+        tempColors.forEach((tempColor, ck) => {
+            this.styleStrings.static += `--temp-static-color-${ck}: ${tempColor};\n`;
+        });
+
         this.styleStrings.static = `:root { \n  ${this.styleStrings.static}}`;
 
         Object.keys(this.styleStrings).map((styleString) => {
