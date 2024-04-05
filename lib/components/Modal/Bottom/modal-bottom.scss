@@ -61,7 +61,7 @@
         background-color: var(--core-color-opacity-black-300);
         border-radius: var(--core-borderRadius-100);
 
-        // Pseudo element for increasing swipeable area
+        // Pseudo-element for increasing swipeable area
         &:before {
             content: "";
             height: var(--core-size-1500);

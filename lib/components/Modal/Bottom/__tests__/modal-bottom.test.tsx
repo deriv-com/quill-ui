@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { StandaloneTrashRegularIcon } from "@deriv/quill-icons";
-import { ModalBottom } from "..";
+import { ModalBottom } from "../index";
 
 describe("ModalBottom", () => {
     const primaryButtonLabel = "Primary Button Label";
