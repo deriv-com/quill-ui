@@ -2,12 +2,10 @@
 
 exports[`ToggleSwitch matches snapshot when blurred 1`] = `
 <DocumentFragment>
-  <div
-    aria-disabled="false"
+  <button
     aria-pressed="false"
     class="toggle-switch"
-    role="button"
-    tabindex="0"
+    data-testid="toggle-switch"
   >
     <div
       class="toggle-switch__slider"
@@ -16,18 +14,16 @@ exports[`ToggleSwitch matches snapshot when blurred 1`] = `
         class="toggle-switch__knob"
       />
     </div>
-  </div>
+  </button>
 </DocumentFragment>
 `;
 
 exports[`ToggleSwitch matches snapshot when focused 1`] = `
 <DocumentFragment>
-  <div
-    aria-disabled="false"
+  <button
     aria-pressed="false"
     class="toggle-switch"
-    role="button"
-    tabindex="0"
+    data-testid="toggle-switch"
   >
     <div
       class="toggle-switch__slider"
@@ -36,18 +32,16 @@ exports[`ToggleSwitch matches snapshot when focused 1`] = `
         class="toggle-switch__knob"
       />
     </div>
-  </div>
+  </button>
 </DocumentFragment>
 `;
 
 exports[`ToggleSwitch renders correctly when defaultChecked 1`] = `
 <DocumentFragment>
-  <div
-    aria-disabled="false"
+  <button
     aria-pressed="true"
     class="toggle-switch"
-    role="button"
-    tabindex="0"
+    data-testid="toggle-switch"
   >
     <div
       class="toggle-switch__slider enabled"
@@ -56,38 +50,17 @@ exports[`ToggleSwitch renders correctly when defaultChecked 1`] = `
         class="toggle-switch__knob enabled"
       />
     </div>
-  </div>
+  </button>
 </DocumentFragment>
 `;
 
 exports[`ToggleSwitch renders correctly when disabled 1`] = `
 <DocumentFragment>
-  <div
-    aria-disabled="true"
-    aria-pressed="false"
-    class="toggle-switch disabled"
-    role="button"
-    tabindex="-1"
-  >
-    <div
-      class="toggle-switch__slider"
-    >
-      <div
-        class="toggle-switch__knob disabled"
-      />
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`ToggleSwitch renders correctly with default props 1`] = `
-<DocumentFragment>
-  <div
-    aria-disabled="false"
+  <button
     aria-pressed="false"
     class="toggle-switch"
-    role="button"
-    tabindex="0"
+    data-testid="toggle-switch"
+    disabled=""
   >
     <div
       class="toggle-switch__slider"
@@ -96,18 +69,34 @@ exports[`ToggleSwitch renders correctly with default props 1`] = `
         class="toggle-switch__knob"
       />
     </div>
-  </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`ToggleSwitch renders correctly with default props 1`] = `
+<DocumentFragment>
+  <button
+    aria-pressed="false"
+    class="toggle-switch"
+    data-testid="toggle-switch"
+  >
+    <div
+      class="toggle-switch__slider"
+    >
+      <div
+        class="toggle-switch__knob"
+      />
+    </div>
+  </button>
 </DocumentFragment>
 `;
 
 exports[`ToggleSwitch toggles from off to on and matches snapshot 1`] = `
 <DocumentFragment>
-  <div
-    aria-disabled="false"
+  <button
     aria-pressed="true"
     class="toggle-switch"
-    role="button"
-    tabindex="0"
+    data-testid="toggle-switch"
   >
     <div
       class="toggle-switch__slider enabled"
@@ -116,6 +105,6 @@ exports[`ToggleSwitch toggles from off to on and matches snapshot 1`] = `
         class="toggle-switch__knob enabled"
       />
     </div>
-  </div>
+  </button>
 </DocumentFragment>
 `;

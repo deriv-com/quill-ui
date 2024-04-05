@@ -51,32 +51,29 @@ const ToggleSwitch = ({
     };
 
     return (
-        <div
-            className={clsx("toggle-switch", className, { disabled })}
-            tabIndex={disabled ? -1 : 0}
+        <button
+            className={clsx("toggle-switch", className)}
             onClick={toggleSwitch}
+            data-testid='toggle-switch'
             onKeyDown={handleKeyDown}
-            role="button"
-            aria-pressed={isEnabled}
             onFocus={onFocus}
             id={id}
             onBlur={onBlur}
-            aria-disabled={disabled}
+            disabled={disabled}
+            aria-pressed={isEnabled}
         >
             <div
                 className={clsx("toggle-switch__slider", {
-                    __enabled: isEnabled,
-                    __disabled: disabled,
+                    enabled: isEnabled,
                 })}
             >
                 <div
                     className={clsx("toggle-switch__knob", {
-                        __enabled: isEnabled,
-                        __disabled: disabled,
+                        enabled: isEnabled,
                     })}
                 ></div>
             </div>
-        </div>
+        </button>
     );
 };
 

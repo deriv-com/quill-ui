@@ -33,10 +33,6 @@
     width: var(--core-size-2400);
     height: var(--core-size-1400);
     border-width: var(--core-borderRadius-100);
-    &__disabled .toggle-switch__slider {
-        pointer-events: none;
-        background: var(--semantic-color-typography-bg);
-    }
     &__slider {
         display: flex;
         align-items: center;
@@ -48,21 +44,21 @@
         transition: background-color var(--core-motion-duration-300) ease;
         cursor: pointer;
         position: relative;
-        &:hover:not(.__disabled) {
+        &:hover {
             background-color: var(--semantic-color-typography-disabled);
         }
 
-        &:active:not(.__disabled) {
+        &:active {
             background-color: var(--switch-active-color);
         }
 
-        &.__enabled {
+        &.enabled {
             background-color: var(--switch-enabled);
-            &:hover:not(.__disabled) {
+            &:hover {
                 background-color: var(--switch-hover-enabled-color);
             }
 
-            &:active:not(.__disabled) {
+            &:active {
                 background-color: var(--switch-active-enabled-color);
             }
         }
@@ -77,12 +73,20 @@
         top: 50%;
         transform: translateY(-50%);
         left: var(--core-spacing-100);
-
-        &.__enabled {
-            left: calc(100% - 22px);
+        &.enabled {
+            left: calc(100% - calc(var(--core-size-2200) / 2));
         }
+    }
+    .enabled {
+        pointer-events: none;
+        .toggle-switch__knob {
+            left: calc(100% - calc(var(--core-size-2200) / 2));
+        }
+    }
 
-        &.__disabled {
+    &[disabled] {
+        pointer-events: none;
+        .toggle-switch__knob {
             background-color: var(--core-color-opacity-white-400);
         }
     }

@@ -67,15 +67,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    args: {
-        disabled: false,
-        defaultChecked: false,
-    },
+    args: {},
 };
 
 export const DefaultOn: Story = {
     args: {
-        disabled: false,
         defaultChecked: true,
     },
     name:'Checked (DefaultChecked is true)'
@@ -84,7 +80,6 @@ export const DefaultOn: Story = {
 export const Disabled: Story = {
     args: {
         disabled: true,
-        defaultChecked: false,
     },
 };
 
@@ -95,10 +90,9 @@ export const DisabledOn: Story = {
     },
 };
 
-export const Checked_StayAlwaysChecked: Story = {
+export const CheckedStaysAlwaysChecked: Story = {
     args: {
         checked:true,
-        disabled: false,
     },
     name:'Checked (Stay Always Checked)'
 };
