@@ -59,7 +59,15 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const defaultSnackbar: Story = {};
+export const defaultSnackbar: Story = {
+    parameters: {
+        docs: {
+            story: {
+                height: '100px',
+            }
+        }
+    }
+};
 
 export const SnackbarWithMessageOnly: Story = {
     args: {
