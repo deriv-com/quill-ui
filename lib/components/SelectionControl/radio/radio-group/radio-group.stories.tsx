@@ -14,7 +14,7 @@ const Template = ({ ...args }) => (
 );
 
 const RadioGroupMeta = {
-  title: "Components/Selection/Radio/RadioGroup",
+  title: "Components/Selection control/Radio/RadioGroup",
   component: RadioGroup,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
