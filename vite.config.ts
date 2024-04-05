@@ -29,6 +29,13 @@ export default defineConfig({
             },
         },
     },
+    resolve: {
+        alias: {
+            "@quill-bundle": resolve(__dirname, "lib/styles/quill-bundle"),
+            "@quill": resolve(__dirname, "lib/styles/quill"),
+            "@quill-custom": resolve(__dirname, "lib/styles/custom"),
+        },
+    },
     build: {
         lib: {
             entry: resolve(__dirname, "lib/main.ts"),

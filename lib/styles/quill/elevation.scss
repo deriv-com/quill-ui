@@ -1,0 +1,77 @@
+:root {
+    --core-elevation-shadow-50: 0 0 0 0;
+    --core-elevation-shadow-110: 0 -1 2 0 rgba(0, 0, 0, 6%),
+        0 -1 2 0 rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-120: 1 0 2 0 rgba(0, 0, 0, 6%),
+        1 0 2 0 rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-130: 0 1 2 0 rgba(0, 0, 0, 6%),
+        0 1 2 0 rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-140: -1 0 2 0 rgba(0, 0, 0, 6%),
+        -1 0 2 0 rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-210: 0 -1 4 0 rgba(0, 0, 0, 8%),
+        0 -1 4 0 rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-220: 1 0 4 0 rgba(0, 0, 0, 8%),
+        1 0 4 0 rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-230: 0 1 4 0 rgba(0, 0, 0, 8%),
+        0 1 4 0 rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-240: -1 0 4 0 rgba(0, 0, 0, 8%),
+        -1 0 4 0 rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-310: 0 -4 8 2 rgba(0, 0, 0, 3%),
+        0 -4 8 2 rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-320: 4 0 8 2 rgba(0, 0, 0, 3%),
+        4 0 8 2 rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-330: 0 4 8 2 rgba(0, 0, 0, 3%),
+        0 4 8 2 rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-340: -4 0 8 2 rgba(0, 0, 0, 3%),
+        -4 0 8 2 rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-410: 0 -8 16 2 rgba(0, 0, 0, 4%),
+        0 -8 16 2 rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-420: 8 0 16 2 rgba(0, 0, 0, 4%),
+        8 0 16 2 rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-430: 0 8 16 2 rgba(0, 0, 0, 4%),
+        0 8 16 2 rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-440: -8 0 16 2 rgba(0, 0, 0, 4%),
+        -8 0 16 2 rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-510: 0 -16 24 4 rgba(0, 0, 0, 4%),
+        0 -16 24 4 rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-520: 16 0 24 4 rgba(0, 0, 0, 4%),
+        16 0 24 4 rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-530: 0 16 24 4 rgba(0, 0, 0, 4%),
+        0 16 24 4 rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-540: -16 0 24 4 rgba(0, 0, 0, 4%),
+        -16 0 24 4 rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-610: 0 -24 48 8 rgba(0, 0, 0, 6%),
+        0 -24 48 8 rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-620: 24 0 48 8 rgba(0, 0, 0, 6%),
+        24 0 48 8 rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-630: 0 24 48 8 rgba(0, 0, 0, 6%),
+        0 24 48 8 rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-640: -24 0 48 8 rgba(0, 0, 0, 6%),
+        -24 0 48 8 rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-710: 0 -32 64 12 rgba(0, 0, 0, 8%),
+        0 -32 64 12 rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-720: 32 0 64 12 rgba(0, 0, 0, 8%),
+        32 0 64 12 rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-730: 0 32 64 12 rgba(0, 0, 0, 8%),
+        0 32 64 12 rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-740: -32 0 64 12 rgba(0, 0, 0, 8%),
+        -32 0 64 12 rgba(0, 0, 0, 4%);
+    --semantic-elevation-shadow-dialog: 0 32 64 12 rgba(0, 0, 0, 8%),
+        0 32 64 12 rgba(0, 0, 0, 4%);
+    --semantic-elevation-shadow-notification: 0 24 48 8 rgba(0, 0, 0, 6%),
+        0 24 48 8 rgba(0, 0, 0, 3%);
+    --semantic-elevation-shadow-menu: 0 16 24 4 rgba(0, 0, 0, 4%),
+        0 16 24 4 rgba(0, 0, 0, 2%);
+    --semantic-elevation-shadow-card-default: 0 4 8 2 rgba(0, 0, 0, 3%),
+        0 4 8 2 rgba(0, 0, 0, 2%);
+    --semantic-elevation-shadow-card-hover: 0 16 24 4 rgba(0, 0, 0, 4%),
+        0 16 24 4 rgba(0, 0, 0, 2%);
+    --semantic-elevation-shadow-overflow-top: 0 -4 8 2 rgba(0, 0, 0, 3%),
+        0 -4 8 2 rgba(0, 0, 0, 2%);
+    --semantic-elevation-shadow-overflow-right: 4 0 8 2 rgba(0, 0, 0, 3%),
+        4 0 8 2 rgba(0, 0, 0, 2%);
+    --semantic-elevation-shadow-overflow-bottom: 0 4 8 2 rgba(0, 0, 0, 3%),
+        0 4 8 2 rgba(0, 0, 0, 2%);
+    --semantic-elevation-shadow-overflow-left: -4 0 8 2 rgba(0, 0, 0, 3%),
+        -4 0 8 2 rgba(0, 0, 0, 2%);
+}

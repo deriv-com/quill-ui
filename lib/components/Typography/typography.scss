@@ -1,4 +1,7 @@
-@import "../../styles/index.scss";
+
+
+@import '@quill-bundle/typhography.scss';
+
 
 $headings: hero, h1, h2, h3, h4, h5, h6;
 $sizes: xl, lg, md, sm;
@@ -20,9 +23,6 @@ $weights: regular, bold;
     );
     line-height: var(
         --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-lineHeight
-    );
-    padding-block: var(
-        --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-paragraphSpacing
     );
     letter-spacing: var(
         --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-letterSpacing
@@ -47,9 +47,6 @@ $weights: regular, bold;
     );
     line-height: var(
         --semantic-typography-#{$type}-#{$weight}-#{$decoration}-lineHeight
-    );
-    padding-block: var(
-        --semantic-typography-#{$type}-#{$weight}-#{$decoration}-paragraphSpacing
     );
     letter-spacing: var(
         --semantic-typography-#{$type}-#{$weight}-#{$decoration}-letterSpacing
@@ -123,9 +120,6 @@ $weights: regular, bold;
             );
             line-height: var(
                 --semantic-typography-heading-#{$heading}-lineHeight
-            );
-            padding-block: var(
-                --semantic-typography-heading-#{$heading}-paragraphSpacing
             );
             letter-spacing: normal;
         }
