@@ -1,51 +1,81 @@
-import RadioButton from ".";
+import React from "react";
+import RadioButton from "./index";
 
-export default {
-    title: "Components/Selection/Radio/RadioButton",
-    component: RadioButton,
+const RadioButtonMeta = {
+  title: "Components/Selection/Radio/RadioButton",
+  component: RadioButton,
+  parameters: { layout: "centered" },
+  tags: ["autodocs"],
+  argTypes: {
+    id: {
+      description: "Unique identifier for the radio button element.",
+    },
+    defaultChecked: {
+      description: "Sets the initial checked state of the radio button.",
+      control: { type: "boolean" },
+    },
+    disabled: {
+      description: "Disables the radio button interaction.",
+      control: { type: "boolean" },
+    },
+    has_info: {
+      description: "Displays informational content next to the radio button.",
+      control: { type: "boolean" },
+    },
+    className: {
+      description: "CSS class name applied to the radio button element.",
+    },
+    classNameLabel: {
+      description: "CSS class name applied to the radio button label.",
+    },
+    classNameInfo: {
+      description: "CSS class name applied to the informational content.",
+    },
+  },
+  description: 'The RadioButton component is used to create radio button elements for user selection within a group.',
 };
 
-export const DefaultButton = () => (
-    <RadioButton id="radio-1" defaultChecked={true}>
-        Option 1
-    </RadioButton>
-);
-DefaultButton.storyName = "Default";
+export default RadioButtonMeta;
 
-export const UncheckedButton = () => (
-    <RadioButton id="radio-2" defaultChecked={false}>
-        Option 2
-    </RadioButton>
-);
-UncheckedButton.storyName = "Unchecked";
+const Template = ({ ...args }) => <RadioButton {...args}>Option</ RadioButton>;
 
-export const CustomClassButton = () => (
-    <RadioButton id="radio-3" defaultChecked={false} className="custom-radio">
-        Custom Option
-    </RadioButton>
-);
-CustomClassButton.storyName = "Custom Class";
+export const Default = Template.bind({});
+Default.args = {
+  defaultChecked: true,
+  disabled: false,
+  has_info: false,
+  id: "radio-1",
+  className: "",
+  classNameLabel: "",
+  classNameInfo: "",
+};
 
-export const CustomLabelClassButton = () => (
-    <RadioButton
-        id="radio-4"
-        defaultChecked={true}
-        classNameLabel="custom-label"
-    >
-        Option 4
-    </RadioButton>
-);
-CustomLabelClassButton.storyName = "Custom Label Class";
+export const Unchecked = Template.bind({});
+Unchecked.args = {
+  ...Default.args,
+  defaultChecked: false,
+};
 
-export const DisabledButton = () => (
-    <RadioButton id="radio-5" defaultChecked={true} disabled>
-        Disabled Option
-    </RadioButton>
-);
+export const CustomClassButton = Template.bind({});
+CustomClassButton.args = {
+  ...Default.args,
+  className: "custom-radio",
+};
 
-export const ButtonWithInfo = () => (
-    <RadioButton id="radio-6" defaultChecked={false} has_info>
-        Option With Info
-    </RadioButton>
-);
-DisabledButton.storyName = "Disabled";
+export const CustomLabelClassButton = Template.bind({});
+CustomLabelClassButton.args = {
+  ...Default.args,
+  classNameLabel: "custom-label",
+};
+
+export const DisabledButton = Template.bind({});
+DisabledButton.args = {
+  ...Default.args,
+  disabled: true,
+};
+
+export const ButtonWithInfo = Template.bind({});
+ButtonWithInfo.args = {
+  ...Default.args,
+  has_info: true,
+};
