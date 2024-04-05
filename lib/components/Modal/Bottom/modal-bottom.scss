@@ -115,14 +115,3 @@
         }
     }
 }
-
-//Styles for class which was used in storybook as an example
-.indicator {
-    &--success {
-        background-color: var(--core-color-solid-green-100);
-    }
-
-    &--danger {
-        background-color: var(--core-color-solid-red-100);
-    }
-}

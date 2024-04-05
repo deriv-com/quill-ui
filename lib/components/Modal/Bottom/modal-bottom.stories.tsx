@@ -419,7 +419,11 @@ export const ModalBottomWithIcon: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Image className="indicator--danger">
+                    <ModalBottom.Image
+                        style={{
+                            backgroundColor: "var(--core-color-solid-red-100)",
+                        }}
+                    >
                         <StandaloneTrashRegularIcon
                             fill="var(--core-color-solid-red-900)"
                             iconSize="2xl"
@@ -459,7 +463,12 @@ export const ModalBottomWithIconAndLongContent: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Image className="indicator--success">
+                    <ModalBottom.Image
+                        style={{
+                            backgroundColor:
+                                "var(--core-color-solid-green-100)",
+                        }}
+                    >
                         <StandaloneCircleSterlingRegularIcon
                             fill="var(--core-color-solid-green-900)"
                             iconSize="2xl"
