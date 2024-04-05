@@ -27,6 +27,8 @@
             cursor: pointer;
             position: relative;
             z-index: 2;
+            min-width: 0;
+            white-space: nowrap;
 
             * {
                 z-index: 2;
