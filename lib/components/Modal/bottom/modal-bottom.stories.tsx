@@ -45,7 +45,7 @@ const meta = {
         children: {
             table: { type: { summary: "ReactNode" } },
             description:
-                "Modal's content. Can be wrapped with the `<ModalBottom.Image/>`,`<ModalBottom.Title/>` and `<ModalBottom.Body/>` components in order to organize the content inside the modal. Each of them accepts className for customization and `<ModalBottom.Image/>` can also be passed scr and height properties.",
+                "Modal's content. Can be wrapped with the `<ModalBottom.Header/>` and `<ModalBottom.Body/>` components in order to organize the content inside the modal. Each of them accepts className for customization and `<ModalBottom.Header/>` can also be passed scr and height properties.",
             control: { type: null },
         },
         isOpened: {
@@ -137,9 +137,7 @@ export const DefaultModalBottom: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Title>
-                        {titlePlaceHolderText}
-                    </ModalBottom.Title>
+                    <ModalBottom.Header title={titlePlaceHolderText} />
                     <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -172,9 +170,7 @@ export const ModalBottomWithoutHandleBar: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Title>
-                        {titlePlaceHolderText}
-                    </ModalBottom.Title>
+                    <ModalBottom.Header title={titlePlaceHolderText} />
                     <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -207,9 +203,7 @@ export const ModalBottomWithoutSecondaryButton: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Title>
-                        {titlePlaceHolderText}
-                    </ModalBottom.Title>
+                    <ModalBottom.Header title={titlePlaceHolderText} />
                     <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -242,9 +236,7 @@ export const ClosingModalBottomOnPrimaryButtonClick: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Title>
-                        {titlePlaceHolderText}
-                    </ModalBottom.Title>
+                    <ModalBottom.Header title={titlePlaceHolderText} />
                     <ModalBottom.Body>{mediumTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -276,9 +268,7 @@ export const ModalBottomExpanded: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Title>
-                        {titlePlaceHolderText}
-                    </ModalBottom.Title>
+                    <ModalBottom.Header title={titlePlaceHolderText} />
                     <ModalBottom.Body>{longTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -310,12 +300,9 @@ export const ModalBottomWithImage: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Image>
+                    <ModalBottom.Header title={titlePlaceHolderText} hasImg>
                         <img src={imageSRC} alt="Apples" />
-                    </ModalBottom.Image>
-                    <ModalBottom.Title>
-                        {titlePlaceHolderText}
-                    </ModalBottom.Title>
+                    </ModalBottom.Header>
                     <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -347,12 +334,9 @@ export const ModalBottomWithImageAndLongContent: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Image>
+                    <ModalBottom.Header title={titlePlaceHolderText} hasImg>
                         <img src={imageSRC} alt="Oranges" />
-                    </ModalBottom.Image>
-                    <ModalBottom.Title>
-                        {titlePlaceHolderText}
-                    </ModalBottom.Title>
+                    </ModalBottom.Header>
                     <ModalBottom.Body>{longTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -384,10 +368,11 @@ export const ModalBottomWithImageSRC: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Image src={imageSRC} />
-                    <ModalBottom.Title>
-                        {titlePlaceHolderText}
-                    </ModalBottom.Title>
+                    <ModalBottom.Header
+                        src={imageSRC}
+                        title={titlePlaceHolderText}
+                        hasImg
+                    />
                     <ModalBottom.Body>{mediumTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -419,19 +404,18 @@ export const ModalBottomWithIcon: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Image
+                    <ModalBottom.Header
                         style={{
                             backgroundColor: "var(--core-color-solid-red-100)",
                         }}
+                        title={titlePlaceHolderText}
+                        hasImg
                     >
                         <StandaloneTrashRegularIcon
                             fill="var(--core-color-solid-red-900)"
                             iconSize="2xl"
                         />
-                    </ModalBottom.Image>
-                    <ModalBottom.Title>
-                        {titlePlaceHolderText}
-                    </ModalBottom.Title>
+                    </ModalBottom.Header>
                     <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -463,20 +447,19 @@ export const ModalBottomWithIconAndLongContent: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Image
+                    <ModalBottom.Header
                         style={{
                             backgroundColor:
                                 "var(--core-color-solid-green-100)",
                         }}
+                        title={titlePlaceHolderText}
+                        hasImg
                     >
                         <StandaloneCircleSterlingRegularIcon
                             fill="var(--core-color-solid-green-900)"
                             iconSize="2xl"
                         />
-                    </ModalBottom.Image>
-                    <ModalBottom.Title>
-                        {titlePlaceHolderText}
-                    </ModalBottom.Title>
+                    </ModalBottom.Header>
                     <ModalBottom.Body>{longTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>

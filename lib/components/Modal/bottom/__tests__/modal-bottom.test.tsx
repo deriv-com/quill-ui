@@ -9,12 +9,13 @@ describe("ModalBottom", () => {
     const primaryButtonLabel = "Primary Button Label";
     const secondaryButtonLabel = "Secondary Button Label";
     const shortTextContent = "This is some amazing placeholder.";
+    const title = "Title";
     const imageSRC =
         "https://live.staticflickr.com/603/21947667154_e63cc9252b_b.jpg";
 
     const children = (
         <>
-            <ModalBottom.Title>Title</ModalBottom.Title>
+            <ModalBottom.Header title={title} />
             <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
         </>
     );
@@ -128,9 +129,9 @@ describe("ModalBottom", () => {
     it("should render passed image if it is ReactNode", () => {
         const { container } = render(
             <ModalBottom {...mockProps}>
-                <ModalBottom.Image>
+                <ModalBottom.Header title={title} hasImg>
                     <img src={imageSRC} alt="Apples" />
-                </ModalBottom.Image>
+                </ModalBottom.Header>
             </ModalBottom>,
         );
 
@@ -141,7 +142,7 @@ describe("ModalBottom", () => {
     it("should render container with image as a background if src was passed", () => {
         const { container } = render(
             <ModalBottom {...mockProps}>
-                <ModalBottom.Image src={imageSRC} />
+                <ModalBottom.Header src={imageSRC} title={title} hasImg />
             </ModalBottom>,
         );
 
@@ -152,9 +153,9 @@ describe("ModalBottom", () => {
     it("should render SVG if it was passed", () => {
         const { container } = render(
             <ModalBottom {...mockProps}>
-                <ModalBottom.Image>
+                <ModalBottom.Header title={title} hasImg>
                     <StandaloneTrashRegularIcon />
-                </ModalBottom.Image>
+                </ModalBottom.Header>
             </ModalBottom>,
         );
 

@@ -3,8 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import clsx from "clsx";
 import "./modal-bottom.scss";
 import { useSwipeable } from "react-swipeable";
-import { ModalImage } from "./modal-image";
-import { ModalTitle } from "./modal-title";
+import { ModalHeader } from "./modal-header";
 import { ModalBody } from "./modal-body";
 import { Button } from "../../Button";
 
@@ -157,6 +156,5 @@ export const ModalBottom = ({
     );
 };
 
-ModalBottom.Title = ModalTitle;
+ModalBottom.Header = ModalHeader;
 ModalBottom.Body = ModalBody;
-ModalBottom.Image = ModalImage;

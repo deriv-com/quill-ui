@@ -77,6 +77,11 @@ exports[`ModalBottom should render SVG if it was passed 1`] = `
             />
           </svg>
         </div>
+        <h4
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal-bottom__content-title"
+        >
+          Title
+        </h4>
       </div>
       <div
         class="quill-modal-bottom__button-wrapper"
@@ -121,6 +126,11 @@ exports[`ModalBottom should render container with image as a background if src w
           class="quill-modal-bottom__content-image"
           data-testid="dt_modal_image"
         />
+        <h4
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal-bottom__content-title"
+        >
+          Title
+        </h4>
       </div>
       <div
         class="quill-modal-bottom__button-wrapper"
@@ -169,6 +179,11 @@ exports[`ModalBottom should render passed image if it is ReactNode 1`] = `
             src="https://live.staticflickr.com/603/21947667154_e63cc9252b_b.jpg"
           />
         </div>
+        <h4
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal-bottom__content-title"
+        >
+          Title
+        </h4>
       </div>
       <div
         class="quill-modal-bottom__button-wrapper"
