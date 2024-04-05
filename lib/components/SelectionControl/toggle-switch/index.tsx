@@ -54,7 +54,6 @@ const ToggleSwitch = ({
         <button
             className={clsx("toggle-switch", className)}
             onClick={toggleSwitch}
-            data-testid='toggle-switch'
             onKeyDown={handleKeyDown}
             onFocus={onFocus}
             id={id}
