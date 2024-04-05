@@ -4,7 +4,7 @@ import {
     LabelPairedCircleMdRegularIcon,
     LabelPairedCircleDotMdFillIcon,
     LabelPairedCircleInfoMdRegularIcon,
-} from "@deriv/quill-icons/LabelPaired";
+} from "@deriv/quill-icons";
 import "./radio-button.scss";
 
 type TRadio = {
