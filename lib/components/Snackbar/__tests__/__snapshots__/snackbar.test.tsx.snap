@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snackbar calls onActionClick when action button is clicked 1`] = `
+<div>
+  <div
+    class="snackbar fast-animation"
+  >
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        Test message
+      </p>
+    </div>
+    <button
+      style="color: rgb(255, 255, 255); padding: 4px;"
+      type="button"
+    >
+      Action
+    </button>
+    <button
+      style="color: rgb(255, 255, 255); padding: 4px;"
+      type="button"
+    >
+      x
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Snackbar calls onClose after a certain duration when Snackbar is open 1`] = `
+<div>
+  <div
+    class="snackbar slow-animation"
+  >
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        Test message
+      </p>
+    </div>
+    <button
+      style="color: rgb(255, 255, 255); padding: 4px;"
+      type="button"
+    >
+      x
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Snackbar calls onClose when close button is clicked 1`] = `
+<div>
+  <div
+    class="snackbar fast-animation"
+  >
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        Test message
+      </p>
+    </div>
+    <button
+      style="color: rgb(255, 255, 255); padding: 4px;"
+      type="button"
+    >
+      x
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Snackbar renders correctly with custom icon 1`] = `
+<div>
+  <div
+    class="snackbar slow-animation"
+  >
+    <div
+      class="snackbar__icon--container"
+    >
+      <img
+        alt="Custom Icon"
+        data-testid="custom-icon"
+        src="custom-icon.svg"
+      />
+    </div>
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        Test message
+      </p>
+    </div>
+    <button
+      style="color: rgb(255, 255, 255); padding: 4px;"
+      type="button"
+    >
+      x
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Snackbar renders correctly without action button 1`] = `
+<div>
+  <div
+    class="snackbar slow-animation"
+  >
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        Test message
+      </p>
+    </div>
+    <button
+      style="color: rgb(255, 255, 255); padding: 4px;"
+      type="button"
+    >
+      x
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Snackbar renders correctly without close button 1`] = `
+<div>
+  <div
+    class="snackbar slow-animation"
+  >
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        Test message
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Snackbar renders with default props 1`] = `
+<div>
+  <div
+    class="snackbar slow-animation"
+  >
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        Test message
+      </p>
+    </div>
+    <button
+      style="color: rgb(255, 255, 255); padding: 4px;"
+      type="button"
+    >
+      x
+    </button>
+  </div>
+</div>
+`;
