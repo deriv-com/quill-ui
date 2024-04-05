@@ -1,1 +1,2 @@
-export * from "./ToggleSwitch";
+export * from "./Checkbox";
+export * from "./toggle-switch";
