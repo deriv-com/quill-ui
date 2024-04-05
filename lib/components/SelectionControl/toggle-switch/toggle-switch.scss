@@ -84,7 +84,7 @@
         }
     }
 
-    &[disabled] {
+    &:disabled{
         pointer-events: none;
         .toggle-switch__knob {
             background-color: var(--core-color-opacity-white-400);
