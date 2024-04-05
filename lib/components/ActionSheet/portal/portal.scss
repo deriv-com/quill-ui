@@ -53,8 +53,8 @@
         padding-left: var(--semantic-spacing-general-lg);
         padding-right: var(--semantic-spacing-general-lg);
         transition-property: all;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
+        transition-timing-function: var(--motion-easing-inandout);
+        transition-duration: var(--core-motion-duration-200);
 
         @media (min-width: 1024px) {
             max-width: 360px;
