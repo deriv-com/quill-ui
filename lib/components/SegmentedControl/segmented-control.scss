@@ -18,6 +18,7 @@
             var(--semantic-color-typography-prominent) 4%,
             transparent
         );
+        -webkit-tap-highlight-color: transparent;
 
         .item {
             display: flex;
