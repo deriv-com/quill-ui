@@ -7,7 +7,7 @@
 
 .snackbar {
     display: flex;
-    width: 340px;
+    width: calc(100vw - var(--core-spacing-1600));
     max-width: 560px;
     min-height: var(--core-size-2400);
     padding: var(--semantic-spacing-general-sm)
