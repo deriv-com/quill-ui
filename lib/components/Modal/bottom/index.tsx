@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, HTMLAttributes } from "react";
 import clsx from "clsx";
 import "./modal-bottom.scss";
 import { useSwipeable } from "react-swipeable";
@@ -7,7 +7,7 @@ import { ModalHeader } from "./modal-header";
 import { ModalBody } from "./modal-body";
 import { Button } from "../../Button";
 
-interface ModalBottomProps {
+interface ModalBottomProps extends HTMLAttributes<HTMLDivElement> {
     isOpened?: boolean;
     className?: string;
     showHandleBar?: boolean;
@@ -41,6 +41,7 @@ export const ModalBottom = ({
     primaryButtonLabel,
     primaryButtonCallback,
     secondaryButtonLabel,
+    ...rest
 }: React.PropsWithChildren<ModalBottomProps>) => {
     const [isVisible, setIsVisible] = useState(isOpened);
     const [isExpanded, setIsExpanded] = useState(false);
@@ -107,6 +108,7 @@ export const ModalBottom = ({
             className="quill-modal-bottom__overlay"
             data-testid="dt_overlay"
             onClick={isSwiping ? undefined : toggleHandler}
+            {...rest}
         >
             <div
                 className={clsx(

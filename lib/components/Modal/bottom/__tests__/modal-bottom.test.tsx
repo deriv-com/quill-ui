@@ -10,7 +10,7 @@ describe("ModalBottom", () => {
     const secondaryButtonLabel = "Secondary Button Label";
     const shortTextContent = "This is some amazing placeholder.";
     const title = "Title";
-    const imageSRC =
+    const imageSrc =
         "https://live.staticflickr.com/603/21947667154_e63cc9252b_b.jpg";
 
     const children = (
@@ -131,7 +131,7 @@ describe("ModalBottom", () => {
             <ModalBottom {...mockProps}>
                 <ModalBottom.Header
                     title={title}
-                    image={<img src={imageSRC} alt="Apples" />}
+                    image={<img src={imageSrc} alt="Apples" />}
                 />
             </ModalBottom>,
         );
@@ -143,7 +143,7 @@ describe("ModalBottom", () => {
     it("should render container with image as a background if src was passed", () => {
         const { container } = render(
             <ModalBottom {...mockProps}>
-                <ModalBottom.Header src={imageSRC} title={title} />
+                <ModalBottom.Header src={imageSrc} title={title} />
             </ModalBottom>,
         );
 
