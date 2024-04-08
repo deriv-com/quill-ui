@@ -19,6 +19,7 @@ const longTextContent = placeHolderText.padStart(600, placeHolderText);
 const titlePlaceHolderText = "Title";
 const imageSRC =
     "https://live.staticflickr.com/603/21947667154_e63cc9252b_b.jpg";
+const Image = <img src={imageSRC} alt="Apples" />;
 
 const meta = {
     title: "Components/Modal/Bottom",
@@ -212,7 +213,7 @@ export const ModalBottomWithoutSecondaryButton: Story = {
 };
 
 export const ClosingModalBottomOnPrimaryButtonClick: Story = {
-    name: "Modal Bottom with closing option on Primary Button click",
+    name: "Modal Bottom with closing option on Primary Button too",
     args: {
         isOpened: false,
         shouldCloseOnPrimaryButtonClick: true,
@@ -300,9 +301,10 @@ export const ModalBottomWithImage: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Header title={titlePlaceHolderText} hasImg>
-                        <img src={imageSRC} alt="Apples" />
-                    </ModalBottom.Header>
+                    <ModalBottom.Header
+                        title={titlePlaceHolderText}
+                        image={Image}
+                    />
                     <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -334,9 +336,10 @@ export const ModalBottomWithImageAndLongContent: Story = {
                     isOpened={isOpen}
                     toggleModal={setIsOpen}
                 >
-                    <ModalBottom.Header title={titlePlaceHolderText} hasImg>
-                        <img src={imageSRC} alt="Oranges" />
-                    </ModalBottom.Header>
+                    <ModalBottom.Header
+                        title={titlePlaceHolderText}
+                        image={Image}
+                    />
                     <ModalBottom.Body>{longTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -371,7 +374,6 @@ export const ModalBottomWithImageSRC: Story = {
                     <ModalBottom.Header
                         src={imageSRC}
                         title={titlePlaceHolderText}
-                        hasImg
                     />
                     <ModalBottom.Body>{mediumTextContent}</ModalBottom.Body>
                 </ModalBottom>
@@ -387,6 +389,13 @@ export const ModalBottomWithIcon: Story = {
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);
+
+        const Icon = (
+            <StandaloneTrashRegularIcon
+                fill="var(--core-color-solid-red-900)"
+                iconSize="2xl"
+            />
+        );
 
         useEffect(() => {
             setIsOpen(args.isOpened);
@@ -409,13 +418,8 @@ export const ModalBottomWithIcon: Story = {
                             backgroundColor: "var(--core-color-solid-red-100)",
                         }}
                         title={titlePlaceHolderText}
-                        hasImg
-                    >
-                        <StandaloneTrashRegularIcon
-                            fill="var(--core-color-solid-red-900)"
-                            iconSize="2xl"
-                        />
-                    </ModalBottom.Header>
+                        image={Icon}
+                    />
                     <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>
@@ -430,6 +434,13 @@ export const ModalBottomWithIconAndLongContent: Story = {
     },
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpened);
+
+        const Icon = (
+            <StandaloneCircleSterlingRegularIcon
+                fill="var(--core-color-solid-green-900)"
+                iconSize="2xl"
+            />
+        );
 
         useEffect(() => {
             setIsOpen(args.isOpened);
@@ -453,13 +464,8 @@ export const ModalBottomWithIconAndLongContent: Story = {
                                 "var(--core-color-solid-green-100)",
                         }}
                         title={titlePlaceHolderText}
-                        hasImg
-                    >
-                        <StandaloneCircleSterlingRegularIcon
-                            fill="var(--core-color-solid-green-900)"
-                            iconSize="2xl"
-                        />
-                    </ModalBottom.Header>
+                        image={Icon}
+                    />
                     <ModalBottom.Body>{longTextContent}</ModalBottom.Body>
                 </ModalBottom>
             </>

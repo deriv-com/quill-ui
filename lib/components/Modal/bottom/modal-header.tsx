@@ -3,55 +3,47 @@ import { Heading } from "../../Typography";
 
 interface ModalBodyProps {
     className?: string;
+    height?: string;
+    image?: React.ReactNode;
     src?: string;
     style?: React.CSSProperties;
-    height?: string;
-    hasImg?: boolean;
     title?: React.ReactNode;
 }
 
 export const ModalHeader = ({
-    children,
     className,
+    height = "var(--temp-static-spacing-202)",
+    image,
     src,
     style,
-    height = "var(--temp-static-spacing-202)",
-    hasImg,
     title,
 }: React.PropsWithChildren<ModalBodyProps>) => (
     <>
-        {hasImg && (
-            <>
-                {src ? (
-                    <div
-                        style={{
-                            background: `url(${src}) lightgray 50% / cover no-repeat`,
-                            height: `${height}`,
-                            ...style,
-                        }}
-                        className={clsx(
-                            "quill-modal-bottom__content-image",
-                            className,
-                        )}
-                        data-testid="dt_modal_image"
-                    />
-                ) : (
-                    <div
-                        style={style}
-                        className={clsx(
-                            "quill-modal-bottom__content-image",
-                            className,
-                        )}
-                    >
-                        {children}
-                    </div>
-                )}
-            </>
+        {src && (
+            <div
+                style={{
+                    background: `url(${src}) lightgray 50% / cover no-repeat`,
+                    height: `${height}`,
+                    ...style,
+                }}
+                className={clsx("quill-modal-bottom__content-image", className)}
+                data-testid="dt_modal_image"
+            />
         )}
-        <Heading.H4
-            className={clsx("quill-modal-bottom__content-title", className)}
-        >
-            {title}
-        </Heading.H4>
+        {image && (
+            <div
+                style={style}
+                className={clsx("quill-modal-bottom__content-image", className)}
+            >
+                {image}
+            </div>
+        )}
+        {title && (
+            <Heading.H4
+                className={clsx("quill-modal-bottom__content-title", className)}
+            >
+                {title}
+            </Heading.H4>
+        )}
     </>
 );

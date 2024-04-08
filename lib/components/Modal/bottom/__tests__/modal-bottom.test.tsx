@@ -129,9 +129,10 @@ describe("ModalBottom", () => {
     it("should render passed image if it is ReactNode", () => {
         const { container } = render(
             <ModalBottom {...mockProps}>
-                <ModalBottom.Header title={title} hasImg>
-                    <img src={imageSRC} alt="Apples" />
-                </ModalBottom.Header>
+                <ModalBottom.Header
+                    title={title}
+                    image={<img src={imageSRC} alt="Apples" />}
+                />
             </ModalBottom>,
         );
 
@@ -142,7 +143,7 @@ describe("ModalBottom", () => {
     it("should render container with image as a background if src was passed", () => {
         const { container } = render(
             <ModalBottom {...mockProps}>
-                <ModalBottom.Header src={imageSRC} title={title} hasImg />
+                <ModalBottom.Header src={imageSRC} title={title} />
             </ModalBottom>,
         );
 
@@ -153,9 +154,10 @@ describe("ModalBottom", () => {
     it("should render SVG if it was passed", () => {
         const { container } = render(
             <ModalBottom {...mockProps}>
-                <ModalBottom.Header title={title} hasImg>
-                    <StandaloneTrashRegularIcon />
-                </ModalBottom.Header>
+                <ModalBottom.Header
+                    title={title}
+                    image={<StandaloneTrashRegularIcon />}
+                />
             </ModalBottom>,
         );
 
