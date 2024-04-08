@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { useDrag } from "@use-gesture/react";
 import { useMediaQuery } from "usehooks-ts";
 
-type SwipeBlockType = {
+interface SwipeBlockType {
     show?: boolean;
     onClose?: () => void;
-};
+}
 
 export const useSwipeBlock = ({ show, onClose }: SwipeBlockType) => {
     const [height, setHeight] = useState("auto");

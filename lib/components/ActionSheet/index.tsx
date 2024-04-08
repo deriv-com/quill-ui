@@ -7,7 +7,7 @@ import ActionSheetHandleBar from "./handle-bar";
 import ActionSheetTrigger from "./trigger";
 import ActionSheetPortal from "./portal";
 
-type ActionSheetType = {
+interface ActionSheetType {
     Root: typeof ActionSheetRoot;
     Header: typeof ActionSheetHeader;
     Content: typeof ActionSheetContent;
@@ -15,7 +15,7 @@ type ActionSheetType = {
     HandleBar: typeof ActionSheetHandleBar;
     Trigger: typeof ActionSheetTrigger;
     Portal: typeof ActionSheetPortal;
-};
+}
 
 export const ActionSheet: ActionSheetType = ({
     children,
