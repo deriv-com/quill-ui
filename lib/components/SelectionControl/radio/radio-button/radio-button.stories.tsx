@@ -37,7 +37,17 @@ const RadioButtonMeta = {
 
 export default RadioButtonMeta;
 
-const Template = (args) => <RadioButton {...args}>Option</ RadioButton>;
+interface RadioButtonProps {
+  defaultChecked: boolean;
+  disabled: boolean;
+  has_info: boolean;
+  id: string;
+  className: string;
+  classNameLabel: string;
+  classNameInfo: string;
+}
+
+const Template: React.FC<RadioButtonProps> = (args) => <RadioButton {...args}>Option</RadioButton>;
 
 export const Default = Template.bind({});
 Default.args = {
