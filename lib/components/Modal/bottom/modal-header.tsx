@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Heading } from "../../Typography";
 
-interface ModalBodyProps {
+interface ModalHeaderProps {
     className?: string;
     height?: string;
     image?: React.ReactNode;
@@ -17,7 +17,7 @@ export const ModalHeader = ({
     src,
     style,
     title,
-}: React.PropsWithChildren<ModalBodyProps>) => (
+}: React.PropsWithChildren<ModalHeaderProps>) => (
     <>
         {src && (
             <div
