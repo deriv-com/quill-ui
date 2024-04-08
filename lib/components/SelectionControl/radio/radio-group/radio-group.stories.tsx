@@ -1,11 +1,11 @@
 import React from "react";
 import RadioGroup from "./index";
 
-const RadioGroupItem = ({ value, label, disabled = false, hidden = false }) => (
+const RadioGroupItem = ({ value = '', label = '', disabled = false, hidden = false }) => (
   <RadioGroup.Item value={value} label={label} disabled={disabled} hidden={hidden} />
 );
 
-const Template = ({ ...args }) => (
+const Template = (args) => (
   <RadioGroup {...args}>
     <RadioGroupItem value="option1" label="Option 1" />
     <RadioGroupItem value="option2" label="Option 2" disabled={args.disabledOption} />

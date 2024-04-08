@@ -37,7 +37,7 @@ const RadioButtonMeta = {
 
 export default RadioButtonMeta;
 
-const Template = ({ ...args }) => <RadioButton {...args}>Option</ RadioButton>;
+const Template = (args) => <RadioButton {...args}>Option</ RadioButton>;
 
 export const Default = Template.bind({});
 Default.args = {
