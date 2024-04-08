@@ -7,6 +7,7 @@ interface RadioGroupProps {
   name: string;
   onToggle: (e: React.ChangeEvent<HTMLInputElement>) => void;
   selected: string;
+  shouldWrapItems: boolean;
 }
 
 const RadioGroupItem = ({ value = '', label = '', disabled = false, hidden = false }) => (
@@ -52,28 +53,26 @@ const RadioGroupMeta = {
 
 export default RadioGroupMeta;
 
-export const BasicRadioGroup = Template.bind({});
-BasicRadioGroup.args = {
+const defaultArgs: RadioGroupProps = {
   name: "radioGroup",
   onToggle: () => console.log("Toggled!"),
   selected: "option1",
   shouldWrapItems: false,
 };
 
-export const DisabledOption = Template.bind({});
-DisabledOption.args = {
-  ...BasicRadioGroup.args,
+export const BasicRadioGroup = Template.bind(this, defaultArgs);
+
+export const DisabledOption = Template.bind(this,{
+  ...defaultArgs,
   disabledOption: true,
-};
+});
 
-export const HiddenOption = Template.bind({});
-HiddenOption.args = {
-  ...BasicRadioGroup.args,
+export const HiddenOption = Template.bind(this, {
+  ...defaultArgs,
   hiddenOption: true,
-};
+});
 
-export const WrappedItems = Template.bind({});
-WrappedItems.args = {
-  ...BasicRadioGroup.args,
+export const WrappedItems = Template.bind(this, {
+  ...defaultArgs,
   shouldWrapItems: true,
-};
+});

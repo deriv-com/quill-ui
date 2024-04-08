@@ -49,8 +49,7 @@ interface RadioButtonProps {
 
 const Template: React.FC<RadioButtonProps> = (args) => <RadioButton {...args}>Option</RadioButton>;
 
-export const Default = Template.bind({});
-Default.args = {
+const defaultArgs: RadioButtonProps = {
   defaultChecked: true,
   disabled: false,
   has_info: false,
@@ -60,32 +59,29 @@ Default.args = {
   classNameInfo: "",
 };
 
-export const Unchecked = Template.bind({});
-Unchecked.args = {
-  ...Default.args,
+export const Default = Template.bind(this, defaultArgs);
+
+export const Unchecked = Template.bind(this, {
+  ...defaultArgs,
   defaultChecked: false,
-};
+});
 
-export const CustomClassButton = Template.bind({});
-CustomClassButton.args = {
-  ...Default.args,
+export const CustomClassButton = Template.bind(this, {
+  ...defaultArgs,
   className: "custom-radio",
-};
+});
 
-export const CustomLabelClassButton = Template.bind({});
-CustomLabelClassButton.args = {
-  ...Default.args,
+export const CustomLabelClassButton = Template.bind(this, {
+  ...defaultArgs,
   classNameLabel: "custom-label",
-};
+});
 
-export const DisabledButton = Template.bind({});
-DisabledButton.args = {
-  ...Default.args,
+export const DisabledButton = Template.bind(this, {
+  ...defaultArgs,
   disabled: true,
-};
+});
 
-export const ButtonWithInfo = Template.bind({});
-ButtonWithInfo.args = {
-  ...Default.args,
+export const ButtonWithInfo = Template.bind(this, {
+  ...defaultArgs,
   has_info: true,
-};
+});
