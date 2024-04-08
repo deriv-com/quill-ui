@@ -34,7 +34,7 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
             </g>
             <defs>
               <clippath
-                id="a0161df4985017ebb2c6f8a038d991f9__a"
+                id="5c9d34bce0fa277ae9a9982833928bda__a"
               >
                 <path
                   d="M0 0h16v24H0z"
@@ -78,7 +78,7 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
             </g>
             <defs>
               <clippath
-                id="a0161df4985017ebb2c6f8a038d991f9__a"
+                id="5c9d34bce0fa277ae9a9982833928bda__a"
               >
                 <path
                   d="M0 0h16v24H0z"
@@ -122,7 +122,7 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
             </g>
             <defs>
               <clippath
-                id="91a873acac72fe8bbe91e3322bd04aa8__a"
+                id="7ba404559cefe18ce4a93b4f9d9cf45f__a"
               >
                 <path
                   d="M0 0h16v24H0z"
@@ -176,7 +176,7 @@ exports[`RadioGroup component renders radio buttons with correct labels 1`] = `
             </g>
             <defs>
               <clippath
-                id="91a873acac72fe8bbe91e3322bd04aa8__a"
+                id="7ba404559cefe18ce4a93b4f9d9cf45f__a"
               >
                 <path
                   d="M0 0h16v24H0z"
@@ -220,7 +220,7 @@ exports[`RadioGroup component renders radio buttons with correct labels 1`] = `
             </g>
             <defs>
               <clippath
-                id="a0161df4985017ebb2c6f8a038d991f9__a"
+                id="5c9d34bce0fa277ae9a9982833928bda__a"
               >
                 <path
                   d="M0 0h16v24H0z"
@@ -264,7 +264,7 @@ exports[`RadioGroup component renders radio buttons with correct labels 1`] = `
             </g>
             <defs>
               <clippath
-                id="a0161df4985017ebb2c6f8a038d991f9__a"
+                id="5c9d34bce0fa277ae9a9982833928bda__a"
               >
                 <path
                   d="M0 0h16v24H0z"
@@ -318,7 +318,7 @@ exports[`RadioGroup component should not call onToggle when a disabled radio but
             </g>
             <defs>
               <clippath
-                id="91a873acac72fe8bbe91e3322bd04aa8__a"
+                id="7ba404559cefe18ce4a93b4f9d9cf45f__a"
               >
                 <path
                   d="M0 0h16v24H0z"
@@ -363,7 +363,7 @@ exports[`RadioGroup component should not call onToggle when a disabled radio but
             </g>
             <defs>
               <clippath
-                id="a0161df4985017ebb2c6f8a038d991f9__a"
+                id="5c9d34bce0fa277ae9a9982833928bda__a"
               >
                 <path
                   d="M0 0h16v24H0z"
@@ -407,7 +407,7 @@ exports[`RadioGroup component should not call onToggle when a disabled radio but
             </g>
             <defs>
               <clippath
-                id="a0161df4985017ebb2c6f8a038d991f9__a"
+                id="5c9d34bce0fa277ae9a9982833928bda__a"
               >
                 <path
                   d="M0 0h16v24H0z"

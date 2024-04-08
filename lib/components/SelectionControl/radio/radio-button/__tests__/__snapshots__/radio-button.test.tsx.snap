@@ -32,7 +32,7 @@ exports[`RadioButton component should be checked by default if defaultChecked is
           </g>
           <defs>
             <clippath
-              id="91a873acac72fe8bbe91e3322bd04aa8__a"
+              id="7ba404559cefe18ce4a93b4f9d9cf45f__a"
             >
               <path
                 d="M0 0h16v24H0z"
@@ -83,7 +83,7 @@ exports[`RadioButton component should be disabled if disabled is true 1`] = `
           </g>
           <defs>
             <clippath
-              id="a0161df4985017ebb2c6f8a038d991f9__a"
+              id="5c9d34bce0fa277ae9a9982833928bda__a"
             >
               <path
                 d="M0 0h16v24H0z"
@@ -133,7 +133,7 @@ exports[`RadioButton component should not be checked by default if defaultChecke
           </g>
           <defs>
             <clippath
-              id="a0161df4985017ebb2c6f8a038d991f9__a"
+              id="5c9d34bce0fa277ae9a9982833928bda__a"
             >
               <path
                 d="M0 0h16v24H0z"
@@ -181,7 +181,7 @@ exports[`RadioButton component should not render info icon when has_info is fals
           </g>
           <defs>
             <clippath
-              id="a0161df4985017ebb2c6f8a038d991f9__a"
+              id="5c9d34bce0fa277ae9a9982833928bda__a"
             >
               <path
                 d="M0 0h16v24H0z"
@@ -232,7 +232,7 @@ exports[`RadioButton component should not trigger click event on input when info
           </g>
           <defs>
             <clippath
-              id="a0161df4985017ebb2c6f8a038d991f9__a"
+              id="5c9d34bce0fa277ae9a9982833928bda__a"
             >
               <path
                 d="M0 0h16v24H0z"
@@ -280,7 +280,7 @@ exports[`RadioButton component should render correctly with default props 1`] = 
           </g>
           <defs>
             <clippath
-              id="a0161df4985017ebb2c6f8a038d991f9__a"
+              id="5c9d34bce0fa277ae9a9982833928bda__a"
             >
               <path
                 d="M0 0h16v24H0z"
@@ -328,7 +328,7 @@ exports[`RadioButton component should render info icon when has_info is true 1`]
           </g>
           <defs>
             <clippath
-              id="a0161df4985017ebb2c6f8a038d991f9__a"
+              id="5c9d34bce0fa277ae9a9982833928bda__a"
             >
               <path
                 d="M0 0h16v24H0z"
@@ -358,7 +358,7 @@ exports[`RadioButton component should render info icon when has_info is true 1`]
         </g>
         <defs>
           <clippath
-            id="ad8b23a80e31a8486d058e2dd896263c__a"
+            id="dcc9bd4997619c0b981e59e31ddca58f__a"
           >
             <path
               d="M0 0h16v24H0z"
@@ -400,7 +400,7 @@ exports[`RadioButton component should render with a custom className 1`] = `
           </g>
           <defs>
             <clippath
-              id="a0161df4985017ebb2c6f8a038d991f9__a"
+              id="5c9d34bce0fa277ae9a9982833928bda__a"
             >
               <path
                 d="M0 0h16v24H0z"
