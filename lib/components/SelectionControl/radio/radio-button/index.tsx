@@ -5,6 +5,7 @@ import {
     LabelPairedCircleDotMdFillIcon,
     LabelPairedCircleInfoMdRegularIcon,
 } from "@deriv/quill-icons";
+import { Text } from "../../../Typography";
 import "./radio-button.scss";
 
 type TRadio = {
@@ -87,14 +88,16 @@ const RadioButton = ({
                         />
                     )}
                 </span>
-                <span
+                <Text
+                    size="md"
+                    as="span"
                     className={clsx(
                         "quill-radio-button__label",
                         classNameLabel,
                     )}
                 >
                     {children}
-                </span>
+                </Text>
                 {/* TODO: implement info icon component */}
                 {has_info && (
                     <LabelPairedCircleInfoMdRegularIcon
