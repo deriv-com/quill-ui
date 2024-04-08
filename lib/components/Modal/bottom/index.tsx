@@ -105,10 +105,10 @@ export const ModalBottom = ({
 
     return ReactDOM.createPortal(
         <div
+            {...rest}
             className="quill-modal-bottom__overlay"
             data-testid="dt_overlay"
             onClick={isSwiping ? undefined : toggleHandler}
-            {...rest}
         >
             <div
                 className={clsx(
