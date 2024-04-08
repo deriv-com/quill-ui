@@ -13,42 +13,49 @@ describe("Snackbar", () => {
         render(<Snackbar {...defaultProps} {...props} />);
 
     it("renders with default props", () => {
-        renderComponent();
+        const { container } = renderComponent();
         expect(screen.getByText(testMessage)).toBeInTheDocument();
+        expect(container).toMatchSnapshot();
     });
     it("calls onActionClick when action button is clicked", () => {
         const onActionClickMock = jest.fn();
-        renderComponent({
+        const { container } = renderComponent({
             actionText: "Action",
             onActionClick: onActionClickMock,
         });
         fireEvent.click(screen.getByText("Action"));
         expect(onActionClickMock).toHaveBeenCalled();
+        expect(container).toMatchSnapshot();
     });
     it("calls onClose when close button is clicked", () => {
-        renderComponent();
+        const { container } = renderComponent();
         fireEvent.click(screen.getByTestId('close-button'));
         expect(defaultProps.onClose).toHaveBeenCalled();
+        expect(container).toMatchSnapshot();
     });
     it("calls onClose after a certain duration when Snackbar is open", () => {
         jest.useFakeTimers();
-        renderComponent();
+        const { container } = renderComponent();
         jest.advanceTimersByTime(3000);
         expect(defaultProps.onClose).toHaveBeenCalled();
         jest.useRealTimers();
+        expect(container).toMatchSnapshot();
     });
     it("renders correctly with custom icon", () => {
-        renderComponent({
+        const { container } = renderComponent({
             icon: <img src="custom-icon.svg" alt="Custom Icon" />,
         });
         expect(screen.getByAltText("Custom Icon")).toBeInTheDocument();
+        expect(container).toMatchSnapshot();
     });
     it("renders correctly without action button", () => {
-        renderComponent();
+        const { container } = renderComponent();
         expect(screen.queryByText("Action")).not.toBeInTheDocument();
+        expect(container).toMatchSnapshot();
     });
     it("renders correctly without close button", () => {
-        renderComponent({ hasCloseButton: false });
+        const { container } = renderComponent({ hasCloseButton: false });
         expect(screen.queryByText("x")).not.toBeInTheDocument();
+        expect(container).toMatchSnapshot();
     });
 });
