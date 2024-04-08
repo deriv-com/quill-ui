@@ -2,6 +2,8 @@ import React, { ReactNode, useEffect, useState, HTMLAttributes } from "react";
 import { Text } from "../Typography";
 import "./snackbar.scss";
 import clsx from "clsx";
+import { Button } from "../Button";
+import { LabelPairedXmarkSmBoldIcon } from "@deriv/quill-icons";
 
 interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     icon?: ReactNode;
@@ -14,19 +16,24 @@ interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Snackbar = ({
-    icon: Icon = "",
+    icon: Icon,
     message,
-    actionText = "",
+    actionText,
     onActionClick,
     hasCloseButton = true,
     isOpen = false,
     onClose,
     ...rest
 }: SnackbarProps) => {
-    const [animationSpeed, setAnimationSpeed] = useState("slow");
+    const animationSpeedObj = Object.freeze({
+        fast: 'fast',
+        slow: 'slow'
+    });
+
+    const [animationSpeed, setAnimationSpeed] = useState<keyof typeof animationSpeedObj>(animationSpeedObj.slow);
     useEffect(() => {
         if (isOpen) {
-            setAnimationSpeed("slow");
+            setAnimationSpeed(animationSpeedObj.slow);
             const timer = setTimeout(() => {
                 onClose?.();
             }, 3000);
@@ -39,12 +46,12 @@ export const Snackbar = ({
 
     const handleClose = () => {
         onClose?.();
-        setAnimationSpeed("fast");
+        setAnimationSpeed(animationSpeedObj.fast);
     };
 
     const handleActionClick = () => {
         onActionClick?.();
-        setAnimationSpeed("fast");
+        setAnimationSpeed(animationSpeedObj.fast);
     };
     return (
         <>
@@ -52,7 +59,7 @@ export const Snackbar = ({
                 <div
                     className={clsx(
                         "snackbar",
-                        animationSpeed === "fast"
+                        animationSpeed === animationSpeedObj.fast
                             ? "fast-animation"
                             : "slow-animation",
                     )}
@@ -67,22 +74,10 @@ export const Snackbar = ({
                         </Text>
                     </div>
                     {actionText && (
-                        <button
-                            type="button"
-                            style={{ color: "#ffffff", padding: "4px" }}
-                            onClick={handleActionClick}
-                        >
-                            {actionText}
-                        </button>
+                        <Button variant="tertiary" label={actionText} color="white" onClick={handleActionClick} />
                     )}
                     {hasCloseButton && (
-                        <button
-                            type="button"
-                            style={{ color: "#ffffff", padding: "4px" }}
-                            onClick={handleClose}
-                        >
-                            x
-                        </button>
+                        <Button variant="tertiary" label={<LabelPairedXmarkSmBoldIcon />} color="white" onClick={handleClose} data-testid='close-button' />
                     )}
                 </div>
             )}

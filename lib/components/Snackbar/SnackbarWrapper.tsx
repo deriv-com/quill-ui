@@ -6,7 +6,6 @@ export const SnackbarWrapper = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleActionClick = () => {
-        console.log("clicked");
         handleClose();
     };
 
@@ -32,7 +31,7 @@ export const SnackbarWrapper = () => {
                         iconSize="sm"
                     />
                 }
-                message="Unable to upload selected photos. \n The app will retry in 5 seconds."
+                message="Enter message here"
                 actionText="Action"
                 onActionClick={handleActionClick}
                 isOpen={isOpen}

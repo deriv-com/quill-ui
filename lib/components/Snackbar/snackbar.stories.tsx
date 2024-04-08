@@ -3,8 +3,6 @@ import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons/Standalone"
 import { fn } from "@storybook/test";
 import { Snackbar } from ".";
 
-/* <StandalonePlaceholderRegularIcon fill="#ffffff" iconSize="sm" /> */
-
 const meta = {
     title: "Components/Snackbar/Snackbar",
     component: Snackbar,

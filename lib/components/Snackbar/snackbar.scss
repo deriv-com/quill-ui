@@ -3,20 +3,21 @@
 @import "@quill/breakpoints.scss";
 @import "@quill/motion.scss";
 @import "@quill/elevation.scss";
+@import "@quill/color.opacity.scss";
 
 .snackbar {
     display: flex;
     width: 340px;
     max-width: 560px;
-    min-height: 48px;
+    min-height: var(--core-size-2400);
     padding: var(--semantic-spacing-general-sm)
         var(--semantic-spacing-general-md) var(--semantic-spacing-general-sm);
     align-items: center;
     gap: var(--semantic-spacing-gap-md);
     border-radius: var(--semantic-borderRadius-md);
     border: var(--borderWidth-xs) solid
-        var(--core-color-opacity-white-100, rgba(255, 255, 255, 0.08));
-    background: var(--core-color-solid-slate-1400, #000);
+        var(--core-color-opacity-white-100);
+    background: var(--core-color-solid-slate-1400);
     box-shadow: var(--core-elevation-shadow-330);
     position: absolute;
     z-index: 1;
@@ -28,14 +29,14 @@
         animation:
             slide-up var(--motion-duration-snappy) var(--motion-easing-inandout)
                 forwards,
-            slide-down var(--motion-duration-snappy) 3.5s
+            slide-down var(--motion-duration-snappy) var(--core-motion-duration-1300)
                 var(--motion-easing-inandout) forwards;
     }
     &.fast-animation {
         animation:
             slide-up var(--motion-duration-snappy) var(--motion-easing-inandout)
                 forwards,
-            slide-down var(--motion-duration-snappy) 1.5s
+            slide-down var(--motion-duration-snappy) var(--core-motion-duration-800)
                 var(--motion-easing-inandout) forwards;
     }
 
@@ -46,8 +47,8 @@
 
     &__icon--container {
         display: flex;
-        width: 24px;
-        height: 24px;
+        width: var(--core-spacing-1200);
+        height: var(--core-spacing-1200);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -62,7 +63,7 @@
         text-overflow: ellipsis;
         overflow: hidden;
         word-wrap: break-word; /* Text gets broken up into another line for long words */
-        color: var(--core-color-solid-slate-50, #fff);
+        color: var(--core-color-solid-slate-50);
 
         @include breakpoint("sm") {
             -webkit-line-clamp: 1;
@@ -73,8 +74,12 @@
             padding-right: var(--semantic-spacing-general-sm);
             align-items: flex-start;
             flex: 1 0 0;
-            min-width: 0; /* Text broken up into another line for long words */
+            min-width:  var(--semantic-spacing-general-none); /* Text broken up into another line for long words */
         }
+    }
+
+    & .button-label svg {
+        display: flex;
     }
 }
 
@@ -83,13 +88,13 @@
         bottom: -100%;
     }
     100% {
-        bottom: 32px;
+        bottom: var(--core-size-1600);
     }
 }
 
 @keyframes slide-down {
     0% {
-        bottom: 32px;
+        bottom: var(--core-size-1600);
     }
     100% {
         bottom: -100%;

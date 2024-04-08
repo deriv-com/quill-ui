@@ -41,7 +41,6 @@
         "@babel/preset-react": "^7.23.3",
         "@babel/preset-typescript": "^7.23.3",
         "@commitlint/cli": "^19.1.0",
-        "@deriv/quill-icons": "^1.19.8",
         "@commitlint/config-conventional": "^19.1.0",
         "@semantic-release/changelog": "^6.0.3",
         "@semantic-release/github": "^9.2.6",
