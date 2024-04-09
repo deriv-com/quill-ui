@@ -1,18 +1,14 @@
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 import { Checkbox } from "../checkbox-single";
+import { CheckboxProps } from "../checkbox-single";
 
 interface CheckboxGroupProps {
     className?: string;
 }
 
-interface Node {
-    label: ReactNode;
-    checked?: boolean;
-    indeterminate?: boolean;
+interface Node extends Omit<CheckboxProps, "id" | "children"> {
     id: string | number;
-    showInfoIcon?: boolean;
-    infoIconClassName?: string;
 }
 
 interface ParentNode extends Node {
@@ -134,57 +130,26 @@ export const CheckboxGroup = ({ className }: CheckboxGroupProps) => {
             className={clsx("quill-checkbox-group__wrapper", className)}
             style={{ padding: "20px", backgroundColor: "#f5f5f5" }}
         >
-            {checkBoxItemsConfig.map(
-                ({
-                    id,
-                    label,
-                    indeterminate,
-                    checked,
-                    showInfoIcon,
-                    children,
-                    infoIconClassName,
-                }) => (
-                    <div key={id} style={{ marginBottom: "10px" }}>
-                        <Checkbox
-                            label={label}
-                            indeterminate={indeterminate}
-                            checked={checked}
-                            showInfoIcon={showInfoIcon}
-                            infoIconClassName={infoIconClassName}
-                            onChange={() => handleParentClick(id)}
-                        />
-                        {children && (
-                            <div style={{ marginLeft: "20px" }}>
-                                {children.map(
-                                    ({
-                                        label,
-                                        id: sunbItemId,
-                                        checked,
-                                        showInfoIcon,
-                                        infoIconClassName,
-                                    }) => (
-                                        <Checkbox
-                                            label={label}
-                                            key={sunbItemId}
-                                            checked={checked}
-                                            showInfoIcon={showInfoIcon}
-                                            infoIconClassName={
-                                                infoIconClassName
-                                            }
-                                            onChange={() =>
-                                                handleChildChange(
-                                                    id,
-                                                    sunbItemId,
-                                                )
-                                            }
-                                        />
-                                    ),
-                                )}
-                            </div>
-                        )}
-                    </div>
-                ),
-            )}
+            {checkBoxItemsConfig.map(({ id, children, ...rest }) => (
+                <div key={id} style={{ marginBottom: "10px" }}>
+                    <Checkbox
+                        onChange={() => handleParentClick(id)}
+                        {...rest}
+                    />
+                    {children && (
+                        <div style={{ marginLeft: "20px" }}>
+                            {children.map(({ id: subItemId, ...rest }) => (
+                                <Checkbox
+                                    onChange={() =>
+                                        handleChildChange(id, subItemId)
+                                    }
+                                    {...rest}
+                                />
+                            ))}
+                        </div>
+                    )}
+                </div>
+            ))}
         </div>
     );
 };

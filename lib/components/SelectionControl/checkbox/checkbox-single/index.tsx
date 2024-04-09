@@ -17,7 +17,7 @@ import {
 import { TMediumSizes } from "../../../../types";
 import { Text } from "../../../Typography";
 
-interface CheckboxProps
+export interface CheckboxProps
     extends Omit<
         ComponentProps<"input">,
         "placeholder" | "defaultChecked" | "size"
