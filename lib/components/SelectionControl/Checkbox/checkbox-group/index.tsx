@@ -5,16 +5,16 @@ import { Checkbox } from "../checkbox-single";
 interface CheckboxGroupProps {
     className?: string;
 }
-//TODO replace with interface
-type TParentNode = {
+
+interface ParentNode {
     label: ReactNode;
     id: string | number;
     indeterminate?: boolean;
     checked?: boolean;
     children?: { label: string; checked?: boolean; id: string | number }[];
-};
+}
 
-const config: TParentNode[] = [
+const config: ParentNode[] = [
     {
         label: "Parent1",
         id: 1,
@@ -99,8 +99,13 @@ export const CheckboxGroup = ({ className }: CheckboxGroupProps) => {
 
         copy.forEach((item) => {
             if (item.id === parentId) {
-                item.checked = !item.checked;
-                item.indeterminate = false;
+                if (item.indeterminate) {
+                    item.checked = false;
+                    item.indeterminate = false;
+                } else {
+                    item.checked = !item.checked;
+                }
+
                 if (item.children && item.checked) {
                     item.children.forEach(
                         (subItem) => (subItem.checked = true),
