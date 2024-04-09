@@ -5,10 +5,10 @@ import { fn } from "@storybook/test";
 interface RadioGroupProps {
     disabledOption?: boolean;
     hiddenOption?: boolean;
-    name: string;
-    onToggle: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    selected: string;
-    shouldWrapItems: boolean;
+    name?: string;
+    onToggle?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    selected?: string;
+    shouldWrapItems?: boolean;
 }
 
 const RadioGroupItem = ({

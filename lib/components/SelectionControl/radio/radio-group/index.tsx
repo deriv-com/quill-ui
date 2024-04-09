@@ -17,10 +17,10 @@ interface IItemWrapper {
 
 interface IRadioGroup extends IItemWrapper {
     className?: string;
-    name: string;
-    onToggle: (e: ChangeEvent<HTMLInputElement>) => void;
+    name?: string;
+    onToggle?: (e: ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
-    selected: string;
+    selected?: string;
 }
 
 const ItemWrapper = ({
@@ -53,7 +53,7 @@ const RadioGroup = ({
 
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         setSelectedOption(e.target.value);
-        onToggle(e);
+        onToggle?.(e);
     };
 
     return (

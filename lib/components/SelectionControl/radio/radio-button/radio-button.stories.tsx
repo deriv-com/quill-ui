@@ -49,13 +49,13 @@ const RadioButtonMeta = {
 export default RadioButtonMeta;
 
 interface RadioButtonProps {
-    defaultChecked: boolean;
-    disabled: boolean;
-    has_info: boolean;
-    id: string;
-    className: string;
-    classNameLabel: string;
-    classNameInfo: string;
+    defaultChecked?: boolean;
+    disabled?: boolean;
+    has_info?: boolean;
+    id?: string;
+    className?: string;
+    classNameLabel?: string;
+    classNameInfo?: string;
 }
 
 const Template: React.FC<RadioButtonProps> = (args) => (
