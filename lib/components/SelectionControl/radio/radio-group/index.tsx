@@ -2,29 +2,31 @@ import React, { ChangeEvent } from "react";
 import clsx from "clsx";
 import RadioButton from "../radio-button";
 
-type TItem = React.HTMLAttributes<HTMLDivElement> & {
+interface IItem extends React.HTMLAttributes<HTMLDivElement> {
     disabled?: boolean;
     hasError?: boolean;
     hidden?: boolean;
     id?: string;
     label: string;
     value: string;
-};
-type TItemWrapper = {
+}
+
+interface IItemWrapper {
     shouldWrapItems?: boolean;
-};
-type TRadioGroup = {
+}
+
+interface IRadioGroup extends IItemWrapper {
     className?: string;
     name: string;
     onToggle: (e: ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
     selected: string;
-} & TItemWrapper;
+}
 
 const ItemWrapper = ({
     children,
     shouldWrapItems,
-}: React.PropsWithChildren<TItemWrapper>) => {
+}: IItemWrapper & React.PropsWithChildren) => {
     if (shouldWrapItems) {
         return (
             <div className="quill-radio-group__item-wrapper">{children}</div>
@@ -42,7 +44,7 @@ const RadioGroup = ({
     required,
     selected,
     shouldWrapItems,
-}: React.PropsWithChildren<TRadioGroup>) => {
+}: IRadioGroup & React.PropsWithChildren) => {
     const [selected_option, setSelectedOption] = React.useState(selected);
 
     React.useEffect(() => {
@@ -83,11 +85,11 @@ const RadioGroup = ({
     );
 };
 
-const Item = ({
+const Item: React.FunctionComponent<IItem> = ({
     children,
     hidden = false,
     ...props
-}: React.PropsWithChildren<TItem>) => (
+}) => (
     <div hidden={hidden} {...props}>
         {children}
     </div>
