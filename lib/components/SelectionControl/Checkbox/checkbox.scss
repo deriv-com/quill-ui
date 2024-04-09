@@ -20,6 +20,7 @@
     &__box {
         position: absolute;
         cursor: pointer;
+        appearance: none;
         height: var(--size-generic-xs);
         width: var(--size-generic-xs);
         top: 50%;
