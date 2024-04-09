@@ -6,12 +6,17 @@ interface CheckboxGroupProps {
     className?: string;
 }
 
-interface ParentNode {
+interface Node {
     label: ReactNode;
-    id: string | number;
-    indeterminate?: boolean;
     checked?: boolean;
-    children?: { label: string; checked?: boolean; id: string | number }[];
+    indeterminate?: boolean;
+    id: string | number;
+    showInfoIcon?: boolean;
+    infoIconClassName?: string;
+}
+
+interface ParentNode extends Node {
+    children?: Node[];
 }
 
 const config: ParentNode[] = [
@@ -19,6 +24,7 @@ const config: ParentNode[] = [
         label: "Parent1",
         id: 1,
         indeterminate: true,
+        showInfoIcon: true,
         children: [
             {
                 label: "Child p1.c1",
@@ -48,6 +54,7 @@ const config: ParentNode[] = [
     {
         label: "Parent3",
         id: 7,
+        showInfoIcon: true,
     },
 ];
 //TODO add other props to config
@@ -127,30 +134,57 @@ export const CheckboxGroup = ({ className }: CheckboxGroupProps) => {
             className={clsx("quill-checkbox-group__wrapper", className)}
             style={{ padding: "20px", backgroundColor: "#f5f5f5" }}
         >
-            {checkBoxItemsConfig.map((item) => (
-                <div key={item.id} style={{ marginBottom: "10px" }}>
-                    <Checkbox
-                        label={item.label}
-                        indeterminate={item?.indeterminate}
-                        checked={item?.checked}
-                        onChange={() => handleParentClick(item.id)}
-                    />
-                    {item.children && (
-                        <div style={{ marginLeft: "20px" }}>
-                            {item.children.map((subItem) => (
-                                <Checkbox
-                                    label={subItem.label}
-                                    key={subItem.id}
-                                    checked={subItem?.checked}
-                                    onChange={() =>
-                                        handleChildChange(item.id, subItem.id)
-                                    }
-                                />
-                            ))}
-                        </div>
-                    )}
-                </div>
-            ))}
+            {checkBoxItemsConfig.map(
+                ({
+                    id,
+                    label,
+                    indeterminate,
+                    checked,
+                    showInfoIcon,
+                    children,
+                    infoIconClassName,
+                }) => (
+                    <div key={id} style={{ marginBottom: "10px" }}>
+                        <Checkbox
+                            label={label}
+                            indeterminate={indeterminate}
+                            checked={checked}
+                            showInfoIcon={showInfoIcon}
+                            infoIconClassName={infoIconClassName}
+                            onChange={() => handleParentClick(id)}
+                        />
+                        {children && (
+                            <div style={{ marginLeft: "20px" }}>
+                                {children.map(
+                                    ({
+                                        label,
+                                        id: sunbItemId,
+                                        checked,
+                                        showInfoIcon,
+                                        infoIconClassName,
+                                    }) => (
+                                        <Checkbox
+                                            label={label}
+                                            key={sunbItemId}
+                                            checked={checked}
+                                            showInfoIcon={showInfoIcon}
+                                            infoIconClassName={
+                                                infoIconClassName
+                                            }
+                                            onChange={() =>
+                                                handleChildChange(
+                                                    id,
+                                                    sunbItemId,
+                                                )
+                                            }
+                                        />
+                                    ),
+                                )}
+                            </div>
+                        )}
+                    </div>
+                ),
+            )}
         </div>
     );
 };
