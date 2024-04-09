@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { fn } from "@storybook/test";
 import { TYPE } from "../../../utils/notification-utils";
 import NotificationBanner from ".";
 
@@ -26,6 +27,8 @@ const meta = {
     },
     args: {
         message: "This is a notification message",
+        onClick: fn(),
+        onClose: fn(),
         title: "Title",
     },
     argTypes: {
@@ -41,6 +44,16 @@ const meta = {
             description: "Optional.",
             table: {
                 type: { summary: "boolean | undefined" },
+            },
+        },
+        message: {
+            table: {
+                type: { summary: "string | ReactNode | undefined" },
+            },
+        },
+        title: {
+            table: {
+                type: { summary: "string | ReactNode | undefined" },
             },
         },
         type: {

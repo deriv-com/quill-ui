@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { fn } from "@storybook/test";
 import NotificationBanners from ".";
+import { TYPE } from "../../../utils/notification-utils";
 
 const meta = {
     title: "Components/Notification/NotificationBanners",
@@ -23,7 +25,24 @@ const meta = {
         },
     },
     args: {
-        banners: [],
+        banners: [
+            {
+                message: "This is an information message",
+                title: "Information",
+                type: TYPE.INFO,
+            },
+            {
+                message: "This is a warning message",
+                title: "Warning",
+                type: TYPE.WARNING,
+            },
+            {
+                message: "This is an error message",
+                title: "Error",
+                type: TYPE.ERROR,
+            },
+        ],
+        onClose: fn(),
     },
     argTypes: {
         className: {
@@ -49,15 +68,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const NotificationBannersDesktop: Story = {
-    args: {
-        banners: [],
-    },
     parameters: { viewport: { defaultViewport: "desktop" } },
 };
 
 export const NotificationBannersMobile: Story = {
     args: {
-        banners: [],
+        isMobile: true,
     },
     parameters: { viewport: { defaultViewport: "mobile1" } },
 };
