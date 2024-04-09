@@ -1,12 +1,12 @@
 import React from "react";
 import clsx from "clsx";
 import {
-    LabelPairedCircleMdRegularIcon,
     LabelPairedCircleDotMdFillIcon,
-    LabelPairedCircleInfoMdRegularIcon,
-    LabelPairedCircleSmRegularIcon,
     LabelPairedCircleDotSmFillIcon,
+    LabelPairedCircleInfoMdRegularIcon,
     LabelPairedCircleInfoSmRegularIcon,
+    LabelPairedCircleMdRegularIcon,
+    LabelPairedCircleSmRegularIcon,
 } from "@deriv/quill-icons";
 import { Text } from "../../../Typography";
 import "./radio-button.scss";
@@ -36,8 +36,8 @@ const RadioButton = ({
     has_info,
     id,
     onChange,
+    size = "md",
     value,
-    size = 'md',
     ...otherProps
 }: React.PropsWithChildren<IRadio>) => {
     const [checked, setChecked] = React.useState(defaultChecked);
@@ -60,6 +60,44 @@ const RadioButton = ({
             const synthesizedEvent = new Event("change");
             const input = e.currentTarget.previousSibling as HTMLInputElement;
             input.dispatchEvent(synthesizedEvent);
+        }
+    };
+
+    const getIcon = () => {
+        if (checked) {
+            return size === "sm" ? (
+                <LabelPairedCircleDotSmFillIcon
+                    data-testid={`dt_checked_icon_${value}_${disabled}`}
+                    fill={disabled ? "#b8b8b8" : "#000000"}
+                    height={22}
+                    width={22}
+                />
+            ) : (
+                <LabelPairedCircleDotMdFillIcon
+                    data-testid={`dt_checked_icon_${value}_${disabled}`}
+                    fill={disabled ? "#b8b8b8" : "#000000"}
+                    height={24}
+                    width={24}
+                />
+            );
+        } else {
+            return size === "sm" ? (
+                <LabelPairedCircleSmRegularIcon
+                    data-testid={`dt_unchecked_icon_${value}_${disabled}`}
+                    fill={disabled ? "#b8b8b8" : "#7e7e7e"}
+                    height={22}
+                    width={22}
+                    tabIndex={0}
+                />
+            ) : (
+                <LabelPairedCircleMdRegularIcon
+                    data-testid={`dt_unchecked_icon_${value}_${disabled}`}
+                    fill={disabled ? "#b8b8b8" : "#7e7e7e"}
+                    height={24}
+                    width={24}
+                    tabIndex={0}
+                />
+            );
         }
     };
 
@@ -87,22 +125,7 @@ const RadioButton = ({
                 onKeyDown={handleIconClick}
                 id={id}
             >
-                {checked ? (
-                    <LabelPairedCircleDotMdFillIcon
-                        data-testid={`dt_checked_icon_${value}_${disabled}`}
-                        fill={disabled ? "#b8b8b8" : "#000000"}
-                        height={24}
-                        width={24}
-                    />
-                ) : (
-                    <LabelPairedCircleMdRegularIcon
-                        data-testid={`dt_unchecked_icon_${value}_${disabled}`}
-                        fill={disabled ? "#b8b8b8" : "#7e7e7e"}
-                        height={24}
-                        tabIndex={0}
-                        width={24}
-                    />
-                )}
+                {getIcon()}
             </span>
             <Text
                 size={size}
@@ -113,10 +136,17 @@ const RadioButton = ({
             </Text>
             {/* TODO: implement info icon component */}
             {has_info && (
-                <LabelPairedCircleInfoMdRegularIcon
-                    className={clsx("quill-radio-button__info", classNameInfo)}
-                    data-testid="dt_quill_radio_button_info"
-                />
+                size === "sm" ? (
+                    <LabelPairedCircleInfoSmRegularIcon
+                        className={clsx("quill-radio-button__info", classNameInfo)}
+                        data-testid="dt_quill_radio_button_info"
+                    />
+                ) : (
+                    <LabelPairedCircleInfoMdRegularIcon
+                        className={clsx("quill-radio-button__info", classNameInfo)}
+                        data-testid="dt_quill_radio_button_info"
+                    />
+                )
             )}
         </label>
     );

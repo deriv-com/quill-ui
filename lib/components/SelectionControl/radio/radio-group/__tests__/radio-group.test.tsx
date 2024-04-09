@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import RadioGroup from "..";
+import RadioGroup from "../index";
 
 describe("RadioGroup component", () => {
     const options = [

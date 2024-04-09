@@ -61,26 +61,28 @@ const RadioGroup = ({
             {Array.isArray(children) &&
                 children
                     .filter((item) => !item.props.hidden)
-                    .map((item) => (
-                        <ItemWrapper
-                            key={item.props.value}
-                            shouldWrapItems={shouldWrapItems}
-                        >
-                            <RadioButton
-                                id={item.props.id}
-                                name={name}
-                                value={item.props.value}
-                                defaultChecked={
-                                    selected_option === item.props.value
-                                }
-                                onChange={onChange}
-                                disabled={item.props.disabled}
-                                required={required}
+                    .map((item) => {
+                        const { id, value, label, disabled } = item.props;
+
+                        return (
+                            <ItemWrapper
+                                key={value}
+                                shouldWrapItems={shouldWrapItems}
                             >
-                                {item.props.label}
-                            </RadioButton>
-                        </ItemWrapper>
-                    ))}
+                                <RadioButton
+                                    id={id}
+                                    name={name}
+                                    value={value}
+                                    defaultChecked={selected_option === value}
+                                    onChange={onChange}
+                                    disabled={disabled}
+                                    required={required}
+                                >
+                                    {label}
+                                </RadioButton>
+                            </ItemWrapper>
+                        );
+                    })}
         </div>
     );
 };
