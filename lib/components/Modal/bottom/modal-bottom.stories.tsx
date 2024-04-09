@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { useEffect, useState } from "react";
 import {
@@ -7,6 +7,13 @@ import {
 } from "@deriv/quill-icons";
 import { ModalBottom } from "./index";
 import { Button } from "../../Button";
+
+interface Template extends React.ComponentProps<typeof ModalBottom> {
+    image?: React.ReactNode;
+    src?: string;
+    style?: React.CSSProperties;
+    textContent?: React.ReactNode;
+}
 
 const openModalButtonLabel = "Open Modal";
 const primaryButtonLabel = "Primary Button Label";
@@ -19,7 +26,14 @@ const longTextContent = placeHolderText.padStart(600, placeHolderText);
 const titlePlaceHolderText = "Title";
 const imageSRC =
     "https://live.staticflickr.com/603/21947667154_e63cc9252b_b.jpg";
-const Image = <img src={imageSRC} alt="Apples" />;
+const ImageComponent = <img src={imageSRC} alt="Apples" />;
+
+const preloadImage = (imageSRC: string) => {
+    const img = new Image();
+    img.src = imageSRC;
+};
+
+preloadImage(imageSRC);
 
 const meta = {
     title: "Components/Modal/Bottom",
@@ -112,363 +126,103 @@ const meta = {
 } satisfies Meta<typeof ModalBottom>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const DefaultModalBottom: Story = {
-    name: "Default Modal Bottom",
-    args: {
-        isOpened: false,
-    },
-    render: (args) => {
-        const [isOpen, setIsOpen] = useState(args.isOpened);
+const Template: React.FC<Template> = ({
+    image,
+    src,
+    style,
+    textContent = shortTextContent,
+    ...args
+}: Template) => {
+    const [isOpen, setIsOpen] = useState(args.isOpened);
 
-        useEffect(() => {
-            setIsOpen(args.isOpened);
-        }, [args.isOpened]);
+    useEffect(() => {
+        setIsOpen(args.isOpened);
+    }, [args.isOpened]);
 
-        return (
-            <>
-                <Button
-                    size="lg"
-                    label={openModalButtonLabel}
-                    onClick={() => setIsOpen(true)}
-                />
-                <ModalBottom
-                    {...args}
-                    isOpened={isOpen}
-                    toggleModal={setIsOpen}
-                >
-                    <ModalBottom.Header title={titlePlaceHolderText} />
-                    <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
-                </ModalBottom>
-            </>
-        );
-    },
-};
-
-export const ModalBottomWithoutHandleBar: Story = {
-    name: "Modal Bottom without handle-bar (no swiping)",
-    args: {
-        isOpened: false,
-        showHandleBar: false,
-    },
-    render: (args) => {
-        const [isOpen, setIsOpen] = useState(args.isOpened);
-
-        useEffect(() => {
-            setIsOpen(args.isOpened);
-        }, [args.isOpened]);
-
-        return (
-            <>
-                <Button
-                    size="lg"
-                    label={openModalButtonLabel}
-                    onClick={() => setIsOpen(true)}
-                />
-                <ModalBottom
-                    {...args}
-                    isOpened={isOpen}
-                    toggleModal={setIsOpen}
-                >
-                    <ModalBottom.Header title={titlePlaceHolderText} />
-                    <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
-                </ModalBottom>
-            </>
-        );
-    },
-};
-
-export const ModalBottomWithoutSecondaryButton: Story = {
-    name: "Modal Bottom without Secondary Button",
-    args: {
-        isOpened: false,
-        showSecondaryButton: false,
-    },
-    render: (args) => {
-        const [isOpen, setIsOpen] = useState(args.isOpened);
-
-        useEffect(() => {
-            setIsOpen(args.isOpened);
-        }, [args.isOpened]);
-
-        return (
-            <>
-                <Button
-                    size="lg"
-                    label={openModalButtonLabel}
-                    onClick={() => setIsOpen(true)}
-                />
-                <ModalBottom
-                    {...args}
-                    isOpened={isOpen}
-                    toggleModal={setIsOpen}
-                >
-                    <ModalBottom.Header title={titlePlaceHolderText} />
-                    <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
-                </ModalBottom>
-            </>
-        );
-    },
-};
-
-export const ClosingModalBottomOnPrimaryButtonClick: Story = {
-    name: "Modal Bottom with closing option on Primary Button too",
-    args: {
-        isOpened: false,
-        shouldCloseOnPrimaryButtonClick: true,
-    },
-    render: (args) => {
-        const [isOpen, setIsOpen] = useState(args.isOpened);
-
-        useEffect(() => {
-            setIsOpen(args.isOpened);
-        }, [args.isOpened]);
-
-        return (
-            <>
-                <Button
-                    size="lg"
-                    label={openModalButtonLabel}
-                    onClick={() => setIsOpen(true)}
-                />
-                <ModalBottom
-                    {...args}
-                    isOpened={isOpen}
-                    toggleModal={setIsOpen}
-                >
-                    <ModalBottom.Header title={titlePlaceHolderText} />
-                    <ModalBottom.Body>{mediumTextContent}</ModalBottom.Body>
-                </ModalBottom>
-            </>
-        );
-    },
-};
-
-export const ModalBottomExpanded: Story = {
-    name: "Modal Bottom with long content (expanded by default)",
-    args: {
-        isOpened: false,
-    },
-    render: (args) => {
-        const [isOpen, setIsOpen] = useState(args.isOpened);
-
-        useEffect(() => {
-            setIsOpen(args.isOpened);
-        }, [args.isOpened]);
-
-        return (
-            <>
-                <Button
-                    size="lg"
-                    label={openModalButtonLabel}
-                    onClick={() => setIsOpen(true)}
-                />
-                <ModalBottom
-                    {...args}
-                    isOpened={isOpen}
-                    toggleModal={setIsOpen}
-                >
-                    <ModalBottom.Header title={titlePlaceHolderText} />
-                    <ModalBottom.Body>{longTextContent}</ModalBottom.Body>
-                </ModalBottom>
-            </>
-        );
-    },
-};
-
-export const ModalBottomWithImage: Story = {
-    name: "Modal Bottom with Image passed as ReactNode (height is not fixed)",
-    args: {
-        isOpened: false,
-    },
-    render: (args) => {
-        const [isOpen, setIsOpen] = useState(args.isOpened);
-
-        useEffect(() => {
-            setIsOpen(args.isOpened);
-        }, [args.isOpened]);
-
-        return (
-            <>
-                <Button
-                    size="lg"
-                    label={openModalButtonLabel}
-                    onClick={() => setIsOpen(true)}
-                />
-                <ModalBottom
-                    {...args}
-                    isOpened={isOpen}
-                    toggleModal={setIsOpen}
-                >
-                    <ModalBottom.Header
-                        title={titlePlaceHolderText}
-                        image={Image}
-                    />
-                    <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
-                </ModalBottom>
-            </>
-        );
-    },
-};
-
-export const ModalBottomWithImageAndLongContent: Story = {
-    name: "Modal Bottom with Image as ReactNode (height is not fixed) and long content",
-    args: {
-        isOpened: false,
-    },
-    render: (args) => {
-        const [isOpen, setIsOpen] = useState(args.isOpened);
-
-        useEffect(() => {
-            setIsOpen(args.isOpened);
-        }, [args.isOpened]);
-
-        return (
-            <>
-                <Button
-                    size="lg"
-                    label={openModalButtonLabel}
-                    onClick={() => setIsOpen(true)}
-                />
-                <ModalBottom
-                    {...args}
-                    isOpened={isOpen}
-                    toggleModal={setIsOpen}
-                >
-                    <ModalBottom.Header
-                        title={titlePlaceHolderText}
-                        image={Image}
-                    />
-                    <ModalBottom.Body>{longTextContent}</ModalBottom.Body>
-                </ModalBottom>
-            </>
-        );
-    },
-};
-
-export const ModalBottomWithImageSRC: Story = {
-    name: "Modal Bottom with Image src and fixed height",
-    args: {
-        isOpened: false,
-    },
-    render: (args) => {
-        const [isOpen, setIsOpen] = useState(args.isOpened);
-
-        useEffect(() => {
-            setIsOpen(args.isOpened);
-        }, [args.isOpened]);
-
-        return (
-            <>
-                <Button
-                    size="lg"
-                    label={openModalButtonLabel}
-                    onClick={() => setIsOpen(true)}
-                />
-                <ModalBottom
-                    {...args}
-                    isOpened={isOpen}
-                    toggleModal={setIsOpen}
-                >
-                    <ModalBottom.Header
-                        src={imageSRC}
-                        title={titlePlaceHolderText}
-                    />
-                    <ModalBottom.Body>{mediumTextContent}</ModalBottom.Body>
-                </ModalBottom>
-            </>
-        );
-    },
-};
-
-export const ModalBottomWithIcon: Story = {
-    name: "Modal Bottom with Icon",
-    args: {
-        isOpened: false,
-    },
-    render: (args) => {
-        const [isOpen, setIsOpen] = useState(args.isOpened);
-
-        const Icon = (
-            <StandaloneTrashRegularIcon
-                fill="var(--core-color-solid-red-900)"
-                iconSize="2xl"
+    return (
+        <>
+            <Button
+                size="lg"
+                label={openModalButtonLabel}
+                onClick={() => setIsOpen(true)}
             />
-        );
-
-        useEffect(() => {
-            setIsOpen(args.isOpened);
-        }, [args.isOpened]);
-
-        return (
-            <>
-                <Button
-                    size="lg"
-                    label={openModalButtonLabel}
-                    onClick={() => setIsOpen(true)}
+            <ModalBottom {...args} isOpened={isOpen} toggleModal={setIsOpen}>
+                <ModalBottom.Header
+                    title={titlePlaceHolderText}
+                    image={image}
+                    src={src}
+                    style={style}
                 />
-                <ModalBottom
-                    {...args}
-                    isOpened={isOpen}
-                    toggleModal={setIsOpen}
-                >
-                    <ModalBottom.Header
-                        style={{
-                            backgroundColor: "var(--core-color-solid-red-100)",
-                        }}
-                        title={titlePlaceHolderText}
-                        image={Icon}
-                    />
-                    <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
-                </ModalBottom>
-            </>
-        );
-    },
+                <ModalBottom.Body>{textContent}</ModalBottom.Body>
+            </ModalBottom>
+        </>
+    );
 };
 
-export const ModalBottomWithIconAndLongContent: Story = {
-    name: "Modal Bottom with Icon and Long Content",
-    args: {
-        isOpened: false,
+export const DefaultModalBottom = Template.bind(this, meta.args);
+
+export const ModalBottomWithoutHandleBar = Template.bind(this, {
+    ...meta.args,
+    showHandleBar: false,
+});
+
+export const ModalBottomWithoutSecondaryButton = Template.bind(this, {
+    ...meta.args,
+    showSecondaryButton: false,
+});
+
+export const ClosingModalBottomOnPrimaryButtonClick = Template.bind(this, {
+    ...meta.args,
+    shouldCloseOnPrimaryButtonClick: true,
+    textContent: mediumTextContent,
+});
+
+export const ModalBottomExpandedByDefault = Template.bind(this, {
+    ...meta.args,
+    textContent: longTextContent,
+});
+
+export const ModalBottomWithImage = Template.bind(this, {
+    ...meta.args,
+    image: ImageComponent,
+});
+
+export const ModalBottomWithImageAndLongContent = Template.bind(this, {
+    ...meta.args,
+    image: ImageComponent,
+    textContent: longTextContent,
+});
+
+export const ModalBottomWithImageSrc = Template.bind(this, {
+    ...meta.args,
+    src: imageSRC,
+    textContent: mediumTextContent,
+});
+
+export const ModalBottomWithIcon = Template.bind(this, {
+    ...meta.args,
+    image: (
+        <StandaloneTrashRegularIcon
+            fill="var(--core-color-solid-red-900)"
+            iconSize="2xl"
+        />
+    ),
+    style: {
+        backgroundColor: "var(--core-color-solid-red-100)",
     },
-    render: (args) => {
-        const [isOpen, setIsOpen] = useState(args.isOpened);
+});
 
-        const Icon = (
-            <StandaloneCircleSterlingRegularIcon
-                fill="var(--core-color-solid-green-900)"
-                iconSize="2xl"
-            />
-        );
-
-        useEffect(() => {
-            setIsOpen(args.isOpened);
-        }, [args.isOpened]);
-
-        return (
-            <>
-                <Button
-                    size="lg"
-                    label={openModalButtonLabel}
-                    onClick={() => setIsOpen(true)}
-                />
-                <ModalBottom
-                    {...args}
-                    isOpened={isOpen}
-                    toggleModal={setIsOpen}
-                >
-                    <ModalBottom.Header
-                        style={{
-                            backgroundColor:
-                                "var(--core-color-solid-green-100)",
-                        }}
-                        title={titlePlaceHolderText}
-                        image={Icon}
-                    />
-                    <ModalBottom.Body>{longTextContent}</ModalBottom.Body>
-                </ModalBottom>
-            </>
-        );
+export const ModalBottomWithIconAndLongContent = Template.bind(this, {
+    ...meta.args,
+    image: (
+        <StandaloneCircleSterlingRegularIcon
+            fill="var(--core-color-solid-green-900)"
+            iconSize="2xl"
+        />
+    ),
+    style: {
+        backgroundColor: "var(--core-color-solid-green-100)",
     },
-};
+    textContent: longTextContent,
+});
