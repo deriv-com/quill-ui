@@ -125,6 +125,7 @@ export const CheckboxGroup = ({
                             {children.map(({ id: subItemId, ...rest }) => (
                                 <Checkbox
                                     {...rest}
+                                    key={subItemId}
                                     id={subItemId + ""}
                                     onChange={(e) =>
                                         handleChildChange(e, id, subItemId)

@@ -74,28 +74,11 @@ const meta = {
         checkboxGroupConfig: {
             table: {
                 type: {
-                    summary: `
-                        Omit<ComponentProps<"input">, "placeholder" | "defaultChecked" | "size"> & { \n
-                        indeterminate?: boolean;\n
-                        showInfoIcon?: boolean;\n
-                        infoIconClassName?: string;\n
-                        id: string | number;\n
-                        size?: TMediumSizes;\n
-                        label: ReactNode;\n
-                        labelClassName?: string;\n
-                        onChange?: (\n
-                            e:\n
-                                | React.ChangeEvent<HTMLInputElement>\n
-                                | React.KeyboardEvent<HTMLSpanElement>,\n
-                        ) => void;\n
-                        className?: string;\n
-                        children?: {same as above}[]\n
-                        }[]`,
+                    summary:
+                        'Omit<ComponentProps<"input">, "placeholder" | "defaultChecked" | "size"> & { \nindeterminate?: boolean;\nshowInfoIcon?: boolean;\ninfoIconClassName?: string;\nid: string | number;\nsize?: TMediumSizes;\nlabel: ReactNode;\nlabelClassName?: string;\ne:\n| React.ChangeEvent<HTMLInputElement>\n| React.KeyboardEvent<HTMLSpanElement>,\n) => void;\nclassName?: string;\nchildren?: {same as above}[]\n}[]',
                 },
             },
-            description: `Config for building Parents and Children Nodes. Each object in array represents Parent Node and includes obligational fields for id and label. Optional are fields which are named the same way as props from Checkbox (single). Also, optional is field 'children', which can include an array with fractal-like Child Nodes objects. Please note, that if you want to change config passed in props, then in order to notify CheckboxGroup component about changed you need to pass config as new one (e.g. with spread operator).
-
-                Example:
+            description: `Config for building Parents and Children Nodes. Each object in array represents Parent Node and includes obligational fields for id and label. Optional are fields which are named the same way as props from Checkbox (single). Also, optional is field 'children', which can include an array with fractal-like Child Nodes objects. Please note, that if you want to change config passed in props, then in order to notify CheckboxGroup component about changed you need to pass config as new one (e.g. with spread operator). Example:
             const config = [
                 {
                     label: "Parent1",
