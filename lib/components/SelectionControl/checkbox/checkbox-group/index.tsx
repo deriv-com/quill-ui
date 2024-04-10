@@ -16,7 +16,6 @@ interface CheckboxGroupProps {
     checkboxGroupConfig: ParentNode[];
 }
 
-//TODO add ref to props?
 export const CheckboxGroup = ({
     className,
     checkboxGroupConfig,
@@ -24,32 +23,19 @@ export const CheckboxGroup = ({
     const [checkBoxItemsConfig, setCheckBoxItemConfig] =
         useState(checkboxGroupConfig);
 
-    useEffect(
-        () => setCheckBoxItemConfig(checkboxGroupConfig),
-        [checkboxGroupConfig],
-    );
+    useEffect(() => {
+        const configCopy = structuredClone(checkBoxItemsConfig);
+        modifyConfig(configCopy);
+        setCheckBoxItemConfig(configCopy);
+    }, [checkboxGroupConfig]);
 
-    //TODO refactor
-    const handleChildChange = (
-        parentId: string | number,
-        childId: string | number,
-    ) => {
-        const copy = structuredClone(checkBoxItemsConfig);
-        //Changing state among children
-        copy.forEach((item) => {
-            if (item.id === parentId) {
-                item.children?.forEach((subItem) => {
-                    if (subItem.id === childId) {
-                        subItem.checked = !subItem.checked;
-                    }
-                });
-            }
-        });
-        //Changing state (unchecked, checked, indeterminate) among parents
-        copy.forEach((item) => {
-            if (item.id === parentId && item?.children) {
+    // Update 1) parent if children have field checked:true and it's not reflected in the Parent Node config part or 2) children if Parent is disabled
+    const modifyConfig = (config: ParentNode[]) => {
+        config.forEach((item) => {
+            if (item?.children) {
+                // handling state
                 const checkedChildrenSum = item.children.reduce(
-                    (acc, subItem) => acc + (subItem?.checked ? 1 : 0),
+                    (acc, subItem) => acc + (subItem.checked ? 1 : 0),
                     0,
                 );
                 if (checkedChildrenSum === item.children.length) {
@@ -61,10 +47,34 @@ export const CheckboxGroup = ({
                 } else {
                     item.indeterminate = true;
                 }
+
+                // handling disabling: if Parent Node has field disabled: true, then all children should be disabled too.
+                if (item.disabled) {
+                    item.children.forEach(
+                        (subItem) => (subItem.disabled = true),
+                    );
+                }
+            }
+        });
+    };
+    //TODO refactor
+    const handleChildChange = (
+        parentId: string | number,
+        childId: string | number,
+    ) => {
+        const configCopy = structuredClone(checkBoxItemsConfig);
+        configCopy.forEach((item) => {
+            if (item.id === parentId) {
+                item.children?.forEach((subItem) => {
+                    if (subItem.id === childId) {
+                        subItem.checked = !subItem.checked;
+                    }
+                });
             }
         });
 
-        setCheckBoxItemConfig(copy);
+        modifyConfig(configCopy);
+        setCheckBoxItemConfig(configCopy);
     };
 
     //TODO refactor

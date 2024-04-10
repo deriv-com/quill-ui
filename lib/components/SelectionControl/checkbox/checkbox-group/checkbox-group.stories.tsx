@@ -5,7 +5,6 @@ const config = [
     {
         label: "Parent 1",
         id: 1,
-        indeterminate: true,
         showInfoIcon: true,
         children: [
             {
@@ -37,6 +36,22 @@ const config = [
         label: "Parent 3",
         id: 7,
         showInfoIcon: true,
+    },
+    {
+        label: "Parent 4",
+        id: 8,
+        disabled: true,
+        children: [
+            {
+                label: "Child 1",
+                id: 9,
+                showInfoIcon: true,
+            },
+            {
+                label: "Child 2",
+                id: 10,
+            },
+        ],
     },
 ];
 
