@@ -58,7 +58,7 @@ export const CheckboxGroup = ({
             }
         });
     };
-    //TODO refactor
+
     const handleChildChange = (
         e:
             | React.ChangeEvent<HTMLInputElement>
@@ -82,7 +82,6 @@ export const CheckboxGroup = ({
         setCheckBoxItemConfig(configCopy);
     };
 
-    //TODO refactor
     const handleParentClick = (
         e:
             | React.ChangeEvent<HTMLInputElement>
@@ -100,15 +99,10 @@ export const CheckboxGroup = ({
                     item.checked = !item.checked;
                 }
 
-                if (item.children && item.checked) {
-                    item.children.forEach(
-                        (subItem) => (subItem.checked = true),
-                    );
-                } else if (item.children && !item.checked) {
-                    item.children.forEach(
-                        (subItem) => (subItem.checked = false),
-                    );
-                }
+                item.children?.forEach(
+                    (subItem) =>
+                        (subItem.checked = item.checked ? true : false),
+                );
 
                 item.onChange?.(e);
             }
