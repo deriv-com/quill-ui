@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import clsx from "clsx";
+import "./checkbox-group.scss";
 import { Checkbox } from "../checkbox-single";
 import { CheckboxProps } from "../checkbox-single";
 
@@ -105,26 +106,24 @@ export const CheckboxGroup = ({
         setCheckBoxItemConfig(copy);
     };
 
-    //TODO add normal styles
     return (
-        <div
-            className={clsx("quill-checkbox-group__wrapper", className)}
-            style={{ padding: "20px" }}
-        >
+        <div className={clsx("quill-checkbox-group", className)}>
             {checkBoxItemsConfig.map(({ id, children, ...rest }) => (
-                <div key={id} style={{ marginBottom: "10px" }}>
+                <div key={id}>
                     <Checkbox
-                        onChange={() => handleParentClick(id)}
                         {...rest}
+                        id={id + ""}
+                        onChange={() => handleParentClick(id)}
                     />
                     {children && (
-                        <div style={{ marginLeft: "20px" }}>
+                        <div className="quill-checkbox-group__children-wrapper">
                             {children.map(({ id: subItemId, ...rest }) => (
                                 <Checkbox
+                                    {...rest}
+                                    id={subItemId + ""}
                                     onChange={() =>
                                         handleChildChange(id, subItemId)
                                     }
-                                    {...rest}
                                 />
                             ))}
                         </div>

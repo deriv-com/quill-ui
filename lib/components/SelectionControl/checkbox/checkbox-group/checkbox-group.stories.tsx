@@ -36,6 +36,7 @@ const config = [
         label: "Parent 3",
         id: 7,
         showInfoIcon: true,
+        checked: true,
     },
     {
         label: "Parent 4",
