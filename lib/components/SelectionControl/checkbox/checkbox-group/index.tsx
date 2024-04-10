@@ -1,11 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { Checkbox } from "../checkbox-single";
 import { CheckboxProps } from "../checkbox-single";
-
-interface CheckboxGroupProps {
-    className?: string;
-}
 
 interface Node extends Omit<CheckboxProps, "id" | "children"> {
     id: string | number;
@@ -15,48 +11,23 @@ interface ParentNode extends Node {
     children?: Node[];
 }
 
-const config: ParentNode[] = [
-    {
-        label: "Parent1",
-        id: 1,
-        indeterminate: true,
-        showInfoIcon: true,
-        children: [
-            {
-                label: "Child p1.c1",
-                checked: true,
-                id: 2,
-            },
-            {
-                label: "Child p1.c2",
-                id: 3,
-            },
-            {
-                label: "Child p1.c3",
-                id: 4,
-            },
-        ],
-    },
-    {
-        label: "Parent2",
-        id: 5,
-        children: [
-            {
-                label: "Child p2.c1",
-                id: 6,
-            },
-        ],
-    },
-    {
-        label: "Parent3",
-        id: 7,
-        showInfoIcon: true,
-    },
-];
-//TODO add other props to config
-//TODO add config to props, add note that it should be new every time
-export const CheckboxGroup = ({ className }: CheckboxGroupProps) => {
-    const [checkBoxItemsConfig, setCheckBoxItemConfig] = useState(config);
+interface CheckboxGroupProps {
+    className?: string;
+    checkboxGroupConfig: ParentNode[];
+}
+
+//TODO add ref to props?
+export const CheckboxGroup = ({
+    className,
+    checkboxGroupConfig,
+}: CheckboxGroupProps) => {
+    const [checkBoxItemsConfig, setCheckBoxItemConfig] =
+        useState(checkboxGroupConfig);
+
+    useEffect(
+        () => setCheckBoxItemConfig(checkboxGroupConfig),
+        [checkboxGroupConfig],
+    );
 
     //TODO refactor
     const handleChildChange = (
@@ -128,7 +99,7 @@ export const CheckboxGroup = ({ className }: CheckboxGroupProps) => {
     return (
         <div
             className={clsx("quill-checkbox-group__wrapper", className)}
-            style={{ padding: "20px", backgroundColor: "#f5f5f5" }}
+            style={{ padding: "20px" }}
         >
             {checkBoxItemsConfig.map(({ id, children, ...rest }) => (
                 <div key={id} style={{ marginBottom: "10px" }}>
