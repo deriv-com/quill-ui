@@ -60,6 +60,9 @@ export const CheckboxGroup = ({
     };
     //TODO refactor
     const handleChildChange = (
+        e:
+            | React.ChangeEvent<HTMLInputElement>
+            | React.KeyboardEvent<HTMLSpanElement>,
         parentId: string | number,
         childId: string | number,
     ) => {
@@ -69,6 +72,7 @@ export const CheckboxGroup = ({
                 item.children?.forEach((subItem) => {
                     if (subItem.id === childId) {
                         subItem.checked = !subItem.checked;
+                        subItem.onChange?.(e);
                     }
                 });
             }
@@ -79,7 +83,12 @@ export const CheckboxGroup = ({
     };
 
     //TODO refactor
-    const handleParentClick = (parentId: string | number) => {
+    const handleParentClick = (
+        e:
+            | React.ChangeEvent<HTMLInputElement>
+            | React.KeyboardEvent<HTMLSpanElement>,
+        parentId: string | number,
+    ) => {
         const copy = structuredClone(checkBoxItemsConfig);
 
         copy.forEach((item) => {
@@ -100,6 +109,8 @@ export const CheckboxGroup = ({
                         (subItem) => (subItem.checked = false),
                     );
                 }
+
+                item.onChange?.(e);
             }
         });
 
@@ -113,7 +124,7 @@ export const CheckboxGroup = ({
                     <Checkbox
                         {...rest}
                         id={id + ""}
-                        onChange={() => handleParentClick(id)}
+                        onChange={(e) => handleParentClick(e, id)}
                     />
                     {children && (
                         <div className="quill-checkbox-group__children-wrapper">
@@ -121,8 +132,8 @@ export const CheckboxGroup = ({
                                 <Checkbox
                                     {...rest}
                                     id={subItemId + ""}
-                                    onChange={() =>
-                                        handleChildChange(id, subItemId)
+                                    onChange={(e) =>
+                                        handleChildChange(e, id, subItemId)
                                     }
                                 />
                             ))}
