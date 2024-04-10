@@ -75,63 +75,63 @@ const meta = {
             table: { type: { summary: "array with objects" } },
             description: `Config for building Parents and Children Nodes. Each object in array represents Parent Node and includes obligational fields for id and label. Optional are fields which are named the same way as props from Checkbox (single). Also, optional is field 'children', which can include an array with fractal-like Child Nodes objects. Please note, that if you want to change config passed in props, then in order to notify CheckboxGroup component about changed you need to pass config as new one (e.g. with spread operator).
             
-                Exact type of config:
-                Omit<ComponentProps<"input">, "placeholder" | "defaultChecked" | "size"> & {
-                indeterminate?: boolean;
-                showInfoIcon?: boolean;
-                infoIconClassName?: string;
-                id: string | number;
-                size?: TMediumSizes;
-                label: ReactNode;
-                labelClassName?: string;
-                onChange?: (
-                    e:
-                        | React.ChangeEvent<HTMLInputElement>
-                        | React.KeyboardEvent<HTMLSpanElement>,
-                ) => void;
-                className?: string;
-                children?: {same as above}[]
-                }[]
+Exact type of config:
+        Omit<ComponentProps<"input">, "placeholder" | "defaultChecked" | "size"> & {
+        indeterminate?: boolean;
+        showInfoIcon?: boolean;
+        infoIconClassName?: string;
+        id: string | number;
+        size?: TMediumSizes;
+        label: ReactNode;
+        labelClassName?: string;
+        onChange?: (
+            e:
+                | React.ChangeEvent<HTMLInputElement>
+                | React.KeyboardEvent<HTMLSpanElement>,
+        ) => void;
+        className?: string;
+        children?: {same as above}[]
+        }[]
                 
-                Example:
-                const config = [
+Example:
+        const config = [
+            {
+                label: "Parent1",
+                id: 1,
+                indeterminate: true,
+                showInfoIcon: true,
+                children: [
                     {
-                        label: "Parent1",
-                        id: 1,
-                        indeterminate: true,
-                        showInfoIcon: true,
-                        children: [
-                            {
-                                label: "Child1",
-                                checked: true,
-                                id: 2,
-                            },
-                            {
-                                label: "Child2",
-                                id: 3,
-                            },
-                            {
-                                label: "Child3",
-                                id: 4,
-                            },
-                        ],
+                        label: "Child1",
+                        checked: true,
+                        id: 2,
                     },
                     {
-                        label: "Parent2",
-                        id: 5,
-                        children: [
-                            {
-                                label: "Child1",
-                                id: 6,
-                            },
-                        ],
+                        label: "Child2",
+                        id: 3,
                     },
                     {
-                        label: "Parent3",
-                        id: 7,
-                        showInfoIcon: true,
+                        label: "Child3",
+                        id: 4,
                     },
-                ];`,
+                ],
+            },
+            {
+                label: "Parent2",
+                id: 5,
+                children: [
+                    {
+                        label: "Child1",
+                        id: 6,
+                    },
+                ],
+            },
+            {
+                label: "Parent3",
+                id: 7,
+                showInfoIcon: true,
+            },
+        ];`,
             control: { type: null },
         },
     },
