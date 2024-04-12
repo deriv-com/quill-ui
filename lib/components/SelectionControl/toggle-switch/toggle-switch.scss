@@ -78,7 +78,6 @@
         }
     }
     .enabled {
-        pointer-events: none;
         .toggle-switch__knob {
             left: calc(100% - calc(var(--core-size-2200) / 2));
         }
