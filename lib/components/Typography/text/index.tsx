@@ -8,11 +8,12 @@ import {
 export const Text = ({
     children,
     className,
-    as = "span",
+    as = "p",
     size = "md",
     italic = false,
     underlined = false,
     bold = false,
+    color,
     ...rest
 }: TypographyProps) => {
     const decoration = getTextDecoration(italic, underlined);
@@ -23,6 +24,7 @@ export const Text = ({
             as={as}
             className={clsx(
                 `quill-typography__body-text__size--${size}__weight--${weight}__decoration--${decoration}`,
+                color ? color : "quill-typography__color--default",
                 className,
             )}
             {...rest}

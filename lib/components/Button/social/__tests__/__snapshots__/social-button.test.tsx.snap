@@ -1,0 +1,331 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Social Button Should render Apple Button 1`] = `
+<div>
+  <button
+    class="quill-button social-button__variant--apple--primary quill-button__size--md"
+  >
+    <svg
+      fill="none"
+      height="24"
+      role="img"
+      viewBox="0 0 32 32"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        clip-path="url(#2985ee5b2c374b48d8881ed9ac01ec09__a)"
+        fill="#fff"
+      >
+        <path
+          d="M22.248 0c.195 1.894-.542 3.749-1.627 5.129-1.125 1.34-2.907 2.405-4.69 2.248-.233-1.815.66-3.746 1.667-4.93C18.721 1.066 20.66.08 22.248 0M18.064 8.672c1.158-.464 2.59-1.038 4.165-.943 1.006.08 3.904.395 5.76 3.185l-.06.041c-.476.317-3.378 2.248-3.342 6.057.036 4.537 3.678 6.238 4.16 6.463l.053.026-.01.032c-.092.3-.72 2.36-2.153 4.49-1.315 1.97-2.668 3.896-4.833 3.935-1.02.02-1.706-.28-2.422-.592-.75-.326-1.53-.667-2.757-.667-1.286 0-2.104.351-2.891.69-.68.29-1.336.572-2.25.61-2.087.077-3.67-2.087-4.985-4.053-2.707-3.973-4.755-11.21-1.971-16.088C5.88 9.42 8.354 7.887 11.02 7.847c1.164-.022 2.278.426 3.25.816.739.297 1.396.562 1.93.562.485 0 1.118-.254 1.864-.553"
+        />
+      </g>
+      <defs>
+        <clippath
+          id="2985ee5b2c374b48d8881ed9ac01ec09__a"
+        >
+          <path
+            d="M0 0h32v32H0z"
+            fill="#fff"
+          />
+        </clippath>
+      </defs>
+    </svg>
+    <p
+      class="quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--apple--primary-color"
+    >
+      Apple
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Social Button Should render Facebook Button 1`] = `
+<div>
+  <button
+    class="quill-button social-button__variant--facebook--primary quill-button__size--md"
+  >
+    <svg
+      fill="#fff"
+      height="24"
+      role="img"
+      viewBox="0 0 32 32"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        clip-path="url(#921bc730889c3f10110214969d5b0559__a)"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M16 32c8.837 0 16-7.163 16-16S24.837 0 16 0 0 7.163 0 16s7.163 16 16 16m2.5-11.249v11.055a16.1 16.1 0 0 1-5 0V20.75H9.438v-4.653H13.5V12.55c0-4.034 2.389-6.263 6.043-6.263 1.751 0 3.582.315 3.582.315v3.961h-2.018c-1.987 0-2.607 1.241-2.607 2.514v3.02h4.438l-.71 4.653z"
+          fill="#fff"
+          fill-rule="evenodd"
+        />
+        <path
+          d="M18.5 20.751v11.055a16.1 16.1 0 0 1-5 0V20.75H9.438v-4.653H13.5V12.55c0-4.034 2.389-6.263 6.043-6.263 1.751 0 3.582.315 3.582.315v3.961h-2.018c-1.987 0-2.607 1.241-2.607 2.514v3.02h4.438l-.71 4.653z"
+          fill="#1877F2"
+        />
+      </g>
+      <defs>
+        <clippath
+          id="921bc730889c3f10110214969d5b0559__a"
+        >
+          <path
+            d="M0 0h32v32H0z"
+            fill="#fff"
+          />
+        </clippath>
+      </defs>
+    </svg>
+    <p
+      class="quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--facebook--primary-color"
+    >
+      Facebook
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Social Button Should render Google Button 1`] = `
+<div>
+  <button
+    class="quill-button social-button__variant--google--primary quill-button__size--md"
+  >
+    <svg
+      fill="none"
+      height="24"
+      role="img"
+      viewBox="0 0 32 32"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        clip-path="url(#f34b37979f8c7a9adfb2f0e6b04a3211__a)"
+      >
+        <path
+          d="M32 16.375c0-1.097-.1-2.194-.294-3.273H16.325v6.186h8.787a7.34 7.34 0 0 1-3.256 4.829l5.274 4.02C30.22 25.348 32 21.248 32 16.374"
+          fill="#3E82F1"
+        />
+        <path
+          d="M21.858 24.119c-1.458.962-3.33 1.529-5.53 1.529-4.257 0-7.852-2.815-9.136-6.6l-5.458 4.145c2.77 5.404 8.42 8.82 14.593 8.812 4.412 0 8.108-1.43 10.805-3.876z"
+          fill="#32A753"
+        />
+        <path
+          d="M7.19 12.966 1.735 8.82a15.77 15.77 0 0 0 0 14.377l5.457-4.145a9.35 9.35 0 0 1 0-6.087"
+          fill="#F9BB00"
+        />
+        <path
+          d="M16.327 0C10.154 0 4.503 3.417 1.734 8.82l5.457 4.146c1.284-3.786 4.88-6.6 9.136-6.6 2.394 0 4.55.81 6.237 2.392l4.687-4.595C24.426 1.583 20.73 0 16.327 0"
+          fill="#E74133"
+        />
+      </g>
+      <defs>
+        <clippath
+          id="f34b37979f8c7a9adfb2f0e6b04a3211__a"
+        >
+          <path
+            d="M0 0h32v32H0z"
+            fill="#fff"
+          />
+        </clippath>
+      </defs>
+    </svg>
+    <p
+      class="quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--google--primary-color"
+    >
+      Google
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Social Button Should render Primary Variant 1`] = `
+<div>
+  <button
+    class="quill-button social-button__variant--apple--primary quill-button__size--md"
+  >
+    <svg
+      fill="none"
+      height="24"
+      role="img"
+      viewBox="0 0 32 32"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        clip-path="url(#2985ee5b2c374b48d8881ed9ac01ec09__a)"
+        fill="#fff"
+      >
+        <path
+          d="M22.248 0c.195 1.894-.542 3.749-1.627 5.129-1.125 1.34-2.907 2.405-4.69 2.248-.233-1.815.66-3.746 1.667-4.93C18.721 1.066 20.66.08 22.248 0M18.064 8.672c1.158-.464 2.59-1.038 4.165-.943 1.006.08 3.904.395 5.76 3.185l-.06.041c-.476.317-3.378 2.248-3.342 6.057.036 4.537 3.678 6.238 4.16 6.463l.053.026-.01.032c-.092.3-.72 2.36-2.153 4.49-1.315 1.97-2.668 3.896-4.833 3.935-1.02.02-1.706-.28-2.422-.592-.75-.326-1.53-.667-2.757-.667-1.286 0-2.104.351-2.891.69-.68.29-1.336.572-2.25.61-2.087.077-3.67-2.087-4.985-4.053-2.707-3.973-4.755-11.21-1.971-16.088C5.88 9.42 8.354 7.887 11.02 7.847c1.164-.022 2.278.426 3.25.816.739.297 1.396.562 1.93.562.485 0 1.118-.254 1.864-.553"
+        />
+      </g>
+      <defs>
+        <clippath
+          id="2985ee5b2c374b48d8881ed9ac01ec09__a"
+        >
+          <path
+            d="M0 0h32v32H0z"
+            fill="#fff"
+          />
+        </clippath>
+      </defs>
+    </svg>
+    <p
+      class="quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--apple--primary-color"
+    >
+      Apple
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Social Button Should render Secondary Variant 1`] = `
+<div>
+  <button
+    class="quill-button social-button__variant--secondary quill-button__size--md"
+  >
+    <svg
+      fill="none"
+      height="24"
+      role="img"
+      viewBox="0 0 32 32"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        clip-path="url(#f34b37979f8c7a9adfb2f0e6b04a3211__a)"
+      >
+        <path
+          d="M32 16.375c0-1.097-.1-2.194-.294-3.273H16.325v6.186h8.787a7.34 7.34 0 0 1-3.256 4.829l5.274 4.02C30.22 25.348 32 21.248 32 16.374"
+          fill="#3E82F1"
+        />
+        <path
+          d="M21.858 24.119c-1.458.962-3.33 1.529-5.53 1.529-4.257 0-7.852-2.815-9.136-6.6l-5.458 4.145c2.77 5.404 8.42 8.82 14.593 8.812 4.412 0 8.108-1.43 10.805-3.876z"
+          fill="#32A753"
+        />
+        <path
+          d="M7.19 12.966 1.735 8.82a15.77 15.77 0 0 0 0 14.377l5.457-4.145a9.35 9.35 0 0 1 0-6.087"
+          fill="#F9BB00"
+        />
+        <path
+          d="M16.327 0C10.154 0 4.503 3.417 1.734 8.82l5.457 4.146c1.284-3.786 4.88-6.6 9.136-6.6 2.394 0 4.55.81 6.237 2.392l4.687-4.595C24.426 1.583 20.73 0 16.327 0"
+          fill="#E74133"
+        />
+      </g>
+      <defs>
+        <clippath
+          id="f34b37979f8c7a9adfb2f0e6b04a3211__a"
+        >
+          <path
+            d="M0 0h32v32H0z"
+            fill="#fff"
+          />
+        </clippath>
+      </defs>
+    </svg>
+    <p
+      class="quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--google--secondary-color"
+    >
+      Google
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Social Button Should render no label if hideLabel is true 1`] = `
+<div>
+  <button
+    class="quill-button social-button__variant--google--primary social-button__icon-only--md"
+  >
+    <svg
+      fill="none"
+      height="24"
+      role="img"
+      viewBox="0 0 32 32"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        clip-path="url(#f34b37979f8c7a9adfb2f0e6b04a3211__a)"
+      >
+        <path
+          d="M32 16.375c0-1.097-.1-2.194-.294-3.273H16.325v6.186h8.787a7.34 7.34 0 0 1-3.256 4.829l5.274 4.02C30.22 25.348 32 21.248 32 16.374"
+          fill="#3E82F1"
+        />
+        <path
+          d="M21.858 24.119c-1.458.962-3.33 1.529-5.53 1.529-4.257 0-7.852-2.815-9.136-6.6l-5.458 4.145c2.77 5.404 8.42 8.82 14.593 8.812 4.412 0 8.108-1.43 10.805-3.876z"
+          fill="#32A753"
+        />
+        <path
+          d="M7.19 12.966 1.735 8.82a15.77 15.77 0 0 0 0 14.377l5.457-4.145a9.35 9.35 0 0 1 0-6.087"
+          fill="#F9BB00"
+        />
+        <path
+          d="M16.327 0C10.154 0 4.503 3.417 1.734 8.82l5.457 4.146c1.284-3.786 4.88-6.6 9.136-6.6 2.394 0 4.55.81 6.237 2.392l4.687-4.595C24.426 1.583 20.73 0 16.327 0"
+          fill="#E74133"
+        />
+      </g>
+      <defs>
+        <clippath
+          id="f34b37979f8c7a9adfb2f0e6b04a3211__a"
+        >
+          <path
+            d="M0 0h32v32H0z"
+            fill="#fff"
+          />
+        </clippath>
+      </defs>
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Social Button Should render properly with fullWidth true 1`] = `
+<div>
+  <button
+    class="quill-button social-button__variant--facebook--primary quill-button__full-width quill-button__size--md"
+  >
+    <svg
+      fill="#fff"
+      height="24"
+      role="img"
+      viewBox="0 0 32 32"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        clip-path="url(#921bc730889c3f10110214969d5b0559__a)"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M16 32c8.837 0 16-7.163 16-16S24.837 0 16 0 0 7.163 0 16s7.163 16 16 16m2.5-11.249v11.055a16.1 16.1 0 0 1-5 0V20.75H9.438v-4.653H13.5V12.55c0-4.034 2.389-6.263 6.043-6.263 1.751 0 3.582.315 3.582.315v3.961h-2.018c-1.987 0-2.607 1.241-2.607 2.514v3.02h4.438l-.71 4.653z"
+          fill="#fff"
+          fill-rule="evenodd"
+        />
+        <path
+          d="M18.5 20.751v11.055a16.1 16.1 0 0 1-5 0V20.75H9.438v-4.653H13.5V12.55c0-4.034 2.389-6.263 6.043-6.263 1.751 0 3.582.315 3.582.315v3.961h-2.018c-1.987 0-2.607 1.241-2.607 2.514v3.02h4.438l-.71 4.653z"
+          fill="#1877F2"
+        />
+      </g>
+      <defs>
+        <clippath
+          id="921bc730889c3f10110214969d5b0559__a"
+        >
+          <path
+            d="M0 0h32v32H0z"
+            fill="#fff"
+          />
+        </clippath>
+      </defs>
+    </svg>
+    <p
+      class="quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--facebook--primary-color"
+    >
+      Facebook
+    </p>
+  </button>
+</div>
+`;

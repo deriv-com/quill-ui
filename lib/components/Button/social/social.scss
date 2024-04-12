@@ -1,0 +1,108 @@
+@import '@quill/color.semantic.scss';
+@import '@quill/color.scss';
+@import '@quill/color.opacity.scss';
+@import '@quill/opacity.scss';
+
+.social-button {
+    &__icon-only {
+        &--md{
+            width: var(--core-size-1600);
+            padding-inline: var(--core-spacing-50);
+            height: var(--core-size-1600);
+            border-radius: var(--core-borderRadius-600);
+        }
+        &--lg{
+            width: var(--core-size-2400);
+            padding-inline: var(--core-spacing-50);
+            height: var(--core-size-2400);
+            border-radius: var(--core-borderRadius-800);
+        }
+        &--xl{
+            width: var(--core-size-3200);
+            padding-inline: var(--core-spacing-50);
+            height: var(--core-size-3200);
+            border-radius: var(--core-borderRadius-1200);
+        }
+    }
+    &__variant {
+        &--google {
+            &--primary {
+                border-color: transparent;
+                background-color: var(--core-color-opacity-black-75);
+                color: var(--semantic-color-typography-default);
+
+                &:hover:not(:disabled) {
+                    background-color: var(--core-color-opacity-black-100);
+                }
+
+                &:active:not(:disabled) {
+                    background-color: var(--core-color-opacity-black-200);
+                }
+
+                &:disabled {
+                    opacity: var(--core-opacity-600);
+                }
+            }
+        }
+
+        &--facebook {
+            &--primary {
+                border-color: transparent;
+                background-color: #1877F2;
+                color: var(--core-color-solid-slate-50);
+
+                &:hover:not(:disabled) {
+                    background-color: #166DDF;
+                }
+
+                &:active:not(:disabled) {
+                    background-color: #1464CB;
+                }
+
+                &:disabled {
+                    opacity: var(--core-opacity-600);
+                }
+            }
+        }
+
+        &--apple {
+            &--primary {
+                background-color: var(--core-color-solid-slate-1400);
+                color: var(--core-color-solid-slate-50);
+                border-color: transparent;
+
+                &:hover:not(:disabled) {
+                    background-color: var(--core-color-solid-slate-700);
+                }
+
+                &:active:not(:disabled) {
+                    background-color: var(--core-color-opacity-black-800);
+                }
+
+                &:disabled {
+                    opacity: var(--core-opacity-600);
+
+                }
+            }
+        }
+
+        &--secondary {
+            background-color: transparent;
+            border-style: solid;
+            border-color: var(--core-color-opacity-black-100);
+            color: var(--core-color-opacity-black-600);
+
+            &:hover:not(:disabled) {
+                background-color: var(--core-color-opacity-black-100);
+            }
+
+            &:active:not(:disabled) {
+                background-color: var(--core-color-opacity-black-200);
+            }
+
+            &:disabled {
+                opacity: var(--core-opacity-600);
+            }
+        }
+    }
+}
