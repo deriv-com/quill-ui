@@ -13,7 +13,7 @@ export const CaptionText = ({
     as = "p",
     italic = false,
     underlined = false,
-    bold = false,
+    bold = true,
     ...rest
 }: TypographyProps) => {
     const decoration = getTextDecoration(italic, underlined);
