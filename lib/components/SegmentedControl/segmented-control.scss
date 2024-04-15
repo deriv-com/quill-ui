@@ -1,0 +1,167 @@
+@import "@quill/border.scss";
+@import "@quill/color.scss";
+@import "@quill/color.semantic.scss";
+@import "@quill/motion.scss";
+@import "@quill/opacity.scss";
+@import "@quill/others.scss";
+@import "@quill/spacing.scss";
+@import "@quill/static.scss";
+
+.segmented-control {
+    &-single {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        width: fit-content;
+        background: color-mix(
+            in srgb,
+            var(--semantic-color-typography-prominent) 4%,
+            transparent
+        );
+        -webkit-tap-highlight-color: transparent;
+
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            min-width: 0;
+            white-space: nowrap;
+
+            * {
+                z-index: 2;
+            }
+            &:disabled {
+                opacity: var(--core-opacity-300);
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+            &.focused,
+            &.focused::before {
+                // not using default :focus since we are customizing focus state
+                box-shadow: 0 0 0 var(--borderWidth-xs)
+                    var(--core-color-solid-blue-700) inset;
+            }
+            &:hover:not(:disabled) {
+                background: color-mix(
+                    in srgb,
+                    var(--semantic-color-typography-prominent) 8%,
+                    transparent
+                );
+            }
+            &:active:not(:disabled, .selected),
+            &:active:not(:disabled, .animated)::before {
+                box-shadow: unset;
+                background: color-mix(
+                    in srgb,
+                    var(--semantic-color-typography-prominent) 16%,
+                    transparent
+                );
+            }
+            &.selected:not(:disabled) {
+                // colors should stay the same for both themes:
+                background: var(--core-color-solid-slate-50);
+            }
+            &.animated::before {
+                content: "";
+                position: absolute;
+                background-color: var(--core-color-solid-slate-50);
+                width: 100%;
+                height: 100%;
+                animation: var(--core-motion-duration-200)
+                    var(--motion-easing-inandout) slide-in;
+                top: 0;
+                left: 0;
+                border-radius: inherit;
+                z-index: 1;
+            }
+            .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    fill: var(--semantic-color-typography-default);
+                }
+            }
+            &.selected:not(:disabled),
+            &.animated {
+                // colors should stay the same for both themes:
+                * {
+                    color: var(--core-color-solid-slate-1400);
+                }
+                svg {
+                    fill: var(--core-color-solid-slate-1400);
+                }
+            }
+        }
+        &--has-container-width {
+            width: inherit;
+            min-width: fit-content;
+
+            .item {
+                flex: 1;
+            }
+        }
+        &--sm {
+            height: var(--size-generic-lg);
+            padding: var(--semantic-spacing-general-xs);
+            border-radius: var(--semantic-borderRadius-md);
+
+            .item {
+                height: var(--size-generic-md);
+                padding: var(--temp-static-spacing-5)
+                    var(--semantic-spacing-general-sm)
+                    var(--temp-static-spacing-5)
+                    var(--semantic-spacing-general-sm);
+                gap: var(--semantic-spacing-gap-sm);
+                border-radius: var(--semantic-borderRadius-sm);
+
+                .icon {
+                    width: var(--size-generic-sm);
+                }
+            }
+        }
+        &--md {
+            height: var(--size-generic-2xl);
+            padding: var(--semantic-spacing-general-sm);
+            border-radius: var(--semantic-borderRadius-lg);
+
+            .item {
+                height: var(--size-generic-lg);
+                padding: var(--semantic-spacing-general-sm)
+                    var(--semantic-spacing-general-md)
+                    var(--semantic-spacing-general-sm)
+                    var(--semantic-spacing-general-md);
+                gap: var(--semantic-spacing-gap-md);
+                border-radius: var(--semantic-borderRadius-md);
+            }
+        }
+        &--lg {
+            height: var(--size-generic-4xl);
+            padding: var(--core-spacing-600);
+            border-radius: var(--semantic-borderRadius-xl);
+
+            .item {
+                height: var(--size-generic-xl);
+                padding: var(--temp-static-spacing-9)
+                    var(--semantic-spacing-general-lg)
+                    var(--temp-static-spacing-9)
+                    var(--semantic-spacing-general-lg);
+                gap: var(--core-spacing-600);
+                border-radius: var(--core-borderRadius-600);
+            }
+        }
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(var(--x));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
