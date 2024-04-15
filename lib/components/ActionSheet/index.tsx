@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import ActionSheetRoot from "./root";
 import ActionSheetHeader from "./header";
 import ActionSheetContent from "./content";
