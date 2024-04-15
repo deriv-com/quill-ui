@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Base } from ".";
 import {
     LabelPairedCircleInfoMdBoldIcon,
     LabelPairedAndroidMdIcon,
     LabelPairedAppleMdIcon,
 } from "@deriv/quill-icons";
+import { Base } from ".";
 
 const icons: Record<string, object | null> = {
     sample_1: LabelPairedCircleInfoMdBoldIcon,

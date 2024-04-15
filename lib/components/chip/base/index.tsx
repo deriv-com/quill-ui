@@ -1,16 +1,16 @@
 import React from "react";
 import { SelectableChipProps } from "../types";
-import { StandardSizes } from "../../../types";
+import { TRegularSizes } from "../../../types";
 import {
     StandaloneChevronDownRegularIcon,
     StandaloneCircleXmarkRegularIcon,
 } from "@deriv/quill-icons";
 import "../_chip.scss";
 import clsx from "clsx";
-import { CaptionText } from "../../Typography";
+import { CaptionText, Text } from "../../Typography";
 
 export const ChipIconSizes: Record<
-    StandardSizes,
+    TRegularSizes,
     { width: number; height: number }
 > = {
     sm: {
@@ -25,6 +25,12 @@ export const ChipIconSizes: Record<
         width: 14,
         height: 24,
     },
+};
+
+export const LabelTextSizes: Record<TRegularSizes, JSX.Element> = {
+    sm: <CaptionText />,
+    md: <Text />,
+    lg: <Text />,
 };
 
 export const Base = ({
@@ -66,8 +72,12 @@ export const Base = ({
             {...rest}
         >
             {Icon && <Icon {...ChipIconSizes[size]} />}
-            {label && <CaptionText size={size}>{label}</CaptionText>}
-            {labelTag && <span className="">{labelTag}</span>}
+            {label &&
+                React.cloneElement(LabelTextSizes[size], {
+                    ...rest,
+                    children: label,
+                })}
+            {labelTag && <CaptionText bold>{labelTag}</CaptionText>}
             {dismissible && (
                 <StandaloneCircleXmarkRegularIcon
                     {...ChipIconSizes[size]}

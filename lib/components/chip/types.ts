@@ -1,4 +1,4 @@
-import { QuillIconComponent, StandardSizes } from "../../types";
+import { QuillIconComponent, TRegularSizes } from "../../types";
 
 export interface BaseChipProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,7 +13,7 @@ export interface SelectableChipProps extends BaseChipProps {
     isDropdownOpen?: boolean;
     dropdown?: boolean;
     selected?: boolean;
-    size?: StandardSizes;
+    size?: TRegularSizes;
     onChipSelect?: (
         event: React.MouseEvent<HTMLButtonElement>,
         value: boolean,
