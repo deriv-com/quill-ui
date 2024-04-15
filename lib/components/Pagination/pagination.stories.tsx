@@ -4,7 +4,7 @@ import { MOCK_DATA } from "./mocks/mock-data";
 import Mocks from "./mocks";
 
 const meta = {
-    title: "Components/Pagination",
+    title: "Components/Pagination/Pagination",
     component: Pagination,
     parameters: {
         layout: "centered",
