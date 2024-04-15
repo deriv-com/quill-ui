@@ -2,419 +2,338 @@
 
 exports[`RadioButton component should be checked by default if defaultChecked is true 1`] = `
 <div>
-  <div>
-    <label
-      class="quill-radio-button quill-radio-group__item--active"
-      data-testid="dt_quill_radio_button"
-      for="test-id"
+  <label
+    class="quill-radio-button quill-radio-group__item--active"
+    data-testid="dt_quill_radio_button"
+    for="test-id"
+  >
+    <input
+      checked=""
+      class="quill-radio-button__input"
+      type="radio"
+      value="option1"
+    />
+    <span
+      class="quill-radio-button__icon"
+      id="test-id"
     >
-      <input
-        checked=""
-        class="quill-radio-button__input"
-        type="radio"
-        value="option1"
-      />
-      <span>
-        <svg
-          data-testid="dt_checked_icon_option1_false"
-          fill="#000000"
-          height="24"
-          id="test-id"
-          role="img"
-          viewBox="0 0 16 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g>
-            <path
-              d="M8 20c-2.875 0-5.5-1.5-6.937-4-1.438-2.469-1.438-5.5 0-8A8.02 8.02 0 0 1 8 4c2.844 0 5.469 1.531 6.906 4 1.438 2.5 1.438 5.531 0 8A7.94 7.94 0 0 1 8 20M8 9c-1.094 0-2.062.594-2.625 1.5-.531.938-.531 2.094 0 3A3.03 3.03 0 0 0 8 15c1.063 0 2.031-.562 2.594-1.5.531-.906.531-2.062 0-3C10.03 9.594 9.063 9 8 9"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="7ba404559cefe18ce4a93b4f9d9cf45f__a"
-            >
-              <path
-                d="M0 0h16v24H0z"
-              />
-            </clippath>
-          </defs>
-        </svg>
-      </span>
-      <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+      <svg
+        data-testid="dt_checked_icon_option1_false"
+        fill="#000000"
+        height="32"
+        role="img"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        Radio Option
-      </span>
-    </label>
-  </div>
+        <path
+          d="M24.125 16.5c0-2.89-1.562-5.547-4.062-7.031-2.54-1.446-5.625-1.446-8.125 0-2.54 1.484-4.063 4.14-4.063 7.031a8.13 8.13 0 0 0 4.063 7.07c2.5 1.446 5.585 1.446 8.124 0 2.5-1.484 4.063-4.14 4.063-7.07M6 16.5a9.93 9.93 0 0 1 5-8.633c3.086-1.797 6.875-1.797 10 0 3.086 1.797 5 5.078 5 8.633 0 3.594-1.914 6.875-5 8.672-3.125 1.797-6.914 1.797-10 0-3.125-1.797-5-5.078-5-8.672m10-3.75c1.328 0 2.54.742 3.242 1.875.664 1.172.664 2.617 0 3.75-.703 1.172-1.914 1.875-3.242 1.875-1.367 0-2.578-.703-3.281-1.875-.664-1.133-.664-2.578 0-3.75.703-1.133 1.914-1.875 3.281-1.875"
+        />
+      </svg>
+    </span>
+    <span
+      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+    >
+      Radio Option
+    </span>
+  </label>
 </div>
 `;
 
 exports[`RadioButton component should be disabled if disabled is true 1`] = `
 <div>
-  <div>
-    <label
-      class="quill-radio-button"
-      data-testid="dt_quill_radio_button"
-      for="test-id"
+  <label
+    class="quill-radio-button"
+    data-testid="dt_quill_radio_button"
+    for="test-id"
+  >
+    <input
+      class="quill-radio-button__input"
+      disabled=""
+      type="radio"
+      value="option3"
+    />
+    <span
+      class="quill-radio-button__icon"
+      id="test-id"
     >
-      <input
-        class="quill-radio-button__input"
-        disabled=""
-        type="radio"
-        value="option3"
-      />
-      <span>
-        <svg
-          data-testid="dt_unchecked_icon_option3_true"
-          fill="#b8b8b8"
-          height="24"
-          id="test-id"
-          role="img"
-          viewBox="0 0 16 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g>
-            <path
-              d="M8 5a6.98 6.98 0 0 0-6.062 3.5c-1.282 2.188-1.282 4.844 0 7C3.188 17.688 5.467 19 8 19c2.5 0 4.781-1.312 6.031-3.5 1.281-2.156 1.281-4.812 0-7C12.781 6.344 10.5 5 8 5m0 15c-2.875 0-5.5-1.5-6.937-4-1.438-2.469-1.438-5.5 0-8A8.02 8.02 0 0 1 8 4c2.844 0 5.469 1.531 6.906 4 1.438 2.5 1.438 5.531 0 8A7.94 7.94 0 0 1 8 20"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="5c9d34bce0fa277ae9a9982833928bda__a"
-            >
-              <path
-                d="M0 0h16v24H0z"
-              />
-            </clippath>
-          </defs>
-        </svg>
-      </span>
-      <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+      <svg
+        data-testid="dt_unchecked_icon_option3_true"
+        fill="#b8b8b8"
+        height="32"
+        role="img"
+        tabindex="0"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        Radio Option
-      </span>
-    </label>
-  </div>
+        <path
+          d="M16 7.75a8.73 8.73 0 0 0-7.578 4.375c-1.602 2.734-1.602 6.055 0 8.75C9.984 23.609 12.836 25.25 16 25.25a8.63 8.63 0 0 0 7.54-4.375c1.6-2.695 1.6-6.016 0-8.75C21.976 9.43 19.124 7.75 16 7.75m0 18.75c-3.594 0-6.875-1.875-8.672-5-1.797-3.086-1.797-6.875 0-10 1.797-3.086 5.078-5 8.672-5 3.555 0 6.836 1.914 8.633 5 1.797 3.125 1.797 6.914 0 10a9.93 9.93 0 0 1-8.633 5"
+        />
+      </svg>
+    </span>
+    <span
+      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+    >
+      Radio Option
+    </span>
+  </label>
 </div>
 `;
 
 exports[`RadioButton component should not be checked by default if defaultChecked is false 1`] = `
 <div>
-  <div>
-    <label
-      class="quill-radio-button"
-      data-testid="dt_quill_radio_button"
-      for="test-id"
+  <label
+    class="quill-radio-button"
+    data-testid="dt_quill_radio_button"
+    for="test-id"
+  >
+    <input
+      class="quill-radio-button__input"
+      type="radio"
+      value="option2"
+    />
+    <span
+      class="quill-radio-button__icon"
+      id="test-id"
     >
-      <input
-        class="quill-radio-button__input"
-        type="radio"
-        value="option2"
-      />
-      <span>
-        <svg
-          data-testid="dt_unchecked_icon_option2_false"
-          fill="#7e7e7e"
-          height="24"
-          id="test-id"
-          role="img"
-          viewBox="0 0 16 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g>
-            <path
-              d="M8 5a6.98 6.98 0 0 0-6.062 3.5c-1.282 2.188-1.282 4.844 0 7C3.188 17.688 5.467 19 8 19c2.5 0 4.781-1.312 6.031-3.5 1.281-2.156 1.281-4.812 0-7C12.781 6.344 10.5 5 8 5m0 15c-2.875 0-5.5-1.5-6.937-4-1.438-2.469-1.438-5.5 0-8A8.02 8.02 0 0 1 8 4c2.844 0 5.469 1.531 6.906 4 1.438 2.5 1.438 5.531 0 8A7.94 7.94 0 0 1 8 20"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="5c9d34bce0fa277ae9a9982833928bda__a"
-            >
-              <path
-                d="M0 0h16v24H0z"
-              />
-            </clippath>
-          </defs>
-        </svg>
-      </span>
-      <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+      <svg
+        data-testid="dt_unchecked_icon_option2_false"
+        fill="#7e7e7e"
+        height="32"
+        role="img"
+        tabindex="0"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        Radio Option
-      </span>
-    </label>
-  </div>
+        <path
+          d="M16 7.75a8.73 8.73 0 0 0-7.578 4.375c-1.602 2.734-1.602 6.055 0 8.75C9.984 23.609 12.836 25.25 16 25.25a8.63 8.63 0 0 0 7.54-4.375c1.6-2.695 1.6-6.016 0-8.75C21.976 9.43 19.124 7.75 16 7.75m0 18.75c-3.594 0-6.875-1.875-8.672-5-1.797-3.086-1.797-6.875 0-10 1.797-3.086 5.078-5 8.672-5 3.555 0 6.836 1.914 8.633 5 1.797 3.125 1.797 6.914 0 10a9.93 9.93 0 0 1-8.633 5"
+        />
+      </svg>
+    </span>
+    <span
+      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+    >
+      Radio Option
+    </span>
+  </label>
 </div>
 `;
 
 exports[`RadioButton component should not render info icon when hasInfo is false 1`] = `
 <div>
-  <div>
-    <label
-      class="quill-radio-button"
-      data-testid="dt_quill_radio_button"
+  <label
+    class="quill-radio-button"
+    data-testid="dt_quill_radio_button"
+  >
+    <input
+      class="quill-radio-button__input"
+      type="radio"
+      value=""
+    />
+    <span
+      class="quill-radio-button__icon"
     >
-      <input
-        class="quill-radio-button__input"
-        type="radio"
-        value=""
-      />
-      <span>
-        <svg
-          data-testid="dt_unchecked_icon_undefined_false"
-          fill="#7e7e7e"
-          height="24"
-          role="img"
-          viewBox="0 0 16 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g>
-            <path
-              d="M8 5a6.98 6.98 0 0 0-6.062 3.5c-1.282 2.188-1.282 4.844 0 7C3.188 17.688 5.467 19 8 19c2.5 0 4.781-1.312 6.031-3.5 1.281-2.156 1.281-4.812 0-7C12.781 6.344 10.5 5 8 5m0 15c-2.875 0-5.5-1.5-6.937-4-1.438-2.469-1.438-5.5 0-8A8.02 8.02 0 0 1 8 4c2.844 0 5.469 1.531 6.906 4 1.438 2.5 1.438 5.531 0 8A7.94 7.94 0 0 1 8 20"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="5c9d34bce0fa277ae9a9982833928bda__a"
-            >
-              <path
-                d="M0 0h16v24H0z"
-              />
-            </clippath>
-          </defs>
-        </svg>
-      </span>
-      <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+      <svg
+        data-testid="dt_unchecked_icon_undefined_false"
+        fill="#7e7e7e"
+        height="32"
+        role="img"
+        tabindex="0"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        Radio Option
-      </span>
-    </label>
-  </div>
+        <path
+          d="M16 7.75a8.73 8.73 0 0 0-7.578 4.375c-1.602 2.734-1.602 6.055 0 8.75C9.984 23.609 12.836 25.25 16 25.25a8.63 8.63 0 0 0 7.54-4.375c1.6-2.695 1.6-6.016 0-8.75C21.976 9.43 19.124 7.75 16 7.75m0 18.75c-3.594 0-6.875-1.875-8.672-5-1.797-3.086-1.797-6.875 0-10 1.797-3.086 5.078-5 8.672-5 3.555 0 6.836 1.914 8.633 5 1.797 3.125 1.797 6.914 0 10a9.93 9.93 0 0 1-8.633 5"
+        />
+      </svg>
+    </span>
+    <span
+      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+    >
+      Radio Option
+    </span>
+  </label>
 </div>
 `;
 
 exports[`RadioButton component should not trigger click event on input when info icon is clicked and disabled 1`] = `
 <div>
-  <div>
-    <label
-      class="quill-radio-button"
-      data-testid="dt_quill_radio_button"
-      for="test-id"
+  <label
+    class="quill-radio-button"
+    data-testid="dt_quill_radio_button"
+    for="test-id"
+  >
+    <input
+      class="quill-radio-button__input"
+      disabled=""
+      type="radio"
+      value="option4"
+    />
+    <span
+      class="quill-radio-button__icon"
+      id="test-id"
     >
-      <input
-        class="quill-radio-button__input"
-        disabled=""
-        type="radio"
-        value="option4"
-      />
-      <span>
-        <svg
-          data-testid="dt_unchecked_icon_option4_true"
-          fill="#b8b8b8"
-          height="24"
-          id="test-id"
-          role="img"
-          viewBox="0 0 16 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g>
-            <path
-              d="M8 5a6.98 6.98 0 0 0-6.062 3.5c-1.282 2.188-1.282 4.844 0 7C3.188 17.688 5.467 19 8 19c2.5 0 4.781-1.312 6.031-3.5 1.281-2.156 1.281-4.812 0-7C12.781 6.344 10.5 5 8 5m0 15c-2.875 0-5.5-1.5-6.937-4-1.438-2.469-1.438-5.5 0-8A8.02 8.02 0 0 1 8 4c2.844 0 5.469 1.531 6.906 4 1.438 2.5 1.438 5.531 0 8A7.94 7.94 0 0 1 8 20"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="5c9d34bce0fa277ae9a9982833928bda__a"
-            >
-              <path
-                d="M0 0h16v24H0z"
-              />
-            </clippath>
-          </defs>
-        </svg>
-      </span>
-      <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+      <svg
+        data-testid="dt_unchecked_icon_option4_true"
+        fill="#b8b8b8"
+        height="32"
+        role="img"
+        tabindex="0"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        Radio Option
-      </span>
-    </label>
-  </div>
+        <path
+          d="M16 7.75a8.73 8.73 0 0 0-7.578 4.375c-1.602 2.734-1.602 6.055 0 8.75C9.984 23.609 12.836 25.25 16 25.25a8.63 8.63 0 0 0 7.54-4.375c1.6-2.695 1.6-6.016 0-8.75C21.976 9.43 19.124 7.75 16 7.75m0 18.75c-3.594 0-6.875-1.875-8.672-5-1.797-3.086-1.797-6.875 0-10 1.797-3.086 5.078-5 8.672-5 3.555 0 6.836 1.914 8.633 5 1.797 3.125 1.797 6.914 0 10a9.93 9.93 0 0 1-8.633 5"
+        />
+      </svg>
+    </span>
+    <span
+      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+    >
+      Radio Option
+    </span>
+  </label>
 </div>
 `;
 
 exports[`RadioButton component should render correctly with default props 1`] = `
 <div>
-  <div>
-    <label
-      class="quill-radio-button"
-      data-testid="dt_quill_radio_button"
+  <label
+    class="quill-radio-button"
+    data-testid="dt_quill_radio_button"
+  >
+    <input
+      class="quill-radio-button__input"
+      type="radio"
+      value=""
+    />
+    <span
+      class="quill-radio-button__icon"
     >
-      <input
-        class="quill-radio-button__input"
-        type="radio"
-        value=""
-      />
-      <span>
-        <svg
-          data-testid="dt_unchecked_icon_undefined_false"
-          fill="#7e7e7e"
-          height="24"
-          role="img"
-          viewBox="0 0 16 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g>
-            <path
-              d="M8 5a6.98 6.98 0 0 0-6.062 3.5c-1.282 2.188-1.282 4.844 0 7C3.188 17.688 5.467 19 8 19c2.5 0 4.781-1.312 6.031-3.5 1.281-2.156 1.281-4.812 0-7C12.781 6.344 10.5 5 8 5m0 15c-2.875 0-5.5-1.5-6.937-4-1.438-2.469-1.438-5.5 0-8A8.02 8.02 0 0 1 8 4c2.844 0 5.469 1.531 6.906 4 1.438 2.5 1.438 5.531 0 8A7.94 7.94 0 0 1 8 20"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="5c9d34bce0fa277ae9a9982833928bda__a"
-            >
-              <path
-                d="M0 0h16v24H0z"
-              />
-            </clippath>
-          </defs>
-        </svg>
-      </span>
-      <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+      <svg
+        data-testid="dt_unchecked_icon_undefined_false"
+        fill="#7e7e7e"
+        height="32"
+        role="img"
+        tabindex="0"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        Radio Option
-      </span>
-    </label>
-  </div>
+        <path
+          d="M16 7.75a8.73 8.73 0 0 0-7.578 4.375c-1.602 2.734-1.602 6.055 0 8.75C9.984 23.609 12.836 25.25 16 25.25a8.63 8.63 0 0 0 7.54-4.375c1.6-2.695 1.6-6.016 0-8.75C21.976 9.43 19.124 7.75 16 7.75m0 18.75c-3.594 0-6.875-1.875-8.672-5-1.797-3.086-1.797-6.875 0-10 1.797-3.086 5.078-5 8.672-5 3.555 0 6.836 1.914 8.633 5 1.797 3.125 1.797 6.914 0 10a9.93 9.93 0 0 1-8.633 5"
+        />
+      </svg>
+    </span>
+    <span
+      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+    >
+      Radio Option
+    </span>
+  </label>
 </div>
 `;
 
 exports[`RadioButton component should render info icon when hasInfo is true 1`] = `
 <div>
-  <div>
-    <label
-      class="quill-radio-button"
-      data-testid="dt_quill_radio_button"
+  <label
+    class="quill-radio-button"
+    data-testid="dt_quill_radio_button"
+  >
+    <input
+      class="quill-radio-button__input"
+      type="radio"
+      value=""
+    />
+    <span
+      class="quill-radio-button__icon"
     >
-      <input
-        class="quill-radio-button__input"
-        type="radio"
-        value=""
-      />
-      <span>
-        <svg
-          data-testid="dt_unchecked_icon_undefined_false"
-          fill="#7e7e7e"
-          height="24"
-          role="img"
-          viewBox="0 0 16 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g>
-            <path
-              d="M8 5a6.98 6.98 0 0 0-6.062 3.5c-1.282 2.188-1.282 4.844 0 7C3.188 17.688 5.467 19 8 19c2.5 0 4.781-1.312 6.031-3.5 1.281-2.156 1.281-4.812 0-7C12.781 6.344 10.5 5 8 5m0 15c-2.875 0-5.5-1.5-6.937-4-1.438-2.469-1.438-5.5 0-8A8.02 8.02 0 0 1 8 4c2.844 0 5.469 1.531 6.906 4 1.438 2.5 1.438 5.531 0 8A7.94 7.94 0 0 1 8 20"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="5c9d34bce0fa277ae9a9982833928bda__a"
-            >
-              <path
-                d="M0 0h16v24H0z"
-              />
-            </clippath>
-          </defs>
-        </svg>
-      </span>
-      <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
-      >
-        Radio Option
-      </span>
       <svg
-        class="quill-radio-button__info custom-info"
-        data-testid="dt_quill_radio_button_info"
-        height="24"
+        data-testid="dt_unchecked_icon_undefined_false"
+        fill="#7e7e7e"
+        height="32"
         role="img"
-        viewBox="0 0 16 24"
-        width="16"
+        tabindex="0"
+        viewBox="0 0 32 32"
+        width="32"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g>
-          <path
-            d="M8 5a6.98 6.98 0 0 0-6.062 3.5c-1.282 2.188-1.282 4.844 0 7C3.188 17.688 5.467 19 8 19c2.5 0 4.781-1.312 6.031-3.5 1.281-2.156 1.281-4.812 0-7C12.781 6.344 10.5 5 8 5m0 15c-2.875 0-5.5-1.5-6.937-4-1.438-2.469-1.438-5.5 0-8A8.02 8.02 0 0 1 8 4c2.844 0 5.469 1.531 6.906 4 1.438 2.5 1.438 5.531 0 8A7.94 7.94 0 0 1 8 20m-1.5-5h1v-3h-.75a.494.494 0 0 1-.5-.5c0-.25.219-.5.5-.5H8c.25 0 .5.25.5.5V15h1c.25 0 .5.25.5.5 0 .281-.25.5-.5.5h-3a.494.494 0 0 1-.5-.5c0-.25.219-.5.5-.5M8 9.75A.72.72 0 0 1 7.25 9 .74.74 0 0 1 8 8.25a.76.76 0 0 1 .75.75.74.74 0 0 1-.75.75"
-          />
-        </g>
-        <defs>
-          <clippath
-            id="dcc9bd4997619c0b981e59e31ddca58f__a"
-          >
-            <path
-              d="M0 0h16v24H0z"
-            />
-          </clippath>
-        </defs>
+        <path
+          d="M16 7.75a8.73 8.73 0 0 0-7.578 4.375c-1.602 2.734-1.602 6.055 0 8.75C9.984 23.609 12.836 25.25 16 25.25a8.63 8.63 0 0 0 7.54-4.375c1.6-2.695 1.6-6.016 0-8.75C21.976 9.43 19.124 7.75 16 7.75m0 18.75c-3.594 0-6.875-1.875-8.672-5-1.797-3.086-1.797-6.875 0-10 1.797-3.086 5.078-5 8.672-5 3.555 0 6.836 1.914 8.633 5 1.797 3.125 1.797 6.914 0 10a9.93 9.93 0 0 1-8.633 5"
+        />
       </svg>
-    </label>
-  </div>
+    </span>
+    <span
+      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+    >
+      Radio Option
+    </span>
+    <svg
+      class="quill-radio-button__info custom-info"
+      data-testid="dt_quill_radio_button_info"
+      height="24"
+      role="img"
+      viewBox="0 0 16 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g>
+        <path
+          d="M8 5a6.98 6.98 0 0 0-6.062 3.5c-1.282 2.188-1.282 4.844 0 7C3.188 17.688 5.467 19 8 19c2.5 0 4.781-1.312 6.031-3.5 1.281-2.156 1.281-4.812 0-7C12.781 6.344 10.5 5 8 5m0 15c-2.875 0-5.5-1.5-6.937-4-1.438-2.469-1.438-5.5 0-8A8.02 8.02 0 0 1 8 4c2.844 0 5.469 1.531 6.906 4 1.438 2.5 1.438 5.531 0 8A7.94 7.94 0 0 1 8 20m-1.5-5h1v-3h-.75a.494.494 0 0 1-.5-.5c0-.25.219-.5.5-.5H8c.25 0 .5.25.5.5V15h1c.25 0 .5.25.5.5 0 .281-.25.5-.5.5h-3a.494.494 0 0 1-.5-.5c0-.25.219-.5.5-.5M8 9.75A.72.72 0 0 1 7.25 9 .74.74 0 0 1 8 8.25a.76.76 0 0 1 .75.75.74.74 0 0 1-.75.75"
+        />
+      </g>
+      <defs>
+        <clippath
+          id="11447e3ee0b5e8cfb552278e49136452__a"
+        >
+          <path
+            d="M0 0h16v24H0z"
+          />
+        </clippath>
+      </defs>
+    </svg>
+  </label>
 </div>
 `;
 
 exports[`RadioButton component should render with a custom className 1`] = `
 <div>
-  <div>
-    <label
-      class="quill-radio-button custom-class"
-      data-testid="dt_quill_radio_button"
+  <label
+    class="quill-radio-button custom-class"
+    data-testid="dt_quill_radio_button"
+  >
+    <input
+      class="quill-radio-button__input"
+      type="radio"
+      value=""
+    />
+    <span
+      class="quill-radio-button__icon"
     >
-      <input
-        class="quill-radio-button__input"
-        type="radio"
-        value=""
-      />
-      <span>
-        <svg
-          data-testid="dt_unchecked_icon_undefined_false"
-          fill="#7e7e7e"
-          height="24"
-          role="img"
-          viewBox="0 0 16 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g>
-            <path
-              d="M8 5a6.98 6.98 0 0 0-6.062 3.5c-1.282 2.188-1.282 4.844 0 7C3.188 17.688 5.467 19 8 19c2.5 0 4.781-1.312 6.031-3.5 1.281-2.156 1.281-4.812 0-7C12.781 6.344 10.5 5 8 5m0 15c-2.875 0-5.5-1.5-6.937-4-1.438-2.469-1.438-5.5 0-8A8.02 8.02 0 0 1 8 4c2.844 0 5.469 1.531 6.906 4 1.438 2.5 1.438 5.531 0 8A7.94 7.94 0 0 1 8 20"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="5c9d34bce0fa277ae9a9982833928bda__a"
-            >
-              <path
-                d="M0 0h16v24H0z"
-              />
-            </clippath>
-          </defs>
-        </svg>
-      </span>
-      <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+      <svg
+        data-testid="dt_unchecked_icon_undefined_false"
+        fill="#7e7e7e"
+        height="32"
+        role="img"
+        tabindex="0"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        Radio Option
-      </span>
-    </label>
-  </div>
+        <path
+          d="M16 7.75a8.73 8.73 0 0 0-7.578 4.375c-1.602 2.734-1.602 6.055 0 8.75C9.984 23.609 12.836 25.25 16 25.25a8.63 8.63 0 0 0 7.54-4.375c1.6-2.695 1.6-6.016 0-8.75C21.976 9.43 19.124 7.75 16 7.75m0 18.75c-3.594 0-6.875-1.875-8.672-5-1.797-3.086-1.797-6.875 0-10 1.797-3.086 5.078-5 8.672-5 3.555 0 6.836 1.914 8.633 5 1.797 3.125 1.797 6.914 0 10a9.93 9.93 0 0 1-8.633 5"
+        />
+      </svg>
+    </span>
+    <span
+      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+    >
+      Radio Option
+    </span>
+  </label>
 </div>
 `;
