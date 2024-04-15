@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Text, Heading, ThemeProvider } from "../lib/main";
+import { Text, Heading, ThemeProvider, Pagination } from "../lib/main";
 import Button from "./button";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -13,6 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 <Heading.H1>Quill UI</Heading.H1>
                 <Heading.H1 as="div">Quill UI - h1 as div</Heading.H1>
                 <Heading.H1 as="span">Quill UI - h1 as span</Heading.H1>
+                <Pagination variant="number" onClickPagination={() => {}} />
             </div>
         </ThemeProvider>
     </React.StrictMode>,
