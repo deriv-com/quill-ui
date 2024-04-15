@@ -1,0 +1,11 @@
+@import "@quill/spacing.scss";
+
+.quill-checkbox-group {
+    .quill-checkbox {
+        margin-bottom: var(--semantic-spacing-general-sm);
+    }
+
+    &__children-wrapper {
+        margin-left: var(--semantic-spacing-general-2xl);
+    }
+}

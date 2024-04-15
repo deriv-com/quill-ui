@@ -3,7 +3,7 @@
 exports[`Social Button Should render Apple Button 1`] = `
 <div>
   <button
-    class="quill-button quill-button__size--md social-button__variant--apple--primary"
+    class="quill-button social-button__variant--apple--primary quill-button__size--md"
   >
     <svg
       fill="none"
@@ -44,7 +44,7 @@ exports[`Social Button Should render Apple Button 1`] = `
 exports[`Social Button Should render Facebook Button 1`] = `
 <div>
   <button
-    class="quill-button quill-button__size--md social-button__variant--facebook--primary"
+    class="quill-button social-button__variant--facebook--primary quill-button__size--md"
   >
     <svg
       fill="#fff"
@@ -55,22 +55,22 @@ exports[`Social Button Should render Facebook Button 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     >
       <g
-        clip-path="url(#73f3e676de7d8a96b935f3905d71db16__a)"
+        clip-path="url(#921bc730889c3f10110214969d5b0559__a)"
       >
         <path
           clip-rule="evenodd"
           d="M16 32c8.837 0 16-7.163 16-16S24.837 0 16 0 0 7.163 0 16s7.163 16 16 16m2.5-11.249v11.055a16.1 16.1 0 0 1-5 0V20.75H9.438v-4.653H13.5V12.55c0-4.034 2.389-6.263 6.043-6.263 1.751 0 3.582.315 3.582.315v3.961h-2.018c-1.987 0-2.607 1.241-2.607 2.514v3.02h4.438l-.71 4.653z"
-          fill="#1877F2"
+          fill="#fff"
           fill-rule="evenodd"
         />
         <path
           d="M18.5 20.751v11.055a16.1 16.1 0 0 1-5 0V20.75H9.438v-4.653H13.5V12.55c0-4.034 2.389-6.263 6.043-6.263 1.751 0 3.582.315 3.582.315v3.961h-2.018c-1.987 0-2.607 1.241-2.607 2.514v3.02h4.438l-.71 4.653z"
-          fill="#fff"
+          fill="#1877F2"
         />
       </g>
       <defs>
         <clippath
-          id="73f3e676de7d8a96b935f3905d71db16__a"
+          id="921bc730889c3f10110214969d5b0559__a"
         >
           <path
             d="M0 0h32v32H0z"
@@ -91,7 +91,7 @@ exports[`Social Button Should render Facebook Button 1`] = `
 exports[`Social Button Should render Google Button 1`] = `
 <div>
   <button
-    class="quill-button quill-button__size--md social-button__variant--google--primary"
+    class="quill-button social-button__variant--google--primary quill-button__size--md"
   >
     <svg
       fill="none"
@@ -144,7 +144,7 @@ exports[`Social Button Should render Google Button 1`] = `
 exports[`Social Button Should render Primary Variant 1`] = `
 <div>
   <button
-    class="quill-button quill-button__size--md social-button__variant--apple--primary"
+    class="quill-button social-button__variant--apple--primary quill-button__size--md"
   >
     <svg
       fill="none"
@@ -185,7 +185,7 @@ exports[`Social Button Should render Primary Variant 1`] = `
 exports[`Social Button Should render Secondary Variant 1`] = `
 <div>
   <button
-    class="quill-button quill-button__size--md social-button__variant--secondary"
+    class="quill-button social-button__variant--secondary quill-button__size--md"
   >
     <svg
       fill="none"
@@ -238,7 +238,7 @@ exports[`Social Button Should render Secondary Variant 1`] = `
 exports[`Social Button Should render no label if hideLabel is true 1`] = `
 <div>
   <button
-    class="quill-button quill-button__size--md social-button__variant--google--primary"
+    class="quill-button social-button__variant--google--primary social-button__icon-only--md"
   >
     <svg
       fill="none"
@@ -286,7 +286,7 @@ exports[`Social Button Should render no label if hideLabel is true 1`] = `
 exports[`Social Button Should render properly with fullWidth true 1`] = `
 <div>
   <button
-    class="quill-button quill-button__size--md social-button__variant--facebook--primary quill-button__full-width"
+    class="quill-button social-button__variant--facebook--primary quill-button__full-width quill-button__size--md"
   >
     <svg
       fill="#fff"
@@ -297,22 +297,22 @@ exports[`Social Button Should render properly with fullWidth true 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     >
       <g
-        clip-path="url(#73f3e676de7d8a96b935f3905d71db16__a)"
+        clip-path="url(#921bc730889c3f10110214969d5b0559__a)"
       >
         <path
           clip-rule="evenodd"
           d="M16 32c8.837 0 16-7.163 16-16S24.837 0 16 0 0 7.163 0 16s7.163 16 16 16m2.5-11.249v11.055a16.1 16.1 0 0 1-5 0V20.75H9.438v-4.653H13.5V12.55c0-4.034 2.389-6.263 6.043-6.263 1.751 0 3.582.315 3.582.315v3.961h-2.018c-1.987 0-2.607 1.241-2.607 2.514v3.02h4.438l-.71 4.653z"
-          fill="#1877F2"
+          fill="#fff"
           fill-rule="evenodd"
         />
         <path
           d="M18.5 20.751v11.055a16.1 16.1 0 0 1-5 0V20.75H9.438v-4.653H13.5V12.55c0-4.034 2.389-6.263 6.043-6.263 1.751 0 3.582.315 3.582.315v3.961h-2.018c-1.987 0-2.607 1.241-2.607 2.514v3.02h4.438l-.71 4.653z"
-          fill="#fff"
+          fill="#1877F2"
         />
       </g>
       <defs>
         <clippath
-          id="73f3e676de7d8a96b935f3905d71db16__a"
+          id="921bc730889c3f10110214969d5b0559__a"
         >
           <path
             d="M0 0h32v32H0z"

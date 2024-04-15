@@ -1,0 +1,365 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snackbar calls onActionClick when action button is clicked 1`] = `
+<div>
+  <div
+    class="snackbar fast-animation"
+  >
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        test message
+      </p>
+    </div>
+    <button
+      class="quill-button quill-button__size--md quill__color--tertiary-white"
+      data-state=""
+    >
+      <span
+        class="button-label"
+      >
+        <p
+          class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
+        >
+          Action
+        </p>
+      </span>
+    </button>
+    <button
+      class="quill-button quill-button__size--md quill__color--tertiary-white"
+      data-state=""
+      data-testid="close-button"
+    >
+      <span
+        class="button-label"
+      >
+        <p
+          class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 11 22"
+            width="11"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="283f9748c1b38a8161c15c2626546e5c__a"
+              >
+                <path
+                  d="M0 0h11v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </p>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Snackbar calls onClose after a certain duration when Snackbar is open 1`] = `
+<div>
+  <div
+    class="snackbar slow-animation"
+  >
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        test message
+      </p>
+    </div>
+    <button
+      class="quill-button quill-button__size--md quill__color--tertiary-white"
+      data-state=""
+      data-testid="close-button"
+    >
+      <span
+        class="button-label"
+      >
+        <p
+          class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 11 22"
+            width="11"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="283f9748c1b38a8161c15c2626546e5c__a"
+              >
+                <path
+                  d="M0 0h11v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </p>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Snackbar calls onClose when close button is clicked 1`] = `
+<div>
+  <div
+    class="snackbar fast-animation"
+  >
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        test message
+      </p>
+    </div>
+    <button
+      class="quill-button quill-button__size--md quill__color--tertiary-white"
+      data-state=""
+      data-testid="close-button"
+    >
+      <span
+        class="button-label"
+      >
+        <p
+          class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 11 22"
+            width="11"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="283f9748c1b38a8161c15c2626546e5c__a"
+              >
+                <path
+                  d="M0 0h11v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </p>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Snackbar renders correctly with custom icon 1`] = `
+<div>
+  <div
+    class="snackbar slow-animation"
+  >
+    <div
+      class="snackbar__icon--container"
+    >
+      <img
+        alt="Custom Icon"
+        src="custom-icon.svg"
+      />
+    </div>
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        test message
+      </p>
+    </div>
+    <button
+      class="quill-button quill-button__size--md quill__color--tertiary-white"
+      data-state=""
+      data-testid="close-button"
+    >
+      <span
+        class="button-label"
+      >
+        <p
+          class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 11 22"
+            width="11"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="283f9748c1b38a8161c15c2626546e5c__a"
+              >
+                <path
+                  d="M0 0h11v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </p>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Snackbar renders correctly without action button 1`] = `
+<div>
+  <div
+    class="snackbar slow-animation"
+  >
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        test message
+      </p>
+    </div>
+    <button
+      class="quill-button quill-button__size--md quill__color--tertiary-white"
+      data-state=""
+      data-testid="close-button"
+    >
+      <span
+        class="button-label"
+      >
+        <p
+          class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 11 22"
+            width="11"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="283f9748c1b38a8161c15c2626546e5c__a"
+              >
+                <path
+                  d="M0 0h11v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </p>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Snackbar renders correctly without close button 1`] = `
+<div>
+  <div
+    class="snackbar slow-animation"
+  >
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        test message
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Snackbar renders with default props 1`] = `
+<div>
+  <div
+    class="snackbar slow-animation"
+  >
+    <div
+      class="snackbar__message--container"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+      >
+        test message
+      </p>
+    </div>
+    <button
+      class="quill-button quill-button__size--md quill__color--tertiary-white"
+      data-state=""
+      data-testid="close-button"
+    >
+      <span
+        class="button-label"
+      >
+        <p
+          class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 11 22"
+            width="11"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="283f9748c1b38a8161c15c2626546e5c__a"
+              >
+                <path
+                  d="M0 0h11v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </p>
+      </span>
+    </button>
+  </div>
+</div>
+`;
