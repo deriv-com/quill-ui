@@ -5,7 +5,7 @@ import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons";
 import { ComponentProps } from "react";
 
 const meta = {
-    title: "Components/Tabs",
+    title: "Components/Tab/Tab",
     component: MockTab,
     tags: ["autodocs"],
     parameters: {
