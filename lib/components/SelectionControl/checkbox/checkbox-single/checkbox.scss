@@ -6,7 +6,7 @@
 @import "@quill/others.scss";
 
 .quill-checkbox {
-    display: inline-flex;
+    display: flex;
     position: relative;
     align-items: center;
     gap: var(--semantic-spacing-gap-md);
@@ -20,6 +20,7 @@
     &__box {
         position: absolute;
         cursor: pointer;
+        appearance: none;
         height: var(--size-generic-xs);
         width: var(--size-generic-xs);
         top: 50%;
