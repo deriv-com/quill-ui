@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { Checkbox } from "..";
+import { Checkbox } from "../index";
 
 describe("Checkbox", () => {
     const mockProps = {

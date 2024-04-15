@@ -123,8 +123,8 @@ class Transformer {
         let sassString = `@mixin breakpoint($breakpoint) {\n`;
 
         // Generate the Sass mixin string using the dynamically populated breakpointMap
-        Object.entries(breakpointMap).forEach(([minWidth, breakpoint]) => {
-            sassString += `@if $breakpoint == "${breakpoint}" {
+        Object.entries(breakpointMap).forEach(([minWidth, breakpoint], bk) => {
+            sassString += `@${bk === 0 ? "if" : "else if"} $breakpoint == "${breakpoint}" {
                             @media (min-width: ${minWidth}px) {
                             @content;
                             }
