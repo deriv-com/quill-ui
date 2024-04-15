@@ -152,7 +152,7 @@ exports[`RadioButton component should not be checked by default if defaultChecke
 </div>
 `;
 
-exports[`RadioButton component should not render info icon when has_info is false 1`] = `
+exports[`RadioButton component should not render info icon when hasInfo is false 1`] = `
 <div>
   <div>
     <label
@@ -299,7 +299,7 @@ exports[`RadioButton component should render correctly with default props 1`] = 
 </div>
 `;
 
-exports[`RadioButton component should render info icon when has_info is true 1`] = `
+exports[`RadioButton component should render info icon when hasInfo is true 1`] = `
 <div>
   <div>
     <label

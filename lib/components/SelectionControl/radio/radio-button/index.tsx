@@ -1,15 +1,14 @@
 import React from "react";
 import clsx from "clsx";
 import {
-    LabelPairedCircleDotMdFillIcon,
-    LabelPairedCircleDotSmFillIcon,
     LabelPairedCircleInfoMdRegularIcon,
     LabelPairedCircleInfoSmRegularIcon,
-    LabelPairedCircleMdRegularIcon,
-    LabelPairedCircleSmRegularIcon,
+    StandaloneCircleDotBoldIcon,
+    StandaloneCircleRegularIcon,
 } from "@deriv/quill-icons";
 import { Text } from "../../../Typography";
 import "./radio-button.scss";
+import { TMediumSizes } from "../../../../types";
 
 interface IRadio {
     className?: string;
@@ -17,13 +16,13 @@ interface IRadio {
     classNameLabel?: string;
     defaultChecked?: boolean;
     disabled?: boolean;
-    has_info?: boolean;
+    hasInfo?: boolean;
     id?: string;
     name?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
     value?: string;
-    size?: "sm" | "md";
+    size?: TMediumSizes;
 }
 
 const RadioButton = ({
@@ -33,7 +32,7 @@ const RadioButton = ({
     classNameLabel,
     defaultChecked,
     disabled = false,
-    has_info,
+    hasInfo,
     id,
     onChange,
     size = "md",
@@ -65,36 +64,19 @@ const RadioButton = ({
 
     const getIcon = () => {
         if (checked) {
-            return size === "sm" ? (
-                <LabelPairedCircleDotSmFillIcon
+            return (
+                <StandaloneCircleDotBoldIcon
                     data-testid={`dt_checked_icon_${value}_${disabled}`}
                     fill={disabled ? "#b8b8b8" : "#000000"}
-                    height={22}
-                    width={22}
-                />
-            ) : (
-                <LabelPairedCircleDotMdFillIcon
-                    data-testid={`dt_checked_icon_${value}_${disabled}`}
-                    fill={disabled ? "#b8b8b8" : "#000000"}
-                    height={24}
-                    width={24}
+                    iconSize={size}
                 />
             );
         } else {
-            return size === "sm" ? (
-                <LabelPairedCircleSmRegularIcon
+            return (
+                <StandaloneCircleRegularIcon
                     data-testid={`dt_unchecked_icon_${value}_${disabled}`}
                     fill={disabled ? "#b8b8b8" : "#7e7e7e"}
-                    height={22}
-                    width={22}
-                    tabIndex={0}
-                />
-            ) : (
-                <LabelPairedCircleMdRegularIcon
-                    data-testid={`dt_unchecked_icon_${value}_${disabled}`}
-                    fill={disabled ? "#b8b8b8" : "#7e7e7e"}
-                    height={24}
-                    width={24}
+                    iconSize={size}
                     tabIndex={0}
                 />
             );
@@ -135,19 +117,24 @@ const RadioButton = ({
                 {children}
             </Text>
             {/* TODO: implement info icon component */}
-            {has_info && (
-                size === "sm" ? (
+            {hasInfo &&
+                (size === "sm" ? (
                     <LabelPairedCircleInfoSmRegularIcon
-                        className={clsx("quill-radio-button__info", classNameInfo)}
+                        className={clsx(
+                            "quill-radio-button__info",
+                            classNameInfo,
+                        )}
                         data-testid="dt_quill_radio_button_info"
                     />
                 ) : (
                     <LabelPairedCircleInfoMdRegularIcon
-                        className={clsx("quill-radio-button__info", classNameInfo)}
+                        className={clsx(
+                            "quill-radio-button__info",
+                            classNameInfo,
+                        )}
                         data-testid="dt_quill_radio_button_info"
                     />
-                )
-            )}
+                ))}
         </label>
     );
 };

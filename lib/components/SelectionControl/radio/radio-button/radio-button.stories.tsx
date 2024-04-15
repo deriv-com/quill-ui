@@ -9,7 +9,7 @@ const RadioButtonMeta = {
     args: {
         defaultChecked: true,
         disabled: false,
-        has_info: false,
+        hasInfo: false,
         id: "radio-1",
         className: "",
         classNameLabel: "",
@@ -27,7 +27,7 @@ const RadioButtonMeta = {
             description: "Disables the radio button interaction.",
             control: { type: "boolean" },
         },
-        has_info: {
+        hasInfo: {
             description:
                 "Displays informational content next to the radio button.",
             control: { type: "boolean" },
@@ -51,7 +51,7 @@ export default RadioButtonMeta;
 interface RadioButtonProps {
     defaultChecked?: boolean;
     disabled?: boolean;
-    has_info?: boolean;
+    hasInfo?: boolean;
     id?: string;
     className?: string;
     classNameLabel?: string;
@@ -81,5 +81,5 @@ export const DisabledButton = Template.bind(this, {
 });
 
 export const ButtonWithInfo = Template.bind(this, {
-    has_info: true,
+    hasInfo: true,
 });

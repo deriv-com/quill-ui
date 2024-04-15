@@ -57,9 +57,9 @@ describe("RadioButton component", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("should render info icon when has_info is true", () => {
+    it("should render info icon when hasInfo is true", () => {
         const { container } = render(
-            <RadioButton has_info classNameInfo="custom-info">
+            <RadioButton hasInfo classNameInfo="custom-info">
                 Radio Option
             </RadioButton>,
         );
@@ -68,7 +68,7 @@ describe("RadioButton component", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("should not render info icon when has_info is false", () => {
+    it("should not render info icon when hasInfo is false", () => {
         const { container } = render(<RadioButton>Radio Option</RadioButton>);
         const infoIcon = screen.queryByTestId("dt_quill_radio_button_info");
         expect(infoIcon).toBeNull();
