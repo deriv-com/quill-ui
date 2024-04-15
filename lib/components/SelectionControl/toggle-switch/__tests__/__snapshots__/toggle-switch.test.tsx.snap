@@ -5,7 +5,6 @@ exports[`ToggleSwitch matches snapshot when blurred 1`] = `
   <button
     aria-pressed="false"
     class="toggle-switch"
-    data-testid="toggle-switch"
   >
     <div
       class="toggle-switch__slider"
@@ -23,7 +22,6 @@ exports[`ToggleSwitch matches snapshot when focused 1`] = `
   <button
     aria-pressed="false"
     class="toggle-switch"
-    data-testid="toggle-switch"
   >
     <div
       class="toggle-switch__slider"
@@ -41,7 +39,6 @@ exports[`ToggleSwitch renders correctly when defaultChecked 1`] = `
   <button
     aria-pressed="true"
     class="toggle-switch"
-    data-testid="toggle-switch"
   >
     <div
       class="toggle-switch__slider enabled"
@@ -59,7 +56,6 @@ exports[`ToggleSwitch renders correctly when disabled 1`] = `
   <button
     aria-pressed="false"
     class="toggle-switch"
-    data-testid="toggle-switch"
     disabled=""
   >
     <div
@@ -78,7 +74,6 @@ exports[`ToggleSwitch renders correctly with default props 1`] = `
   <button
     aria-pressed="false"
     class="toggle-switch"
-    data-testid="toggle-switch"
   >
     <div
       class="toggle-switch__slider"
@@ -96,7 +91,6 @@ exports[`ToggleSwitch toggles from off to on and matches snapshot 1`] = `
   <button
     aria-pressed="true"
     class="toggle-switch"
-    data-testid="toggle-switch"
   >
     <div
       class="toggle-switch__slider enabled"
