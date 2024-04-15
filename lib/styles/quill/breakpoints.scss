@@ -3,27 +3,24 @@
         @media (min-width: 640px) {
             @content;
         }
-    }
-    @if $breakpoint == "md" {
+    } @else if $breakpoint == "md" {
         @media (min-width: 768px) {
             @content;
         }
-    }
-    @if $breakpoint == "lg" {
+    } @else if $breakpoint == "lg" {
         @media (min-width: 1024px) {
             @content;
         }
-    }
-    @if $breakpoint == "xl" {
+    } @else if $breakpoint == "xl" {
         @media (min-width: 1280px) {
             @content;
         }
-    }
-    @if $breakpoint == "2xl" {
+    } @else if $breakpoint == "2xl" {
         @media (min-width: 1440px) {
             @content;
         }
-    } @else {
+    } 
+    @else {
         @warn "Unknown breakpoint: #{$breakpoint}.";
     }
 }

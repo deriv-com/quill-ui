@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SegmentedControlSingleChoice should inherit container width 1`] = `
+<div>
+  <div
+    style="width: 328px;"
+  >
+    <div
+      class="segmented-control-single segmented-control-single--md segmented-control-single--has-container-width"
+    >
+      <button
+        class="item selected"
+      >
+        <span
+          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        >
+          Label
+        </span>
+      </button>
+      <button
+        class="item"
+      >
+        <span
+          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        >
+          Label
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SegmentedControlSingleChoice should render segments with icons and labels 1`] = `
+<div>
+  <div
+    class="segmented-control-single segmented-control-single--md"
+  >
+    <button
+      class="item selected"
+    >
+      <span
+        class="icon"
+      >
+        <div>
+          IconComponent
+        </div>
+      </span>
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </button>
+    <button
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        <div>
+          IconComponent
+        </div>
+      </span>
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </button>
+    <button
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        <div>
+          IconComponent
+        </div>
+      </span>
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </button>
+    <button
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        <div>
+          IconComponent
+        </div>
+      </span>
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </button>
+    <button
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        <div>
+          IconComponent
+        </div>
+      </span>
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`SegmentedControlSingleChoice should render segments with icons only 1`] = `
+<div>
+  <div
+    class="segmented-control-single segmented-control-single--md"
+  >
+    <button
+      class="item selected"
+    >
+      <span
+        class="icon"
+      >
+        <div>
+          IconComponent
+        </div>
+      </span>
+    </button>
+    <button
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        <div>
+          IconComponent
+        </div>
+      </span>
+    </button>
+    <button
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        <div>
+          IconComponent
+        </div>
+      </span>
+    </button>
+    <button
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        <div>
+          IconComponent
+        </div>
+      </span>
+    </button>
+    <button
+      class="item"
+    >
+      <span
+        class="icon"
+      >
+        <div>
+          IconComponent
+        </div>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`SegmentedControlSingleChoice should render segments with labels only 1`] = `
+<div>
+  <div
+    class="segmented-control-single segmented-control-single--md"
+  >
+    <button
+      class="item selected"
+    >
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </button>
+    <button
+      class="item"
+    >
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </button>
+    <button
+      class="item"
+    >
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </button>
+    <button
+      class="item"
+    >
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </button>
+    <button
+      class="item"
+    >
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`SegmentedControlSingleChoice should render with one disabled option 1`] = `
+<div>
+  <div
+    class="segmented-control-single segmented-control-single--md"
+  >
+    <button
+      class="item selected"
+    >
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </button>
+    <button
+      class="item"
+      disabled=""
+    >
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </button>
+    <button
+      class="item"
+    >
+      <span
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Label
+      </span>
+    </button>
+  </div>
+</div>
+`;
