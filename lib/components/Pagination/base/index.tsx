@@ -5,6 +5,7 @@ import {
 import { DOTS } from "../../../hooks/usePaginationRange.tsx";
 import { PaginationProps } from "../types";
 import "./pagination-base.scss";
+import { CaptionText } from "../../Typography/caption";
 
 interface PaginationButtonProps extends Pick<PaginationProps, "variant"> {
     pageNumber: number | string;
@@ -58,7 +59,12 @@ const PaginationButton = ({
             onClick={(e) => handleOnClick(e.currentTarget.textContent)}
             className="variant__number"
         >
-            {pageNumber}
+            <CaptionText
+                className="number-text"
+                aria-current={currentPage === pageNumber}
+            >
+                {pageNumber}
+            </CaptionText>
         </button>
     );
 };

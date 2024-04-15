@@ -26,10 +26,7 @@
                 background-color: var(--core-color-solid-slate-1400);
             }
         }
-        color: var(--semantic-color-typography-default);
-        &[aria-current=true] {
-            color: var(--core-color-solid-slate-50);
-        }
+    
     }
     &__bullet {
         
@@ -45,4 +42,11 @@
 }
 .hidden_pages {
     display: flex;
+}
+.number-text{
+    &[aria-current=true]{
+        font-weight: bold;
+        color: var(--core-color-solid-slate-50);
+    }
+    color: var(--semantic-color-typography-default);
 }
