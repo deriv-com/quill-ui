@@ -1,6 +1,7 @@
 @import "@quill/spacing.scss";
 @import "@quill/motion.scss";
 @import "@quill/color.scss";
+@import "@quill/breakpoints.scss";
 
 .quill-action-sheet {
     &--header {
@@ -30,7 +31,7 @@
         align-items: center;
         flex-direction: row-reverse;
 
-        @media (min-width: 1040px) {
+        @include breakpoint("lg") {
             flex-direction: row;
         }
 
@@ -50,7 +51,7 @@
                 visibility: hidden;
                 cursor: pointer;
 
-                @media (min-width: 1040px) {
+                @include breakpoint("lg") {
                     visibility: visible;
                 }
             }

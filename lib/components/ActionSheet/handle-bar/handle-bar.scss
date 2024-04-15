@@ -1,3 +1,5 @@
+@import "@quill/breakpoints.scss";
+
 .quill-action-sheet--handle-bar {
     position: sticky;
     left: var(--semantic-spacing-general-none);
@@ -9,7 +11,7 @@
     padding-top: var(--semantic-spacing-general-sm);
     padding-bottom: var(--semantic-spacing-general-sm);
 
-    @media (min-width: 1024px) {
+    @include breakpoint("lg") {
         display: none;
     }
 

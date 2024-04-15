@@ -4,6 +4,7 @@
 @import "@quill/color.opacity.scss";
 @import "@quill/color.scss";
 @import "@quill/border.scss";
+@import "@quill/breakpoints.scss";
 
 .quill-action-sheet {
     &--portal {
@@ -56,7 +57,7 @@
         transition-timing-function: var(--motion-easing-inandout);
         transition-duration: var(--core-motion-duration-200);
 
-        @media (min-width: 1024px) {
+        @include breakpoint("lg") {
             max-width: 360px;
             border-radius: var(--semantic-spacing-general-none);
             max-height: 100vh;
@@ -68,12 +69,12 @@
                     visibility: hidden;
                     transform: translateY(100%);
 
-                    @media (min-width: 1024px) {
+                    @include breakpoint("lg") {
                         transform: translateX(-100%);
                     }
                 }
 
-                @media (min-width: 1024px) {
+                @include breakpoint("lg") {
                     margin-left: var(--semantic-spacing-general-none);
                 }
             }
@@ -82,12 +83,12 @@
                     visibility: hidden;
                     transform: translateY(100%);
 
-                    @media (min-width: 1024px) {
+                    @include breakpoint("lg") {
                         transform: translateX(100%);
                     }
                 }
 
-                @media (min-width: 1024px) {
+                @include breakpoint("lg") {
                     margin-right: var(--semantic-spacing-general-none);
                 }
             }
