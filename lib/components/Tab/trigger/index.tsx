@@ -4,7 +4,7 @@ import { TabProps } from "../types";
 import { Text } from "../../Typography";
 import clsx from "clsx";
 import "./trigger.scss";
-import "../tabs.scss";
+import "../tab.scss";
 
 export const TabTrigger = ({
     children,
@@ -56,10 +56,10 @@ export const TabTrigger = ({
             ref={ref}
             {...rest}
             className={clsx(
-                "tabs",
-                `tabs__variants--size-${size}`,
+                "tab-menu",
+                `tab-menu__variants--size-${size}`,
                 `tab-trigger__icon-position--${iconPosition}`,
-                selectedTab && "tabs__selected-tab",
+                selectedTab && "tab-menu__selected-tab",
                 className,
             )}
         >

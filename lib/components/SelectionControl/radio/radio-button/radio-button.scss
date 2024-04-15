@@ -1,0 +1,32 @@
+.quill {
+    &-radio-button {
+        display: flex;
+        align-items: center;
+
+        &__label {
+            margin-left: var(--core-spacing-400);
+            cursor: pointer;
+        }
+        &__icon svg {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+
+            &:focus {
+                outline: none;
+
+                &-visible {
+                    border: none;
+                    border-radius: 50%;
+                    box-shadow: 0 0 var(--core-borderWidth-75) var(--core-borderWidth-100) var(--core-color-solid-blue-700) inset;
+                }
+            }
+        }
+        &__input {
+            display: none;
+        }
+        &__info {
+            margin-left: var(--core-spacing-400);
+        }
+    }
+}
