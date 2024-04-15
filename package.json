@@ -115,10 +115,7 @@
             "<rootDir>/test/setup.test.js"
         ],
         "testMatch": [
-            "**/*.test.tsx",
-            "**/*.test.ts",
-            "**/*.spec.tsx",
-            "**/*.spec.ts"
+            "<rootDir>/lib/**/*.(test|spec).{js,jsx,ts,tsx}"
         ],
         "moduleNameMapper": {
             "\\.(css|less|scss|sass)$": "identity-obj-proxy",
