@@ -1,5 +1,4 @@
 import { FooterProps } from "../types";
-// import Button from "../../button/basic";
 import { useContext } from "react";
 import { ActionSheetContext } from "../root";
 import clsx from "clsx";
@@ -11,7 +10,7 @@ const Footer = ({
     secondaryAction,
     alignment,
     className,
-    ...restProps
+    ...rest
 }: FooterProps) => {
     const { handleClose } = useContext(ActionSheetContext);
     if (!primaryAction && !secondaryAction) return null;
@@ -33,7 +32,7 @@ const Footer = ({
                 `quill-action-sheet--footer__variant--${alignment}`,
                 className,
             )}
-            {...restProps}
+            {...rest}
         >
             {primaryAction && (
                 <Button
