@@ -2,8 +2,8 @@ import {
     StandaloneCircleFillIcon,
     StandaloneEllipsisRegularIcon,
 } from "@deriv/quill-icons/Standalone";
-import { DOTS } from "../../../hooks/usePaginationRange.tsx";
-import { PaginationProps } from "../types";
+import { DOTS } from "@hooks/usePaginationRange.tsx";
+import { PaginationProps } from "@components/Pagination/types";
 import "./pagination-base.scss";
 import { CaptionText } from "@components/Typography";
 

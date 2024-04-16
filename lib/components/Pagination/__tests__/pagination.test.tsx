@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import Pagination from "../index";
+import Pagination from "@components/Pagination";
 
 jest.mock("@deriv/quill-icons/Standalone", () => ({
     StandaloneChevronLeftRegularIcon: () => <div>Previous</div>,

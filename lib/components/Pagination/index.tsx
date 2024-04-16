@@ -3,9 +3,9 @@ import {
     StandaloneChevronLeftRegularIcon,
     StandaloneChevronRightRegularIcon,
 } from "@deriv/quill-icons/Standalone";
-import { PaginationProps } from "./types";
-import { UsePaginationRange } from "../../hooks/usePaginationRange.tsx";
-import PaginationButton from "./base";
+import { PaginationProps } from "@components/Pagination/types";
+import { UsePaginationRange } from "@hooks/usePaginationRange";
+import PaginationButton from "@components/Pagination/base";
 import "./pagination.scss";
 import clsx from "clsx";
 

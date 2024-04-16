@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import PaginationButton from "../index";
+import PaginationButton from "@components/Pagination/base";
 
 jest.mock("@deriv/quill-icons/Standalone", () => ({
     StandaloneEllipsisRegularIcon: () => <div>...</div>,

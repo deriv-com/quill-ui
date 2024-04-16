@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import Pagination from "..";
-import { TPaginationEvent } from "../types";
+import Pagination from "@components/Pagination";
+import { TPaginationEvent } from "@components/Pagination/types";
 import "./mocks.scss";
 
 type TData = {

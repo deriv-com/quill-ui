@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Pagination from ".";
-import { MOCK_DATA } from "./mocks/mock-data";
-import Mocks from "./mocks";
+import Pagination from "@components/Pagination";
+import { MOCK_DATA } from "@components/Pagination/mocks/mock-data";
+import Mocks from "@components/Pagination/mocks";
 
 const meta = {
     title: "Components/Pagination/Pagination",
