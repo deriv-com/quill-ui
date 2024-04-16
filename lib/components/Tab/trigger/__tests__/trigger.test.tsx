@@ -5,8 +5,8 @@ import {
     screen,
 } from "@testing-library/react";
 import { LabelPairedPlaceholderMdRegularIcon } from "@deriv/quill-icons/LabelPaired";
-import Tab from "..";
-import { TabContextType } from "../container";
+import Tab from "../../index";
+import { TabContextType } from "../../container";
 import userEvent from "@testing-library/user-event";
 
 const render = (

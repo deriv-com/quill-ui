@@ -1,5 +1,4 @@
 import type { Meta } from "@storybook/react";
-import {} from "@deriv/quill-icons/LabelPaired";
 import MockTab from "./mocks/index";
 import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons";
 import { ComponentProps } from "react";
@@ -30,17 +29,25 @@ const placeholder = {
     sm: <StandalonePlaceholderRegularIcon iconSize="sm" />,
     md: <StandalonePlaceholderRegularIcon iconSize="md" />,
 };
-export const TabWithIconsOnLeft = (args: ComponentProps<typeof MockTab>) => (
+export const TabWithIconsOnLeftFill = (
+    args: ComponentProps<typeof MockTab>,
+) => (
     <MockTab
         {...args}
         iconPosition="left"
         icon={placeholder[args?.size as keyof typeof placeholder]}
     />
 );
-export const TabWithIconsOnTop = (args: ComponentProps<typeof MockTab>) => (
+export const TabWithIconsOnTopFill = (args: ComponentProps<typeof MockTab>) => (
     <MockTab
         {...args}
         iconPosition="top"
         icon={placeholder[args?.size as keyof typeof placeholder]}
     />
+);
+export const TabWithoutIconsFill = (args: ComponentProps<typeof MockTab>) => (
+    <MockTab {...args} />
+);
+export const TabWithIconsOnLeftHug = (args: ComponentProps<typeof MockTab>) => (
+    <MockTab {...args} tabContent="hug" />
 );

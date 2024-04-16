@@ -4,8 +4,8 @@ import {
     render as rtlRender,
     screen,
 } from "@testing-library/react";
-import Tab from "..";
-import { TabContextType } from "../container";
+import Tab from "../../index";
+import { TabContextType } from "../../container";
 
 const render = (
     ui: React.ReactElement,

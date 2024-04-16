@@ -1,10 +1,9 @@
 @import '@quill/spacing.scss/';
-@import '@quill/color.semantic.scss';
+@import "@quill-bundle/color.scss";
 @import '@quill/border.scss';
 @import '@quill/spacing.scss';
 @import '@quill/size.scss';
 @import '@quill/opacity.scss';
-@import '@quill/color.opacity.scss';
 
 .tab-menu {
     border-bottom: var(--core-borderRadius-100) solid var(--core-color-opacity-black-200);
@@ -27,17 +26,35 @@
     }
 
     &__variants {
-        &--size {
-            &-sm {
-                font-size: var(--core-font-size-75);
-                padding: var(--core-spacing-400) var(--core-spacing-200);
-                gap: var(--core-spacing-200);
+        &__size {
+            &__fill {
+                &-sm {
+                    padding: var(--core-spacing-200) var(--core-spacing-400);
+                    min-width: 106px;
+                    justify-content: center;
+                    gap: var(--core-spacing-200);
+                }
+
+                &-md {
+                    min-width: 106px;
+                    padding: var(--core-spacing-400) var(--core-spacing-800);
+                    justify-content: center;
+                    gap: var(--core-spacing-400);
+                }
             }
 
-            &-md {
-                font-size: var(--core-font-size-100);
-                padding: var(--core-spacing-800) var(--core-spacing-600);
-                gap: var(--core-spacing-400);
+            &__hug {
+                &-sm {
+                    padding: var(--core-spacing-200) var(--core-spacing-800) var(--core-spacing-200) var(--core-spacing-400);
+                    justify-content: center;
+                    gap: var(--core-spacing-200);
+                }
+
+                &-md {
+                    padding: var(--core-spacing-400) var(--core-spacing-1200) var(--core-spacing-400) var(--core-spacing-800);
+                    justify-content: center;
+                    gap: var(--core-spacing-400);
+                }
             }
 
         }
