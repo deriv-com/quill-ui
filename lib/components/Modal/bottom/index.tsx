@@ -5,7 +5,7 @@ import "./modal-bottom.scss";
 import { useSwipeable } from "react-swipeable";
 import { ModalHeader } from "./modal-header";
 import { ModalBody } from "./modal-body";
-import { Button } from "../../Button";
+import { Button } from "@components/Button";
 
 interface ModalBottomProps extends HTMLAttributes<HTMLDivElement> {
     isOpened?: boolean;

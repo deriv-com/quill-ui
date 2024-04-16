@@ -5,7 +5,7 @@ import {
 import { DOTS } from "../../../hooks/usePaginationRange.tsx";
 import { PaginationProps } from "../types";
 import "./pagination-base.scss";
-import { CaptionText } from "../../Typography/caption";
+import { CaptionText } from "@components/Typography";
 
 interface PaginationButtonProps extends Pick<PaginationProps, "variant"> {
     pageNumber: number | string;

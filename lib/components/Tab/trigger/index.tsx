@@ -1,7 +1,7 @@
 import { useContext, useEffect, MouseEvent, useRef, useState } from "react";
 import { TabContext } from "../container";
 import { TabProps } from "../types";
-import { Text } from "../../Typography";
+import { Text } from "@components/Typography";
 import clsx from "clsx";
 import "./trigger.scss";
 import "../tab.scss";

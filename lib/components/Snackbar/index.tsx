@@ -1,8 +1,8 @@
 import React, { ReactNode, useEffect, useState, HTMLAttributes } from "react";
-import { Text } from "../Typography";
+import { Text } from "@components/Typography";
 import "./snackbar.scss";
 import clsx from "clsx";
-import { Button } from "../Button";
+import { Button } from "@components/Button";
 import { LabelPairedXmarkSmBoldIcon } from "@deriv/quill-icons";
 
 interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
@@ -26,11 +26,13 @@ export const Snackbar = ({
     ...rest
 }: SnackbarProps) => {
     const animationSpeedObj = Object.freeze({
-        fast: 'fast',
-        slow: 'slow'
+        fast: "fast",
+        slow: "slow",
     });
 
-    const [animationSpeed, setAnimationSpeed] = useState<keyof typeof animationSpeedObj>(animationSpeedObj.slow);
+    const [animationSpeed, setAnimationSpeed] = useState<
+        keyof typeof animationSpeedObj
+    >(animationSpeedObj.slow);
     useEffect(() => {
         if (isOpen) {
             setAnimationSpeed(animationSpeedObj.slow);
@@ -74,10 +76,21 @@ export const Snackbar = ({
                         </Text>
                     </div>
                     {actionText && (
-                        <Button variant="tertiary" label={actionText} color="white" onClick={handleActionClick} />
+                        <Button
+                            variant="tertiary"
+                            label={actionText}
+                            color="white"
+                            onClick={handleActionClick}
+                        />
                     )}
                     {hasCloseButton && (
-                        <Button variant="tertiary" label={<LabelPairedXmarkSmBoldIcon />} color="white" onClick={handleClose} data-testid='close-button' />
+                        <Button
+                            variant="tertiary"
+                            label={<LabelPairedXmarkSmBoldIcon />}
+                            color="white"
+                            onClick={handleClose}
+                            data-testid="close-button"
+                        />
                     )}
                 </div>
             )}

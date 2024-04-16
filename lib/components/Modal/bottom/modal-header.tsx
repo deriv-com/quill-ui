@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { Heading } from "../../Typography";
+import { Heading } from "@components/Typography";
 
 interface ModalHeaderProps {
     className?: string;
