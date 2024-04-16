@@ -2,7 +2,7 @@ import React, { ReactNode, useEffect, useState, HTMLAttributes } from "react";
 import { Text } from "@components/Typography";
 import "./snackbar.scss";
 import clsx from "clsx";
-import { Button } from "../Button";
+import { Button } from "@components/Button";
 import { LabelPairedXmarkSmBoldIcon } from "@deriv/quill-icons";
 
 interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
