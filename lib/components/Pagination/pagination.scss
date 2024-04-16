@@ -1,0 +1,26 @@
+.pagination {
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--core-spacing-400);
+        
+    }
+    &__chevron {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: var(--semantic-color-typography-prominent);
+        &:disabled{
+            cursor: auto;
+            color: var(--semantic-color-typography-disabled);
+        }
+        
+        &-svg {
+            fill: var(--semantic-color-typography-prominent);  
+        }
+        &-disabled {
+            fill: var(--semantic-color-typography-disabled);
+        }
+    }
+}
