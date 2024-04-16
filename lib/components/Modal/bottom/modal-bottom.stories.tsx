@@ -6,7 +6,7 @@ import {
     StandaloneTrashRegularIcon,
 } from "@deriv/quill-icons";
 import { ModalBottom } from "./index";
-import { Button } from "../../Button";
+import { Button } from "@components/Button";
 
 interface Template extends React.ComponentProps<typeof ModalBottom> {
     image?: React.ReactNode;
