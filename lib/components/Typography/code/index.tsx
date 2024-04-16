@@ -1,9 +1,6 @@
 import clsx from "clsx";
 import { Typography, TypographyProps } from "../base";
-import {
-    getTextDecoration,
-    getTextWeight,
-} from "../../../utils/typography-utils";
+import { getTextDecoration, getTextWeight } from "@utils/typography-utils";
 
 export const CodeText = ({
     children,
