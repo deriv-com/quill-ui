@@ -5,8 +5,7 @@ import { ButtonProps } from "../types";
 import clsx from "clsx";
 import { Button } from "../base";
 import "./dropdown.scss";
-import { Text } from "../../Typography/text";
-import { CaptionText } from "../../Typography/caption";
+import { Text, CaptionText } from "@components/Typography";
 
 export type TSingleSelectItem = {
     value: number | string;

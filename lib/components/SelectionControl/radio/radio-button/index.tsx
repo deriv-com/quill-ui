@@ -6,9 +6,9 @@ import {
     StandaloneCircleDotBoldIcon,
     StandaloneCircleRegularIcon,
 } from "@deriv/quill-icons";
-import { Text } from "../../../Typography";
+import { Text } from "@components/Typography";
 import "./radio-button.scss";
-import { TMediumSizes } from "../../../../types";
+import { TMediumSizes } from "@types";
 
 interface IRadio {
     className?: string;
