@@ -34,6 +34,10 @@ export default defineConfig({
             "@quill-bundle": resolve(__dirname, "lib/styles/quill-bundle"),
             "@quill": resolve(__dirname, "lib/styles/quill"),
             "@quill-custom": resolve(__dirname, "lib/styles/custom"),
+            "@components": resolve(__dirname, "lib/components"),
+            "@hooks": resolve(__dirname, "lib/hooks"),
+            "@providers": resolve(__dirname, "lib/providers"),
+            "@utils": resolve(__dirname, "lib/utils"),
         },
     },
     build: {

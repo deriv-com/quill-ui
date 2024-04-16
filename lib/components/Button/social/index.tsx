@@ -11,7 +11,7 @@ import clsx from "clsx";
 import { ButtonSize } from "../base";
 import "./social.scss";
 import "../button.scss";
-import { Text } from "../../Typography/text";
+import { Text } from "@components/Typography";
 
 export const socialButtonIconSize = {
     md: {

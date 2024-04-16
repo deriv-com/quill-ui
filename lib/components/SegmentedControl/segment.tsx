@@ -1,6 +1,6 @@
 import React, { ReactNode, RefObject, forwardRef, useEffect } from "react";
 import clsx from "clsx";
-import { Text } from "../Typography";
+import { Text } from "@components/Typography";
 import { SegmentedControlProps } from "./base";
 
 interface SegmentProps {
