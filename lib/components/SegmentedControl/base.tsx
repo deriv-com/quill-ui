@@ -5,7 +5,7 @@ import React, {
     useEffect,
     useState,
 } from "react";
-import { TRegularSizes } from "../../types";
+import { TRegularSizes } from "@types";
 import { Segment } from "./segment";
 import "./segmented-control.scss";
 

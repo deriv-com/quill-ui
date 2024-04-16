@@ -4,7 +4,7 @@ import {
     TDefaultColor,
     TRegularSizesWithExtraLarge,
     TSemiRegularSizes,
-} from "../../types";
+} from "@types";
 
 export type TVariant = "primary" | "secondary" | "tertiary";
 

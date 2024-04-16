@@ -38,6 +38,7 @@ export default defineConfig({
             "@hooks": resolve(__dirname, "lib/hooks"),
             "@providers": resolve(__dirname, "lib/providers"),
             "@utils": resolve(__dirname, "lib/utils"),
+            "@types": resolve(__dirname, "lib/types.ts"),
         },
     },
     build: {

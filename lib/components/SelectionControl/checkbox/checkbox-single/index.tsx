@@ -14,7 +14,7 @@ import {
     LabelPairedCircleInfoSmRegularIcon,
     LabelPairedCircleInfoMdRegularIcon,
 } from "@deriv/quill-icons";
-import { TMediumSizes } from "../../../../types";
+import { TMediumSizes } from "@types";
 import { Text } from "@components/Typography";
 
 export interface CheckboxProps
