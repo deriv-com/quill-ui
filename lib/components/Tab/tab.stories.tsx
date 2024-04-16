@@ -1,5 +1,5 @@
 import type { Meta } from "@storybook/react";
-import MockTab from "./mocks/index";
+import MockTab from "@components/Tab/mocks/index";
 import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons";
 import { ComponentProps } from "react";
 
@@ -29,7 +29,7 @@ const placeholder = {
     sm: <StandalonePlaceholderRegularIcon iconSize="sm" />,
     md: <StandalonePlaceholderRegularIcon iconSize="md" />,
 };
-export const TabWithIconsOnLeftFill = (
+export const TabFillContentWithIconsOnLeft = (
     args: ComponentProps<typeof MockTab>,
 ) => (
     <MockTab
@@ -38,16 +38,38 @@ export const TabWithIconsOnLeftFill = (
         icon={placeholder[args?.size as keyof typeof placeholder]}
     />
 );
-export const TabWithIconsOnTopFill = (args: ComponentProps<typeof MockTab>) => (
+export const TabFillContentWithIconsOnTop = (
+    args: ComponentProps<typeof MockTab>,
+) => (
     <MockTab
         {...args}
         iconPosition="top"
         icon={placeholder[args?.size as keyof typeof placeholder]}
     />
 );
-export const TabWithoutIconsFill = (args: ComponentProps<typeof MockTab>) => (
-    <MockTab {...args} />
+export const TabFillContentWithoutIcons = (
+    args: ComponentProps<typeof MockTab>,
+) => <MockTab {...args} />;
+export const TabHugContentWithIconsOnLeft = (
+    args: ComponentProps<typeof MockTab>,
+) => (
+    <MockTab
+        {...args}
+        iconPosition="left"
+        tabContent="hug"
+        icon={placeholder[args?.size as keyof typeof placeholder]}
+    />
 );
-export const TabWithIconsOnLeftHug = (args: ComponentProps<typeof MockTab>) => (
-    <MockTab {...args} tabContent="hug" />
+export const TabHugContentWithIconsOnTop = (
+    args: ComponentProps<typeof MockTab>,
+) => (
+    <MockTab
+        {...args}
+        iconPosition="top"
+        tabContent="hug"
+        icon={placeholder[args?.size as keyof typeof placeholder]}
+    />
 );
+export const TabHugContentWithoutIconsOnLeft = (
+    args: ComponentProps<typeof MockTab>,
+) => <MockTab {...args} tabContent="hug" />;

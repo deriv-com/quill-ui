@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import Tab from "../index";
+import Tab from "@components/Tab";
 import { Text } from "@components/Typography";
 
 const MockTab = ({
