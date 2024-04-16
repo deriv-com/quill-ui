@@ -26,38 +26,46 @@
     }
 
     &__variants {
-        &__size {
             &__fill {
-                &-sm {
-                    padding: var(--core-spacing-200) var(--core-spacing-400);
-                    min-width: 106px;
-                    justify-content: center;
-                    gap: var(--core-spacing-200);
-                }
-
-                &-md {
-                    min-width: 106px;
-                    padding: var(--core-spacing-400) var(--core-spacing-800);
-                    justify-content: center;
-                    gap: var(--core-spacing-400);
-                }
+                &-size {
+                    &-sm {
+                        padding: var(--core-spacing-200) var(--core-spacing-400);
+                        min-width: 106px;
+                        text-wrap: nowrap;
+                        justify-content: center;
+                        gap: var(--core-spacing-200);
+                    }
+    
+                    &-md {
+                        min-width: 106px;
+                        text-wrap: nowrap;
+                        padding: var(--core-spacing-400) var(--core-spacing-800);
+                        justify-content: center;
+                        gap: var(--core-spacing-400);
+                    }
+                }              
             }
 
             &__hug {
-                &-sm {
-                    padding: var(--core-spacing-200) var(--core-spacing-800) var(--core-spacing-200) var(--core-spacing-400);
-                    justify-content: center;
-                    gap: var(--core-spacing-200);
+                &-size {
+                    &-sm {
+                        padding: var(--core-spacing-200) var(--core-spacing-800) var(--core-spacing-200) var(--core-spacing-400);
+                        justify-content: center;
+                        text-wrap: nowrap;
+                        gap: var(--core-spacing-200);
+                    }
+    
+                    &-md {
+                        padding: var(--core-spacing-400) var(--core-spacing-1200) var(--core-spacing-400) var(--core-spacing-800);
+                        justify-content: center;
+                        text-wrap: nowrap;
+                        gap: var(--core-spacing-400);
+                    }
                 }
-
-                &-md {
-                    padding: var(--core-spacing-400) var(--core-spacing-1200) var(--core-spacing-400) var(--core-spacing-800);
-                    justify-content: center;
-                    gap: var(--core-spacing-400);
-                }
+               
             }
 
         }
-    }
+    
 
 }

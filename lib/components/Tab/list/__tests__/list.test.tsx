@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Tab from "../../index";
+import Tab from "@components/Tab";
 
 describe("<Tab.List/>", () => {
     it("should render correctly", () => {
