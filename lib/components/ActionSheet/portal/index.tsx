@@ -2,7 +2,7 @@ import { ComponentProps, useContext } from "react";
 import { createPortal } from "react-dom";
 import HandleBar from "../handle-bar";
 import "./portal.scss";
-import { useSwipeBlock } from "../../../hooks";
+import { useSwipeBlock } from "@hooks/useSwipeBlock";
 import { ActionSheetContext } from "../root";
 import clsx from "clsx";
 

@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, ReactNode, useContext } from "react";
 import { ActionSheetContext } from "../root";
 import clsx from "clsx";
 import "./header.scss";
-import { Heading, Text } from "../../Typography";
+import { Heading, Text } from "@components/Typography";
 
 interface HeaderProps extends ComponentPropsWithoutRef<"div"> {
     title?: string;

@@ -3,9 +3,9 @@ import { ComponentProps, useState } from "react";
 import { LabelPairedBarsSmBoldIcon } from "@deriv/quill-icons";
 import ActionSheet from "..";
 import { ActionSheetContextType } from "../root";
-import { Text } from "../../Typography";
+import { Text } from "@components/Typography";
 import "./mock.scss";
-import { Button } from "../../Button";
+import { Button } from "@components/Button";
 
 type ExampleProps = ActionSheetContextType &
     ComponentProps<typeof ActionSheet.Root> &
