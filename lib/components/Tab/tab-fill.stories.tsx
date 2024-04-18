@@ -4,7 +4,7 @@ import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons";
 import { ComponentProps } from "react";
 
 const meta = {
-    title: "Components/Tab/Tab",
+    title: "Components/Tab/Fill Content",
     component: MockTab,
     tags: ["autodocs"],
     parameters: {
@@ -50,26 +50,3 @@ export const TabFillContentWithIconsOnTop = (
 export const TabFillContentWithoutIcons = (
     args: ComponentProps<typeof MockTab>,
 ) => <MockTab {...args} />;
-export const TabHugContentWithIconsOnLeft = (
-    args: ComponentProps<typeof MockTab>,
-) => (
-    <MockTab
-        {...args}
-        iconPosition="left"
-        tabContent="hug"
-        icon={placeholder[args?.size as keyof typeof placeholder]}
-    />
-);
-export const TabHugContentWithIconsOnTop = (
-    args: ComponentProps<typeof MockTab>,
-) => (
-    <MockTab
-        {...args}
-        iconPosition="top"
-        tabContent="hug"
-        icon={placeholder[args?.size as keyof typeof placeholder]}
-    />
-);
-export const TabHugContentWithoutIconsOnLeft = (
-    args: ComponentProps<typeof MockTab>,
-) => <MockTab {...args} tabContent="hug" />;
