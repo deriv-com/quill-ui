@@ -33,6 +33,11 @@
     width: var(--core-size-2400);
     height: var(--core-size-1400);
     border-width: var(--core-borderRadius-100);
+    &:focus {
+        outline: var(--core-borderRadius-100) solid
+            var(--core-color-solid-blue-700);
+        border-radius: var(--semantic-borderRadius-lg);
+    }
     &__slider {
         display: flex;
         align-items: center;
@@ -83,7 +88,7 @@
         }
     }
 
-    &:disabled{
+    &:disabled {
         pointer-events: none;
         .toggle-switch__knob {
             background-color: var(--core-color-opacity-white-400);
