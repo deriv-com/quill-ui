@@ -5,3 +5,4 @@ export * from "./SelectionControl";
 export * from "./Snackbar";
 export * from "./Tab";
 export * from "./Typography";
+export * from "./ActionSheet";
