@@ -1,6 +1,6 @@
 import { useContext, useEffect, MouseEvent, useRef, useState } from "react";
-import { TabContext } from "../container";
-import { TabProps } from "../types";
+import { TabContext } from "@components/Tab/container";
+import { TabProps } from "@components/Tab/types";
 import { Text } from "@components/Typography";
 import clsx from "clsx";
 import "./trigger.scss";
@@ -9,6 +9,7 @@ import "../tab.scss";
 export const TabTrigger = ({
     children,
     icon,
+    tabContent = "fill",
     className,
     ...rest
 }: TabProps) => {
@@ -57,7 +58,9 @@ export const TabTrigger = ({
             {...rest}
             className={clsx(
                 "tab-menu",
-                `tab-menu__variants--size-${size}`,
+                tabContent === "fill"
+                    ? `tab-menu__variants__fill-size-${size}`
+                    : `tab-menu__variants__hug-size-${size}`,
                 `tab-trigger__icon-position--${iconPosition}`,
                 selectedTab && "tab-menu__selected-tab",
                 className,

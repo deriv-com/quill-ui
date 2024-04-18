@@ -1,0 +1,52 @@
+@import "@quill/size.scss";
+@import "@quill/border.scss";
+@import "@quill/color.opacity.scss";
+@import "@quill/color.semantic.scss"; 
+
+.variant{
+    &__number {
+        display: inline-flex;
+        flex-direction: column;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        height: var(--core-size-1600);
+        width: var(--core-size-1600);
+        border-radius: var(--core-size-200);
+        &:hover {
+            background-color: var(--core-color-opacity-black-100);
+        }
+
+        &:active {
+            background-color: var(--core-color-opacity-black-200);
+        }
+        &[aria-current=true] {
+            background-color: var(--core-color-solid-slate-1400);
+            &:hover {
+                background-color: var(--core-color-solid-slate-1400);
+            }
+        }
+    
+    }
+    &__bullet {
+        
+        &-svg {
+            fill: var(--core-color-opacity-black-75);
+            cursor: pointer;
+        &[aria-current=true] {
+           fill: var(--semantic-color-typography-prominent);
+        }
+        }
+        
+    }
+}
+.hidden_pages {
+    display: flex;
+}
+.number-text{
+    &[aria-current=true]{
+        font-weight: bold;
+        color: var(--core-color-solid-slate-50);
+    }
+    color: var(--semantic-color-typography-default);
+}
