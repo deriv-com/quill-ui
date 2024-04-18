@@ -1,0 +1,60 @@
+@import "@quill/spacing.scss";
+@import "@quill/motion.scss";
+@import "@quill/color.scss";
+@import "@quill/breakpoints.scss";
+
+.quill-action-sheet {
+    &--header {
+        left: var(--semantic-spacing-general-none);
+        padding-top: var(--semantic-spacing-general-md);
+        padding-bottom: var(--semantic-spacing-general-md);
+        gap: var(--semantic-spacing-gap-lg);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        &__expandable {
+            &--true {
+                top: var(--semantic-spacing-general-lg);
+            }
+
+            &--false {
+                top: var(--semantic-spacing-general-none);
+            }
+        }
+    }
+
+    &--title {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--semantic-spacing-gap-md);
+        align-items: center;
+        flex-direction: row-reverse;
+
+        @include breakpoint("lg") {
+            flex-direction: row;
+        }
+
+        & > h5 {
+            flex: 1;
+        }
+
+        &--icon {
+            display: flex;
+            width: var(--core-size-2400);
+            height: var(--core-size-2400);
+            justify-content: center;
+            align-items: center;
+            fill: var(--semantic-color-typography-prominent);
+
+            &--close {
+                visibility: hidden;
+                cursor: pointer;
+
+                @include breakpoint("lg") {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}

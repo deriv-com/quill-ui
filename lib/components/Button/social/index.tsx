@@ -2,15 +2,16 @@ import { forwardRef } from "react";
 import {
     SocialAppleWhiteIcon,
     SocialGoogleBrandIcon,
-    SocialFacebookBrandIcon,
+    SocialFacebookBrandDarkIcon,
     SocialAppleBlackIcon,
+    SocialFacebookBrandIcon,
 } from "@deriv/quill-icons/Social";
 import { SocialButtonProps } from "../types";
 import clsx from "clsx";
 import { ButtonSize } from "../base";
 import "./social.scss";
 import "../button.scss";
-import { Text } from "../../Typography/text";
+import { Text } from "@components/Typography";
 
 export const socialButtonIconSize = {
     md: {
@@ -26,6 +27,11 @@ export const socialButtonIconSize = {
         height: 32,
     },
 };
+export const SocialButtonSize = {
+    md: "social-button__icon-only--md",
+    lg: "social-button__icon-only--lg",
+    xl: "social-button__icon-only--xl",
+} as const;
 
 export const SocialButton = forwardRef<HTMLButtonElement, SocialButtonProps>(
     (
@@ -54,10 +60,12 @@ export const SocialButton = forwardRef<HTMLButtonElement, SocialButtonProps>(
             <button
                 className={clsx(
                     "quill-button",
-                    ButtonSize[size],
                     buttonColorClass,
                     className,
                     fullWidth && "quill-button__full-width",
+                    !fullWidth && hideLabel
+                        ? SocialButtonSize[size]
+                        : ButtonSize[size],
 
                     { ...rest },
                 )}
@@ -68,12 +76,18 @@ export const SocialButton = forwardRef<HTMLButtonElement, SocialButtonProps>(
                 {social === "google" && (
                     <SocialGoogleBrandIcon {...socialButtonIconSize[size]} />
                 )}
-                {social === "facebook" && (
-                    <SocialFacebookBrandIcon
-                        {...socialButtonIconSize[size]}
-                        fill="#fff"
-                    />
-                )}
+                {social === "facebook" &&
+                    (variant === "primary" ? (
+                        <SocialFacebookBrandDarkIcon
+                            {...socialButtonIconSize[size]}
+                            fill="#fff"
+                        />
+                    ) : (
+                        <SocialFacebookBrandIcon
+                            {...socialButtonIconSize[size]}
+                            fill="#fff"
+                        />
+                    ))}
                 {social === "apple" && variant === "primary" ? (
                     <SocialAppleWhiteIcon {...socialButtonIconSize[size]} />
                 ) : social === "apple" && variant === "secondary" ? (

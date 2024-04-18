@@ -1,14 +1,14 @@
 import { forwardRef } from "react";
 import clsx from "clsx";
 import { ButtonProps } from "../types";
-import { Text, CaptionText } from "../../Typography";
 import {
-    LabelPairedChevronDownLgRegularIcon,
-    LabelPairedChevronDownMdRegularIcon,
-    LabelPairedChevronDownSmRegularIcon,
-    LabelPairedChevronDownXlRegularIcon,
+    LabelPairedChevronDownLgBoldIcon,
+    LabelPairedChevronDownMdBoldIcon,
+    LabelPairedChevronDownSmBoldIcon,
+    LabelPairedChevronDownXlBoldIcon,
 } from "@deriv/quill-icons";
 import "../button.scss";
+import { CaptionText, Text } from "@components/Typography";
 
 export const ButtonSize = {
     xl: "quill-button__size--xl",
@@ -18,10 +18,10 @@ export const ButtonSize = {
 } as const;
 
 const dropdownIcons = {
-    sm: LabelPairedChevronDownSmRegularIcon,
-    md: LabelPairedChevronDownMdRegularIcon,
-    lg: LabelPairedChevronDownLgRegularIcon,
-    xl: LabelPairedChevronDownXlRegularIcon,
+    sm: LabelPairedChevronDownSmBoldIcon,
+    md: LabelPairedChevronDownMdBoldIcon,
+    lg: LabelPairedChevronDownLgBoldIcon,
+    xl: LabelPairedChevronDownXlBoldIcon,
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(

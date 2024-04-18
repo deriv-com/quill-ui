@@ -33,7 +33,7 @@
         "build-storybook": "storybook build --output-dir dist/storybook",
         "test": "jest",
         "test:update": "jest --updateSnapshot",
-        "test:staged": "jest --onlyChanged",
+        "test:staged": "jest --bail --findRelatedTests",
         "prepare": "husky install"
     },
     "devDependencies": {
@@ -46,15 +46,15 @@
         "@semantic-release/github": "^9.2.6",
         "@semantic-release/npm": "^11.0.2",
         "@semantic-release/release-notes-generator": "^12.1.0",
-        "@storybook/addon-essentials": "^8.0.0",
-        "@storybook/addon-interactions": "^8.0.0",
-        "@storybook/addon-links": "^8.0.0",
-        "@storybook/addon-onboarding": "^8.0.0",
-        "@storybook/addon-themes": "^8.0.0",
-        "@storybook/blocks": "^8.0.0",
-        "@storybook/react": "^8.0.0",
-        "@storybook/react-vite": "^8.0.0",
-        "@storybook/test": "^8.0.0",
+        "@storybook/addon-essentials": "^8.0.5",
+        "@storybook/addon-interactions": "^8.0.5",
+        "@storybook/addon-links": "^8.0.5",
+        "@storybook/addon-onboarding": "^8.0.5",
+        "@storybook/addon-themes": "^8.0.5",
+        "@storybook/blocks": "^8.0.5",
+        "@storybook/react": "^8.0.5",
+        "@storybook/react-vite": "^8.0.5",
+        "@storybook/test": "^8.0.5",
         "@tanstack/react-table": "^8.12.0",
         "@testing-library/jest-dom": "^6.4.2",
         "@testing-library/react": "^14.2.1",
@@ -65,6 +65,7 @@
         "@types/react-dom": "^18.2.17",
         "@typescript-eslint/eslint-plugin": "^6.14.0",
         "@typescript-eslint/parser": "^6.14.0",
+        "@use-gesture/react": "^10.3.1",
         "@vitejs/plugin-react": "^4.2.1",
         "@zxcvbn-ts/core": "^3.0.4",
         "@zxcvbn-ts/language-common": "^3.0.4",
@@ -115,19 +116,21 @@
             "<rootDir>/test/setup.test.js"
         ],
         "testMatch": [
-            "**/*.test.tsx",
-            "**/*.test.ts",
-            "**/*.spec.tsx",
-            "**/*.spec.ts"
+            "<rootDir>/lib/**/*.(test|spec).{js,jsx,ts,tsx}"
         ],
         "moduleNameMapper": {
             "\\.(css|less|scss|sass)$": "identity-obj-proxy",
-            "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/__mocks__/fileMock.js"
+            "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/__mocks__/fileMock.js",
+            "^@components(.*)$": "<rootDir>/lib/components$1",
+            "^@hooks(.*)$": "<rootDir>/lib/hooks$1",
+            "^@providers(.*)$": "<rootDir>/lib/providers$1",
+            "^@utils(.*)$": "<rootDir>/lib/utils$1"
         }
     },
     "dependencies": {
-        "@deriv/quill-icons": "^1.19.8",
+        "@deriv/quill-icons": "^1.19.20",
         "@headlessui/react": "^1.7.18",
-        "usehooks-ts": "^3.0.1"
+        "usehooks-ts": "^3.0.2",
+        "react-swipeable": "^6.2.1"
     }
 }

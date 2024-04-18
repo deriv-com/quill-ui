@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ActionSheet.Portal/> should render correctly with position left 1`] = `
+<p>
+  left
+   portal
+</p>
+`;
+
+exports[`<ActionSheet.Portal/> should render correctly with position right 1`] = `
+<p>
+  right
+   portal
+</p>
+`;
