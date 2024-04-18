@@ -3,7 +3,7 @@ import { expect, fn, userEvent, within } from "@storybook/test";
 import { Checkbox } from "./index";
 
 const meta = {
-    title: "Components/Selection control/Checkbox",
+    title: "Components/Selection Control/Checkbox",
     component: Checkbox,
     parameters: { layout: "centered" },
     tags: ["autodocs"],

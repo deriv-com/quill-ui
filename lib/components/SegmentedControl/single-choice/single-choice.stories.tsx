@@ -9,7 +9,7 @@ import SegmentedControlSingleChoice from ".";
 import { ComponentProps } from "react";
 
 const meta = {
-    title: "Components/SegmentedControl/SegmentedControlSingleChoice",
+    title: "Components/Segmented Control/SingleChoice",
     component: SegmentedControlSingleChoice,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],

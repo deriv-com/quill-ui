@@ -2,7 +2,7 @@ import React from "react";
 import RadioButton from "./index";
 
 const RadioButtonMeta = {
-    title: "Components/Selection control/Radio/RadioButton",
+    title: "Components/Selection Control/Radio/RadioButton",
     component: RadioButton,
     parameters: { layout: "centered" },
     tags: ["autodocs"],

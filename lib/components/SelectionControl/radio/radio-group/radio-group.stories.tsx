@@ -42,7 +42,7 @@ const Template: React.FC<RadioGroupProps> = (args) => (
 );
 
 const RadioGroupMeta = {
-    title: "Components/Selection control/Radio/RadioGroup",
+    title: "Components/Selection Control/Radio/RadioGroup",
     component: RadioGroup,
     parameters: { layout: "centered" },
     tags: ["autodocs"],
