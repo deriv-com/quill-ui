@@ -7,7 +7,6 @@ exports[`Input should render a default Input 1`] = `
   >
     <div
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
-      data-has-value="false"
     >
       <input
         class="input peer input__align--left input__size--md"
@@ -28,7 +27,6 @@ exports[`Input should render a disabled Input with a variant of fill 1`] = `
   >
     <div
       class="quill-input__wrapper quill-input__wrapper__variant--fill status--neutral quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
-      data-has-value="false"
     >
       <input
         class="input peer input__align--left input__size--md"
@@ -50,14 +48,15 @@ exports[`Input should render an Input with a label 1`] = `
   >
     <div
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
-      data-has-value="false"
     >
       <input
         class="input peer input__align--left input__size--md"
+        id="UserName"
         type="text"
       />
       <label
         class="label label__status--neutral"
+        for="UserName"
       >
         UserName
       </label>
@@ -76,7 +75,6 @@ exports[`Input should render an Input with a variant of outline 1`] = `
   >
     <div
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
-      data-has-value="false"
     >
       <input
         class="input peer input__align--left input__size--md"
@@ -97,7 +95,6 @@ exports[`Input should render an Input with centered text 1`] = `
   >
     <div
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
-      data-has-value="false"
     >
       <input
         class="input peer input__align--center input__size--md"
@@ -118,7 +115,6 @@ exports[`Input should render an Input with status messages 1`] = `
   >
     <div
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
-      data-has-value="false"
     >
       <input
         class="input peer input__align--left input__size--md"
@@ -129,12 +125,12 @@ exports[`Input should render an Input with status messages 1`] = `
       class="message__container"
     >
       <p
-        class="message__container__text message__container__text__status--neutral"
+        class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message__container__text message__container__text__status--neutral"
       >
         Message goes here
       </p>
       <p
-        class="self-end message__container__text message__container__text__status--neutral"
+        class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent self-end message__container__text message__container__text__status--neutral"
       >
         0/0
       </p>

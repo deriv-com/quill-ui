@@ -2,8 +2,8 @@ import clsx from "clsx";
 import { InputHTMLAttributes, ReactNode, forwardRef, useState } from "react";
 import "./base.scss";
 import React from "react";
-import { TMediumSizes } from "../../../types";
-import { CaptionText } from "../../Typography";
+import { TMediumSizes } from "@types";
+import { CaptionText } from "@components/Typography";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type?: "text" | "email" | "password";
