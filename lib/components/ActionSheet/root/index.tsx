@@ -40,6 +40,9 @@ const Root = ({
         if (!isOpen) {
             handleClose();
         }
+        if (isOpen) {
+            handleOpen();
+        }
     }, [isOpen, handleClose]);
 
     return (

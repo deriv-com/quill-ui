@@ -119,4 +119,52 @@ export const ActionSheetExampleWithIconTrigger = ({
     );
 };
 
+export const ActionSheetExampleControlled = ({
+    primaryAction,
+    secondaryAction,
+    alignment,
+    description,
+    title,
+    closeIcon,
+    icon,
+    ...props
+}: ExampleProps) => {
+    return (
+        <>
+            <ActionSheet.Root {...props}>
+                <ActionSheet.Portal>
+                    <ActionSheet.Header
+                        title={title}
+                        description={description}
+                        closeIcon={closeIcon}
+                        icon={icon}
+                    />
+                    <ActionSheet.Content className="mock-action-sheet--content">
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                    </ActionSheet.Content>
+                    <ActionSheet.Footer
+                        primaryAction={primaryAction}
+                        secondaryAction={secondaryAction}
+                        alignment={alignment}
+                    />
+                </ActionSheet.Portal>
+            </ActionSheet.Root>
+        </>
+    );
+};
+
 export default ActionSheetExample;
