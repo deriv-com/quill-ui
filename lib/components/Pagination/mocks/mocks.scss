@@ -1,0 +1,15 @@
+
+.mock{
+    &-section{
+        padding-bottom: 8px;
+    }
+    &-table{
+        display: flex;
+        flex-direction: column;
+        border: 2px solid;
+        gap: 8px;
+        padding: 8px;
+        align-items: center;
+    }
+   
+}

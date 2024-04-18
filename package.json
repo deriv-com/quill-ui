@@ -33,7 +33,7 @@
         "build-storybook": "storybook build --output-dir dist/storybook",
         "test": "jest",
         "test:update": "jest --updateSnapshot",
-        "test:staged": "jest --onlyChanged",
+        "test:staged": "jest --bail --findRelatedTests",
         "prepare": "husky install"
     },
     "devDependencies": {
@@ -120,7 +120,11 @@
         ],
         "moduleNameMapper": {
             "\\.(css|less|scss|sass)$": "identity-obj-proxy",
-            "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/__mocks__/fileMock.js"
+            "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/__mocks__/fileMock.js",
+            "^@components(.*)$": "<rootDir>/lib/components$1",
+            "^@hooks(.*)$": "<rootDir>/lib/hooks$1",
+            "^@providers(.*)$": "<rootDir>/lib/providers$1",
+            "^@utils(.*)$": "<rootDir>/lib/utils$1"
         }
     },
     "dependencies": {
