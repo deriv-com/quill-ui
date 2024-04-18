@@ -53,7 +53,7 @@ exports[`Snackbar calls onActionClick when action button is clicked 1`] = `
             </g>
             <defs>
               <clippath
-                id="a7bd501ce53ed6e1a615bbf6d67075b4__a"
+                id="bc20b7afc9245ecd8673f572bfeb5871__a"
               >
                 <path
                   d="M0 0h11v22H0z"
@@ -107,7 +107,7 @@ exports[`Snackbar calls onClose after a certain duration when Snackbar is open 1
             </g>
             <defs>
               <clippath
-                id="a7bd501ce53ed6e1a615bbf6d67075b4__a"
+                id="bc20b7afc9245ecd8673f572bfeb5871__a"
               >
                 <path
                   d="M0 0h11v22H0z"
@@ -161,7 +161,7 @@ exports[`Snackbar calls onClose when close button is clicked 1`] = `
             </g>
             <defs>
               <clippath
-                id="a7bd501ce53ed6e1a615bbf6d67075b4__a"
+                id="bc20b7afc9245ecd8673f572bfeb5871__a"
               >
                 <path
                   d="M0 0h11v22H0z"
@@ -223,7 +223,7 @@ exports[`Snackbar renders correctly with custom icon 1`] = `
             </g>
             <defs>
               <clippath
-                id="a7bd501ce53ed6e1a615bbf6d67075b4__a"
+                id="bc20b7afc9245ecd8673f572bfeb5871__a"
               >
                 <path
                   d="M0 0h11v22H0z"
@@ -277,7 +277,7 @@ exports[`Snackbar renders correctly without action button 1`] = `
             </g>
             <defs>
               <clippath
-                id="a7bd501ce53ed6e1a615bbf6d67075b4__a"
+                id="bc20b7afc9245ecd8673f572bfeb5871__a"
               >
                 <path
                   d="M0 0h11v22H0z"
@@ -349,7 +349,7 @@ exports[`Snackbar renders with default props 1`] = `
             </g>
             <defs>
               <clippath
-                id="a7bd501ce53ed6e1a615bbf6d67075b4__a"
+                id="bc20b7afc9245ecd8673f572bfeb5871__a"
               >
                 <path
                   d="M0 0h11v22H0z"

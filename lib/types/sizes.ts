@@ -1,3 +1,5 @@
+import { QuillSvgProps } from "@deriv/quill-icons";
+
 export type TGenericSizes =
     | "2xl"
     | "2xs"
@@ -63,3 +65,11 @@ export type TAllSizesExceptMediumExtraSmall = Exclude<
     TGenericSizes,
     TMediumSizes | TSmallSizes
 >;
+
+export type QuillIconComponent = React.ForwardRefExoticComponent<
+    Omit<QuillSvgProps, "ref">
+>;
+
+export type ExcludeAllNull<T> = {
+    [K in keyof T]: Exclude<T[K], null>;
+};

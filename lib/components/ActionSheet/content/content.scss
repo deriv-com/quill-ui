@@ -1,0 +1,7 @@
+@import "@quill/spacing.scss";
+
+.action-sheet--content {
+    padding-top: var(--semantic-spacing-general-lg);
+    padding-bottom: var(--semantic-spacing-general-lg);
+    flex-grow: 1;
+}

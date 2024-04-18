@@ -1,0 +1,97 @@
+@import "@quill/spacing.scss";
+@import "@quill/elevation.scss";
+@import "@quill/motion.scss";
+@import "@quill/color.opacity.scss";
+@import "@quill/color.scss";
+@import "@quill/border.scss";
+@import "@quill/breakpoints.scss";
+
+.quill-action-sheet {
+    &--portal {
+        position: fixed;
+        inset: var(--semantic-spacing-general-none);
+        transition: all var(--core-motion-duration-200)
+            var(--core-motion-ease-400);
+
+        &--wrapper {
+            pointer-events: none;
+            z-index: 50;
+            display: flex;
+            user-select: none;
+            align-items: flex-end;
+            justify-content: center;
+            overflow-x: hidden;
+
+            &[data-state="close"] {
+                visibility: hidden;
+            }
+        }
+
+        &__variant--modal {
+            background-color: var(--core-color-opacity-black-500);
+            pointer-events: auto;
+            z-index: -10;
+        }
+    }
+
+    &--root {
+        pointer-events: auto;
+        box-shadow: var(--core-elevation-shadow-540);
+        touch-action: none;
+        position: relative;
+        z-index: 20;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        max-height: 90vh;
+        min-width: 320px;
+        max-width: 800px;
+        flex-direction: column;
+        overflow-y: auto;
+        border-top-left-radius: var(--semantic-borderRadius-lg);
+        border-top-right-radius: var(--semantic-borderRadius-lg);
+        background-color: var(--semantic-color-background-dialog);
+        padding-left: var(--semantic-spacing-general-lg);
+        padding-right: var(--semantic-spacing-general-lg);
+        transition-property: all;
+        transition-timing-function: var(--motion-easing-inandout);
+        transition-duration: var(--core-motion-duration-200);
+
+        @include breakpoint("lg") {
+            max-width: 360px;
+            border-radius: var(--semantic-spacing-general-none);
+            max-height: 100vh;
+        }
+
+        &__position {
+            &--left {
+                &__show--false {
+                    visibility: hidden;
+                    transform: translateY(100%);
+
+                    @include breakpoint("lg") {
+                        transform: translateX(-100%);
+                    }
+                }
+
+                @include breakpoint("lg") {
+                    margin-left: var(--semantic-spacing-general-none);
+                }
+            }
+            &--right {
+                &__show--false {
+                    visibility: hidden;
+                    transform: translateY(100%);
+
+                    @include breakpoint("lg") {
+                        transform: translateX(100%);
+                    }
+                }
+
+                @include breakpoint("lg") {
+                    margin-right: var(--semantic-spacing-general-none);
+                }
+            }
+        }
+    }
+}
