@@ -4,7 +4,7 @@ import "./toggle-switch.scss";
 import { fn } from "@storybook/test";
 
 const meta = {
-    title: "Components/Selection control/Toggle Switch",
+    title: "Components/Selection Control/Toggle Switch",
     component: ToggleSwitch,
     parameters: { layout: "centered" },
     tags: ["autodocs"],
@@ -24,7 +24,8 @@ const meta = {
         },
         checked: {
             table: { type: { summary: "boolean | undefined" } },
-            description: "Setting the switch state from outside the component and manage it outside, It enforces whichever state is coming",
+            description:
+                "Setting the switch state from outside the component and manage it outside, It enforces whichever state is coming",
             control: { type: "boolean" },
         },
         disabled: {
@@ -74,7 +75,7 @@ export const DefaultOn: Story = {
     args: {
         defaultChecked: true,
     },
-    name:'Checked (DefaultChecked is true)'
+    name: "Checked (DefaultChecked is true)",
 };
 
 export const Disabled: Story = {
@@ -92,7 +93,7 @@ export const DisabledOn: Story = {
 
 export const CheckedStaysAlwaysChecked: Story = {
     args: {
-        checked:true,
+        checked: true,
     },
-    name:'Checked (Stay Always Checked)'
+    name: "Checked (Stay Always Checked)",
 };
