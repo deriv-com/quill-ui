@@ -1,24 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-    LabelPairedCircleInfoMdBoldIcon,
-    LabelPairedAndroidMdIcon,
-    LabelPairedAppleMdIcon,
-} from "@deriv/quill-icons";
-import { Base } from ".";
+import { LabelPairedPlaceholderCaptionBoldIcon } from "@deriv/quill-icons";
+import SelectableChip from ".";
 
 const icons: Record<string, object | null> = {
-    sample_1: LabelPairedCircleInfoMdBoldIcon,
-    sample_2: LabelPairedAndroidMdIcon,
-    sample_3: LabelPairedAppleMdIcon,
+    with_icon: LabelPairedPlaceholderCaptionBoldIcon,
     none: null,
 };
 
 const meta = {
-    title: "Chip/Base",
-    component: Base,
+    title: "Components/Chips/Selectable Chip",
+    component: SelectableChip,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
-    args: {},
     argTypes: {
         size: { options: ["sm", "md", "lg"], control: { type: "radio" } },
         icon: {
@@ -26,11 +19,15 @@ const meta = {
             options: Object.keys(icons),
             mapping: icons,
             control: {
-                type: "select",
+                type: "radio",
             },
         },
+        disabled: {
+            description: "disabled the chip",
+            control: { type: "boolean" },
+        },
     },
-} satisfies Meta<typeof Base>;
+} satisfies Meta<typeof SelectableChip>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -38,6 +35,5 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     args: {
         label: "Label Here",
-        dropdown: true,
     },
 };

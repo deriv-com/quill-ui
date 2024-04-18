@@ -1,6 +1,7 @@
 @import "@quill/spacing.scss";
 @import "@quill/border.scss";
 @import "@quill/color.opacity.scss";
+@import "@quill/color.scss";
 
 .quill-chip {
     display: flex;
@@ -13,15 +14,15 @@
     &__size {
         &--sm {
             padding-inline: var(--core-spacing-600);
-            height: var(--semantic-spacing-general-lg);
+            height: var(--core-spacing-1200);
         }
         &--md {
             padding-inline: var(--semantic-spacing-general-md);
-            height: var(--semantic-spacing-general-2xl);
+            height: var(--core-spacing-1600);
         }
         &--lg {
             padding-inline: var(--semantic-spacing-general-lg);
-            height: var(--semantic-spacing-general-4xl);
+            height: var(--core-spacing-2400);
         }
     }
 }

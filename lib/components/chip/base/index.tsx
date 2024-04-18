@@ -1,13 +1,13 @@
-import React from "react";
-import { SelectableChipProps } from "../types";
-import { TRegularSizes } from "../../../types";
+import React, { forwardRef } from "react";
+import { BaseChipProps } from "../types";
 import {
     StandaloneChevronDownRegularIcon,
     StandaloneCircleXmarkRegularIcon,
 } from "@deriv/quill-icons";
 import "../_chip.scss";
 import clsx from "clsx";
-import { CaptionText, Text } from "../../Typography";
+import { CaptionText, Text } from "@components/Typography";
+import { TRegularSizes } from "@types";
 
 export const ChipIconSizes: Record<
     TRegularSizes,
@@ -33,69 +33,78 @@ export const LabelTextSizes: Record<TRegularSizes, JSX.Element> = {
     lg: <Text />,
 };
 
-export const Base = ({
-    icon: Icon,
-    size = "md",
-    label,
-    labelTag,
-    dismissible = false,
-    dropdown = false,
-    className,
-    onChipSelect,
-    onDismiss,
-    ...rest
-}: SelectableChipProps) => {
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        // if (dismissible || dropdown) return;
-        const target = event.currentTarget;
-        const icon = target.querySelector(".rotate");
-        const isOpen = icon?.getAttribute("data-state") === "open";
-        const selected_state = isOpen ? "close" : "open";
-        icon?.setAttribute("data-state", selected_state);
-        onChipSelect?.(event, !isOpen);
-    };
-
-    const handleDismiss = (
-        event: React.MouseEvent<SVGSVGElement, MouseEvent>,
+export const Base = forwardRef<HTMLButtonElement, BaseChipProps>(
+    (
+        {
+            icon: Icon,
+            size = "md",
+            label,
+            labelTag,
+            dismissible = false,
+            dropdown = false,
+            className,
+            isDropdownOpen,
+            onChipSelect,
+            onDismiss,
+            children,
+            ...rest
+        },
+        ref,
     ) => {
-        onDismiss?.(event);
-    };
+        const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+            // if (dismissible || dropdown) return;
+            const target = event.currentTarget;
+            const isSelected = target.getAttribute("data-state") === "selected";
+            const selected_state = isSelected ? "" : "selected";
+            target.setAttribute("data-state", selected_state);
 
-    return (
-        <button
-            onClick={handleClick}
-            className={clsx(
-                "quill-chip",
-                `quill-chip__size--${size}`,
-                className,
-            )}
-            {...rest}
-        >
-            {Icon && <Icon {...ChipIconSizes[size]} />}
-            {label &&
-                React.cloneElement(LabelTextSizes[size], {
-                    ...rest,
-                    children: label,
-                })}
-            {labelTag && <CaptionText bold>{labelTag}</CaptionText>}
-            {dismissible && (
-                <StandaloneCircleXmarkRegularIcon
-                    {...ChipIconSizes[size]}
-                    onClick={handleDismiss}
-                    data-testid="dt-chip-dismissible-btn"
-                    className="cursor-pointer"
-                />
-            )}
-            {dropdown && (
-                <StandaloneChevronDownRegularIcon
-                    width={24}
-                    height={24}
-                    data-state="open"
-                    className="rotate"
-                />
-            )}
-        </button>
-    );
-};
+            onChipSelect?.(event, !isSelected);
+        };
+
+        const handleDismiss = (
+            event: React.MouseEvent<SVGSVGElement, MouseEvent>,
+        ) => {
+            onDismiss?.(event);
+        };
+
+        return (
+            <button
+                onClick={handleClick}
+                className={clsx(
+                    "quill-chip",
+                    `quill-chip__size--${size}`,
+                    className,
+                )}
+                ref={ref}
+                {...rest}
+            >
+                {Icon && <Icon {...ChipIconSizes[size]} />}
+                {children}
+                {label &&
+                    React.cloneElement(LabelTextSizes[size], {
+                        ...rest,
+                        children: label,
+                    })}
+                {labelTag && <CaptionText bold>{labelTag}</CaptionText>}
+                {dismissible && (
+                    <StandaloneCircleXmarkRegularIcon
+                        {...ChipIconSizes[size]}
+                        onClick={handleDismiss}
+                        data-testid="dt-chip-dismissible-btn"
+                        className="cursor-pointer"
+                    />
+                )}
+                {dropdown && (
+                    <StandaloneChevronDownRegularIcon
+                        width={24}
+                        height={24}
+                        data-state={isDropdownOpen ? "open" : "close"}
+                        className="rotate"
+                    />
+                )}
+            </button>
+        );
+    },
+);
 
 export default Base;

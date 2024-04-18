@@ -1,15 +1,13 @@
-import { QuillIconComponent, TRegularSizes } from "../../types";
+import { QuillIconComponent, TRegularSizes } from "@types";
+import { ReactNode } from "react";
 
 export interface BaseChipProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     dismissible?: boolean;
-    icon?: QuillIconComponent;
+    icon?: QuillIconComponent & ReactNode;
     label?: string;
     labelTag?: string;
     disabled?: boolean;
-}
-
-export interface SelectableChipProps extends BaseChipProps {
     isDropdownOpen?: boolean;
     dropdown?: boolean;
     selected?: boolean;
@@ -19,4 +17,21 @@ export interface SelectableChipProps extends BaseChipProps {
         value: boolean,
     ) => void;
     onDismiss?: (event: React.MouseEvent<SVGSVGElement, MouseEvent>) => void;
+}
+
+export interface SelectableChipProps
+    extends Omit<BaseChipProps, "isDropdownOpen" | "dropdown"> {
+    className?: string;
+}
+
+export type TSingleSelectItem = {
+    value: number | string;
+    label: string;
+    disabled?: boolean;
+};
+
+export interface SingleSelectChipProps extends BaseChipProps {
+    options: TSingleSelectItem[];
+    defaultOption: TSingleSelectItem;
+    onSelectionChange: (item: TSingleSelectItem) => void;
 }

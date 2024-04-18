@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Text, Heading, ThemeProvider, Button } from "../lib/main";
+import { Text, Heading, ThemeProvider } from "../lib/main";
+import Button from "./button";
+import Chip from "@components/Chip";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
@@ -12,6 +14,26 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 <Heading.H1>Quill UI</Heading.H1>
                 <Heading.H1 as="div">Quill UI - h1 as div</Heading.H1>
                 <Heading.H1 as="span">Quill UI - h1 as span</Heading.H1>
+                <Chip.SingleSelectDropdown
+                    defaultOption={{
+                        value: "",
+                        label: "Dropdown Chip Single Select",
+                    }}
+                    size="md"
+                    onSelectionChange={() => console.log("123")}
+                    disabled={false}
+                    options={[
+                        { value: "1", label: "Sample Item 1" },
+                        {
+                            value: "2",
+                            label: "Sample Item 2 - which is disabled",
+                            disabled: true,
+                        },
+                        { value: "3", label: "Sample Item 3" },
+                        { value: "4", label: "Sample Item 4" },
+                    ]}
+                />
+                <Chip.Selectable label="Testing" />
             </div>
         </ThemeProvider>
     </React.StrictMode>,
