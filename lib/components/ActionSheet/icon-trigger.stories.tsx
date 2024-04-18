@@ -20,6 +20,8 @@ const meta: Meta = {
         description: "Description",
         closeIcon: <StandaloneXmarkRegularIcon />,
         icon: <LabelPairedPlaceholderCaptionBoldIcon />,
+        onOpen: fn(),
+        isOpen: false,
     },
     argTypes: {
         isOpen: { table: { disable: true } },

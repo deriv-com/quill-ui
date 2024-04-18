@@ -1,30 +1,41 @@
 import type { Meta, StoryObj } from "@storybook/react";
+
+import { ActionSheetExampleControlled } from "./mocks/example";
 import { fn } from "@storybook/test";
-import { ActionSheetExample } from "./mocks/example";
 import {
     LabelPairedPlaceholderCaptionBoldIcon,
     StandaloneXmarkRegularIcon,
 } from "@deriv/quill-icons";
 
 const meta: Meta = {
-    title: "Components/Action Sheet/Button Trigger",
-    component: ActionSheetExample,
+    title: "Components/Action Sheet/Controlled",
+    component: ActionSheetExampleControlled,
     tags: ["autodocs"],
+    parameters: {
+        controls: { hideNoControlsWarning: true },
+    },
     args: {
+        isOpen: false,
         onClose: fn(),
         title: "Title",
         description: "Description",
+        type: "non-modal",
         closeIcon: <StandaloneXmarkRegularIcon />,
         icon: <LabelPairedPlaceholderCaptionBoldIcon />,
+        onOpen: fn(),
     },
     argTypes: {
-        isOpen: { table: { disable: true } },
+        isOpen: {
+            description:
+                "If you wish to manage the opening and closing states, transmit the `open` state from your component. Set the initial value to `false` when passing it.",
+            control: { type: "boolean" },
+        },
         show: { table: { disable: true } },
         handleOpen: { table: { disable: true } },
         handleClose: { table: { disable: true } },
         onOpen: {
             description:
-                "Pass your callback function using this method. It will be triggered on the open function. If you are passing the `isOpen` state, provide your `open` `setState` function like this: `onOpen={() => setIsOpen(true)}`.",
+                "Pass your callback function using this method. It will be triggered on the open function.",
         },
         onClose: {
             description:
@@ -45,20 +56,6 @@ const meta: Meta = {
             options: ["left", "right"],
             control: { type: "radio" },
             description: "This prop will make bottom sheet expandable",
-        },
-        title: {
-            description: "Title for `ActionSheet.Header`",
-        },
-        description: {
-            description: "Description for `ActionSheet.Header`",
-        },
-        closeIcon: {
-            description:
-                "This props allowed you to pass in icon for close button in `ActionSheet.Header`",
-        },
-        icon: {
-            description:
-                "This props allowed you to pass in icon for `ActionSheet.Header`",
         },
         primaryAction: {
             control: {
@@ -82,15 +79,14 @@ const meta: Meta = {
                 "This prop is for `ActionSheet.Footer` buttons alignment",
         },
     },
-} satisfies Meta<typeof ActionSheetExample>;
+} satisfies Meta<typeof ActionSheetExampleControlled>;
 
 export default meta;
-type Story = StoryObj<typeof ActionSheetExample>;
+type Story = StoryObj<typeof ActionSheetExampleControlled>;
 
-export const ButtonTrigger: Story = {
+export const Controlled: Story = {
     args: {
         expandable: true,
-        type: "modal",
         position: "right",
         primaryAction: {
             content: "Primary",
