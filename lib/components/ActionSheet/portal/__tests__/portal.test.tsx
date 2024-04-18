@@ -6,7 +6,7 @@ import {
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { RootPosition, RootProps } from "../../types";
-import ActionSheet from "../..";
+import ActionSheet from "@components/ActionSheet";
 
 const render = (
     ui: React.ReactElement,

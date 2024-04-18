@@ -1,5 +1,5 @@
 import { screen, render } from "@testing-library/react";
-import ActionSheet from "../..";
+import ActionSheet from "@components/ActionSheet";
 
 describe("<ActionSheet.HandleBar/>", () => {
     it("should render correctly with props", () => {

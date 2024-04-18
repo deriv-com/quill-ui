@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import ActionSheet from "../..";
+import ActionSheet from "@components/ActionSheet";
 import { StandaloneXmarkRegularIcon } from "@deriv/quill-icons";
 
 describe("<ActionSheet.Header/>", () => {

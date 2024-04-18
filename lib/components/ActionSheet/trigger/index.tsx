@@ -1,9 +1,8 @@
 import { useContext } from "react";
-// import { Button } from "../../button";
 import { ActionSheetContext } from "../root";
 import { IconSize } from "@deriv/quill-icons";
-import { QuillIconComponent } from "../../../types";
-import { Button, ButtonProps } from "../../Button";
+import { QuillIconComponent } from "@types";
+import { Button, ButtonProps } from "@components/Button";
 
 interface ButtonTriggerProps extends ButtonProps {
     iconComponent?: never;

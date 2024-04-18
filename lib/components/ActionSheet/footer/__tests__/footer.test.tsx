@@ -1,5 +1,5 @@
 import { screen, render } from "@testing-library/react";
-import ActionSheet from "../..";
+import ActionSheet from "@components/ActionSheet";
 import userEvent from "@testing-library/user-event";
 import { FooterAlignment } from "../../types";
 
