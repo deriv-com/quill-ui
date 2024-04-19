@@ -1,6 +1,8 @@
 import React from "react";
 import RadioGroup from "./index";
 import { fn } from "@storybook/test";
+import { TMediumSizes } from "@types";
+
 
 interface RadioGroupProps {
     disabledOption?: boolean;
@@ -9,6 +11,7 @@ interface RadioGroupProps {
     onToggle?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     selected?: string;
     shouldWrapItems?: boolean;
+    size?: TMediumSizes;
 }
 
 const RadioGroupItem = ({

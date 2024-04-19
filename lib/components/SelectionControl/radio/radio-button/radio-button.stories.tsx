@@ -1,6 +1,7 @@
 import React from "react";
 import RadioButton from "./index";
 import "./radio-button.stories.scss";
+import { TMediumSizes } from "@types";
 
 const RadioButtonMeta = {
     title: "Components/Selection Control/Radio/RadioButton",
@@ -78,6 +79,7 @@ interface RadioButtonProps {
     className?: string;
     classNameLabel?: string;
     classNameInfo?: string;
+    size?: TMediumSizes;
 }
 
 const Template: React.FC<RadioButtonProps> = (args) => (
