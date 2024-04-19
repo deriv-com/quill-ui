@@ -15,8 +15,7 @@
     align-items: center;
     gap: var(--semantic-spacing-gap-md);
     border-radius: var(--semantic-borderRadius-md);
-    border: var(--borderWidth-xs) solid
-        var(--core-color-opacity-white-100);
+    border: var(--borderWidth-xs) solid var(--core-color-opacity-white-100);
     background: var(--core-color-solid-slate-1400);
     box-shadow: var(--core-elevation-shadow-330);
     position: absolute;
@@ -25,18 +24,22 @@
     transition: bottom var(--motion-duration-snappy)
         var(--motion-easing-inandout);
 
+    &--container {
+        display: flex;
+        justify-content: center;
+    }
+
     &.slow-animation {
-        animation:
-            slide-up var(--motion-duration-snappy) var(--motion-easing-inandout)
-                forwards,
-            slide-down var(--motion-duration-snappy) var(--core-motion-duration-1300)
-                var(--motion-easing-inandout) forwards;
+        animation: slide-up var(--motion-duration-snappy)
+            var(--motion-easing-inandout) forwards,
+        slide-down var(--motion-duration-snappy) var(--core-motion-duration-1300)
+            var(--motion-easing-inandout) forwards;
     }
     &.fast-animation {
         animation:
             slide-up var(--motion-duration-snappy) var(--motion-easing-inandout)
                 forwards,
-            slide-down var(--motion-duration-snappy) var(--core-motion-duration-800)
+            slide-down var(--motion-duration-snappy) var(--core-motion-duration-900)
                 var(--motion-easing-inandout) forwards;
     }
 
@@ -74,7 +77,9 @@
             padding-right: var(--semantic-spacing-general-sm);
             align-items: flex-start;
             flex: 1 0 0;
-            min-width:  var(--semantic-spacing-general-none); /* Text broken up into another line for long words */
+            min-width: var(
+                --semantic-spacing-general-none
+            ); /* Text broken up into another line for long words */
         }
     }
 
@@ -82,21 +87,20 @@
         display: flex;
     }
 }
-
 @keyframes slide-up {
     0% {
         bottom: -100%;
     }
     100% {
-        bottom: var(--core-size-1600);
+        bottom: var(--core-size-800);
     }
 }
 
 @keyframes slide-down {
-    0% {
-        bottom: var(--core-size-1600);
+    from {
+        bottom: var(--core-size-800);
     }
-    100% {
+    to {
         bottom: -100%;
     }
 }

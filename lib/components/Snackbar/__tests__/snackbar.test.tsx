@@ -1,47 +1,46 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { Snackbar } from "..";
+import { useSnackbar } from "../../../hooks/useSnackbar";
+import { SnackbarProvider } from "../../../providers/snackbar/snackbarProvider";
+
+const removeSnackbarMock = jest.fn();
+jest.mock("../../../hooks/useSnackbar", () => ({
+    useSnackbar: jest.fn(() => ({
+        queue: [],
+        addSnackbar: jest.fn(),
+        removeSnackbar: jest.fn(),
+    })),
+}));
 
 describe("Snackbar", () => {
-    const testMessage = "test message"
+    const testMessage = "test message";
     const defaultProps = {
+        icon: "",
         message: testMessage,
-        isOpen: true,
-        onClose: jest.fn(),
+        actionText: "Action",
+        hasCloseButton: true,
     };
 
     const renderComponent = (props = {}) =>
-        render(<Snackbar {...defaultProps} {...props} />);
+        render(
+            <SnackbarProvider>
+                <Snackbar {...defaultProps} {...props} />
+            </SnackbarProvider>,
+        );
 
     it("renders with default props", () => {
+        (useSnackbar as jest.Mock).mockReturnValue({
+            queue: ["trigger"],
+        });
         const { container } = renderComponent();
         expect(screen.getByText(testMessage)).toBeInTheDocument();
-        expect(container).toMatchSnapshot();
-    });
-    it("calls onActionClick when action button is clicked", () => {
-        const onActionClickMock = jest.fn();
-        const { container } = renderComponent({
-            actionText: "Action",
-            onActionClick: onActionClickMock,
-        });
-        fireEvent.click(screen.getByText("Action"));
-        expect(onActionClickMock).toHaveBeenCalled();
-        expect(container).toMatchSnapshot();
-    });
-    it("calls onClose when close button is clicked", () => {
-        const { container } = renderComponent();
-        fireEvent.click(screen.getByTestId('close-button'));
-        expect(defaultProps.onClose).toHaveBeenCalled();
-        expect(container).toMatchSnapshot();
-    });
-    it("calls onClose after a certain duration when Snackbar is open", () => {
-        jest.useFakeTimers();
-        const { container } = renderComponent();
-        jest.advanceTimersByTime(3000);
-        expect(defaultProps.onClose).toHaveBeenCalled();
-        jest.useRealTimers();
+        expect(screen.getByText("Action")).toBeInTheDocument();
         expect(container).toMatchSnapshot();
     });
     it("renders correctly with custom icon", () => {
+        (useSnackbar as jest.Mock).mockReturnValue({
+            queue: ["trigger"],
+        });
         const { container } = renderComponent({
             icon: <img src="custom-icon.svg" alt="Custom Icon" />,
         });
@@ -49,13 +48,66 @@ describe("Snackbar", () => {
         expect(container).toMatchSnapshot();
     });
     it("renders correctly without action button", () => {
-        const { container } = renderComponent();
+        (useSnackbar as jest.Mock).mockReturnValue({
+            queue: ["trigger"],
+        });
+        const { container } = renderComponent({ actionText: "" });
         expect(screen.queryByText("Action")).not.toBeInTheDocument();
         expect(container).toMatchSnapshot();
     });
     it("renders correctly without close button", () => {
+        (useSnackbar as jest.Mock).mockReturnValue({
+            queue: ["trigger"],
+        });
         const { container } = renderComponent({ hasCloseButton: false });
-        expect(screen.queryByText("x")).not.toBeInTheDocument();
+        expect(screen.queryByTestId("close-button")).not.toBeInTheDocument();
         expect(container).toMatchSnapshot();
+    });
+    it("calls removeSnackbar when close button is clicked", async () => {
+        jest.useFakeTimers();
+        (useSnackbar as jest.Mock).mockReturnValue({
+            queue: ["trigger"],
+            removeSnackbar: removeSnackbarMock,
+        });
+        const { container } = renderComponent();
+
+        act(() => {
+            fireEvent.click(screen.getByTestId("close-button"));
+            jest.advanceTimersByTime(1000);
+        });
+
+        expect(removeSnackbarMock).toHaveBeenCalled();
+        expect(container).toMatchSnapshot();
+        jest.useRealTimers();
+    });
+    it("calls removeSnackbar when action button is clicked", async () => {
+        jest.useFakeTimers();
+        (useSnackbar as jest.Mock).mockReturnValue({
+            queue: ["trigger"],
+            removeSnackbar: removeSnackbarMock,
+        });
+        const { container } = renderComponent();
+
+        act(() => {
+            fireEvent.click(screen.getByText("Action"));
+            jest.advanceTimersByTime(1000);
+        });
+
+        expect(removeSnackbarMock).toHaveBeenCalled();
+        expect(container).toMatchSnapshot();
+        jest.useRealTimers();
+    });
+    it("calls removeSnackbar after a certain duration when Snackbar is open", async () => {
+        jest.useFakeTimers();
+        (useSnackbar as jest.Mock).mockReturnValue({
+            queue: ["trigger"],
+            removeSnackbar: removeSnackbarMock,
+        });
+        const { container } = renderComponent();
+        jest.advanceTimersByTime(3000);
+
+        expect(removeSnackbarMock).toHaveBeenCalled();
+        expect(container).toMatchSnapshot();
+        jest.useRealTimers();
     });
 });

@@ -1,18 +1,22 @@
-import React, { ReactNode, useEffect, useState, HTMLAttributes } from "react";
+import React, {
+    ReactNode,
+    useEffect,
+    useState,
+    HTMLAttributes,
+    useRef,
+} from "react";
 import { Text } from "../Typography";
 import "./snackbar.scss";
 import clsx from "clsx";
 import { Button } from "../Button";
 import { LabelPairedXmarkSmBoldIcon } from "@deriv/quill-icons";
-
-interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
+import { useSnackbar } from "../../hooks/useSnackbar";
+export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     icon?: ReactNode;
     message: string;
     actionText?: string;
     hasCloseButton?: boolean;
-    onClose: () => void;
     onActionClick?: () => void;
-    isOpen: boolean;
 }
 
 export const Snackbar = ({
@@ -21,40 +25,50 @@ export const Snackbar = ({
     actionText,
     onActionClick,
     hasCloseButton = true,
-    isOpen = false,
-    onClose,
     ...rest
 }: SnackbarProps) => {
+    const { queue, removeSnackbar } = useSnackbar();
+    const [isOpen, setIsOpen] = useState(false);
+    const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
     const animationSpeedObj = Object.freeze({
-        fast: 'fast',
-        slow: 'slow'
+        fast: "fast",
+        slow: "slow",
     });
+    const [animationSpeed, setAnimationSpeed] = useState<
+        keyof typeof animationSpeedObj
+    >(animationSpeedObj.slow);
 
-    const [animationSpeed, setAnimationSpeed] = useState<keyof typeof animationSpeedObj>(animationSpeedObj.slow);
     useEffect(() => {
-        if (isOpen) {
+        if (queue.length > 0) {
+            setIsOpen(true);
             setAnimationSpeed(animationSpeedObj.slow);
-            const timer = setTimeout(() => {
-                onClose?.();
+            timerRef.current = setTimeout(() => {
+                setIsOpen(false);
+                removeSnackbar(); 
             }, 3000);
-
             return () => {
-                clearTimeout(timer);
+                clearTimeout(timerRef.current ?? "");
             };
         }
-    }, [isOpen]);
+    }, [queue]);
 
     const handleClose = () => {
-        onClose?.();
+        if (timerRef) clearTimeout(timerRef.current ?? "");
         setAnimationSpeed(animationSpeedObj.fast);
+        setTimeout(() => {
+            setIsOpen(false);
+            removeSnackbar();
+        }, 1000);
     };
 
     const handleActionClick = () => {
         onActionClick?.();
-        setAnimationSpeed(animationSpeedObj.fast);
+        handleClose();
     };
+
     return (
-        <>
+        <div className="snackbar--container">
             {isOpen && (
                 <div
                     className={clsx(
@@ -74,13 +88,24 @@ export const Snackbar = ({
                         </Text>
                     </div>
                     {actionText && (
-                        <Button variant="tertiary" label={actionText} color="white" onClick={handleActionClick} />
+                        <Button
+                            variant="tertiary"
+                            label={actionText}
+                            color="white"
+                            onClick={handleActionClick}
+                        />
                     )}
                     {hasCloseButton && (
-                        <Button variant="tertiary" label={<LabelPairedXmarkSmBoldIcon />} color="white" onClick={handleClose} data-testid='close-button' />
+                        <Button
+                            variant="tertiary"
+                            label={<LabelPairedXmarkSmBoldIcon />}
+                            color="white"
+                            onClick={handleClose}
+                            data-testid="close-button"
+                        />
                     )}
                 </div>
             )}
-        </>
+        </div>
     );
 };

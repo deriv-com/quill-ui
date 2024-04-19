@@ -1,7 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
+import type { Meta } from "@storybook/react";
 import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons/Standalone";
 import { fn } from "@storybook/test";
 import { Snackbar } from ".";
+import { useSnackbar } from "../../hooks/useSnackbar";
+import { Button } from "../Button";
+import { SnackbarProvider } from "../../providers/snackbar/snackbarProvider";
 
 const meta = {
     title: "Components/Snackbar/Snackbar",
@@ -12,9 +16,7 @@ const meta = {
         icon: <StandalonePlaceholderRegularIcon fill="#ffffff" iconSize="sm" />,
         message: "Message goes here",
         actionText: "Action",
-        isOpen: false,
         onActionClick: fn(),
-        onClose: fn(),
         hasCloseButton: true,
     },
     argTypes: {
@@ -37,103 +39,114 @@ const meta = {
             description:
                 "Optional. Must be included if we have actionText to trigger action and close snackbar.",
         },
-        isOpen: {
-            description:
-                "Required. Controls opening and closing of snackbar. Should be set to false by default.",
-            control: "boolean",
-        },
-        onClose: {
-            description:
-                "Required. Needed to close snackbar after a certain time.",
-        },
         hasCloseButton: {
             control: "boolean",
             description: "Optional. Set to true by default.",
+        },
+    },
+    decorators: [
+        (Story) => (
+            <SnackbarProvider>
+                <Story />
+            </SnackbarProvider>
+        ),
+    ],
+    parameters: {
+        docs: {
+            story: {
+                height: "200px",
+            },
         },
     },
 } satisfies Meta<typeof Snackbar>;
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+const Template = ({
+    icon,
+    message,
+    actionText,
+    onActionClick,
+    hasCloseButton,
+}: React.ComponentProps<typeof Snackbar>) => {
+    const { queue: SnackbarQueue, addSnackbar } = useSnackbar();
 
-export const defaultSnackbar: Story = {
-    parameters: {
-        docs: {
-            story: {
-                height: '100px',
-            }
-        }
-    }
+    return (
+        <>
+            <>{SnackbarQueue[0]}</>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+                <Button
+                    size="lg"
+                    label={"Add Snackbar"}
+                    style={{ margin: "0 auto" }}
+                    onClick={() => {
+                        addSnackbar({
+                            message: message,
+                            icon: icon,
+                            hasCloseButton: hasCloseButton,
+                            actionText: actionText,
+                            onActionClick: onActionClick,
+                        });
+                    }}
+                />
+            </div>
+        </>
+    );
 };
 
-export const SnackbarWithMessageOnly: Story = {
-    args: {
-        isOpen: true,
-        icon: "",
-        hasCloseButton: false,
-        actionText: "",
-    },
-};
+export const defaultSnackbar = Template.bind(this, meta.args);
 
-export const SnackbarWithIcon: Story = {
-    args: {
-        isOpen: true,
-        icon: <StandalonePlaceholderRegularIcon fill="#ffffff" iconSize="sm" />,
-        hasCloseButton: false,
-        actionText: "",
-    },
-};
+export const SnackbarWithMessageOnly = Template.bind(this, {
+    ...meta.args,
+    icon: "",
+    hasCloseButton: false,
+    actionText: "",
+});
 
-export const SnackbarWithAction: Story = {
-    args: {
-        isOpen: true,
-        icon: "",
-        hasCloseButton: false,
-        actionText: "Action",
-        onActionClick: fn(),
-    },
-};
+export const SnackbarWithIcon = Template.bind(this, {
+    ...meta.args,
+    icon: <StandalonePlaceholderRegularIcon fill="#ffffff" iconSize="sm" />,
+    hasCloseButton: false,
+    actionText: "",
+});
 
-export const SnackbarWithCloseButton: Story = {
-    args: {
-        isOpen: true,
-        icon: "",
-        actionText: "",
-        onClose: fn(),
-    },
-};
+export const SnackbarWithAction = Template.bind(this, {
+    ...meta.args,
+    icon: "",
+    hasCloseButton: false,
+    actionText: "Action",
+    onActionClick: fn(),
+});
 
-export const SnackbarWithTwoLinesMessage: Story = {
-    args: {
-        isOpen: true,
-        icon: "",
-        message:
-            "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem. Lorem ipsum lorem lorem. Lorem ipsum lorem lorem.",
-        hasCloseButton: false,
-        actionText: "",
-    },
-};
+export const SnackbarWithCloseButton = Template.bind(this, {
+    ...meta.args,
+    icon: "",
+    actionText: "",
+});
 
-export const SnackbarWithTwoLinesMessageWithCloseButton: Story = {
-    args: {
-        isOpen: true,
-        icon: "",
-        message:
-            "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem.",
-        onClose: fn(),
-        actionText: "",
-    },
-};
+export const SnackbarWithTwoLinesMessage = Template.bind(this, {
+    ...meta.args,
+    icon: "",
+    message:
+        "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem. Lorem ipsum lorem lorem. Lorem ipsum lorem lorem.",
+    hasCloseButton: false,
+    actionText: "",
+});
 
-export const SnackbarWithTwoLinesMessageWithActionButton: Story = {
-    args: {
-        isOpen: true,
-        icon: "",
-        message:
-            "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem.",
-        actionText: "Action",
-        hasCloseButton: false,
-        onActionClick: fn(),
-    },
-};
+export const SnackbarWithTwoLinesMessageWithCloseButton = Template.bind(this, {
+    ...meta.args,
+    icon: "",
+    message:
+        "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem.",
+    actionText: "",
+});
+
+export const SnackbarWithTwoLinesMessageWithActionButton = Template.bind(this, {
+    ...meta.args,
+    icon: "",
+    message:
+        "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem.",
+    actionText: "Action",
+    hasCloseButton: false,
+    onActionClick: fn(),
+});
