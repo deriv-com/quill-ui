@@ -66,16 +66,22 @@ const RadioGroupMeta = {
             description:
                 "Pre-selects a specific radio button value by its value prop.",
         },
+        size: {
+            description: "Size of the radio button elements.",
+            control: { type: "select" },
+            options: ["sm", "md"],
+        },
         shouldWrapItems: {
             description:
                 "Controls whether radio buttons within the group wrap to multiple lines.",
             control: { type: "boolean" },
         },
-        disabledOption: {
-            description: "Disables the second radio button option.",
+        className: {
+            description: "CSS class name applied to the radio group element.",
         },
-        hiddenOption: {
-            description: "Hides the third radio button option.",
+        required: {
+            description: "Sets the radio group as a required field.",
+            control: { type: "boolean" },
         },
     },
 };
@@ -94,4 +100,14 @@ export const HiddenOption = Template.bind(this, {
 
 export const WrappedItems = Template.bind(this, {
     shouldWrapItems: true,
+});
+
+export const CustomOnToggleCallback = Template.bind(this, {
+    onToggle: (e) => {
+        alert(`Selected option: ${e.target.value}`);
+    },
+});
+
+export const BasicRadioGroupSmall = Template.bind(this, {
+    size: "sm",
 });
