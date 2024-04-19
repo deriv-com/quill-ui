@@ -5,17 +5,22 @@ import React from "react";
 import { TMediumSizes } from "@types";
 import { CaptionText } from "@components/Typography";
 
+export type Variants = "fill" | "outline";
+export type Status = "neutral" | "success" | "error";
+export type Types = "text" | "email" | "password";
+export type TextAlignments = "left" | "center";
+
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-    type?: "text" | "email" | "password";
+    type?: Types;
     icon?: ReactNode;
     statusIcon?: ReactNode;
     inputSize?: TMediumSizes;
-    status?: "neutral" | "success" | "error";
+    status?: Status;
     disabled?: boolean;
-    variant?: "fill" | "outline";
+    variant?: Variants;
     leftStatusMessage?: string;
     rightStatusMessage?: string;
-    textAlignment?: "left" | "center";
+    textAlignment?: TextAlignments;
     label?: ReactNode;
     value?: string;
 }

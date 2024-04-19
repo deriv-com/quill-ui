@@ -5,20 +5,22 @@ import {
     StandaloneCircleUserRegularIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons";
+import { Status, Variants } from "../base";
 
 const placeholder = "Placeholder";
 
-const variants = {
-    FILL: "fill",
-    OUTLINE: "outline",
+const variants: Record<string, Variants> = {
+    fill: "fill",
+    outline: "outline",
 };
 
-const status = {
-    NEUTRAL: "neutral",
-    SUCCESS: "success",
-    ERROR: "error",
+const status: Record<string, Status> = {
+    neutral: "neutral",
+    success: "success",
+    error: "error",
 };
 
+const label = "label";
 const leftStatusMessage = "Status message goes here";
 const rightStatusMessage = "0/0";
 
@@ -86,51 +88,51 @@ type Story = StoryObj<typeof meta>;
 
 export const DefaultTextField: Story = {
     args: {
-        placeholder: "Placeholder",
+        placeholder,
     },
 };
 export const SuccessTextField: Story = {
     args: {
-        placeholder: "Placeholder",
-        variant: "outline",
-        status: "success",
+        placeholder,
+        variant: variants.outline,
+        status: status.success,
     },
 };
 export const ErrorTextField: Story = {
     args: {
-        placeholder: "Placeholder",
-        variant: "outline",
-        status: "error",
+        placeholder,
+        variant: variants.outline,
+        status: status.error,
     },
 };
 export const DisabledTextField: Story = {
     args: {
-        placeholder: "Placeholder",
+        placeholder,
         disabled: true,
-        variant: "outline",
+        variant: variants.outline,
     },
 };
 
 export const TextFieldWithLabel: Story = {
     args: {
-        placeholder: "Placeholder",
-        label: "Label",
+        placeholder,
+        label,
     },
 };
 
 export const TextFieldWithIconAndLabel: Story = {
     args: {
-        placeholder: "Placeholder",
-        label: "Label",
+        placeholder,
+        label,
         icon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
     },
 };
 
 export const SuccessStatusIconTextField: Story = {
     args: {
-        placeholder: "Placeholder",
-        variant: "outline",
-        status: "success",
+        placeholder,
+        variant: variants.outline,
+        status: status.success,
         statusIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     },
     argTypes: {
@@ -144,18 +146,18 @@ export const SuccessStatusIconTextField: Story = {
 
 export const StatusMessageTextField: Story = {
     args: {
-        placeholder: "Placeholder",
-        variant: "outline",
-        status: "success",
-        leftStatusMessage: "Status message goes here",
+        placeholder,
+        variant: variants.outline,
+        status: status.success,
+        leftStatusMessage,
     },
 };
 
 export const DoubleStatusMessageTextField: Story = {
     args: {
         placeholder,
-        // variants.OUTLINE,
-        // status.ERROR,
+        variant: variants.outline,
+        status: status.error,
         leftStatusMessage,
         rightStatusMessage,
     },
@@ -163,21 +165,21 @@ export const DoubleStatusMessageTextField: Story = {
 
 export const SuccessMessageTextFieldWithIcons: Story = {
     args: {
-        placeholder: "Placeholder",
-        variant: "outline",
-        status: "success",
-        leftStatusMessage: "Status message goes here",
-        rightStatusMessage: "0/0",
+        placeholder,
+        variant: variants.outline,
+        status: status.success,
+        leftStatusMessage,
+        rightStatusMessage,
         statusIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     },
 };
 export const ErrorMessageTextFieldWithIcons: Story = {
     args: {
-        placeholder: "Placeholder",
-        variant: "outline",
-        status: "error",
-        leftStatusMessage: "Status message goes here",
-        rightStatusMessage: "0/0",
+        placeholder,
+        variant: variants.outline,
+        status: status.error,
+        leftStatusMessage,
+        rightStatusMessage,
         statusIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
     },
 };
