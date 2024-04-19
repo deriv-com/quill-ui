@@ -16,7 +16,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     leftStatusMessage?: string;
     rightStatusMessage?: string;
     textAlignment?: "left" | "center";
-    label?: string;
+    label?: ReactNode;
     value?: string;
 }
 
@@ -76,7 +76,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             setHasValue(!!e.target.value);
                             onChange?.(e);
                         }}
-                        id={label}
+                        id={label?.toString()}
                         ref={ref}
                     />
                     {label && inputSize === "md" && (
@@ -86,7 +86,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 `label__status--${status}`,
                                 Icon && `label__hasIcon`,
                             )}
-                            htmlFor={label}
+                            htmlFor={label.toString()}
                         >
                             {label}
                         </label>

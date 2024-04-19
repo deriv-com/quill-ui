@@ -6,6 +6,22 @@ import {
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons";
 
+const placeholder = "Placeholder";
+
+const variants = {
+    FILL: "fill",
+    OUTLINE: "outline",
+};
+
+const status = {
+    NEUTRAL: "neutral",
+    SUCCESS: "success",
+    ERROR: "error",
+};
+
+const leftStatusMessage = "Status message goes here";
+const rightStatusMessage = "0/0";
+
 const meta = {
     title: "Components/Inputs/Text Field",
     component: TextField,
@@ -137,11 +153,11 @@ export const StatusMessageTextField: Story = {
 
 export const DoubleStatusMessageTextField: Story = {
     args: {
-        placeholder: "Placeholder",
-        variant: "outline",
-        status: "success",
-        leftStatusMessage: "Status message goes here",
-        rightStatusMessage: "0/0",
+        placeholder,
+        // variants.OUTLINE,
+        // status.ERROR,
+        leftStatusMessage,
+        rightStatusMessage,
     },
 };
 
