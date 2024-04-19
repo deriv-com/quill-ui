@@ -1,6 +1,8 @@
 import React, { ChangeEvent } from "react";
 import clsx from "clsx";
 import RadioButton from "../radio-button";
+import { TMediumSizes } from "@types";
+import "./radio-group.scss";
 
 interface IItem extends React.HTMLAttributes<HTMLDivElement> {
     disabled?: boolean;
@@ -21,6 +23,7 @@ interface IRadioGroup extends IItemWrapper {
     onToggle?: (e: ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
     selected?: string;
+    size?: TMediumSizes;
 }
 
 const ItemWrapper = ({
@@ -44,6 +47,7 @@ const RadioGroup = ({
     required,
     selected,
     shouldWrapItems,
+    size,
 }: IRadioGroup & React.PropsWithChildren) => {
     const [selected_option, setSelectedOption] = React.useState(selected);
 
@@ -77,6 +81,7 @@ const RadioGroup = ({
                                     onChange={onChange}
                                     disabled={disabled}
                                     required={required}
+                                    size={size}
                                 >
                                     {label}
                                 </RadioButton>
