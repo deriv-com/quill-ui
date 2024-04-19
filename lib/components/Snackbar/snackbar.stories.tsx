@@ -4,7 +4,7 @@ import { fn } from "@storybook/test";
 import { Snackbar } from ".";
 
 const meta = {
-    title: "Components/Snackbar/Snackbar",
+    title: "Components/Snackbar/Default",
     component: Snackbar,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
@@ -61,10 +61,10 @@ export const defaultSnackbar: Story = {
     parameters: {
         docs: {
             story: {
-                height: '100px',
-            }
-        }
-    }
+                height: "100px",
+            },
+        },
+    },
 };
 
 export const SnackbarWithMessageOnly: Story = {
