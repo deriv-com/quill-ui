@@ -39,8 +39,7 @@ const Root = ({
     useEffect(() => {
         if (!isOpen) {
             handleClose();
-        }
-        if (isOpen) {
+        } else {
             handleOpen();
         }
     }, [isOpen, handleClose]);
