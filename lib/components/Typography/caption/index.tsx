@@ -1,10 +1,7 @@
 import clsx from "clsx";
 import { Typography, TypographyProps } from "../base";
 import "../typography.scss";
-import {
-    getTextDecoration,
-    getTextWeight,
-} from "../../../utils/typography-utils";
+import { getTextDecoration, getTextWeight } from "@utils/typography-utils";
 
 export const CaptionText = ({
     children,
@@ -13,7 +10,7 @@ export const CaptionText = ({
     as = "p",
     italic = false,
     underlined = false,
-    bold = true,
+    bold = false,
     ...rest
 }: TypographyProps) => {
     const decoration = getTextDecoration(italic, underlined);

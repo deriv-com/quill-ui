@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleSwitch matches snapshot when blurred 1`] = `
+<DocumentFragment>
+  <button
+    aria-pressed="false"
+    class="toggle-switch"
+  >
+    <div
+      class="toggle-switch__slider"
+    >
+      <div
+        class="toggle-switch__knob"
+      />
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`ToggleSwitch matches snapshot when focused 1`] = `
+<DocumentFragment>
+  <button
+    aria-pressed="false"
+    class="toggle-switch"
+  >
+    <div
+      class="toggle-switch__slider"
+    >
+      <div
+        class="toggle-switch__knob"
+      />
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`ToggleSwitch renders correctly when defaultChecked 1`] = `
+<DocumentFragment>
+  <button
+    aria-pressed="true"
+    class="toggle-switch"
+  >
+    <div
+      class="toggle-switch__slider enabled"
+    >
+      <div
+        class="toggle-switch__knob enabled"
+      />
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`ToggleSwitch renders correctly when disabled 1`] = `
+<DocumentFragment>
+  <button
+    aria-pressed="false"
+    class="toggle-switch"
+    disabled=""
+  >
+    <div
+      class="toggle-switch__slider"
+    >
+      <div
+        class="toggle-switch__knob"
+      />
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`ToggleSwitch renders correctly with default props 1`] = `
+<DocumentFragment>
+  <button
+    aria-pressed="false"
+    class="toggle-switch"
+  >
+    <div
+      class="toggle-switch__slider"
+    >
+      <div
+        class="toggle-switch__knob"
+      />
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`ToggleSwitch toggles from off to on and matches snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-pressed="true"
+    class="toggle-switch"
+  >
+    <div
+      class="toggle-switch__slider enabled"
+    >
+      <div
+        class="toggle-switch__knob enabled"
+      />
+    </div>
+  </button>
+</DocumentFragment>
+`;

@@ -1,5 +1,5 @@
 // SnackbarContext.js
-import { Snackbar } from "@components/Snackbar";
+import { Snackbar } from "../../components/Snackbar/";
 import { ComponentProps, createContext } from "react";
 import { SnackbarComponent } from "./snackbarProvider";
 

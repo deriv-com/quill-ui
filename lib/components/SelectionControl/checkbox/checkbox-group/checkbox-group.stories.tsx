@@ -57,7 +57,7 @@ const config = [
 ];
 
 const meta = {
-    title: "Components/Selection control/CheckboxGroup",
+    title: "Components/Selection Control/Checkbox Group",
     component: CheckboxGroup,
     tags: ["autodocs"],
     args: {
