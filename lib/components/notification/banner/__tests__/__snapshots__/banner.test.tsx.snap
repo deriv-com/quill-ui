@@ -52,7 +52,7 @@ exports[`NotificationBanner should apply correct classname 1`] = `
         </g>
         <defs>
           <clippath
-            id="4cb956d93676db27e3570118096072d8__a"
+            id="7de5e81d528becfb5d441dba2ca2f432__a"
           >
             <path
               d="M0 0h11v22H0z"
@@ -119,7 +119,7 @@ exports[`NotificationBanner should have correct title 1`] = `
         </g>
         <defs>
           <clippath
-            id="4cb956d93676db27e3570118096072d8__a"
+            id="7de5e81d528becfb5d441dba2ca2f432__a"
           >
             <path
               d="M0 0h11v22H0z"
@@ -184,7 +184,7 @@ exports[`NotificationBanner should render correct icon based on the notification
         </g>
         <defs>
           <clippath
-            id="4cb956d93676db27e3570118096072d8__a"
+            id="7de5e81d528becfb5d441dba2ca2f432__a"
           >
             <path
               d="M0 0h11v22H0z"
