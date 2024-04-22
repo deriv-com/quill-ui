@@ -34,7 +34,7 @@ export const TabFillContentWithIconsOnLeft = (
     <MockTab
         {...args}
         iconPosition="left"
-        tabContent="fill"
+        contentStyle="fill"
         icon={placeholder[args?.size as keyof typeof placeholder]}
     />
 );
@@ -44,10 +44,10 @@ export const TabFillContentWithIconsOnTop = (
     <MockTab
         {...args}
         iconPosition="top"
-        tabContent="fill"
+        contentStyle="fill"
         icon={placeholder[args?.size as keyof typeof placeholder]}
     />
 );
 export const TabFillContentWithoutIcons = (
     args: ComponentProps<typeof MockTab>,
-) => <MockTab {...args} tabContent="fill" />;
+) => <MockTab {...args} contentStyle="fill" />;

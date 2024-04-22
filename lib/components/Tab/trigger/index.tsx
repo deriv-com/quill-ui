@@ -13,7 +13,7 @@ export const TabTrigger = ({
     ...rest
 }: TabProps) => {
     const [selectedTab, setSelectedTab] = useState(false);
-    const { activeTab, handleToggle, id, size, iconPosition, tabContent } =
+    const { activeTab, handleToggle, id, size, iconPosition, contentStyle } =
         useContext(TabContext);
 
     const onClickTab = (e: MouseEvent<HTMLButtonElement>) => {
@@ -57,7 +57,7 @@ export const TabTrigger = ({
             {...rest}
             className={clsx(
                 "tab-menu",
-                tabContent === "fill"
+                contentStyle === "fill"
                     ? `tab-menu__variants__fill-size-${size} `
                     : `tab-menu__variants__hug-size-${size}`,
                 `tab-trigger__icon-position--${iconPosition}`,

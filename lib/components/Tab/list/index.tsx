@@ -5,13 +5,13 @@ import { useContext } from "react";
 import { TabContext } from "../container";
 
 export const TabList = ({ children, className }: TabProps) => {
-    const { tabContent } = useContext(TabContext);
+    const { contentStyle } = useContext(TabContext);
     return (
         <div className={clsx("tab-list--container", className)}>
             <div
                 className={clsx(
                     "tab-list--item",
-                    tabContent === "hug" && "tab-list--item-hug-content",
+                    contentStyle === "hug" && "tab-list--item-hug-content",
                 )}
                 role="tablist"
                 aria-orientation="horizontal"

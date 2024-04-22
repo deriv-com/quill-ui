@@ -15,7 +15,7 @@ export const TabContainer = ({
     id = "tab-default-id",
     size = "md",
     iconPosition = "left",
-    tabContent = "fill",
+    contentStyle = "fill",
     className,
 }: TabProps) => {
     const [activeTab, setActiveTab] = useState(0);
@@ -32,7 +32,7 @@ export const TabContainer = ({
                 id,
                 size,
                 iconPosition,
-                tabContent,
+                contentStyle,
             }}
         >
             <div id={id} className={className}>

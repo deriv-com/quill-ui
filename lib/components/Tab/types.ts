@@ -2,7 +2,6 @@ import React, { ComponentProps } from "react";
 
 export type QuillIconComponent = React.ForwardRefExoticComponent<"ref">;
 export type TTabSize = "sm" | "md";
-export type TTabContent = "hug" | "fill";
 
 export interface TabProps extends ComponentProps<"button"> {
     size?: TTabSize;
@@ -10,5 +9,5 @@ export interface TabProps extends ComponentProps<"button"> {
     iconPosition?: "left" | "top";
     className?: string;
     children?: React.ReactNode;
-    tabContent?: TTabContent;
+    contentStyle?: "hug" | "fill";
 }

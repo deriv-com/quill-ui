@@ -34,7 +34,7 @@ export const TabHugContentWithIconsOnLeft = (
 ) => (
     <MockTab
         {...args}
-        tabContent="hug"
+        contentStyle="hug"
         icon={placeholder[args?.size as keyof typeof placeholder]}
     />
 );
@@ -44,10 +44,10 @@ export const TabHugContentWithIconsOnTop = (
     <MockTab
         {...args}
         iconPosition="top"
-        tabContent="hug"
+        contentStyle="hug"
         icon={placeholder[args?.size as keyof typeof placeholder]}
     />
 );
 export const TabHugContentWithoutIcons = (
     args: ComponentProps<typeof MockTab>,
-) => <MockTab {...args} tabContent="hug" />;
+) => <MockTab {...args} contentStyle="hug" />;

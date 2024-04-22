@@ -2,13 +2,13 @@ import Tab from "@components/Tab";
 import { Text } from "@components/Typography";
 import { TabProps } from "../types";
 
-const MockTab = ({ size, iconPosition, tabContent, ...props }: TabProps) => {
+const MockTab = ({ size, iconPosition, contentStyle, ...props }: TabProps) => {
     return (
         <Tab.Container
             id="test"
             size={size}
             iconPosition={iconPosition}
-            tabContent={tabContent}
+            contentStyle={contentStyle}
         >
             <Tab.List>
                 <Tab.Trigger {...props}>Forex</Tab.Trigger>
