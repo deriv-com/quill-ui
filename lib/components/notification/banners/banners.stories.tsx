@@ -1,7 +1,6 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
-import { fn } from "@storybook/test";
 import NotificationBanners from ".";
 import { TYPE } from "../../../utils/notification-utils";
 
@@ -73,7 +72,6 @@ const Template: Story = {
 
         const handleClose = (id: string) => {
             setBanners(banners.filter((banner) => banner.id !== id));
-            fn();
         };
 
         return (
