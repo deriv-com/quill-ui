@@ -1,7 +1,6 @@
 import { forwardRef } from "react";
 import clsx from "clsx";
 import { ButtonProps } from "../types";
-import { Text, CaptionText } from "../../Typography";
 import {
     LabelPairedChevronDownLgBoldIcon,
     LabelPairedChevronDownMdBoldIcon,
@@ -9,6 +8,7 @@ import {
     LabelPairedChevronDownXlBoldIcon,
 } from "@deriv/quill-icons";
 import "../button.scss";
+import { CaptionText, Text } from "@components/Typography";
 
 export const ButtonSize = {
     xl: "quill-button__size--xl",

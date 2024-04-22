@@ -4,13 +4,14 @@ import {
     SocialGoogleBrandIcon,
     SocialFacebookBrandDarkIcon,
     SocialAppleBlackIcon,
+    SocialFacebookBrandIcon,
 } from "@deriv/quill-icons/Social";
 import { SocialButtonProps } from "../types";
 import clsx from "clsx";
 import { ButtonSize } from "../base";
 import "./social.scss";
 import "../button.scss";
-import { Text } from "../../Typography/text";
+import { Text } from "@components/Typography";
 
 export const socialButtonIconSize = {
     md: {
@@ -75,12 +76,18 @@ export const SocialButton = forwardRef<HTMLButtonElement, SocialButtonProps>(
                 {social === "google" && (
                     <SocialGoogleBrandIcon {...socialButtonIconSize[size]} />
                 )}
-                {social === "facebook" && (
-                    <SocialFacebookBrandDarkIcon
-                        {...socialButtonIconSize[size]}
-                        fill="#fff"
-                    />
-                )}
+                {social === "facebook" &&
+                    (variant === "primary" ? (
+                        <SocialFacebookBrandDarkIcon
+                            {...socialButtonIconSize[size]}
+                            fill="#fff"
+                        />
+                    ) : (
+                        <SocialFacebookBrandIcon
+                            {...socialButtonIconSize[size]}
+                            fill="#fff"
+                        />
+                    ))}
                 {social === "apple" && variant === "primary" ? (
                     <SocialAppleWhiteIcon {...socialButtonIconSize[size]} />
                 ) : social === "apple" && variant === "secondary" ? (

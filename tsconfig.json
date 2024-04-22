@@ -5,11 +5,12 @@
             "@components/*": ["lib/components/*"],
             "@hooks/*": ["lib/hooks/*"],
             "@providers/*": ["lib/providers/*"],
-            "@utils/*": ["lib/utils/*"]
-          },
+            "@utils/*": ["lib/utils/*"],
+            "@types": ["lib/types.ts"]
+        },
         "target": "ES2020",
         "useDefineForClassFields": true,
-        "lib": ["ES2020", "DOM", "DOM.Iterable"],
+        "lib": ["ES2020", "ES2023.Array", "DOM", "DOM.Iterable"],
         "module": "ESNext",
         "skipLibCheck": true,
 
