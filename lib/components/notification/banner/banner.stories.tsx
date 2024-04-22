@@ -72,27 +72,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NotificationBannerDesktop: Story = {
+export const NotificationBannerExample: Story = {
     args: {
         isMobile: false,
     },
     parameters: { viewport: { defaultViewport: "desktop" } },
-};
-
-export const NotificationBannerMobile: Story = {
-    args: {
-        isMobile: true,
-    },
-    parameters: { viewport: { defaultViewport: "mobile1" } },
     render: (args) => (
-        <div
-            style={{
-                position: "absolute",
-                top: "8px",
-                left: "8px",
-                width: "calc(100vw - 16px)",
-            }}
-        >
+        <div style={{ width: "360px" }}>
             <NotificationBanner {...args} />
         </div>
     ),

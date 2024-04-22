@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { fn } from "@storybook/test";
@@ -24,26 +25,6 @@ const meta = {
             defaultViewport: "desktop",
         },
     },
-    args: {
-        banners: [
-            {
-                message: "This is an information message",
-                title: "Information",
-                type: TYPE.INFO,
-            },
-            {
-                message: "This is a warning message",
-                title: "Warning",
-                type: TYPE.WARNING,
-            },
-            {
-                message: "This is an error message",
-                title: "Error",
-                type: TYPE.ERROR,
-            },
-        ],
-        onClose: fn(),
-    },
     argTypes: {
         className: {
             control: { type: null },
@@ -67,11 +48,51 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const Template: Story = {
+    render: (args) => {
+        const [banners, setBanners] = useState([
+            {
+                id: "0",
+                message: "This is an information message",
+                title: "Information",
+                type: TYPE.INFO,
+            },
+            {
+                id: "1",
+                message: "This is a warning message",
+                title: "Warning",
+                type: TYPE.WARNING,
+            },
+            {
+                id: "2",
+                message: "This is an error message",
+                title: "Error",
+                type: TYPE.ERROR,
+            },
+        ]);
+
+        const handleClose = (id: string) => {
+            setBanners(banners.filter((banner) => banner.id !== id));
+            fn();
+        };
+
+        return (
+            <NotificationBanners
+                {...args}
+                banners={banners}
+                onClose={handleClose}
+            />
+        );
+    },
+};
+
 export const NotificationBannersDesktop: Story = {
+    ...Template,
     parameters: { viewport: { defaultViewport: "desktop" } },
 };
 
 export const NotificationBannersMobile: Story = {
+    ...Template,
     args: {
         isMobile: true,
     },

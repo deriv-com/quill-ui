@@ -13,11 +13,9 @@
     &-banner,
     &-banner__mobile {
         position: relative;
-        // bottom: 8px;
-        // left: 8px;
         display: flex;
         align-items: center;
-        width: 360px;
+        width: 100%;
         height: fit-content;
         min-height: 72px;
         padding: 16px 32px 16px 16px;
@@ -36,6 +34,7 @@
             );
         background-color: var(--semantic-color-background-dialog);
         cursor: pointer;
+        animation: 240ms cubic-bezier(0.72, 0, 0.24, 1) enter-desktop;
 
         .icon {
             display: flex;
@@ -72,11 +71,66 @@
             align-items: center;
             gap: 16px;
         }
-        &__mobile {
-            //     top: 8px;
-            //     bottom: unset;
-            //     width: calc(100vw - 16px);
-            width: inherit;
+        &.hidden {
+            animation: 240ms cubic-bezier(0.72, 0, 0.24, 1) exit-desktop;
         }
+    }
+    &-banner__mobile {
+        animation: 240ms cubic-bezier(0.72, 0, 0.24, 1) enter-mobile;
+
+        &.hidden {
+            animation: 240ms cubic-bezier(0.72, 0, 0.24, 1) exit-mobile;
+        }
+    }
+}
+
+.notification-banners,
+.notification-banners__mobile {
+    position: absolute;
+    width: 360px;
+    bottom: 8px;
+    left: 8px;
+    z-index: 6;
+
+    &__mobile {
+        top: 8px;
+        bottom: unset;
+        width: calc(100vw - 16px);
+    }
+}
+
+@keyframes enter-mobile {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes enter-desktop {
+    0% {
+        transform: translateY(100vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes exit-mobile {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+@keyframes exit-desktop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
     }
 }

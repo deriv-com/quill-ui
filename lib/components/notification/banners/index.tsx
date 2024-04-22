@@ -1,69 +1,49 @@
-import React, { ReactNode, useEffect, useRef, useState } from "react";
+import React, { ReactNode } from "react";
+import clsx from "clsx";
 import { TYPE } from "../../../utils/notification-utils";
 import NotificationBanner from "../banner";
 
 export interface NotificationBannersProps {
+    autohideTimeout?: number;
     className?: string;
     banners?: Array<{
+        id: string;
         message?: ReactNode;
         title?: string;
         type: (typeof TYPE)[keyof typeof TYPE];
     }>;
     isMobile?: boolean;
-    onClose?: (closedBannerIdx: number) => void;
+    onClose?: (bannerId: string) => void;
+    zIndex?: number;
 }
 
 const NotificationBanners = ({
+    autohideTimeout,
     banners = [],
+    className,
     isMobile,
     onClose,
+    zIndex,
 }: NotificationBannersProps) => {
-    const [visibleBannerIdx, setVisibleBannerIdx] = useState(0);
-    const intervalId = useRef<ReturnType<typeof setInterval>>();
-
-    useEffect(() => {
-        if (banners.length > 0) {
-            runInterval();
-        }
-        return () => {
-            if (intervalId.current) clearInterval(intervalId.current);
-        };
-    }, []);
-
-    const runInterval = () => {
-        clearInterval(intervalId.current);
-        const id = setInterval(() => {
-            // hide the current banner
-            setVisibleBannerIdx((idx) => {
-                const nextId = idx + 1;
-                if (nextId > banners.length - 1) {
-                    clearInterval(id);
-                    return idx;
-                }
-                return nextId;
-            });
-        }, 4000);
-        intervalId.current = id;
-    };
-
-    const handleClose = () => {
-        const nextId = visibleBannerIdx + 1;
-        if (nextId > banners.length - 1) {
-            return;
-        }
-        // hide the current banner
-        setVisibleBannerIdx(nextId);
-        runInterval();
-        onClose?.(visibleBannerIdx);
-    };
-
     if (!banners.length) return null;
     return (
-        <NotificationBanner
-            {...banners[visibleBannerIdx]}
-            isMobile={isMobile}
-            onClose={handleClose}
-        />
+        <div
+            className={clsx(
+                `notification-banners${isMobile ? "__mobile" : ""}`,
+                className,
+            )}
+            style={{ zIndex }}
+        >
+            {banners.slice(0, 1).map(({ id, ...rest }) => (
+                <NotificationBanner
+                    {...rest}
+                    autohideTimeout={autohideTimeout}
+                    key={id}
+                    isMobile={isMobile}
+                    onClose={() => onClose?.(id)}
+                />
+            ))}
+        </div>
     );
 };
 
