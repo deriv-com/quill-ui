@@ -27,6 +27,7 @@ class Transformer {
             "core/typography",
             "core/motion",
             "core/sizing",
+            "component/component",
             "semantic/global",
             "semantic/viewPort/default",
         ];
@@ -59,6 +60,7 @@ class Transformer {
             "line.height": "lineHeight",
             "letter.spacing": "letterSpacing",
             "text.decoration": "textDecoration",
+            component: "component",
             gap: "paragraphSpacing",
             border: "border",
             elevation: "elevation",
@@ -406,6 +408,10 @@ class Transformer {
                         `{${vKey}}`,
                         tokenValue,
                     );
+                }
+
+                if (!(vKey in this.allRules)) {
+                    throw new Error(`Couldn't find a value for ${vKey}`);
                 }
             });
         });
