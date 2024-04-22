@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Text, Heading, ThemeProvider, Button } from "../lib/main";
+import { Text, Heading, ThemeProvider } from "../lib/main";
+import Button from "./button";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
