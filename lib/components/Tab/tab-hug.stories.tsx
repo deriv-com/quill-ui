@@ -12,7 +12,6 @@ const meta = {
     },
     args: {
         size: "sm",
-        iconPosition: "left",
     },
     argTypes: {
         size: {
@@ -35,7 +34,6 @@ export const TabHugContentWithIconsOnLeft = (
 ) => (
     <MockTab
         {...args}
-        iconPosition="left"
         tabContent="hug"
         icon={placeholder[args?.size as keyof typeof placeholder]}
     />
@@ -50,6 +48,6 @@ export const TabHugContentWithIconsOnTop = (
         icon={placeholder[args?.size as keyof typeof placeholder]}
     />
 );
-export const TabHugContentWithoutIconsOnLeft = (
+export const TabHugContentWithoutIcons = (
     args: ComponentProps<typeof MockTab>,
 ) => <MockTab {...args} tabContent="hug" />;

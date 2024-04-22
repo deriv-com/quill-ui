@@ -12,7 +12,6 @@ const meta = {
     },
     args: {
         size: "sm",
-        iconPosition: "left",
     },
     argTypes: {
         size: {
@@ -35,6 +34,7 @@ export const TabFillContentWithIconsOnLeft = (
     <MockTab
         {...args}
         iconPosition="left"
+        tabContent="fill"
         icon={placeholder[args?.size as keyof typeof placeholder]}
     />
 );
@@ -44,9 +44,10 @@ export const TabFillContentWithIconsOnTop = (
     <MockTab
         {...args}
         iconPosition="top"
+        tabContent="fill"
         icon={placeholder[args?.size as keyof typeof placeholder]}
     />
 );
 export const TabFillContentWithoutIcons = (
     args: ComponentProps<typeof MockTab>,
-) => <MockTab {...args} />;
+) => <MockTab {...args} tabContent="fill" />;
