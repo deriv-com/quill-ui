@@ -1,5 +1,5 @@
 // SnackbarContext.js
-import { SnackbarProps } from "../../components/Snackbar/Snackbar";
+import { SnackbarProps } from "@components/Snackbar/Snackbar";
 import { createContext } from "react";
 
 export type SnackbarContextValue = {
