@@ -3,9 +3,15 @@ import TextField from ".";
 import {
     StandaloneCircleCheckBoldIcon,
     StandaloneCircleUserRegularIcon,
+    StandalonePlaceholderRegularIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons";
 import { Status, Variants } from "../base";
+
+const icons: Record<string, object | null> = {
+    with_icon: <StandalonePlaceholderRegularIcon />,
+    none: null,
+};
 
 const placeholder = "Placeholder";
 
@@ -45,6 +51,13 @@ const meta = {
                 type: "radio",
             },
             options: ["sm", "md"],
+        },
+        icon: {
+            options: Object.keys(icons),
+            mapping: icons,
+            control: {
+                type: "select",
+            },
         },
         status: {
             control: {

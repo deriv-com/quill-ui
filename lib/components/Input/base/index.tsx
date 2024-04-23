@@ -67,35 +67,38 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     )}
                 >
                     {Icon && <span className="icon_wrapper">{Icon}</span>}
-                    <input
-                        {...rest}
-                        type={type}
-                        className={clsx(
-                            "input",
-                            "peer",
-                            `input__align--${textAlignment}`,
-                            `input__size--${inputSize}`,
-                        )}
-                        disabled={!!disabled}
-                        onChange={(e) => {
-                            setHasValue(!!e.target.value);
-                            onChange?.(e);
-                        }}
-                        id={label?.toString()}
-                        ref={ref}
-                    />
-                    {label && inputSize === "md" && (
-                        <label
+                    <div className="quill-input-label__wrapper">
+                        <input
+                            {...rest}
+                            type={type}
                             className={clsx(
-                                "label",
-                                `label__status--${status}`,
-                                Icon && `label__hasIcon`,
+                                "input",
+                                "peer",
+                                `input__align--${textAlignment}`,
+                                `input__size--${inputSize}`,
                             )}
-                            htmlFor={label.toString()}
-                        >
-                            {label}
-                        </label>
-                    )}
+                            disabled={!!disabled}
+                            onChange={(e) => {
+                                setHasValue(!!e.target.value);
+                                onChange?.(e);
+                            }}
+                            id={label?.toString()}
+                            ref={ref}
+                        />
+                        {label && inputSize === "md" && (
+                            <label
+                                className={clsx(
+                                    "label",
+                                    `label__status--${status}`,
+                                    Icon && `label__hasIcon`,
+                                )}
+                                htmlFor={label.toString()}
+                            >
+                                {label}
+                            </label>
+                        )}
+                    </div>
+
                     {StatusIcon && (
                         <span
                             className={clsx(
