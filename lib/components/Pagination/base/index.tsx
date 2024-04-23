@@ -1,7 +1,3 @@
-import {
-    StandaloneCircleFillIcon,
-    StandaloneEllipsisRegularIcon,
-} from "@deriv/quill-icons/Standalone";
 import { DOTS } from "@hooks/usePaginationRange.tsx";
 import { PaginationProps } from "@components/Pagination/types";
 import "./pagination-base.scss";
@@ -33,21 +29,15 @@ const PaginationButton = ({
                 onClick={() => handleOnClick(String(pageNumber))}
                 aria-label={`Go to page ${pageNumber}`}
                 aria-current={currentPage === pageNumber}
-                className="variant__bullet-svg"
-            >
-                <StandaloneCircleFillIcon
-                    iconSize="sm"
-                    height={12}
-                    width={12}
-                />
-            </button>
+                className="variant__bullet"
+            ></button>
         );
     }
 
     if (pageNumber === DOTS) {
         return (
             <button disabled aria-label="Hidden pages" className="hidden_pages">
-                <StandaloneEllipsisRegularIcon iconSize="sm" />
+                <p className="hidden_pages-dots">{DOTS}</p>
             </button>
         );
     }
