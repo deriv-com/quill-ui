@@ -68,6 +68,67 @@
     --semantic-borderRadius-xl: 24px;
     --semantic-borderRadius-2xl: 48px;
     --semantic-borderRadius-pill: 96px;
+    --component-handle-border-radius: 96px;
+    --component-tab-border-color-default: rgba(255, 255, 255, 0.08);
+    --component-tab-border-color-hover: rgba(255, 255, 255, 0.16);
+    --component-tab-border-color-active: rgba(255, 255, 255, 0.24);
+    --component-tab-border-color-selected: #ffffff;
+    --component-tab-border-color-disabled: rgba(255, 255, 255, 0.08);
+    --component-tab-border-width-item: 2px;
+    --component-tab-border-width-body: 1px;
+    --component-field-border-radius-sm: 8px;
+    --component-field-border-radius-md: 8px;
+    --component-field-border-width: 1px;
+    --component-field-border-color-default: rgba(255, 255, 255, 0.08);
+    --component-field-border-color-hover: rgba(255, 255, 255, 0.16);
+    --component-field-border-color-focus: #ffffff;
+    --component-field-border-color-successDefault: rgba(0, 136, 50, 0.72);
+    --component-field-border-color-successHover: rgba(0, 136, 50, 0.88);
+    --component-field-border-color-successFocus: #4dbc6b;
+    --component-field-border-color-failDefault: rgba(230, 25, 14, 0.72);
+    --component-field-border-color-failHover: rgba(230, 25, 14, 0.88);
+    --component-field-border-color-failFocus: #ff4d4d;
+    --component-field-border-color-disabled: rgba(255, 255, 255, 0.08);
+    --component-toggle-border-radius: 96px;
+    --component-modal-border-radius-bottom: 16px;
+    --component-modal-border-radius-overlay: 32px;
+    --component-button-border-radius-sm: 8px;
+    --component-button-border-radius-md: 12px;
+    --component-button-border-radius-lg: 16px;
+    --component-button-border-radius-xl: 24px;
+    --component-button-border-width-sm: 1px;
+    --component-button-border-width-md: 2px;
+    --component-button-border-color-coral: #ff444f;
+    --component-button-border-color-black: #000000;
+    --component-button-border-color-white: #ffffff;
+    --component-button-border-color-blackWhite: #ffffff;
+    --component-button-border-color-buy: #00c390;
+    --component-button-border-color-sell: #de0040;
+    --component-button-border-color-google: rgba(255, 255, 255, 0.08);
+    --component-button-border-color-facebook: rgba(255, 255, 255, 0.08);
+    --component-button-border-color-apple: rgba(255, 255, 255, 0.08);
+    --component-segmentedControl-border-radius-single-item-sm: 4px;
+    --component-segmentedControl-border-radius-single-item-md: 8px;
+    --component-segmentedControl-border-radius-single-item-lg: 12px;
+    --component-segmentedControl-border-radius-single-body-sm: 8px;
+    --component-segmentedControl-border-radius-single-body-md: 16px;
+    --component-segmentedControl-border-radius-single-body-lg: 24px;
+    --component-segmentedControl-border-radius-multi-body-sm: 4px;
+    --component-segmentedControl-border-radius-multi-body-md: 8px;
+    --component-segmentedControl-border-radius-multi-body-lg: 12px;
+    --component-pagination-border-radius-number: 4px;
+    --component-pagination-border-radius-bullet: 96px;
+    --component-pagination-border-radius-button: 4px;
+    --component-actionSheet-border-radius: 16px;
+    --component-snackbar-border-radius: 8px;
+    --component-snackbar-border-width: 1px;
+    --component-snackbar-border-color: rgba(0, 0, 0, 0.04);
+    --component-badge-notification-border-radius: 96px;
+    --component-badge-status-border-radius: 96px;
+    --component-dropdownItem-border-radius: 4px;
+    --component-dropdownList-border-radius: 8px;
+    --component-dropdownList-border-width: 1px;
+    --component-dropdownList-border-color: rgba(255, 255, 255, 0.04);
 }
 @media (min-width: 640px) {
     :root {
@@ -127,5 +188,1103 @@
         --semantic-borderRadius-xl: 24px;
         --semantic-borderRadius-2xl: 48px;
         --semantic-borderRadius-pill: 96px;
+    }
+}
+:root {
+    .theme--light {
+        --semantic-color-monochrome-border-normal-low: rgba(0, 0, 0, 0.04);
+        --semantic-color-monochrome-border-normal-mid: rgba(0, 0, 0, 0.08);
+        --semantic-color-monochrome-border-normal-high: rgba(0, 0, 0, 0.16);
+        --semantic-color-monochrome-border-normal-highest: rgba(0, 0, 0, 0.24);
+        --semantic-color-monochrome-border-inverse-low: rgba(
+            255,
+            255,
+            255,
+            0.04
+        );
+        --semantic-color-monochrome-border-inverse-mid: rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+        --semantic-color-monochrome-border-inverse-high: rgba(
+            255,
+            255,
+            255,
+            0.16
+        );
+        --semantic-color-monochrome-border-inverse-highest: rgba(
+            255,
+            255,
+            255,
+            0.24
+        );
+        --semantic-color-monochrome-border-static-blackLow: rgba(0, 0, 0, 0.04);
+        --semantic-color-monochrome-border-static-blackMid: rgba(0, 0, 0, 0.08);
+        --semantic-color-monochrome-border-static-blackHigh: rgba(
+            0,
+            0,
+            0,
+            0.16
+        );
+        --semantic-color-monochrome-border-static-blackHighest: rgba(
+            0,
+            0,
+            0,
+            0.24
+        );
+        --semantic-color-monochrome-border-static-whiteLow: rgba(
+            255,
+            255,
+            255,
+            0.04
+        );
+        --semantic-color-monochrome-border-static-whiteMid: rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+        --semantic-color-monochrome-border-static-whiteHigh: rgba(
+            255,
+            255,
+            255,
+            0.16
+        );
+        --semantic-color-monochrome-border-static-whiteHighest: rgba(
+            255,
+            255,
+            255,
+            0.24
+        );
+        --semantic-color-slate-solid-border-normal-lowest: #ffffff;
+        --semantic-color-slate-solid-border-normal-low: #ebecef;
+        --semantic-color-slate-solid-border-normal-mid: #ced0d6;
+        --semantic-color-slate-solid-border-normal-high: #787d88;
+        --semantic-color-slate-solid-border-normal-highest: #414652;
+        --semantic-color-slate-solid-border-inverse-lowest: #000000;
+        --semantic-color-slate-solid-border-inverse-low: #11141b;
+        --semantic-color-slate-solid-border-inverse-mid: #181c25;
+        --semantic-color-slate-solid-border-inverse-high: #303541;
+        --semantic-color-slate-solid-border-inverse-highest: #414652;
+        --semantic-color-slate-solid-border-static-lowest: #ffffff;
+        --semantic-color-slate-solid-border-static-lower: #ebecef;
+        --semantic-color-slate-solid-border-static-low: #ced0d6;
+        --semantic-color-slate-solid-border-static-midLow: #787d88;
+        --semantic-color-slate-solid-border-static-mid: #414652;
+        --semantic-color-slate-solid-border-static-midHigh: #303541;
+        --semantic-color-slate-solid-border-static-high: #181c25;
+        --semantic-color-slate-solid-border-static-higher: #11141b;
+        --semantic-color-slate-solid-border-static-highest: #000000;
+        --semantic-color-slate-opacity-border-lowest: rgba(65, 70, 82, 0.04);
+        --semantic-color-slate-opacity-border-lower: rgba(65, 70, 82, 0.08);
+        --semantic-color-slate-opacity-border-low: rgba(65, 70, 82, 0.16);
+        --semantic-color-slate-opacity-border-mid: rgba(65, 70, 82, 0.24);
+        --semantic-color-slate-opacity-border-high: rgba(65, 70, 82, 0.72);
+        --semantic-color-slate-opacity-border-higher: rgba(65, 70, 82, 0.8);
+        --semantic-color-slate-opacity-border-highest: rgba(65, 70, 82, 0.88);
+        --semantic-color-red-solid-border-normal-low: #ffe6e6;
+        --semantic-color-red-solid-border-normal-mid: #ffbfbf;
+        --semantic-color-red-solid-border-normal-high: #ff4d4d;
+        --semantic-color-red-solid-border-normal-highest: #e6190e;
+        --semantic-color-red-solid-border-inverse-low: #4d0000;
+        --semantic-color-red-solid-border-inverse-mid: #6a0000;
+        --semantic-color-red-solid-border-inverse-high: #c40000;
+        --semantic-color-red-solid-border-inverse-highest: #e6190e;
+        --semantic-color-red-solid-border-static-lowest: #ffe6e6;
+        --semantic-color-red-solid-border-static-lower: #ffbfbf;
+        --semantic-color-red-solid-border-static-low: #ff4d4d;
+        --semantic-color-red-solid-border-static-mid: #e6190e;
+        --semantic-color-red-solid-border-static-high: #c40000;
+        --semantic-color-red-solid-border-static-higher: #6a0000;
+        --semantic-color-red-solid-border-static-highest: #4d0000;
+        --semantic-color-red-opacity-border-lowest: rgba(230, 25, 14, 0.04);
+        --semantic-color-red-opacity-border-lower: rgba(230, 25, 14, 0.08);
+        --semantic-color-red-opacity-border-low: rgba(230, 25, 14, 0.16);
+        --semantic-color-red-opacity-border-mid: rgba(230, 25, 14, 0.24);
+        --semantic-color-red-opacity-border-high: rgba(230, 25, 14, 0.72);
+        --semantic-color-red-opacity-border-higher: rgba(230, 25, 14, 0.8);
+        --semantic-color-red-opacity-border-highest: rgba(230, 25, 14, 0.88);
+        --semantic-color-orange-solid-border-normal-low: #feefe7;
+        --semantic-color-orange-solid-border-normal-mid: #fdd7c2;
+        --semantic-color-orange-solid-border-normal-high: #f88f54;
+        --semantic-color-orange-solid-border-normal-highest: #f55f0a;
+        --semantic-color-orange-solid-border-inverse-low: #4a1d03;
+        --semantic-color-orange-solid-border-inverse-mid: #662804;
+        --semantic-color-orange-solid-border-inverse-high: #bc4908;
+        --semantic-color-orange-solid-border-inverse-highest: #f55f0a;
+        --semantic-color-orange-solid-border-static-lowest: #feefe7;
+        --semantic-color-orange-solid-border-static-lower: #fdd7c2;
+        --semantic-color-orange-solid-border-static-low: #f88f54;
+        --semantic-color-orange-solid-border-static-mid: #f55f0a;
+        --semantic-color-orange-solid-border-static-high: #bc4908;
+        --semantic-color-orange-solid-border-static-higher: #662804;
+        --semantic-color-orange-solid-border-static-highest: #4a1d03;
+        --semantic-color-orange-opacity-border-lowest: rgba(245, 95, 10, 0.04);
+        --semantic-color-orange-opacity-border-lower: rgba(245, 95, 10, 0.08);
+        --semantic-color-orange-opacity-border-low: rgba(245, 95, 10, 0.16);
+        --semantic-color-orange-opacity-border-mid: rgba(245, 95, 10, 0.24);
+        --semantic-color-orange-opacity-border-high: rgba(245, 95, 10, 0.72);
+        --semantic-color-orange-opacity-border-higher: rgba(245, 95, 10, 0.8);
+        --semantic-color-orange-opacity-border-highest: rgba(245, 95, 10, 0.88);
+        --semantic-color-yellow-solid-border-normal-low: #fff7e6;
+        --semantic-color-yellow-solid-border-normal-mid: #ffeabf;
+        --semantic-color-yellow-solid-border-normal-high: #ffbe4d;
+        --semantic-color-yellow-solid-border-normal-highest: #ff9c13;
+        --semantic-color-yellow-solid-border-inverse-low: #4d3500;
+        --semantic-color-yellow-solid-border-inverse-mid: #6a4800;
+        --semantic-color-yellow-solid-border-inverse-high: #c47d00;
+        --semantic-color-yellow-solid-border-inverse-highest: #ff9c13;
+        --semantic-color-yellow-solid-border-static-lowest: #fff7e6;
+        --semantic-color-yellow-solid-border-static-lower: #ffeabf;
+        --semantic-color-yellow-solid-border-static-low: #ffbe4d;
+        --semantic-color-yellow-solid-border-static-mid: #ff9c13;
+        --semantic-color-yellow-solid-border-static-high: #c47d00;
+        --semantic-color-yellow-solid-border-static-higher: #6a4800;
+        --semantic-color-yellow-solid-border-static-highest: #4d3500;
+        --semantic-color-yellow-opacity-border-lowest: rgba(255, 156, 19, 0.04);
+        --semantic-color-yellow-opacity-border-lower: rgba(255, 156, 19, 0.08);
+        --semantic-color-yellow-opacity-border-low: rgba(255, 156, 19, 0.16);
+        --semantic-color-yellow-opacity-border-mid: rgba(255, 156, 19, 0.24);
+        --semantic-color-yellow-opacity-border-high: rgba(255, 156, 19, 0.72);
+        --semantic-color-yellow-opacity-border-higher: rgba(255, 156, 19, 0.8);
+        --semantic-color-yellow-opacity-border-highest: rgba(
+            255,
+            156,
+            19,
+            0.88
+        );
+        --semantic-color-mustard-solid-border-normal-low: #fef9e7;
+        --semantic-color-mustard-solid-border-normal-mid: #fdf1c2;
+        --semantic-color-mustard-solid-border-normal-high: #f9d754;
+        --semantic-color-mustard-solid-border-normal-highest: #f7c60b;
+        --semantic-color-mustard-solid-border-inverse-low: #4a3b03;
+        --semantic-color-mustard-solid-border-inverse-mid: #675305;
+        --semantic-color-mustard-solid-border-inverse-high: #bd9808;
+        --semantic-color-mustard-solid-border-inverse-highest: #f7c60b;
+        --semantic-color-mustard-solid-border-static-lowest: #fef9e7;
+        --semantic-color-mustard-solid-border-static-lower: #fdf1c2;
+        --semantic-color-mustard-solid-border-static-low: #f9d754;
+        --semantic-color-mustard-solid-border-static-mid: #f7c60b;
+        --semantic-color-mustard-solid-border-static-high: #bd9808;
+        --semantic-color-mustard-solid-border-static-higher: #675305;
+        --semantic-color-mustard-solid-border-static-highest: #4a3b03;
+        --semantic-color-mustard-opacity-border-lowest: rgba(
+            247,
+            198,
+            11,
+            0.04
+        );
+        --semantic-color-mustard-opacity-border-lower: rgba(247, 198, 11, 0.08);
+        --semantic-color-mustard-opacity-border-low: rgba(247, 198, 11, 0.16);
+        --semantic-color-mustard-opacity-border-mid: rgba(247, 198, 11, 0.24);
+        --semantic-color-mustard-opacity-border-high: rgba(247, 198, 11, 0.72);
+        --semantic-color-mustard-opacity-border-higher: rgba(247, 198, 11, 0.8);
+        --semantic-color-mustard-opacity-border-highest: rgba(
+            247,
+            198,
+            11,
+            0.88
+        );
+        --semantic-color-olive-solid-border-normal-low: #fcfbe6;
+        --semantic-color-olive-solid-border-normal-mid: #f7f6c0;
+        --semantic-color-olive-solid-border-normal-high: #e9e54e;
+        --semantic-color-olive-solid-border-normal-highest: #e0da02;
+        --semantic-color-olive-solid-border-inverse-low: #434101;
+        --semantic-color-olive-solid-border-inverse-mid: #5d5b01;
+        --semantic-color-olive-solid-border-inverse-high: #aca702;
+        --semantic-color-olive-solid-border-inverse-highest: #e0da02;
+        --semantic-color-olive-solid-border-static-lowest: #fcfbe6;
+        --semantic-color-olive-solid-border-static-lower: #f7f6c0;
+        --semantic-color-olive-solid-border-static-low: #e9e54e;
+        --semantic-color-olive-solid-border-static-mid: #e0da02;
+        --semantic-color-olive-solid-border-static-high: #aca702;
+        --semantic-color-olive-solid-border-static-higher: #5d5b01;
+        --semantic-color-olive-solid-border-static-highest: #434101;
+        --semantic-color-olive-opacity-border-lowest: rgba(224, 218, 2, 0.04);
+        --semantic-color-olive-opacity-border-lower: rgba(224, 218, 2, 0.08);
+        --semantic-color-olive-opacity-border-low: rgba(224, 218, 2, 0.16);
+        --semantic-color-olive-opacity-border-mid: rgba(224, 218, 2, 0.24);
+        --semantic-color-olive-opacity-border-high: rgba(224, 218, 2, 0.72);
+        --semantic-color-olive-opacity-border-higher: rgba(224, 218, 2, 0.8);
+        --semantic-color-olive-opacity-border-highest: rgba(224, 218, 2, 0.88);
+        --semantic-color-green-solid-border-normal-low: #e6fae9;
+        --semantic-color-green-solid-border-normal-mid: #bfefc8;
+        --semantic-color-green-solid-border-normal-high: #4dbc6b;
+        --semantic-color-green-solid-border-normal-highest: #008832;
+        --semantic-color-green-solid-border-inverse-low: #003d0a;
+        --semantic-color-green-solid-border-inverse-mid: #00500f;
+        --semantic-color-green-solid-border-inverse-high: #007a22;
+        --semantic-color-green-solid-border-inverse-highest: #008832;
+        --semantic-color-green-solid-border-static-lowest: #e6fae9;
+        --semantic-color-green-solid-border-static-lower: #bfefc8;
+        --semantic-color-green-solid-border-static-low: #4dbc6b;
+        --semantic-color-green-solid-border-static-mid: #008832;
+        --semantic-color-green-solid-border-static-high: #007a22;
+        --semantic-color-green-solid-border-static-higher: #00500f;
+        --semantic-color-green-solid-border-static-highest: #003d0a;
+        --semantic-color-green-opacity-border-lowest: rgba(0, 136, 50, 0.04);
+        --semantic-color-green-opacity-border-lower: rgba(0, 136, 50, 0.08);
+        --semantic-color-green-opacity-border-low: rgba(0, 136, 50, 0.16);
+        --semantic-color-green-opacity-border-mid: rgba(0, 136, 50, 0.24);
+        --semantic-color-green-opacity-border-high: rgba(0, 136, 50, 0.72);
+        --semantic-color-green-opacity-border-higher: rgba(0, 136, 50, 0.8);
+        --semantic-color-green-opacity-border-highest: rgba(0, 136, 50, 0.88);
+        --semantic-color-emerald-solid-border-normal-low: #e6fff9;
+        --semantic-color-emerald-solid-border-normal-mid: #bfffed;
+        --semantic-color-emerald-solid-border-normal-high: #4decbc;
+        --semantic-color-emerald-solid-border-normal-highest: #00c390;
+        --semantic-color-emerald-solid-border-inverse-low: #004d39;
+        --semantic-color-emerald-solid-border-inverse-mid: #006a4c;
+        --semantic-color-emerald-solid-border-inverse-high: #00ae7a;
+        --semantic-color-emerald-solid-border-inverse-highest: #00c390;
+        --semantic-color-emerald-solid-border-static-lowest: #e6fff9;
+        --semantic-color-emerald-solid-border-static-lower: #bfffed;
+        --semantic-color-emerald-solid-border-static-low: #4decbc;
+        --semantic-color-emerald-solid-border-static-mid: #00c390;
+        --semantic-color-emerald-solid-border-static-high: #00ae7a;
+        --semantic-color-emerald-solid-border-static-higher: #006a4c;
+        --semantic-color-emerald-solid-border-static-highest: #004d39;
+        --semantic-color-emerald-opacity-border-lowest: rgba(0, 195, 144, 0.04);
+        --semantic-color-emerald-opacity-border-lower: rgba(0, 195, 144, 0.08);
+        --semantic-color-emerald-opacity-border-low: rgba(0, 195, 144, 0.16);
+        --semantic-color-emerald-opacity-border-mid: rgba(0, 195, 144, 0.24);
+        --semantic-color-emerald-opacity-border-high: rgba(0, 195, 144, 0.72);
+        --semantic-color-emerald-opacity-border-higher: rgba(0, 195, 144, 0.8);
+        --semantic-color-emerald-opacity-border-highest: rgba(
+            0,
+            195,
+            144,
+            0.88
+        );
+        --semantic-color-tiffany-solid-border-normal-low: #e8fdf8;
+        --semantic-color-tiffany-solid-border-normal-mid: #c5faef;
+        --semantic-color-tiffany-solid-border-normal-high: #5df0d1;
+        --semantic-color-tiffany-solid-border-normal-highest: #17eabd;
+        --semantic-color-tiffany-solid-border-inverse-low: #074639;
+        --semantic-color-tiffany-solid-border-inverse-mid: #0a624f;
+        --semantic-color-tiffany-solid-border-inverse-high: #12b391;
+        --semantic-color-tiffany-solid-border-inverse-highest: #17eabd;
+        --semantic-color-tiffany-solid-border-static-lowest: #e8fdf8;
+        --semantic-color-tiffany-solid-border-static-lower: #c5faef;
+        --semantic-color-tiffany-solid-border-static-low: #5df0d1;
+        --semantic-color-tiffany-solid-border-static-mid: #17eabd;
+        --semantic-color-tiffany-solid-border-static-high: #12b391;
+        --semantic-color-tiffany-solid-border-static-higher: #0a624f;
+        --semantic-color-tiffany-solid-border-static-highest: #074639;
+        --semantic-color-tiffany-opacity-border-lowest: rgba(
+            23,
+            234,
+            189,
+            0.04
+        );
+        --semantic-color-tiffany-opacity-border-lower: rgba(23, 234, 189, 0.08);
+        --semantic-color-tiffany-opacity-border-low: rgba(23, 234, 189, 0.16);
+        --semantic-color-tiffany-opacity-border-mid: rgba(23, 234, 189, 0.24);
+        --semantic-color-tiffany-opacity-border-high: rgba(23, 234, 189, 0.72);
+        --semantic-color-tiffany-opacity-border-higher: rgba(23, 234, 189, 0.8);
+        --semantic-color-tiffany-opacity-border-highest: rgba(
+            23,
+            234,
+            189,
+            0.88
+        );
+        --semantic-color-teal-solid-border-normal-low: #e6fafa;
+        --semantic-color-teal-solid-border-normal-mid: #bff2f2;
+        --semantic-color-teal-solid-border-normal-high: #4ddbdb;
+        --semantic-color-teal-solid-border-normal-highest: #00cccc;
+        --semantic-color-teal-solid-border-inverse-low: #003d3d;
+        --semantic-color-teal-solid-border-inverse-mid: #005555;
+        --semantic-color-teal-solid-border-inverse-high: #009c9c;
+        --semantic-color-teal-solid-border-inverse-highest: #00cccc;
+        --semantic-color-teal-solid-border-static-lowest: #e6fafa;
+        --semantic-color-teal-solid-border-static-lower: #bff2f2;
+        --semantic-color-teal-solid-border-static-low: #4ddbdb;
+        --semantic-color-teal-solid-border-static-mid: #00cccc;
+        --semantic-color-teal-solid-border-static-high: #009c9c;
+        --semantic-color-teal-solid-border-static-higher: #005555;
+        --semantic-color-teal-solid-border-static-highest: #003d3d;
+        --semantic-color-teal-opacity-border-lowest: rgba(0, 204, 204, 0.04);
+        --semantic-color-teal-opacity-border-lower: rgba(0, 204, 204, 0.08);
+        --semantic-color-teal-opacity-border-low: rgba(0, 204, 204, 0.16);
+        --semantic-color-teal-opacity-border-mid: rgba(0, 204, 204, 0.24);
+        --semantic-color-teal-opacity-border-high: rgba(0, 204, 204, 0.72);
+        --semantic-color-teal-opacity-border-higher: rgba(0, 204, 204, 0.8);
+        --semantic-color-teal-opacity-border-highest: rgba(0, 204, 204, 0.88);
+        --semantic-color-seawater-solid-border-normal-low: #e7f6f7;
+        --semantic-color-seawater-solid-border-normal-mid: #c2e7eb;
+        --semantic-color-seawater-solid-border-normal-high: #54bdc8;
+        --semantic-color-seawater-solid-border-normal-highest: #0aa0b0;
+        --semantic-color-seawater-solid-border-inverse-low: #033035;
+        --semantic-color-seawater-solid-border-inverse-mid: #044349;
+        --semantic-color-seawater-solid-border-inverse-high: #087b87;
+        --semantic-color-seawater-solid-border-inverse-highest: #0aa0b0;
+        --semantic-color-seawater-solid-border-static-lowest: #e7f6f7;
+        --semantic-color-seawater-solid-border-static-lower: #c2e7eb;
+        --semantic-color-seawater-solid-border-static-low: #54bdc8;
+        --semantic-color-seawater-solid-border-static-mid: #0aa0b0;
+        --semantic-color-seawater-solid-border-static-high: #087b87;
+        --semantic-color-seawater-solid-border-static-higher: #044349;
+        --semantic-color-seawater-solid-border-static-highest: #033035;
+        --semantic-color-seawater-opacity-border-lowest: rgba(
+            10,
+            160,
+            176,
+            0.04
+        );
+        --semantic-color-seawater-opacity-border-lower: rgba(
+            10,
+            160,
+            176,
+            0.08
+        );
+        --semantic-color-seawater-opacity-border-low: rgba(10, 160, 176, 0.16);
+        --semantic-color-seawater-opacity-border-mid: rgba(10, 160, 176, 0.24);
+        --semantic-color-seawater-opacity-border-high: rgba(10, 160, 176, 0.72);
+        --semantic-color-seawater-opacity-border-higher: rgba(
+            10,
+            160,
+            176,
+            0.8
+        );
+        --semantic-color-seawater-opacity-border-highest: rgba(
+            10,
+            160,
+            176,
+            0.88
+        );
+        --semantic-color-blue-solid-border-normal-low: #e6f5ff;
+        --semantic-color-blue-solid-border-normal-mid: #bfe7ff;
+        --semantic-color-blue-solid-border-normal-high: #53b9ff;
+        --semantic-color-blue-solid-border-normal-highest: #2c9aff;
+        --semantic-color-blue-solid-border-inverse-low: #00304d;
+        --semantic-color-blue-solid-border-inverse-mid: #00426a;
+        --semantic-color-blue-solid-border-inverse-high: #0777c4;
+        --semantic-color-blue-solid-border-inverse-highest: #2c9aff;
+        --semantic-color-blue-solid-border-static-lowest: #e6f5ff;
+        --semantic-color-blue-solid-border-static-lower: #bfe7ff;
+        --semantic-color-blue-solid-border-static-low: #53b9ff;
+        --semantic-color-blue-solid-border-static-mid: #2c9aff;
+        --semantic-color-blue-solid-border-static-high: #0777c4;
+        --semantic-color-blue-solid-border-static-higher: #00426a;
+        --semantic-color-blue-solid-border-static-highest: #00304d;
+        --semantic-color-blue-opacity-border-lowest: rgba(44, 154, 255, 0.04);
+        --semantic-color-blue-opacity-border-lower: rgba(44, 154, 255, 0.08);
+        --semantic-color-blue-opacity-border-low: rgba(44, 154, 255, 0.16);
+        --semantic-color-blue-opacity-border-mid: rgba(44, 154, 255, 0.24);
+        --semantic-color-blue-opacity-border-high: rgba(44, 154, 255, 0.72);
+        --semantic-color-blue-opacity-border-higher: rgba(44, 154, 255, 0.8);
+        --semantic-color-blue-opacity-border-highest: rgba(44, 154, 255, 0.88);
+        --semantic-color-sapphire-solid-border-normal-low: #e7eafe;
+        --semantic-color-sapphire-solid-border-normal-mid: #c2c9fd;
+        --semantic-color-sapphire-solid-border-normal-high: #5569f9;
+        --semantic-color-sapphire-solid-border-normal-highest: #0c28f7;
+        --semantic-color-sapphire-solid-border-inverse-low: #040c4a;
+        --semantic-color-sapphire-solid-border-inverse-mid: #051167;
+        --semantic-color-sapphire-solid-border-inverse-high: #091fbd;
+        --semantic-color-sapphire-solid-border-inverse-highest: #0c28f7;
+        --semantic-color-sapphire-solid-border-static-lowest: #e7eafe;
+        --semantic-color-sapphire-solid-border-static-lower: #c2c9fd;
+        --semantic-color-sapphire-solid-border-static-low: #5569f9;
+        --semantic-color-sapphire-solid-border-static-mid: #0c28f7;
+        --semantic-color-sapphire-solid-border-static-high: #091fbd;
+        --semantic-color-sapphire-solid-border-static-higher: #051167;
+        --semantic-color-sapphire-solid-border-static-highest: #040c4a;
+        --semantic-color-sapphire-opacity-border-lowest: rgba(
+            12,
+            40,
+            247,
+            0.04
+        );
+        --semantic-color-sapphire-opacity-border-lower: rgba(12, 40, 247, 0.08);
+        --semantic-color-sapphire-opacity-border-low: rgba(12, 40, 247, 0.16);
+        --semantic-color-sapphire-opacity-border-mid: rgba(12, 40, 247, 0.24);
+        --semantic-color-sapphire-opacity-border-high: rgba(12, 40, 247, 0.72);
+        --semantic-color-sapphire-opacity-border-higher: rgba(12, 40, 247, 0.8);
+        --semantic-color-sapphire-opacity-border-highest: rgba(
+            12,
+            40,
+            247,
+            0.88
+        );
+        --semantic-color-blueberry-solid-border-normal-low: #ede6fc;
+        --semantic-color-blueberry-solid-border-normal-mid: #d2c0f7;
+        --semantic-color-blueberry-solid-border-normal-high: #804ee9;
+        --semantic-color-blueberry-solid-border-normal-highest: #4902e0;
+        --semantic-color-blueberry-solid-border-inverse-low: #160143;
+        --semantic-color-blueberry-solid-border-inverse-mid: #1e015d;
+        --semantic-color-blueberry-solid-border-inverse-high: #3802ac;
+        --semantic-color-blueberry-solid-border-inverse-highest: #4902e0;
+        --semantic-color-blueberry-solid-border-static-lowest: #ede6fc;
+        --semantic-color-blueberry-solid-border-static-lower: #d2c0f7;
+        --semantic-color-blueberry-solid-border-static-low: #804ee9;
+        --semantic-color-blueberry-solid-border-static-mid: #4902e0;
+        --semantic-color-blueberry-solid-border-static-high: #3802ac;
+        --semantic-color-blueberry-solid-border-static-higher: #1e015d;
+        --semantic-color-blueberry-solid-border-static-highest: #160143;
+        --semantic-color-blueberry-opacity-border-lowest: rgba(
+            73,
+            2,
+            224,
+            0.04
+        );
+        --semantic-color-blueberry-opacity-border-lower: rgba(73, 2, 224, 0.08);
+        --semantic-color-blueberry-opacity-border-low: rgba(73, 2, 224, 0.16);
+        --semantic-color-blueberry-opacity-border-mid: rgba(73, 2, 224, 0.24);
+        --semantic-color-blueberry-opacity-border-high: rgba(73, 2, 224, 0.72);
+        --semantic-color-blueberry-opacity-border-higher: rgba(73, 2, 224, 0.8);
+        --semantic-color-blueberry-opacity-border-highest: rgba(
+            73,
+            2,
+            224,
+            0.88
+        );
+        --semantic-color-grape-solid-border-normal-low: #f2e7fa;
+        --semantic-color-grape-solid-border-normal-mid: #dfc3f3;
+        --semantic-color-grape-solid-border-normal-high: #a556dd;
+        --semantic-color-grape-solid-border-normal-highest: #7f0dcf;
+        --semantic-color-grape-solid-border-inverse-low: #26043e;
+        --semantic-color-grape-solid-border-inverse-mid: #350556;
+        --semantic-color-grape-solid-border-inverse-high: #610a9f;
+        --semantic-color-grape-solid-border-inverse-highest: #7f0dcf;
+        --semantic-color-grape-solid-border-static-lowest: #f2e7fa;
+        --semantic-color-grape-solid-border-static-lower: #dfc3f3;
+        --semantic-color-grape-solid-border-static-low: #a556dd;
+        --semantic-color-grape-solid-border-static-mid: #7f0dcf;
+        --semantic-color-grape-solid-border-static-high: #610a9f;
+        --semantic-color-grape-solid-border-static-higher: #350556;
+        --semantic-color-grape-solid-border-static-highest: #26043e;
+        --semantic-color-grape-opacity-border-lowest: rgba(127, 13, 207, 0.04);
+        --semantic-color-grape-opacity-border-lower: rgba(127, 13, 207, 0.08);
+        --semantic-color-grape-opacity-border-low: rgba(127, 13, 207, 0.16);
+        --semantic-color-grape-opacity-border-mid: rgba(127, 13, 207, 0.24);
+        --semantic-color-grape-opacity-border-high: rgba(127, 13, 207, 0.72);
+        --semantic-color-grape-opacity-border-higher: rgba(127, 13, 207, 0.8);
+        --semantic-color-grape-opacity-border-highest: rgba(127, 13, 207, 0.88);
+        --semantic-color-magenta-solid-border-normal-low: #fae7fe;
+        --semantic-color-magenta-solid-border-normal-mid: #f2c3fd;
+        --semantic-color-magenta-solid-border-normal-high: #db56f9;
+        --semantic-color-magenta-solid-border-normal-highest: #cb0df7;
+        --semantic-color-magenta-solid-border-inverse-low: #3d044a;
+        --semantic-color-magenta-solid-border-inverse-mid: #550567;
+        --semantic-color-magenta-solid-border-inverse-high: #9c0abd;
+        --semantic-color-magenta-solid-border-inverse-highest: #cb0df7;
+        --semantic-color-magenta-solid-border-static-lowest: #fae7fe;
+        --semantic-color-magenta-solid-border-static-lower: #f2c3fd;
+        --semantic-color-magenta-solid-border-static-low: #db56f9;
+        --semantic-color-magenta-solid-border-static-mid: #cb0df7;
+        --semantic-color-magenta-solid-border-static-high: #9c0abd;
+        --semantic-color-magenta-solid-border-static-higher: #550567;
+        --semantic-color-magenta-solid-border-static-highest: #3d044a;
+        --semantic-color-magenta-opacity-border-lowest: rgba(
+            203,
+            13,
+            247,
+            0.04
+        );
+        --semantic-color-magenta-opacity-border-lower: rgba(203, 13, 247, 0.08);
+        --semantic-color-magenta-opacity-border-low: rgba(203, 13, 247, 0.16);
+        --semantic-color-magenta-opacity-border-mid: rgba(203, 13, 247, 0.24);
+        --semantic-color-magenta-opacity-border-high: rgba(203, 13, 247, 0.72);
+        --semantic-color-magenta-opacity-border-higher: rgba(203, 13, 247, 0.8);
+        --semantic-color-magenta-opacity-border-highest: rgba(
+            203,
+            13,
+            247,
+            0.88
+        );
+        --semantic-color-cherry-solid-border-normal-low: #ffe6e7;
+        --semantic-color-cherry-solid-border-normal-mid: #ffbfc6;
+        --semantic-color-cherry-solid-border-normal-high: #ff4d6e;
+        --semantic-color-cherry-solid-border-normal-highest: #de0040;
+        --semantic-color-cherry-solid-border-inverse-low: #4d0005;
+        --semantic-color-cherry-solid-border-inverse-mid: #6a000a;
+        --semantic-color-cherry-solid-border-inverse-high: #c40025;
+        --semantic-color-cherry-solid-border-inverse-highest: #de0040;
+        --semantic-color-cherry-solid-border-static-lowest: #ffe6e7;
+        --semantic-color-cherry-solid-border-static-lower: #ffbfc6;
+        --semantic-color-cherry-solid-border-static-low: #ff4d6e;
+        --semantic-color-cherry-solid-border-static-mid: #de0040;
+        --semantic-color-cherry-solid-border-static-high: #c40025;
+        --semantic-color-cherry-solid-border-static-higher: #6a000a;
+        --semantic-color-cherry-solid-border-static-highest: #4d0005;
+        --semantic-color-cherry-opacity-border-lowest: rgba(222, 0, 64, 0.04);
+        --semantic-color-cherry-opacity-border-lower: rgba(222, 0, 64, 0.08);
+        --semantic-color-cherry-opacity-border-low: rgba(222, 0, 64, 0.16);
+        --semantic-color-cherry-opacity-border-mid: rgba(222, 0, 64, 0.24);
+        --semantic-color-cherry-opacity-border-high: rgba(222, 0, 64, 0.72);
+        --semantic-color-cherry-opacity-border-higher: rgba(222, 0, 64, 0.8);
+        --semantic-color-cherry-opacity-border-highest: rgba(222, 0, 64, 0.88);
+        --semantic-color-coral-solid-border-normal-low: #ffe6e6;
+        --semantic-color-coral-solid-border-normal-mid: #ffbfc2;
+        --semantic-color-coral-solid-border-normal-high: #ff6671;
+        --semantic-color-coral-solid-border-normal-highest: #ff444f;
+        --semantic-color-coral-solid-border-inverse-low: #4d0000;
+        --semantic-color-coral-solid-border-inverse-mid: #6a0004;
+        --semantic-color-coral-solid-border-inverse-high: #c41c28;
+        --semantic-color-coral-solid-border-inverse-highest: #ff444f;
+        --semantic-color-coral-solid-border-static-lowest: #ffe6e6;
+        --semantic-color-coral-solid-border-static-lower: #ffbfc2;
+        --semantic-color-coral-solid-border-static-low: #ff6671;
+        --semantic-color-coral-solid-border-static-mid: #ff444f;
+        --semantic-color-coral-solid-border-static-high: #c41c28;
+        --semantic-color-coral-solid-border-static-higher: #6a0004;
+        --semantic-color-coral-solid-border-static-highest: #4d0000;
+        --semantic-color-coral-opacity-border-lowest: rgba(255, 68, 79, 0.04);
+        --semantic-color-coral-opacity-border-lower: rgba(255, 68, 79, 0.08);
+        --semantic-color-coral-opacity-border-low: rgba(255, 68, 79, 0.16);
+        --semantic-color-coral-opacity-border-mid: rgba(255, 68, 79, 0.24);
+        --semantic-color-coral-opacity-border-high: rgba(255, 68, 79, 0.72);
+        --semantic-color-coral-opacity-border-higher: rgba(255, 68, 79, 0.8);
+        --semantic-color-coral-opacity-border-highest: rgba(255, 68, 79, 0.88);
+    }
+    .theme--dark {
+        --semantic-color-monochrome-border-normal-low: rgba(
+            255,
+            255,
+            255,
+            0.04
+        );
+        --semantic-color-monochrome-border-normal-mid: rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+        --semantic-color-monochrome-border-normal-high: rgba(
+            255,
+            255,
+            255,
+            0.16
+        );
+        --semantic-color-monochrome-border-normal-highest: rgba(
+            255,
+            255,
+            255,
+            0.24
+        );
+        --semantic-color-monochrome-border-inverse-low: rgba(0, 0, 0, 0.04);
+        --semantic-color-monochrome-border-inverse-mid: rgba(0, 0, 0, 0.08);
+        --semantic-color-monochrome-border-inverse-high: rgba(0, 0, 0, 0.16);
+        --semantic-color-monochrome-border-inverse-highest: rgba(0, 0, 0, 0.24);
+        --semantic-color-monochrome-border-static-blackLow: rgba(0, 0, 0, 0.04);
+        --semantic-color-monochrome-border-static-blackMid: rgba(0, 0, 0, 0.08);
+        --semantic-color-monochrome-border-static-blackHigh: rgba(
+            0,
+            0,
+            0,
+            0.16
+        );
+        --semantic-color-monochrome-border-static-blackHighest: rgba(
+            0,
+            0,
+            0,
+            0.24
+        );
+        --semantic-color-monochrome-border-static-whiteLow: rgba(
+            255,
+            255,
+            255,
+            0.04
+        );
+        --semantic-color-monochrome-border-static-whiteMid: rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+        --semantic-color-monochrome-border-static-whiteHigh: rgba(
+            255,
+            255,
+            255,
+            0.16
+        );
+        --semantic-color-monochrome-border-static-whiteHighest: rgba(
+            255,
+            255,
+            255,
+            0.24
+        );
+        --semantic-color-slate-solid-border-normal-lowest: #000000;
+        --semantic-color-slate-solid-border-normal-low: #11141b;
+        --semantic-color-slate-solid-border-normal-mid: #181c25;
+        --semantic-color-slate-solid-border-normal-high: #303541;
+        --semantic-color-slate-solid-border-normal-highest: #414652;
+        --semantic-color-slate-solid-border-inverse-lowest: #ffffff;
+        --semantic-color-slate-solid-border-inverse-low: #ebecef;
+        --semantic-color-slate-solid-border-inverse-mid: #ced0d6;
+        --semantic-color-slate-solid-border-inverse-high: #787d88;
+        --semantic-color-slate-solid-border-inverse-highest: #414652;
+        --semantic-color-slate-solid-border-static-lowest: #ffffff;
+        --semantic-color-slate-solid-border-static-lower: #ebecef;
+        --semantic-color-slate-solid-border-static-low: #ced0d6;
+        --semantic-color-slate-solid-border-static-midLow: #787d88;
+        --semantic-color-slate-solid-border-static-mid: #414652;
+        --semantic-color-slate-solid-border-static-midHigh: #303541;
+        --semantic-color-slate-solid-border-static-high: #181c25;
+        --semantic-color-slate-solid-border-static-higher: #11141b;
+        --semantic-color-slate-solid-border-static-highest: #000000;
+        --semantic-color-slate-opacity-border-lowest: rgba(65, 70, 82, 0.04);
+        --semantic-color-slate-opacity-border-lower: rgba(65, 70, 82, 0.08);
+        --semantic-color-slate-opacity-border-low: rgba(65, 70, 82, 0.16);
+        --semantic-color-slate-opacity-border-mid: rgba(65, 70, 82, 0.24);
+        --semantic-color-slate-opacity-border-high: rgba(65, 70, 82, 0.72);
+        --semantic-color-slate-opacity-border-higher: rgba(65, 70, 82, 0.8);
+        --semantic-color-slate-opacity-border-highest: rgba(65, 70, 82, 0.88);
+        --semantic-color-red-solid-border-normal-low: #4d0000;
+        --semantic-color-red-solid-border-normal-mid: #6a0000;
+        --semantic-color-red-solid-border-normal-high: #c40000;
+        --semantic-color-red-solid-border-normal-highest: #e6190e;
+        --semantic-color-red-solid-border-inverse-low: #ffe6e6;
+        --semantic-color-red-solid-border-inverse-mid: #ffbfbf;
+        --semantic-color-red-solid-border-inverse-high: #ff4d4d;
+        --semantic-color-red-solid-border-inverse-highest: #e6190e;
+        --semantic-color-red-solid-border-static-lowest: #ffe6e6;
+        --semantic-color-red-solid-border-static-lower: #ffbfbf;
+        --semantic-color-red-solid-border-static-low: #ff4d4d;
+        --semantic-color-red-solid-border-static-mid: #e6190e;
+        --semantic-color-red-solid-border-static-high: #c40000;
+        --semantic-color-red-solid-border-static-higher: #6a0000;
+        --semantic-color-red-solid-border-static-highest: #4d0000;
+        --semantic-color-red-opacity-border-lowest: rgba(230, 25, 14, 0.04);
+        --semantic-color-red-opacity-border-lower: rgba(230, 25, 14, 0.08);
+        --semantic-color-red-opacity-border-low: rgba(230, 25, 14, 0.16);
+        --semantic-color-red-opacity-border-mid: rgba(230, 25, 14, 0.24);
+        --semantic-color-red-opacity-border-high: rgba(230, 25, 14, 0.72);
+        --semantic-color-red-opacity-border-higher: rgba(230, 25, 14, 0.8);
+        --semantic-color-red-opacity-border-highest: rgba(230, 25, 14, 0.88);
+        --semantic-color-orange-solid-border-normal-low: #4a1d03;
+        --semantic-color-orange-solid-border-normal-mid: #662804;
+        --semantic-color-orange-solid-border-normal-high: #bc4908;
+        --semantic-color-orange-solid-border-normal-highest: #f55f0a;
+        --semantic-color-orange-solid-border-inverse-low: #feefe7;
+        --semantic-color-orange-solid-border-inverse-mid: #fdd7c2;
+        --semantic-color-orange-solid-border-inverse-high: #f88f54;
+        --semantic-color-orange-solid-border-inverse-highest: #f55f0a;
+        --semantic-color-orange-solid-border-static-lowest: #feefe7;
+        --semantic-color-orange-solid-border-static-lower: #fdd7c2;
+        --semantic-color-orange-solid-border-static-low: #f88f54;
+        --semantic-color-orange-solid-border-static-mid: #f55f0a;
+        --semantic-color-orange-solid-border-static-high: #bc4908;
+        --semantic-color-orange-solid-border-static-higher: #662804;
+        --semantic-color-orange-solid-border-static-highest: #4a1d03;
+        --semantic-color-orange-opacity-border-lowest: rgba(245, 95, 10, 0.04);
+        --semantic-color-orange-opacity-border-lower: rgba(245, 95, 10, 0.08);
+        --semantic-color-orange-opacity-border-low: rgba(245, 95, 10, 0.16);
+        --semantic-color-orange-opacity-border-mid: rgba(245, 95, 10, 0.24);
+        --semantic-color-orange-opacity-border-high: rgba(245, 95, 10, 0.72);
+        --semantic-color-orange-opacity-border-higher: rgba(245, 95, 10, 0.8);
+        --semantic-color-orange-opacity-border-highest: rgba(245, 95, 10, 0.88);
+        --semantic-color-yellow-solid-border-normal-low: #4d3500;
+        --semantic-color-yellow-solid-border-normal-mid: #6a4800;
+        --semantic-color-yellow-solid-border-normal-high: #c47d00;
+        --semantic-color-yellow-solid-border-normal-highest: #ff9c13;
+        --semantic-color-yellow-solid-border-inverse-low: #fff7e6;
+        --semantic-color-yellow-solid-border-inverse-mid: #ffeabf;
+        --semantic-color-yellow-solid-border-inverse-high: #ffbe4d;
+        --semantic-color-yellow-solid-border-inverse-highest: #ff9c13;
+        --semantic-color-yellow-solid-border-static-lowest: #fff7e6;
+        --semantic-color-yellow-solid-border-static-lower: #ffeabf;
+        --semantic-color-yellow-solid-border-static-low: #ffbe4d;
+        --semantic-color-yellow-solid-border-static-mid: #ff9c13;
+        --semantic-color-yellow-solid-border-static-high: #c47d00;
+        --semantic-color-yellow-solid-border-static-higher: #6a4800;
+        --semantic-color-yellow-solid-border-static-highest: #4d3500;
+        --semantic-color-yellow-opacity-border-lowest: rgba(255, 156, 19, 0.04);
+        --semantic-color-yellow-opacity-border-lower: rgba(255, 156, 19, 0.08);
+        --semantic-color-yellow-opacity-border-low: rgba(255, 156, 19, 0.16);
+        --semantic-color-yellow-opacity-border-mid: rgba(255, 156, 19, 0.24);
+        --semantic-color-yellow-opacity-border-high: rgba(255, 156, 19, 0.72);
+        --semantic-color-yellow-opacity-border-higher: rgba(255, 156, 19, 0.8);
+        --semantic-color-yellow-opacity-border-highest: rgba(
+            255,
+            156,
+            19,
+            0.88
+        );
+        --semantic-color-mustard-solid-border-normal-low: #4a3b03;
+        --semantic-color-mustard-solid-border-normal-mid: #675305;
+        --semantic-color-mustard-solid-border-normal-high: #bd9808;
+        --semantic-color-mustard-solid-border-normal-highest: #f7c60b;
+        --semantic-color-mustard-solid-border-inverse-low: #fef9e7;
+        --semantic-color-mustard-solid-border-inverse-mid: #fdf1c2;
+        --semantic-color-mustard-solid-border-inverse-high: #f9d754;
+        --semantic-color-mustard-solid-border-inverse-highest: #f7c60b;
+        --semantic-color-mustard-solid-border-static-lowest: #fef9e7;
+        --semantic-color-mustard-solid-border-static-lower: #fdf1c2;
+        --semantic-color-mustard-solid-border-static-low: #f9d754;
+        --semantic-color-mustard-solid-border-static-mid: #f7c60b;
+        --semantic-color-mustard-solid-border-static-high: #bd9808;
+        --semantic-color-mustard-solid-border-static-higher: #675305;
+        --semantic-color-mustard-solid-border-static-highest: #4a3b03;
+        --semantic-color-mustard-opacity-border-lowest: rgba(
+            247,
+            198,
+            11,
+            0.04
+        );
+        --semantic-color-mustard-opacity-border-lower: rgba(247, 198, 11, 0.08);
+        --semantic-color-mustard-opacity-border-low: rgba(247, 198, 11, 0.16);
+        --semantic-color-mustard-opacity-border-mid: rgba(247, 198, 11, 0.24);
+        --semantic-color-mustard-opacity-border-high: rgba(247, 198, 11, 0.72);
+        --semantic-color-mustard-opacity-border-higher: rgba(247, 198, 11, 0.8);
+        --semantic-color-mustard-opacity-border-highest: rgba(
+            247,
+            198,
+            11,
+            0.88
+        );
+        --semantic-color-olive-solid-border-normal-low: #434101;
+        --semantic-color-olive-solid-border-normal-mid: #5d5b01;
+        --semantic-color-olive-solid-border-normal-high: #aca702;
+        --semantic-color-olive-solid-border-normal-highest: #e0da02;
+        --semantic-color-olive-solid-border-inverse-low: #fcfbe6;
+        --semantic-color-olive-solid-border-inverse-mid: #f7f6c0;
+        --semantic-color-olive-solid-border-inverse-high: #e9e54e;
+        --semantic-color-olive-solid-border-inverse-highest: #e0da02;
+        --semantic-color-olive-solid-border-static-lowest: #fcfbe6;
+        --semantic-color-olive-solid-border-static-lower: #f7f6c0;
+        --semantic-color-olive-solid-border-static-low: #e9e54e;
+        --semantic-color-olive-solid-border-static-mid: #e0da02;
+        --semantic-color-olive-solid-border-static-high: #aca702;
+        --semantic-color-olive-solid-border-static-higher: #5d5b01;
+        --semantic-color-olive-solid-border-static-highest: #434101;
+        --semantic-color-olive-opacity-border-lowest: rgba(224, 218, 2, 0.04);
+        --semantic-color-olive-opacity-border-lower: rgba(224, 218, 2, 0.08);
+        --semantic-color-olive-opacity-border-low: rgba(224, 218, 2, 0.16);
+        --semantic-color-olive-opacity-border-mid: rgba(224, 218, 2, 0.24);
+        --semantic-color-olive-opacity-border-high: rgba(224, 218, 2, 0.72);
+        --semantic-color-olive-opacity-border-higher: rgba(224, 218, 2, 0.8);
+        --semantic-color-olive-opacity-border-highest: rgba(224, 218, 2, 0.88);
+        --semantic-color-green-solid-border-normal-low: #003d0a;
+        --semantic-color-green-solid-border-normal-mid: #00500f;
+        --semantic-color-green-solid-border-normal-high: #007a22;
+        --semantic-color-green-solid-border-normal-highest: #008832;
+        --semantic-color-green-solid-border-inverse-low: #e6fae9;
+        --semantic-color-green-solid-border-inverse-mid: #bfefc8;
+        --semantic-color-green-solid-border-inverse-high: #4dbc6b;
+        --semantic-color-green-solid-border-inverse-highest: #008832;
+        --semantic-color-green-solid-border-static-lowest: #e6fae9;
+        --semantic-color-green-solid-border-static-lower: #bfefc8;
+        --semantic-color-green-solid-border-static-low: #4dbc6b;
+        --semantic-color-green-solid-border-static-mid: #008832;
+        --semantic-color-green-solid-border-static-high: #007a22;
+        --semantic-color-green-solid-border-static-higher: #00500f;
+        --semantic-color-green-solid-border-static-highest: #003d0a;
+        --semantic-color-green-opacity-border-lowest: rgba(0, 136, 50, 0.04);
+        --semantic-color-green-opacity-border-lower: rgba(0, 136, 50, 0.08);
+        --semantic-color-green-opacity-border-low: rgba(0, 136, 50, 0.16);
+        --semantic-color-green-opacity-border-mid: rgba(0, 136, 50, 0.24);
+        --semantic-color-green-opacity-border-high: rgba(0, 136, 50, 0.72);
+        --semantic-color-green-opacity-border-higher: rgba(0, 136, 50, 0.8);
+        --semantic-color-green-opacity-border-highest: rgba(0, 136, 50, 0.88);
+        --semantic-color-emerald-solid-border-normal-low: #004d39;
+        --semantic-color-emerald-solid-border-normal-mid: #006a4c;
+        --semantic-color-emerald-solid-border-normal-high: #00ae7a;
+        --semantic-color-emerald-solid-border-normal-highest: #00c390;
+        --semantic-color-emerald-solid-border-inverse-low: #e6fff9;
+        --semantic-color-emerald-solid-border-inverse-mid: #bfffed;
+        --semantic-color-emerald-solid-border-inverse-high: #4decbc;
+        --semantic-color-emerald-solid-border-inverse-highest: #00c390;
+        --semantic-color-emerald-solid-border-static-lowest: #e6fff9;
+        --semantic-color-emerald-solid-border-static-lower: #bfffed;
+        --semantic-color-emerald-solid-border-static-low: #4decbc;
+        --semantic-color-emerald-solid-border-static-mid: #00c390;
+        --semantic-color-emerald-solid-border-static-high: #00ae7a;
+        --semantic-color-emerald-solid-border-static-higher: #006a4c;
+        --semantic-color-emerald-solid-border-static-highest: #004d39;
+        --semantic-color-emerald-opacity-border-lowest: rgba(0, 195, 144, 0.04);
+        --semantic-color-emerald-opacity-border-lower: rgba(0, 195, 144, 0.08);
+        --semantic-color-emerald-opacity-border-low: rgba(0, 195, 144, 0.16);
+        --semantic-color-emerald-opacity-border-mid: rgba(0, 195, 144, 0.24);
+        --semantic-color-emerald-opacity-border-high: rgba(0, 195, 144, 0.72);
+        --semantic-color-emerald-opacity-border-higher: rgba(0, 195, 144, 0.8);
+        --semantic-color-emerald-opacity-border-highest: rgba(
+            0,
+            195,
+            144,
+            0.88
+        );
+        --semantic-color-tiffany-solid-border-normal-low: #074639;
+        --semantic-color-tiffany-solid-border-normal-mid: #0a624f;
+        --semantic-color-tiffany-solid-border-normal-high: #12b391;
+        --semantic-color-tiffany-solid-border-normal-highest: #17eabd;
+        --semantic-color-tiffany-solid-border-inverse-low: #e8fdf8;
+        --semantic-color-tiffany-solid-border-inverse-mid: #c5faef;
+        --semantic-color-tiffany-solid-border-inverse-high: #5df0d1;
+        --semantic-color-tiffany-solid-border-inverse-highest: #17eabd;
+        --semantic-color-tiffany-solid-border-static-lowest: #e8fdf8;
+        --semantic-color-tiffany-solid-border-static-lower: #c5faef;
+        --semantic-color-tiffany-solid-border-static-low: #5df0d1;
+        --semantic-color-tiffany-solid-border-static-mid: #17eabd;
+        --semantic-color-tiffany-solid-border-static-high: #12b391;
+        --semantic-color-tiffany-solid-border-static-higher: #0a624f;
+        --semantic-color-tiffany-solid-border-static-highest: #074639;
+        --semantic-color-tiffany-opacity-border-lowest: rgba(
+            23,
+            234,
+            189,
+            0.04
+        );
+        --semantic-color-tiffany-opacity-border-lower: rgba(23, 234, 189, 0.08);
+        --semantic-color-tiffany-opacity-border-low: rgba(23, 234, 189, 0.16);
+        --semantic-color-tiffany-opacity-border-mid: rgba(23, 234, 189, 0.24);
+        --semantic-color-tiffany-opacity-border-high: rgba(23, 234, 189, 0.72);
+        --semantic-color-tiffany-opacity-border-higher: rgba(23, 234, 189, 0.8);
+        --semantic-color-tiffany-opacity-border-highest: rgba(
+            23,
+            234,
+            189,
+            0.88
+        );
+        --semantic-color-teal-solid-border-normal-low: #003d3d;
+        --semantic-color-teal-solid-border-normal-mid: #005555;
+        --semantic-color-teal-solid-border-normal-high: #009c9c;
+        --semantic-color-teal-solid-border-normal-highest: #00cccc;
+        --semantic-color-teal-solid-border-inverse-low: #e6fafa;
+        --semantic-color-teal-solid-border-inverse-mid: #bff2f2;
+        --semantic-color-teal-solid-border-inverse-high: #4ddbdb;
+        --semantic-color-teal-solid-border-inverse-highest: #00cccc;
+        --semantic-color-teal-solid-border-static-lowest: #e6fafa;
+        --semantic-color-teal-solid-border-static-lower: #bff2f2;
+        --semantic-color-teal-solid-border-static-low: #4ddbdb;
+        --semantic-color-teal-solid-border-static-mid: #00cccc;
+        --semantic-color-teal-solid-border-static-high: #009c9c;
+        --semantic-color-teal-solid-border-static-higher: #005555;
+        --semantic-color-teal-solid-border-static-highest: #003d3d;
+        --semantic-color-teal-opacity-border-lowest: rgba(0, 204, 204, 0.04);
+        --semantic-color-teal-opacity-border-lower: rgba(0, 204, 204, 0.08);
+        --semantic-color-teal-opacity-border-low: rgba(0, 204, 204, 0.16);
+        --semantic-color-teal-opacity-border-mid: rgba(0, 204, 204, 0.24);
+        --semantic-color-teal-opacity-border-high: rgba(0, 204, 204, 0.72);
+        --semantic-color-teal-opacity-border-higher: rgba(0, 204, 204, 0.8);
+        --semantic-color-teal-opacity-border-highest: rgba(0, 204, 204, 0.88);
+        --semantic-color-seawater-solid-border-normal-low: #033035;
+        --semantic-color-seawater-solid-border-normal-mid: #044349;
+        --semantic-color-seawater-solid-border-normal-high: #087b87;
+        --semantic-color-seawater-solid-border-normal-highest: #0aa0b0;
+        --semantic-color-seawater-solid-border-inverse-low: #e7f6f7;
+        --semantic-color-seawater-solid-border-inverse-mid: #c2e7eb;
+        --semantic-color-seawater-solid-border-inverse-high: #54bdc8;
+        --semantic-color-seawater-solid-border-inverse-highest: #0aa0b0;
+        --semantic-color-seawater-solid-border-static-lowest: #e7f6f7;
+        --semantic-color-seawater-solid-border-static-lower: #c2e7eb;
+        --semantic-color-seawater-solid-border-static-low: #54bdc8;
+        --semantic-color-seawater-solid-border-static-mid: #0aa0b0;
+        --semantic-color-seawater-solid-border-static-high: #087b87;
+        --semantic-color-seawater-solid-border-static-higher: #044349;
+        --semantic-color-seawater-solid-border-static-highest: #033035;
+        --semantic-color-seawater-opacity-border-lowest: rgba(
+            10,
+            160,
+            176,
+            0.04
+        );
+        --semantic-color-seawater-opacity-border-lower: rgba(
+            10,
+            160,
+            176,
+            0.08
+        );
+        --semantic-color-seawater-opacity-border-low: rgba(10, 160, 176, 0.16);
+        --semantic-color-seawater-opacity-border-mid: rgba(10, 160, 176, 0.24);
+        --semantic-color-seawater-opacity-border-high: rgba(10, 160, 176, 0.72);
+        --semantic-color-seawater-opacity-border-higher: rgba(
+            10,
+            160,
+            176,
+            0.8
+        );
+        --semantic-color-seawater-opacity-border-highest: rgba(
+            10,
+            160,
+            176,
+            0.88
+        );
+        --semantic-color-blue-solid-border-normal-low: #00304d;
+        --semantic-color-blue-solid-border-normal-mid: #00426a;
+        --semantic-color-blue-solid-border-normal-high: #0777c4;
+        --semantic-color-blue-solid-border-normal-highest: #2c9aff;
+        --semantic-color-blue-solid-border-inverse-low: #e6f5ff;
+        --semantic-color-blue-solid-border-inverse-mid: #bfe7ff;
+        --semantic-color-blue-solid-border-inverse-high: #53b9ff;
+        --semantic-color-blue-solid-border-inverse-highest: #2c9aff;
+        --semantic-color-blue-solid-border-static-lowest: #e6f5ff;
+        --semantic-color-blue-solid-border-static-lower: #bfe7ff;
+        --semantic-color-blue-solid-border-static-low: #53b9ff;
+        --semantic-color-blue-solid-border-static-mid: #2c9aff;
+        --semantic-color-blue-solid-border-static-high: #0777c4;
+        --semantic-color-blue-solid-border-static-higher: #00426a;
+        --semantic-color-blue-solid-border-static-highest: #00304d;
+        --semantic-color-blue-opacity-border-lowest: rgba(44, 154, 255, 0.04);
+        --semantic-color-blue-opacity-border-lower: rgba(44, 154, 255, 0.08);
+        --semantic-color-blue-opacity-border-low: rgba(44, 154, 255, 0.16);
+        --semantic-color-blue-opacity-border-mid: rgba(44, 154, 255, 0.24);
+        --semantic-color-blue-opacity-border-high: rgba(44, 154, 255, 0.72);
+        --semantic-color-blue-opacity-border-higher: rgba(44, 154, 255, 0.8);
+        --semantic-color-blue-opacity-border-highest: rgba(44, 154, 255, 0.88);
+        --semantic-color-sapphire-solid-border-normal-low: #040c4a;
+        --semantic-color-sapphire-solid-border-normal-mid: #051167;
+        --semantic-color-sapphire-solid-border-normal-high: #091fbd;
+        --semantic-color-sapphire-solid-border-normal-highest: #0c28f7;
+        --semantic-color-sapphire-solid-border-inverse-low: #e7eafe;
+        --semantic-color-sapphire-solid-border-inverse-mid: #c2c9fd;
+        --semantic-color-sapphire-solid-border-inverse-high: #5569f9;
+        --semantic-color-sapphire-solid-border-inverse-highest: #0c28f7;
+        --semantic-color-sapphire-solid-border-static-lowest: #e7eafe;
+        --semantic-color-sapphire-solid-border-static-lower: #c2c9fd;
+        --semantic-color-sapphire-solid-border-static-low: #5569f9;
+        --semantic-color-sapphire-solid-border-static-mid: #0c28f7;
+        --semantic-color-sapphire-solid-border-static-high: #091fbd;
+        --semantic-color-sapphire-solid-border-static-higher: #051167;
+        --semantic-color-sapphire-solid-border-static-highest: #040c4a;
+        --semantic-color-sapphire-opacity-border-lowest: rgba(
+            12,
+            40,
+            247,
+            0.04
+        );
+        --semantic-color-sapphire-opacity-border-lower: rgba(12, 40, 247, 0.08);
+        --semantic-color-sapphire-opacity-border-low: rgba(12, 40, 247, 0.16);
+        --semantic-color-sapphire-opacity-border-mid: rgba(12, 40, 247, 0.24);
+        --semantic-color-sapphire-opacity-border-high: rgba(12, 40, 247, 0.72);
+        --semantic-color-sapphire-opacity-border-higher: rgba(12, 40, 247, 0.8);
+        --semantic-color-sapphire-opacity-border-highest: rgba(
+            12,
+            40,
+            247,
+            0.88
+        );
+        --semantic-color-blueberry-solid-border-normal-low: #160143;
+        --semantic-color-blueberry-solid-border-normal-mid: #1e015d;
+        --semantic-color-blueberry-solid-border-normal-high: #3802ac;
+        --semantic-color-blueberry-solid-border-normal-highest: #4902e0;
+        --semantic-color-blueberry-solid-border-inverse-low: #ede6fc;
+        --semantic-color-blueberry-solid-border-inverse-mid: #d2c0f7;
+        --semantic-color-blueberry-solid-border-inverse-high: #804ee9;
+        --semantic-color-blueberry-solid-border-inverse-highest: #4902e0;
+        --semantic-color-blueberry-solid-border-static-lowest: #ede6fc;
+        --semantic-color-blueberry-solid-border-static-lower: #d2c0f7;
+        --semantic-color-blueberry-solid-border-static-low: #804ee9;
+        --semantic-color-blueberry-solid-border-static-mid: #4902e0;
+        --semantic-color-blueberry-solid-border-static-high: #3802ac;
+        --semantic-color-blueberry-solid-border-static-higher: #1e015d;
+        --semantic-color-blueberry-solid-border-static-highest: #160143;
+        --semantic-color-blueberry-opacity-border-lowest: rgba(
+            73,
+            2,
+            224,
+            0.04
+        );
+        --semantic-color-blueberry-opacity-border-lower: rgba(73, 2, 224, 0.08);
+        --semantic-color-blueberry-opacity-border-low: rgba(73, 2, 224, 0.16);
+        --semantic-color-blueberry-opacity-border-mid: rgba(73, 2, 224, 0.24);
+        --semantic-color-blueberry-opacity-border-high: rgba(73, 2, 224, 0.72);
+        --semantic-color-blueberry-opacity-border-higher: rgba(73, 2, 224, 0.8);
+        --semantic-color-blueberry-opacity-border-highest: rgba(
+            73,
+            2,
+            224,
+            0.88
+        );
+        --semantic-color-grape-solid-border-normal-low: #26043e;
+        --semantic-color-grape-solid-border-normal-mid: #350556;
+        --semantic-color-grape-solid-border-normal-high: #610a9f;
+        --semantic-color-grape-solid-border-normal-highest: #7f0dcf;
+        --semantic-color-grape-solid-border-inverse-low: #f2e7fa;
+        --semantic-color-grape-solid-border-inverse-mid: #dfc3f3;
+        --semantic-color-grape-solid-border-inverse-high: #a556dd;
+        --semantic-color-grape-solid-border-inverse-highest: #7f0dcf;
+        --semantic-color-grape-solid-border-static-lowest: #f2e7fa;
+        --semantic-color-grape-solid-border-static-lower: #dfc3f3;
+        --semantic-color-grape-solid-border-static-low: #a556dd;
+        --semantic-color-grape-solid-border-static-mid: #7f0dcf;
+        --semantic-color-grape-solid-border-static-high: #610a9f;
+        --semantic-color-grape-solid-border-static-higher: #350556;
+        --semantic-color-grape-solid-border-static-highest: #26043e;
+        --semantic-color-grape-opacity-border-lowest: rgba(127, 13, 207, 0.04);
+        --semantic-color-grape-opacity-border-lower: rgba(127, 13, 207, 0.08);
+        --semantic-color-grape-opacity-border-low: rgba(127, 13, 207, 0.16);
+        --semantic-color-grape-opacity-border-mid: rgba(127, 13, 207, 0.24);
+        --semantic-color-grape-opacity-border-high: rgba(127, 13, 207, 0.72);
+        --semantic-color-grape-opacity-border-higher: rgba(127, 13, 207, 0.8);
+        --semantic-color-grape-opacity-border-highest: rgba(127, 13, 207, 0.88);
+        --semantic-color-magenta-solid-border-normal-low: #3d044a;
+        --semantic-color-magenta-solid-border-normal-mid: #550567;
+        --semantic-color-magenta-solid-border-normal-high: #9c0abd;
+        --semantic-color-magenta-solid-border-normal-highest: #cb0df7;
+        --semantic-color-magenta-solid-border-inverse-low: #fae7fe;
+        --semantic-color-magenta-solid-border-inverse-mid: #f2c3fd;
+        --semantic-color-magenta-solid-border-inverse-high: #db56f9;
+        --semantic-color-magenta-solid-border-inverse-highest: #cb0df7;
+        --semantic-color-magenta-solid-border-static-lowest: #fae7fe;
+        --semantic-color-magenta-solid-border-static-lower: #f2c3fd;
+        --semantic-color-magenta-solid-border-static-low: #db56f9;
+        --semantic-color-magenta-solid-border-static-mid: #cb0df7;
+        --semantic-color-magenta-solid-border-static-high: #9c0abd;
+        --semantic-color-magenta-solid-border-static-higher: #550567;
+        --semantic-color-magenta-solid-border-static-highest: #3d044a;
+        --semantic-color-magenta-opacity-border-lowest: rgba(
+            203,
+            13,
+            247,
+            0.04
+        );
+        --semantic-color-magenta-opacity-border-lower: rgba(203, 13, 247, 0.08);
+        --semantic-color-magenta-opacity-border-low: rgba(203, 13, 247, 0.16);
+        --semantic-color-magenta-opacity-border-mid: rgba(203, 13, 247, 0.24);
+        --semantic-color-magenta-opacity-border-high: rgba(203, 13, 247, 0.72);
+        --semantic-color-magenta-opacity-border-higher: rgba(203, 13, 247, 0.8);
+        --semantic-color-magenta-opacity-border-highest: rgba(
+            203,
+            13,
+            247,
+            0.88
+        );
+        --semantic-color-cherry-solid-border-normal-low: #4d0005;
+        --semantic-color-cherry-solid-border-normal-mid: #6a000a;
+        --semantic-color-cherry-solid-border-normal-high: #c40025;
+        --semantic-color-cherry-solid-border-normal-highest: #de0040;
+        --semantic-color-cherry-solid-border-inverse-low: #ffe6e7;
+        --semantic-color-cherry-solid-border-inverse-mid: #ffbfc6;
+        --semantic-color-cherry-solid-border-inverse-high: #ff4d6e;
+        --semantic-color-cherry-solid-border-inverse-highest: #de0040;
+        --semantic-color-cherry-solid-border-static-lowest: #ffe6e7;
+        --semantic-color-cherry-solid-border-static-lower: #ffbfc6;
+        --semantic-color-cherry-solid-border-static-low: #ff4d6e;
+        --semantic-color-cherry-solid-border-static-mid: #de0040;
+        --semantic-color-cherry-solid-border-static-high: #c40025;
+        --semantic-color-cherry-solid-border-static-higher: #6a000a;
+        --semantic-color-cherry-solid-border-static-highest: #4d0005;
+        --semantic-color-cherry-opacity-border-lowest: rgba(222, 0, 64, 0.04);
+        --semantic-color-cherry-opacity-border-lower: rgba(222, 0, 64, 0.08);
+        --semantic-color-cherry-opacity-border-low: rgba(222, 0, 64, 0.16);
+        --semantic-color-cherry-opacity-border-mid: rgba(222, 0, 64, 0.24);
+        --semantic-color-cherry-opacity-border-high: rgba(222, 0, 64, 0.72);
+        --semantic-color-cherry-opacity-border-higher: rgba(222, 0, 64, 0.8);
+        --semantic-color-cherry-opacity-border-highest: rgba(222, 0, 64, 0.88);
+        --semantic-color-coral-solid-border-normal-low: #4d0000;
+        --semantic-color-coral-solid-border-normal-mid: #6a0004;
+        --semantic-color-coral-solid-border-normal-high: #c41c28;
+        --semantic-color-coral-solid-border-normal-highest: #ff444f;
+        --semantic-color-coral-solid-border-inverse-low: #ffe6e6;
+        --semantic-color-coral-solid-border-inverse-mid: #ffbfc2;
+        --semantic-color-coral-solid-border-inverse-high: #ff6671;
+        --semantic-color-coral-solid-border-inverse-highest: #ff444f;
+        --semantic-color-coral-solid-border-static-lowest: #ffe6e6;
+        --semantic-color-coral-solid-border-static-lower: #ffbfc2;
+        --semantic-color-coral-solid-border-static-low: #ff6671;
+        --semantic-color-coral-solid-border-static-mid: #ff444f;
+        --semantic-color-coral-solid-border-static-high: #c41c28;
+        --semantic-color-coral-solid-border-static-higher: #6a0004;
+        --semantic-color-coral-solid-border-static-highest: #4d0000;
+        --semantic-color-coral-opacity-border-lowest: rgba(255, 68, 79, 0.04);
+        --semantic-color-coral-opacity-border-lower: rgba(255, 68, 79, 0.08);
+        --semantic-color-coral-opacity-border-low: rgba(255, 68, 79, 0.16);
+        --semantic-color-coral-opacity-border-mid: rgba(255, 68, 79, 0.24);
+        --semantic-color-coral-opacity-border-high: rgba(255, 68, 79, 0.72);
+        --semantic-color-coral-opacity-border-higher: rgba(255, 68, 79, 0.8);
+        --semantic-color-coral-opacity-border-highest: rgba(255, 68, 79, 0.88);
     }
 }

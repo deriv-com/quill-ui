@@ -362,6 +362,7 @@ class Transformer {
             this.styleStrings[styleString] = this.mapTokenValues(
                 objectTokens,
                 this.styleStrings[styleString],
+                styleString,
             );
 
             // Convert HEX values to RGBA
@@ -418,10 +419,28 @@ class Transformer {
     };
 
     mapTokenValues = (objectTokens, str) => {
-        Object.keys(objectTokens).map((key) => {
-            const tokenValue = this.allRules[key];
+        const regex = /\{([^{}]+)\}/g; // Regular expression to match {dynamic.variable} pattern
+        const occurrences = [];
+        let match;
 
-            str = str.replaceAll(`{${key}}`, tokenValue);
+        // Use a loop to find all matches
+        while ((match = regex.exec(str)) !== null) {
+            const dynamicName = match[1].trim(); // Get the content inside {} and trim whitespace
+
+            // Check if the dynamicName is not empty and does not contain unwanted substrings
+            if (dynamicName && !dynamicName.includes("\n")) {
+                occurrences.push(dynamicName); // Push the matched content (dynamic.variable) into the occurrences array
+            }
+        }
+
+        occurrences.forEach((occ) => {
+            const tokenValue = this.allRules[occ];
+
+            if (tokenValue !== undefined) {
+                str = str.replaceAll(`{${occ}}`, tokenValue);
+            } else {
+                throw new Error(`Couldn't map a value for ${occ}`);
+            }
         });
 
         return str;
