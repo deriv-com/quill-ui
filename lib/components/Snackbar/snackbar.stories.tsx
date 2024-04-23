@@ -106,6 +106,8 @@ To add snackbar anywhere in your application, import addSnackbar function from u
 \`\`\`javascript
 import { useSnackbar } from "@hooks/useSnackbar";
 
+const { addSnackbar } = useSnackbar();
+
 <Button 
     size="lg" 
     label={"Add Snackbar"}
