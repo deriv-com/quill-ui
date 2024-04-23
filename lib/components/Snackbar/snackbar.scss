@@ -37,16 +37,6 @@
         animation: slide-down var(--motion-duration-snappy) var(--motion-easing-inandout) forwards;
     }
 
-    &.show {
-        animation: slide-up var(--motion-duration-snappy)
-            var(--motion-easing-inandout) forwards;
-    }
-
-    &.fast-animation {
-        animation: slide-down var(--motion-duration-snappy)
-            var(--motion-easing-inandout) 5s forwards;
-    }
-
     @include breakpoint("sm") {
         display: inline-flex;
         width: 560px;
