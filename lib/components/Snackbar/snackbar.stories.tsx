@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta } from "@storybook/react";
 import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons/Standalone";
 import { fn } from "@storybook/test";
-import { Snackbar } from "./Snackbar";
+import { Snackbar } from "./snackbar";
 import { useSnackbar } from "../../hooks/useSnackbar";
 import { Button } from "../Button";
 import { SnackbarProvider } from "../../providers/snackbar/snackbarProvider";

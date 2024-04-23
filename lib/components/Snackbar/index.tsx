@@ -1,5 +1,5 @@
 import React from "react";
-import { Snackbar, SnackbarProps } from "@components/Snackbar/Snackbar";
+import { Snackbar, SnackbarProps } from "@components/Snackbar/snackbar";
 import { useSnackbar } from "@hooks/useSnackbar";
 import "./snackbar.scss";
 
