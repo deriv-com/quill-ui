@@ -4,6 +4,7 @@
 @import '@quill/spacing.scss';
 @import '@quill/size.scss';
 @import '@quill/opacity.scss';
+@import '@quill/motion.scss';
 
 :root {
     .theme--light {
@@ -22,11 +23,16 @@
 .tab-menu {
     display: inline-flex;
     border-bottom:var(--core-borderRadius-100) solid transparent;
+   
     &:hover:not(:disabled):not([aria-selected="true"]) {
         border-bottom:var(--core-borderRadius-100) solid var(--border-bottom-color-hover);
+        animation-timing-function: var(--motion-easing-inandout);
+        animation-duration: var(--core-motion-duration-200);
     }
     &:active:not(:disabled):not([aria-selected="true"]) {
         border-bottom: var(--core-borderRadius-100) solid var(--border-bottom-color-active);
+        animation-timing-function: var(--motion-easing-inandout);
+        animation-duration: var(--core-motion-duration-200);
     }
     &:disabled {
         opacity: var(--core-opacity-600);
