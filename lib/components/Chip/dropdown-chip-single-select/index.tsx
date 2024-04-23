@@ -8,6 +8,7 @@ import type { TSingleSelectItem, SingleSelectChipProps } from "../types";
 import clsx from "clsx";
 import "./dropdown-chip-single-select.scss";
 import { TRegularSizes } from "@types";
+import { Text } from "@components/Typography";
 
 const Options = ({
     item,
@@ -23,9 +24,13 @@ const Options = ({
                     className={clsx(
                         "dropdown-item",
                         `dropdown-item__size--${size}`,
+                        `dropdown-item__selected--${selected}`,
+                        `dropdown-item__disabled--${disabled}`,
                     )}
                 >
-                    {item.label}
+                    <Text size="sm" color="white">
+                        {item.label}
+                    </Text>
                 </li>
             )}
         </Listbox.Option>

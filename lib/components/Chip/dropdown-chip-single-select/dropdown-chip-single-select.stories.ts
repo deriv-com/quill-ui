@@ -55,6 +55,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
+        onSelectionChange: () => console.log("selection changed"),
         options: [
             { value: "1", label: "Sample Item 1" },
             {

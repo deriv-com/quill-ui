@@ -1,5 +1,6 @@
 @import "@quill/spacing.scss";
 @import "@quill/border.scss";
+@import "@quill/elevation.scss";
 
 .enter {
     transition: 0.2s ease;
@@ -69,6 +70,7 @@
     &-item {
         display: flex;
         align-items: center;
+        border-radius: var(--core-borderRadius-200);
 
         &__size {
             &--sm,
@@ -76,10 +78,19 @@
                 height: var(--core-spacing-1600);
                 padding: 0 var(--core-spacing-600);
             }
-
             &--lg {
                 height: var(--core-spacing-2400);
                 padding: 0 var(--core-spacing-800);
+            }
+        }
+
+        &__selected {
+            &--true {
+                background-color: var(--core-color-solid-slate-1400);
+
+                & > p {
+                    color: var(--core-color-solid-slate-50);
+                }
             }
         }
     }
