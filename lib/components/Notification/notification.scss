@@ -1,0 +1,120 @@
+@import "@quill/border.scss";
+@import "@quill/color.scss";
+@import "@quill/color.opacity.scss";
+@import "@quill/color.semantic.scss";
+@import "@quill/motion.scss";
+@import "@quill/opacity.scss";
+@import "@quill/others.scss";
+@import "@quill/spacing.scss";
+@import "@quill/static.scss";
+// TODO: remove unnecessary imports
+
+.notification {
+    &-banner,
+    &-banner__mobile {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: fit-content;
+        min-height: 72px;
+        padding: 16px 32px 16px 16px;
+        border-radius: 16px;
+        border: 1px solid
+            color-mix(
+                in srgb,
+                var(--semantic-color-typography-prominent) 8%,
+                transparent
+            );
+        box-shadow: 0px 4px 8px 2px
+            color-mix(
+                in srgb,
+                var(--semantic-color-typography-prominent) 3%,
+                transparent
+            );
+        background-color: var(--semantic-color-background-dialog);
+        cursor: pointer;
+        animation: 240ms cubic-bezier(0.72, 0, 0.24, 1) enter-desktop;
+        transform: translateY(0);
+        transition: transform 240ms cubic-bezier(0.72, 0, 0.24, 1);
+
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            border-radius: var(--semantic-borderRadius-pill);
+            cursor: pointer;
+
+            &.info {
+                background-color: var(--core-color-opacity-blue-100);
+            }
+            &.error {
+                background-color: var(--core-color-opacity-red-100);
+            }
+            &.success {
+                background-color: var(--core-color-opacity-green-100);
+            }
+            &.warning {
+                background-color: var(--core-color-opacity-yellow-100);
+            }
+            &.close {
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                right: 8px;
+                top: 8px;
+                border-radius: unset;
+            }
+        }
+        .body {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        &.hidden {
+            transform: translateY(100vh);
+        }
+    }
+    &-banner__mobile {
+        animation: 240ms cubic-bezier(0.72, 0, 0.24, 1) enter-mobile;
+
+        &.hidden {
+            transform: translateY(-100vh);
+        }
+    }
+}
+
+.notification-banners,
+.notification-banners__mobile {
+    position: absolute;
+    width: 360px;
+    bottom: 8px;
+    left: 8px;
+    z-index: 6;
+
+    &__mobile {
+        top: 8px;
+        bottom: unset;
+        width: calc(100vw - 16px);
+    }
+}
+
+@keyframes enter-mobile {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes enter-desktop {
+    0% {
+        transform: translateY(100vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
