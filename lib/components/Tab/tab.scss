@@ -21,7 +21,7 @@
 
 .tab-menu {
     display: inline-flex;
-
+    border-bottom:var(--core-borderRadius-100) solid transparent;
     &:hover:not(:disabled):not([aria-selected="true"]) {
         border-bottom:var(--core-borderRadius-100) solid var(--border-bottom-color-hover);
     }
