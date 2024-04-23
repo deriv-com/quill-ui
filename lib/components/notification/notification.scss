@@ -35,6 +35,8 @@
         background-color: var(--semantic-color-background-dialog);
         cursor: pointer;
         animation: 240ms cubic-bezier(0.72, 0, 0.24, 1) enter-desktop;
+        transform: translateY(0);
+        transition: transform 240ms cubic-bezier(0.72, 0, 0.24, 1);
 
         .icon {
             display: flex;
@@ -72,14 +74,14 @@
             gap: 16px;
         }
         &.hidden {
-            animation: 240ms cubic-bezier(0.72, 0, 0.24, 1) exit-desktop;
+            transform: translateY(100vh);
         }
     }
     &-banner__mobile {
         animation: 240ms cubic-bezier(0.72, 0, 0.24, 1) enter-mobile;
 
         &.hidden {
-            animation: 240ms cubic-bezier(0.72, 0, 0.24, 1) exit-mobile;
+            transform: translateY(-100vh);
         }
     }
 }
@@ -114,23 +116,5 @@
     }
     100% {
         transform: translateY(0);
-    }
-}
-
-@keyframes exit-mobile {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-100vh);
-    }
-}
-
-@keyframes exit-desktop {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(100vh);
     }
 }

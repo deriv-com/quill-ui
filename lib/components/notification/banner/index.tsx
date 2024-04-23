@@ -38,7 +38,7 @@ const NotificationBanner = ({
         setIsHidden(true);
         timeoutId.current = setTimeout(() => {
             onClose?.();
-        }, 200);
+        }, 240);
     };
 
     const forceClose = () => {
