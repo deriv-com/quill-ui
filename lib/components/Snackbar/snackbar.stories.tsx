@@ -195,7 +195,7 @@ export const SnackbarWithCloseButton = Template.bind(this, {
     actionText: "",
 });
 
-export const SnackbarWithTwoLinesMessage = Template.bind(this, {
+export const SnackbarWithTwoLinesMessageMobileOnly = Template.bind(this, {
     ...meta.args,
     icon: "",
     message:
@@ -204,7 +204,7 @@ export const SnackbarWithTwoLinesMessage = Template.bind(this, {
     actionText: "",
 });
 
-export const SnackbarWithTwoLinesMessageWithCloseButton = Template.bind(this, {
+export const SnackbarWithTwoLinesMessageWithCloseButtonMobileOnly = Template.bind(this, {
     ...meta.args,
     icon: "",
     message:
@@ -212,7 +212,7 @@ export const SnackbarWithTwoLinesMessageWithCloseButton = Template.bind(this, {
     actionText: "",
 });
 
-export const SnackbarWithTwoLinesMessageWithActionButton = Template.bind(this, {
+export const SnackbarWithTwoLinesMessageWithActionButtonMobileOnly = Template.bind(this, {
     ...meta.args,
     icon: "",
     message:
