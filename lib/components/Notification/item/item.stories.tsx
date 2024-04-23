@@ -29,7 +29,7 @@ const meta = {
         message: "This is a notification message",
         onClick: fn(),
         onClose: fn(),
-        timestamp: new Date('2024-04-23T09:24:00').getTime(),
+        timestamp: new Date("2024-04-23T09:24:00").getTime(),
         title: "Title",
     },
     argTypes: {
@@ -79,7 +79,7 @@ export const NotificationItemExample: Story = {
     },
     parameters: { viewport: { defaultViewport: "desktop" } },
     render: (args) => (
-        <div style={{ width: "1008px" }}>
+        <div style={{ width: "360px" }}>
             <NotificationItem {...args} />
         </div>
     ),

@@ -58,10 +58,17 @@ export const Notification = ({
     });
 
     return (
-        <a {...swipeHandlers} {...rest} className={className}>
+        <a
+            {...swipeHandlers}
+            {...rest}
+            className={clsx("notification", className)}
+        >
             <div className="body">
                 <div className={clsx("icon", type)}>
                     <NotificationIcon type={type} />
+                    {!isBanner && status === STATUS.UNREAD && (
+                        <div className="badge-unread" />
+                    )}
                 </div>
                 <div className="content">
                     <Text
@@ -81,7 +88,7 @@ export const Notification = ({
                         </Text>
                     )}
                     {!isBanner && timestamp && (
-                        <CaptionText className="timestamp">
+                        <CaptionText className="time">
                             {formattedTime}
                         </CaptionText>
                     )}
@@ -92,18 +99,23 @@ export const Notification = ({
                     <LabelPairedXmarkSmRegularIcon />
                 </button>
             )}
-            {!isBanner && status === STATUS.UNREAD && (
-                <button
-                    className={clsx("icon", "mark-as-read")}
-                    onClick={onClose}
-                >
-                    <LabelPairedCheckSmBoldIcon />
-                </button>
-            )}
             {!isBanner && (
-                <button className={clsx("icon", "delete")} onClick={onClose}>
-                    <LabelPairedTrashSmBoldIcon />
-                </button>
+                <div className="buttons">
+                    {status === STATUS.UNREAD && (
+                        <button
+                            className={clsx("icon", "mark-as-read")}
+                            onClick={onClose}
+                        >
+                            <LabelPairedCheckSmBoldIcon />
+                        </button>
+                    )}
+                    <button
+                        className={clsx("icon", "delete")}
+                        onClick={onClose}
+                    >
+                        <LabelPairedTrashSmBoldIcon />
+                    </button>
+                </div>
             )}
         </a>
     );
