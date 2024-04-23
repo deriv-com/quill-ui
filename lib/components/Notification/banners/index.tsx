@@ -1,17 +1,12 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import clsx from "clsx";
-import { TYPE } from "../../../utils/notification-utils";
 import NotificationBanner from "../banner";
+import type { NotificationBannerProps } from "../banner";
 
 export interface NotificationBannersProps {
     autohideTimeout?: number;
     className?: string;
-    banners?: Array<{
-        id: string;
-        message?: ReactNode;
-        title?: string;
-        type: (typeof TYPE)[keyof typeof TYPE];
-    }>;
+    banners?: Array<NotificationBannerProps & { id: string }>;
     isMobile?: boolean;
     onClose?: (bannerId: string) => void;
     zIndex?: number;

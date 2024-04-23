@@ -4,7 +4,7 @@ import { TYPE } from "../../../utils/notification-utils";
 import { Notification } from "../base";
 import type { NotificationProps } from "../base";
 
-export interface NotificationBannerProps
+export interface NotificationItemProps
     extends Omit<NotificationProps, "icon" | "status" | "hasCloseButton"> {
     autohideTimeout?: number;
     className?: string;
@@ -12,14 +12,14 @@ export interface NotificationBannerProps
     isMobile?: boolean;
 }
 
-const NotificationBanner = ({
+const NotificationItem = ({
     autohideTimeout = 4000,
     className,
     type = "info",
     isMobile,
     onClose,
     ...rest
-}: NotificationBannerProps) => {
+}: NotificationItemProps) => {
     const [isHidden, setIsHidden] = useState(false);
     const intervalId = useRef<ReturnType<typeof setInterval>>();
     const timeoutId = useRef<ReturnType<typeof setTimeout>>();
@@ -50,18 +50,15 @@ const NotificationBanner = ({
         <Notification
             {...rest}
             className={clsx(
-                `notification-banner${isMobile ? "__mobile" : ""}`,
+                `notification-item${isMobile ? "__mobile" : ""}`,
                 isHidden && "hidden",
                 className,
             )}
             hasCloseButton={!isMobile}
-            isBanner
             onClose={forceClose}
-            onSwipeDown={isMobile ? undefined : forceClose}
-            onSwipeUp={isMobile ? forceClose : undefined}
             type={type}
         />
     );
 };
 
-export default NotificationBanner;
+export default NotificationItem;

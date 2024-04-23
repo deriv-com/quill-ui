@@ -1,5 +1,9 @@
 import React from "react";
-import { LabelPairedXmarkSmRegularIcon } from "@deriv/quill-icons";
+import {
+    LabelPairedCheckSmBoldIcon,
+    LabelPairedTrashSmBoldIcon,
+    LabelPairedXmarkSmRegularIcon,
+} from "@deriv/quill-icons";
 import clsx from "clsx";
 import { useSwipeable } from "react-swipeable";
 import { CaptionText, Text } from "../Typography";
@@ -11,11 +15,13 @@ export interface NotificationProps
     extends Omit<React.HTMLAttributes<HTMLAnchorElement>, "title"> {
     className?: string;
     hasCloseButton?: boolean;
+    isBanner?: boolean;
     message?: React.ReactNode;
     onClose?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
     onSwipeDown?: () => void;
     onSwipeUp?: () => void;
     status?: (typeof STATUS)[keyof typeof STATUS];
+    timestamp?: number;
     title?: React.ReactNode;
     type?: (typeof TYPE)[keyof typeof TYPE];
 }
@@ -23,15 +29,28 @@ export interface NotificationProps
 export const Notification = ({
     className,
     hasCloseButton,
+    isBanner,
     message,
     onClose,
     onSwipeDown,
     onSwipeUp,
-    status = "unread",
+    status = STATUS.UNREAD,
+    timestamp,
     title,
     type,
     ...rest
 }: NotificationProps) => {
+    const formattedTime = `${new Date(timestamp ?? 0).getDate()} ${new Date(
+        timestamp ?? 0,
+    ).toLocaleString("en", {
+        month: "short",
+        year: "numeric",
+        hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZoneName: "short",
+    })}`.replace(",", "");
+
     const swipeHandlers = useSwipeable({
         onSwipedUp: onSwipeUp,
         onSwipedDown: onSwipeDown,
@@ -52,14 +71,38 @@ export const Notification = ({
                     >
                         {title}
                     </Text>
-                    <CaptionText className="message" bold={false}>
-                        {message}
-                    </CaptionText>
+                    {isBanner ? (
+                        <CaptionText className="message" bold={false}>
+                            {message}
+                        </CaptionText>
+                    ) : (
+                        <Text className="message" size="sm">
+                            {message}
+                        </Text>
+                    )}
+                    {!isBanner && timestamp && (
+                        <CaptionText className="timestamp">
+                            {formattedTime}
+                        </CaptionText>
+                    )}
                 </div>
             </div>
-            {hasCloseButton && (
+            {isBanner && hasCloseButton && (
                 <button className={clsx("icon", "close")} onClick={onClose}>
                     <LabelPairedXmarkSmRegularIcon />
+                </button>
+            )}
+            {!isBanner && status === STATUS.UNREAD && (
+                <button
+                    className={clsx("icon", "mark-as-read")}
+                    onClick={onClose}
+                >
+                    <LabelPairedCheckSmBoldIcon />
+                </button>
+            )}
+            {!isBanner && (
+                <button className={clsx("icon", "delete")} onClick={onClose}>
+                    <LabelPairedTrashSmBoldIcon />
                 </button>
             )}
         </a>

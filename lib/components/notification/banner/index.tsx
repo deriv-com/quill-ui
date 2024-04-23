@@ -55,6 +55,7 @@ const NotificationBanner = ({
                 className,
             )}
             hasCloseButton={!isMobile}
+            isBanner
             onClose={forceClose}
             onSwipeDown={isMobile ? undefined : forceClose}
             onSwipeUp={isMobile ? forceClose : undefined}

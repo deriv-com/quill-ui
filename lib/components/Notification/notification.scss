@@ -84,20 +84,24 @@
             transform: translateY(-100vh);
         }
     }
-}
-
-.notification-banners,
-.notification-banners__mobile {
-    position: absolute;
-    width: 360px;
-    bottom: 8px;
-    left: 8px;
-    z-index: 6;
-
-    &__mobile {
-        top: 8px;
-        bottom: unset;
-        width: calc(100vw - 16px);
+    &-banners,
+    &-banners__mobile {
+        position: absolute;
+        width: 360px;
+        bottom: 8px;
+        left: 8px;
+        z-index: 6;
+    
+        &__mobile {
+            top: 8px;
+            bottom: unset;
+            width: calc(100vw - 16px);
+        }
+    }
+    &-item {
+        display: flex;
+        align-items: center;
+        width: 100%;
     }
 }
 
