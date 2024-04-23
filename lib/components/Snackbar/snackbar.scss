@@ -18,9 +18,9 @@
     border: var(--borderWidth-xs) solid var(--core-color-opacity-white-100);
     background: var(--core-color-solid-slate-1400);
     box-shadow: var(--core-elevation-shadow-330);
-    position: absolute;
+    position: fixed;
     z-index: 1;
-    bottom: -100%;
+    bottom: -16px;
     transition: bottom var(--motion-duration-snappy)
         var(--motion-easing-inandout);
 
@@ -29,18 +29,22 @@
         justify-content: center;
     }
 
-    &.slow-animation {
+    &.slide-up {
+        animation: slide-up var(--motion-duration-snappy) var(--motion-easing-inandout) forwards;
+    }
+
+    &.slide-down {
+        animation: slide-down var(--motion-duration-snappy) var(--motion-easing-inandout) forwards;
+    }
+
+    &.show {
         animation: slide-up var(--motion-duration-snappy)
-            var(--motion-easing-inandout) forwards,
-        slide-down var(--motion-duration-snappy) var(--core-motion-duration-1300)
             var(--motion-easing-inandout) forwards;
     }
+
     &.fast-animation {
-        animation:
-            slide-up var(--motion-duration-snappy) var(--motion-easing-inandout)
-                forwards,
-            slide-down var(--motion-duration-snappy) var(--core-motion-duration-900)
-                var(--motion-easing-inandout) forwards;
+        animation: slide-down var(--motion-duration-snappy)
+            var(--motion-easing-inandout) 5s forwards;
     }
 
     @include breakpoint("sm") {
@@ -88,10 +92,10 @@
     }
 }
 @keyframes slide-up {
-    0% {
+    from {
         bottom: -100%;
     }
-    100% {
+    to {
         bottom: var(--core-size-800);
     }
 }

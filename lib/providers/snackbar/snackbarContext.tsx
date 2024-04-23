@@ -1,12 +1,11 @@
 // SnackbarContext.js
-import { Snackbar } from "../../components/Snackbar/";
-import { ComponentProps, createContext } from "react";
-import { SnackbarComponent } from "./snackbarProvider";
+import { SnackbarProps } from "../../components/Snackbar/Snackbar";
+import { createContext } from "react";
 
 export type SnackbarContextValue = {
-  queue:  SnackbarComponent[];
-  addSnackbar: (props: ComponentProps<typeof Snackbar>) => void;
-  removeSnackbar: () => void;
+  queue:  SnackbarProps[];
+  addSnackbar: (props: Omit<SnackbarProps, 'id' | 'isShown'>) => void;
+  removeSnackbar: (id: string) => void;
 };
 
 export const SnackbarContext = createContext<SnackbarContextValue>({ queue: [], addSnackbar: () => {}, removeSnackbar: () => {}, });

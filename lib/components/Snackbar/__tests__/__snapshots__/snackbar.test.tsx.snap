@@ -6,7 +6,7 @@ exports[`Snackbar calls removeSnackbar after a certain duration when Snackbar is
     class="snackbar--container"
   >
     <div
-      class="snackbar slow-animation"
+      class="snackbar slide-up slide-down"
     >
       <div
         class="snackbar__message--container"
@@ -56,7 +56,7 @@ exports[`Snackbar calls removeSnackbar after a certain duration when Snackbar is
               </g>
               <defs>
                 <clippath
-                  id="a7bd501ce53ed6e1a615bbf6d67075b4__a"
+                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
                 >
                   <path
                     d="M0 0h11v22H0z"
@@ -76,7 +76,71 @@ exports[`Snackbar calls removeSnackbar when action button is clicked 1`] = `
 <div>
   <div
     class="snackbar--container"
-  />
+  >
+    <div
+      class="snackbar slide-up slide-down"
+    >
+      <div
+        class="snackbar__message--container"
+      >
+        <p
+          class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+        >
+          test message
+        </p>
+      </div>
+      <button
+        class="quill-button quill-button__size--md quill__color--tertiary-white"
+        data-state=""
+      >
+        <span
+          class="button-label"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
+          >
+            Action
+          </p>
+        </span>
+      </button>
+      <button
+        class="quill-button quill-button__size--md quill__color--tertiary-white"
+        data-state=""
+        data-testid="close-button"
+      >
+        <span
+          class="button-label"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
+          >
+            <svg
+              height="22"
+              role="img"
+              viewBox="0 0 11 22"
+              width="11"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+                />
+              </g>
+              <defs>
+                <clippath
+                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
+                >
+                  <path
+                    d="M0 0h11v22H0z"
+                  />
+                </clippath>
+              </defs>
+            </svg>
+          </p>
+        </span>
+      </button>
+    </div>
+  </div>
 </div>
 `;
 
@@ -84,7 +148,71 @@ exports[`Snackbar calls removeSnackbar when close button is clicked 1`] = `
 <div>
   <div
     class="snackbar--container"
-  />
+  >
+    <div
+      class="snackbar slide-up slide-down"
+    >
+      <div
+        class="snackbar__message--container"
+      >
+        <p
+          class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+        >
+          test message
+        </p>
+      </div>
+      <button
+        class="quill-button quill-button__size--md quill__color--tertiary-white"
+        data-state=""
+      >
+        <span
+          class="button-label"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
+          >
+            Action
+          </p>
+        </span>
+      </button>
+      <button
+        class="quill-button quill-button__size--md quill__color--tertiary-white"
+        data-state=""
+        data-testid="close-button"
+      >
+        <span
+          class="button-label"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
+          >
+            <svg
+              height="22"
+              role="img"
+              viewBox="0 0 11 22"
+              width="11"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+                />
+              </g>
+              <defs>
+                <clippath
+                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
+                >
+                  <path
+                    d="M0 0h11v22H0z"
+                  />
+                </clippath>
+              </defs>
+            </svg>
+          </p>
+        </span>
+      </button>
+    </div>
+  </div>
 </div>
 `;
 
@@ -94,7 +222,7 @@ exports[`Snackbar renders correctly with custom icon 1`] = `
     class="snackbar--container"
   >
     <div
-      class="snackbar slow-animation"
+      class="snackbar slide-up slide-down"
     >
       <div
         class="snackbar__icon--container"
@@ -152,7 +280,7 @@ exports[`Snackbar renders correctly with custom icon 1`] = `
               </g>
               <defs>
                 <clippath
-                  id="a7bd501ce53ed6e1a615bbf6d67075b4__a"
+                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
                 >
                   <path
                     d="M0 0h11v22H0z"
@@ -174,7 +302,7 @@ exports[`Snackbar renders correctly without action button 1`] = `
     class="snackbar--container"
   >
     <div
-      class="snackbar slow-animation"
+      class="snackbar slide-up slide-down"
     >
       <div
         class="snackbar__message--container"
@@ -210,7 +338,7 @@ exports[`Snackbar renders correctly without action button 1`] = `
               </g>
               <defs>
                 <clippath
-                  id="a7bd501ce53ed6e1a615bbf6d67075b4__a"
+                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
                 >
                   <path
                     d="M0 0h11v22H0z"
@@ -232,7 +360,7 @@ exports[`Snackbar renders correctly without close button 1`] = `
     class="snackbar--container"
   >
     <div
-      class="snackbar slow-animation"
+      class="snackbar slide-up slide-down"
     >
       <div
         class="snackbar__message--container"
@@ -268,7 +396,7 @@ exports[`Snackbar renders with default props 1`] = `
     class="snackbar--container"
   >
     <div
-      class="snackbar slow-animation"
+      class="snackbar slide-up slide-down"
     >
       <div
         class="snackbar__message--container"
@@ -318,7 +446,7 @@ exports[`Snackbar renders with default props 1`] = `
               </g>
               <defs>
                 <clippath
-                  id="a7bd501ce53ed6e1a615bbf6d67075b4__a"
+                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
                 >
                   <path
                     d="M0 0h11v22H0z"
