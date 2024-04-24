@@ -72,6 +72,9 @@
         align-items: center;
         border-radius: var(--core-borderRadius-200);
 
+        &:hover {
+        }
+
         &__size {
             &--sm,
             &--md {
@@ -91,6 +94,11 @@
                 & > p {
                     color: var(--core-color-solid-slate-50);
                 }
+            }
+        }
+
+        &__disabled {
+            &--true {
             }
         }
     }
