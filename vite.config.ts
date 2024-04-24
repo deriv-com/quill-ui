@@ -31,15 +31,14 @@ export default defineConfig({
     },
     resolve: {
         alias: {
-            "@": resolve(__dirname, "./lib"),
-            "@quill-bundle": resolve(__dirname, "./lib/styles/quill-bundle"),
-            "@quill": resolve(__dirname, "./lib/styles/quill"),
-            "@quill-custom": resolve(__dirname, "./lib/styles/custom"),
-            "@components": resolve(__dirname, "./lib/components"),
-            "@hooks": resolve(__dirname, "./lib/hooks"),
-            "@providers": resolve(__dirname, "./lib/providers"),
-            "@utils": resolve(__dirname, "./lib/utils"),
-            "@types": resolve(__dirname, "./lib/types.ts"),
+            "@quill-bundle": resolve(__dirname, "lib/styles/quill-bundle"),
+            "@quill": resolve(__dirname, "lib/styles/quill"),
+            "@quill-custom": resolve(__dirname, "lib/styles/custom"),
+            "@components": resolve(__dirname, "lib/components"),
+            "@hooks": resolve(__dirname, "lib/hooks"),
+            "@providers": resolve(__dirname, "lib/providers"),
+            "@utils": resolve(__dirname, "lib/utils"),
+            "@types": resolve(__dirname, "lib/types.ts"),
         },
     },
     build: {
