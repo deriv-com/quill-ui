@@ -1,5 +1,7 @@
 import React, { ComponentProps, ElementType } from "react";
 import { TGenericSizes } from "@types";
+import "@quill/quill.scss";
+import "@styles/index.scss";
 import "./typography.scss";
 
 export interface TypographyProps extends ComponentProps<THeaders> {
