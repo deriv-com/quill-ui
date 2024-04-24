@@ -1,8 +1,8 @@
 import { act, fireEvent, render, screen } from "@testing-library/react";
-import { useSnackbar } from "../../../hooks/useSnackbar";
-import { SnackbarProvider } from "../../../providers/snackbar/snackbarProvider";
+import { useSnackbar } from "@hooks/useSnackbar";
+import { SnackbarProvider } from "@providers/snackbar/snackbarProvider";
 import { SnackbarController } from "..";
-import { SnackbarProps } from "../snackbar";
+import { SnackbarProps } from "@components/Snackbar/snackbar";
 
 const removeSnackbarMock = jest.fn();
 jest.mock("../../../hooks/useSnackbar", () => ({
