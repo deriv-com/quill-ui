@@ -52,6 +52,8 @@ class Transformer {
             static: "",
             quill: "",
             breakpoints: "",
+            light: "",
+            dark: "",
         };
         this.mapSASSValues();
         this.generateFiles();
@@ -222,33 +224,29 @@ class Transformer {
     };
 
     generateThemeVariables = () => {
-        this.styleStrings.quill += `\n
-                /* Theme Styling */ \n
-                :root { \n    
-                    `;
-
         this.themeTokenNames.map((name) => {
             const themeTokenGroup = this.getTokenGroup([name]);
             const themeObjectTokens = this.generateSassVariables({
                 data: themeTokenGroup,
             });
 
-            const themeName = name.replace(/^.*?\/(.*?)\/(.*)$/, "$1--$2");
+            const themeName = name.split("/")[2];
 
-            this.styleStrings.quill += `\n .${themeName} { \n
-    `;
+            this.styleStrings[themeName] += `\n
+            /* ${themeName} Theme */ \n
+            :root { \n    
+                `;
 
             Object.keys(themeObjectTokens).map((tokenKey) => {
                 const convertedKey = this.convertCSSkey(tokenKey);
                 const tokenValue = themeObjectTokens[tokenKey];
 
-                this.styleStrings.quill += `${convertedKey}: ${tokenValue};\n`;
+                this.styleStrings[themeName] +=
+                    `${convertedKey}: ${tokenValue};\n`;
             });
 
-            this.styleStrings.quill += "\n}\n";
+            this.styleStrings[themeName] += "\n}\n";
         });
-
-        this.styleStrings.quill += "\n}\n";
     };
 
     getTokenGroup = (group) =>
@@ -305,21 +303,29 @@ class Transformer {
     };
 
     resolveDynamicVariables = () => {
-        const str = this.styleStrings.quill;
+        Object.keys(this.styleStrings).forEach((styleStrKey) => {
+            const str = this.styleStrings[styleStrKey];
 
-        // Regular expression to match { dynamic.variable.name } format
-        const regex = /\{\s*([a-zA-Z0-9_.]+)\s*\}/g;
+            // Regular expression to match { dynamic.variable.name } format
+            const regex = /\{\s*([a-zA-Z0-9_.]+)\s*\}/g;
 
-        // Replace occurrences of dynamic variables with var(--dynamic-variable-name)
-        const transformedString = str.replace(regex, (match, variableName) => {
-            // Remove any whitespace and convert variableName to valid CSS custom property name
-            const cssVariableName = variableName.replace(/[^\w-]/g, "-");
+            // Replace occurrences of dynamic variables with var(--dynamic-variable-name)
+            const transformedString = str.replace(
+                regex,
+                (match, variableName) => {
+                    // Remove any whitespace and convert variableName to valid CSS custom property name
+                    const cssVariableName = variableName.replace(
+                        /[^\w-]/g,
+                        "-",
+                    );
 
-            // Construct the CSS variable syntax var(--dynamic-variable-name)
-            return `var(--${cssVariableName})`;
+                    // Construct the CSS variable syntax var(--dynamic-variable-name)
+                    return `var(--${cssVariableName})`;
+                },
+            );
+
+            this.styleStrings[styleStrKey] = transformedString;
         });
-
-        this.styleStrings.quill = transformedString;
     };
 
     resolveTokenValues = () => {

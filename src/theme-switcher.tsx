@@ -6,9 +6,12 @@ const ThemeSwitcher = () => {
 
     return (
         <div>
-            <Button variant="primary" onClick={toggleTheme}>
-                Toggle Theme
-            </Button>
+            <Button
+                size="md"
+                variant="primary"
+                onClick={toggleTheme}
+                label="Toggle Theme"
+            ></Button>
         </div>
     );
 };

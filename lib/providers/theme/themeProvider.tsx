@@ -24,6 +24,21 @@ export const ThemeProvider = ({ children, theme }: ThemeProviderProps) => {
         const theme = selectedTheme || (systemPrefersDark ? "dark" : "light");
 
         setCurrentTheme(theme);
+
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+
+        if (theme === "light") {
+            link.href = "/lib/styles/quill/light.scss";
+        } else {
+            link.href = "/lib/styles/quill/dark.scss";
+        }
+
+        document.head.appendChild(link);
+
+        return () => {
+            document.head.removeChild(link);
+        };
     }, [selectedTheme, systemPrefersDark]);
 
     return (
