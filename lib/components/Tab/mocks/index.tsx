@@ -13,8 +13,9 @@ const MockTab = ({ size, iconPosition, contentStyle, ...props }: TabProps) => {
             <Tab.List>
                 <Tab.Trigger {...props}>Forex</Tab.Trigger>
                 <Tab.Trigger {...props}>Derived Indices</Tab.Trigger>
-                <Tab.Trigger disabled={true} {...props}>
-                    Stocks
+                <Tab.Trigger {...props}>Stocks</Tab.Trigger>
+                <Tab.Trigger disabled {...props}>
+                    Crypto
                 </Tab.Trigger>
             </Tab.List>
             <Tab.Content>
