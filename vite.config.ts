@@ -31,7 +31,7 @@ export default defineConfig({
     },
     resolve: {
         alias: {
-            // "@": resolve(__dirname, "./lib"),
+            "@": resolve(__dirname, "./lib"),
             "@quill-bundle": resolve(__dirname, "./lib/styles/quill-bundle"),
             "@quill": resolve(__dirname, "./lib/styles/quill"),
             "@quill-custom": resolve(__dirname, "./lib/styles/custom"),
