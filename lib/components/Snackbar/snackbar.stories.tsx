@@ -110,7 +110,7 @@ const { addSnackbar } = useSnackbar();
 
 <Button 
     size="lg" 
-    label={"Add Snackbar"}
+    label="Add Snackbar"
     onClick={() => {
         addSnackbar({
             icon: <StandalonePlaceholderRegularIcon fill="#ffffff" iconSize="sm" />,
@@ -151,7 +151,7 @@ const Template = ({
         <div style={{ display: "flex", justifyContent: "center" }}>
             <Button
                 size="lg"
-                label={"Add Snackbar"}
+                label="Add Snackbar"
                 style={{ margin: "0 auto" }}
                 onClick={() => {
                     addSnackbar({
