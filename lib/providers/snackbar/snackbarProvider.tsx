@@ -1,6 +1,6 @@
 import React, { useState, PropsWithChildren } from "react";
 import { SnackbarContext } from "./snackbarContext";
-import { SnackbarProps } from "../../components/Snackbar/snackbar";
+import { SnackbarProps } from "@components/Snackbar/snackbar";
 import uuid from 'react-uuid';
 
 export interface SnackbarProviderProps {

@@ -3,9 +3,7 @@ import type { Meta } from "@storybook/react";
 import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons/Standalone";
 import { fn } from "@storybook/test";
 import { Snackbar } from "./snackbar";
-import { useSnackbar } from "../../hooks/useSnackbar";
-import { Button } from "../Button";
-import { SnackbarProvider } from "../../providers/snackbar/snackbarProvider";
+import { Button } from "@components/Button";
 import { SnackbarController } from ".";
 import {
     Title,
@@ -16,6 +14,8 @@ import {
     Stories,
     Markdown,
 } from "@storybook/blocks";
+import { useSnackbar } from "@hooks/useSnackbar";
+import { SnackbarProvider } from "@providers/snackbar/snackbarProvider";
 
 const meta = {
     title: "Components/Snackbar/Default",
