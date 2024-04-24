@@ -87,16 +87,16 @@ $weights: regular, bold;
 .quill-typography {
     &__color {
         &--prominent {
-            color: var(--semantic-color-typography-prominent);
+            color: var(--component-textIcon-normal-prominent);
         }
         &--default {
-            color: var(--semantic-color-typography-default);
+            color: var(--component-textIcon-normal-default);
         }
         &--subtle {
-            color: var(--semantic-color-typography-subtle);
+            color: var(--component-textIcon-normal-subtle);
         }
         &--disabled {
-            color: var(--semantic-color-typography-disabled);
+            color: var(--component-textIcon-normal-disabled);
         }
     }
 
