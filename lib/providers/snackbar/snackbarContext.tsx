@@ -1,4 +1,3 @@
-// SnackbarContext.js
 import { SnackbarProps } from "@components/Snackbar/snackbar";
 import { createContext } from "react";
 
