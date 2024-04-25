@@ -73,7 +73,7 @@ class Transformer {
             Object.keys(this.styleCategoryNames).map((key) => [key, ""]),
         );
 
-        this.mapSASSValues();
+        this.mapSassValues();
         this.generateFiles();
     }
 
@@ -309,7 +309,7 @@ class Transformer {
 
     isObject = (item) => typeof item === "object";
 
-    mapSASSValues = () => {
+    mapSassValues = () => {
         const tokenGroup = this.getTokenGroup(this.tokenNames);
         const objectTokens = this.generateSassVariables({ data: tokenGroup });
 

@@ -52,7 +52,7 @@ class Transformer {
             quill: "",
             breakpoints: "",
         };
-        this.mapSASSValues();
+        this.mapSassValues();
         this.generateFiles();
     }
 
@@ -254,7 +254,7 @@ class Transformer {
 
     isObject = (item) => typeof item === "object";
 
-    mapSASSValues = () => {
+    mapSassValues = () => {
         this.styleStrings.static = ``;
         // Add temporary static values
         for (let i = 1; i <= 300; i++) {
