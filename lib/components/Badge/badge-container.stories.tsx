@@ -5,7 +5,7 @@ import { StandaloneWhatsappIcon } from "@deriv/quill-icons/Standalone";
 import { TextField } from "..";
 
 const meta = {
-    title: "Components/Badge/Conatiner",
+    title: "Components/Badge/Container",
     component: BadgeContainer,
     parameters: {
         layout: "centered",
