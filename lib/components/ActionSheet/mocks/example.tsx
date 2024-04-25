@@ -107,6 +107,56 @@ export const ActionSheetExampleWithIconTrigger = ({
                             screen which includes content related to the
                             previous screen.
                         </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
                     </ActionSheet.Content>
                     <ActionSheet.Footer
                         primaryAction={primaryAction}
