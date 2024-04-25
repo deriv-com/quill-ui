@@ -22,15 +22,11 @@
         }
         &:hover:not(:disabled) {
             background-color: var(--core-color-opacity-black-100);
-            animation-timing-function: var(--core-motion-ease-400);
-            animation-duration: var(--core-motion-duration-200);
-        }
+                }
 
         &:active:not(:disabled) {
             background-color: var(--core-color-opacity-black-200);
-            animation-timing-function: var(--core-motion-ease-400);
-            animation-duration: var(--core-motion-duration-200);
-        }
+             }
         
         &-svg {
             fill: var(--semantic-color-typography-prominent);  

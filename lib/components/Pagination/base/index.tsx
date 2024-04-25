@@ -2,8 +2,10 @@ import { DOTS } from "@hooks/usePaginationRange.tsx";
 import { PaginationProps } from "@components/Pagination/types";
 import "./pagination-base.scss";
 import { CaptionText } from "@components/Typography";
-
-interface PaginationButtonProps extends Pick<PaginationProps, "variant"> {
+import clsx from "clsx";
+import React from "react";
+export interface PaginationButtonProps
+    extends Pick<PaginationProps, "variant"> {
     pageNumber: number | string;
     currentPage: number;
     handleOnClick: (event: string | null) => void;
@@ -17,7 +19,14 @@ interface PaginationButtonProps extends Pick<PaginationProps, "variant"> {
  * @param {number} pageNumber - Page number
  * @param {string} variant - Variant of Pagination
  */
-const PaginationButton = ({
+export interface PaginationButtonProps
+    extends Pick<PaginationProps, "variant"> {
+    pageNumber: number | string;
+    currentPage: number;
+    handleOnClick: (event: string | null) => void;
+}
+
+export const PaginationButton = ({
     currentPage,
     handleOnClick,
     pageNumber,
@@ -29,7 +38,10 @@ const PaginationButton = ({
                 onClick={() => handleOnClick(String(pageNumber))}
                 aria-label={`Go to page ${pageNumber}`}
                 aria-current={currentPage === pageNumber}
-                className="variant__bullet"
+                className={clsx(
+                    "variant__bullet",
+                    currentPage === pageNumber && "animated-bullet",
+                )}
             ></button>
         );
     }
@@ -47,7 +59,10 @@ const PaginationButton = ({
             aria-label={`Go to page ${pageNumber}`}
             aria-current={currentPage === pageNumber}
             onClick={(e) => handleOnClick(e.currentTarget.textContent)}
-            className="variant__number"
+            className={clsx(
+                "variant__number",
+                currentPage === pageNumber && "animated",
+            )}
         >
             <CaptionText
                 className="number-text"
