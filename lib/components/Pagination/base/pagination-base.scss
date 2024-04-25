@@ -2,7 +2,6 @@
 @import "@quill/border.scss";
 @import "@quill/color.opacity.scss";
 @import "@quill/color.semantic.scss";
-@import "@quill/motion.scss";
 
 .variant {
     &__number {
@@ -25,22 +24,7 @@
         }
 
         &[aria-current="true"]:not(:active):not(hover) {
-            color: var(--core-color-solid-slate-50);
-        }
-
-        &.animated::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            animation: slideIn var(--core-motion-duration-200)
-                var(--motion-easing-inandout);
-            background-color: var(--semantic-color-typography-prominent);
-            border-radius: inherit;
-            z-index: -10;
+            background-color: var(--core-color-solid-slate-1400);
         }
     }
 
@@ -59,19 +43,8 @@
         &:active {
             background-color: var(--core-color-opacity-black-200);
         }
-        &.animated-bullet::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            animation: slideIn var(--core-motion-duration-200)
-                var(--motion-easing-inandout);
-            background-color: var(--semantic-color-typography-prominent);
-            border-radius: inherit;
-            z-index: -10;
+        &[aria-current=true] {
+            background-color: var(--core-color-solid-slate-1400);
         }
     }
 }
@@ -94,6 +67,7 @@
 }
 
 .number-text {
+    
     &[aria-current="true"] {
         font-weight: bold;
         color: var(--core-color-solid-slate-50);
@@ -102,12 +76,3 @@
     color: var(--semantic-color-typography-default);
 }
 
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
