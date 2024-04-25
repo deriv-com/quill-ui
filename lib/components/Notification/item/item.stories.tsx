@@ -28,7 +28,7 @@ const meta = {
     args: {
         href: "https://www.example.com",
         message:
-            "This is a notification message. Use href or onClick props to redirect to a desired page.",
+            "Notification: use href or onClick to redirect to a desired page.",
         onClick: fn(),
         onClose: fn(),
         onMarkAsRead: fn(),
@@ -87,13 +87,22 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NotificationItemExample: Story = {
-    args: {
-        isMobile: false,
-    },
+export const NotificationItemDesktop: Story = {
     parameters: { viewport: { defaultViewport: "desktop" } },
     render: (args) => (
         <div style={{ width: "360px" }}>
+            <NotificationItem {...args} />
+        </div>
+    ),
+};
+
+export const NotificationItemMobile: Story = {
+    args: {
+        isMobile: true,
+    },
+    parameters: { viewport: { defaultViewport: "mobile1" } },
+    render: (args) => (
+        <div style={{ width: "calc(100vw - 32px)" }}>
             <NotificationItem {...args} />
         </div>
     ),

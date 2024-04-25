@@ -29,7 +29,7 @@ const meta = {
     args: {
         href: "https://www.example.com",
         message:
-            "This is a notification message. Use href or onClick props to redirect to a desired page.",
+            "Notification: use href or onClick to redirect to a desired page.",
         onClick: fn(),
         onClose: fn(),
         title: "Title",
@@ -87,11 +87,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const DesktopWithoutAutohide: Story = {
-    args: {
-        isMobile: false,
-    },
-    parameters: { viewport: { defaultViewport: "desktop" } },
+export const NotificationBannerDesktop: Story = {
     render: (args) => (
         <div style={{ width: "360px" }}>
             <NotificationBanner {...args} />
@@ -99,8 +95,18 @@ export const DesktopWithoutAutohide: Story = {
     ),
 };
 
-export const DesktopWithoutAutohideWithCustomIcon: Story = {
-    parameters: { viewport: { defaultViewport: "desktop" } },
+export const NotificationBannerMobile: Story = {
+    args: {
+        isMobile: true,
+    },
+    render: (args) => (
+        <div style={{ width: "360px" }}>
+            <NotificationBanner {...args} />
+        </div>
+    ),
+};
+
+export const NotificationBannerDesktopWithCustomIcon: Story = {
     render: (args) => (
         <div style={{ width: "360px" }}>
             <NotificationBanner

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import clsx from "clsx";
-import { TYPE } from "../../../utils/notification-utils";
+import { STATUS, TYPE } from "../../../utils/notification-utils";
 import { Notification } from "../base";
 import type { NotificationProps } from "../base";
 
@@ -11,14 +11,22 @@ export interface NotificationItemProps
     isMobile?: boolean;
 }
 
+const DIRECTION = {
+    LEFT: "left",
+    RIGHT: "right",
+};
+
 const NotificationItem = ({
     className,
+    status,
     type = "info",
     isMobile,
     onClose,
+    onMarkAsRead,
     ...rest
 }: NotificationItemProps) => {
     const timeoutId = useRef<ReturnType<typeof setTimeout>>();
+    const [shouldShowButtons, setShouldShowButtons] = React.useState(false);
 
     useEffect(() => {
         return () => {
@@ -29,20 +37,40 @@ const NotificationItem = ({
     const handleClose = () => {
         timeoutId.current = setTimeout(() => {
             onClose?.();
-        }, 240);
+        }, 160);
+    };
+
+    const handleMarkAsRead = (e?: React.MouseEvent<HTMLButtonElement>) => {
+        setShouldShowButtons(false);
+        onMarkAsRead?.(e);
+    };
+
+    const handleSwipe = (direction: string) => {
+        setShouldShowButtons(direction === DIRECTION.LEFT);
     };
 
     return (
-        <Notification
-            {...rest}
-            className={clsx(
-                `notification-item${isMobile ? "__mobile" : ""}`,
-                className,
-            )}
-            hasCloseButton={!isMobile}
-            onClose={handleClose}
-            type={type}
-        />
+        <div className="notification-item-wrapper">
+            <Notification
+                {...rest}
+                className={clsx(
+                    `notification-item${isMobile ? "__mobile" : ""}`,
+                    shouldShowButtons &&
+                        `show-buttons${status === STATUS.READ ? "--read" : ""}`,
+                    className,
+                )}
+                onClose={handleClose}
+                onMarkAsRead={handleMarkAsRead}
+                onSwipeLeft={
+                    isMobile ? () => handleSwipe(DIRECTION.LEFT) : undefined
+                }
+                onSwipeRight={
+                    isMobile ? () => handleSwipe(DIRECTION.RIGHT) : undefined
+                }
+                status={status}
+                type={type}
+            />
+        </div>
     );
 };
 

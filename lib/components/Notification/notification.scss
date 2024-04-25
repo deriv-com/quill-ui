@@ -79,16 +79,20 @@
                 var(--semantic-color-typography-prominent) 3%,
                 transparent
             );
-        animation: 240ms cubic-bezier(0.72, 0, 0.24, 1) enter-desktop;
+        animation: var(--motion-duration-snappy) var(--motion-easing-inandout)
+            enter-desktop;
         transform: translateY(0);
-        transition: transform 240ms cubic-bezier(0.72, 0, 0.24, 1);
+        transition: transform var(--motion-duration-snappy)
+            var(--motion-easing-inandout);
 
         &.hidden {
             transform: translateY(100vh);
         }
     }
     &-banner__mobile {
-        animation: 240ms cubic-bezier(0.72, 0, 0.24, 1) enter-mobile;
+        animation: var(--motion-duration-snappy) var(--motion-easing-inandout)
+            enter-mobile;
+        padding: 16px;
 
         &.hidden {
             transform: translateY(-100vh);
@@ -108,7 +112,8 @@
             width: calc(100vw - 16px);
         }
     }
-    &-item {
+    &-item,
+    &-item__mobile {
         padding: 16px;
         justify-content: space-between;
         min-height: 98px;
@@ -154,6 +159,66 @@
         &:active {
             .buttons {
                 visibility: visible;
+            }
+        }
+        &-wrapper {
+            width: inherit;
+            overflow: hidden;
+        }
+    }
+    &-item__mobile {
+        transform: translateX(0);
+        transition: transform var(--motion-duration-snappy)
+            var(--motion-easing-inandout);
+
+        .buttons {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            visibility: visible;
+            transform: translateX(100%);
+            width: fit-content;
+            gap: unset;
+
+            .mark-as-read,
+            .delete {
+                width: 72px;
+
+                .icon {
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba(0, 0, 0, 1);
+                    border-radius: unset;
+
+                    &:active,
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.88);
+                    }
+                    svg {
+                        fill: rgba(255, 255, 255, 1);
+                    }
+                }
+            }
+            .delete {
+                .icon {
+                    background-color: rgba(230, 25, 14, 1);
+
+                    &:active,
+                    &:hover {
+                        background-color: rgba(196, 0, 0, 1);
+                    }
+                }
+            }
+            a.nav {
+                display: none;
+            }
+        }
+        &.show-buttons {
+            transform: translateX(-144px);
+
+            &--read {
+                transform: translateX(-72px);
             }
         }
     }

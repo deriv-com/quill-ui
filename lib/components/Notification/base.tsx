@@ -23,6 +23,8 @@ export interface NotificationProps
     onClose?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
     onMarkAsRead?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
     onSwipeDown?: () => void;
+    onSwipeLeft?: () => void;
+    onSwipeRight?: () => void;
     onSwipeUp?: () => void;
     status?: (typeof STATUS)[keyof typeof STATUS];
     timestamp?: number;
@@ -41,6 +43,8 @@ export const Notification = ({
     onClose,
     onMarkAsRead,
     onSwipeDown,
+    onSwipeLeft,
+    onSwipeRight,
     onSwipeUp,
     status = STATUS.UNREAD,
     timestamp,
@@ -62,6 +66,8 @@ export const Notification = ({
     const swipeHandlers = useSwipeable({
         onSwipedUp: onSwipeUp,
         onSwipedDown: onSwipeDown,
+        onSwipedLeft: onSwipeLeft,
+        onSwipedRight: onSwipeRight,
         trackMouse: true,
     });
 

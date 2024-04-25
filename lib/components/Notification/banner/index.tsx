@@ -45,7 +45,6 @@ const NotificationBanner = ({
     };
 
     const forceClose = () => {
-        console.log("forceClose");
         if (intervalId.current) clearInterval(intervalId.current);
         handleClose();
     };
