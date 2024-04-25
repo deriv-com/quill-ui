@@ -118,6 +118,15 @@
         justify-content: space-between;
         min-height: 98px;
 
+        .body,
+        .details {
+            min-width: 0;
+        }
+        .message--one-liner {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
         .date-time {
             color: rgba(0, 0, 0, 0.48);
             margin-top: 4px;
@@ -221,6 +230,13 @@
                 transform: translateX(-72px);
             }
         }
+    }
+    &-items-list,
+    &-items-list__mobile {
+        width: inherit;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 8px;
     }
 }
 

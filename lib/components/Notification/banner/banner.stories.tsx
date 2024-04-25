@@ -27,9 +27,9 @@ const meta = {
         },
     },
     args: {
-        href: "https://www.example.com",
+        redirectTo: "https://www.example.com",
         message:
-            "Notification: use href or onClick to redirect to a desired page.",
+            "Notification: use redirectTo or onClick to redirect to a desired page.",
         onClick: fn(),
         onClose: fn(),
         title: "Title",
@@ -64,6 +64,10 @@ const meta = {
             table: {
                 type: { summary: "string | ReactNode | undefined" },
             },
+        },
+        redirectTo: {
+            description:
+                "Optional. Passed to href attribute of the anchor tag.",
         },
         title: {
             table: {

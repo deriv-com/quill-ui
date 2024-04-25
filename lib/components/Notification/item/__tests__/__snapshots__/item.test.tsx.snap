@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NotificationBanner should apply correct classname 1`] = `
+exports[`NotificationItem should apply correct classname 1`] = `
 <div>
   <div
     class="notification-item-wrapper"
@@ -37,7 +37,7 @@ exports[`NotificationBanner should apply correct classname 1`] = `
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
           />
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
           />
         </div>
       </a>
@@ -110,7 +110,7 @@ exports[`NotificationBanner should apply correct classname 1`] = `
 </div>
 `;
 
-exports[`NotificationBanner should have correct title 1`] = `
+exports[`NotificationItem should have correct title 1`] = `
 <div>
   <div
     class="notification-item-wrapper"
@@ -149,7 +149,7 @@ exports[`NotificationBanner should have correct title 1`] = `
             Test title
           </p>
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
           />
         </div>
       </a>
@@ -222,7 +222,7 @@ exports[`NotificationBanner should have correct title 1`] = `
 </div>
 `;
 
-exports[`NotificationBanner should render correct icon based on the notification type 1`] = `
+exports[`NotificationItem should render correct icon based on the notification type 1`] = `
 <div>
   <div
     class="notification-item-wrapper"
@@ -259,7 +259,7 @@ exports[`NotificationBanner should render correct icon based on the notification
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
           />
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
           />
         </div>
       </a>
@@ -332,7 +332,7 @@ exports[`NotificationBanner should render correct icon based on the notification
 </div>
 `;
 
-exports[`NotificationBanner should render correctly for mobile - without close button 1`] = `
+exports[`NotificationItem should render correctly for mobile - without close button 1`] = `
 <div>
   <div
     class="notification-item-wrapper"
@@ -369,7 +369,7 @@ exports[`NotificationBanner should render correctly for mobile - without close b
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
           />
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
           />
         </div>
       </a>

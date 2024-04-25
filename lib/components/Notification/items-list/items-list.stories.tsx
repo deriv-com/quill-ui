@@ -1,12 +1,12 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
-import NotificationBanners from ".";
+import NotificationItemsList from ".";
 import { TYPE } from "../../../utils/notification-utils";
 
 const meta = {
-    title: "Components/Notification/NotificationBanners",
-    component: NotificationBanners,
+    title: "Components/Notification/NotificationItemsList",
+    component: NotificationItemsList,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
     parameters: {
@@ -24,9 +24,6 @@ const meta = {
             defaultViewport: "desktop",
         },
     },
-    args: {
-        autohideTimeout: 4000,
-    },
     argTypes: {
         className: {
             control: { type: null },
@@ -35,17 +32,17 @@ const meta = {
                 type: { summary: "string | undefined" },
             },
         },
-        banners: {
+        items: {
             description:
-                "Required. An array of NotificationBanners. Please refer to the NotificationBanner component docs for more details about props.",
+                "Required. An array of NotificationItems. Please refer to the NotificationItem component docs for more details about props.",
             table: {
                 type: {
-                    summary: "Array<NotificationBannerProps & { id: string }>",
+                    summary: "Array<NotificationItemProps & { id: string }>",
                 },
             },
         },
     },
-} satisfies Meta<typeof NotificationBanners>;
+} satisfies Meta<typeof NotificationItemsList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -55,22 +52,25 @@ const Template: Story = {
         const [banners, setBanners] = useState([
             {
                 id: "0",
-                message: "This is an information message",
+                message: "This is a very very long information message",
                 redirectTo: "https://www.example.com",
+                timestamp: new Date("2024-04-23T09:24:00").getTime(),
                 title: "Information",
                 type: TYPE.INFO,
             },
             {
                 id: "1",
-                message: "This is a warning message",
+                message: "This is a very very long warning message",
                 redirectTo: "https://www.example.com",
+                timestamp: new Date("2024-04-23T09:24:00").getTime(),
                 title: "Warning",
                 type: TYPE.WARNING,
             },
             {
                 id: "2",
-                message: "This is an error message",
+                message: "This is a very very long error message",
                 redirectTo: "https://www.example.com",
+                timestamp: new Date("2024-04-23T09:24:00").getTime(),
                 title: "Error",
                 type: TYPE.ERROR,
             },
@@ -81,9 +81,9 @@ const Template: Story = {
         };
 
         return (
-            <NotificationBanners
+            <NotificationItemsList
                 {...args}
-                banners={banners}
+                items={banners}
                 onClose={handleClose}
             />
         );

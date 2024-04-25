@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import NotificationItem from "..";
 
-describe("NotificationBanner", () => {
+describe("NotificationItem", () => {
     it("should display correct content", () => {
         render(<NotificationItem message="Test message" />);
 

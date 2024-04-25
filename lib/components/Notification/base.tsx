@@ -15,7 +15,6 @@ export interface NotificationProps
     extends Omit<React.HTMLProps<HTMLDivElement>, "title"> {
     className?: string;
     hasCloseButton?: boolean;
-    href?: string;
     icon?: React.ReactNode;
     iconBackgroundColor?: string;
     isBanner?: boolean;
@@ -26,6 +25,7 @@ export interface NotificationProps
     onSwipeLeft?: () => void;
     onSwipeRight?: () => void;
     onSwipeUp?: () => void;
+    redirectTo?: string;
     status?: (typeof STATUS)[keyof typeof STATUS];
     timestamp?: number;
     title?: React.ReactNode;
@@ -35,7 +35,6 @@ export interface NotificationProps
 export const Notification = ({
     className,
     hasCloseButton,
-    href,
     icon,
     iconBackgroundColor,
     isBanner,
@@ -46,6 +45,7 @@ export const Notification = ({
     onSwipeLeft,
     onSwipeRight,
     onSwipeUp,
+    redirectTo,
     status = STATUS.UNREAD,
     timestamp,
     title,
@@ -84,7 +84,7 @@ export const Notification = ({
         >
             <a
                 className="body"
-                href={href}
+                href={redirectTo}
                 onDragStart={(e) => e.preventDefault()}
             >
                 <div
@@ -109,7 +109,7 @@ export const Notification = ({
                             {message}
                         </CaptionText>
                     ) : (
-                        <Text className="message" size="sm">
+                        <Text className="message--one-liner" size="sm">
                             {message}
                         </Text>
                     )}
@@ -140,8 +140,11 @@ export const Notification = ({
                             </button>
                         </div>
                     ) : (
-                        href && (
-                            <a href={href} className={clsx("icon", "nav")} />
+                        redirectTo && (
+                            <a
+                                href={redirectTo}
+                                className={clsx("icon", "nav")}
+                            />
                         )
                     )}
                     <div className="delete">

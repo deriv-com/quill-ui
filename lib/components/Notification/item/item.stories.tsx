@@ -26,9 +26,8 @@ const meta = {
         },
     },
     args: {
-        href: "https://www.example.com",
-        message:
-            "Notification: use href or onClick to redirect to a desired page.",
+        redirectTo: "https://www.example.com",
+        message: "redirectTo can be used to redirect to a desired page.",
         onClick: fn(),
         onClose: fn(),
         onMarkAsRead: fn(),
@@ -55,10 +54,9 @@ const meta = {
                 type: { summary: "string | ReactNode | undefined" },
             },
         },
-        title: {
-            table: {
-                type: { summary: "string | ReactNode | undefined" },
-            },
+        redirectTo: {
+            description:
+                "Optional. Passed to href attribute of the anchor tag.",
         },
         status: {
             options: [STATUS.READ, STATUS.UNREAD],
@@ -68,6 +66,11 @@ const meta = {
                 type: {
                     summary: "'read' | 'unread' | undefined",
                 },
+            },
+        },
+        title: {
+            table: {
+                type: { summary: "string | ReactNode | undefined" },
             },
         },
         type: {
