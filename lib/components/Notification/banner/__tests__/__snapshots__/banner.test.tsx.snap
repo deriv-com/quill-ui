@@ -25,7 +25,7 @@ exports[`NotificationBanner should apply correct classname 1`] = `
         </svg>
       </div>
       <div
-        class="content"
+        class="details"
       >
         <p
           class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
@@ -90,7 +90,7 @@ exports[`NotificationBanner should have correct title 1`] = `
         </svg>
       </div>
       <div
-        class="content"
+        class="details"
       >
         <p
           class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
@@ -157,7 +157,7 @@ exports[`NotificationBanner should render correct icon based on the notification
         </svg>
       </div>
       <div
-        class="content"
+        class="details"
       >
         <p
           class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
@@ -222,7 +222,7 @@ exports[`NotificationBanner should render correctly for mobile - without close b
         </svg>
       </div>
       <div
-        class="content"
+        class="details"
       >
         <p
           class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"

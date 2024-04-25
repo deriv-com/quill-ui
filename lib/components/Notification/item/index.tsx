@@ -5,7 +5,7 @@ import { Notification } from "../base";
 import type { NotificationProps } from "../base";
 
 export interface NotificationItemProps
-    extends Omit<NotificationProps, "isBanner" | "status" | "hasCloseButton"> {
+    extends Omit<NotificationProps, "isBanner" | "hasCloseButton"> {
     className?: string;
     type?: (typeof TYPE)[keyof typeof TYPE];
     isMobile?: boolean;

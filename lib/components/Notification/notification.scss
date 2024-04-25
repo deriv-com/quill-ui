@@ -113,15 +113,36 @@
         justify-content: space-between;
         min-height: 98px;
 
-        .time {
+        .date-time {
             color: rgba(0, 0, 0, 0.48);
             margin-top: 4px;
         }
         .buttons {
             display: flex;
-            align-self: center;
+            align-self: stretch;
+            justify-content: flex-end;
+            flex-direction: row;
             gap: 8px;
             visibility: hidden;
+            width: 72px;
+            flex-shrink: 0;
+
+            .mark-as-read,
+            .delete,
+            a.nav {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .icon {
+                    border-radius: 12px;
+
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.08);
+                    }
+                }
+            }
         }
         &:hover {
             background-color: rgba(0, 0, 0, 0.04);

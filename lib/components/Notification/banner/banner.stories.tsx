@@ -29,7 +29,7 @@ const meta = {
     args: {
         href: "https://www.example.com",
         message:
-            "This is a notification message. Use href or onClick props to redirect to a required page.",
+            "This is a notification message. Use href or onClick props to redirect to a desired page.",
         onClick: fn(),
         onClose: fn(),
         title: "Title",
@@ -76,7 +76,8 @@ const meta = {
             description: "Optional.",
             table: {
                 type: {
-                    summary: "info | error | success | warning | undefined",
+                    summary:
+                        "'info' | 'error' | 'success' | 'warning' | undefined",
                 },
             },
         },
@@ -110,7 +111,7 @@ export const DesktopWithoutAutohideWithCustomIcon: Story = {
                         iconSize="sm"
                     />
                 }
-                type="success"
+                type={TYPE.SUCCESS}
             />
         </div>
     ),

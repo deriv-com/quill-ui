@@ -21,6 +21,7 @@ export interface NotificationProps
     isBanner?: boolean;
     message?: React.ReactNode;
     onClose?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
+    onMarkAsRead?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
     onSwipeDown?: () => void;
     onSwipeUp?: () => void;
     status?: (typeof STATUS)[keyof typeof STATUS];
@@ -38,6 +39,7 @@ export const Notification = ({
     isBanner,
     message,
     onClose,
+    onMarkAsRead,
     onSwipeDown,
     onSwipeUp,
     status = STATUS.UNREAD,
@@ -63,6 +65,11 @@ export const Notification = ({
         trackMouse: true,
     });
 
+    const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        onClose?.(e);
+    };
+
     return (
         <div
             {...rest}
@@ -83,7 +90,7 @@ export const Notification = ({
                         <div className="badge-unread" />
                     )}
                 </div>
-                <div className="content">
+                <div className="details">
                     <Text
                         className="title"
                         bold={status === STATUS.UNREAD}
@@ -101,33 +108,41 @@ export const Notification = ({
                         </Text>
                     )}
                     {!isBanner && timestamp && (
-                        <CaptionText className="time">
+                        <CaptionText className="date-time">
                             {formattedTime}
                         </CaptionText>
                     )}
                 </div>
             </a>
             {isBanner && hasCloseButton && (
-                <button className={clsx("icon", "close")} onClick={onClose}>
+                <button className={clsx("icon", "close")} onClick={handleClose}>
                     <LabelPairedXmarkSmRegularIcon />
                 </button>
             )}
             {!isBanner && (
                 <div className="buttons">
-                    {status === STATUS.UNREAD && (
-                        <button
-                            className={clsx("icon", "mark-as-read")}
-                            onClick={onClose}
-                        >
-                            <LabelPairedCheckSmBoldIcon />
-                        </button>
+                    {status === STATUS.UNREAD ? (
+                        <div className="mark-as-read">
+                            <button
+                                className="icon"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    onMarkAsRead?.(e);
+                                }}
+                            >
+                                <LabelPairedCheckSmBoldIcon />
+                            </button>
+                        </div>
+                    ) : (
+                        href && (
+                            <a href={href} className={clsx("icon", "nav")} />
+                        )
                     )}
-                    <button
-                        className={clsx("icon", "delete")}
-                        onClick={onClose}
-                    >
-                        <LabelPairedTrashSmBoldIcon />
-                    </button>
+                    <div className="delete">
+                        <button className="icon" onClick={handleClose}>
+                            <LabelPairedTrashSmBoldIcon />
+                        </button>
+                    </div>
                 </div>
             )}
         </div>

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { fn } from "@storybook/test";
-import { TYPE } from "../../../utils/notification-utils";
+import { STATUS, TYPE } from "../../../utils/notification-utils";
 import NotificationItem from ".";
 
 const meta = {
@@ -26,9 +26,12 @@ const meta = {
         },
     },
     args: {
-        message: "This is a notification message",
+        href: "https://www.example.com",
+        message:
+            "This is a notification message. Use href or onClick props to redirect to a desired page.",
         onClick: fn(),
         onClose: fn(),
+        onMarkAsRead: fn(),
         timestamp: new Date("2024-04-23T09:24:00").getTime(),
         title: "Title",
     },
@@ -57,13 +60,24 @@ const meta = {
                 type: { summary: "string | ReactNode | undefined" },
             },
         },
+        status: {
+            options: [STATUS.READ, STATUS.UNREAD],
+            control: { type: "radio" },
+            description: "Optional. Defaults to 'unread'.",
+            table: {
+                type: {
+                    summary: "'read' | 'unread' | undefined",
+                },
+            },
+        },
         type: {
             options: [TYPE.INFO, TYPE.ERROR, TYPE.SUCCESS, TYPE.WARNING],
             control: { type: "radio" },
             description: "Optional.",
             table: {
                 type: {
-                    summary: "info | error | success | warning | undefined",
+                    summary:
+                        "'info' | 'error' | 'success' | 'warning' | undefined",
                 },
             },
         },

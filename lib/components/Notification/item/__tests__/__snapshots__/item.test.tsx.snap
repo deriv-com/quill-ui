@@ -28,7 +28,7 @@ exports[`NotificationBanner should apply correct classname 1`] = `
         />
       </div>
       <div
-        class="content"
+        class="details"
       >
         <p
           class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
@@ -41,58 +41,66 @@ exports[`NotificationBanner should apply correct classname 1`] = `
     <div
       class="buttons"
     >
-      <button
-        class="icon mark-as-read"
+      <div
+        class="mark-as-read"
       >
-        <svg
-          height="22"
-          role="img"
-          viewBox="0 0 13 22"
-          width="13"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="icon"
         >
-          <g>
-            <path
-              d="M12.434 6.566c.246.274.246.684 0 .93l-7.22 7.219c-.273.273-.683.273-.929 0L.566 10.996a.6.6 0 0 1 0-.902.6.6 0 0 1 .903 0l3.254 3.254 6.78-6.782a.644.644 0 0 1 .903 0z"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="2fb4e3453244533b2fbbdb2477bdd605__a"
-            >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
               <path
-                d="M0 0h13v22H0z"
+                d="M12.434 6.566c.246.274.246.684 0 .93l-7.22 7.219c-.273.273-.683.273-.929 0L.566 10.996a.6.6 0 0 1 0-.902.6.6 0 0 1 .903 0l3.254 3.254 6.78-6.782a.644.644 0 0 1 .903 0z"
               />
-            </clippath>
-          </defs>
-        </svg>
-      </button>
-      <button
-        class="icon delete"
+            </g>
+            <defs>
+              <clippath
+                id="2fb4e3453244533b2fbbdb2477bdd605__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+      <div
+        class="delete"
       >
-        <svg
-          height="22"
-          role="img"
-          viewBox="0 0 13 22"
-          width="13"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="icon"
         >
-          <g>
-            <path
-              d="M5.215 5.063c-.082 0-.137.054-.192.109l-.52.766H8.47l-.52-.766a.23.23 0 0 0-.191-.11zm4.84.875h1.914c.355 0 .656.3.656.656 0 .383-.3.656-.656.656h-.328l-.657 8.887c-.082.93-.82 1.613-1.75 1.613H3.738c-.93 0-1.668-.684-1.75-1.613L1.332 7.25h-.3a.63.63 0 0 1-.657-.656c0-.356.273-.657.656-.657h1.887L3.93 4.435c.273-.41.765-.684 1.285-.684h2.543c.52 0 1.012.273 1.285.684zm.273 1.312H2.645l.656 8.805a.44.44 0 0 0 .437.383h5.496c.22 0 .41-.165.438-.383z"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="7606a6352379dd74458e5153601178cf__a"
-            >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
               <path
-                d="M0 0h13v22H0z"
+                d="M5.215 5.063c-.082 0-.137.054-.192.109l-.52.766H8.47l-.52-.766a.23.23 0 0 0-.191-.11zm4.84.875h1.914c.355 0 .656.3.656.656 0 .383-.3.656-.656.656h-.328l-.657 8.887c-.082.93-.82 1.613-1.75 1.613H3.738c-.93 0-1.668-.684-1.75-1.613L1.332 7.25h-.3a.63.63 0 0 1-.657-.656c0-.356.273-.657.656-.657h1.887L3.93 4.435c.273-.41.765-.684 1.285-.684h2.543c.52 0 1.012.273 1.285.684zm.273 1.312H2.645l.656 8.805a.44.44 0 0 0 .437.383h5.496c.22 0 .41-.165.438-.383z"
               />
-            </clippath>
-          </defs>
-        </svg>
-      </button>
+            </g>
+            <defs>
+              <clippath
+                id="7606a6352379dd74458e5153601178cf__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -126,7 +134,7 @@ exports[`NotificationBanner should have correct title 1`] = `
         />
       </div>
       <div
-        class="content"
+        class="details"
       >
         <p
           class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
@@ -141,58 +149,66 @@ exports[`NotificationBanner should have correct title 1`] = `
     <div
       class="buttons"
     >
-      <button
-        class="icon mark-as-read"
+      <div
+        class="mark-as-read"
       >
-        <svg
-          height="22"
-          role="img"
-          viewBox="0 0 13 22"
-          width="13"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="icon"
         >
-          <g>
-            <path
-              d="M12.434 6.566c.246.274.246.684 0 .93l-7.22 7.219c-.273.273-.683.273-.929 0L.566 10.996a.6.6 0 0 1 0-.902.6.6 0 0 1 .903 0l3.254 3.254 6.78-6.782a.644.644 0 0 1 .903 0z"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="2fb4e3453244533b2fbbdb2477bdd605__a"
-            >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
               <path
-                d="M0 0h13v22H0z"
+                d="M12.434 6.566c.246.274.246.684 0 .93l-7.22 7.219c-.273.273-.683.273-.929 0L.566 10.996a.6.6 0 0 1 0-.902.6.6 0 0 1 .903 0l3.254 3.254 6.78-6.782a.644.644 0 0 1 .903 0z"
               />
-            </clippath>
-          </defs>
-        </svg>
-      </button>
-      <button
-        class="icon delete"
+            </g>
+            <defs>
+              <clippath
+                id="2fb4e3453244533b2fbbdb2477bdd605__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+      <div
+        class="delete"
       >
-        <svg
-          height="22"
-          role="img"
-          viewBox="0 0 13 22"
-          width="13"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="icon"
         >
-          <g>
-            <path
-              d="M5.215 5.063c-.082 0-.137.054-.192.109l-.52.766H8.47l-.52-.766a.23.23 0 0 0-.191-.11zm4.84.875h1.914c.355 0 .656.3.656.656 0 .383-.3.656-.656.656h-.328l-.657 8.887c-.082.93-.82 1.613-1.75 1.613H3.738c-.93 0-1.668-.684-1.75-1.613L1.332 7.25h-.3a.63.63 0 0 1-.657-.656c0-.356.273-.657.656-.657h1.887L3.93 4.435c.273-.41.765-.684 1.285-.684h2.543c.52 0 1.012.273 1.285.684zm.273 1.312H2.645l.656 8.805a.44.44 0 0 0 .437.383h5.496c.22 0 .41-.165.438-.383z"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="7606a6352379dd74458e5153601178cf__a"
-            >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
               <path
-                d="M0 0h13v22H0z"
+                d="M5.215 5.063c-.082 0-.137.054-.192.109l-.52.766H8.47l-.52-.766a.23.23 0 0 0-.191-.11zm4.84.875h1.914c.355 0 .656.3.656.656 0 .383-.3.656-.656.656h-.328l-.657 8.887c-.082.93-.82 1.613-1.75 1.613H3.738c-.93 0-1.668-.684-1.75-1.613L1.332 7.25h-.3a.63.63 0 0 1-.657-.656c0-.356.273-.657.656-.657h1.887L3.93 4.435c.273-.41.765-.684 1.285-.684h2.543c.52 0 1.012.273 1.285.684zm.273 1.312H2.645l.656 8.805a.44.44 0 0 0 .437.383h5.496c.22 0 .41-.165.438-.383z"
               />
-            </clippath>
-          </defs>
-        </svg>
-      </button>
+            </g>
+            <defs>
+              <clippath
+                id="7606a6352379dd74458e5153601178cf__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -226,7 +242,7 @@ exports[`NotificationBanner should render correct icon based on the notification
         />
       </div>
       <div
-        class="content"
+        class="details"
       >
         <p
           class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
@@ -239,58 +255,66 @@ exports[`NotificationBanner should render correct icon based on the notification
     <div
       class="buttons"
     >
-      <button
-        class="icon mark-as-read"
+      <div
+        class="mark-as-read"
       >
-        <svg
-          height="22"
-          role="img"
-          viewBox="0 0 13 22"
-          width="13"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="icon"
         >
-          <g>
-            <path
-              d="M12.434 6.566c.246.274.246.684 0 .93l-7.22 7.219c-.273.273-.683.273-.929 0L.566 10.996a.6.6 0 0 1 0-.902.6.6 0 0 1 .903 0l3.254 3.254 6.78-6.782a.644.644 0 0 1 .903 0z"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="2fb4e3453244533b2fbbdb2477bdd605__a"
-            >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
               <path
-                d="M0 0h13v22H0z"
+                d="M12.434 6.566c.246.274.246.684 0 .93l-7.22 7.219c-.273.273-.683.273-.929 0L.566 10.996a.6.6 0 0 1 0-.902.6.6 0 0 1 .903 0l3.254 3.254 6.78-6.782a.644.644 0 0 1 .903 0z"
               />
-            </clippath>
-          </defs>
-        </svg>
-      </button>
-      <button
-        class="icon delete"
+            </g>
+            <defs>
+              <clippath
+                id="2fb4e3453244533b2fbbdb2477bdd605__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+      <div
+        class="delete"
       >
-        <svg
-          height="22"
-          role="img"
-          viewBox="0 0 13 22"
-          width="13"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="icon"
         >
-          <g>
-            <path
-              d="M5.215 5.063c-.082 0-.137.054-.192.109l-.52.766H8.47l-.52-.766a.23.23 0 0 0-.191-.11zm4.84.875h1.914c.355 0 .656.3.656.656 0 .383-.3.656-.656.656h-.328l-.657 8.887c-.082.93-.82 1.613-1.75 1.613H3.738c-.93 0-1.668-.684-1.75-1.613L1.332 7.25h-.3a.63.63 0 0 1-.657-.656c0-.356.273-.657.656-.657h1.887L3.93 4.435c.273-.41.765-.684 1.285-.684h2.543c.52 0 1.012.273 1.285.684zm.273 1.312H2.645l.656 8.805a.44.44 0 0 0 .437.383h5.496c.22 0 .41-.165.438-.383z"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="7606a6352379dd74458e5153601178cf__a"
-            >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
               <path
-                d="M0 0h13v22H0z"
+                d="M5.215 5.063c-.082 0-.137.054-.192.109l-.52.766H8.47l-.52-.766a.23.23 0 0 0-.191-.11zm4.84.875h1.914c.355 0 .656.3.656.656 0 .383-.3.656-.656.656h-.328l-.657 8.887c-.082.93-.82 1.613-1.75 1.613H3.738c-.93 0-1.668-.684-1.75-1.613L1.332 7.25h-.3a.63.63 0 0 1-.657-.656c0-.356.273-.657.656-.657h1.887L3.93 4.435c.273-.41.765-.684 1.285-.684h2.543c.52 0 1.012.273 1.285.684zm.273 1.312H2.645l.656 8.805a.44.44 0 0 0 .437.383h5.496c.22 0 .41-.165.438-.383z"
               />
-            </clippath>
-          </defs>
-        </svg>
-      </button>
+            </g>
+            <defs>
+              <clippath
+                id="7606a6352379dd74458e5153601178cf__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -324,7 +348,7 @@ exports[`NotificationBanner should render correctly for mobile - without close b
         />
       </div>
       <div
-        class="content"
+        class="details"
       >
         <p
           class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
@@ -337,58 +361,66 @@ exports[`NotificationBanner should render correctly for mobile - without close b
     <div
       class="buttons"
     >
-      <button
-        class="icon mark-as-read"
+      <div
+        class="mark-as-read"
       >
-        <svg
-          height="22"
-          role="img"
-          viewBox="0 0 13 22"
-          width="13"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="icon"
         >
-          <g>
-            <path
-              d="M12.434 6.566c.246.274.246.684 0 .93l-7.22 7.219c-.273.273-.683.273-.929 0L.566 10.996a.6.6 0 0 1 0-.902.6.6 0 0 1 .903 0l3.254 3.254 6.78-6.782a.644.644 0 0 1 .903 0z"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="2fb4e3453244533b2fbbdb2477bdd605__a"
-            >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
               <path
-                d="M0 0h13v22H0z"
+                d="M12.434 6.566c.246.274.246.684 0 .93l-7.22 7.219c-.273.273-.683.273-.929 0L.566 10.996a.6.6 0 0 1 0-.902.6.6 0 0 1 .903 0l3.254 3.254 6.78-6.782a.644.644 0 0 1 .903 0z"
               />
-            </clippath>
-          </defs>
-        </svg>
-      </button>
-      <button
-        class="icon delete"
+            </g>
+            <defs>
+              <clippath
+                id="2fb4e3453244533b2fbbdb2477bdd605__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+      <div
+        class="delete"
       >
-        <svg
-          height="22"
-          role="img"
-          viewBox="0 0 13 22"
-          width="13"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="icon"
         >
-          <g>
-            <path
-              d="M5.215 5.063c-.082 0-.137.054-.192.109l-.52.766H8.47l-.52-.766a.23.23 0 0 0-.191-.11zm4.84.875h1.914c.355 0 .656.3.656.656 0 .383-.3.656-.656.656h-.328l-.657 8.887c-.082.93-.82 1.613-1.75 1.613H3.738c-.93 0-1.668-.684-1.75-1.613L1.332 7.25h-.3a.63.63 0 0 1-.657-.656c0-.356.273-.657.656-.657h1.887L3.93 4.435c.273-.41.765-.684 1.285-.684h2.543c.52 0 1.012.273 1.285.684zm.273 1.312H2.645l.656 8.805a.44.44 0 0 0 .437.383h5.496c.22 0 .41-.165.438-.383z"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="7606a6352379dd74458e5153601178cf__a"
-            >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
               <path
-                d="M0 0h13v22H0z"
+                d="M5.215 5.063c-.082 0-.137.054-.192.109l-.52.766H8.47l-.52-.766a.23.23 0 0 0-.191-.11zm4.84.875h1.914c.355 0 .656.3.656.656 0 .383-.3.656-.656.656h-.328l-.657 8.887c-.082.93-.82 1.613-1.75 1.613H3.738c-.93 0-1.668-.684-1.75-1.613L1.332 7.25h-.3a.63.63 0 0 1-.657-.656c0-.356.273-.657.656-.657h1.887L3.93 4.435c.273-.41.765-.684 1.285-.684h2.543c.52 0 1.012.273 1.285.684zm.273 1.312H2.645l.656 8.805a.44.44 0 0 0 .437.383h5.496c.22 0 .41-.165.438-.383z"
               />
-            </clippath>
-          </defs>
-        </svg>
-      </button>
+            </g>
+            <defs>
+              <clippath
+                id="7606a6352379dd74458e5153601178cf__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
