@@ -2,10 +2,10 @@
 
 exports[`NotificationBanner should apply correct classname 1`] = `
 <div>
-  <a
+  <div
     class="notification notification-banner test"
   >
-    <div
+    <a
       class="body"
     >
       <div
@@ -34,7 +34,7 @@ exports[`NotificationBanner should apply correct classname 1`] = `
           class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
         />
       </div>
-    </div>
+    </a>
     <button
       class="icon close"
     >
@@ -61,16 +61,16 @@ exports[`NotificationBanner should apply correct classname 1`] = `
         </defs>
       </svg>
     </button>
-  </a>
+  </div>
 </div>
 `;
 
 exports[`NotificationBanner should have correct title 1`] = `
 <div>
-  <a
+  <div
     class="notification notification-banner"
   >
-    <div
+    <a
       class="body"
     >
       <div
@@ -101,7 +101,7 @@ exports[`NotificationBanner should have correct title 1`] = `
           class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
         />
       </div>
-    </div>
+    </a>
     <button
       class="icon close"
     >
@@ -128,16 +128,16 @@ exports[`NotificationBanner should have correct title 1`] = `
         </defs>
       </svg>
     </button>
-  </a>
+  </div>
 </div>
 `;
 
 exports[`NotificationBanner should render correct icon based on the notification type 1`] = `
 <div>
-  <a
+  <div
     class="notification notification-banner"
   >
-    <div
+    <a
       class="body"
     >
       <div
@@ -166,7 +166,7 @@ exports[`NotificationBanner should render correct icon based on the notification
           class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
         />
       </div>
-    </div>
+    </a>
     <button
       class="icon close"
     >
@@ -193,16 +193,16 @@ exports[`NotificationBanner should render correct icon based on the notification
         </defs>
       </svg>
     </button>
-  </a>
+  </div>
 </div>
 `;
 
 exports[`NotificationBanner should render correctly for mobile - without close button 1`] = `
 <div>
-  <a
+  <div
     class="notification notification-banner__mobile"
   >
-    <div
+    <a
       class="body"
     >
       <div
@@ -231,7 +231,7 @@ exports[`NotificationBanner should render correctly for mobile - without close b
           class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
         />
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
 </div>
 `;

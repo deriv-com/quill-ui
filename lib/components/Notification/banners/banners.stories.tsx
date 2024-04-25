@@ -24,6 +24,9 @@ const meta = {
             defaultViewport: "desktop",
         },
     },
+    args: {
+        autohideTimeout: 4000,
+    },
     argTypes: {
         className: {
             control: { type: null },
@@ -33,11 +36,11 @@ const meta = {
             },
         },
         banners: {
-            description: "Required.",
+            description:
+                "Required. An array of NotificationBanners. Please refer to the NotificationBanner component docs for more details about props.",
             table: {
                 type: {
-                    summary:
-                        "Array<{ id: string; message?: ReactNode; title?: string; type?: info | error | success | warning; }>",
+                    summary: "Array<NotificationBannerProps & { id: string }>",
                 },
             },
         },

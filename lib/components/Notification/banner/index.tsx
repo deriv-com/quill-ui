@@ -5,7 +5,7 @@ import { Notification } from "../base";
 import type { NotificationProps } from "../base";
 
 export interface NotificationBannerProps
-    extends Omit<NotificationProps, "icon" | "status" | "hasCloseButton"> {
+    extends Omit<NotificationProps, "isBanner" | "status" | "hasCloseButton"> {
     autohideTimeout?: number;
     className?: string;
     type?: (typeof TYPE)[keyof typeof TYPE];
@@ -13,10 +13,11 @@ export interface NotificationBannerProps
 }
 
 const NotificationBanner = ({
-    autohideTimeout = 4000,
+    autohideTimeout,
     className,
     type = "info",
     isMobile,
+    onClick,
     onClose,
     ...rest
 }: NotificationBannerProps) => {
@@ -25,9 +26,11 @@ const NotificationBanner = ({
     const timeoutId = useRef<ReturnType<typeof setTimeout>>();
 
     useEffect(() => {
-        intervalId.current = setInterval(() => {
-            handleClose();
-        }, autohideTimeout);
+        if (autohideTimeout) {
+            intervalId.current = setInterval(() => {
+                handleClose();
+            }, autohideTimeout);
+        }
         return () => {
             if (intervalId.current) clearInterval(intervalId.current);
             if (timeoutId.current) clearTimeout(timeoutId.current);
@@ -42,8 +45,14 @@ const NotificationBanner = ({
     };
 
     const forceClose = () => {
+        console.log("forceClose");
         if (intervalId.current) clearInterval(intervalId.current);
         handleClose();
+    };
+
+    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        forceClose();
+        onClick?.(e);
     };
 
     return (
@@ -56,6 +65,7 @@ const NotificationBanner = ({
             )}
             hasCloseButton={!isMobile}
             isBanner
+            onClick={handleClick}
             onClose={forceClose}
             onSwipeDown={isMobile ? undefined : forceClose}
             onSwipeUp={isMobile ? forceClose : undefined}

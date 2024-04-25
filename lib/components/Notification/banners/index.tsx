@@ -32,7 +32,7 @@ const NotificationBanners = ({
             {banners.slice(0, 1).map(({ id, ...rest }) => (
                 <NotificationBanner
                     {...rest}
-                    autohideTimeout={autohideTimeout}
+                    autohideTimeout={autohideTimeout ?? 4000}
                     key={id}
                     isMobile={isMobile}
                     onClose={() => onClose?.(id)}

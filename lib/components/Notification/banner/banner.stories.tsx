@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { fn } from "@storybook/test";
+import { StandaloneCirclePlusBoldIcon } from "@deriv/quill-icons";
 import { TYPE } from "../../../utils/notification-utils";
 import NotificationBanner from ".";
 
@@ -26,7 +27,9 @@ const meta = {
         },
     },
     args: {
-        message: "This is a notification message",
+        href: "https://www.example.com",
+        message:
+            "This is a notification message. Use href or onClick props to redirect to a required page.",
         onClick: fn(),
         onClose: fn(),
         title: "Title",
@@ -35,6 +38,17 @@ const meta = {
         className: {
             control: { type: null },
             description: "Optional.",
+            table: {
+                type: { summary: "string | undefined" },
+            },
+        },
+        icon: {
+            table: {
+                type: { summary: "ReactNode | undefined" },
+            },
+        },
+        iconBackgroundColor: {
+            control: { type: "color" },
             table: {
                 type: { summary: "string | undefined" },
             },
@@ -72,7 +86,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NotificationBannerExample: Story = {
+export const DesktopWithoutAutohide: Story = {
     args: {
         isMobile: false,
     },
@@ -80,6 +94,24 @@ export const NotificationBannerExample: Story = {
     render: (args) => (
         <div style={{ width: "360px" }}>
             <NotificationBanner {...args} />
+        </div>
+    ),
+};
+
+export const DesktopWithoutAutohideWithCustomIcon: Story = {
+    parameters: { viewport: { defaultViewport: "desktop" } },
+    render: (args) => (
+        <div style={{ width: "360px" }}>
+            <NotificationBanner
+                {...args}
+                icon={
+                    <StandaloneCirclePlusBoldIcon
+                        fill="rgba(0, 130, 42, 1)"
+                        iconSize="sm"
+                    />
+                }
+                type="success"
+            />
         </div>
     ),
 };
