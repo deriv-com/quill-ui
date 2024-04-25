@@ -6,6 +6,11 @@ import {
     StandaloneXmarkRegularIcon,
 } from "@deriv/quill-icons";
 
+const icons: Record<string, object | null> = {
+    with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
+    none: null,
+};
+
 const meta: Meta = {
     title: "Components/Action Sheet/Button Trigger",
     component: ActionSheetExample,
@@ -15,7 +20,6 @@ const meta: Meta = {
         title: "Title",
         description: "Description",
         closeIcon: <StandaloneXmarkRegularIcon />,
-        icon: <LabelPairedPlaceholderCaptionBoldIcon />,
     },
     argTypes: {
         isOpen: { table: { disable: true } },
@@ -59,6 +63,11 @@ const meta: Meta = {
         icon: {
             description:
                 "This props allowed you to pass in icon for `ActionSheet.Header`",
+            options: Object.keys(icons),
+            mapping: icons,
+            control: {
+                type: "radio",
+            },
         },
         primaryAction: {
             control: {
