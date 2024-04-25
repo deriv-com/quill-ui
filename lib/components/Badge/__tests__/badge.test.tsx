@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Badge from "../index";
+import Badge from "../base";
 import { TRegularSizes } from "@types";
 import { TBadgeColorVariants } from "../types";
 

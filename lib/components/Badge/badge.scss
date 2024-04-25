@@ -1,16 +1,42 @@
 @import "@quill-bundle/color.scss";
 @import "@quill/size.scss";
-@import  "@quill/static.scss";
+@import "@quill/static.scss";
 @import "@quill/border.scss";
 
-.badge{
+.badge {
+    &__container {
+        position: relative;
+
+        &-children {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &__position {
+        &-bottom {
+            top: var(--core-size-2200);
+            left: var(--core-size-2200);
+        }
+        &-top {
+            top: -9px;
+            left: var(--core-size-800);
+        }
+        &-center {
+            top: var(--core-size-800);
+            right: var(--core-size-700);
+        }
+        
+    }
+
     &__base {
         display: inline-flex;
+        position: absolute;
         border-radius: var(--core-borderRadius-4800);
         align-items: center;
         justify-content: center;
         color: var(--core-color-solid-slate-50);
     }
+
     &__variant {
         &__status {
             &--size {
@@ -18,16 +44,19 @@
                     height: var(--core-size-400);
                     min-width: var(--core-size-400);
                 }
+
                 &-md {
                     height: var(--core-size-800);
                     min-width: var(--core-size-800);
                 }
+
                 &-lg {
                     height: var(--core-size-1200);
                     min-width: var(--core-size-1200);
                 }
-            }   
+            }
         }
+
         &__notification {
             &--size {
                 &-sm {
@@ -35,11 +64,13 @@
                     height: var(--core-size-900);
                     min-width: var(--core-size-900);
                 }
+
                 &-md {
                     padding-inline: var(--temp-static-spacing-5);
                     height: var(--core-size-1200);
                     min-width: var(--core-size-1200);
                 }
+
                 &-lg {
                     padding-inline: var(--temp-static-spacing-5);
                     height: var(--core-size-1800);
@@ -48,17 +79,18 @@
             }
         }
     }
+
     &__color {
         &--success {
             background-color: var(--core-color-solid-green-700);
         }
+
         &--warning {
             background-color: var(--core-color-solid-yellow-700);
         }
+
         &--danger {
             background-color: var(--core-color-solid-red-700);
         }
     }
 }
-
-
