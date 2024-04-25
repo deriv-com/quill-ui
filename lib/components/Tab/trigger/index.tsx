@@ -62,7 +62,6 @@ export const TabTrigger = ({
                     : `tab-menu__variants__hug-size-${size}`,
                 `tab-trigger__icon-position--${iconPosition}`,
                 className,
-                selectedTab && "animated",
             )}
         >
             {icon && size && iconPosition && (
