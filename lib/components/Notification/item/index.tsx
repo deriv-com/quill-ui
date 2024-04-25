@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import { STATUS, TYPE } from "../../../utils/notification-utils";
 import { Notification } from "../base";
@@ -25,19 +25,12 @@ const NotificationItem = ({
     onMarkAsRead,
     ...rest
 }: NotificationItemProps) => {
-    const timeoutId = useRef<ReturnType<typeof setTimeout>>();
-    const [shouldShowButtons, setShouldShowButtons] = React.useState(false);
-
-    useEffect(() => {
-        return () => {
-            if (timeoutId.current) clearTimeout(timeoutId.current);
-        };
-    }, []);
+    const [isDeleted, setIsDeleted] = useState(false);
+    const [shouldShowButtons, setShouldShowButtons] = useState(false);
 
     const handleClose = () => {
-        timeoutId.current = setTimeout(() => {
-            onClose?.();
-        }, 160);
+        setIsDeleted(true);
+        onClose?.();
     };
 
     const handleMarkAsRead = (e?: React.MouseEvent<HTMLButtonElement>) => {
@@ -50,11 +43,16 @@ const NotificationItem = ({
     };
 
     return (
-        <div className="notification-item-wrapper">
+        <div
+            className={clsx(
+                "notification__item-wrapper",
+                isDeleted && "deleted",
+            )}
+        >
             <Notification
                 {...rest}
                 className={clsx(
-                    `notification-item${isMobile ? "__mobile" : ""}`,
+                    `notification__item${isMobile ? "--mobile" : ""}`,
                     shouldShowButtons &&
                         `show-buttons${status === STATUS.READ ? "--read" : ""}`,
                     className,

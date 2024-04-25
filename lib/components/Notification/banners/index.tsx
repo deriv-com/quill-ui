@@ -24,7 +24,7 @@ const NotificationBanners = ({
     return (
         <div
             className={clsx(
-                `notification-banners${isMobile ? "__mobile" : ""}`,
+                `notification__banners${isMobile ? "--mobile" : ""}`,
                 className,
             )}
             style={{ zIndex }}

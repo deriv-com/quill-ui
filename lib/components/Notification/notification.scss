@@ -62,8 +62,8 @@
         display: flex;
         gap: 16px;
     }
-    &-banner,
-    &-banner__mobile {
+    &__banner,
+    &__banner--mobile {
         min-height: 72px;
         padding: 16px 32px 16px 16px;
         border-radius: 16px;
@@ -89,7 +89,7 @@
             transform: translateY(100vh);
         }
     }
-    &-banner__mobile {
+    &__banner--mobile {
         animation: var(--motion-duration-snappy) var(--motion-easing-inandout)
             enter-mobile;
         padding: 16px;
@@ -98,25 +98,25 @@
             transform: translateY(-100vh);
         }
     }
-    &-banners,
-    &-banners__mobile {
+    &__banners,
+    &__banners--mobile {
         position: absolute;
         width: 360px;
         bottom: 8px;
         left: 8px;
         z-index: 6;
 
-        &__mobile {
+        &--mobile {
             top: 8px;
             bottom: unset;
             width: calc(100vw - 16px);
         }
     }
-    &-item,
-    &-item__mobile {
+    &__item,
+    &__item--mobile {
         padding: 16px;
         justify-content: space-between;
-        min-height: 98px;
+        height: 98px;
 
         .body,
         .details {
@@ -171,11 +171,31 @@
             }
         }
         &-wrapper {
+            position: relative;
             width: inherit;
             overflow: hidden;
+            max-height: 98px; // equal to __item's height, required for item deletion transition to work
+
+            &:not(:last-child)::after {
+                position: absolute;
+                content: "";
+                width: calc(100% - 64px);
+                height: 100%;
+                right: 0;
+                outline: 1px solid rgba(0, 0, 0, 0.08);
+            }
+            &.deleted,
+            &.deleted:not(:last-child)::after {
+                opacity: 0;
+                max-height: 0;
+                transition:
+                    max-height 160ms,
+                    opacity 160ms;
+                transition-timing-function: var(--motion-easing-inandout);
+            }
         }
     }
-    &-item__mobile {
+    &__item--mobile {
         transform: translateX(0);
         transition: transform var(--motion-duration-snappy)
             var(--motion-easing-inandout);
@@ -231,8 +251,7 @@
             }
         }
     }
-    &-items-list,
-    &-items-list__mobile {
+    &__items-list {
         width: inherit;
         overflow: hidden;
         border: 1px solid rgba(0, 0, 0, 0.08);

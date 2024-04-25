@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import NotificationItemsList from ".";
-import { TYPE } from "../../../utils/notification-utils";
+import { STATUS, TYPE } from "../../../utils/notification-utils";
 
 const meta = {
     title: "Components/Notification/NotificationItemsList",
@@ -49,11 +49,12 @@ type Story = StoryObj<typeof meta>;
 
 const Template: Story = {
     render: (args) => {
-        const [banners, setBanners] = useState([
+        const items_list = [
             {
                 id: "0",
                 message: "This is a very very long information message",
                 redirectTo: "https://www.example.com",
+                status: STATUS.UNREAD,
                 timestamp: new Date("2024-04-23T09:24:00").getTime(),
                 title: "Information",
                 type: TYPE.INFO,
@@ -62,6 +63,7 @@ const Template: Story = {
                 id: "1",
                 message: "This is a very very long warning message",
                 redirectTo: "https://www.example.com",
+                status: STATUS.UNREAD,
                 timestamp: new Date("2024-04-23T09:24:00").getTime(),
                 title: "Warning",
                 type: TYPE.WARNING,
@@ -70,32 +72,45 @@ const Template: Story = {
                 id: "2",
                 message: "This is a very very long error message",
                 redirectTo: "https://www.example.com",
+                status: STATUS.READ,
                 timestamp: new Date("2024-04-23T09:24:00").getTime(),
                 title: "Error",
                 type: TYPE.ERROR,
             },
+        ];
+        const [items, setItems] = useState([
+            ...items_list,
+            ...items_list.map((item) => ({ ...item, id: `${item.id}_unique` })),
         ]);
 
         const handleClose = (id: string) => {
-            setBanners(banners.filter((banner) => banner.id !== id));
+            setItems((items) => items.filter((item) => item.id !== id));
+        };
+        const handleMarkAsRead = (id: string) => {
+            setItems((items) =>
+                items.map((item) =>
+                    item.id === id ? { ...item, status: STATUS.READ } : item,
+                ),
+            );
         };
 
         return (
             <NotificationItemsList
                 {...args}
-                items={banners}
+                items={items}
                 onClose={handleClose}
+                onMarkAsRead={handleMarkAsRead}
             />
         );
     },
 };
 
-export const NotificationBannersDesktop: Story = {
+export const NotificationItemsListDesktop: Story = {
     ...Template,
     parameters: { viewport: { defaultViewport: "desktop" } },
 };
 
-export const NotificationBannersMobile: Story = {
+export const NotificationItemsListMobile: Story = {
     ...Template,
     args: {
         isMobile: true,

@@ -58,7 +58,7 @@ const NotificationBanner = ({
         <Notification
             {...rest}
             className={clsx(
-                `notification-banner${isMobile ? "__mobile" : ""}`,
+                `notification__banner${isMobile ? "--mobile" : ""}`,
                 isHidden && "hidden",
                 className,
             )}

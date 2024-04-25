@@ -3,7 +3,7 @@
 exports[`NotificationBanner should apply correct classname 1`] = `
 <div>
   <div
-    class="notification notification-banner test"
+    class="notification notification__banner test"
   >
     <a
       class="body"
@@ -68,7 +68,7 @@ exports[`NotificationBanner should apply correct classname 1`] = `
 exports[`NotificationBanner should have correct title 1`] = `
 <div>
   <div
-    class="notification notification-banner"
+    class="notification notification__banner"
   >
     <a
       class="body"
@@ -135,7 +135,7 @@ exports[`NotificationBanner should have correct title 1`] = `
 exports[`NotificationBanner should render correct icon based on the notification type 1`] = `
 <div>
   <div
-    class="notification notification-banner"
+    class="notification notification__banner"
   >
     <a
       class="body"
@@ -200,7 +200,7 @@ exports[`NotificationBanner should render correct icon based on the notification
 exports[`NotificationBanner should render correctly for mobile - without close button 1`] = `
 <div>
   <div
-    class="notification notification-banner__mobile"
+    class="notification notification__banner--mobile"
   >
     <a
       class="body"

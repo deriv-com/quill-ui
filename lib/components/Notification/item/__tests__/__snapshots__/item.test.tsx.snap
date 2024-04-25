@@ -3,10 +3,10 @@
 exports[`NotificationItem should apply correct classname 1`] = `
 <div>
   <div
-    class="notification-item-wrapper"
+    class="notification__item-wrapper"
   >
     <div
-      class="notification notification-item test"
+      class="notification notification__item test"
     >
       <a
         class="body"
@@ -113,10 +113,10 @@ exports[`NotificationItem should apply correct classname 1`] = `
 exports[`NotificationItem should have correct title 1`] = `
 <div>
   <div
-    class="notification-item-wrapper"
+    class="notification__item-wrapper"
   >
     <div
-      class="notification notification-item"
+      class="notification notification__item"
     >
       <a
         class="body"
@@ -225,10 +225,10 @@ exports[`NotificationItem should have correct title 1`] = `
 exports[`NotificationItem should render correct icon based on the notification type 1`] = `
 <div>
   <div
-    class="notification-item-wrapper"
+    class="notification__item-wrapper"
   >
     <div
-      class="notification notification-item"
+      class="notification notification__item"
     >
       <a
         class="body"
@@ -335,10 +335,10 @@ exports[`NotificationItem should render correct icon based on the notification t
 exports[`NotificationItem should render correctly for mobile - without close button 1`] = `
 <div>
   <div
-    class="notification-item-wrapper"
+    class="notification__item-wrapper"
   >
     <div
-      class="notification notification-item__mobile"
+      class="notification notification__item--mobile"
     >
       <a
         class="body"
