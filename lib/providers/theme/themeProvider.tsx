@@ -22,28 +22,17 @@ export const ThemeProvider = ({ children, theme }: ThemeProviderProps) => {
 
     useEffect(() => {
         const theme = selectedTheme || (systemPrefersDark ? "dark" : "light");
+        const unusedTheme = currentTheme === "dark" ? "light" : "dark";
+        const root = document.documentElement;
+        root.classList.add(currentTheme);
+        root.classList.remove(unusedTheme);
 
         setCurrentTheme(theme);
-
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-
-        if (theme === "light") {
-            link.href = "/lib/styles/quill/light.scss";
-        } else {
-            link.href = "/lib/styles/quill/dark.scss";
-        }
-
-        document.head.appendChild(link);
-
-        return () => {
-            document.head.removeChild(link);
-        };
     }, [selectedTheme, systemPrefersDark]);
 
     return (
         <ThemeContext.Provider value={{ theme: currentTheme, toggleTheme }}>
-            <section className={`theme--${currentTheme}`}>{children}</section>
+            {children}
         </ThemeContext.Provider>
     );
 };

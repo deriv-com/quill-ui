@@ -51,8 +51,6 @@ class Transformer {
             static: "",
             quill: "",
             breakpoints: "",
-            light: "",
-            dark: "",
         };
         this.mapSASSValues();
         this.generateFiles();
@@ -231,20 +229,19 @@ class Transformer {
 
             const themeName = name.split("/")[2];
 
-            this.styleStrings[themeName] += `\n
+            this.styleStrings.quill += `\n
             /* ${themeName} Theme */ \n
-            :root { \n    
+            html.${themeName} { \n    
                 `;
 
             Object.keys(themeObjectTokens).map((tokenKey) => {
                 const convertedKey = this.convertCSSkey(tokenKey);
                 const tokenValue = themeObjectTokens[tokenKey];
 
-                this.styleStrings[themeName] +=
-                    `${convertedKey}: ${tokenValue};\n`;
+                this.styleStrings.quill += `${convertedKey}: ${tokenValue};\n`;
             });
 
-            this.styleStrings[themeName] += "\n}\n";
+            this.styleStrings.quill += "\n}\n";
         });
     };
 
