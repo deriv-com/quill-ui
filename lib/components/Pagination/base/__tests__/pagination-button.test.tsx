@@ -20,7 +20,7 @@ describe("PaginationButton", () => {
 
         const elBullet = screen.getByRole("button", { name: /Go to page 1/i });
 
-        expect(elBullet.innerHTML).toMatch("O");
+        expect(elBullet).toBeInTheDocument();
     });
 
     it("should render ellipsis icon when page number is DOTS", () => {

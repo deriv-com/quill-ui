@@ -10,5 +10,6 @@ export interface PaginationProps {
     className?: string;
     contentPerPage?: number;
     contentLength?: number;
+    hideChevron?: boolean;
     onClickPagination: (props: TPaginationEvent) => void;
 }
