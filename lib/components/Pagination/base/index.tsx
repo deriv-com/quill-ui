@@ -1,27 +1,16 @@
-import {
-    StandaloneCircleFillIcon,
-    StandaloneEllipsisRegularIcon,
-} from "@deriv/quill-icons/Standalone";
 import { DOTS } from "@hooks/usePaginationRange.tsx";
 import { PaginationProps } from "@components/Pagination/types";
 import "./pagination-base.scss";
 import { CaptionText } from "@components/Typography";
-
-interface PaginationButtonProps extends Pick<PaginationProps, "variant"> {
+import React from "react";
+export interface PaginationButtonProps
+    extends Pick<PaginationProps, "variant"> {
     pageNumber: number | string;
     currentPage: number;
     handleOnClick: (event: string | null) => void;
 }
 
-/**
- * Component to render type of Pagination button based on variant and page number.
- * @name PaginationButton
- * @param {number} currentPage - Selected page number
- * @param {function} handleOnClick - Function to handle click action on the Pagination button
- * @param {number} pageNumber - Page number
- * @param {string} variant - Variant of Pagination
- */
-const PaginationButton = ({
+export const PaginationButton = ({
     currentPage,
     handleOnClick,
     pageNumber,
@@ -33,21 +22,15 @@ const PaginationButton = ({
                 onClick={() => handleOnClick(String(pageNumber))}
                 aria-label={`Go to page ${pageNumber}`}
                 aria-current={currentPage === pageNumber}
-                className="variant__bullet-svg"
-            >
-                <StandaloneCircleFillIcon
-                    iconSize="sm"
-                    height={12}
-                    width={12}
-                />
-            </button>
+                className="variant__bullet"
+            ></button>
         );
     }
 
     if (pageNumber === DOTS) {
         return (
             <button disabled aria-label="Hidden pages" className="hidden_pages">
-                <StandaloneEllipsisRegularIcon iconSize="sm" />
+                <p className="hidden_pages-dots">{DOTS}</p>
             </button>
         );
     }
