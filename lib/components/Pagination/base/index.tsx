@@ -10,21 +10,6 @@ export interface PaginationButtonProps
     handleOnClick: (event: string | null) => void;
 }
 
-/**
- * Component to render type of Pagination button based on variant and page number.
- * @name PaginationButton
- * @param {number} currentPage - Selected page number
- * @param {function} handleOnClick - Function to handle click action on the Pagination button
- * @param {number} pageNumber - Page number
- * @param {string} variant - Variant of Pagination
- */
-export interface PaginationButtonProps
-    extends Pick<PaginationProps, "variant"> {
-    pageNumber: number | string;
-    currentPage: number;
-    handleOnClick: (event: string | null) => void;
-}
-
 export const PaginationButton = ({
     currentPage,
     handleOnClick,
