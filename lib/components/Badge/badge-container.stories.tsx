@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import BadgeContainer from "./index";
-import { LabelPairedBellXlRegularIcon } from "@deriv/quill-icons/LabelPaired";
-import { StandaloneWhatsappIcon } from "@deriv/quill-icons/Standalone";
-import { TextField } from "..";
+import Badge from "./index";
+import { StandaloneBellRegularIcon } from "@deriv/quill-icons/Standalone";
+import { TextField } from "@components/Input";
 
 const meta = {
     title: "Components/Badge/Container",
-    component: BadgeContainer,
+    component: Badge,
     parameters: {
         layout: "centered",
     },
@@ -23,28 +22,90 @@ const meta = {
         },
     },
     tags: ["autodocs"],
-} satisfies Meta<typeof BadgeContainer>;
+} satisfies Meta<typeof Badge>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+const imageSRC =
+    "https://www.clipartmax.com/png/small/344-3442642_clip-art-freeuse-library-profile-man-user-people-icon-icono-de-login.png";
 
-export const NotificationOnTop: Story = {
+export const NotificationOnTopSmallIcon: Story = {
     args: {
-        children: <LabelPairedBellXlRegularIcon />,
+        children: <StandaloneBellRegularIcon iconSize="sm" />,
         variant: "notification",
-        label: "3",
+        label: "6",
         size: "sm",
         color: "danger",
         position: "top-right",
     },
 };
-
-export const StatusOnBottom: Story = {
+export const NotificationOnTopMediumIcon: Story = {
+    args: {
+        children: <StandaloneBellRegularIcon fill="#000000" iconSize="md" />,
+        variant: "notification",
+        label: "6",
+        size: "sm",
+        contentSize: "md",
+        color: "danger",
+        position: "top-right",
+    },
+};
+export const NotificationOnTopLargeIcon: Story = {
+    args: {
+        children: <StandaloneBellRegularIcon fill="#000000" iconSize="2xl" />,
+        variant: "notification",
+        label: "6",
+        size: "lg",
+        contentSize: "2xl",
+        color: "danger",
+        position: "top-right",
+    },
+};
+export const StatusOnBottomSmallContent: Story = {
     args: {
         variant: "status",
         position: "bottom-right",
-        children: <StandaloneWhatsappIcon fill="#000000" iconSize="xl" />,
+        children: (
+            <img
+                src={imageSRC}
+                width={26}
+                height={26}
+                alt="Notification small"
+            />
+        ),
         size: "sm",
+        color: "success",
+    },
+};
+export const StatusOnBottomMedimContent: Story = {
+    args: {
+        variant: "status",
+        position: "bottom-right",
+        children: (
+            <img
+                src={imageSRC}
+                width={56}
+                height={56}
+                alt="Notification medium"
+            />
+        ),
+        size: "md",
+        color: "success",
+    },
+};
+export const StatusOnBottomLargeContent: Story = {
+    args: {
+        variant: "status",
+        position: "bottom-right",
+        children: (
+            <img
+                src={imageSRC}
+                width={111}
+                height={111}
+                alt="Notification large"
+            />
+        ),
+        size: "lg",
         color: "success",
     },
 };
