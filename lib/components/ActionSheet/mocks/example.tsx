@@ -29,9 +29,7 @@ export const ActionSheetExample = ({
     return (
         <>
             <ActionSheet.Root {...props} isOpen={open} onOpen={openHandler}>
-                <ActionSheet.Trigger>
-                    <Button label="Click Here" />
-                </ActionSheet.Trigger>
+                <ActionSheet.Trigger label="Click Here" />
                 <ActionSheet.Portal>
                     <ActionSheet.Header
                         title={title}
