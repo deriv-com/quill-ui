@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import TextField from ".";
-import { StandaloneCircleUserRegularIcon } from "@deriv/quill-icons";
+import SearchField from ".";
 import { Status, Variants } from "../base";
+import { StandaloneCircleXmarkFillIcon } from "@deriv/quill-icons";
+import { ChangeEvent, useState } from "react";
 
 const placeholder = "Placeholder";
 
@@ -16,13 +17,11 @@ const status: Record<string, Status> = {
     error: "error",
 };
 
-const label = "label";
 const leftStatusMessage = "Status message goes here";
-const rightStatusMessage = "0/0";
 
 const meta = {
-    title: "Components/Inputs/Text Field",
-    component: TextField,
+    title: "Components/Inputs/Search Field",
+    component: SearchField,
     parameters: {
         layout: "centered",
     },
@@ -34,8 +33,20 @@ const meta = {
         disabled: false,
         variant: "fill",
         textAlignment: "left",
+        triggerActionIcon: (
+            <StandaloneCircleXmarkFillIcon
+                fill="var(--core-color-opacity-black-400)"
+                iconSize="sm"
+            />
+        ),
     },
     argTypes: {
+        type: {
+            control: {
+                type: "text",
+            },
+            options: ["text", "email", "password"],
+        },
         inputSize: {
             control: {
                 type: "radio",
@@ -54,11 +65,6 @@ const meta = {
             },
             options: ["fill", "outline"],
         },
-        label: {
-            control: {
-                type: "text",
-            },
-        },
         textAlignment: {
             control: {
                 type: "radio",
@@ -70,38 +76,43 @@ const meta = {
                 type: "text",
             },
         },
-        rightStatusMessage: {
-            control: {
-                type: "text",
-            },
-        },
     },
-} satisfies Meta<typeof TextField>;
+    decorators: [
+        (Story, context) => {
+            const { args } = context;
+            const [value, setValue] = useState(args.value ?? "");
+            return (
+                <>
+                    <Story {...context} args={{ ...args, value, onChange: (e: ChangeEvent<HTMLInputElement>) => setValue(e.target.value) }} />
+                </>
+            );
+        },
+    ],
+} satisfies Meta<typeof SearchField>;
 
 export default meta;
-
 type Story = StoryObj<typeof meta>;
 
-export const DefaultTextField: Story = {
+export const DefaultSearchField: Story = {
     args: {
         placeholder,
     },
 };
-export const SuccessTextField: Story = {
+export const SuccessSearchField: Story = {
     args: {
         placeholder,
         variant: variants.outline,
         status: status.success,
     },
 };
-export const ErrorTextField: Story = {
+export const ErrorSearchField: Story = {
     args: {
         placeholder,
         variant: variants.outline,
         status: status.error,
     },
 };
-export const DisabledTextField: Story = {
+export const DisabledSearchField: Story = {
     args: {
         placeholder,
         disabled: true,
@@ -109,22 +120,7 @@ export const DisabledTextField: Story = {
     },
 };
 
-export const TextFieldWithLabel: Story = {
-    args: {
-        placeholder,
-        label,
-    },
-};
-
-export const TextFieldWithIconAndLabel: Story = {
-    args: {
-        placeholder,
-        label,
-        icon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
-    },
-};
-
-export const SuccessStatusIconTextField: Story = {
+export const SuccessStatusIconSearchField: Story = {
     args: {
         placeholder,
         variant: variants.outline,
@@ -139,7 +135,7 @@ export const SuccessStatusIconTextField: Story = {
     },
 };
 
-export const StatusMessageTextField: Story = {
+export const StatusMessageSearchField: Story = {
     args: {
         placeholder,
         variant: variants.outline,
@@ -148,31 +144,28 @@ export const StatusMessageTextField: Story = {
     },
 };
 
-export const DoubleStatusMessageTextField: Story = {
+export const DoubleStatusMessageSearchField: Story = {
     args: {
         placeholder,
         variant: variants.outline,
         status: status.error,
         leftStatusMessage,
-        rightStatusMessage,
     },
 };
 
-export const SuccessMessageTextFieldWithIcons: Story = {
+export const SuccessMessageSearchFieldWithIcons: Story = {
     args: {
         placeholder,
         variant: variants.outline,
         status: status.success,
         leftStatusMessage,
-        rightStatusMessage,
     },
 };
-export const ErrorMessageTextFieldWithIcons: Story = {
+export const ErrorMessageSearchFieldWithIcons: Story = {
     args: {
         placeholder,
         variant: variants.outline,
         status: status.error,
         leftStatusMessage,
-        rightStatusMessage,
     },
 };

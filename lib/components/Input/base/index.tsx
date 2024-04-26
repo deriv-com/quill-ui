@@ -4,6 +4,7 @@ import "./base.scss";
 import React from "react";
 import { TMediumSizes } from "@types";
 import { CaptionText } from "@components/Typography";
+import { StandaloneCircleCheckBoldIcon, StandaloneTriangleExclamationBoldIcon } from "@deriv/quill-icons";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
@@ -13,7 +14,6 @@ export type TextAlignments = "left" | "center";
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type?: Types;
     icon?: ReactNode;
-    statusIcon?: ReactNode;
     inputSize?: TMediumSizes;
     status?: Status;
     disabled?: boolean;
@@ -23,6 +23,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     textAlignment?: TextAlignments;
     label?: ReactNode;
     value?: string;
+    triggerActionIcon?: ReactNode;
 }
 
 const statusIconColors = {
@@ -45,14 +46,22 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             rightStatusMessage,
             textAlignment = "left",
             label,
-            statusIcon: StatusIcon,
             onChange,
+            triggerActionIcon,
             ...rest
         },
         ref,
     ) => {
         const [hasValue, setHasValue] = useState(false);
-
+        const successIcon = <StandaloneCircleCheckBoldIcon iconSize="sm" />;
+        const errorIcon = (
+            <StandaloneTriangleExclamationBoldIcon iconSize="sm" />
+        );
+        const statusIcon = Object.freeze({
+            success: successIcon,
+            error: errorIcon,
+            neutral: "",
+        })[status ?? "neutral"];
         return (
             <div className="quill-input__container">
                 <div
@@ -96,15 +105,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             {label}
                         </label>
                     )}
-                    {StatusIcon && (
                         <span
                             className={clsx(
                                 "icon_wrapper",
                                 statusIconColors[status],
                             )}
                         >
-                            {StatusIcon}
+                            {statusIcon}
                         </span>
+                    {triggerActionIcon && (
+                        <span className="icon_wrapper">{triggerActionIcon}</span>
                     )}
                 </div>
                 <div className="message__container">
