@@ -10,11 +10,23 @@
         display: flex;
         align-items: center;
         cursor: pointer;
+        justify-content: center;
+        height: var(--core-size-1600);
+        width: var(--core-size-1600);
+        border-radius: var(--core-size-200);
         color: var(--semantic-color-typography-prominent);
+     
         &:disabled{
             cursor: auto;
             color: var(--semantic-color-typography-disabled);
         }
+        &:hover:not(:disabled) {
+            background-color: var(--core-color-opacity-black-100);
+                }
+
+        &:active:not(:disabled) {
+            background-color: var(--core-color-opacity-black-200);
+             }
         
         &-svg {
             fill: var(--semantic-color-typography-prominent);  
