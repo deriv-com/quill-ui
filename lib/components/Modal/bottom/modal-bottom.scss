@@ -10,7 +10,7 @@
         z-index: 9999;
         height: 100vh;
         width: 100vw;
-        background-color: var(--semantic-color-background-overlay);
+        background-color: var(--core-color-opacity-black-600);
     }
 
     &__container {
@@ -24,7 +24,7 @@
         align-items: stretch;
         justify-content: space-evenly;
         flex-direction: column;
-        background-color: var(--semantic-color-background-dialog);
+        background-color: var(--component-modal-bg);
         border-top-left-radius: var(--core-borderRadius-800);
         border-top-right-radius: var(--core-borderRadius-800);
         opacity: var(--core-opacity-50);

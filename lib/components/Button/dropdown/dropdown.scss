@@ -3,7 +3,7 @@
         padding-bottom:  var(--core-spacing-200);
     }
     &__container{
-        background-color: var(--semantic-color-background-primary-container);
+        background-color: var(--component-dropdownList-bg);
         border-radius: var(--core-borderRadius-400);
         box-shadow: var(--semantic-elevation-shadow-card-hover);
         display: flex;
@@ -21,18 +21,21 @@
         gap: var(--core-spacing-400);
         align-self: stretch;
         min-height: var(--core-size-2400);
-        
         border-radius: var(--core-borderRadius-200);
+        background-color: var(--component-dropdownItem-bg-default);
+        color: var(--component-dropdownItem-label-color-default);
+
         &:hover{
-            background-color: var(--semantic-color-background-primary-base);
+            background-color: var(--component-dropdownItem-bg-hover);
             cursor: pointer ;
       
         }
-        &--selected{
-            background-color: var(--semantic-color-background-primary-base);
+        &--selected:not(:active):not(hover){
+            background-color: var(--component-dropdownItem-bg-selected);
+            color : var(--component-dropdownItem-label-color-selectedWhite);
         }
         &--active{
-            background-color: var(--semantic-color-background-primary-base);
+            background-color: var(--component-dropdownItem-bg-active);
         
         }
     }
