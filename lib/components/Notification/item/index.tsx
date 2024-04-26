@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import { STATUS, TYPE } from "../../../utils/notification-utils";
 import { Notification } from "../base";
@@ -21,12 +21,23 @@ const NotificationItem = ({
     status,
     type = "info",
     isMobile,
+    onClick,
     onClose,
     onMarkAsRead,
     ...rest
 }: NotificationItemProps) => {
     const [isDeleted, setIsDeleted] = useState(false);
+    const [isRead, setIsRead] = useState(status === STATUS.READ);
     const [shouldShowButtons, setShouldShowButtons] = useState(false);
+
+    useEffect(() => {
+        setIsRead(status === STATUS.READ);
+    }, [status]);
+
+    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        handleMarkAsRead();
+        onClick?.(e);
+    };
 
     const handleClose = () => {
         setIsDeleted(true);
@@ -35,6 +46,7 @@ const NotificationItem = ({
 
     const handleMarkAsRead = (e?: React.MouseEvent<HTMLButtonElement>) => {
         setShouldShowButtons(false);
+        setIsRead(true);
         onMarkAsRead?.(e);
     };
 
@@ -54,9 +66,10 @@ const NotificationItem = ({
                 className={clsx(
                     `notification__item${isMobile ? "--mobile" : ""}`,
                     shouldShowButtons &&
-                        `show-buttons${status === STATUS.READ ? "--read" : ""}`,
+                        `show-buttons${isRead ? "--read" : ""}`,
                     className,
                 )}
+                onClick={handleClick}
                 onClose={handleClose}
                 onMarkAsRead={handleMarkAsRead}
                 onSwipeLeft={
@@ -65,7 +78,7 @@ const NotificationItem = ({
                 onSwipeRight={
                     isMobile ? () => handleSwipe(DIRECTION.RIGHT) : undefined
                 }
-                status={status}
+                status={isRead ? STATUS.READ : STATUS.UNREAD}
                 type={type}
             />
         </div>

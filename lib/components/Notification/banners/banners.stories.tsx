@@ -20,6 +20,13 @@ const meta = {
                         height: "100%",
                     },
                 },
+                iphoneSE: {
+                    name: "iphoneSE",
+                    styles: {
+                        width: "375px",
+                        height: "667px",
+                    },
+                },
             },
             defaultViewport: "desktop",
         },
@@ -100,5 +107,5 @@ export const NotificationBannersMobile: Story = {
     args: {
         isMobile: true,
     },
-    parameters: { viewport: { defaultViewport: "mobile1" } },
+    parameters: { viewport: { defaultViewport: "iphoneSE" } },
 };

@@ -6,8 +6,7 @@
 @import "@quill/opacity.scss";
 @import "@quill/others.scss";
 @import "@quill/spacing.scss";
-@import "@quill/static.scss";
-// TODO: remove unnecessary imports
+@import "@quill/size.scss";
 
 .notification {
     position: relative;
@@ -23,8 +22,8 @@
         flex-shrink: 0;
         justify-content: center;
         align-items: center;
-        width: 32px;
-        height: 32px;
+        width: var(--core-size-1600);
+        height: var(--core-size-1600);
         border-radius: var(--semantic-borderRadius-pill);
         cursor: pointer;
 
@@ -42,38 +41,47 @@
         }
         &.close {
             position: absolute;
-            width: 24px;
-            height: 24px;
-            right: 8px;
-            top: 8px;
+            width: var(--core-size-1200);
+            height: var(--core-size-1200);
+            right: var(--semantic-spacing-general-sm);
+            top: var(--semantic-spacing-general-sm);
             border-radius: unset;
+
+            svg {
+                fill: var(--semantic-color-typography-prominent);
+            }
         }
         .badge-unread {
             position: absolute;
             top: 0;
             right: 0;
-            width: 8px;
-            height: 8px;
-            border-radius: 96px;
-            background-color: rgba(230, 25, 14, 1);
+            width: var(--core-size-400);
+            height: var(--core-size-400);
+            border-radius: var(--semantic-borderRadius-pill);
+            background-color: var(--core-color-solid-red-700);
         }
     }
     .body {
         display: flex;
-        gap: 16px;
+        gap: var(--semantic-spacing-gap-lg);
     }
     &__banner,
     &__banner--mobile {
-        min-height: 72px;
-        padding: 16px 32px 16px 16px;
-        border-radius: 16px;
-        border: 1px solid
+        min-height: var(--core-size-3600);
+        padding: var(--semantic-spacing-general-md)
+            var(--semantic-spacing-general-2xl)
+            var(--semantic-spacing-general-md)
+            var(--semantic-spacing-general-md);
+        border-radius: var(--semantic-borderRadius-lg);
+        border: var(--borderWidth-xs) solid
             color-mix(
                 in srgb,
                 var(--semantic-color-typography-prominent) 8%,
                 transparent
             );
-        box-shadow: 0px 4px 8px 2px
+        box-shadow: 0 var(--semantic-spacing-general-xs)
+            var(--semantic-spacing-general-sm)
+            var(--semantic-spacing-general-2xs)
             color-mix(
                 in srgb,
                 var(--semantic-color-typography-prominent) 3%,
@@ -92,7 +100,7 @@
     &__banner--mobile {
         animation: var(--motion-duration-snappy) var(--motion-easing-inandout)
             enter-mobile;
-        padding: 16px;
+        padding: var(--semantic-spacing-general-md);
 
         &.hidden {
             transform: translateY(-100vh);
@@ -102,25 +110,26 @@
     &__banners--mobile {
         position: absolute;
         width: 360px;
-        bottom: 8px;
-        left: 8px;
+        bottom: var(--semantic-spacing-general-sm);
+        left: var(--semantic-spacing-general-sm);
         z-index: 6;
 
         &--mobile {
-            top: 8px;
+            top: var(--semantic-spacing-general-sm);
             bottom: unset;
-            width: calc(100vw - 16px);
+            width: calc(100vw - var(--size-generic-xs));
         }
     }
     &__item,
     &__item--mobile {
-        padding: 16px;
+        padding: var(--semantic-spacing-general-md);
         justify-content: space-between;
-        height: 98px;
+        height: var(--core-size-4900);
 
         .body,
         .details {
             min-width: 0;
+            flex-grow: 1;
         }
         .message--one-liner {
             white-space: nowrap;
@@ -128,17 +137,17 @@
             text-overflow: ellipsis;
         }
         .date-time {
-            color: rgba(0, 0, 0, 0.48);
-            margin-top: 4px;
+            color: var(--semantic-color-typography-subtle);
+            margin-top: var(--semantic-spacing-general-xs);
         }
         .buttons {
             display: flex;
             align-self: stretch;
             justify-content: flex-end;
             flex-direction: row;
-            gap: 8px;
+            gap: var(--semantic-spacing-gap-md);
             visibility: hidden;
-            width: 72px;
+            width: var(--core-size-3600);
             flex-shrink: 0;
 
             .mark-as-read,
@@ -150,19 +159,34 @@
                 justify-content: center;
 
                 .icon {
-                    border-radius: 12px;
+                    border-radius: var(--core-borderRadius-600);
 
                     &:hover {
-                        background-color: rgba(0, 0, 0, 0.08);
+                        background-color: color-mix(
+                            in srgb,
+                            var(--semantic-color-typography-prominent) 8%,
+                            transparent
+                        );
+                    }
+                    svg {
+                        fill: var(--semantic-color-typography-prominent);
                     }
                 }
             }
         }
         &:hover {
-            background-color: rgba(0, 0, 0, 0.04);
+            background-color: color-mix(
+                in srgb,
+                var(--semantic-color-typography-prominent) 4%,
+                transparent
+            );
         }
         &:active {
-            background-color: rgba(0, 0, 0, 0.08);
+            background-color: color-mix(
+                in srgb,
+                var(--semantic-color-typography-prominent) 8%,
+                transparent
+            );
         }
         &:hover,
         &:active {
@@ -174,23 +198,30 @@
             position: relative;
             width: inherit;
             overflow: hidden;
-            max-height: 98px; // equal to __item's height, required for item deletion transition to work
+            max-height: var(
+                --core-size-4900
+            ); // equal to __item's height of 98px, must be in px for for item deletion transition to work
 
             &:not(:last-child)::after {
                 position: absolute;
                 content: "";
-                width: calc(100% - 64px);
+                width: calc(100% - var(--core-size-3200));
                 height: 100%;
                 right: 0;
-                outline: 1px solid rgba(0, 0, 0, 0.08);
+                outline: var(--borderWidth-xs) solid
+                    color-mix(
+                        in srgb,
+                        var(--semantic-color-typography-prominent) 8%,
+                        transparent
+                    );
             }
             &.deleted,
             &.deleted:not(:last-child)::after {
-                opacity: 0;
+                opacity: var(--core-opacity-50);
                 max-height: 0;
                 transition:
-                    max-height 160ms,
-                    opacity 160ms;
+                    max-height var(--core-motion-duration-200),
+                    opacity var(--core-motion-duration-200);
                 transition-timing-function: var(--motion-easing-inandout);
             }
         }
@@ -212,30 +243,30 @@
 
             .mark-as-read,
             .delete {
-                width: 72px;
+                width: var(--core-size-3600);
 
                 .icon {
                     height: 100%;
                     width: 100%;
-                    background-color: rgba(0, 0, 0, 1);
+                    background-color: var(--core-color-solid-slate-1400);
                     border-radius: unset;
 
                     &:active,
                     &:hover {
-                        background-color: rgba(0, 0, 0, 0.88);
+                        background-color: var(--core-color-opacity-black-800);
                     }
                     svg {
-                        fill: rgba(255, 255, 255, 1);
+                        fill: var(--core-color-solid-slate-50);
                     }
                 }
             }
             .delete {
                 .icon {
-                    background-color: rgba(230, 25, 14, 1);
+                    background-color: var(--core-color-solid-red-700);
 
                     &:active,
                     &:hover {
-                        background-color: rgba(196, 0, 0, 1);
+                        background-color: var(--core-color-solid-red-900);
                     }
                 }
             }
@@ -244,18 +275,23 @@
             }
         }
         &.show-buttons {
-            transform: translateX(-144px);
+            transform: translateX(calc(var(--core-size-3600) * -2));
 
             &--read {
-                transform: translateX(-72px);
+                transform: translateX(calc(var(--core-size-3600) * -1));
             }
         }
     }
     &__items-list {
         width: inherit;
         overflow: hidden;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        border-radius: 8px;
+        border: var(--borderWidth-xs) solid
+            color-mix(
+                in srgb,
+                var(--semantic-color-typography-prominent) 8%,
+                transparent
+            );
+        border-radius: var(--semantic-borderRadius-md);
     }
 }
 

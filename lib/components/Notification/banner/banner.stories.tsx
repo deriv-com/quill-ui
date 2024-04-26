@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { fn } from "@storybook/test";
 import { StandaloneCirclePlusBoldIcon } from "@deriv/quill-icons";
 import { TYPE } from "../../../utils/notification-utils";
@@ -12,19 +11,6 @@ const meta = {
     tags: ["autodocs"],
     parameters: {
         layout: "centered",
-        viewport: {
-            viewports: {
-                ...MINIMAL_VIEWPORTS,
-                desktop: {
-                    name: "desktop",
-                    styles: {
-                        width: "100%",
-                        height: "100%",
-                    },
-                },
-            },
-            defaultViewport: "desktop",
-        },
     },
     args: {
         redirectTo: "https://www.example.com",

@@ -21,6 +21,13 @@ const meta = {
                         height: "100%",
                     },
                 },
+                iphoneSE: {
+                    name: "iphoneSE",
+                    styles: {
+                        width: "375px",
+                        height: "667px",
+                    },
+                },
             },
             defaultViewport: "desktop",
         },
@@ -93,7 +100,7 @@ type Story = StoryObj<typeof meta>;
 export const NotificationItemDesktop: Story = {
     parameters: { viewport: { defaultViewport: "desktop" } },
     render: (args) => (
-        <div style={{ width: "360px" }}>
+        <div style={{ width: "calc(100vw - 32px)", height: "98px" }}>
             <NotificationItem {...args} />
         </div>
     ),
@@ -103,9 +110,9 @@ export const NotificationItemMobile: Story = {
     args: {
         isMobile: true,
     },
-    parameters: { viewport: { defaultViewport: "mobile1" } },
+    parameters: { viewport: { defaultViewport: "iphoneSE" } },
     render: (args) => (
-        <div style={{ width: "calc(100vw - 32px)" }}>
+        <div style={{ width: "calc(100vw - 32px)", height: "98px" }}>
             <NotificationItem {...args} />
         </div>
     ),
