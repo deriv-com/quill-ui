@@ -5,7 +5,6 @@ import ActionSheet from "..";
 import { ActionSheetContextType } from "../root";
 import { Text } from "@components/Typography";
 import "./mock.scss";
-import { Button } from "@components/Button";
 
 type ExampleProps = ActionSheetContextType &
     ComponentProps<typeof ActionSheet.Root> &
@@ -29,9 +28,7 @@ export const ActionSheetExample = ({
     return (
         <>
             <ActionSheet.Root {...props} isOpen={open} onOpen={openHandler}>
-                <ActionSheet.Trigger>
-                    <Button label="Click Here" />
-                </ActionSheet.Trigger>
+                <ActionSheet.Trigger label="Click Here" />
                 <ActionSheet.Portal>
                     <ActionSheet.Header
                         title={title}
@@ -92,6 +89,56 @@ export const ActionSheetExampleWithIconTrigger = ({
                         icon={icon}
                     />
                     <ActionSheet.Content className="mock-action-sheet--content">
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
+                        <Text size="sm">
+                            Bottom sheet is a surface fixed at the bottom of the
+                            screen which includes content related to the
+                            previous screen.
+                        </Text>
                         <Text size="sm">
                             Bottom sheet is a surface fixed at the bottom of the
                             screen which includes content related to the
