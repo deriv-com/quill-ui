@@ -9,7 +9,14 @@ import {
 import { Status, Variants } from "../base";
 
 const icons: Record<string, object | null> = {
-    with_icon: <StandalonePlaceholderRegularIcon />,
+    with_icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
+    none: null,
+};
+
+const statusIcon: Record<string, object | null> = {
+    placeholder: <StandalonePlaceholderRegularIcon iconSize="sm" />,
+    success: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+    error: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
     none: null,
 };
 
@@ -44,6 +51,8 @@ const meta = {
         disabled: false,
         variant: "fill",
         textAlignment: "left",
+        fieldMarker: false,
+        required: false,
     },
     argTypes: {
         inputSize: {
@@ -55,6 +64,13 @@ const meta = {
         icon: {
             options: Object.keys(icons),
             mapping: icons,
+            control: {
+                type: "select",
+            },
+        },
+        statusIcon: {
+            options: Object.keys(statusIcon),
+            mapping: statusIcon,
             control: {
                 type: "select",
             },

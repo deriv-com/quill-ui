@@ -70,6 +70,11 @@ exports[`Input should render an Input with a label 1`] = `
           for="UserName"
         >
           UserName
+          <div
+            class="label-field-marker label-field-marker__required--false"
+          >
+            (optional)
+          </div>
         </label>
       </div>
     </div>

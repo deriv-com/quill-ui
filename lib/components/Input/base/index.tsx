@@ -3,7 +3,7 @@ import { InputHTMLAttributes, ReactNode, forwardRef, useState } from "react";
 import "./base.scss";
 import React from "react";
 import { TMediumSizes } from "@types";
-import { CaptionText } from "@components/Typography";
+import { CaptionText, Text } from "@components/Typography";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
@@ -23,6 +23,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     textAlignment?: TextAlignments;
     label?: ReactNode;
     value?: string;
+    fieldMarker?: boolean;
 }
 
 const statusIconColors = {
@@ -47,6 +48,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             label,
             statusIcon: StatusIcon,
             onChange,
+            fieldMarker = true,
+            required = false,
             ...rest
         },
         ref,
@@ -70,6 +73,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     <div className="quill-input-label__wrapper">
                         <input
                             {...rest}
+                            required={required}
                             type={type}
                             className={clsx(
                                 "input",
@@ -95,6 +99,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 htmlFor={label.toString()}
                             >
                                 {label}
+                                {fieldMarker && (
+                                    <div
+                                        className={clsx(
+                                            "label-field-marker",
+                                            `label-field-marker__required--${required}`,
+                                        )}
+                                    >
+                                        {required ? "*" : "(optional)"}
+                                    </div>
+                                )}
                             </label>
                         )}
                     </div>
