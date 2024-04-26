@@ -60,6 +60,7 @@ class Transformer {
         const pref = prefix ? "--" : "";
         return `${pref}${cssKey.replaceAll(".", "-")}`;
     };
+    convertTokenKey = (str) => str.replaceAll("--", "").replaceAll("-", ".");
 
     convertHexes = (str) => {
         const rgbaRegex =
@@ -320,7 +321,31 @@ class Transformer {
                 },
             );
 
-            this.styleStrings[styleStrKey] = transformedString;
+            // Map RGBA values
+            const rgbaPattern =
+                /rgba\(\s*var\((--[\w-]+)\),\s*var\((--[\w-]+)\s*\)\s*\)/g;
+
+            // Replace matches with custom strings
+            const replacedString = transformedString.replace(
+                rgbaPattern,
+                (match, hex, opacity) => {
+                    const hexKey = this.convertTokenKey(hex);
+                    const hexValue = this.allRules[hexKey] || hex;
+                    const opacityKey = this.convertTokenKey(opacity);
+                    const opacityValue = this.allRules[opacityKey] ?? opacity;
+                    const rgbReplacement = "rgba(HEX, OPACITY)";
+
+                    if (hex || opacity) {
+                        return rgbReplacement
+                            .replace("HEX", hexValue)
+                            .replace("OPACITY", opacityValue);
+                    } else {
+                        return match;
+                    }
+                },
+            );
+
+            this.styleStrings[styleStrKey] = replacedString;
         });
     };
 
