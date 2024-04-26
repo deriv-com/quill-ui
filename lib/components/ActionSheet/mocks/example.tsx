@@ -5,7 +5,6 @@ import ActionSheet from "..";
 import { ActionSheetContextType } from "../root";
 import { Text } from "@components/Typography";
 import "./mock.scss";
-import { Button } from "@components/Button";
 
 type ExampleProps = ActionSheetContextType &
     ComponentProps<typeof ActionSheet.Root> &
