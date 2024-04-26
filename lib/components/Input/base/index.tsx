@@ -12,8 +12,8 @@ export type TextAlignments = "left" | "center";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type?: Types;
-    icon?: ReactNode;
-    statusIcon?: ReactNode;
+    leftIcon?: ReactNode;
+    rightIcon?: ReactNode;
     inputSize?: TMediumSizes;
     status?: Status;
     disabled?: boolean;
@@ -41,12 +41,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             status = "neutral",
             disabled = false,
             variant = "outline",
-            icon: Icon,
+            leftIcon,
             leftStatusMessage,
             rightStatusMessage,
             textAlignment = "left",
             label,
-            statusIcon: StatusIcon,
+            rightIcon,
             onChange,
             fieldMarker = true,
             required = false,
@@ -69,7 +69,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         `quill-input__wrapper__status--${status}`,
                     )}
                 >
-                    {Icon && <span className="icon_wrapper">{Icon}</span>}
+                    {leftIcon && (
+                        <span className="icon_wrapper">{leftIcon}</span>
+                    )}
                     <div className="quill-input-label__wrapper">
                         <input
                             {...rest}
@@ -94,7 +96,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 className={clsx(
                                     "label",
                                     `label__status--${status}`,
-                                    Icon && `label__hasIcon`,
+                                    leftIcon && `label__hasIcon`,
                                 )}
                                 htmlFor={label.toString()}
                             >
@@ -113,14 +115,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         )}
                     </div>
 
-                    {StatusIcon && (
+                    {rightIcon && (
                         <span
                             className={clsx(
                                 "icon_wrapper",
                                 statusIconColors[status],
                             )}
                         >
-                            {StatusIcon}
+                            {rightIcon}
                         </span>
                     )}
                 </div>

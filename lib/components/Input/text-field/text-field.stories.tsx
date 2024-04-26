@@ -61,14 +61,14 @@ const meta = {
             },
             options: ["sm", "md"],
         },
-        icon: {
+        leftIcon: {
             options: Object.keys(icons),
             mapping: icons,
             control: {
                 type: "select",
             },
         },
-        statusIcon: {
+        rightIcon: {
             options: Object.keys(statusIcon),
             mapping: statusIcon,
             control: {
@@ -153,7 +153,7 @@ export const TextFieldWithIconAndLabel: Story = {
     args: {
         placeholder,
         label,
-        icon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
+        leftIcon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
     },
 };
 
@@ -162,7 +162,7 @@ export const SuccessStatusIconTextField: Story = {
         placeholder,
         variant: variants.outline,
         status: status.success,
-        statusIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+        rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     },
     argTypes: {
         status: {
@@ -199,7 +199,14 @@ export const SuccessMessageTextFieldWithIcons: Story = {
         status: status.success,
         leftStatusMessage,
         rightStatusMessage,
-        statusIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+        rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+    },
+    argTypes: {
+        rightIcon: {
+            table: {
+                disable: true,
+            },
+        },
     },
 };
 export const ErrorMessageTextFieldWithIcons: Story = {
@@ -209,6 +216,13 @@ export const ErrorMessageTextFieldWithIcons: Story = {
         status: status.error,
         leftStatusMessage,
         rightStatusMessage,
-        statusIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+    },
+    argTypes: {
+        rightIcon: {
+            table: {
+                disable: true,
+            },
+        },
     },
 };
