@@ -4,8 +4,8 @@ import { NotificationBannerProps } from "@components/Notification";
 import { NotificationItemProps } from "@components/Notification/item";
 
 interface UseNotificationsParams {
-    banners?: NotificationBannerProps[];
-    notificationItems?: NotificationItemProps[];
+    banners?: Array<NotificationBannerProps & { id: string }>;
+    notificationItems?: Array<NotificationItemProps & { id: string }>;
 }
 
 export const useNotifications = (params?: UseNotificationsParams) => {

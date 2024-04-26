@@ -3,7 +3,7 @@ import clsx from "clsx";
 import NotificationItem from "../item";
 import type { NotificationItemProps } from "../item";
 
-export interface NotificationBannersProps {
+export interface NotificationItemsListProps {
     className?: string;
     items?: Array<NotificationItemProps & { id: string }>;
     isMobile?: boolean;
@@ -17,7 +17,7 @@ const NotificationItemsList = ({
     isMobile,
     onClose,
     onMarkAsRead,
-}: NotificationBannersProps) => {
+}: NotificationItemsListProps) => {
     const timeoutIds = useRef<Array<ReturnType<typeof setTimeout>>>([]);
 
     useEffect(() => {

@@ -34,7 +34,7 @@ const NotificationItem = ({
         setIsRead(status === STATUS.READ);
     }, [status]);
 
-    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         handleMarkAsRead();
         onClick?.(e);
     };

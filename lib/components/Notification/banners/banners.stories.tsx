@@ -1,8 +1,10 @@
-import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import NotificationBanners from ".";
 import { TYPE } from "../../../utils/notification-utils";
+import { NotificationsProvider } from "@providers/notification/notificationsProvider";
+import { useNotifications } from "@hooks/useNotifications";
+import { AddNewNotificationTestButtons } from "../test-button";
 
 const meta = {
     title: "Components/Notification/NotificationBanners",
@@ -31,6 +33,13 @@ const meta = {
             defaultViewport: "desktop",
         },
     },
+    decorators: [
+        (Story) => (
+            <NotificationsProvider>
+                <Story />
+            </NotificationsProvider>
+        ),
+    ],
     args: {
         autohideTimeout: 4000,
     },
@@ -57,42 +66,52 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const basicBanners = [
+    {
+        id: "0",
+        message: "This is an information message",
+        redirectTo: "https://www.example.com",
+        title: "Information",
+        type: TYPE.INFO,
+    },
+    {
+        id: "1",
+        message: "This is a warning message",
+        redirectTo: "https://www.example.com",
+        title: "Warning",
+        type: TYPE.WARNING,
+    },
+    {
+        id: "2",
+        message: "This is an error message",
+        redirectTo: "https://www.example.com",
+        title: "Error",
+        type: TYPE.ERROR,
+    },
+];
+const initialBanners = [
+    ...basicBanners,
+    ...basicBanners.map((item) => ({ ...item, id: `${item.id}_unique` })),
+];
+
 const Template: Story = {
     render: (args) => {
-        const [banners, setBanners] = useState([
-            {
-                id: "0",
-                message: "This is an information message",
-                redirectTo: "https://www.example.com",
-                title: "Information",
-                type: TYPE.INFO,
-            },
-            {
-                id: "1",
-                message: "This is a warning message",
-                redirectTo: "https://www.example.com",
-                title: "Warning",
-                type: TYPE.WARNING,
-            },
-            {
-                id: "2",
-                message: "This is an error message",
-                redirectTo: "https://www.example.com",
-                title: "Error",
-                type: TYPE.ERROR,
-            },
-        ]);
-
-        const handleClose = (id: string) => {
-            setBanners(banners.filter((banner) => banner.id !== id));
-        };
+        const { addBanner, banners, removeBanner } = useNotifications({
+            banners: initialBanners,
+        });
 
         return (
-            <NotificationBanners
-                {...args}
-                banners={banners}
-                onClose={handleClose}
-            />
+            <>
+                <AddNewNotificationTestButtons
+                    addNotification={addBanner}
+                    shouldAddBanner
+                />
+                <NotificationBanners
+                    {...args}
+                    banners={banners}
+                    onClose={removeBanner}
+                />
+            </>
         );
     },
 };

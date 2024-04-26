@@ -6,9 +6,11 @@ import { NotificationItemProps } from "@components/Notification/item";
 import { STATUS } from "@utils/notification-utils";
 
 export const NotificationsProvider = ({ children }: PropsWithChildren) => {
-    const [banners, setBanners] = useState<NotificationBannerProps[]>([]);
+    const [banners, setBanners] = useState<
+        Array<NotificationBannerProps & { id: string }>
+    >([]);
     const [notificationItems, setNotificationItems] = useState<
-        NotificationItemProps[]
+        Array<NotificationItemProps & { id: string }>
     >([]);
 
     const addBanner = (props: Omit<NotificationBannerProps, "id">) => {
@@ -18,11 +20,9 @@ export const NotificationsProvider = ({ children }: PropsWithChildren) => {
     const addNotificationItem = (
         props: Omit<NotificationItemProps, "id" | "status">,
     ) => {
-        console.log(notificationItems, props, "add");
-
         setNotificationItems((prev) => [
-            ...prev,
             { ...props, id: uuid(), status: STATUS.UNREAD },
+            ...prev,
         ]);
     };
 
@@ -52,11 +52,15 @@ export const NotificationsProvider = ({ children }: PropsWithChildren) => {
         setNotificationItems((prev) => prev.filter((item) => item.id !== id));
     };
 
-    const updateBanners = (list: NotificationBannerProps[]) => {
+    const updateBanners = (
+        list: Array<NotificationBannerProps & { id: string }>,
+    ) => {
         setBanners([...list]);
     };
 
-    const updateNotificationItems = (list: NotificationItemProps[]) => {
+    const updateNotificationItems = (
+        list: Array<NotificationItemProps & { id: string }>,
+    ) => {
         setNotificationItems([...list]);
     };
 

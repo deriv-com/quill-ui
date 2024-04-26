@@ -142,35 +142,26 @@
         }
         .buttons {
             display: flex;
-            align-self: stretch;
+            align-self: center;
             justify-content: flex-end;
-            flex-direction: row;
             gap: var(--semantic-spacing-gap-md);
             visibility: hidden;
             width: var(--core-size-3600);
             flex-shrink: 0;
 
             .mark-as-read,
-            .delete,
-            a.nav {
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            .delete {
+                border-radius: var(--core-borderRadius-600);
 
-                .icon {
-                    border-radius: var(--core-borderRadius-600);
-
-                    &:hover {
-                        background-color: color-mix(
-                            in srgb,
-                            var(--semantic-color-typography-prominent) 8%,
-                            transparent
-                        );
-                    }
-                    svg {
-                        fill: var(--semantic-color-typography-prominent);
-                    }
+                &:hover {
+                    background-color: color-mix(
+                        in srgb,
+                        var(--semantic-color-typography-prominent) 8%,
+                        transparent
+                    );
+                }
+                svg {
+                    fill: var(--semantic-color-typography-prominent);
                 }
             }
         }
@@ -240,38 +231,30 @@
             transform: translateX(100%);
             width: fit-content;
             gap: unset;
+            height: 100%;
 
             .mark-as-read,
             .delete {
                 width: var(--core-size-3600);
+                height: 100%;
+                background-color: var(--core-color-solid-slate-1400);
+                border-radius: unset;
 
-                .icon {
-                    height: 100%;
-                    width: 100%;
-                    background-color: var(--core-color-solid-slate-1400);
-                    border-radius: unset;
-
-                    &:active,
-                    &:hover {
-                        background-color: var(--core-color-opacity-black-800);
-                    }
-                    svg {
-                        fill: var(--core-color-solid-slate-50);
-                    }
+                &:active,
+                &:hover {
+                    background-color: var(--core-color-opacity-black-800);
+                }
+                svg {
+                    fill: var(--core-color-solid-slate-50);
                 }
             }
             .delete {
-                .icon {
-                    background-color: var(--core-color-solid-red-700);
+                background-color: var(--core-color-solid-red-700);
 
-                    &:active,
-                    &:hover {
-                        background-color: var(--core-color-solid-red-900);
-                    }
+                &:active,
+                &:hover {
+                    background-color: var(--core-color-solid-red-900);
                 }
-            }
-            a.nav {
-                display: none;
             }
         }
         &.show-buttons {

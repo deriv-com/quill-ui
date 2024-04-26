@@ -49,7 +49,7 @@ const NotificationBanner = ({
         handleClose();
     };
 
-    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         forceClose();
         onClick?.(e);
     };

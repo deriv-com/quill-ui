@@ -12,7 +12,7 @@ import { STATUS, TYPE } from "../../utils/notification-utils";
 import "./notification.scss";
 
 export interface NotificationProps
-    extends Omit<React.HTMLProps<HTMLDivElement>, "title"> {
+    extends Omit<React.HTMLProps<HTMLAnchorElement>, "title"> {
     className?: string;
     hasCloseButton?: boolean;
     icon?: React.ReactNode;
@@ -72,21 +72,20 @@ export const Notification = ({
     });
 
     const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
         e.stopPropagation();
         onClose?.(e);
     };
 
     return (
-        <div
+        <a
             {...rest}
             {...swipeHandlers}
             className={clsx("notification", className)}
+            href={redirectTo}
+            onDragStart={(e) => e.preventDefault()}
         >
-            <a
-                className="body"
-                href={redirectTo}
-                onDragStart={(e) => e.preventDefault()}
-            >
+            <div className="body">
                 <div
                     className={clsx("icon", type)}
                     style={{ backgroundColor: iconBackgroundColor }}
@@ -119,7 +118,7 @@ export const Notification = ({
                         </CaptionText>
                     )}
                 </div>
-            </a>
+            </div>
             {isBanner && hasCloseButton && (
                 <button className={clsx("icon", "close")} onClick={handleClose}>
                     <LabelPairedXmarkSmRegularIcon />
@@ -127,33 +126,26 @@ export const Notification = ({
             )}
             {!isBanner && (
                 <div className="buttons">
-                    {status === STATUS.UNREAD ? (
-                        <div className="mark-as-read">
-                            <button
-                                className="icon"
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    onMarkAsRead?.(e);
-                                }}
-                            >
-                                <LabelPairedCheckSmBoldIcon />
-                            </button>
-                        </div>
-                    ) : (
-                        redirectTo && (
-                            <a
-                                href={redirectTo}
-                                className={clsx("icon", "nav")}
-                            />
-                        )
-                    )}
-                    <div className="delete">
-                        <button className="icon" onClick={handleClose}>
-                            <LabelPairedTrashSmBoldIcon />
+                    {status === STATUS.UNREAD && (
+                        <button
+                            className={clsx("icon", "mark-as-read")}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                onMarkAsRead?.(e);
+                            }}
+                        >
+                            <LabelPairedCheckSmBoldIcon />
                         </button>
-                    </div>
+                    )}
+                    <button
+                        className={clsx("icon", "delete")}
+                        onClick={handleClose}
+                    >
+                        <LabelPairedTrashSmBoldIcon />
+                    </button>
                 </div>
             )}
-        </div>
+        </a>
     );
 };

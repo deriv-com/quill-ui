@@ -15,10 +15,10 @@ const meta = {
     args: {
         redirectTo: "https://www.example.com",
         message:
-            "Notification: use redirectTo or onClick to redirect to a desired page.",
+            "The redirectTo prop can be used to redirect to a desired page when the banner is clicked.",
         onClick: fn(),
         onClose: fn(),
-        title: "Title",
+        title: "Hint",
     },
     argTypes: {
         className: {

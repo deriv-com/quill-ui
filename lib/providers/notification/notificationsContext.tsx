@@ -7,16 +7,18 @@ export type NotificationsContextValue = {
     addNotificationItem: (
         props: Omit<NotificationItemProps, "id" | "status">,
     ) => void;
-    banners: NotificationBannerProps[];
+    banners: Array<NotificationBannerProps & { id: string }>;
     markAllNotificationsAsRead: () => void;
     markNotificationItemAsRead: (id: string) => void;
-    notificationItems: NotificationItemProps[];
+    notificationItems: Array<NotificationItemProps & { id: string }>;
     removeAllNotificationItems: () => void;
     removeBanner: (id: string) => void;
     removeNotificationItem: (id: string) => void;
-    updateBanners: (banners: NotificationBannerProps[]) => void;
+    updateBanners: (
+        banners: Array<NotificationBannerProps & { id: string }>,
+    ) => void;
     updateNotificationItems: (
-        notificationItems: NotificationItemProps[],
+        notificationItems: Array<NotificationItemProps & { id: string }>,
     ) => void;
 };
 

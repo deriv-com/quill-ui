@@ -1,8 +1,10 @@
-import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import NotificationItemsList from ".";
 import { STATUS, TYPE } from "../../../utils/notification-utils";
+import { NotificationsProvider } from "@providers/notification/notificationsProvider";
+import { useNotifications } from "@hooks/useNotifications";
+import { AddNewNotificationTestButtons } from "../test-button";
 
 const meta = {
     title: "Components/Notification/NotificationItemsList",
@@ -31,6 +33,13 @@ const meta = {
             defaultViewport: "desktop",
         },
     },
+    decorators: [
+        (Story) => (
+            <NotificationsProvider>
+                <Story />
+            </NotificationsProvider>
+        ),
+    ],
     argTypes: {
         className: {
             control: { type: null },
@@ -54,60 +63,65 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const basicItems = [
+    {
+        id: "0",
+        message: "This is a very very long Information message",
+        redirectTo: "https://www.example.com",
+        status: STATUS.UNREAD,
+        timestamp: new Date("2024-04-23T09:24:00").getTime(),
+        title: "Information",
+        type: TYPE.INFO,
+    },
+    {
+        id: "1",
+        message: "This is a very very very long Warning message",
+        redirectTo: "https://www.example.com",
+        status: STATUS.UNREAD,
+        timestamp: new Date("2024-04-23T09:24:00").getTime(),
+        title: "Warning",
+        type: TYPE.WARNING,
+    },
+    {
+        id: "2",
+        message: "This is a very very very long Error message",
+        redirectTo: "https://www.example.com",
+        status: STATUS.READ,
+        timestamp: new Date("2024-04-23T09:24:00").getTime(),
+        title: "Error",
+        type: TYPE.ERROR,
+    },
+];
+const initialNotifications = [
+    ...basicItems,
+    ...basicItems.map((item) => ({ ...item, id: `${item.id}_unique` })),
+];
+
 const Template: Story = {
     render: (args) => {
-        const items_list = [
-            {
-                id: "0",
-                message: "This is a very very long information message",
-                redirectTo: "https://www.example.com",
-                status: STATUS.UNREAD,
-                timestamp: new Date("2024-04-23T09:24:00").getTime(),
-                title: "Information",
-                type: TYPE.INFO,
-            },
-            {
-                id: "1",
-                message: "This is a very very long warning message",
-                redirectTo: "https://www.example.com",
-                status: STATUS.UNREAD,
-                timestamp: new Date("2024-04-23T09:24:00").getTime(),
-                title: "Warning",
-                type: TYPE.WARNING,
-            },
-            {
-                id: "2",
-                message: "This is a very very long error message",
-                redirectTo: "https://www.example.com",
-                status: STATUS.READ,
-                timestamp: new Date("2024-04-23T09:24:00").getTime(),
-                title: "Error",
-                type: TYPE.ERROR,
-            },
-        ];
-        const [items, setItems] = useState([
-            ...items_list,
-            ...items_list.map((item) => ({ ...item, id: `${item.id}_unique` })),
-        ]);
-
-        const handleClose = (id: string) => {
-            setItems((items) => items.filter((item) => item.id !== id));
-        };
-        const handleMarkAsRead = (id: string) => {
-            setItems((items) =>
-                items.map((item) =>
-                    item.id === id ? { ...item, status: STATUS.READ } : item,
-                ),
-            );
-        };
+        const {
+            addNotificationItem,
+            markAllNotificationsAsRead,
+            markNotificationItemAsRead,
+            notificationItems,
+            removeAllNotificationItems,
+            removeNotificationItem,
+        } = useNotifications({ notificationItems: initialNotifications });
 
         return (
-            <NotificationItemsList
-                {...args}
-                items={items}
-                onClose={handleClose}
-                onMarkAsRead={handleMarkAsRead}
-            />
+            <>
+                <AddNewNotificationTestButtons
+                    addNotification={addNotificationItem}
+                    markAllAsRead={markAllNotificationsAsRead}
+                    removeAllNotifications={removeAllNotificationItems}
+                />
+                <NotificationItemsList
+                    {...args}
+                    items={notificationItems}
+                    onClose={removeNotificationItem}
+                    onMarkAsRead={markNotificationItemAsRead}
+                />
+            </>
         );
     },
 };

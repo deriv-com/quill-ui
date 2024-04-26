@@ -34,12 +34,13 @@ const meta = {
     },
     args: {
         redirectTo: "https://www.example.com",
-        message: "redirectTo can be used to redirect to a desired page.",
+        message:
+            "The redirectTo prop can be used to redirect to a desired page when the notification is clicked.",
         onClick: fn(),
         onClose: fn(),
         onMarkAsRead: fn(),
         timestamp: new Date("2024-04-23T09:24:00").getTime(),
-        title: "Title",
+        title: "Hint",
     },
     argTypes: {
         className: {
