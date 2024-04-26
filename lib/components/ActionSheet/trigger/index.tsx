@@ -35,7 +35,7 @@ const Trigger = ({
             </Button>
         );
     }
-    return <button onClick={handleOpen} {...restProps} />;
+    return <Button onClick={handleOpen} {...restProps} />;
 };
 
 Trigger.displayName = "Trigger";
