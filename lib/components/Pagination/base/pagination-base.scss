@@ -1,15 +1,15 @@
-.variant{
+
+.variant {
     &__number {
         display: inline-flex;
         flex-direction: column;
         cursor: pointer;
         justify-content: center;
+        position: relative;
         align-items: center;
         height: var(--core-size-1600);
         width: var(--core-size-1600);
         border-radius: var(--core-size-200);
-<<<<<<< Updated upstream
-=======
 
         &:hover {
             background-color: var(--core-color-opacity-black-100);
@@ -29,10 +29,9 @@
         height: var(--core-size-400);
         border-radius: var(--core-size-4800);
         position: relative;
-        background-color: var(--component-pagination-bg-default);
+        background-color: var(--core-color-opacity-black-75);
         cursor: pointer;
 
->>>>>>> Stashed changes
         &:hover {
             background-color: var(--core-color-opacity-black-100);
         }
@@ -42,12 +41,7 @@
         }
         &[aria-current=true] {
             background-color: var(--core-color-solid-slate-1400);
-            &:hover {
-                background-color: var(--core-color-solid-slate-1400);
-            }
         }
-<<<<<<< Updated upstream
-=======
     }
 }
 
@@ -60,7 +54,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: var(--component-pagination-label-color-disabled);
+        color: var(--component-pagination-icon-disabled);
         font-size: var(--core-size-600);
         width: var(--core-size-1600);
         height: var(--core-size-900);
@@ -69,35 +63,11 @@
 }
 
 .number-text {
->>>>>>> Stashed changes
     
-    }
-    &__bullet {
-        
-        &-svg {
-            fill: var(--core-color-opacity-black-75);
-            cursor: pointer;
-        &[aria-current=true] {
-           fill: var(--semantic-color-typography-prominent);
-        }
-        }
-        
-    }
-}
-.hidden_pages {
-    display: flex;
-}
-.number-text{
-    &[aria-current=true]{
+    &[aria-current="true"] {
         font-weight: bold;
         color: var(--core-color-solid-slate-50);
     }
-<<<<<<< Updated upstream
-    color: var(--semantic-color-typography-default);
-}
-=======
 
-    color: var(--component-pagination-label-color-default);
+    color: var(--component-pagination-icon-default);
 }
-
->>>>>>> Stashed changes

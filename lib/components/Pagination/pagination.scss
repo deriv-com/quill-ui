@@ -10,26 +10,29 @@
         display: flex;
         align-items: center;
         cursor: pointer;
-<<<<<<< Updated upstream
-        color: var(--semantic-color-typography-prominent);
-=======
         justify-content: center;
         height: var(--core-size-1600);
         width: var(--core-size-1600);
         border-radius: var(--core-size-200);
-        color: var(--component-pagination-label-color-selected);
+        color: var(--component-pagination-icon-default);
      
->>>>>>> Stashed changes
         &:disabled{
             cursor: auto;
-            color: var(--component-pagination-label-color-disabled);
+            color: var(--component-pagination-icon-disabled);
         }
+        &:hover:not(:disabled) {
+            background-color: var(--core-color-opacity-black-100);
+                }
+
+        &:active:not(:disabled) {
+            background-color: var(--core-color-opacity-black-200);
+             }
         
         &-svg {
             fill: var(--component-pagination-icon-default);  
         }
         &-disabled {
-            fill: var(--component-pagination-label-color-disabled);
+            fill: var(--component-pagination-icon-disabled);
         }
     }
 }
