@@ -1,0 +1,67 @@
+import { ReactNode } from "react";
+import { renderHook, act } from "@testing-library/react";
+import { useNotifications } from "..";
+import { NotificationsProvider } from "@providers/notification/notificationsProvider";
+import { STATUS } from "@utils/notification-utils";
+
+describe("useNotifications", () => {
+    const banners = [
+        { title: "a", id: "0" },
+        { title: "b", id: "1" },
+    ];
+    const notificationItems = [
+        { title: "a", id: "0", status: STATUS.UNREAD },
+        { title: "b", id: "1", status: STATUS.READ },
+    ];
+    const wrapper = ({ children }: { children: ReactNode }) => (
+        <NotificationsProvider>{children}</NotificationsProvider>
+    );
+    it("should add a banner", () => {
+        const { result } = renderHook(() => useNotifications(), { wrapper });
+
+        act(() => {
+            result.current.addBanner({ title: "a" });
+        });
+
+        expect(result.current.banners[0]).toHaveProperty("id");
+    });
+    it("should add a notification item", () => {
+        const { result } = renderHook(() => useNotifications(), { wrapper });
+
+        act(() => {
+            result.current.addNotificationItem({ title: "a" });
+        });
+
+        expect(result.current.notificationItems[0]).toHaveProperty("id");
+        expect(result.current.notificationItems[0]).toHaveProperty("status");
+    });
+    it("should remove one of the 2 existing banners", () => {
+        const { result } = renderHook(() => useNotifications({ banners }), {
+            wrapper,
+        });
+
+        expect(result.current.banners).toHaveLength(2);
+
+        act(() => {
+            const id = result.current.banners[0].id;
+            if (id) result.current.removeBanner(id);
+        });
+
+        expect(result.current.banners).toHaveLength(1);
+    });
+    it("should remove one of the 2 existing notification items", () => {
+        const { result } = renderHook(
+            () => useNotifications({ notificationItems }),
+            { wrapper },
+        );
+
+        expect(result.current.notificationItems).toHaveLength(2);
+
+        act(() => {
+            const id = result.current.notificationItems[0].id;
+            if (id) result.current.removeNotificationItem(id);
+        });
+
+        expect(result.current.notificationItems).toHaveLength(1);
+    });
+});
