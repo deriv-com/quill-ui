@@ -3,7 +3,7 @@ import { InputHTMLAttributes, ReactNode, forwardRef, useState } from "react";
 import "./base.scss";
 import React from "react";
 import { TMediumSizes } from "@types";
-import { CaptionText, Text } from "@components/Typography";
+import { CaptionText } from "@components/Typography";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
