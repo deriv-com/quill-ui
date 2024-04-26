@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Badge.Empty/> should render badge correctly with color danger 1`] = `
+<span
+  aria-label="danger Badge"
+  class="badge__base badge__variant__notification--size-sm badge__color--danger"
+/>
+`;
+
+exports[`<Badge.Empty/> should render badge correctly with color success 1`] = `
+<span
+  aria-label="success Badge"
+  class="badge__base badge__variant__notification--size-sm badge__color--success"
+/>
+`;
+
+exports[`<Badge.Empty/> should render badge correctly with color warning 1`] = `
+<span
+  aria-label="warning Badge"
+  class="badge__base badge__variant__notification--size-sm badge__color--warning"
+/>
+`;
+
+exports[`<Badge.Empty/> should render badge correctly with size lg 1`] = `
+<span
+  aria-label="lg Badge"
+  class="badge__base badge__variant__status--size-lg badge__color--success"
+/>
+`;
+
+exports[`<Badge.Empty/> should render badge correctly with size md 1`] = `
+<span
+  aria-label="md Badge"
+  class="badge__base badge__variant__status--size-md badge__color--success"
+/>
+`;
+
+exports[`<Badge.Empty/> should render badge correctly with size sm 1`] = `
+<span
+  aria-label="sm Badge"
+  class="badge__base badge__variant__status--size-sm badge__color--success"
+/>
+`;
