@@ -16,7 +16,7 @@ describe("useNotifications", () => {
     const wrapper = ({ children }: { children: ReactNode }) => (
         <NotificationsProvider>{children}</NotificationsProvider>
     );
-    it("should add a banner", () => {
+    it("should add one banner", () => {
         const { result } = renderHook(() => useNotifications(), { wrapper });
 
         act(() => {
@@ -25,7 +25,7 @@ describe("useNotifications", () => {
 
         expect(result.current.banners[0]).toHaveProperty("id");
     });
-    it("should add a notification item", () => {
+    it("should add one notification item", () => {
         const { result } = renderHook(() => useNotifications(), { wrapper });
 
         act(() => {
@@ -34,6 +34,55 @@ describe("useNotifications", () => {
 
         expect(result.current.notificationItems[0]).toHaveProperty("id");
         expect(result.current.notificationItems[0]).toHaveProperty("status");
+    });
+    it("should update the list of banners with the new list", () => {
+        const { result } = renderHook(() => useNotifications({ banners: [] }), {
+            wrapper,
+        });
+
+        expect(result.current.banners).toHaveLength(0);
+
+        act(() => {
+            result.current.updateBanners(banners);
+        });
+
+        expect(result.current.banners).toHaveLength(2);
+    });
+    it("should update the list of notification items with the new list", () => {
+        const { result } = renderHook(
+            () => useNotifications({ notificationItems: [] }),
+            { wrapper },
+        );
+
+        expect(result.current.notificationItems).toHaveLength(0);
+
+        act(() => {
+            result.current.updateNotificationItems(notificationItems);
+        });
+
+        expect(result.current.notificationItems).toHaveLength(2);
+    });
+    it("should mark one notification item as read", () => {
+        const { result } = renderHook(
+            () => useNotifications({ notificationItems }),
+            { wrapper },
+        );
+
+        act(() => result.current.markNotificationItemAsRead("0"));
+
+        expect(result.current.notificationItems[0].status).toBe(STATUS.READ);
+    });
+    it("should mark all notification items as read", () => {
+        const { result } = renderHook(
+            () => useNotifications({ notificationItems }),
+            { wrapper },
+        );
+
+        act(() => result.current.markAllNotificationsAsRead());
+
+        result.current.notificationItems.forEach((item) => {
+            expect(item.status).toBe(STATUS.READ);
+        });
     });
     it("should remove one of the 2 existing banners", () => {
         const { result } = renderHook(() => useNotifications({ banners }), {
@@ -63,5 +112,17 @@ describe("useNotifications", () => {
         });
 
         expect(result.current.notificationItems).toHaveLength(1);
+    });
+    it("should remove all notification items", () => {
+        const { result } = renderHook(
+            () => useNotifications({ notificationItems }),
+            { wrapper },
+        );
+
+        expect(result.current.notificationItems).toHaveLength(2);
+
+        act(() => result.current.removeAllNotificationItems());
+
+        expect(result.current.notificationItems).toHaveLength(0);
     });
 });

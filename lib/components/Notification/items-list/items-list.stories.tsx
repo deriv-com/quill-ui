@@ -35,7 +35,7 @@ const meta = {
         docs: {
             description: {
                 component:
-                    "*NOTE: You can wrap your app with `NotificationsProvider` and use `useNotifications()` hook available in this library for managing notifications state (CRUD operations) using context.",
+                    "*NOTE: You can wrap your app with `NotificationsProvider` and use `useNotifications()` hook available in this library for managing notifications state using context. The hook exports `notificationItems` and methods for CRUD operations with NotificationItemsList such as `addNotificationItem`, `markNotificationItemAsRead` (by id), `markAllNotificationsAsRead`, `removeNotificationItem` (by id), `removeAllNotificationItems`, `updateNotificationItems`.",
             },
         },
     },

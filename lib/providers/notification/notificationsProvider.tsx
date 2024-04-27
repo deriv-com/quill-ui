@@ -1,4 +1,4 @@
-import uuid from "react-uuid";
+import { v4 as uuid } from 'uuid';
 import React, { useState, PropsWithChildren } from "react";
 import { NotificationsContext } from "./notificationsContext";
 import { NotificationBannerProps } from "@components/Notification/banner";
