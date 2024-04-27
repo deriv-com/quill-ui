@@ -4,7 +4,7 @@ import NotificationItemsList from ".";
 import { STATUS, TYPE } from "../../../utils/notification-utils";
 import { NotificationsProvider } from "@providers/notification/notificationsProvider";
 import { useNotifications } from "@hooks/useNotifications";
-import { AddNewNotificationTestButtons } from "../test-button";
+import { AddNewNotificationTestButtons } from "../test-buttons";
 
 const meta = {
     title: "Components/Notification/NotificationItemsList",
@@ -31,6 +31,12 @@ const meta = {
                 },
             },
             defaultViewport: "desktop",
+        },
+        docs: {
+            description: {
+                component:
+                    "*NOTE: You can wrap your app with `NotificationsProvider` and use `useNotifications()` hook available in this library for managing notifications state (CRUD operations) using context.",
+            },
         },
     },
     decorators: [

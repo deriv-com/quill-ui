@@ -8,6 +8,7 @@ export interface NotificationBannersProps {
     className?: string;
     banners?: Array<NotificationBannerProps & { id: string }>;
     isMobile?: boolean;
+    onClick?: (bannerId: string) => void;
     onClose?: (bannerId: string) => void;
     zIndex?: number;
 }
@@ -17,6 +18,7 @@ const NotificationBanners = ({
     banners = [],
     className,
     isMobile,
+    onClick,
     onClose,
     zIndex,
 }: NotificationBannersProps) => {
@@ -35,6 +37,7 @@ const NotificationBanners = ({
                     autohideTimeout={autohideTimeout ?? 4000}
                     key={id}
                     isMobile={isMobile}
+                    onClick={() => onClick?.(id)}
                     onClose={() => onClose?.(id)}
                 />
             ))}

@@ -50,6 +50,20 @@ const meta = {
                 type: { summary: "string | undefined" },
             },
         },
+        icon: {
+            description: "Optional. Custom icon component.",
+            table: {
+                type: { summary: "ReactNode | undefined" },
+            },
+        },
+        iconBackgroundColor: {
+            description:
+                "Optional. Custom background color for the icon of the notification.",
+            control: { type: "color" },
+            table: {
+                type: { summary: "string | undefined" },
+            },
+        },
         isMobile: {
             control: { type: "boolean" },
             description: "Optional.",
@@ -58,6 +72,7 @@ const meta = {
             },
         },
         message: {
+            description: "Optional. Description message of the notification.",
             table: {
                 type: { summary: "string | ReactNode | undefined" },
             },
@@ -77,14 +92,20 @@ const meta = {
             },
         },
         title: {
+            description: "Optional. Title of the notification.",
             table: {
                 type: { summary: "string | ReactNode | undefined" },
             },
         },
+        timestamp: {
+            description:
+                "Optional. Timestamp in milliseconds. Transforms to a human-readable date and time.",
+        },
         type: {
             options: [TYPE.INFO, TYPE.ERROR, TYPE.SUCCESS, TYPE.WARNING],
             control: { type: "radio" },
-            description: "Optional.",
+            description:
+                "Optional. Defaults to `info`. Controls which icon to display. A custom icon can be passed using the `icon` prop. Icon background color can be customized using the `iconBackgroundColor`.",
             table: {
                 type: {
                     summary:
@@ -101,7 +122,7 @@ type Story = StoryObj<typeof meta>;
 export const NotificationItemDesktop: Story = {
     parameters: { viewport: { defaultViewport: "desktop" } },
     render: (args) => (
-        <div style={{ width: "calc(100vw - 32px)", height: "98px" }}>
+        <div style={{ width: "calc(100% - 32px)", height: "98px" }}>
             <NotificationItem {...args} />
         </div>
     ),

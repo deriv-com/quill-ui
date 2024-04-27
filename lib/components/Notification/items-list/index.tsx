@@ -7,6 +7,7 @@ export interface NotificationItemsListProps {
     className?: string;
     items?: Array<NotificationItemProps & { id: string }>;
     isMobile?: boolean;
+    onClick?: (itemId: string) => void;
     onClose?: (itemId: string) => void;
     onMarkAsRead?: (itemId: string) => void;
 }
@@ -15,6 +16,7 @@ const NotificationItemsList = ({
     items = [],
     className,
     isMobile,
+    onClick,
     onClose,
     onMarkAsRead,
 }: NotificationItemsListProps) => {
@@ -43,6 +45,7 @@ const NotificationItemsList = ({
                     {...rest}
                     key={id}
                     isMobile={isMobile}
+                    onClick={() => onClick?.(id)}
                     onClose={() => handleClose?.(id)}
                     onMarkAsRead={() => onMarkAsRead?.(id)}
                 />

@@ -29,11 +29,14 @@ const meta = {
             },
         },
         icon: {
+            description: "Optional. Custom icon component.",
             table: {
                 type: { summary: "ReactNode | undefined" },
             },
         },
         iconBackgroundColor: {
+            description:
+                "Optional. Custom background color for the icon of the banner.",
             control: { type: "color" },
             table: {
                 type: { summary: "string | undefined" },
@@ -47,6 +50,7 @@ const meta = {
             },
         },
         message: {
+            description: "Optional. Description message of the banner.",
             table: {
                 type: { summary: "string | ReactNode | undefined" },
             },
@@ -56,6 +60,7 @@ const meta = {
                 "Optional. Passed to href attribute of the anchor tag.",
         },
         title: {
+            description: "Optional. Title of the banner.",
             table: {
                 type: { summary: "string | ReactNode | undefined" },
             },
@@ -63,7 +68,8 @@ const meta = {
         type: {
             options: [TYPE.INFO, TYPE.ERROR, TYPE.SUCCESS, TYPE.WARNING],
             control: { type: "radio" },
-            description: "Optional.",
+            description:
+                "Optional. Defaults to `info`. Controls which icon to display. A custom icon can be passed using the `icon` prop. Icon background color can be customized using the `iconBackgroundColor`.",
             table: {
                 type: {
                     summary:

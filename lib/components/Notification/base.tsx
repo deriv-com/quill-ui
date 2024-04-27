@@ -32,6 +32,11 @@ export interface NotificationProps
     type?: (typeof TYPE)[keyof typeof TYPE];
 }
 
+const swipeConfig = {
+    trackMouse: true,
+    preventScrollOnSwipe: true,
+};
+
 export const Notification = ({
     className,
     hasCloseButton,
@@ -68,7 +73,7 @@ export const Notification = ({
         onSwipedDown: onSwipeDown,
         onSwipedLeft: onSwipeLeft,
         onSwipedRight: onSwipeRight,
-        trackMouse: true,
+        ...swipeConfig,
     });
 
     const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -113,14 +118,21 @@ export const Notification = ({
                         </Text>
                     )}
                     {!isBanner && timestamp && (
-                        <CaptionText className="date-time">
+                        <CaptionText
+                            aria-label="date-time"
+                            className="date-time"
+                        >
                             {formattedTime}
                         </CaptionText>
                     )}
                 </div>
             </div>
             {isBanner && hasCloseButton && (
-                <button className={clsx("icon", "close")} onClick={handleClose}>
+                <button
+                    className={clsx("icon", "close")}
+                    aria-label="close"
+                    onClick={handleClose}
+                >
                     <LabelPairedXmarkSmRegularIcon />
                 </button>
             )}
@@ -129,6 +141,7 @@ export const Notification = ({
                     {status === STATUS.UNREAD && (
                         <button
                             className={clsx("icon", "mark-as-read")}
+                            aria-label="mark-as-read"
                             onClick={(e) => {
                                 e.preventDefault();
                                 e.stopPropagation();
@@ -140,6 +153,7 @@ export const Notification = ({
                     )}
                     <button
                         className={clsx("icon", "delete")}
+                        aria-label="delete"
                         onClick={handleClose}
                     >
                         <LabelPairedTrashSmBoldIcon />

@@ -1,6 +1,7 @@
 import { TYPE } from "@utils/notification-utils";
 import { Button, Text } from "..";
 import { NotificationItemProps } from "./item";
+import { StandaloneCirclePlusBoldIcon } from "@deriv/quill-icons";
 
 interface AddNewNotificationTestButtonsProps {
     addNotification: (
@@ -21,26 +22,33 @@ export const AddNewNotificationTestButtons = ({
 }: AddNewNotificationTestButtonsProps) => (
     <div
         style={{
-            margin: shouldAddBanner ? "30%" : "32px",
-            width: "60%",
-            height: "fit-content",
+            margin: shouldAddBanner ? "100px 20% 100px 80px" : "32px",
+            width: "80%",
         }}
     >
-        <Text>The below buttons are provided for testing purposes:</Text>
+        <Text>Testing button{shouldAddBanner ? "" : "s"}:</Text>
         <Button
             onClick={() => {
                 addNotification({
-                    message: "This is a new notification",
+                    icon: (
+                        <StandaloneCirclePlusBoldIcon
+                            fill="rgba(0, 130, 42, 1)"
+                            iconSize="sm"
+                        />
+                    ),
+                    message:
+                        "This is a newly added notification with a custom icon.",
                     redirectTo: "https://www.example.com",
                     timestamp: shouldAddBanner
                         ? undefined
                         : new Date().getTime(),
                     title: "New notification",
-                    type: TYPE.INFO,
+                    type: TYPE.SUCCESS,
                 });
             }}
         >
-            Add new notification
+            Add new{" "}
+            {shouldAddBanner ? "banner in the end" : "notification at the top"}
         </Button>
         {!shouldAddBanner && (
             <>
