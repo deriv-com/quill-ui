@@ -25,15 +25,11 @@
         }
 
         &:hover:not(:disabled) ~ .quill-checkbox__box-icon {
-            fill: color-mix(
-                in srgb,
-                var(--semantic-color-typography-prominent) 72%,
-                transparent
-            );
+            fill: var(--component-selectionControl-icon-hover);
         }
 
         &:active:not(:disabled) ~ .quill-checkbox__box-icon {
-            fill: var(--semantic-color-typography-prominent);
+            fill: var(--component-selectionControl-icon-active);
         }
 
         &:focus-visible {
@@ -56,14 +52,10 @@
 
     &__box-icon {
         pointer-events: none;
-        fill: var(--semantic-color-typography-prominent);
+        fill: var(--component-selectionControl-icon-selectedDefault);
 
         &--pale {
-            fill: color-mix(
-                in srgb,
-                var(--semantic-color-typography-prominent) 48%,
-                transparent
-            );
+            fill: var(--component-selectionControl-icon-default)
         }
     }
 
@@ -73,30 +65,22 @@
     }
 
     &__info-icon {
-        fill: var(--semantic-color-typography-default);
+        fill: var(--component-selectionControl-icon-default);
     }
 
     &--disabled {
         .quill-checkbox {
             &__box-icon {
-                fill: color-mix(
-                    in srgb,
-                    var(--semantic-color-typography-prominent) 24%,
-                    transparent
-                );
+                fill: var(--component-selectionControl-icon-disabled)
             }
 
             &__label {
-                color: var(--semantic-color-typography-disabled);
+                color: var(--component-selectionControl-label-color-disabled);
                 cursor: default;
             }
 
             &__info-icon {
-                fill: color-mix(
-                    in srgb,
-                    var(--semantic-color-typography-prominent) 24%,
-                    transparent
-                );
+                fill: var(--component-selectionControl-icon-disabled);
                 cursor: default;
             }
         }

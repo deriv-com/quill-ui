@@ -12,7 +12,7 @@
         align-items: flex-start;
         max-height: 258px;
         width: fit-content;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
     &__item{
         display: flex;
@@ -20,10 +20,23 @@
         align-items: center;
         gap: var(--core-spacing-400);
         align-self: stretch;
-        min-height: var(--core-size-2400);
         border-radius: var(--core-borderRadius-200);
-        background-color: var(--component-dropdownItem-bg-default);
         color: var(--component-dropdownItem-label-color-default);
+
+        &--size {
+           &-sm {
+            min-height: 32px;
+           }
+           &-md {
+            min-height: 32px;
+           }
+           &-lg {
+            min-height: 48px;
+           }
+           &-xl {
+            min-height: 48px;
+          }
+        }
 
         &:hover{
             background-color: var(--component-dropdownItem-bg-hover);

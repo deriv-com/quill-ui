@@ -137,7 +137,7 @@
             &--neutral {
                 color: var(--core-color-opacity-black-100);
                 &:focus-within {
-                    border-color: var(--component-field-border-color-default);
+                    border-color: var(--component-field-border-color-focus);
                     color: var(--component-field-label-color-default);
                 }
                 &:has(input:enabled) {
@@ -159,8 +159,8 @@
                 &:has(input:enabled) {
                     &:hover {
                         &:not(:focus-within) {
-                            color: var(--core-color-opacity-green-800);
-                            border-color: var(--core-color-opacity-green-800);
+                            color: var(--component-field-border-color-successHover);
+                            border-color: var(--component-field-border-color-successHover);
                         }
                     }
                 }
@@ -267,7 +267,7 @@
             }
             &__status {
                 &--neutral {
-                    color: var(--core-color-opacity-black-600);
+                    color: var(--component-field-label-color-default);
                 }
                 &--success {
                     color: var(--core-color-opacity-green-900);

@@ -43,7 +43,7 @@ html.dark {
         position: relative;
 
         &:hover {
-            background-color: var(--semantic-color-typography-disabled);
+            background-color: var(--component-selectionControl-icon-disabled);
         }
 
         &:active {

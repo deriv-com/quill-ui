@@ -26,7 +26,7 @@ html.dark {
     }
 
     &[aria-selected="true"]:not(:disabled):not(:active):not(hover) {
-        border-bottom: var(--core-borderRadius-100) solid var(--semantic-color-typography-prominent);
+        border-bottom: var(--core-borderRadius-100) solid var(--component-tab-icon-selected);
     }
 
     &:disabled {
