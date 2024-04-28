@@ -77,6 +77,7 @@ const NotificationItem = ({
                         `show-buttons${isRead ? "--read" : ""}`,
                     className,
                 )}
+                onBlur={() => setShouldShowButtons(false)}
                 onClick={handleClick}
                 onClose={handleClose}
                 onMarkAsRead={handleMarkAsRead}
