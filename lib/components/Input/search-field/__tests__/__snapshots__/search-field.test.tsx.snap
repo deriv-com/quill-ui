@@ -6,7 +6,7 @@ exports[`<SearchField /> renders clear icon when value is not empty and clear ic
     class="quill-input__container"
   >
     <div
-      class="search-field quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
       <span
         class="icon_wrapper"
@@ -33,7 +33,7 @@ exports[`<SearchField /> renders correctly with default props 1`] = `
     class="quill-input__container"
   >
     <div
-      class="search-field quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
       <span
         class="icon_wrapper"
@@ -59,7 +59,7 @@ exports[`<SearchField /> renders error status icon when status prop is "error" 1
     class="quill-input__container"
   >
     <div
-      class="search-field quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--error"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--error"
     >
       <span
         class="icon_wrapper"
@@ -90,7 +90,7 @@ exports[`<SearchField /> renders leftStatusMessage when prop is given 1`] = `
     class="quill-input__container"
   >
     <div
-      class="search-field quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
       <span
         class="icon_wrapper"
@@ -122,7 +122,7 @@ exports[`<SearchField /> renders success status icon when status prop is "succes
     class="quill-input__container"
   >
     <div
-      class="search-field quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--success"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--success"
     >
       <span
         class="icon_wrapper"
@@ -153,7 +153,7 @@ exports[`<SearchField /> updates value correctly on input change 1`] = `
     class="quill-input__container"
   >
     <div
-      class="search-field quill-input__wrapper quill-input__wrapper--has-value quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+      class="quill-input__wrapper quill-input__wrapper--has-value quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
       <span
         class="icon_wrapper"
