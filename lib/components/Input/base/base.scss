@@ -59,8 +59,25 @@
         }
 
         .icon_wrapper {
-            width: var(--core-size-1200);
-            height: var(--core-size-1200);
+            display: flex;
+        }
+    }
+
+    &-label__wrapper {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        flex-grow: 1;
+
+        &:focus-within {
+            &:has(label) {
+                padding-top: var(--core-spacing-600);
+            }
+        }
+        &--has-value {
+            &:has(label) {
+                padding-top: var(--core-spacing-600);
+            }
         }
     }
 
@@ -75,6 +92,8 @@
         overflow: hidden;
         position: relative;
         border-style: solid;
+        display: flex;
+        gap: var(--semantic-spacing-gap-md);
 
         &:has(input:disabled) {
             cursor: not-allowed;
@@ -84,18 +103,14 @@
             transition-timing-function: var(--core-motion-ease-400);
             transition-duration: var(--core-motion-duration-200);
         }
-        &:focus-within {
-            &:has(label) {
-                padding-top: var(--core-spacing-600);
-            }
-        }
-        &--has-value {
-            &:has(label) {
-                padding-top: var(--core-spacing-600);
-            }
-        }
         &__variant {
             &--fill {
+                background-color: var(--core-color-opacity-black-75);
+
+                &:hover {
+                    background-color: var(--core-color-opacity-black-100);
+                }
+
                 &:focus-within {
                     background-color: var(--core-color-opacity-black-75);
                     color: var(--semantic-color-typography-prominent);
@@ -220,6 +235,7 @@
             &:disabled {
                 color: var(--semantic-color-typography-disabled);
             }
+
             &:has(~ label) {
                 font-size: var(--core-fontSize-100);
                 &::placeholder {
@@ -231,6 +247,7 @@
                     }
                 }
             }
+
             &::-webkit-search-decoration,
             &::-webkit-search-cancel-button,
             &::-webkit-search-results-button,
@@ -257,9 +274,15 @@
             &__size {
                 &--sm {
                     height: var(--core-size-1100);
+                    font-size: var(
+                        --semantic-typography-body-sm-regular-default-fontSize
+                    );
                 }
                 &--md {
                     height: var(--core-size-1200);
+                    font-size: var(
+                        --semantic-typography-body-md-regular-default-fontSize
+                    );
                 }
             }
         }
@@ -272,10 +295,9 @@
             align-items: center;
             width: 100%;
             cursor: pointer;
+            left: var(--core-spacing-50);
+            gap: var(--semantic-spacing-gap-sm);
 
-            &__hasIcon {
-                left: var(--core-spacing-2000);
-            }
             &__status {
                 &--neutral {
                     color: var(--core-color-opacity-black-600);
@@ -285,6 +307,18 @@
                 }
                 &--error {
                     color: var(--core-color-opacity-red-900);
+                }
+            }
+
+            &-field-marker {
+                &__required {
+                    &--true {
+                        color: var(--core-color-solid-red-900);
+                    }
+
+                    &--false {
+                        color: var(--semantic-color-typography-disabled);
+                    }
                 }
             }
         }
@@ -298,14 +332,26 @@
                 transform: translateY(-100%);
                 line-height: var(--core-lineHeight-100);
                 font-size: var(--core-fontSize-50);
-                height: var(--core-size-900);
+                height: var(--core-size-600);
                 gap: var(--semantic-spacing-gap-sm);
+
+                &-field-marker {
+                    font-size: var(
+                        --semantic-typography-caption-regular-default-fontSize
+                    );
+                }
             }
             &:not(placeholder-shown) + .label {
                 transform: translateY(-100%);
                 line-height: var(--core-lineHeight-100);
                 font-size: var(--core-fontSize-50);
                 height: var(--core-size-900);
+
+                &-field-marker {
+                    font-size: var(
+                        --semantic-typography-body-md-regular-default-fontSize
+                    );
+                }
             }
         }
 

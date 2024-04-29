@@ -1,5 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Input should render a Input with field marker 1`] = `
+<div>
+  <div
+    class="quill-input__container"
+  >
+    <div
+      class="quill-input__wrapper quill-input__wrapper__variant--fill status--neutral quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+    >
+      <div
+        class="quill-input-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          id="label"
+          type="text"
+        />
+        <label
+          class="label label__status--neutral"
+          for="label"
+        >
+          label
+          <div
+            class="label-field-marker label-field-marker__required--false"
+          >
+            (optional)
+          </div>
+        </label>
+      </div>
+    </div>
+    <div
+      class="message__container"
+    />
+  </div>
+</div>
+`;
+
 exports[`Input should render a default Input 1`] = `
 <div>
   <div
@@ -8,10 +44,14 @@ exports[`Input should render a default Input 1`] = `
     <div
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
-      <input
-        class="input peer input__align--left input__size--md"
-        type="text"
-      />
+      <div
+        class="quill-input-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          type="text"
+        />
+      </div>
     </div>
     <div
       class="message__container"
@@ -28,11 +68,15 @@ exports[`Input should render a disabled Input with a variant of fill 1`] = `
     <div
       class="quill-input__wrapper quill-input__wrapper__variant--fill status--neutral quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
-      <input
-        class="input peer input__align--left input__size--md"
-        disabled=""
-        type="text"
-      />
+      <div
+        class="quill-input-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          disabled=""
+          type="text"
+        />
+      </div>
     </div>
     <div
       class="message__container"
@@ -49,17 +93,26 @@ exports[`Input should render an Input with a label 1`] = `
     <div
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
-      <input
-        class="input peer input__align--left input__size--md"
-        id="UserName"
-        type="text"
-      />
-      <label
-        class="label label__status--neutral"
-        for="UserName"
+      <div
+        class="quill-input-label__wrapper"
       >
-        UserName
-      </label>
+        <input
+          class="input peer input__align--left input__size--md"
+          id="UserName"
+          type="text"
+        />
+        <label
+          class="label label__status--neutral"
+          for="UserName"
+        >
+          UserName
+          <div
+            class="label-field-marker label-field-marker__required--false"
+          >
+            (optional)
+          </div>
+        </label>
+      </div>
     </div>
     <div
       class="message__container"
@@ -76,10 +129,14 @@ exports[`Input should render an Input with a variant of outline 1`] = `
     <div
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
-      <input
-        class="input peer input__align--left input__size--md"
-        type="text"
-      />
+      <div
+        class="quill-input-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          type="text"
+        />
+      </div>
     </div>
     <div
       class="message__container"
@@ -96,10 +153,14 @@ exports[`Input should render an Input with centered text 1`] = `
     <div
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
-      <input
-        class="input peer input__align--center input__size--md"
-        type="text"
-      />
+      <div
+        class="quill-input-label__wrapper"
+      >
+        <input
+          class="input peer input__align--center input__size--md"
+          type="text"
+        />
+      </div>
     </div>
     <div
       class="message__container"
@@ -116,10 +177,14 @@ exports[`Input should render an Input with status messages 1`] = `
     <div
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
-      <input
-        class="input peer input__align--left input__size--md"
-        type="text"
-      />
+      <div
+        class="quill-input-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          type="text"
+        />
+      </div>
     </div>
     <div
       class="message__container"
