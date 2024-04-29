@@ -12,9 +12,6 @@ exports[`Input should render a default Input 1`] = `
         class="input peer input__align--left input__size--md"
         type="text"
       />
-      <span
-        class="icon_wrapper status-icon--neutral"
-      />
     </div>
     <div
       class="message__container"
@@ -35,9 +32,6 @@ exports[`Input should render a disabled Input with a variant of fill 1`] = `
         class="input peer input__align--left input__size--md"
         disabled=""
         type="text"
-      />
-      <span
-        class="icon_wrapper status-icon--neutral"
       />
     </div>
     <div
@@ -66,9 +60,6 @@ exports[`Input should render an Input with a label 1`] = `
       >
         UserName
       </label>
-      <span
-        class="icon_wrapper status-icon--neutral"
-      />
     </div>
     <div
       class="message__container"
@@ -88,9 +79,6 @@ exports[`Input should render an Input with a variant of outline 1`] = `
       <input
         class="input peer input__align--left input__size--md"
         type="text"
-      />
-      <span
-        class="icon_wrapper status-icon--neutral"
       />
     </div>
     <div
@@ -112,9 +100,6 @@ exports[`Input should render an Input with centered text 1`] = `
         class="input peer input__align--center input__size--md"
         type="text"
       />
-      <span
-        class="icon_wrapper status-icon--neutral"
-      />
     </div>
     <div
       class="message__container"
@@ -134,9 +119,6 @@ exports[`Input should render an Input with status messages 1`] = `
       <input
         class="input peer input__align--left input__size--md"
         type="text"
-      />
-      <span
-        class="icon_wrapper status-icon--neutral"
       />
     </div>
     <div
