@@ -51,13 +51,13 @@ const meta = {
             control: {
                 type: "radio",
             },
-            options: ["neutral", "success", "error"],
+            options: Object.values(status),
         },
         variant: {
             control: {
                 type: "radio",
             },
-            options: ["fill", "outline"],
+            options: Object.values(variants),
         },
         textAlignment: {
             control: {
