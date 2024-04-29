@@ -9,7 +9,7 @@ exports[`Snackbar calls onActionClick when action button is clicked 1`] = `
       class="snackbar__message--container"
     >
       <p
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default snackbar__message"
       >
         test message
       </p>
@@ -77,7 +77,7 @@ exports[`Snackbar calls onClose after a certain duration when Snackbar is open 1
       class="snackbar__message--container"
     >
       <p
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default snackbar__message"
       >
         test message
       </p>
@@ -131,7 +131,7 @@ exports[`Snackbar calls onClose when close button is clicked 1`] = `
       class="snackbar__message--container"
     >
       <p
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default snackbar__message"
       >
         test message
       </p>
@@ -193,7 +193,7 @@ exports[`Snackbar renders correctly with custom icon 1`] = `
       class="snackbar__message--container"
     >
       <p
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default snackbar__message"
       >
         test message
       </p>
@@ -247,7 +247,7 @@ exports[`Snackbar renders correctly without action button 1`] = `
       class="snackbar__message--container"
     >
       <p
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default snackbar__message"
       >
         test message
       </p>
@@ -301,7 +301,7 @@ exports[`Snackbar renders correctly without close button 1`] = `
       class="snackbar__message--container"
     >
       <p
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default snackbar__message"
       >
         test message
       </p>
@@ -319,7 +319,7 @@ exports[`Snackbar renders with default props 1`] = `
       class="snackbar__message--container"
     >
       <p
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default snackbar__message"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default snackbar__message"
       >
         test message
       </p>
