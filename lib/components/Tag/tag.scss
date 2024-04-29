@@ -1,0 +1,95 @@
+.tag {
+    min-width: auto;
+    border-radius: var(--core-borderRadius-200);
+    display: inline-flex;
+    align-items: center;
+    justify-self: center;
+
+    &__size {
+        &-sm {
+            padding: 3px 8px;
+            gap: 8px;
+        }
+
+        &-xs {
+            padding: 2px 4px;
+            gap: 4px
+        }
+
+        &-md {
+            padding: 5px 12px;
+            gap: 12px;
+        }
+
+        &-lg {
+            padding: 12px 16px;
+            gap: 16px;
+        }
+    }
+
+    &__color {
+        &--success {
+            color: var(--core-color-solid-green-800);
+
+            &-fill {
+                background-color: var(--core-color-opacity-green-100);
+            }
+
+            &-outline {
+                border: 1px solid var(--core-color-solid-green-700);
+            }
+
+            &-svg {
+                fill: var(--core-color-solid-green-800)
+            }
+        }
+
+        &--error {
+            color: var(--core-color-solid-red-800);
+
+            &-fill {
+                background-color: var(--core-color-opacity-red-100);
+            }
+
+            &-outline {
+                border: 1px solid var(--core-color-solid-red-700);
+            }
+
+            &-svg {
+                fill: var(--core-color-solid-red-800)
+            }
+        }
+
+        &--warning {
+            color: var(--core-color-solid-orange-800);
+
+            &-fill {
+                background-color: var(--core-color-opacity-orange-100);
+            }
+
+            &-outline {
+                border: 1px solid var(--core-color-solid-orange-700);
+            }
+
+            &-svg {
+                fill: var(--core-color-solid-orange-800)
+            }
+        }
+
+        &--info {
+            color: var(--core-color-solid-blue-800);
+
+            &-fill {
+                background-color: var(--core-color-opacity-blue-100);
+            }
+
+            &-outline {
+                border: 1px solid var(--core-color-solid-blue-700);
+            }
+
+            &-svg {
+                fill: var(--core-color-solid-blue-800)
+            }
+        }
+    }
+}

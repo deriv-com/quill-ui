@@ -1,0 +1,21 @@
+
+.custom-tag{
+    background: linear-gradient(90deg, var(--core-color-solid-blue-100), var(--core-color-solid-blue-300), var(--core-color-solid-blue-500));
+    color: var(--core-color-solid-blue-1200);
+    border: 1px solid var(--core-color-solid-blue-700);
+    &-icon {
+       fill: var(--core-color-solid-blue-1200)
+    }
+    &-without-icon-fill {
+        background-color: var(--core-color-solid-yellow-100);
+        color: var(--core-color-solid-yellow-1200);
+    }
+    &-without-icon-outline {
+        border: 1px solid var(--core-color-solid-red-1200);
+        color: var(--core-color-solid-red-700)!important;
+        &-icon {
+            fill: var(--core-color-solid-red-1200)
+        }
+    }
+}
+
