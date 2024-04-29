@@ -22,6 +22,10 @@ export type TRegularSizesWithExtraLarge = Extract<
     TGenericSizes,
     "sm" | "md" | "lg" | "xl"
 >;
+export type TRegularSizesWithExtraSmall = Extract<
+    TGenericSizes,
+    "xs" | "sm" | "md" | "lg"
+>;
 export type TSemiRegularSizes = Exclude<TRegularSizesWithExtraLarge, "sm">;
 
 // Extracting large sizes from TGenericSizes

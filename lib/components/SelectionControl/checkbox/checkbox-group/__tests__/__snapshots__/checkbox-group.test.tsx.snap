@@ -34,7 +34,7 @@ exports[`CheckboxGroup should render checkbox components according to passed con
           for="1"
         >
           <span
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
           >
             Parent 1
           </span>
@@ -95,7 +95,7 @@ exports[`CheckboxGroup should render checkbox components according to passed con
             for="2"
           >
             <span
-              class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+              class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
             >
               Child 1
             </span>
@@ -129,7 +129,7 @@ exports[`CheckboxGroup should render checkbox components according to passed con
             for="3"
           >
             <span
-              class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+              class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
             >
               Child 2
             </span>
@@ -163,7 +163,7 @@ exports[`CheckboxGroup should render checkbox components according to passed con
             for="4"
           >
             <span
-              class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+              class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
             >
               Child 3
             </span>
@@ -200,7 +200,7 @@ exports[`CheckboxGroup should render checkbox components according to passed con
           for="5"
         >
           <span
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
           >
             Parent 2
           </span>
@@ -237,7 +237,7 @@ exports[`CheckboxGroup should render checkbox components according to passed con
             for="6"
           >
             <span
-              class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+              class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
             >
               Child 1
             </span>
@@ -275,7 +275,7 @@ exports[`CheckboxGroup should render checkbox components according to passed con
           for="7"
         >
           <span
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
           >
             Parent 3
           </span>
@@ -335,7 +335,7 @@ exports[`CheckboxGroup should render checkbox components according to passed con
           for="8"
         >
           <span
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
           >
             Parent 4
           </span>
@@ -373,7 +373,7 @@ exports[`CheckboxGroup should render checkbox components according to passed con
             for="9"
           >
             <span
-              class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+              class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
             >
               Child 1
             </span>
@@ -431,7 +431,7 @@ exports[`CheckboxGroup should render checkbox components according to passed con
             for="10"
           >
             <span
-              class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+              class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
             >
               Child 2
             </span>
