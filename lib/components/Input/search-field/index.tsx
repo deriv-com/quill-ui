@@ -1,75 +1,11 @@
-// import { ComponentProps, forwardRef, useState, useEffect } from "react";
-// import Input, { InputProps } from "../base";
-// import React from "react";
-// import {
-//     StandaloneCircleXmarkFillIcon,
-//     StandaloneSearchRegularIcon,
-// } from "@deriv/quill-icons";
-
-// export type SearchFieldProps = Omit<
-//     ComponentProps<typeof Input>,
-//     "label" | "icon" | "rightStatusMessage" | "statusIcon"
-// >;
-
-// export const SearchField = forwardRef<HTMLInputElement, InputProps>(
-//     (props: SearchFieldProps, ref) => {
-//         const { value, onChange } = props;
-//         const [isEmpty, setIsEmpty] = useState(!value);
-//         const [searchValue, setSearchValue] = useState(value ?? "");
-
-//         const clearIcon = (
-//             <button
-//                 onClick={() => {
-//                     setIsEmpty(true);
-//                     setSearchValue("");
-//                     onChange?.({
-//                         target: { value: "" },
-//                     } as React.ChangeEvent<HTMLInputElement>);
-//                 }}
-//             >
-//                 <StandaloneCircleXmarkFillIcon
-//                     fill="var(--core-color-opacity-black-400)"
-//                     iconSize="sm"
-//                 />
-//             </button>
-//         );
-
-//         const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-//             const newValue = e.target.value;
-//             setIsEmpty(newValue === "");
-//             setSearchValue(newValue);
-//             onChange?.(e);
-//         };
-
-//         useEffect(() => {
-//             setSearchValue(value ?? "");
-//             setIsEmpty(!value);
-//         }, [value]);
-
-//         return (
-//             <Input
-//                 icon={
-//                     <StandaloneSearchRegularIcon fill="#000000" iconSize="sm" />
-//                 }
-//                 className="search-field"
-//                 triggerActionIcon={isEmpty ? "" : clearIcon}
-//                 ref={ref}
-//                 onChange={onChangeValue}
-//                 value={searchValue}
-//                 {...props}
-//             />
-//         );
-//     },
-// );
-
-// export default SearchField;
-
 import { ComponentProps, forwardRef, useState, useEffect } from "react";
 import Input, { InputProps } from "../base";
 import React from "react";
 import {
+    StandaloneCircleCheckBoldIcon,
     StandaloneCircleXmarkFillIcon,
     StandaloneSearchRegularIcon,
+    StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons";
 
 export type SearchFieldProps = Omit<
@@ -79,8 +15,18 @@ export type SearchFieldProps = Omit<
 
 export const SearchField = forwardRef<HTMLInputElement, InputProps>(
     (props: SearchFieldProps, ref) => {
-        const { value, onChange } = props;
+        const { value, onChange, status } = props;
         const [isEmpty, setIsEmpty] = useState(!value);
+
+        const successIcon = <StandaloneCircleCheckBoldIcon iconSize="sm" />;
+        const errorIcon = (
+            <StandaloneTriangleExclamationBoldIcon iconSize="sm" />
+        );
+        const statusIcon = Object.freeze({
+            success: successIcon,
+            error: errorIcon,
+            neutral: "",
+        })[status ?? "neutral"];
 
         const clearIcon = (
             <button
@@ -105,10 +51,12 @@ export const SearchField = forwardRef<HTMLInputElement, InputProps>(
         return (
             <Input
                 icon={
-                    <StandaloneSearchRegularIcon fill="#000000" iconSize="sm" />
+                    <StandaloneSearchRegularIcon fill="var(--core-color-opacity-black-600)" iconSize="sm" />
                 }
                 className="search-field"
+                statusIcon={statusIcon}
                 triggerActionIcon={isEmpty ? "" : clearIcon}
+                placeholder="Search"
                 ref={ref}
                 {...props}
             />
