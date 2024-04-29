@@ -25,16 +25,16 @@
 
         &--size {
            &-sm {
-            min-height: 32px;
+            min-height: var(--core-borderRadius-1600);
            }
            &-md {
-            min-height: 32px;
+            min-height: var(--core-borderRadius-1600);
            }
            &-lg {
-            min-height: 48px;
+            min-height: var(--core-borderRadius-2400);
            }
            &-xl {
-            min-height: 48px;
+            min-height: var(--core-borderRadius-2400);
           }
         }
 
