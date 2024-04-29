@@ -1,19 +1,23 @@
-import { ComponentProps } from 'react'
-import clsx from 'clsx'
-import './list.scss'
+import clsx from "clsx";
+import "./list.scss";
+import { TabProps } from "../types";
+import { useContext } from "react";
+import { TabContext } from "../container";
 
-type TabListProps = ComponentProps<'div'>
-
-export const TabList = ({ children, className }: TabListProps) => {
-  return (
-    <div className={clsx('tab-list--container', className)}>
-      <div
-        className="tab-list--item"
-        role="tablist"
-        aria-orientation="horizontal"
-      >
-        {children}
-      </div>
-    </div>
-  )
-}
+export const TabList = ({ children, className }: TabProps) => {
+    const { contentStyle } = useContext(TabContext);
+    return (
+        <div className={clsx("tab-list--container", className)}>
+            <div
+                className={clsx(
+                    "tab-list--item",
+                    contentStyle === "hug" && "tab-list--item-hug-content",
+                )}
+                role="tablist"
+                aria-orientation="horizontal"
+            >
+                {children}
+            </div>
+        </div>
+    );
+};

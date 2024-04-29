@@ -7,6 +7,11 @@ import {
     StandaloneXmarkRegularIcon,
 } from "@deriv/quill-icons";
 
+const icons: Record<string, object | null> = {
+    with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
+    none: null,
+};
+
 const meta: Meta = {
     title: "Components/Action Sheet/Controlled",
     component: ActionSheetExampleControlled,
@@ -21,7 +26,6 @@ const meta: Meta = {
         description: "Description",
         type: "non-modal",
         closeIcon: <StandaloneXmarkRegularIcon />,
-        icon: <LabelPairedPlaceholderCaptionBoldIcon />,
         onOpen: fn(),
     },
     argTypes: {
@@ -56,6 +60,15 @@ const meta: Meta = {
             options: ["left", "right"],
             control: { type: "radio" },
             description: "This prop will make bottom sheet expandable",
+        },
+        icon: {
+            description:
+                "This props allowed you to pass in icon for `ActionSheet.Header`",
+            options: Object.keys(icons),
+            mapping: icons,
+            control: {
+                type: "radio",
+            },
         },
         primaryAction: {
             control: {

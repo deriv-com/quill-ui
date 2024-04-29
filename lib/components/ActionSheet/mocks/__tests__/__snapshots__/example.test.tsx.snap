@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Action sheet example Should render action sheet 1`] = `
+<div>
+  <button
+    class="quill-button quill-button__size--md quill__color--primary-coral"
+    data-state=""
+  >
+    <span
+      class="button-label"
+    >
+      <p
+        class="quill-typography__body-text__size--sm__weight--bold__decoration--default coral"
+      >
+        Click Here
+      </p>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Action sheet example controlled Should render action sheet 1`] = `<div />`;
+
+exports[`Action sheet example with icon trigger Should render action sheet 1`] = `
+<div>
+  <button
+    class="quill-button quill-button__size--md quill__color--primary-coral"
+    data-state=""
+  >
+    <div>
+      <svg
+        class="mock-action-sheet--trigger"
+        data-testid="dt-actionsheet-icon-button"
+        height="22"
+        role="img"
+        viewBox="0 0 13 22"
+        width="13"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M.375 6.156c0-.355.273-.656.656-.656H11.97c.355 0 .656.3.656.656 0 .383-.3.657-.656.657H1.03a.63.63 0 0 1-.656-.657m0 4.375c0-.355.273-.656.656-.656H11.97c.355 0 .656.3.656.656 0 .383-.3.656-.656.656H1.03a.63.63 0 0 1-.656-.656m12.25 4.375c0 .383-.3.656-.656.656H1.03a.63.63 0 0 1-.656-.656c0-.355.273-.656.656-.656H11.97c.355 0 .656.3.656.656"
+          />
+        </g>
+        <defs>
+          <clippath
+            id="54f94bb3e1a15715c604fcf036ae35ad__a"
+          >
+            <path
+              d="M0 0h13v22H0z"
+            />
+          </clippath>
+        </defs>
+      </svg>
+    </div>
+  </button>
+</div>
+`;

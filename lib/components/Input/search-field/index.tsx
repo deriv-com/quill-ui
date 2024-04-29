@@ -7,7 +7,6 @@ import {
     StandaloneSearchRegularIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons";
-import clsx from "clsx";
 
 export type SearchFieldProps = Omit<
     ComponentProps<typeof Input>,
@@ -16,7 +15,7 @@ export type SearchFieldProps = Omit<
 
 export const SearchField = forwardRef<HTMLInputElement, InputProps>(
     (props: SearchFieldProps, ref) => {
-        const { value, onChange, status, className } = props;
+        const { value, onChange, status } = props;
         const [isEmpty, setIsEmpty] = useState(!value);
 
         const successIcon = <StandaloneCircleCheckBoldIcon iconSize="sm" />;
@@ -51,10 +50,10 @@ export const SearchField = forwardRef<HTMLInputElement, InputProps>(
 
         return (
             <Input
-                icon={
+                leftIcon={
                     <StandaloneSearchRegularIcon fill="var(--core-color-opacity-black-600)" iconSize="sm" />
                 }
-                statusIcon={statusIcon}
+                rightIcon={statusIcon}
                 triggerActionIcon={isEmpty ? "" : clearIcon}
                 placeholder="Search"
                 ref={ref}
