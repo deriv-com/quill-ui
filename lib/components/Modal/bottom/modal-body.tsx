@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Text } from "@components/Typography";
 
-interface ModalBodyProps {
+export interface ModalBodyProps {
     className?: string;
 }
 
