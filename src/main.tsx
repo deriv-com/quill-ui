@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import { Text, Heading, ThemeProvider } from "../lib/main";
 import Button from "./button";
 import DropdownChipSingleSelect from "@components/Chip/dropdown-chip-single-select";
+import DropdownItem from "@components/Input/dropdown-item";
+import { StandalonePlaceholderFillIcon } from "@deriv/quill-icons";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
@@ -27,6 +29,12 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                         { value: "4", label: "Sample Item 4" },
                     ]}
                     defaultOption={{ value: "", label: "dropdowns" }}
+                />
+                <DropdownItem
+                    leftIcon={<StandalonePlaceholderFillIcon />}
+                    rightIcon={<StandalonePlaceholderFillIcon />}
+                    label="testing"
+                    size="md"
                 />
             </div>
         </ThemeProvider>
