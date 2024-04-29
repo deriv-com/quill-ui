@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { StandaloneCirclePlusBoldIcon } from "@deriv/quill-icons";
-import { TYPE } from "../../../utils/notification-utils";
+import { TYPE } from "@utils/notification-utils";
 import NotificationBanner from ".";
 
 const meta = {

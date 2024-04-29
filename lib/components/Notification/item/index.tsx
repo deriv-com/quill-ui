@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import clsx from "clsx";
-import { STATUS, TYPE } from "../../../utils/notification-utils";
+import { STATUS, TYPE } from "@utils/notification-utils";
 import { Notification } from "../base";
 import type { NotificationProps } from "../base";
 

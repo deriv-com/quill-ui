@@ -8,7 +8,7 @@ import clsx from "clsx";
 import { useSwipeable } from "react-swipeable";
 import { CaptionText, Text } from "../Typography";
 import { NotificationIcon } from "./notification-icon";
-import { STATUS, TYPE } from "../../utils/notification-utils";
+import { STATUS, TYPE } from "@utils/notification-utils";
 import "./notification.scss";
 
 export interface NotificationProps

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import NotificationBanners from ".";
-import { TYPE } from "../../../utils/notification-utils";
+import { TYPE } from "@utils/notification-utils";
 import { NotificationsProvider } from "@providers/notification/notificationsProvider";
 import { useNotifications } from "@hooks/useNotifications";
 import { AddNewNotificationTestButtons } from "../test-buttons";

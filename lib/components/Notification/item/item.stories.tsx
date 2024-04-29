@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { fn } from "@storybook/test";
-import { STATUS, TYPE } from "../../../utils/notification-utils";
+import { STATUS, TYPE } from "@utils/notification-utils";
 import NotificationItem from ".";
 
 const meta = {
