@@ -35,20 +35,20 @@ exports[`NotificationItem should display correct content 1`] = `
           class="details"
         >
           <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default title"
           >
             Test title
           </p>
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default message--one-liner"
           >
             Test message
           </p>
           <p
             aria-label="date-time"
-            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--default date-time"
           >
-            23 Apr 2024 09:24 GMT+3
+            23 Apr 2024 09:24 GMT+4
           </p>
         </div>
       </div>
@@ -142,20 +142,20 @@ exports[`NotificationItem should display correct notification with a custom icon
           class="details"
         >
           <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default title"
           >
             Test title
           </p>
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default message--one-liner"
           >
             Test message
           </p>
           <p
             aria-label="date-time"
-            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--default date-time"
           >
-            23 Apr 2024 09:24 GMT+3
+            23 Apr 2024 09:24 GMT+4
           </p>
         </div>
       </div>
@@ -257,20 +257,20 @@ exports[`NotificationItem should render correctly for mobile 1`] = `
           class="details"
         >
           <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default title"
           >
             Test title
           </p>
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default message--one-liner"
           >
             Test message
           </p>
           <p
             aria-label="date-time"
-            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--default date-time"
           >
-            23 Apr 2024 09:24 GMT+3
+            23 Apr 2024 09:24 GMT+4
           </p>
         </div>
       </div>
@@ -372,20 +372,20 @@ exports[`NotificationItem should render notification correctly based on the noti
           class="details"
         >
           <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default title"
           >
             Test title
           </p>
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default message--one-liner"
           >
             Test message
           </p>
           <p
             aria-label="date-time"
-            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--default date-time"
           >
-            23 Apr 2024 09:24 GMT+3
+            23 Apr 2024 09:24 GMT+4
           </p>
         </div>
       </div>
@@ -484,20 +484,20 @@ exports[`NotificationItem should render notification correctly when status is 'r
           class="details"
         >
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default title"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default title"
           >
             Test title
           </p>
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default message--one-liner"
           >
             Test message
           </p>
           <p
             aria-label="date-time"
-            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--default date-time"
           >
-            23 Apr 2024 09:24 GMT+3
+            23 Apr 2024 09:24 GMT+4
           </p>
         </div>
       </div>
