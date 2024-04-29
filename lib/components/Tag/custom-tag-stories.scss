@@ -1,21 +1,22 @@
-@import "@quill-bundle/color.scss";
-@import '@quill/border.scss';
-
-.custom-tag{
+.custom-tag {
     background: linear-gradient(90deg, var(--core-color-solid-blue-100), var(--core-color-solid-blue-300), var(--core-color-solid-blue-500));
     color: var(--core-color-solid-blue-1200);
     border: var(--core-borderWidth-75) solid var(--core-color-solid-blue-700);
+
     &-icon {
-       fill: var(--core-color-solid-blue-1200)
+        fill: var(--core-color-solid-blue-1200)
     }
+
     &-without-icon-outline {
         border: var(--core-borderWidth-75) solid var(--core-color-solid-yellow-700);
         color: var(--core-color-solid-yellow-1200);
-   }
+    }
 }
+
 .custom-tag-outline {
     background-color: var(--core-color-solid-magenta-100);
     color: var(--core-color-solid-magenta-1200);
+
     &-icon {
         fill: var(--core-color-solid-magenta-1200);
     }
