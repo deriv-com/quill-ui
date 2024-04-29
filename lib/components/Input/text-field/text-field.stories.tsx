@@ -1,6 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
 import TextField from ".";
-import { StandaloneCircleUserRegularIcon } from "@deriv/quill-icons";
+import {
+    StandaloneCircleCheckBoldIcon,
+    StandaloneCircleUserRegularIcon,
+    StandaloneTriangleExclamationBoldIcon,
+} from "@deriv/quill-icons";
 import { Status, Variants } from "../base";
 
 const placeholder = "Placeholder";
@@ -129,6 +133,7 @@ export const SuccessStatusIconTextField: Story = {
         placeholder,
         variant: variants.outline,
         status: status.success,
+        statusIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     },
     argTypes: {
         status: {
@@ -165,6 +170,7 @@ export const SuccessMessageTextFieldWithIcons: Story = {
         status: status.success,
         leftStatusMessage,
         rightStatusMessage,
+        statusIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     },
 };
 export const ErrorMessageTextFieldWithIcons: Story = {
@@ -174,5 +180,6 @@ export const ErrorMessageTextFieldWithIcons: Story = {
         status: status.error,
         leftStatusMessage,
         rightStatusMessage,
+        statusIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
     },
 };
