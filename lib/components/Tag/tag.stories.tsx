@@ -6,12 +6,13 @@ const meta = {
     component: Tag,
     parameters: {
         layout: "centered",
-        exclude: ["contentLength"],
     },
     args: {
-        label: "Label",
+        label: "Custom",
         size: "md",
-        isBold: false,
+        isBold: true,
+        variant: "custom",
+        color: "custom",
     },
     argTypes: {
         label: {
@@ -24,9 +25,8 @@ const meta = {
             },
         },
         className: {
-            table: {
-                disable: true,
-            },
+            name: "Class Name",
+            control: "text",
         },
         iconClassName: {
             table: {
@@ -35,6 +35,11 @@ const meta = {
         },
         isBold: {
             control: "boolean",
+        },
+        color: {
+            table: {
+                disable: true,
+            },
         },
     },
     tags: ["autodocs"],
@@ -74,14 +79,6 @@ export const InfoTagFill: Story = {
     },
 };
 
-export const ErrorTagOutline: Story = {
-    args: {
-        color: "error",
-        variant: "outline",
-        label: "Error",
-    },
-};
-
 export const WarningTagOutline: Story = {
     args: {
         color: "warning",
@@ -95,6 +92,14 @@ export const SuccessTagOutline: Story = {
         color: "success",
         variant: "outline",
         label: "Success",
+    },
+};
+
+export const ErrorTagOutline: Story = {
+    args: {
+        color: "error",
+        variant: "outline",
+        label: "Error",
     },
 };
 

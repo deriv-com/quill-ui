@@ -1,3 +1,9 @@
+@import "@quill-bundle/color.scss";
+@import '@quill/size.scss';
+@import '@quill/spacing.scss';
+@import '@quill/border.scss';
+@import '@quill/static.scss';
+
 .tag {
     min-width: auto;
     border-radius: var(--core-borderRadius-200);
@@ -7,23 +13,23 @@
 
     &__size {
         &-sm {
-            padding: 3px 8px;
-            gap: 8px;
+            padding: var(--temp-static-spacing-3) var(--core-spacing-400);
+            gap: var(--core-spacing-400);
         }
 
         &-xs {
-            padding: 2px 4px;
-            gap: 4px
+            padding: var(--core-spacing-100) var(--core-spacing-200);
+            gap: var(--core-spacing-200);
         }
 
         &-md {
-            padding: 5px 12px;
-            gap: 12px;
+            padding: var(--temp-static-spacing-5) var(--core-spacing-600);
+            gap: var(--core-spacing-600);
         }
 
         &-lg {
-            padding: 12px 16px;
-            gap: 16px;
+            padding: var(--core-spacing-600) var(--core-spacing-800);
+            gap: var(--core-spacing-800);
         }
     }
 
@@ -36,7 +42,7 @@
             }
 
             &-outline {
-                border: 1px solid var(--core-color-solid-green-700);
+                border: var(--core-borderWidth-75) solid var(--core-color-solid-green-700);
             }
 
             &-svg {
@@ -52,7 +58,7 @@
             }
 
             &-outline {
-                border: 1px solid var(--core-color-solid-red-700);
+                border: var(--core-borderWidth-75) solid var(--core-color-solid-red-700);
             }
 
             &-svg {
@@ -68,7 +74,7 @@
             }
 
             &-outline {
-                border: 1px solid var(--core-color-solid-orange-700);
+                border: var(--core-borderWidth-75) solid var(--core-color-solid-orange-700);
             }
 
             &-svg {
@@ -84,7 +90,7 @@
             }
 
             &-outline {
-                border: 1px solid var(--core-color-solid-blue-700);
+                border: var(--core-borderWidth-75) solid var(--core-color-solid-blue-700);
             }
 
             &-svg {

@@ -57,19 +57,19 @@ export const TagIcon = ({
         { width: number; height: number }
     > = {
         xs: {
-            width: 11,
+            width: 12,
             height: 18,
         },
         sm: {
-            width: 11,
+            width: 12,
             height: 18,
         },
         md: {
-            width: 13,
+            width: 14,
             height: 22,
         },
         lg: {
-            width: 14,
+            width: 16,
             height: 24,
         },
     };

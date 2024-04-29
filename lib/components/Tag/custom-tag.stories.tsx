@@ -1,8 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { LabelPairedPlaceholderSmRegularIcon } from "@deriv/quill-icons/LabelPaired";
+import {
+    LabelPairedPlaceholderSmRegularIcon,
+    LabelPairedThumbsUpCaptionFillIcon,
+} from "@deriv/quill-icons/LabelPaired";
 import "./custom-tag-stories.scss";
-
 import Tag from ".";
+
 const meta = {
     title: "Components/Tag/Custom",
     component: Tag,
@@ -58,24 +61,23 @@ export const CustomTagFillWithIcon: Story = {
         iconClassName: "custom-tag-icon",
     },
 };
+export const CustomTagWithIcon: Story = {
+    args: {
+        variant: "custom",
+        icon: LabelPairedThumbsUpCaptionFillIcon,
+        className: "custom-tag-outline",
+        label: "Best seller",
+        iconClassName: "custom-tag-outline-icon",
+        size: "lg",
+    },
+};
 
 export const CustomTagWithoutIcon: Story = {
     args: {
         variant: "custom",
         color: "custom",
-        className: "custom-tag-without-icon-fill",
-        isBold: false,
-        size: "lg",
-    },
-};
-
-export const CustomTagOutlineWithoutIcon: Story = {
-    args: {
-        variant: "outline",
-        icon: LabelPairedPlaceholderSmRegularIcon,
         className: "custom-tag-without-icon-outline",
-        iconClassName: "custom-tag-without-icon-outline-icon",
         isBold: false,
-        size: "sm",
+        size: "md",
     },
 };
