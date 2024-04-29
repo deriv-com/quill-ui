@@ -35,7 +35,7 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
         </svg>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-radio-button__label"
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
       >
         Option 1
       </span>
@@ -69,7 +69,7 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
         </svg>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-radio-button__label"
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
       >
         Option 2
       </span>
@@ -102,7 +102,7 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
         </svg>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-radio-button__label"
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
       >
         Option 3
       </span>
@@ -145,7 +145,7 @@ exports[`RadioGroup component renders radio buttons with correct labels 1`] = `
         </svg>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-radio-button__label"
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
       >
         Option 1
       </span>
@@ -179,7 +179,7 @@ exports[`RadioGroup component renders radio buttons with correct labels 1`] = `
         </svg>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-radio-button__label"
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
       >
         Option 2
       </span>
@@ -213,7 +213,7 @@ exports[`RadioGroup component renders radio buttons with correct labels 1`] = `
         </svg>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-radio-button__label"
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
       >
         Option 3
       </span>
@@ -256,7 +256,7 @@ exports[`RadioGroup component should not call onToggle when a disabled radio but
         </svg>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-radio-button__label"
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
       >
         Option 1
       </span>
@@ -291,7 +291,7 @@ exports[`RadioGroup component should not call onToggle when a disabled radio but
         </svg>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-radio-button__label quill-radio-button__label--disabled"
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label quill-radio-button__label--disabled"
       >
         Option 2
       </span>
@@ -325,7 +325,7 @@ exports[`RadioGroup component should not call onToggle when a disabled radio but
         </svg>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-radio-button__label"
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
       >
         Option 3
       </span>
