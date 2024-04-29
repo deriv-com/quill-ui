@@ -1,10 +1,3 @@
-@import "@quill/border.scss";
-@import "@quill/color.scss";
-@import "@quill/color.semantic.scss";
-@import "@quill/motion.scss";
-@import "@quill/opacity.scss";
-@import "@quill/others.scss";
-@import "@quill/spacing.scss";
 @import "@quill/static.scss";
 
 .segmented-control {
@@ -15,11 +8,7 @@
         align-items: stretch;
         width: fit-content;
         height: fit-content;
-        background: color-mix(
-            in srgb,
-            var(--semantic-color-typography-prominent) 4%,
-            transparent
-        );
+        background-color: var(--semantic-color-monochrome-surface-normal-lowest);
         -webkit-tap-highlight-color: transparent;
 
         .item {
@@ -47,20 +36,12 @@
                     var(--core-color-solid-blue-700) inset;
             }
             &:hover:not(:disabled) {
-                background: color-mix(
-                    in srgb,
-                    var(--semantic-color-typography-prominent) 8%,
-                    transparent
-                );
+                background-color: var(--component-segmentedControl-bg-single-item-hover);
             }
             &:active:not(:disabled, .selected),
             &:active:not(:disabled, .animated)::before {
                 box-shadow: unset;
-                background: color-mix(
-                    in srgb,
-                    var(--semantic-color-typography-prominent) 16%,
-                    transparent
-                );
+                background-color: var(--component-segmentedControl-bg-single-item-active);
             }
             &.selected:not(:disabled) {
                 // colors should stay the same for both themes:

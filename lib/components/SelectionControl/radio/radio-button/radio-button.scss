@@ -8,7 +8,7 @@
             cursor: pointer;
 
             &--disabled {
-                color: var(--semantic-color-typography-disabled);
+                color: var(--component-selectionControl-icon-disabled);
                 cursor: default;
             }
         }

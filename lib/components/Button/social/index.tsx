@@ -88,11 +88,13 @@ export const SocialButton = forwardRef<HTMLButtonElement, SocialButtonProps>(
                             fill="#fff"
                         />
                     ))}
-                {social === "apple" && variant === "primary" ? (
-                    <SocialAppleWhiteIcon {...socialButtonIconSize[size]} />
-                ) : social === "apple" && variant === "secondary" ? (
+                {social === "apple" && variant === "secondary" ? (
                     <SocialAppleBlackIcon {...socialButtonIconSize[size]} />
-                ) : null}
+                ) : (
+                    social === "apple" && (
+                        <SocialAppleWhiteIcon {...socialButtonIconSize[size]} />
+                    )
+                )}
                 {!hideLabel && (
                     <Text size={labelSize} bold color={labelColor}>
                         {socialButtonName}
