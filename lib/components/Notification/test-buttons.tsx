@@ -3,7 +3,7 @@ import { Button, Text } from "..";
 import { NotificationItemProps } from "./item";
 import { StandaloneCirclePlusBoldIcon } from "@deriv/quill-icons";
 
-interface AddNewNotificationTestButtonsProps {
+interface NotificationTestButtonsProps {
     addNotification: (
         props:
             | Omit<NotificationItemProps, "id">
@@ -14,12 +14,12 @@ interface AddNewNotificationTestButtonsProps {
     shouldAddBanner?: boolean;
 }
 
-export const AddNewNotificationTestButtons = ({
+export const NotificationTestButtons = ({
     addNotification,
     markAllAsRead,
     removeAllNotifications,
     shouldAddBanner,
-}: AddNewNotificationTestButtonsProps) => (
+}: NotificationTestButtonsProps) => (
     <div
         style={{
             margin: shouldAddBanner ? "100px 20% 100px 80px" : "32px",

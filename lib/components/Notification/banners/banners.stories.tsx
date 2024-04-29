@@ -4,7 +4,7 @@ import NotificationBanners from ".";
 import { TYPE } from "@utils/notification-utils";
 import { NotificationsProvider } from "@providers/notification/notificationsProvider";
 import { useNotifications } from "@hooks/useNotifications";
-import { AddNewNotificationTestButtons } from "../test-buttons";
+import { NotificationTestButtons } from "../test-buttons";
 
 const meta = {
     title: "Components/Notification/NotificationBanners",
@@ -108,7 +108,7 @@ const Template: Story = {
 
         return (
             <>
-                <AddNewNotificationTestButtons
+                <NotificationTestButtons
                     addNotification={addBanner}
                     shouldAddBanner
                 />
