@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationBanners should not render if banners are empty 1`] = `<div />`;
+
+exports[`NotificationBanners should render notifications correctly for mobile - without close button 1`] = `
+<div>
+  <div
+    class="notification__banners--mobile test"
+    style="z-index: 6;"
+  >
+    <a
+      class="notification notification__banner--mobile"
+      href="https://www.example.com"
+    >
+      <div
+        class="body"
+      >
+        <div
+          class="icon info"
+        >
+          <svg
+            fill="#1789E1"
+            height="24"
+            role="img"
+            viewBox="0 0 32 32"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 8.375c-2.93 0-5.586 1.563-7.07 4.063-1.446 2.539-1.446 5.624 0 8.124A8.13 8.13 0 0 0 16 24.626c2.89 0 5.547-1.523 7.031-4.062 1.446-2.5 1.446-5.586 0-8.125-1.484-2.5-4.14-4.063-7.031-4.063M16 26.5c-3.594 0-6.875-1.875-8.672-5-1.797-3.086-1.797-6.875 0-10 1.797-3.086 5.078-5 8.672-5 3.555 0 6.836 1.914 8.633 5 1.797 3.125 1.797 6.914 0 10a9.93 9.93 0 0 1-8.633 5m-1.562-6.875h.937v-2.5h-.937c-.547 0-.938-.39-.938-.937 0-.508.39-.938.938-.938h1.874a.95.95 0 0 1 .938.938v3.437h.313a.95.95 0 0 1 .937.938c0 .546-.43.937-.937.937h-3.125c-.547 0-.938-.39-.938-.937 0-.508.39-.938.938-.938M16 14c-.703 0-1.25-.547-1.25-1.25 0-.664.547-1.25 1.25-1.25.664 0 1.25.586 1.25 1.25 0 .703-.586 1.25-1.25 1.25"
+            />
+          </svg>
+        </div>
+        <div
+          class="details"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+          >
+            Information
+          </p>
+          <p
+            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
+          >
+            Info message
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`NotificationBanners should render the first banner from the list of banners and auto-close it after autohideTimeout + 240ms of animation 1`] = `
+<div>
+  <div
+    class="notification__banners test"
+    style="z-index: 6;"
+  >
+    <a
+      class="notification notification__banner"
+      href="https://www.example.com"
+    >
+      <div
+        class="body"
+      >
+        <div
+          class="icon info"
+        >
+          <svg
+            fill="#1789E1"
+            height="24"
+            role="img"
+            viewBox="0 0 32 32"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 8.375c-2.93 0-5.586 1.563-7.07 4.063-1.446 2.539-1.446 5.624 0 8.124A8.13 8.13 0 0 0 16 24.626c2.89 0 5.547-1.523 7.031-4.062 1.446-2.5 1.446-5.586 0-8.125-1.484-2.5-4.14-4.063-7.031-4.063M16 26.5c-3.594 0-6.875-1.875-8.672-5-1.797-3.086-1.797-6.875 0-10 1.797-3.086 5.078-5 8.672-5 3.555 0 6.836 1.914 8.633 5 1.797 3.125 1.797 6.914 0 10a9.93 9.93 0 0 1-8.633 5m-1.562-6.875h.937v-2.5h-.937c-.547 0-.938-.39-.938-.937 0-.508.39-.938.938-.938h1.874a.95.95 0 0 1 .938.938v3.437h.313a.95.95 0 0 1 .937.938c0 .546-.43.937-.937.937h-3.125c-.547 0-.938-.39-.938-.937 0-.508.39-.938.938-.938M16 14c-.703 0-1.25-.547-1.25-1.25 0-.664.547-1.25 1.25-1.25.664 0 1.25.586 1.25 1.25 0 .703-.586 1.25-1.25 1.25"
+            />
+          </svg>
+        </div>
+        <div
+          class="details"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+          >
+            Information
+          </p>
+          <p
+            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
+          >
+            Info message
+          </p>
+        </div>
+      </div>
+      <button
+        aria-label="close"
+        class="icon close"
+      >
+        <svg
+          height="22"
+          role="img"
+          viewBox="0 0 11 22"
+          width="11"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M9.11 15.016 5.5 11.379l-3.637 3.637c-.164.164-.437.164-.629 0-.164-.192-.164-.465 0-.63l3.637-3.636-3.637-3.61c-.164-.163-.164-.437 0-.628.192-.164.465-.164.63 0L5.5 10.148l3.61-3.636c.163-.164.437-.164.628 0 .164.191.164.465 0 .629L6.102 10.75l3.636 3.637c.164.164.164.437 0 .629-.191.164-.465.164-.629 0"
+            />
+          </g>
+          <defs>
+            <clippath
+              id="7de5e81d528becfb5d441dba2ca2f432__a"
+            >
+              <path
+                d="M0 0h11v22H0z"
+              />
+            </clippath>
+          </defs>
+        </svg>
+      </button>
+    </a>
+  </div>
+</div>
+`;
