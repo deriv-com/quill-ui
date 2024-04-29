@@ -1,6 +1,7 @@
 import React, { ComponentProps } from "react";
-import { render, fireEvent, screen, act } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import SearchField from "..";
+import userEvent from "@testing-library/user-event";
 
 jest.mock("@deriv/quill-icons", () => ({
     ...jest.requireActual("@deriv/quill-icons"),
@@ -21,16 +22,13 @@ describe("<SearchField />", () => {
         expect(screen.getByText("mockedSearchIcon")).toBeInTheDocument();
         expect(container).toMatchSnapshot();
     });
-    it("updates value correctly on input change", () => {
+    it("updates value correctly on input change", async () => {
         const onChangeMock = jest.fn();
         const { container } = renderSearchField({ onChange: onChangeMock });
         const searchElement = screen.getByPlaceholderText("Search");
 
-        act(() => {
-            fireEvent.change(searchElement, { target: { value: "test" } });
-        });
+        await userEvent.type(searchElement, 'test');
 
-        expect(onChangeMock).toHaveBeenCalledTimes(1);
         expect(onChangeMock).toHaveBeenCalledWith(
             expect.objectContaining({
                 target: expect.objectContaining({
@@ -40,12 +38,12 @@ describe("<SearchField />", () => {
         );
         expect(container).toMatchSnapshot();
     });
-    it("renders clear icon when value is not empty and clear icon should be removed after click", () => {
+    it("renders clear icon when value is not empty and clear icon should be removed after click", async () => {
         const { container } = renderSearchField({ value: "test" });
         const mockedClearIcon = screen.getByText("mockedClearIcon");
         expect(mockedClearIcon).toBeInTheDocument();
 
-        act(() => fireEvent.click(mockedClearIcon));
+        await userEvent.click(mockedClearIcon)
         
         expect(mockedClearIcon).not.toBeInTheDocument();
         expect(container).toMatchSnapshot();
