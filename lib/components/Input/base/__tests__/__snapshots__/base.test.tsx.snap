@@ -190,12 +190,12 @@ exports[`Input should render an Input with status messages 1`] = `
       class="message__container"
     >
       <p
-        class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--default message__container__text message__container__text__status--neutral"
+        class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message__container__text message__container__text__status--neutral"
       >
         Message goes here
       </p>
       <p
-        class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--default self-end message__container__text message__container__text__status--neutral"
+        class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent self-end message__container__text message__container__text__status--neutral"
       >
         0/0
       </p>
