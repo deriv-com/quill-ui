@@ -4,7 +4,7 @@
     width: 100%;
     cursor: pointer;
     height: fit-content;
-    background-color: var(--semantic-color-background-dialog);
+    background-color: var(--component-modal-bg);
 
     .icon {
         position: relative;
@@ -38,7 +38,7 @@
             border-radius: unset;
 
             svg {
-                fill: var(--semantic-color-typography-prominent);
+                fill: var(--component-textIcon-normal-prominent);
             }
         }
         .badge-unread {
@@ -66,7 +66,7 @@
         border: var(--borderWidth-xs) solid
             color-mix(
                 in srgb,
-                var(--semantic-color-typography-prominent) 8%,
+                var(--component-textIcon-normal-prominent) 8%,
                 transparent
             );
         box-shadow: 0 var(--semantic-spacing-general-xs)
@@ -74,7 +74,7 @@
             var(--semantic-spacing-general-2xs)
             color-mix(
                 in srgb,
-                var(--semantic-color-typography-prominent) 3%,
+                var(--component-textIcon-normal-prominent) 3%,
                 transparent
             );
         animation: var(--motion-duration-snappy) var(--motion-easing-inandout)
@@ -127,7 +127,7 @@
             text-overflow: ellipsis;
         }
         .date-time {
-            color: var(--semantic-color-typography-subtle);
+            color: var(--component-textIcon-normal-subtle);
             margin-top: var(--semantic-spacing-general-xs);
         }
         .buttons {
@@ -146,26 +146,26 @@
                 &:hover {
                     background-color: color-mix(
                         in srgb,
-                        var(--semantic-color-typography-prominent) 8%,
+                        var(--component-textIcon-normal-prominent) 8%,
                         transparent
                     );
                 }
                 svg {
-                    fill: var(--semantic-color-typography-prominent);
+                    fill: var(--component-textIcon-normal-prominent);
                 }
             }
         }
         &:hover {
             background-color: color-mix(
                 in srgb,
-                var(--semantic-color-typography-prominent) 4%,
+                var(--component-textIcon-normal-prominent) 4%,
                 transparent
             );
         }
         &:active {
             background-color: color-mix(
                 in srgb,
-                var(--semantic-color-typography-prominent) 8%,
+                var(--component-textIcon-normal-prominent) 8%,
                 transparent
             );
         }
@@ -192,7 +192,7 @@
                 outline: var(--borderWidth-xs) solid
                     color-mix(
                         in srgb,
-                        var(--semantic-color-typography-prominent) 8%,
+                        var(--component-textIcon-normal-prominent) 8%,
                         transparent
                     );
             }
@@ -261,7 +261,7 @@
         border: var(--borderWidth-xs) solid
             color-mix(
                 in srgb,
-                var(--semantic-color-typography-prominent) 8%,
+                var(--component-textIcon-normal-prominent) 8%,
                 transparent
             );
         border-radius: var(--semantic-borderRadius-md);
