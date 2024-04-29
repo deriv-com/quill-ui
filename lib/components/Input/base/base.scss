@@ -87,8 +87,8 @@
             &--fill {
                 &:focus-within {
                     background-color: var(--core-color-opacity-black-75);
-                    color: var(--semantic-color-typography-prominent);
-                    border-color: var(--semantic-color-typography-prominent);
+                    color: var(--component-field-input-color-focus);
+                    border-color: var(--component-field-input-color-focus);
                 }
                 &:has(input) {
                     &:disabled {
@@ -98,7 +98,7 @@
                         &:hover {
                             &:not(:focus-within) {
                                 color: var(
-                                    --semantic-color-typography-disabled
+                                    --component-field-label-color-disabled
                                 );
                                 background-color: var(
                                     --core-color-opacity-black-100
@@ -110,11 +110,11 @@
             }
             &--outline {
                 background-color: var(
-                    --semantic-color-background-primary-container
+                    --component-field-bg-outline-default
                 );
                 &:has(input:disabled) {
                     background-color: var(
-                        --semantic-color-background-primary-container
+                        --component-field-bg-outline-default
                     );
                     color: var(--core-color-opacity-black-100);
                     border-color: var(--core-color-opacity-black-100);
@@ -137,8 +137,8 @@
             &--neutral {
                 color: var(--core-color-opacity-black-100);
                 &:focus-within {
-                    border-color: var(--semantic-color-typography-prominent);
-                    color: var(--semantic-color-typography-prominent);
+                    border-color: var(--component-field-border-color-focus);
+                    color: var(--component-field-label-color-default);
                 }
                 &:has(input:enabled) {
                     &:hover {
@@ -150,8 +150,8 @@
                 }
             }
             &--success {
-                color: var(--semantic-color-status-success);
-                border-color: var(--semantic-color-status-success);
+                color: var(--component-field-label-color-success);
+                border-color: var(--component-field-border-color-successDefault);
                 &:focus-within {
                     border-color: var(--core-color-solid-green-900);
                     color: var(--core-color-solid-green-900);
@@ -159,15 +159,15 @@
                 &:has(input:enabled) {
                     &:hover {
                         &:not(:focus-within) {
-                            color: var(--core-color-opacity-green-800);
-                            border-color: var(--core-color-opacity-green-800);
+                            color: var(--component-field-border-color-successHover);
+                            border-color: var(--component-field-border-color-successHover);
                         }
                     }
                 }
             }
             &--error {
-                color: var(--semantic-color-status-danger);
-                border-color: var(--semantic-color-status-danger);
+                color: var(--component-field-label-color-fail);
+                border-color: var(--component-field-border-color-failDefault);
                 &:focus-within {
                     border-color: var(--core-color-solid-red-900);
                     color: var(--core-color-solid-red-900);
@@ -195,19 +195,19 @@
             &:focus {
                 outline: 2px solid transparent;
                 outline-offset: 2px;
-                color: var(--semantic-color-typography-prominent);
+                color: var(--component-field-label-color-focus);
             }
             &:hover {
-                color: var(--semantic-color-typography-default);
+                color: var(--component-field-label-color-default);
             }
             &:placeholder-shown {
-                color: var(--semantic-color-typography-disabled);
+                color: var(--component-field-placeholder-color);
             }
             &:not(placeholder-shown) {
-                color: var(--semantic-color-typography-default);
+                color: var(--component-field-label-color-default);
             }
             &:disabled {
-                color: var(--semantic-color-typography-disabled);
+                color: var(--component-field-label-color-disabled);
             }
             &:has(~ label) {
                 font-size: var(--core-fontSize-100);
@@ -216,7 +216,7 @@
                 }
                 &:focus {
                     &::placeholder {
-                        color: var(--semantic-color-typography-disabled);
+                        color: var(--component-field-label-color-disabled);
                     }
                 }
             }
@@ -267,7 +267,7 @@
             }
             &__status {
                 &--neutral {
-                    color: var(--core-color-opacity-black-600);
+                    color: var(--component-field-label-color-default);
                 }
                 &--success {
                     color: var(--core-color-opacity-green-900);
@@ -300,7 +300,7 @@
 
         .status-icon {
             &--neutral {
-                fill: var(--semantic-color-typography-default);
+                fill: var(--component-field-label-color-default);
             }
             &--success {
                 fill: var(--core-color-solid-green-900);

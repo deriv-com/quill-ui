@@ -14,11 +14,11 @@
         height: var(--core-size-1600);
         width: var(--core-size-1600);
         border-radius: var(--core-size-200);
-        color: var(--semantic-color-typography-prominent);
+        color: var(--component-pagination-bg-default);
      
         &:disabled{
             cursor: auto;
-            color: var(--semantic-color-typography-disabled);
+            color: var(--component-pagination-icon-disabled);
         }
         &:hover:not(:disabled) {
             background-color: var(--core-color-opacity-black-100);
@@ -29,10 +29,10 @@
              }
         
         &-svg {
-            fill: var(--semantic-color-typography-prominent);  
+            fill: var(--component-pagination-icon-default);  
         }
         &-disabled {
-            fill: var(--semantic-color-typography-disabled);
+            fill: var(--component-pagination-icon-disabled);
         }
     }
 }

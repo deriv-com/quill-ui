@@ -6,44 +6,60 @@ import clsx from "clsx";
 import { Button } from "../base";
 import "./dropdown.scss";
 import { Text, CaptionText } from "@components/Typography";
+import { TRegularSizesWithExtraLarge } from "@types";
 
 export type TSingleSelectItem = {
     value: number | string;
     label: string | React.ReactNode;
 };
 
-export interface SingleSelectChipProps extends ButtonProps {
+export interface SingleSelectDropdownProps extends ButtonProps {
     options: TSingleSelectItem[];
     defaultOption: TSingleSelectItem;
     onSelectionChange?: (item: TSingleSelectItem) => void;
+    size?: TRegularSizesWithExtraLarge;
 }
 
-const Options = ({ item }: { item: TSingleSelectItem }) => {
+const Options = ({
+    item,
+    size,
+}: {
+    item: TSingleSelectItem;
+    size: TRegularSizesWithExtraLarge;
+}) => {
     return (
         <Listbox.Option value={item} as={Fragment}>
-            {({ selected, active }) => (
-                <li
-                    className={clsx(
-                        "dropdown-menu__item",
-                        selected && `dropdown-menu__item--selected`,
-                        active && `dropdown-menu__item--active`,
-                    )}
-                >
-                    <Text as="span"> {item.label}</Text>
-                </li>
-            )}
+            {({ selected, active }) => {
+                return (
+                    <li
+                        className={clsx(
+                            "dropdown-menu__item",
+                            `dropdown-menu__item--size-${size}`,
+                            selected && "dropdown-menu__item--selected",
+                            active && `dropdown-menu__item--active`,
+                        )}
+                    >
+                        <Text
+                            as="span"
+                            color="var(--component-dropdownItem-label-color-selectedWhite)"
+                        >
+                            {item.label}
+                        </Text>
+                    </li>
+                );
+            }}
         </Listbox.Option>
     );
 };
 
 export const DropdownButton = forwardRef<
     HTMLButtonElement,
-    SingleSelectChipProps
+    SingleSelectDropdownProps
 >(
     (
         {
             defaultOption,
-            size,
+            size = "md",
             icon,
             label,
             color = "coral",
@@ -110,9 +126,13 @@ export const DropdownButton = forwardRef<
                                 <Listbox.Options
                                     className={clsx("dropdown-menu__container")}
                                 >
-                                    <Options item={defaultOption} />
+                                    <Options item={defaultOption} size={size} />
                                     {options.map((item) => (
-                                        <Options item={item} key={item.value} />
+                                        <Options
+                                            item={item}
+                                            key={item.value}
+                                            size={size}
+                                        />
                                     ))}
                                 </Listbox.Options>
                             </Transition>

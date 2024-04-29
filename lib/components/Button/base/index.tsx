@@ -83,7 +83,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                     <DropdownIcon
                         data-state={isDropdownOpen ? "open" : "close"}
                         className={clsx(
-                            isDropdownOpen && "quill-button__transform",
+                            "quill-button__transform",
+                            isDropdownOpen && "quill-button__transform-rotate",
                         )}
                     />
                 )}
