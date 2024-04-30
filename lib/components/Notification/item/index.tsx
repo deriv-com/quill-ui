@@ -77,7 +77,8 @@ const NotificationItem = ({
                         `show-buttons${isRead ? "--read" : ""}`,
                     className,
                 )}
-                onBlur={() => setShouldShowButtons(false)}
+                // @ts-expect-error using it instead of onBlur in order to make it work for iOS
+                onFocusOut={() => setShouldShowButtons(false)}
                 onClick={handleClick}
                 onClose={handleClose}
                 onMarkAsRead={handleMarkAsRead}
