@@ -1,13 +1,11 @@
-@import '@quill/opacity.scss';
-:root {
-    .theme--light {
-        --border-bottom-color-default: var(--core-color-opacity-black-100);
-    }
-
-    .theme--dark {
-        --border-bottom-color-default: var(--core-color-opacity-white-100);
-    }
+html.light {
+    --border-bottom-color-default: var(--core-color-opacity-black-100);
 }
+
+html.dark {
+    --border-bottom-color-default: var(--core-color-opacity-white-100);
+}
+
 
 .tab-list {
     &--container {
@@ -27,11 +25,12 @@
         &::-webkit-scrollbar {
             display: none;
         }
+
         &-hug-content {
             gap: 8px;
         }
-       
+
     }
-  
-    
+
+
 }

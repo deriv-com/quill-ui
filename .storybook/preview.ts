@@ -15,10 +15,10 @@ const preview: Preview = {
     decorators: [
         withThemeByClassName({
             themes: {
-                light: "theme--light",
-                dark: "theme--dark",
+                light: "light",
+                dark: "dark",
             },
-            parentSelector: "body",
+            parentSelector: "html",
             defaultTheme: "light",
         }),
     ],

@@ -1,17 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Text, Heading, ThemeProvider } from "../lib/main";
-import Button from "./button";
-import DropdownChipSingleSelect from "@components/Chip/dropdown-chip-single-select";
-import DropdownItem from "@components/Input/dropdown-item";
+import { Heading, ThemeProvider } from "../lib/main";
+import ThemeSwitcher from "./theme-switcher";
 import { StandalonePlaceholderFillIcon } from "@deriv/quill-icons";
+import DropdownItem from "@components/Input/dropdown/dropdown-item";
+import DropdownChipSingleSelect from "@components/Chip/dropdown-chip-single-select";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
         <ThemeProvider>
             <div className="quill__background--primary__type--base">
-                <Button />
-                <Text as="span">Quill UI</Text>
+                <ThemeSwitcher />
                 <Heading.Hero>Quill UI</Heading.Hero>
                 <Heading.H1>Quill UI</Heading.H1>
                 <Heading.H1 as="div">Quill UI - h1 as div</Heading.H1>

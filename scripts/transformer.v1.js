@@ -47,11 +47,32 @@ class Transformer {
         );
         this.excludedKeys = ["$themes", "$metadata"];
 
-        this.styleStrings = {
-            static: "",
-            quill: "",
-            breakpoints: "",
+        this.styleCategoryNames = {
+            spacing: "spacing",
+            opacity: "core.opacity",
+            color: "color.solid",
+            "color.gradient": "color.gradient",
+            "color.opacity": "color.opacity",
+            "color.semantic": "semantic.color",
+            "font.size": "fontSize",
+            "font.weight": "fontWeight",
+            "font.family": "fontFamily",
+            "line.height": "lineHeight",
+            "letter.spacing": "letterSpacing",
+            "text.decoration": "textDecoration",
+            component: "component",
+            gap: "paragraphSpacing",
+            border: "border",
+            elevation: "elevation",
+            motion: "motion",
+            size: ".size.",
+            static: "temp",
+            others: "others",
         };
+        this.styleStrings = Object.fromEntries(
+            Object.keys(this.styleCategoryNames).map((key) => [key, ""]),
+        );
+
         this.mapSassValues();
         this.generateFiles();
     }
@@ -60,7 +81,6 @@ class Transformer {
         const pref = prefix ? "--" : "";
         return `${pref}${cssKey.replaceAll(".", "-")}`;
     };
-    convertTokenKey = (str) => str.replaceAll("--", "").replaceAll("-", ".");
 
     convertHexes = (str) => {
         const rgbaRegex =
@@ -146,30 +166,45 @@ class Transformer {
     };
 
     generateMediaQueryVariables = () => {
-        this.styleStrings.quill += `\n
+        Object.keys(this.styleStrings).map((styleString) => {
+            const groupCode = this.styleCategoryNames[styleString];
+
+            this.styleStrings[styleString] += `\n
              /* Media Queries for Semantic Tokens */ \n`;
 
-        this.semanticTokenNames.map((name) => {
-            const semanticTokenGroup = this.getTokenGroup([name]);
-            const semanticObjectTokens = this.generateSassVariables({
-                data: semanticTokenGroup,
-            });
+            this.semanticTokenNames.map((name) => {
+                const semanticTokenGroup = this.getTokenGroup([name]);
+                const semanticObjectTokens = this.generateSassVariables({
+                    data: semanticTokenGroup,
+                });
 
-            const viewportValue = (name.match(/\/(\d+)-plus$/) || [])[1];
+                const viewportValue = (name.match(/\/(\d+)-plus$/) || [])[1];
 
-            this.styleStrings.quill += `\n
+                this.styleStrings[styleString] += `\n
                             @media (min-width: ${viewportValue}px)  { \n
                             :root { \n    
                             `;
 
-            Object.keys(semanticObjectTokens).map((tokenKey) => {
-                const convertedKey = this.convertCSSkey(tokenKey);
-                const tokenValue = semanticObjectTokens[tokenKey];
+                Object.keys(semanticObjectTokens).map((tokenKey) => {
+                    const convertedKey = this.convertCSSkey(tokenKey);
+                    const tokenValue = semanticObjectTokens[tokenKey];
+                    if (tokenKey.includes(groupCode)) {
+                        this.styleStrings[styleString] +=
+                            `${convertedKey}: ${tokenValue};\n`;
+                    }
 
-                this.styleStrings.quill += `${convertedKey}: ${tokenValue};\n`;
+                    if (
+                        groupCode === "others" &&
+                        !Object.values(this.styleStrings).some((e) =>
+                            e.includes(convertedKey),
+                        )
+                    ) {
+                        this.styleStrings.others += `${convertedKey}: ${tokenValue};\n`;
+                    }
+                });
+
+                this.styleStrings[styleString] += "}\n}\n";
             });
-
-            this.styleStrings.quill += "}\n}\n";
         });
     };
 
@@ -222,27 +257,46 @@ class Transformer {
     };
 
     generateThemeVariables = () => {
-        this.themeTokenNames.map((name) => {
-            const themeTokenGroup = this.getTokenGroup([name]);
-            const themeObjectTokens = this.generateSassVariables({
-                data: themeTokenGroup,
+        Object.keys(this.styleStrings).map((styleString) => {
+            const groupCode = this.styleCategoryNames[styleString];
+
+            this.styleStrings[styleString] += `\n
+                /* Theme Styling */ \n
+                :root { \n    
+                    `;
+
+            this.themeTokenNames.map((name) => {
+                const themeTokenGroup = this.getTokenGroup([name]);
+                const themeObjectTokens = this.generateSassVariables({
+                    data: themeTokenGroup,
+                });
+
+                const themeName = name.replace(/^.*?\/(.*?)\/(.*)$/, "$1--$2");
+
+                this.styleStrings[styleString] += `\n .${themeName} { \n
+    `;
+
+                Object.keys(themeObjectTokens).map((tokenKey) => {
+                    const convertedKey = this.convertCSSkey(tokenKey);
+                    const tokenValue = themeObjectTokens[tokenKey];
+                    if (tokenKey.includes(groupCode)) {
+                        this.styleStrings[styleString] +=
+                            `${convertedKey}: ${tokenValue};\n`;
+                    }
+                    if (
+                        groupCode === "others" &&
+                        !Object.values(this.styleStrings).some((e) =>
+                            e.includes(convertedKey),
+                        )
+                    ) {
+                        this.styleStrings.others += `${convertedKey}: ${tokenValue};\n`;
+                    }
+                });
+
+                this.styleStrings[styleString] += "\n}\n";
             });
 
-            const themeName = name.split("/")[2];
-
-            this.styleStrings.quill += `\n
-            /* ${themeName} Theme */ \n
-            html.${themeName} { \n    
-                `;
-
-            Object.keys(themeObjectTokens).map((tokenKey) => {
-                const convertedKey = this.convertCSSkey(tokenKey);
-                const tokenValue = themeObjectTokens[tokenKey];
-
-                this.styleStrings.quill += `${convertedKey}: ${tokenValue};\n`;
-            });
-
-            this.styleStrings.quill += "\n}\n";
+            this.styleStrings[styleString] += "\n}\n";
         });
     };
 
@@ -256,29 +310,43 @@ class Transformer {
     isObject = (item) => typeof item === "object";
 
     mapSassValues = () => {
+        const tokenGroup = this.getTokenGroup(this.tokenNames);
+        const objectTokens = this.generateSassVariables({ data: tokenGroup });
+
         this.styleStrings.static = ``;
         // Add temporary static values
         for (let i = 1; i <= 300; i++) {
             this.styleStrings.static += `--temp-static-spacing-${i}: ${i}px;\n`;
         }
 
-        this.styleStrings.static = `:root { \n  ${this.styleStrings.static} }`;
+        this.styleStrings.static = `:root { \n  ${this.styleStrings.static}}`;
 
-        // Generate all quill token variables
-        const quillObjectTokens = this.generateSassVariables({
-            data: this.designTokens,
+        Object.keys(this.styleStrings).map((styleString) => {
+            const groupCode = this.styleCategoryNames[styleString];
+
+            this.styleStrings[styleString] += `:root { \n`;
+
+            Object.keys(objectTokens).map((tokenKey) => {
+                const tokenValue = objectTokens[tokenKey];
+                const convertedKey = this.convertCSSkey(tokenKey);
+
+                if (tokenKey.includes(groupCode)) {
+                    this.styleStrings[styleString] +=
+                        `${this.convertCSSkey(tokenKey)}: ${tokenValue};\n`;
+                }
+
+                if (
+                    groupCode === "others" &&
+                    !Object.values(this.styleStrings).some((e) =>
+                        e.includes(convertedKey),
+                    )
+                ) {
+                    this.styleStrings.others += `${convertedKey}: ${tokenValue};\n`;
+                }
+            });
+
+            this.styleStrings[styleString] += "}";
         });
-
-        this.styleStrings.quill += `:root { \n`;
-
-        Object.keys(quillObjectTokens).map((tokenKey) => {
-            const tokenValue = quillObjectTokens[tokenKey];
-            const convertedKey = this.convertCSSkey(tokenKey);
-
-            this.styleStrings.quill += `${convertedKey}: ${tokenValue};\n`;
-        });
-
-        this.styleStrings.quill += "}";
 
         // Generate Media query rules
         this.generateMediaQueryVariables();
@@ -286,67 +354,25 @@ class Transformer {
         // Generate theme rules
         this.generateThemeVariables();
 
-        // this.resolveTokenValues();
-        this.resolveDynamicVariables();
+        this.resolveTokenValues();
 
-        // Map token variables
-        this.styleStrings.quill = this.mapTokenValues(this.styleStrings.quill);
+        // Do transformation on each files
+        Object.keys(this.styleStrings).map((styleString) => {
+            // Map token variables
+            this.styleStrings[styleString] = this.mapTokenValues(
+                objectTokens,
+                this.styleStrings[styleString],
+                styleString,
+            );
 
-        // Convert HEX values to RGBA
-        this.styleStrings.quill = this.convertHexes(this.styleStrings.quill);
+            // Convert HEX values to RGBA
+            this.styleStrings[styleString] = this.convertHexes(
+                this.styleStrings[styleString],
+            );
+        });
 
         // Generate Breakpoint Mixins
         this.styleStrings.breakpoints = this.generateBreakpoints();
-    };
-
-    resolveDynamicVariables = () => {
-        Object.keys(this.styleStrings).forEach((styleStrKey) => {
-            const str = this.styleStrings[styleStrKey];
-
-            // Regular expression to match { dynamic.variable.name } format
-            const regex = /\{\s*([a-zA-Z0-9_.]+)\s*\}/g;
-
-            // Replace occurrences of dynamic variables with var(--dynamic-variable-name)
-            const transformedString = str.replace(
-                regex,
-                (match, variableName) => {
-                    // Remove any whitespace and convert variableName to valid CSS custom property name
-                    const cssVariableName = variableName.replace(
-                        /[^\w-]/g,
-                        "-",
-                    );
-
-                    // Construct the CSS variable syntax var(--dynamic-variable-name)
-                    return `var(--${cssVariableName})`;
-                },
-            );
-
-            // Map RGBA values
-            const rgbaPattern =
-                /rgba\(\s*var\((--[\w-]+)\),\s*var\((--[\w-]+)\s*\)\s*\)/g;
-
-            // Replace matches with custom strings
-            const replacedString = transformedString.replace(
-                rgbaPattern,
-                (match, hex, opacity) => {
-                    const hexKey = this.convertTokenKey(hex);
-                    const hexValue = this.allRules[hexKey] || hex;
-                    const opacityKey = this.convertTokenKey(opacity);
-                    const opacityValue = this.allRules[opacityKey] ?? opacity;
-                    const rgbReplacement = "rgba(HEX, OPACITY)";
-
-                    if (hex || opacity) {
-                        return rgbReplacement
-                            .replace("HEX", hexValue)
-                            .replace("OPACITY", opacityValue);
-                    } else {
-                        return match;
-                    }
-                },
-            );
-
-            this.styleStrings[styleStrKey] = replacedString;
-        });
     };
 
     resolveTokenValues = () => {
@@ -392,7 +418,7 @@ class Transformer {
         });
     };
 
-    mapTokenValues = (str) => {
+    mapTokenValues = (objectTokens, str) => {
         const regex = /\{([^{}]+)\}/g; // Regular expression to match {dynamic.variable} pattern
         const occurrences = [];
         let match;

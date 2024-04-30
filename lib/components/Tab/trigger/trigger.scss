@@ -1,5 +1,3 @@
-@import '@quill/color.semantic.scss';
-
 .tab-trigger {
     &__icon-position {
         &--left {
@@ -19,8 +17,12 @@
     display: inline-flex;
 
     svg {
-        fill: var(--semantic-color-typography-default);
+        fill: var(--component-tab-icon-default);
+        &[aria-selected="true"] {
+            fill: var(--component-tab-icon-selected);
+        }
     }
+
 }
 .label-class {
     text-align: center;

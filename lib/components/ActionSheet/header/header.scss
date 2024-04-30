@@ -1,6 +1,3 @@
-@import "@quill/spacing.scss";
-@import "@quill/motion.scss";
-@import "@quill/color.scss";
 @import "@quill/breakpoints.scss";
 
 .quill-action-sheet {
@@ -45,7 +42,7 @@
             height: var(--core-size-2400);
             justify-content: center;
             align-items: center;
-            fill: var(--semantic-color-typography-prominent);
+            fill: var(--component-textIcon-normal-prominent);
 
             &--close {
                 visibility: hidden;

@@ -1,7 +1,3 @@
-@import "@quill/size.scss";
-@import "@quill/border.scss";
-@import "@quill/color.opacity.scss";
-@import "@quill/color.semantic.scss";
 
 .variant {
     &__number {
@@ -33,18 +29,18 @@
         height: var(--core-size-400);
         border-radius: var(--core-size-4800);
         position: relative;
-        background-color: var(--core-color-opacity-black-75);
+        background-color: var(--component-pagination-bg-default);
         cursor: pointer;
 
         &:hover {
-            background-color: var(--core-color-opacity-black-100);
+            background-color: var(--component-pagination-bg-active);
         }
 
         &:active {
-            background-color: var(--core-color-opacity-black-200);
+            background-color: var(--component-pagination-bg-active);
         }
         &[aria-current=true] {
-            background-color: var(--core-color-solid-slate-1400);
+            background-color: var(--component-pagination-bg-selected);
         }
     }
 }
@@ -58,7 +54,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: var(--semantic-color-typography-disabled);
+        color: var(--component-pagination-icon-disabled);
         font-size: var(--core-size-600);
         width: var(--core-size-1600);
         height: var(--core-size-900);
@@ -73,6 +69,5 @@
         color: var(--core-color-solid-slate-50);
     }
 
-    color: var(--semantic-color-typography-default);
+    color: var(--component-pagination-icon-default);
 }
-
