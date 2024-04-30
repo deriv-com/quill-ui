@@ -55,7 +55,7 @@
         fill: var(--component-selectionControl-icon-selectedDefault);
 
         &--pale {
-            fill: var(--component-selectionControl-icon-default)
+            fill: var(--component-selectionControl-icon-default);
         }
     }
 
@@ -65,13 +65,14 @@
     }
 
     &__info-icon {
+        flex-shrink: 0;
         fill: var(--component-selectionControl-icon-default);
     }
 
     &--disabled {
         .quill-checkbox {
             &__box-icon {
-                fill: var(--component-selectionControl-icon-disabled)
+                fill: var(--component-selectionControl-icon-disabled);
             }
 
             &__label {
