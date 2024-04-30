@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import SearchField from ".";
 import { Status, Variants } from "../base";
 import { ComponentProps, useState } from "react";
@@ -32,7 +32,7 @@ const meta = {
         disabled: false,
         variant: variants.fill,
         textAlignment: "left",
-        leftStatusMessage: ''
+        leftStatusMessage: "",
     },
     argTypes: {
         type: {
@@ -80,6 +80,8 @@ const meta = {
 
 export default meta;
 
+type Story = StoryObj<typeof meta>;
+
 const Template = (args: ComponentProps<typeof SearchField>) => {
     const [value, setValue] = useState("");
     return (
@@ -92,48 +94,42 @@ const Template = (args: ComponentProps<typeof SearchField>) => {
     );
 };
 
-export const DefaultSearchField = Template.bind({});
+export const DefaultSearchField = Template.bind({}) as Story;
 
-export const SuccessSearchField = Template.bind({});
-//@ts-expect-error expected
+export const SuccessSearchField = Template.bind({}) as Story;
 SuccessSearchField.args = {
     variant: variants.outline,
     status: status.success,
 } as ComponentProps<typeof SearchField>;
 
-export const ErrorSearchField = Template.bind({});
-//@ts-expect-error expected
+export const ErrorSearchField = Template.bind({}) as Story;
 ErrorSearchField.args = {
     variant: variants.outline,
     status: status.error,
 };
 
-export const DisabledSearchField = Template.bind({});
-//@ts-expect-error expected
+export const DisabledSearchField = Template.bind({}) as Story;
 DisabledSearchField.args = {
     disabled: true,
     variant: variants.outline,
-}
+};
 
-export const SuccessStatusIconSearchField = Template.bind({});
-//@ts-expect-error expected
+export const SuccessStatusIconSearchField = Template.bind({}) as Story;
 SuccessStatusIconSearchField.args = {
     variant: variants.outline,
     status: status.success,
-}
+};
 
-export const SuccessMessageSearchFieldWithIcons = Template.bind({});
-//@ts-expect-error expected
+export const SuccessMessageSearchFieldWithIcons = Template.bind({}) as Story;
 SuccessMessageSearchFieldWithIcons.args = {
     variant: variants.outline,
     status: status.success,
     leftStatusMessage,
-}
+};
 
-export const ErrorMessageSearchFieldWithIcons = Template.bind({});
-//@ts-expect-error expected
+export const ErrorMessageSearchFieldWithIcons = Template.bind({}) as Story;
 ErrorMessageSearchFieldWithIcons.args = {
     variant: variants.outline,
     status: status.error,
     leftStatusMessage,
-}
+};
