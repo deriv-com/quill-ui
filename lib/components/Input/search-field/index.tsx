@@ -1,5 +1,5 @@
 import { ComponentProps, forwardRef, useState, useEffect } from "react";
-import Input, { InputProps } from "../base";
+import Input from "../base";
 import React from "react";
 import {
     StandaloneCircleCheckBoldIcon,
@@ -13,8 +13,8 @@ export type SearchFieldProps = Omit<
     "label" | "icon" | "rightStatusMessage" | "statusIcon"
 >;
 
-export const SearchField = forwardRef<HTMLInputElement, InputProps>(
-    (props: SearchFieldProps, ref) => {
+export const SearchField = forwardRef<HTMLInputElement, SearchFieldProps>(
+    (props, ref) => {
         const { value, onChange, status } = props;
         const [isEmpty, setIsEmpty] = useState(!value);
 
