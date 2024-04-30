@@ -15,8 +15,10 @@ export interface NotificationItemProps
         | "onSwipeUp"
     > {
     className?: string;
-    type?: (typeof TYPE)[keyof typeof TYPE];
     isMobile?: boolean;
+    onShowingButtons?: () => void;
+    showButtons: boolean;
+    type?: (typeof TYPE)[keyof typeof TYPE];
 }
 
 const DIRECTION = {
@@ -32,6 +34,8 @@ const NotificationItem = ({
     onClick,
     onClose,
     onMarkAsRead,
+    onShowingButtons,
+    showButtons,
     ...rest
 }: NotificationItemProps) => {
     const [isDeleted, setIsDeleted] = useState(false);
@@ -41,6 +45,10 @@ const NotificationItem = ({
     useEffect(() => {
         setIsRead(status === STATUS.READ);
     }, [status]);
+
+    useEffect(() => {
+        setShouldShowButtons(showButtons);
+    }, [showButtons]);
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         handleMarkAsRead();
@@ -59,7 +67,9 @@ const NotificationItem = ({
     };
 
     const handleSwipe = (direction: string) => {
-        setShouldShowButtons(direction === DIRECTION.LEFT);
+        const isLeft = direction === DIRECTION.LEFT;
+        setShouldShowButtons(isLeft);
+        if (isLeft) onShowingButtons?.();
     };
 
     return (
@@ -77,8 +87,7 @@ const NotificationItem = ({
                         `show-buttons${isRead ? "--read" : ""}`,
                     className,
                 )}
-                // onBlur={() => setShouldShowButtons(false)}
-                onBlurCapture={() => setShouldShowButtons(false)}
+                onBlur={() => setShouldShowButtons(false)}
                 onClick={handleClick}
                 onClose={handleClose}
                 onMarkAsRead={handleMarkAsRead}
