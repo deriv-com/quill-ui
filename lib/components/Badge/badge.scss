@@ -1,0 +1,120 @@
+.badge {
+    &__container {
+        position: relative;
+
+        &-children {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &__position {
+        &-bottom {
+            &-sm {
+                bottom: -2px;
+                right: -2px;
+            }
+            &-md {
+                bottom: -4px;
+                right: -4px;
+            }
+            &-lg {
+                bottom: -8px;
+                right: -8px;
+            }
+        }
+        &-top {
+            &-sm {
+                top: -9px;
+                right: -9px;
+            }
+            &-md {
+                top: -9px;
+                right: -9px;
+            }
+            &-lg {
+                top: -12px;
+                right: -12px;
+            }
+            &-xl {
+                top: -12px;
+                right: -12px;
+            }
+            &-2xl {
+                top: -18px;
+                right: -18px;
+            }
+           
+        }
+        &-center {
+            top: var(--core-size-800);
+            right: var(--core-size-700);
+        }
+        
+    }
+
+    &__base {
+        display: inline-flex;
+        position: absolute;
+        border-radius: var(--core-borderRadius-4800);
+        align-items: center;
+        justify-content: center;
+        color: var(--core-color-solid-slate-50);
+    }
+
+    &__variant {
+        &__status {
+            &--size {
+                &-sm {
+                    height: var(--core-size-400);
+                    min-width: var(--core-size-400);
+                }
+
+                &-md {
+                    height: var(--core-size-800);
+                    min-width: var(--core-size-800);
+                }
+
+                &-lg {
+                    height: var(--core-size-1200);
+                    min-width: var(--core-size-1200);
+                }
+            }
+        }
+
+        &__notification {
+            &--size {
+                &-sm {
+                    padding-inline: var(--temp-static-spacing-5);
+                    height: var(--core-size-900);
+                    min-width: var(--core-size-900);
+                }
+
+                &-md {
+                    padding-inline: var(--temp-static-spacing-5);
+                    height: var(--core-size-1200);
+                    min-width: var(--core-size-1200);
+                }
+
+                &-lg {
+                    padding-inline: var(--temp-static-spacing-5);
+                    height: var(--core-size-1800);
+                    min-width: var(--core-size-1800);
+                }
+            }
+        }
+    }
+
+    &__color {
+        &--success {
+            background-color: var(--core-color-solid-green-700);
+        }
+
+        &--warning {
+            background-color: var(--core-color-solid-yellow-700);
+        }
+
+        &--danger {
+            background-color: var(--core-color-solid-red-700);
+        }
+    }
+}

@@ -1,44 +1,37 @@
-@import '@quill/spacing.scss/';
-@import "@quill-bundle/color.scss";
-@import '@quill/border.scss';
-@import '@quill/spacing.scss';
-@import '@quill/size.scss';
-@import '@quill/opacity.scss';
-
-:root {
-    .theme--light {
-        --border-bottom-color-default: var(--core-color-opacity-black-100);
-        --border-bottom-color-hover: var(--core-color-opacity-black-200);
-        --border-bottom-color-active: var(--core-color-opacity-black-300);
-
-    }
-
-    .theme--dark {
-        --border-bottom-color-default: var(--core-color-opacity-white-100);
-        --border-bottom-color-hover: var(--core-color-opacity-white-200);
-        --border-bottom-color-active: var(--core-color-opacity-white-300);
-
-    }
+html.light {
+    --border-bottom-color-hover: var(--core-color-opacity-black-200);
+    --border-bottom-color-active: var(--core-color-opacity-black-300);
 }
 
-.tab-menu {
-    border-bottom: var(--core-borderRadius-100) solid var(--border-bottom-color-default);
-    display: inline-flex;
+html.dark {
+    --border-bottom-color-hover: var(--core-color-opacity-white-200);
+    --border-bottom-color-active: var(--core-color-opacity-white-300);
+}
 
-    &:active:not(:disabled) {
-        border-bottom-color: var(--core-borderRadius-100) solid var(--border-bottom-color-active);
-    }
+
+.tab-menu {
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    z-index: 2;
+    border-bottom: var(--core-borderRadius-100) solid transparent;
 
     &:hover:not(:disabled) {
-        border-bottom-color: var(--border-bottom-color-hover);
+        border-bottom: var(--core-borderRadius-100) solid var(--border-bottom-color-hover);
+    }
+
+    &:active:not(:disabled) {
+        border-bottom: var(--core-borderRadius-100) solid var(--border-bottom-color-active);
+    }
+
+    &[aria-selected="true"]:not(:disabled):not(:active):not(hover) {
+        border-bottom: var(--core-borderRadius-100) solid var(--component-tab-icon-selected);
     }
 
     &:disabled {
         opacity: var(--core-opacity-600);
-    }
-
-    &__selected-tab {
-        border-bottom: var(--core-borderRadius-100) solid var(--semantic-color-typography-prominent);
+        cursor: auto;
     }
 
     &__variants {
@@ -65,23 +58,19 @@
         &__hug {
             &-size {
                 &-sm {
-                    padding: var(--core-spacing-200) var(--core-spacing-800) var(--core-spacing-200) var(--core-spacing-400);
+                    padding: var(--core-spacing-200) var(--core-spacing-400);
                     justify-content: center;
                     text-wrap: nowrap;
                     gap: var(--core-spacing-200);
                 }
 
                 &-md {
-                    padding: var(--core-spacing-400) var(--core-spacing-1200) var(--core-spacing-400) var(--core-spacing-800);
+                    padding: var(--core-spacing-400) var(--core-spacing-800);
                     justify-content: center;
                     text-wrap: nowrap;
                     gap: var(--core-spacing-400);
                 }
             }
-
         }
-
     }
-
-
 }

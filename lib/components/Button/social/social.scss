@@ -1,8 +1,3 @@
-@import '@quill/color.semantic.scss';
-@import '@quill/color.scss';
-@import '@quill/color.opacity.scss';
-@import '@quill/opacity.scss';
-
 .social-button {
     &__icon-only {
         &--md{
@@ -28,15 +23,15 @@
         &--google {
             &--primary {
                 border-color: transparent;
-                background-color: var(--core-color-opacity-black-75);
-                color: var(--semantic-color-typography-default);
+                background-color: var(--component-button-bg-google-primary-default);
+                color: var(--component-button-label-color-google-primary);
 
                 &:hover:not(:disabled) {
-                    background-color: var(--core-color-opacity-black-100);
+                    background-color: var(--component-button-bg-google-primary-hover);
                 }
 
                 &:active:not(:disabled) {
-                    background-color: var(--core-color-opacity-black-200);
+                    background-color: var(--component-button-bg-google-primary-active);
                 }
 
                 &:disabled {
@@ -89,8 +84,8 @@
         &--secondary {
             background-color: transparent;
             border-style: solid;
-            border-color: var(--core-color-opacity-black-100);
-            color: var(--core-color-opacity-black-600);
+            border-color: var(--component-button-border-color-google);
+            color: var(--component-button-label-color-google-secondary);
 
             &:hover:not(:disabled) {
                 background-color: var(--core-color-opacity-black-100);

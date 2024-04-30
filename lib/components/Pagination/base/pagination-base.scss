@@ -1,18 +1,16 @@
-@import "@quill/size.scss";
-@import "@quill/border.scss";
-@import "@quill/color.opacity.scss";
-@import "@quill/color.semantic.scss"; 
 
-.variant{
+.variant {
     &__number {
         display: inline-flex;
         flex-direction: column;
         cursor: pointer;
         justify-content: center;
+        position: relative;
         align-items: center;
         height: var(--core-size-1600);
         width: var(--core-size-1600);
         border-radius: var(--core-size-200);
+
         &:hover {
             background-color: var(--core-color-opacity-black-100);
         }
@@ -20,33 +18,56 @@
         &:active {
             background-color: var(--core-color-opacity-black-200);
         }
-        &[aria-current=true] {
+
+        &[aria-current="true"]:not(:active):not(hover) {
             background-color: var(--core-color-solid-slate-1400);
-            &:hover {
-                background-color: var(--core-color-solid-slate-1400);
-            }
         }
-    
     }
+
     &__bullet {
-        
-        &-svg {
-            fill: var(--core-color-opacity-black-75);
-            cursor: pointer;
+        width: var(--core-size-400);
+        height: var(--core-size-400);
+        border-radius: var(--core-size-4800);
+        position: relative;
+        background-color: var(--component-pagination-bg-default);
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--component-pagination-bg-active);
+        }
+
+        &:active {
+            background-color: var(--component-pagination-bg-active);
+        }
         &[aria-current=true] {
-           fill: var(--semantic-color-typography-prominent);
+            background-color: var(--component-pagination-bg-selected);
         }
-        }
-        
     }
 }
+
 .hidden_pages {
-    display: flex;
+    height: var(--core-size-1600);
+    width: var(--core-size-1600);
+    border-radius: var(--core-size-200);
+
+    &-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--component-pagination-icon-disabled);
+        font-size: var(--core-size-600);
+        width: var(--core-size-1600);
+        height: var(--core-size-900);
+        text-align: center;
+    }
 }
-.number-text{
-    &[aria-current=true]{
+
+.number-text {
+    
+    &[aria-current="true"] {
         font-weight: bold;
         color: var(--core-color-solid-slate-50);
     }
-    color: var(--semantic-color-typography-default);
+
+    color: var(--component-pagination-icon-default);
 }

@@ -1,7 +1,3 @@
-@import "@quill/spacing.scss";
-@import "@quill/size.scss";
-@import "@quill/border.scss";
-@import "@quill/motion.scss";
 @import "@quill-custom/color.scss";
 
 .quill-button {
@@ -47,8 +43,10 @@
     &__transform {
         transition-property: transform;
         transition-duration: var(--core-motion-duration-200);
-        transform: rotate(180deg);
         transition-timing-function: ease-in-out;
+        &-rotate {
+            transform: rotate(180deg);
+        }
     }
 
     &__full-width {

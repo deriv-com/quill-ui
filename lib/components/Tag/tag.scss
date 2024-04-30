@@ -1,0 +1,97 @@
+@import '@quill/static.scss';
+
+.tag {
+    min-width: auto;
+    border-radius: var(--core-borderRadius-200);
+    display: inline-flex;
+    align-items: center;
+    justify-self: center;
+
+    &__size {
+        &-sm {
+            padding: var(--temp-static-spacing-3) var(--core-spacing-400);
+            gap: var(--core-spacing-400);
+        }
+
+        &-xs {
+            padding: var(--core-spacing-100) var(--core-spacing-200);
+            gap: var(--core-spacing-200);
+        }
+
+        &-md {
+            padding: var(--temp-static-spacing-5) var(--core-spacing-600);
+            gap: var(--core-spacing-600);
+        }
+
+        &-lg {
+            padding: var(--core-spacing-600) var(--core-spacing-800);
+            gap: var(--core-spacing-800);
+        }
+    }
+
+    &__color {
+        &--success {
+            color: var(--core-color-solid-green-800);
+
+            &-fill {
+                background-color: var(--core-color-opacity-green-100);
+            }
+
+            &-outline {
+                border: var(--core-borderWidth-75) solid var(--core-color-solid-green-700);
+            }
+
+            &-svg {
+                fill: var(--core-color-solid-green-800)
+            }
+        }
+
+        &--error {
+            color: var(--core-color-solid-red-800);
+
+            &-fill {
+                background-color: var(--core-color-opacity-red-100);
+            }
+
+            &-outline {
+                border: var(--core-borderWidth-75) solid var(--core-color-solid-red-700);
+            }
+
+            &-svg {
+                fill: var(--core-color-solid-red-800)
+            }
+        }
+
+        &--warning {
+            color: var(--core-color-solid-orange-800);
+
+            &-fill {
+                background-color: var(--core-color-opacity-orange-100);
+            }
+
+            &-outline {
+                border: var(--core-borderWidth-75) solid var(--core-color-solid-orange-700);
+            }
+
+            &-svg {
+                fill: var(--core-color-solid-orange-800)
+            }
+        }
+
+        &--info {
+            color: var(--core-color-solid-blue-800);
+
+            &-fill {
+                background-color: var(--core-color-opacity-blue-100);
+            }
+
+            &-outline {
+                border: var(--core-borderWidth-75) solid var(--core-color-solid-blue-700);
+            }
+
+            &-svg {
+                fill: var(--core-color-solid-blue-800)
+            }
+        }
+    }
+}

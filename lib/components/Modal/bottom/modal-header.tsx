@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Heading } from "@components/Typography";
 
-interface ModalHeaderProps {
+export interface ModalHeaderProps {
     className?: string;
     height?: string;
     image?: React.ReactNode;

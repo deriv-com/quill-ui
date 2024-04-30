@@ -69,20 +69,6 @@ export const DropdownMenu: Story = {
             },
             { value: "3", label: "Sample Item 3" },
             { value: "4", label: "Sample Item 4" },
-            { value: "1", label: "Sample Item 1" },
-            {
-                value: "2",
-                label: "Sample Item 2",
-            },
-            { value: "3", label: "Sample Item 3" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "1", label: "Sample Item 1" },
-            {
-                value: "2",
-                label: "Sample Item 2",
-            },
-            { value: "3", label: "Sample Item 3" },
-            { value: "4", label: "Sample Item 4" },
         ],
     },
 };

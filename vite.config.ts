@@ -25,19 +25,18 @@ export default defineConfig({
         preprocessorOptions: {
             scss: {
                 implementation: sass,
-                additionalData: ['@use "./lib/styles/index.scss" as *;'],
             },
         },
     },
     resolve: {
         alias: {
-            "@quill-bundle": resolve(__dirname, "lib/styles/quill-bundle"),
             "@quill": resolve(__dirname, "lib/styles/quill"),
             "@quill-custom": resolve(__dirname, "lib/styles/custom"),
             "@components": resolve(__dirname, "lib/components"),
             "@hooks": resolve(__dirname, "lib/hooks"),
             "@providers": resolve(__dirname, "lib/providers"),
             "@utils": resolve(__dirname, "lib/utils"),
+            "@styles": resolve(__dirname, "lib/styles"),
             "@types": resolve(__dirname, "lib/types.ts"),
         },
     },
@@ -47,6 +46,7 @@ export default defineConfig({
             formats: ["es"],
         },
         copyPublicDir: false,
+        cssCodeSplit: false,
         rollupOptions: {
             external: ["react", "react/jsx-runtime", "react-dom"],
             input: Object.fromEntries(

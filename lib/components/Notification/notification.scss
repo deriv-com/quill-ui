@@ -1,0 +1,287 @@
+.notification {
+    position: relative;
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    height: fit-content;
+    background-color: var(--component-modal-bg);
+
+    .icon {
+        position: relative;
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        width: var(--core-size-1600);
+        height: var(--core-size-1600);
+        border-radius: var(--semantic-borderRadius-pill);
+        cursor: pointer;
+
+        &.info {
+            background-color: var(--core-color-opacity-blue-100);
+        }
+        &.error {
+            background-color: var(--core-color-opacity-red-100);
+        }
+        &.success {
+            background-color: var(--core-color-opacity-green-100);
+        }
+        &.warning {
+            background-color: var(--core-color-opacity-yellow-100);
+        }
+        &.close {
+            position: absolute;
+            width: var(--core-size-1200);
+            height: var(--core-size-1200);
+            right: var(--semantic-spacing-general-sm);
+            top: var(--semantic-spacing-general-sm);
+            border-radius: unset;
+
+            svg {
+                fill: var(--component-textIcon-normal-prominent);
+            }
+        }
+        .badge-unread {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: var(--core-size-400);
+            height: var(--core-size-400);
+            border-radius: var(--semantic-borderRadius-pill);
+            background-color: var(--core-color-solid-red-700);
+        }
+    }
+    .body {
+        display: flex;
+        gap: var(--semantic-spacing-gap-lg);
+    }
+    &__banner,
+    &__banner--mobile {
+        min-height: var(--core-size-3600);
+        padding: var(--semantic-spacing-general-md)
+            var(--semantic-spacing-general-2xl)
+            var(--semantic-spacing-general-md)
+            var(--semantic-spacing-general-md);
+        border-radius: var(--semantic-borderRadius-lg);
+        border: var(--borderWidth-xs) solid
+            color-mix(
+                in srgb,
+                var(--component-textIcon-normal-prominent) 8%,
+                transparent
+            );
+        box-shadow: 0 var(--semantic-spacing-general-xs)
+            var(--semantic-spacing-general-sm)
+            var(--semantic-spacing-general-2xs)
+            color-mix(
+                in srgb,
+                var(--component-textIcon-normal-prominent) 3%,
+                transparent
+            );
+        animation: var(--motion-duration-snappy) var(--motion-easing-inandout)
+            enter-desktop;
+        transform: translateY(0);
+        transition: transform var(--motion-duration-snappy)
+            var(--motion-easing-inandout);
+
+        &.hidden {
+            transform: translateY(100vh);
+        }
+    }
+    &__banner--mobile {
+        animation: var(--motion-duration-snappy) var(--motion-easing-inandout)
+            enter-mobile;
+        padding: var(--semantic-spacing-general-md);
+
+        &.hidden {
+            transform: translateY(-100vh);
+        }
+    }
+    &__banners,
+    &__banners--mobile {
+        position: absolute;
+        width: 360px;
+        bottom: var(--semantic-spacing-general-sm);
+        left: var(--semantic-spacing-general-sm);
+        z-index: 6;
+
+        &--mobile {
+            top: var(--semantic-spacing-general-sm);
+            bottom: unset;
+            width: calc(100vw - var(--size-generic-xs));
+        }
+    }
+    &__item,
+    &__item--mobile {
+        padding: var(--semantic-spacing-general-md);
+        justify-content: space-between;
+        height: var(--core-size-4900);
+
+        .body,
+        .details {
+            min-width: 0;
+            flex-grow: 1;
+        }
+        .message--one-liner {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .date-time {
+            color: var(--component-textIcon-normal-subtle);
+            margin-top: var(--semantic-spacing-general-xs);
+        }
+        .buttons {
+            display: flex;
+            align-self: center;
+            justify-content: flex-end;
+            gap: var(--semantic-spacing-gap-md);
+            visibility: hidden;
+            width: var(--core-size-3600);
+            flex-shrink: 0;
+
+            .mark-as-read,
+            .delete {
+                border-radius: var(--core-borderRadius-600);
+
+                &:hover {
+                    background-color: color-mix(
+                        in srgb,
+                        var(--component-textIcon-normal-prominent) 8%,
+                        transparent
+                    );
+                }
+                svg {
+                    fill: var(--component-textIcon-normal-prominent);
+                }
+            }
+        }
+        &:hover {
+            background-color: color-mix(
+                in srgb,
+                var(--component-textIcon-normal-prominent) 4%,
+                transparent
+            );
+        }
+        &:active {
+            background-color: color-mix(
+                in srgb,
+                var(--component-textIcon-normal-prominent) 8%,
+                transparent
+            );
+        }
+        &:hover,
+        &:active {
+            .buttons {
+                visibility: visible;
+            }
+        }
+        &-wrapper {
+            position: relative;
+            width: inherit;
+            overflow: hidden;
+            max-height: var(
+                --core-size-4900
+            ); // equal to __item's height of 98px, must be in px for for item deletion transition to work
+
+            &:not(:last-child)::after {
+                position: absolute;
+                content: "";
+                width: calc(100% - var(--core-size-3200));
+                height: 100%;
+                right: 0;
+                outline: var(--borderWidth-xs) solid
+                    color-mix(
+                        in srgb,
+                        var(--component-textIcon-normal-prominent) 8%,
+                        transparent
+                    );
+            }
+            &.deleted,
+            &.deleted:not(:last-child)::after {
+                opacity: var(--core-opacity-50);
+                max-height: 0;
+                transition:
+                    max-height var(--core-motion-duration-200),
+                    opacity var(--core-motion-duration-200);
+                transition-timing-function: var(--motion-easing-inandout);
+            }
+        }
+    }
+    &__item--mobile {
+        transform: translateX(0);
+        transition: transform var(--motion-duration-snappy)
+            var(--motion-easing-inandout);
+
+        .buttons {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            visibility: visible;
+            transform: translateX(100%);
+            width: fit-content;
+            gap: unset;
+            height: 100%;
+
+            .mark-as-read,
+            .delete {
+                width: var(--core-size-3600);
+                height: 100%;
+                background-color: var(--core-color-solid-slate-1400);
+                border-radius: unset;
+
+                &:active,
+                &:hover {
+                    background-color: var(--core-color-opacity-black-800);
+                }
+                svg {
+                    fill: var(--core-color-solid-slate-50);
+                }
+            }
+            .delete {
+                background-color: var(--core-color-solid-red-700);
+
+                &:active,
+                &:hover {
+                    background-color: var(--core-color-solid-red-900);
+                }
+            }
+        }
+        &.show-buttons {
+            transform: translateX(calc(var(--core-size-3600) * -2));
+
+            &--read {
+                transform: translateX(calc(var(--core-size-3600) * -1));
+            }
+        }
+    }
+    &__items-list {
+        width: inherit;
+        overflow: hidden;
+        border: var(--borderWidth-xs) solid
+            color-mix(
+                in srgb,
+                var(--component-textIcon-normal-prominent) 8%,
+                transparent
+            );
+        border-radius: var(--semantic-borderRadius-md);
+    }
+}
+
+@keyframes enter-mobile {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes enter-desktop {
+    0% {
+        transform: translateY(100vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

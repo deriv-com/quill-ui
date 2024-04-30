@@ -57,3 +57,13 @@ export const BulletPagination: Story = {
         onClickPagination: () => {},
     },
 };
+
+export const BulletPaginationWithoutChevron: Story = {
+    args: {
+        contentPerPage: 20,
+        variant: "bullet",
+        hideChevron: true,
+        contentLength: MOCK_DATA.length,
+        onClickPagination: () => {},
+    },
+};

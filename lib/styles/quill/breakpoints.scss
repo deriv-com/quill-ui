@@ -19,8 +19,7 @@
         @media (min-width: 1440px) {
             @content;
         }
-    } 
-    @else {
+    } @else {
         @warn "Unknown breakpoint: #{$breakpoint}.";
     }
 }

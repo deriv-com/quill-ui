@@ -1,0 +1,538 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationItem should display correct content 1`] = `
+<div>
+  <div
+    class="notification__item-wrapper"
+  >
+    <a
+      class="notification notification__item test"
+      href="https://www.example.com"
+    >
+      <div
+        class="body"
+      >
+        <div
+          class="icon info"
+        >
+          <svg
+            fill="#1789E1"
+            height="24"
+            role="img"
+            viewBox="0 0 32 32"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 8.375c-2.93 0-5.586 1.563-7.07 4.063-1.446 2.539-1.446 5.624 0 8.124A8.13 8.13 0 0 0 16 24.626c2.89 0 5.547-1.523 7.031-4.062 1.446-2.5 1.446-5.586 0-8.125-1.484-2.5-4.14-4.063-7.031-4.063M16 26.5c-3.594 0-6.875-1.875-8.672-5-1.797-3.086-1.797-6.875 0-10 1.797-3.086 5.078-5 8.672-5 3.555 0 6.836 1.914 8.633 5 1.797 3.125 1.797 6.914 0 10a9.93 9.93 0 0 1-8.633 5m-1.562-6.875h.937v-2.5h-.937c-.547 0-.938-.39-.938-.937 0-.508.39-.938.938-.938h1.874a.95.95 0 0 1 .938.938v3.437h.313a.95.95 0 0 1 .937.938c0 .546-.43.937-.937.937h-3.125c-.547 0-.938-.39-.938-.937 0-.508.39-.938.938-.938M16 14c-.703 0-1.25-.547-1.25-1.25 0-.664.547-1.25 1.25-1.25.664 0 1.25.586 1.25 1.25 0 .703-.586 1.25-1.25 1.25"
+            />
+          </svg>
+          <div
+            class="badge-unread"
+          />
+        </div>
+        <div
+          class="details"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+          >
+            Test title
+          </p>
+          <p
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+          >
+            Test message
+          </p>
+          <p
+            aria-label="date-time"
+            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+          >
+            23 Apr 2024 09:24 GMT+4
+          </p>
+        </div>
+      </div>
+      <div
+        class="buttons"
+      >
+        <button
+          aria-label="mark-as-read"
+          class="icon mark-as-read"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M12.434 6.566c.246.274.246.684 0 .93l-7.22 7.219c-.273.273-.683.273-.929 0L.566 10.996a.6.6 0 0 1 0-.902.6.6 0 0 1 .903 0l3.254 3.254 6.78-6.782a.644.644 0 0 1 .903 0z"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="2fb4e3453244533b2fbbdb2477bdd605__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+        <button
+          aria-label="delete"
+          class="icon delete"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M5.215 5.063c-.082 0-.137.054-.192.109l-.52.766H8.47l-.52-.766a.23.23 0 0 0-.191-.11zm4.84.875h1.914c.355 0 .656.3.656.656 0 .383-.3.656-.656.656h-.328l-.657 8.887c-.082.93-.82 1.613-1.75 1.613H3.738c-.93 0-1.668-.684-1.75-1.613L1.332 7.25h-.3a.63.63 0 0 1-.657-.656c0-.356.273-.657.656-.657h1.887L3.93 4.435c.273-.41.765-.684 1.285-.684h2.543c.52 0 1.012.273 1.285.684zm.273 1.312H2.645l.656 8.805a.44.44 0 0 0 .437.383h5.496c.22 0 .41-.165.438-.383z"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="7606a6352379dd74458e5153601178cf__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`NotificationItem should display correct notification with a custom icon 1`] = `
+<div>
+  <div
+    class="notification__item-wrapper"
+  >
+    <a
+      class="notification notification__item test"
+      href="https://www.example.com"
+    >
+      <div
+        class="body"
+      >
+        <div
+          class="icon info"
+          style="background-color: rgb(0, 0, 0);"
+        >
+          <div>
+            Custom icon
+          </div>
+          <div
+            class="badge-unread"
+          />
+        </div>
+        <div
+          class="details"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+          >
+            Test title
+          </p>
+          <p
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+          >
+            Test message
+          </p>
+          <p
+            aria-label="date-time"
+            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+          >
+            23 Apr 2024 09:24 GMT+4
+          </p>
+        </div>
+      </div>
+      <div
+        class="buttons"
+      >
+        <button
+          aria-label="mark-as-read"
+          class="icon mark-as-read"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M12.434 6.566c.246.274.246.684 0 .93l-7.22 7.219c-.273.273-.683.273-.929 0L.566 10.996a.6.6 0 0 1 0-.902.6.6 0 0 1 .903 0l3.254 3.254 6.78-6.782a.644.644 0 0 1 .903 0z"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="2fb4e3453244533b2fbbdb2477bdd605__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+        <button
+          aria-label="delete"
+          class="icon delete"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M5.215 5.063c-.082 0-.137.054-.192.109l-.52.766H8.47l-.52-.766a.23.23 0 0 0-.191-.11zm4.84.875h1.914c.355 0 .656.3.656.656 0 .383-.3.656-.656.656h-.328l-.657 8.887c-.082.93-.82 1.613-1.75 1.613H3.738c-.93 0-1.668-.684-1.75-1.613L1.332 7.25h-.3a.63.63 0 0 1-.657-.656c0-.356.273-.657.656-.657h1.887L3.93 4.435c.273-.41.765-.684 1.285-.684h2.543c.52 0 1.012.273 1.285.684zm.273 1.312H2.645l.656 8.805a.44.44 0 0 0 .437.383h5.496c.22 0 .41-.165.438-.383z"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="7606a6352379dd74458e5153601178cf__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`NotificationItem should render correctly for mobile 1`] = `
+<div>
+  <div
+    class="notification__item-wrapper"
+  >
+    <a
+      class="notification notification__item--mobile test"
+      href="https://www.example.com"
+    >
+      <div
+        class="body"
+      >
+        <div
+          class="icon info"
+        >
+          <svg
+            fill="#1789E1"
+            height="24"
+            role="img"
+            viewBox="0 0 32 32"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 8.375c-2.93 0-5.586 1.563-7.07 4.063-1.446 2.539-1.446 5.624 0 8.124A8.13 8.13 0 0 0 16 24.626c2.89 0 5.547-1.523 7.031-4.062 1.446-2.5 1.446-5.586 0-8.125-1.484-2.5-4.14-4.063-7.031-4.063M16 26.5c-3.594 0-6.875-1.875-8.672-5-1.797-3.086-1.797-6.875 0-10 1.797-3.086 5.078-5 8.672-5 3.555 0 6.836 1.914 8.633 5 1.797 3.125 1.797 6.914 0 10a9.93 9.93 0 0 1-8.633 5m-1.562-6.875h.937v-2.5h-.937c-.547 0-.938-.39-.938-.937 0-.508.39-.938.938-.938h1.874a.95.95 0 0 1 .938.938v3.437h.313a.95.95 0 0 1 .937.938c0 .546-.43.937-.937.937h-3.125c-.547 0-.938-.39-.938-.937 0-.508.39-.938.938-.938M16 14c-.703 0-1.25-.547-1.25-1.25 0-.664.547-1.25 1.25-1.25.664 0 1.25.586 1.25 1.25 0 .703-.586 1.25-1.25 1.25"
+            />
+          </svg>
+          <div
+            class="badge-unread"
+          />
+        </div>
+        <div
+          class="details"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+          >
+            Test title
+          </p>
+          <p
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+          >
+            Test message
+          </p>
+          <p
+            aria-label="date-time"
+            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+          >
+            23 Apr 2024 09:24 GMT+4
+          </p>
+        </div>
+      </div>
+      <div
+        class="buttons"
+      >
+        <button
+          aria-label="mark-as-read"
+          class="icon mark-as-read"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M12.434 6.566c.246.274.246.684 0 .93l-7.22 7.219c-.273.273-.683.273-.929 0L.566 10.996a.6.6 0 0 1 0-.902.6.6 0 0 1 .903 0l3.254 3.254 6.78-6.782a.644.644 0 0 1 .903 0z"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="2fb4e3453244533b2fbbdb2477bdd605__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+        <button
+          aria-label="delete"
+          class="icon delete"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M5.215 5.063c-.082 0-.137.054-.192.109l-.52.766H8.47l-.52-.766a.23.23 0 0 0-.191-.11zm4.84.875h1.914c.355 0 .656.3.656.656 0 .383-.3.656-.656.656h-.328l-.657 8.887c-.082.93-.82 1.613-1.75 1.613H3.738c-.93 0-1.668-.684-1.75-1.613L1.332 7.25h-.3a.63.63 0 0 1-.657-.656c0-.356.273-.657.656-.657h1.887L3.93 4.435c.273-.41.765-.684 1.285-.684h2.543c.52 0 1.012.273 1.285.684zm.273 1.312H2.645l.656 8.805a.44.44 0 0 0 .437.383h5.496c.22 0 .41-.165.438-.383z"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="7606a6352379dd74458e5153601178cf__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`NotificationItem should render notification correctly based on the notification type 1`] = `
+<div>
+  <div
+    class="notification__item-wrapper"
+  >
+    <a
+      class="notification notification__item test"
+      href="https://www.example.com"
+    >
+      <div
+        class="body"
+      >
+        <div
+          class="icon success"
+        >
+          <svg
+            fill="#00822A"
+            height="24"
+            role="img"
+            viewBox="0 0 32 32"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 8.375c-2.93 0-5.586 1.563-7.07 4.063-1.446 2.539-1.446 5.624 0 8.124A8.13 8.13 0 0 0 16 24.626c2.89 0 5.547-1.523 7.031-4.062 1.446-2.5 1.446-5.586 0-8.125-1.484-2.5-4.14-4.063-7.031-4.063M16 26.5c-3.594 0-6.875-1.875-8.672-5-1.797-3.086-1.797-6.875 0-10 1.797-3.086 5.078-5 8.672-5 3.555 0 6.836 1.914 8.633 5 1.797 3.125 1.797 6.914 0 10a9.93 9.93 0 0 1-8.633 5m4.414-11.836-5 5c-.39.39-.976.39-1.328 0l-2.5-2.5a.856.856 0 0 1 0-1.289c.351-.39.937-.39 1.328 0l1.836 1.836 4.336-4.336c.352-.39.937-.39 1.328 0a.92.92 0 0 1 0 1.29"
+            />
+          </svg>
+          <div
+            class="badge-unread"
+          />
+        </div>
+        <div
+          class="details"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+          >
+            Test title
+          </p>
+          <p
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+          >
+            Test message
+          </p>
+          <p
+            aria-label="date-time"
+            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+          >
+            23 Apr 2024 09:24 GMT+4
+          </p>
+        </div>
+      </div>
+      <div
+        class="buttons"
+      >
+        <button
+          aria-label="mark-as-read"
+          class="icon mark-as-read"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M12.434 6.566c.246.274.246.684 0 .93l-7.22 7.219c-.273.273-.683.273-.929 0L.566 10.996a.6.6 0 0 1 0-.902.6.6 0 0 1 .903 0l3.254 3.254 6.78-6.782a.644.644 0 0 1 .903 0z"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="2fb4e3453244533b2fbbdb2477bdd605__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+        <button
+          aria-label="delete"
+          class="icon delete"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M5.215 5.063c-.082 0-.137.054-.192.109l-.52.766H8.47l-.52-.766a.23.23 0 0 0-.191-.11zm4.84.875h1.914c.355 0 .656.3.656.656 0 .383-.3.656-.656.656h-.328l-.657 8.887c-.082.93-.82 1.613-1.75 1.613H3.738c-.93 0-1.668-.684-1.75-1.613L1.332 7.25h-.3a.63.63 0 0 1-.657-.656c0-.356.273-.657.656-.657h1.887L3.93 4.435c.273-.41.765-.684 1.285-.684h2.543c.52 0 1.012.273 1.285.684zm.273 1.312H2.645l.656 8.805a.44.44 0 0 0 .437.383h5.496c.22 0 .41-.165.438-.383z"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="7606a6352379dd74458e5153601178cf__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`NotificationItem should render notification correctly when status is 'read' 1`] = `
+<div>
+  <div
+    class="notification__item-wrapper"
+  >
+    <a
+      class="notification notification__item test"
+      href="https://www.example.com"
+    >
+      <div
+        class="body"
+      >
+        <div
+          class="icon info"
+        >
+          <svg
+            fill="#1789E1"
+            height="24"
+            role="img"
+            viewBox="0 0 32 32"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 8.375c-2.93 0-5.586 1.563-7.07 4.063-1.446 2.539-1.446 5.624 0 8.124A8.13 8.13 0 0 0 16 24.626c2.89 0 5.547-1.523 7.031-4.062 1.446-2.5 1.446-5.586 0-8.125-1.484-2.5-4.14-4.063-7.031-4.063M16 26.5c-3.594 0-6.875-1.875-8.672-5-1.797-3.086-1.797-6.875 0-10 1.797-3.086 5.078-5 8.672-5 3.555 0 6.836 1.914 8.633 5 1.797 3.125 1.797 6.914 0 10a9.93 9.93 0 0 1-8.633 5m-1.562-6.875h.937v-2.5h-.937c-.547 0-.938-.39-.938-.937 0-.508.39-.938.938-.938h1.874a.95.95 0 0 1 .938.938v3.437h.313a.95.95 0 0 1 .937.938c0 .546-.43.937-.937.937h-3.125c-.547 0-.938-.39-.938-.937 0-.508.39-.938.938-.938M16 14c-.703 0-1.25-.547-1.25-1.25 0-.664.547-1.25 1.25-1.25.664 0 1.25.586 1.25 1.25 0 .703-.586 1.25-1.25 1.25"
+            />
+          </svg>
+        </div>
+        <div
+          class="details"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default title"
+          >
+            Test title
+          </p>
+          <p
+            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+          >
+            Test message
+          </p>
+          <p
+            aria-label="date-time"
+            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+          >
+            23 Apr 2024 09:24 GMT+4
+          </p>
+        </div>
+      </div>
+      <div
+        class="buttons"
+      >
+        <button
+          aria-label="delete"
+          class="icon delete"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M5.215 5.063c-.082 0-.137.054-.192.109l-.52.766H8.47l-.52-.766a.23.23 0 0 0-.191-.11zm4.84.875h1.914c.355 0 .656.3.656.656 0 .383-.3.656-.656.656h-.328l-.657 8.887c-.082.93-.82 1.613-1.75 1.613H3.738c-.93 0-1.668-.684-1.75-1.613L1.332 7.25h-.3a.63.63 0 0 1-.657-.656c0-.356.273-.657.656-.657h1.887L3.93 4.435c.273-.41.765-.684 1.285-.684h2.543c.52 0 1.012.273 1.285.684zm.273 1.312H2.645l.656 8.805a.44.44 0 0 0 .437.383h5.496c.22 0 .41-.165.438-.383z"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="7606a6352379dd74458e5153601178cf__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+    </a>
+  </div>
+</div>
+`;

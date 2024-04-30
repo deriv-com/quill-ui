@@ -1,20 +1,21 @@
-import { ComponentProps } from "react";
 import Tab from "@components/Tab";
 import { Text } from "@components/Typography";
+import { TabProps } from "../types";
 
-const MockTab = ({
-    size,
-    iconPosition,
-    ...props
-}: ComponentProps<typeof Tab.Container> &
-    ComponentProps<typeof Tab.Trigger>) => {
+const MockTab = ({ size, iconPosition, contentStyle, ...props }: TabProps) => {
     return (
-        <Tab.Container id="test" size={size} iconPosition={iconPosition}>
+        <Tab.Container
+            id="test"
+            size={size}
+            iconPosition={iconPosition}
+            contentStyle={contentStyle}
+        >
             <Tab.List>
                 <Tab.Trigger {...props}>Forex</Tab.Trigger>
                 <Tab.Trigger {...props}>Derived Indices</Tab.Trigger>
-                <Tab.Trigger disabled={true} {...props}>
-                    Stocks
+                <Tab.Trigger {...props}>Stocks</Tab.Trigger>
+                <Tab.Trigger disabled {...props}>
+                    Crypto
                 </Tab.Trigger>
             </Tab.List>
             <Tab.Content>

@@ -1,10 +1,3 @@
-@import "@quill/border.scss";
-@import "@quill/color.scss";
-@import "@quill/color.semantic.scss";
-@import "@quill/motion.scss";
-@import "@quill/opacity.scss";
-@import "@quill/others.scss";
-@import "@quill/spacing.scss";
 @import "@quill/static.scss";
 
 .segmented-control {
@@ -12,12 +5,10 @@
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
+        align-items: stretch;
         width: fit-content;
-        background: color-mix(
-            in srgb,
-            var(--semantic-color-typography-prominent) 4%,
-            transparent
-        );
+        height: fit-content;
+        background-color: var(--semantic-color-monochrome-surface-normal-lowest);
         -webkit-tap-highlight-color: transparent;
 
         .item {
@@ -28,7 +19,7 @@
             position: relative;
             z-index: 2;
             min-width: 0;
-            white-space: nowrap;
+            text-align: center;
 
             * {
                 z-index: 2;
@@ -45,20 +36,12 @@
                     var(--core-color-solid-blue-700) inset;
             }
             &:hover:not(:disabled) {
-                background: color-mix(
-                    in srgb,
-                    var(--semantic-color-typography-prominent) 8%,
-                    transparent
-                );
+                background-color: var(--component-segmentedControl-bg-single-item-hover);
             }
             &:active:not(:disabled, .selected),
             &:active:not(:disabled, .animated)::before {
                 box-shadow: unset;
-                background: color-mix(
-                    in srgb,
-                    var(--semantic-color-typography-prominent) 16%,
-                    transparent
-                );
+                background-color: var(--component-segmentedControl-bg-single-item-active);
             }
             &.selected:not(:disabled) {
                 // colors should stay the same for both themes:
@@ -69,7 +52,7 @@
                 position: absolute;
                 background-color: var(--core-color-solid-slate-50);
                 width: 100%;
-                height: 100%;
+                min-height: 100%;
                 animation: var(--core-motion-duration-200)
                     var(--motion-easing-inandout) slide-in;
                 top: 0;
@@ -106,12 +89,12 @@
             }
         }
         &--sm {
-            height: var(--size-generic-lg);
+            min-height: var(--size-generic-lg);
             padding: var(--semantic-spacing-general-xs);
             border-radius: var(--semantic-borderRadius-md);
 
             .item {
-                height: var(--size-generic-md);
+                min-height: var(--size-generic-md);
                 padding: var(--temp-static-spacing-5)
                     var(--semantic-spacing-general-sm)
                     var(--temp-static-spacing-5)
@@ -125,12 +108,12 @@
             }
         }
         &--md {
-            height: var(--size-generic-2xl);
+            min-height: var(--size-generic-2xl);
             padding: var(--semantic-spacing-general-sm);
             border-radius: var(--semantic-borderRadius-lg);
 
             .item {
-                height: var(--size-generic-lg);
+                min-height: var(--size-generic-lg);
                 padding: var(--semantic-spacing-general-sm)
                     var(--semantic-spacing-general-md)
                     var(--semantic-spacing-general-sm)
@@ -140,12 +123,12 @@
             }
         }
         &--lg {
-            height: var(--size-generic-4xl);
+            min-height: var(--size-generic-4xl);
             padding: var(--core-spacing-600);
             border-radius: var(--semantic-borderRadius-xl);
 
             .item {
-                height: var(--size-generic-xl);
+                min-height: var(--size-generic-xl);
                 padding: var(--temp-static-spacing-9)
                     var(--semantic-spacing-general-lg)
                     var(--temp-static-spacing-9)

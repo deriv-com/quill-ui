@@ -1,5 +1,4 @@
 /* Global Styles */
-@import "@quill/color.semantic.scss"; //need
 @import "./reset.scss";
 
 @at-root {
@@ -10,33 +9,31 @@
 
 .quill {
     &__background {
-        @each $bg in primary, secondary {
-            &--#{$bg} {
-                @each $type in base, container {
-                    &__type--#{$type} {
-                        background-color: var(
-                            --semantic-color-background-#{$bg}-#{$type}
-                        );
-                    }
-                }
+        &--primary__type {
+            &--base {
+                background-color: var(
+                    --semantic-color-slate-solid-surface-frame-mid
+                );
+            }
+
+            &--container {
+                background-color: var(
+                    --semantic-color-slate-solid-surface-frame-low
+                );
             }
         }
 
-        @each $bg in dialog, overlay {
-            &--#{$bg} {
-                background-color: var(--semantic-color-background-#{$bg});
+        &--secondary__type {
+            &--base {
+                background-color: var(
+                    --semantic-color-slate-solid-surface-frame-low
+                );
             }
-        }
 
-        &--overflow__number {
-            @each $number in 1, 2 {
-                &--#{$number} {
-                    @each $position in top, right, bottom, left {
-                        background-color: var(
-                            --semantic-color-background-overflow-#{$number}-#{$position}
-                        );
-                    }
-                }
+            &--container {
+                background-color: var(
+                    --semantic-color-slate-solid-surface-frame-mid
+                );
             }
         }
     }

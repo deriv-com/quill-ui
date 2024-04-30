@@ -1,5 +1,7 @@
 import React from "react";
 import RadioButton from "./index";
+import "./radio-button.stories.scss";
+import { TMediumSizes } from "@types";
 
 const RadioButtonMeta = {
     title: "Components/Selection Control/Radio/RadioButton",
@@ -7,13 +9,13 @@ const RadioButtonMeta = {
     parameters: { layout: "centered" },
     tags: ["autodocs"],
     args: {
+        className: "",
+        classNameInfo: "",
+        classNameLabel: "",
         defaultChecked: true,
         disabled: false,
         hasInfo: false,
         id: "radio-1",
-        className: "",
-        classNameLabel: "",
-        classNameInfo: "",
     },
     argTypes: {
         id: {
@@ -41,6 +43,27 @@ const RadioButtonMeta = {
         classNameInfo: {
             description: "CSS class name applied to the informational content.",
         },
+        name: {
+            description:
+                "Unique name for the radio group to identify selected radio button.",
+        },
+        onChange: {
+            description:
+                "Callback function that is triggered when the radio button is selected.",
+            action: "onChange",
+        },
+        required: {
+            description: "Sets the radio button as a required field.",
+            control: { type: "boolean" },
+        },
+        value: {
+            description: "Value of the radio button element.",
+        },
+        size: {
+            description: "Size of the radio button element.",
+            control: { type: "select" },
+            options: ["sm", "md"],
+        },
     },
     description:
         "The RadioButton component is used to create radio button elements for user selection within a group.",
@@ -56,6 +79,7 @@ interface RadioButtonProps {
     className?: string;
     classNameLabel?: string;
     classNameInfo?: string;
+    size?: TMediumSizes;
 }
 
 const Template: React.FC<RadioButtonProps> = (args) => (
@@ -82,4 +106,19 @@ export const DisabledButton = Template.bind(this, {
 
 export const ButtonWithInfo = Template.bind(this, {
     hasInfo: true,
+});
+
+export const DefaultSmall = Template.bind(this, {
+    defaultChecked: true,
+    size: "sm",
+});
+
+export const UncheckedSmall = Template.bind(this, {
+    defaultChecked: false,
+    size: "sm",
+});
+
+export const DisabledButtonSmall = Template.bind(this, {
+    disabled: true,
+    size: "sm",
 });

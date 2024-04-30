@@ -3,7 +3,7 @@ import clsx from "clsx";
 import {
     LabelPairedCircleInfoMdRegularIcon,
     LabelPairedCircleInfoSmRegularIcon,
-    StandaloneCircleDotBoldIcon,
+    StandaloneCircleDotFillIcon,
     StandaloneCircleRegularIcon,
 } from "@deriv/quill-icons";
 import { Text } from "@components/Typography";
@@ -65,7 +65,7 @@ const RadioButton = ({
     const getIcon = () => {
         if (checked) {
             return (
-                <StandaloneCircleDotBoldIcon
+                <StandaloneCircleDotFillIcon
                     data-testid={`dt_checked_icon_${value}_${disabled}`}
                     fill={disabled ? "#b8b8b8" : "#000000"}
                     iconSize={size}
@@ -102,7 +102,9 @@ const RadioButton = ({
             />
 
             <span
-                className="quill-radio-button__icon"
+                className={clsx("quill-radio-button__icon", {
+                    "quill-radio-button__icon--disabled": disabled,
+                })}
                 onClick={handleIconClick}
                 onKeyDown={handleIconClick}
                 id={id}
@@ -112,7 +114,13 @@ const RadioButton = ({
             <Text
                 size={size}
                 as="span"
-                className={clsx("quill-radio-button__label", classNameLabel)}
+                className={clsx(
+                    "quill-radio-button__label",
+                    {
+                        "quill-radio-button__label--disabled": disabled,
+                    },
+                    classNameLabel,
+                )}
             >
                 {children}
             </Text>

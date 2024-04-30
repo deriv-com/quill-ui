@@ -14,9 +14,9 @@ export const Pagination = ({
     contentLength,
     onClickPagination,
     variant = "number",
+    hideChevron,
 }: PaginationProps) => {
     const [currentPage, setCurrentPage] = useState(1);
-
     const totalPageCount = useMemo(() => {
         const dataToDisplay = contentPerPage ?? 1;
         return Math.ceil((contentLength ?? 0) / dataToDisplay);
@@ -40,28 +40,41 @@ export const Pagination = ({
         const pageNumber = Number(event);
         setCurrentPage(pageNumber);
     };
-
+    const handleKeyPress = (event: { key: string }) => {
+        if (event.key === "ArrowLeft" && currentPage !== 1) {
+            gotToPreviousPage();
+        } else if (
+            event.key === "ArrowRight" &&
+            currentPage !== totalPageCount
+        ) {
+            goToNextPage();
+        }
+    };
     return (
         <nav
             role="navigation"
             aria-label="Pagination Navigation"
             className="pagination__container"
+            onKeyDown={handleKeyPress}
+            tabIndex={0}
         >
-            <button
-                onClick={gotToPreviousPage}
-                disabled={currentPage === 1}
-                className="pagination__chevron"
-                aria-label="Go to Previous page"
-            >
-                <StandaloneChevronLeftRegularIcon
-                    iconSize="sm"
-                    className={clsx(
-                        currentPage === 1
-                            ? "pagination__chevron-disabled"
-                            : "pagination__chevron-svg",
-                    )}
-                />
-            </button>
+            {!hideChevron && (
+                <button
+                    onClick={gotToPreviousPage}
+                    disabled={currentPage === 1}
+                    className="pagination__chevron"
+                    aria-label="Go to Previous page"
+                >
+                    <StandaloneChevronLeftRegularIcon
+                        iconSize="sm"
+                        className={clsx(
+                            currentPage === 1
+                                ? "pagination__chevron-disabled"
+                                : "pagination__chevron-svg",
+                        )}
+                    />
+                </button>
+            )}
             {paginationRange.map((pageNumber, index) => (
                 <PaginationButton
                     key={`${pageNumber}_${index}`}
@@ -71,21 +84,23 @@ export const Pagination = ({
                     handleOnClick={changePage}
                 />
             ))}
-            <button
-                onClick={goToNextPage}
-                disabled={currentPage === totalPageCount}
-                className="pagination__chevron"
-                aria-label="Go to Next page"
-            >
-                <StandaloneChevronRightRegularIcon
-                    iconSize="sm"
-                    className={clsx(
-                        currentPage === totalPageCount
-                            ? "pagination__chevron-disabled"
-                            : "pagination__chevron-svg",
-                    )}
-                />
-            </button>
+            {!hideChevron && (
+                <button
+                    onClick={goToNextPage}
+                    disabled={currentPage === totalPageCount}
+                    className="pagination__chevron"
+                    aria-label="Go to Next page"
+                >
+                    <StandaloneChevronRightRegularIcon
+                        iconSize="sm"
+                        className={clsx(
+                            currentPage === totalPageCount
+                                ? "pagination__chevron-disabled"
+                                : "pagination__chevron-svg",
+                        )}
+                    />
+                </button>
+            )}
         </nav>
     );
 };
