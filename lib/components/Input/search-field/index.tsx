@@ -30,6 +30,7 @@ export const SearchField = forwardRef<HTMLInputElement, InputProps>(
 
         const clearIcon = (
             <button
+                className="icon_wrapper"
                 onClick={() => {
                     setIsEmpty(true);
                     onChange?.({
@@ -51,7 +52,10 @@ export const SearchField = forwardRef<HTMLInputElement, InputProps>(
         return (
             <Input
                 leftIcon={
-                    <StandaloneSearchRegularIcon fill="var(--core-color-opacity-black-600)" iconSize="sm" />
+                    <StandaloneSearchRegularIcon
+                        fill="var(--core-color-opacity-black-600)"
+                        iconSize="sm"
+                    />
                 }
                 rightIcon={statusIcon}
                 triggerActionIcon={isEmpty ? "" : clearIcon}
@@ -64,4 +68,3 @@ export const SearchField = forwardRef<HTMLInputElement, InputProps>(
 );
 
 export default SearchField;
-

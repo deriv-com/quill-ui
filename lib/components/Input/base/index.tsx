@@ -128,9 +128,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         </span>
                     )}
                     {triggerActionIcon && (
-                        <span className="icon_wrapper">
+                        <>
                             {triggerActionIcon}
-                        </span>
+                        </>
                     )}
                 </div>
                 <div className="message__container">
