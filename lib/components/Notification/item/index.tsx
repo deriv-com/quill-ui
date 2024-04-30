@@ -83,7 +83,8 @@ const NotificationItem = ({
                 {...rest}
                 className={clsx(
                     `notification__item${isMobile ? "--mobile" : ""}`,
-                    shouldShowButtons &&
+                    isMobile &&
+                        shouldShowButtons &&
                         `show-buttons${isRead ? "--read" : ""}`,
                     className,
                 )}
