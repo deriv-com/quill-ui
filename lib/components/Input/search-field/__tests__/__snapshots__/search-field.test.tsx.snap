@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchField /> renders clear icon when value is not empty and clear icon should be removed after click 1`] = `
+<div>
+  <div
+    class="quill-input__container"
+  >
+    <div
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+    >
+      <span
+        class="icon_wrapper"
+      >
+        mockedSearchIcon
+      </span>
+      <div
+        class="quill-input-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          placeholder="Search"
+          type="text"
+          value="test"
+        />
+      </div>
+    </div>
+    <div
+      class="message__container"
+    />
+  </div>
+</div>
+`;
+
+exports[`<SearchField /> renders correctly with default props 1`] = `
+<div>
+  <div
+    class="quill-input__container"
+  >
+    <div
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+    >
+      <span
+        class="icon_wrapper"
+      >
+        mockedSearchIcon
+      </span>
+      <div
+        class="quill-input-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          placeholder="Search"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      class="message__container"
+    />
+  </div>
+</div>
+`;
+
+exports[`<SearchField /> renders error status icon when status prop is "error" 1`] = `
+<div>
+  <div
+    class="quill-input__container"
+  >
+    <div
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--error"
+    >
+      <span
+        class="icon_wrapper"
+      >
+        mockedSearchIcon
+      </span>
+      <div
+        class="quill-input-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          placeholder="Search"
+          type="text"
+        />
+      </div>
+      <span
+        class="icon_wrapper status-icon--error"
+      >
+        mockedErrorIcon
+      </span>
+    </div>
+    <div
+      class="message__container"
+    />
+  </div>
+</div>
+`;
+
+exports[`<SearchField /> renders leftStatusMessage when prop is given 1`] = `
+<div>
+  <div
+    class="quill-input__container"
+  >
+    <div
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+    >
+      <span
+        class="icon_wrapper"
+      >
+        mockedSearchIcon
+      </span>
+      <div
+        class="quill-input-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          placeholder="Search"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      class="message__container"
+    >
+      <p
+        class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message__container__text message__container__text__status--neutral"
+      >
+        mocked status message
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<SearchField /> renders success status icon when status prop is "success" 1`] = `
+<div>
+  <div
+    class="quill-input__container"
+  >
+    <div
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--success"
+    >
+      <span
+        class="icon_wrapper"
+      >
+        mockedSearchIcon
+      </span>
+      <div
+        class="quill-input-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          placeholder="Search"
+          type="text"
+        />
+      </div>
+      <span
+        class="icon_wrapper status-icon--success"
+      >
+        mockedSuccessIcon
+      </span>
+    </div>
+    <div
+      class="message__container"
+    />
+  </div>
+</div>
+`;
+
+exports[`<SearchField /> updates value correctly on input change 1`] = `
+<div>
+  <div
+    class="quill-input__container"
+  >
+    <div
+      class="quill-input__wrapper quill-input__wrapper--has-value quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+    >
+      <span
+        class="icon_wrapper"
+      >
+        mockedSearchIcon
+      </span>
+      <div
+        class="quill-input-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          placeholder="Search"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      class="message__container"
+    />
+  </div>
+</div>
+`;

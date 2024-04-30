@@ -23,6 +23,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     textAlignment?: TextAlignments;
     label?: ReactNode;
     value?: string;
+    triggerActionIcon?: ReactNode;
     fieldMarker?: boolean;
 }
 
@@ -48,6 +49,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             label,
             rightIcon,
             onChange,
+            triggerActionIcon,
             fieldMarker = true,
             required = false,
             ...rest
@@ -124,6 +126,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         >
                             {rightIcon}
                         </span>
+                    )}
+                    {triggerActionIcon && (
+                        <>
+                            {triggerActionIcon}
+                        </>
                     )}
                 </div>
                 <div className="message__container">
