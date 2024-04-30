@@ -27,7 +27,7 @@ exports[`Checkbox should apply className if it was passed 1`] = `
     </div>
     <label>
       <span
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
       >
         Checkbox label
       </span>
@@ -66,7 +66,7 @@ exports[`Checkbox should apply id if it was passed 1`] = `
       for="mock_id"
     >
       <span
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
       >
         Checkbox label
       </span>
@@ -102,7 +102,7 @@ exports[`Checkbox should apply labelClassName if it was passed 1`] = `
     </div>
     <label>
       <span
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label label_className"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label label_className"
       >
         Checkbox label
       </span>
@@ -142,7 +142,7 @@ exports[`Checkbox should apply name if it was passed 1`] = `
       for="mock_name"
     >
       <span
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
       >
         Checkbox label
       </span>
@@ -179,7 +179,7 @@ exports[`Checkbox should render correct attribute of input if checked === true 1
     </div>
     <label>
       <span
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
       >
         Checkbox label
       </span>
@@ -216,7 +216,7 @@ exports[`Checkbox should render correct attribute of input if disabled === true 
     </div>
     <label>
       <span
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
       >
         Checkbox label
       </span>
@@ -252,7 +252,7 @@ exports[`Checkbox should render correct icon if indeterminate === true 1`] = `
     </div>
     <label>
       <span
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
       >
         Checkbox label
       </span>
@@ -288,7 +288,7 @@ exports[`Checkbox should render correct label size if size === 'md' 1`] = `
     </div>
     <label>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-checkbox__label"
       >
         Checkbox label
       </span>
@@ -324,7 +324,7 @@ exports[`Checkbox should render info icon if showInfoIcon === true 1`] = `
     </div>
     <label>
       <span
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
       >
         Checkbox label
       </span>
@@ -383,7 +383,7 @@ exports[`Checkbox should render with default values if optional ones were not pa
     </div>
     <label>
       <span
-        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-checkbox__label"
       >
         Checkbox label
       </span>

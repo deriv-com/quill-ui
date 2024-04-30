@@ -12,8 +12,8 @@ export type TextAlignments = "left" | "center";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type?: Types;
-    icon?: ReactNode;
-    statusIcon?: ReactNode;
+    leftIcon?: ReactNode;
+    rightIcon?: ReactNode;
     inputSize?: TMediumSizes;
     status?: Status;
     disabled?: boolean;
@@ -23,6 +23,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     textAlignment?: TextAlignments;
     label?: ReactNode;
     value?: string;
+    fieldMarker?: boolean;
 }
 
 const statusIconColors = {
@@ -40,13 +41,15 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             status = "neutral",
             disabled = false,
             variant = "outline",
-            icon: Icon,
+            leftIcon,
             leftStatusMessage,
             rightStatusMessage,
             textAlignment = "left",
             label,
-            statusIcon: StatusIcon,
+            rightIcon,
             onChange,
+            fieldMarker = true,
+            required = false,
             ...rest
         },
         ref,
@@ -66,44 +69,60 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         `quill-input__wrapper__status--${status}`,
                     )}
                 >
-                    {Icon && <span className="icon_wrapper">{Icon}</span>}
-                    <input
-                        {...rest}
-                        type={type}
-                        className={clsx(
-                            "input",
-                            "peer",
-                            `input__align--${textAlignment}`,
-                            `input__size--${inputSize}`,
-                        )}
-                        disabled={!!disabled}
-                        onChange={(e) => {
-                            setHasValue(!!e.target.value);
-                            onChange?.(e);
-                        }}
-                        id={label?.toString()}
-                        ref={ref}
-                    />
-                    {label && inputSize === "md" && (
-                        <label
-                            className={clsx(
-                                "label",
-                                `label__status--${status}`,
-                                Icon && `label__hasIcon`,
-                            )}
-                            htmlFor={label.toString()}
-                        >
-                            {label}
-                        </label>
+                    {leftIcon && (
+                        <span className="icon_wrapper">{leftIcon}</span>
                     )}
-                    {StatusIcon && (
+                    <div className="quill-input-label__wrapper">
+                        <input
+                            {...rest}
+                            required={required}
+                            type={type}
+                            className={clsx(
+                                "input",
+                                "peer",
+                                `input__align--${textAlignment}`,
+                                `input__size--${inputSize}`,
+                            )}
+                            disabled={!!disabled}
+                            onChange={(e) => {
+                                setHasValue(!!e.target.value);
+                                onChange?.(e);
+                            }}
+                            id={label?.toString()}
+                            ref={ref}
+                        />
+                        {label && inputSize === "md" && (
+                            <label
+                                className={clsx(
+                                    "label",
+                                    `label__status--${status}`,
+                                    leftIcon && `label__hasIcon`,
+                                )}
+                                htmlFor={label.toString()}
+                            >
+                                {label}
+                                {fieldMarker && (
+                                    <div
+                                        className={clsx(
+                                            "label-field-marker",
+                                            `label-field-marker__required--${required}`,
+                                        )}
+                                    >
+                                        {required ? "*" : "(optional)"}
+                                    </div>
+                                )}
+                            </label>
+                        )}
+                    </div>
+
+                    {rightIcon && (
                         <span
                             className={clsx(
                                 "icon_wrapper",
                                 statusIconColors[status],
                             )}
                         >
-                            {StatusIcon}
+                            {rightIcon}
                         </span>
                     )}
                 </div>

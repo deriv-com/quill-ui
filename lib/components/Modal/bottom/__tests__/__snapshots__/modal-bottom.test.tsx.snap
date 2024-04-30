@@ -18,7 +18,7 @@ exports[`ModalBottom should not render handleBar if showHandleBar === false 1`] 
           Title
         </h4>
         <div
-          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal-bottom__content-body"
+          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-modal-bottom__content-body"
         >
           This is some amazing placeholder.
         </div>
@@ -230,7 +230,7 @@ exports[`ModalBottom should render secondary button if showSecondaryButton === t
           Title
         </h4>
         <div
-          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal-bottom__content-body"
+          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-modal-bottom__content-body"
         >
           This is some amazing placeholder.
         </div>
@@ -294,7 +294,7 @@ exports[`ModalBottom should render with default values if optional ones were not
           Title
         </h4>
         <div
-          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal-bottom__content-body"
+          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-modal-bottom__content-body"
         >
           This is some amazing placeholder.
         </div>

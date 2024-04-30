@@ -37,4 +37,11 @@ describe("Input", () => {
         const { container } = render(<Input disabled variant="fill" />);
         expect(container).toMatchSnapshot();
     });
+
+    it("should render a Input with field marker", () => {
+        const { container } = render(
+            <Input label="label" fieldMarker={true} variant="fill" />,
+        );
+        expect(container).toMatchSnapshot();
+    });
 });

@@ -3,9 +3,22 @@ import TextField from ".";
 import {
     StandaloneCircleCheckBoldIcon,
     StandaloneCircleUserRegularIcon,
+    StandalonePlaceholderRegularIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons";
 import { Status, Variants } from "../base";
+
+const icons: Record<string, object | null> = {
+    with_icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
+    none: null,
+};
+
+const statusIcon: Record<string, object | null> = {
+    placeholder: <StandalonePlaceholderRegularIcon iconSize="sm" />,
+    success: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+    error: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+    none: null,
+};
 
 const placeholder = "Placeholder";
 
@@ -38,6 +51,8 @@ const meta = {
         disabled: false,
         variant: "fill",
         textAlignment: "left",
+        fieldMarker: false,
+        required: false,
     },
     argTypes: {
         inputSize: {
@@ -45,6 +60,20 @@ const meta = {
                 type: "radio",
             },
             options: ["sm", "md"],
+        },
+        leftIcon: {
+            options: Object.keys(icons),
+            mapping: icons,
+            control: {
+                type: "select",
+            },
+        },
+        rightIcon: {
+            options: Object.keys(statusIcon),
+            mapping: statusIcon,
+            control: {
+                type: "select",
+            },
         },
         status: {
             control: {
@@ -124,7 +153,7 @@ export const TextFieldWithIconAndLabel: Story = {
     args: {
         placeholder,
         label,
-        icon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
+        leftIcon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
     },
 };
 
@@ -133,7 +162,7 @@ export const SuccessStatusIconTextField: Story = {
         placeholder,
         variant: variants.outline,
         status: status.success,
-        statusIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+        rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     },
     argTypes: {
         status: {
@@ -170,7 +199,14 @@ export const SuccessMessageTextFieldWithIcons: Story = {
         status: status.success,
         leftStatusMessage,
         rightStatusMessage,
-        statusIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+        rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+    },
+    argTypes: {
+        rightIcon: {
+            table: {
+                disable: true,
+            },
+        },
     },
 };
 export const ErrorMessageTextFieldWithIcons: Story = {
@@ -180,6 +216,13 @@ export const ErrorMessageTextFieldWithIcons: Story = {
         status: status.error,
         leftStatusMessage,
         rightStatusMessage,
-        statusIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+    },
+    argTypes: {
+        rightIcon: {
+            table: {
+                disable: true,
+            },
+        },
     },
 };
