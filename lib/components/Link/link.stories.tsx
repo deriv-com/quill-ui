@@ -24,6 +24,11 @@ const meta = {
             control: { type: "radio" },
             description: "To select the size of the link",
         },
+        color: {
+            options: ["black", "white"],
+            control: { type: "radio" },
+            description: "To select the color of the link",
+        },
     },
     tags: ["autodocs"],
 } satisfies Meta<typeof Link>;

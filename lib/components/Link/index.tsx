@@ -26,7 +26,11 @@ export const Link = forwardRef<HTMLButtonElement, LinkProps>(
                 className={clsx("link", `link__color-${color}`, className)}
                 disabled={disabled}
             >
-                {icon && <span data-testid="dt-link-icon">{icon}</span>}
+                {icon && (
+                    <span data-testid="dt-link-icon" className="link__icon">
+                        {icon}
+                    </span>
+                )}
                 {size === "caption" ? (
                     <CaptionText color={color}>{children}</CaptionText>
                 ) : (

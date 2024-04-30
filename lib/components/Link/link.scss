@@ -1,65 +1,73 @@
 .link {
     display: inline-flex;
-    gap: 8px;
+    gap: var(--core-borderRadius-400);
     text-decoration: none;
     cursor: pointer;
     align-items: center;
+
     &__color {
         &-black {
             color: var(--core-color-solid-slate-1400);
         }
+
         &-white {
             color: var(--core-color-solid-slate-50);
         }
     }
+
     color: var(--component-textIcon-normal-prominent);
 
     &:hover {
-        text-decoration: underline;
+        text-decoration: var(--core-fontDecoration-underline);
     }
 
     &:active {
-        text-decoration: underline;
+        text-decoration: var(--core-fontDecoration-underline);
     }
 
     &:disabled {
         pointer-events: none;
-        opacity: var(--core-opacity-600);
+        opacity: var(--opacity-disabled);
     }
 
     &__icon-color {
         &-black {
             fill: var(--core-color-solid-slate-1400);
         }
+
         &-white {
             fill: var(--core-color-solid-slate-50);
         }
     }
 
-    &__icon-size {
-        &-caption {
-            width: 8px;
-            height: 18px;
-        }
+    &__icon {
+        display: inline-flex;
 
-        &-sm {
-            width: 8px;
-            height: 22px;
-        }
+        &-size {
+            &-caption {
+                width: var(--core-borderRadius-400);
+                height: var(--core-borderRadius-900);
+            }
 
-        &-md {
-            width: 10px;
-            height: 24px;
-        }
+            &-sm {
+                width: var(--core-borderRadius-400);
+                height: var(--core-borderRadius-1100);
+            }
 
-        &-lg {
-            width: 13px;
-            height: 30px;
-        }
+            &-md {
+                width: var(--core-borderRadius-500);
+                height: var(--core-borderRadius-1200);
+            }
 
-        &-xl {
-            width: 15px;
-            height: 36px;
+            &-lg {
+                width: var(--temp-static-spacing-13);
+                height: var(--core-borderRadius-1500);
+            }
+
+            &-xl {
+                width: var(--temp-static-spacing-15);
+                height: var(--core-borderRadius-1800);
+            }
         }
     }
 
