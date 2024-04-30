@@ -17,7 +17,7 @@ export interface NotificationItemProps
     className?: string;
     isMobile?: boolean;
     onShowingButtons?: () => void;
-    showButtons: boolean;
+    showButtons?: boolean;
     type?: (typeof TYPE)[keyof typeof TYPE];
 }
 
@@ -47,7 +47,7 @@ const NotificationItem = ({
     }, [status]);
 
     useEffect(() => {
-        setShouldShowButtons(showButtons);
+        setShouldShowButtons(showButtons ?? false);
     }, [showButtons]);
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
