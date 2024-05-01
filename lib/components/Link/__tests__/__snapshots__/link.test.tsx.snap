@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link should render correctly with caption size and color black 1`] = `
+<div>
+  <button
+    class="link link__color-black"
+  >
+    <p
+      class="quill-typography__caption-text__weight--regular__decoration--default black"
+    >
+      Click me - 
+      caption
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Link should render correctly with caption size and color white 1`] = `
+<div>
+  <button
+    class="link link__color-white"
+  >
+    <p
+      class="quill-typography__caption-text__weight--regular__decoration--default white"
+    >
+      Click me - 
+      caption
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Link should render correctly with disabled false 1`] = `
+<p
+  class="quill-typography__body-text__size--md__weight--regular__decoration--default black"
+>
+  Click me disabled
+</p>
+`;
+
+exports[`Link should render correctly with disabled true 1`] = `
+<p
+  class="quill-typography__body-text__size--md__weight--regular__decoration--default black"
+>
+  Click me disabled
+</p>
+`;
+
+exports[`Link should render correctly with lg size and color black 1`] = `
+<div>
+  <button
+    class="link link__color-black"
+  >
+    <p
+      class="quill-typography__body-text__size--lg__weight--regular__decoration--default black"
+    >
+      Click me - 
+      lg
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Link should render correctly with lg size and color white 1`] = `
+<div>
+  <button
+    class="link link__color-white"
+  >
+    <p
+      class="quill-typography__body-text__size--lg__weight--regular__decoration--default white"
+    >
+      Click me - 
+      lg
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Link should render correctly with md size and color black 1`] = `
+<div>
+  <button
+    class="link link__color-black"
+  >
+    <p
+      class="quill-typography__body-text__size--md__weight--regular__decoration--default black"
+    >
+      Click me - 
+      md
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Link should render correctly with md size and color white 1`] = `
+<div>
+  <button
+    class="link link__color-white"
+  >
+    <p
+      class="quill-typography__body-text__size--md__weight--regular__decoration--default white"
+    >
+      Click me - 
+      md
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Link should render correctly with sm size and color black 1`] = `
+<div>
+  <button
+    class="link link__color-black"
+  >
+    <p
+      class="quill-typography__body-text__size--sm__weight--regular__decoration--default black"
+    >
+      Click me - 
+      sm
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Link should render correctly with sm size and color white 1`] = `
+<div>
+  <button
+    class="link link__color-white"
+  >
+    <p
+      class="quill-typography__body-text__size--sm__weight--regular__decoration--default white"
+    >
+      Click me - 
+      sm
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Link should render correctly with xl size and color black 1`] = `
+<div>
+  <button
+    class="link link__color-black"
+  >
+    <p
+      class="quill-typography__body-text__size--xl__weight--regular__decoration--default black"
+    >
+      Click me - 
+      xl
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Link should render correctly with xl size and color white 1`] = `
+<div>
+  <button
+    class="link link__color-white"
+  >
+    <p
+      class="quill-typography__body-text__size--xl__weight--regular__decoration--default white"
+    >
+      Click me - 
+      xl
+    </p>
+  </button>
+</div>
+`;
