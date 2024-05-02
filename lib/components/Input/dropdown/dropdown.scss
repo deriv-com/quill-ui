@@ -4,45 +4,83 @@
         border-radius: var(--core-borderRadius-400);
         box-shadow: var(--semantic-elevation-shadow-card-hover);
         display: flex;
-        padding: var(--core-spacing-400);
         flex-direction: column;
         align-items: flex-start;
         max-height: 420px;
-        margin-top: 8px;
+        margin-top: var(--core-size-200);
         max-width: 360px;
         overflow-y: auto;
+
+        &--size {
+            &-sm {
+                padding: var(--core-spacing-200);
+            }
+
+            &-md {
+                padding: var(--core-spacing-400);
+            }
+
+        }
     }
+
     &__item {
         cursor: pointer;
         display: flex;
-        padding: var(--core-spacing-50) var(--core-spacing-600);
         align-items: center;
         width: 100%;
-        gap: var(--core-spacing-400);
         align-self: stretch;
         border-radius: var(--core-borderRadius-200);
         color: var(--component-dropdownItem-label-color-default);
+
         &--size {
             &-sm {
-               height: 32px;
+                height: var(--core-size-1600);
+                padding-inline: var(--core-size-600);
+                gap: var(--core-spacing-300);
             }
+
             &-md {
-               height: 48px;
+                height: var(--core-size-2400);
+                padding-inline: var(--core-size-800);
+                gap: var(--core-spacing-400);
             }
-         
         }
+
+        &__align {
+            &-left {
+                justify-content: left;
+            }
+
+            &-center {
+                justify-content: center;
+            }
+        }
+
         &:hover {
             background-color: var(--component-dropdownItem-bg-hover);
             cursor: pointer;
         }
+
         &--selected:not(:active):not(hover) {
             background-color: var(--component-dropdownItem-bg-selected);
             color: var(--component-dropdownItem-label-color-selectedWhite);
         }
+
         &--active {
             background-color: var(--component-dropdownItem-bg-active);
         }
     }
+
+    &__transform {
+        transition-property: transform;
+        transition-duration: var(--core-motion-duration-200);
+        transition-timing-function: ease-in-out;
+
+        &-rotate {
+            transform: rotate(180deg);
+        }
+    }
+
     &__icon {
         &-svg {
             fill: var(--component-textIcon-normal-prominent);

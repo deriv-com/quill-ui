@@ -29,9 +29,6 @@ exports[`Input should render a Input with field marker 1`] = `
         </label>
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -53,9 +50,6 @@ exports[`Input should render a default Input 1`] = `
         />
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -78,9 +72,6 @@ exports[`Input should render a disabled Input with a variant of fill 1`] = `
         />
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -114,9 +105,6 @@ exports[`Input should render an Input with a label 1`] = `
         </label>
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -138,9 +126,6 @@ exports[`Input should render an Input with a variant of outline 1`] = `
         />
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -162,9 +147,6 @@ exports[`Input should render an Input with centered text 1`] = `
         />
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -194,6 +176,10 @@ exports[`Input should render an Input with status messages 1`] = `
       >
         Message goes here
       </p>
+    </div>
+    <div
+      class="message__container"
+    >
       <p
         class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent self-end message__container__text message__container__text__status--neutral"
       >

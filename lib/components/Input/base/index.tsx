@@ -76,7 +76,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     {leftIcon && (
                         <span className="icon_wrapper">{leftIcon}</span>
                     )}
-                    <div className={clsx(label ? "quill-input-label__wrapper" : 'quill-input-no-label__wrapper')}>
+                    <div
+                        className={clsx(
+                            label
+                                ? "quill-input-label__wrapper"
+                                : "quill-input-no-label__wrapper",
+                        )}
+                    >
                         <input
                             {...rest}
                             required={required}
@@ -132,8 +138,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     {dropdownIcon && dropdownIcon}
                     {triggerActionIcon && <>{triggerActionIcon}</>}
                 </div>
-                <div className="message__container">
-                    {leftStatusMessage && (
+
+                {leftStatusMessage && (
+                    <div className="message__container">
                         <CaptionText
                             className={clsx(
                                 "message__container__text",
@@ -144,8 +151,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         >
                             {leftStatusMessage}
                         </CaptionText>
-                    )}
-                    {rightStatusMessage && (
+                    </div>
+                )}
+                {rightStatusMessage && (
+                    <div className="message__container">
                         <CaptionText
                             className={clsx(
                                 "self-end",
@@ -155,8 +164,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         >
                             {rightStatusMessage}
                         </CaptionText>
-                    )}
-                </div>
+                    </div>
+                )}
             </div>
         );
     },

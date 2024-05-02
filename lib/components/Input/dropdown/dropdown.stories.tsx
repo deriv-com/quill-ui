@@ -103,9 +103,171 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const DropdownFeildWithoutLabel: Story = {
+export const DefaultLabellessDropdown: Story = {
     args: {
         placeholder,
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+        options: [
+            { value: "1", label: "Sample Item 1" },
+            {
+                value: "2",
+                label: "Sample Item 2",
+            },
+            { value: "3", label: "Sample Item 3" },
+            { value: "4", label: "Sample Item 4" },
+        ],
+    },
+};
+export const DisabledDropdown: Story = {
+    args: {
+        placeholder,
+        disabled: true,
+        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+        options: [
+            { value: "1", label: "Sample Item 1" },
+            {
+                value: "2",
+                label: "Sample Item 2",
+            },
+            { value: "3", label: "Sample Item 3" },
+            { value: "4", label: "Sample Item 4" },
+        ],
+    },
+};
+export const LabellessSuccessDropdown: Story = {
+    args: {
+        placeholder,
+        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+        status: "success",
+        rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+        variant: "fill",
+        options: [
+            { value: "1", label: "Sample Item 1" },
+            {
+                value: "2",
+                label: "Sample Item 2",
+            },
+            { value: "3", label: "Sample Item 3" },
+            { value: "4", label: "Sample Item 4" },
+        ],
+    },
+};
+export const LabellessErrorDropdown: Story = {
+    args: {
+        placeholder,
+        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+        status: "error",
+        variant: "fill",
+        options: [
+            { value: "1", label: "Sample Item 1" },
+            {
+                value: "2",
+                label: "Sample Item 2",
+            },
+            { value: "3", label: "Sample Item 3" },
+            { value: "4", label: "Sample Item 4" },
+        ],
+    },
+};
+export const LabellessDropdownWithErrorMessage: Story = {
+    args: {
+        placeholder,
+        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+        leftStatusMessage: "This is an error message",
+        status: "error",
+        variant: "fill",
+        options: [
+            { value: "1", label: "Sample Item 1" },
+            {
+                value: "2",
+                label: "Sample Item 2",
+            },
+            { value: "3", label: "Sample Item 3" },
+            { value: "4", label: "Sample Item 4" },
+        ],
+    },
+};
+export const DefaultDropdownFeildWithLabel: Story = {
+    args: {
+        placeholder,
+        label: "Label",
+        required: true,
+        fieldMarker: true,
+        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+        options: [
+            { value: "1", label: "Sample Item 1" },
+            {
+                value: "2",
+                label: "Sample Item 2",
+            },
+            { value: "3", label: "Sample Item 3" },
+            { value: "4", label: "Sample Item 4" },
+        ],
+    },
+};
+export const LabelledSuccessDropdown: Story = {
+    args: {
+        placeholder,
+        label: "Label",
+        required: true,
+        fieldMarker: true,
+        variant: "outline",
+        status: "success",
+        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+        rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+        options: [
+            { value: "1", label: "Sample Item 1" },
+            {
+                value: "2",
+                label: "Sample Item 2",
+            },
+            { value: "3", label: "Sample Item 3" },
+            { value: "4", label: "Sample Item 4" },
+        ],
+    },
+};
+export const LabelledErrorDropdown: Story = {
+    args: {
+        placeholder,
+        label: "Label",
+        required: true,
+        fieldMarker: true,
+        variant: "fill",
+        status: "error",
+        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+        options: [
+            { value: "1", label: "Sample Item 1" },
+            {
+                value: "2",
+                label: "Sample Item 2",
+            },
+            { value: "3", label: "Sample Item 3" },
+            { value: "4", label: "Sample Item 4" },
+        ],
+    },
+};
+export const LabelledDropdownWithSuccessMessage: Story = {
+    args: {
+        placeholder,
+        label: "Label",
+        required: true,
+        fieldMarker: true,
+        variant: "fill",
+        status: "success",
+        leftStatusMessage: "This is a success message",
+        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+        rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+        options: [
+            { value: "1", label: "Sample Item 1" },
+            {
+                value: "2",
+                label: "Sample Item 2",
+            },
+            { value: "3", label: "Sample Item 3" },
+            { value: "4", label: "Sample Item 4" },
+        ],
     },
 };

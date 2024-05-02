@@ -24,9 +24,6 @@ exports[`<SearchField /> renders clear icon when value is not empty and clear ic
         />
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -54,9 +51,6 @@ exports[`<SearchField /> renders correctly with default props 1`] = `
         />
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -89,9 +83,6 @@ exports[`<SearchField /> renders error status icon when status prop is "error" 1
         mockedErrorIcon
       </span>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -160,9 +151,6 @@ exports[`<SearchField /> renders success status icon when status prop is "succes
         mockedSuccessIcon
       </span>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -190,9 +178,6 @@ exports[`<SearchField /> updates value correctly on input change 1`] = `
         />
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;

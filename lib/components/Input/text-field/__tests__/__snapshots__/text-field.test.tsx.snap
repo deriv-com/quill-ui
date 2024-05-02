@@ -17,9 +17,6 @@ exports[`TextField It should render a default Textfiled 1`] = `
         />
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -53,9 +50,6 @@ exports[`TextField should render a TextField with error status 1`] = `
         />
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -77,9 +71,6 @@ exports[`TextField should render a TextField with success status 1`] = `
         />
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;

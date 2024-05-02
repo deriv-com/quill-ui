@@ -8,32 +8,33 @@ import { Text } from "@components/Typography";
 import { TMediumSizes } from "@types";
 import "./dropdown.scss";
 
-const people = [
-    "Durward Reynolds",
-    "Kenton Towne",
-    "Therese Wunsch",
-    "Benedict Kessler",
-    "Katelyn Rohan",
-];
 export type TSingleSelectItem = {
     value: number | string;
     label: string | React.ReactNode;
 };
-export interface DropdownOptionProps {
-    item: string;
+
+export type TDropdownOption = {
+    item: TSingleSelectItem;
+    inputSize: TMediumSizes;
+    textAlignment?: "left" | "center";
     closeDropdown: () => void;
-    inputSize?: TMediumSizes;
     handleKeyDown: (e: React.KeyboardEvent) => void;
+};
+
+export interface DropdownOptionProps extends TextFieldProps {
+    options?: TSingleSelectItem[];
+    defaultOption?: TSingleSelectItem;
 }
 
 const Options = ({
     item,
     inputSize,
+    textAlignment,
     closeDropdown,
     handleKeyDown,
-}: DropdownOptionProps) => {
+}: TDropdownOption) => {
     return (
-        <Combobox.Option value={item} as={Fragment}>
+        <Combobox.Option value={item.label} as={Fragment}>
             {({ selected, active }) => {
                 return (
                     <Combobox.Button
@@ -42,6 +43,7 @@ const Options = ({
                         className={clsx(
                             "dropdown__item",
                             `dropdown__item--size-${inputSize}`,
+                            `dropdown__item__align-${textAlignment}`,
                             selected && "dropdown__item--selected",
                             active && `dropdown__item--active`,
                         )}
@@ -50,7 +52,7 @@ const Options = ({
                             as="span"
                             color="var(--component-dropdownItem-label-color-selectedWhite)"
                         >
-                            {item}
+                            {item.label}
                         </Text>
                     </Combobox.Button>
                 );
@@ -59,8 +61,18 @@ const Options = ({
     );
 };
 
-export const InputDropdown = forwardRef<HTMLInputElement, TextFieldProps>(
-    ({ inputSize = "md", ...rest }, ref) => {
+export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
+    (
+        {
+            inputSize = "md",
+            leftStatusMessage,
+            textAlignment,
+            options,
+            disabled,
+            ...rest
+        },
+        ref,
+    ) => {
         const [isDropdownOpen, setDropdownOpen] = useState(false);
         const handleDropdownClick = () => {
             setDropdownOpen(!isDropdownOpen);
@@ -76,22 +88,24 @@ export const InputDropdown = forwardRef<HTMLInputElement, TextFieldProps>(
         };
 
         return (
-            <Combobox>
+            <Combobox disabled={disabled}>
                 <Combobox.Input
                     as={Input}
                     type="select"
                     readOnly
+                    data-testid="dropdown-input"
                     inputSize={inputSize}
+                    textAlignment={textAlignment}
+                    leftStatusMessage={leftStatusMessage}
                     onClick={handleDropdownClick}
                     onKeyDown={handleKeyDown}
                     {...rest}
-                    rightIcon={
+                    dropdownIcon={
                         <LabelPairedChevronDownSmBoldIcon
                             data-state={isDropdownOpen ? "open" : "close"}
                             className={clsx(
-                                "quill-button__transform",
-                                isDropdownOpen &&
-                                    "quill-button__transform-rotate",
+                                "dropdown__transform",
+                                isDropdownOpen && "dropdown__transform-rotate",
                             )}
                         />
                     }
@@ -99,14 +113,20 @@ export const InputDropdown = forwardRef<HTMLInputElement, TextFieldProps>(
                 />
 
                 {isDropdownOpen && (
-                    <div className="dropdown__container">
-                        {people.map((person) => (
+                    <div
+                        className={clsx(
+                            "dropdown__container",
+                            `dropdown__container--size-${inputSize}`,
+                        )}
+                    >
+                        {options?.map((item) => (
                             <Options
-                                item={person}
-                                key={person}
+                                item={item}
+                                key={item.value}
                                 closeDropdown={closeDropdown}
                                 handleKeyDown={handleKeyDown}
                                 inputSize={inputSize}
+                                textAlignment={textAlignment}
                             />
                         ))}
                     </div>
