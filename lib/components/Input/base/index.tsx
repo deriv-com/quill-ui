@@ -74,7 +74,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     {leftIcon && (
                         <span className="icon_wrapper">{leftIcon}</span>
                     )}
-                    <div className="quill-input-label__wrapper">
+                    <div
+                        className={clsx(
+                            "quill-input-label__wrapper",
+                            hasValue && "quill-input-label__wrapper--has-value",
+                        )}
+                    >
                         <input
                             {...rest}
                             required={required}
@@ -127,11 +132,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             {rightIcon}
                         </span>
                     )}
-                    {triggerActionIcon && (
-                        <>
-                            {triggerActionIcon}
-                        </>
-                    )}
+                    {triggerActionIcon && <>{triggerActionIcon}</>}
                 </div>
                 <div className="message__container">
                     {leftStatusMessage && (
