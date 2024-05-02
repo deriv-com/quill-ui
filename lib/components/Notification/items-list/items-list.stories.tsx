@@ -71,7 +71,6 @@ type Story = StoryObj<typeof meta>;
 
 const basicItems = [
     {
-        id: "0",
         message: "This is a very very long Information message",
         redirectTo: "https://www.example.com",
         status: STATUS.UNREAD,
@@ -80,7 +79,6 @@ const basicItems = [
         type: TYPE.INFO,
     },
     {
-        id: "1",
         message: "This is a very very very long Warning message",
         redirectTo: "https://www.example.com",
         status: STATUS.UNREAD,
@@ -89,7 +87,6 @@ const basicItems = [
         type: TYPE.WARNING,
     },
     {
-        id: "2",
         message: "This is a very very very long Error message",
         redirectTo: "https://www.example.com",
         status: STATUS.READ,
@@ -98,10 +95,7 @@ const basicItems = [
         type: TYPE.ERROR,
     },
 ];
-const initialNotifications = [
-    ...basicItems,
-    ...basicItems.map((item) => ({ ...item, id: `${item.id}_unique` })),
-];
+const initialNotifications = [...basicItems, ...basicItems];
 
 const Template: Story = {
     render: (args) => {
