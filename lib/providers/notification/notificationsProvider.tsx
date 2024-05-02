@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
 import React, { useState, PropsWithChildren } from "react";
 import { NotificationsContext } from "./notificationsContext";
 import { NotificationBannerProps } from "@components/Notification/banner";
@@ -53,15 +53,19 @@ export const NotificationsProvider = ({ children }: PropsWithChildren) => {
     };
 
     const updateBanners = (
-        list: Array<NotificationBannerProps & { id: string }>,
+        list: Array<NotificationBannerProps & { id?: string }>,
     ) => {
-        setBanners([...list]);
+        setBanners(
+            list.map((banner) => ({ ...banner, id: banner.id || uuid() })),
+        );
     };
 
     const updateNotificationItems = (
-        list: Array<NotificationItemProps & { id: string }>,
+        list: Array<NotificationItemProps & { id?: string }>,
     ) => {
-        setNotificationItems([...list]);
+        setNotificationItems(
+            list.map((item) => ({ ...item, id: item.id || uuid() })),
+        );
     };
 
     return (

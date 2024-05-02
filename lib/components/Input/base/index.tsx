@@ -81,6 +81,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             label
                                 ? "quill-input-label__wrapper"
                                 : "quill-input-no-label__wrapper",
+                            hasValue && "quill-input-label__wrapper--has-value",
                         )}
                     >
                         <input

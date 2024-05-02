@@ -169,7 +169,7 @@ exports[`<SearchField /> updates value correctly on input change 1`] = `
         mockedSearchIcon
       </span>
       <div
-        class="quill-input-no-label__wrapper"
+        class="quill-input-no-label__wrapper quill-input-label__wrapper--has-value"
       >
         <input
           class="input peer input__align--left input__size--md"

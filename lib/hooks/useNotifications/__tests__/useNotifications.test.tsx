@@ -125,4 +125,18 @@ describe("useNotifications", () => {
 
         expect(result.current.notificationItems).toHaveLength(0);
     });
+    it("should return banners with ids when receives initial banners without ids", () => {
+        const { result } = renderHook(
+            () => useNotifications({ banners: [{ title: "a" }] }),
+            { wrapper },
+        );
+        expect(result.current.banners[0].id).toBeDefined();
+    });
+    it("should return notification items with ids when receives initial notification items without ids", () => {
+        const { result } = renderHook(
+            () => useNotifications({ notificationItems: [{ title: "a" }] }),
+            { wrapper },
+        );
+        expect(result.current.notificationItems[0].id).toBeDefined();
+    });
 });

@@ -125,7 +125,8 @@
             "^@hooks(.*)$": "<rootDir>/lib/hooks$1",
             "^@providers(.*)$": "<rootDir>/lib/providers$1",
             "^@utils(.*)$": "<rootDir>/lib/utils$1"
-        }
+        },
+        "globalSetup": "<rootDir>/globalSetup.js"
     },
     "dependencies": {
         "@deriv/quill-icons": "^1.19.20",
