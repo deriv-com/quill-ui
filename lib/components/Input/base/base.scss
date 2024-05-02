@@ -54,17 +54,17 @@
             }
 
             & > .label {
-                top: 0px;
+                top: var(--core-spacing-50);
             }
         }
         &--has-value {
             &:has(label) {
-                top: 0px;
+                top: var(--core-spacing-50);
                 padding-top: var(--core-spacing-600);
             }
 
             & > .label {
-                top: 0px;
+                top: var(--core-spacing-50);
             }
         }
     }
