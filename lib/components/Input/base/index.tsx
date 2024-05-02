@@ -7,7 +7,7 @@ import { CaptionText } from "@components/Typography";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
-export type Types = "text" | "email" | "password";
+export type Types = "text" | "email" | "password" | "select";
 export type TextAlignments = "left" | "center";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -22,6 +22,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     rightStatusMessage?: string;
     textAlignment?: TextAlignments;
     label?: ReactNode;
+    dropdownIcon?: ReactNode;
     value?: string;
     triggerActionIcon?: ReactNode;
     fieldMarker?: boolean;
@@ -49,6 +50,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             label,
             rightIcon,
             onChange,
+            dropdownIcon,
             triggerActionIcon,
             fieldMarker = true,
             required = false,
@@ -127,11 +129,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             {rightIcon}
                         </span>
                     )}
-                    {triggerActionIcon && (
-                        <>
-                            {triggerActionIcon}
-                        </>
-                    )}
+                    {dropdownIcon && dropdownIcon}
+                    {triggerActionIcon && <>{triggerActionIcon}</>}
                 </div>
                 <div className="message__container">
                     {leftStatusMessage && (
