@@ -48,7 +48,7 @@ exports[`NotificationItem should display correct content 1`] = `
             aria-label="date-time"
             class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
           >
-            23 Apr 2024 09:24 GMT+4
+            23 Apr 2024 09:24 GMT+8
           </p>
         </div>
       </div>
@@ -155,7 +155,7 @@ exports[`NotificationItem should display correct notification with a custom icon
             aria-label="date-time"
             class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
           >
-            23 Apr 2024 09:24 GMT+4
+            23 Apr 2024 09:24 GMT+8
           </p>
         </div>
       </div>
@@ -270,7 +270,7 @@ exports[`NotificationItem should render correctly for mobile 1`] = `
             aria-label="date-time"
             class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
           >
-            23 Apr 2024 09:24 GMT+4
+            23 Apr 2024 09:24 GMT+8
           </p>
         </div>
       </div>
@@ -385,7 +385,7 @@ exports[`NotificationItem should render notification correctly based on the noti
             aria-label="date-time"
             class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
           >
-            23 Apr 2024 09:24 GMT+4
+            23 Apr 2024 09:24 GMT+8
           </p>
         </div>
       </div>
@@ -497,7 +497,7 @@ exports[`NotificationItem should render notification correctly when status is 'r
             aria-label="date-time"
             class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
           >
-            23 Apr 2024 09:24 GMT+4
+            23 Apr 2024 09:24 GMT+8
           </p>
         </div>
       </div>

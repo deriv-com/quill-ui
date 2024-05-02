@@ -1,0 +1,81 @@
+.quill-dropdown-item {
+    display: flex;
+    align-items: center;
+    height: var(--core-spacing-1600);
+    border-radius: var(--core-borderRadius-200);
+
+    &-label {
+        flex-grow: 1;
+    }
+
+    &__size {
+        &--sm {
+            height: var(--core-spacing-1600);
+            padding: 0 var(--core-spacing-600);
+            gap: var(--core-spacing-300);
+        }
+        &--md {
+            height: var(--core-spacing-2400);
+            padding: 0 var(--core-spacing-800);
+            gap: var(--core-spacing-400);
+        }
+    }
+
+    &__selected {
+        &--true {
+            &__disabled {
+                &--true {
+                    background-color: var(--core-color-opacity-black-300);
+
+                    & > p {
+                        color: var(--core-color-opacity-white-300);
+                    }
+
+                    & > svg {
+                        fill: var(--core-color-opacity-white-300);
+                    }
+                }
+
+                &--false {
+                    background-color: var(--core-color-solid-slate-1400);
+
+                    & > p {
+                        color: var(--core-color-solid-slate-50);
+                    }
+
+                    & > svg {
+                        fill: var(--core-color-solid-slate-50);
+                    }
+
+                    &:hover {
+                        background-color: var(--core-color-opacity-black-700);
+                    }
+
+                    &:active {
+                        background-color: var(--core-color-opacity-black-800);
+                    }
+                }
+            }
+        }
+
+        &--false {
+            &__disabled {
+                &--true {
+                    & > svg {
+                        fill: var(--semantic-color-typography-disabled);
+                    }
+                }
+
+                &--false {
+                    &:hover {
+                        background-color: var(--core-color-opacity-black-100);
+                    }
+
+                    &:active {
+                        background-color: var(--core-color-opacity-black-200);
+                    }
+                }
+            }
+        }
+    }
+}

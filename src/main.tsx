@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Heading, ThemeProvider } from "../lib/main";
 import ThemeSwitcher from "./theme-switcher";
+import DropdownItem from "@components/Atom/dropdown/dropdown-item";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
@@ -12,6 +13,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 <Heading.H1>Quill UI</Heading.H1>
                 <Heading.H1 as="div">Quill UI - h1 as div</Heading.H1>
                 <Heading.H1 as="span">Quill UI - h1 as span</Heading.H1>
+
+                <DropdownItem label="testing" />
             </div>
         </ThemeProvider>
     </React.StrictMode>,
