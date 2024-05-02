@@ -20,6 +20,15 @@ const statusIcon: Record<string, object | null> = {
 };
 
 const placeholder = "Select";
+const options = [
+    { value: "1", label: "Sample Item 1" },
+    {
+        value: "2",
+        label: "Sample Item 2",
+    },
+    { value: "3", label: "Sample Item 3" },
+    { value: "4", label: "Sample Item 4" },
+];
 
 const meta = {
     title: "Components/Inputs/Dropdown",
@@ -107,15 +116,7 @@ export const DefaultLabellessDropdown: Story = {
     args: {
         placeholder,
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
-        options: [
-            { value: "1", label: "Sample Item 1" },
-            {
-                value: "2",
-                label: "Sample Item 2",
-            },
-            { value: "3", label: "Sample Item 3" },
-            { value: "4", label: "Sample Item 4" },
-        ],
+        options: options,
     },
 };
 export const DisabledDropdown: Story = {
@@ -123,15 +124,7 @@ export const DisabledDropdown: Story = {
         placeholder,
         disabled: true,
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
-        options: [
-            { value: "1", label: "Sample Item 1" },
-            {
-                value: "2",
-                label: "Sample Item 2",
-            },
-            { value: "3", label: "Sample Item 3" },
-            { value: "4", label: "Sample Item 4" },
-        ],
+        options: options,
     },
 };
 export const LabellessSuccessDropdown: Story = {
@@ -141,15 +134,7 @@ export const LabellessSuccessDropdown: Story = {
         status: "success",
         rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
         variant: "fill",
-        options: [
-            { value: "1", label: "Sample Item 1" },
-            {
-                value: "2",
-                label: "Sample Item 2",
-            },
-            { value: "3", label: "Sample Item 3" },
-            { value: "4", label: "Sample Item 4" },
-        ],
+        options: options,
     },
 };
 export const LabellessErrorDropdown: Story = {
@@ -159,15 +144,7 @@ export const LabellessErrorDropdown: Story = {
         rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
         status: "error",
         variant: "fill",
-        options: [
-            { value: "1", label: "Sample Item 1" },
-            {
-                value: "2",
-                label: "Sample Item 2",
-            },
-            { value: "3", label: "Sample Item 3" },
-            { value: "4", label: "Sample Item 4" },
-        ],
+        options: options,
     },
 };
 export const LabellessDropdownWithErrorMessage: Story = {
@@ -178,15 +155,7 @@ export const LabellessDropdownWithErrorMessage: Story = {
         leftStatusMessage: "This is an error message",
         status: "error",
         variant: "fill",
-        options: [
-            { value: "1", label: "Sample Item 1" },
-            {
-                value: "2",
-                label: "Sample Item 2",
-            },
-            { value: "3", label: "Sample Item 3" },
-            { value: "4", label: "Sample Item 4" },
-        ],
+        options: options,
     },
 };
 export const DefaultDropdownFeildWithLabel: Story = {
@@ -196,15 +165,7 @@ export const DefaultDropdownFeildWithLabel: Story = {
         required: true,
         fieldMarker: true,
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
-        options: [
-            { value: "1", label: "Sample Item 1" },
-            {
-                value: "2",
-                label: "Sample Item 2",
-            },
-            { value: "3", label: "Sample Item 3" },
-            { value: "4", label: "Sample Item 4" },
-        ],
+        options: options,
     },
 };
 export const LabelledSuccessDropdown: Story = {
@@ -213,19 +174,11 @@ export const LabelledSuccessDropdown: Story = {
         label: "Label",
         required: true,
         fieldMarker: true,
-        variant: "outline",
+        variant: "fill",
         status: "success",
+        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
-        rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
-        options: [
-            { value: "1", label: "Sample Item 1" },
-            {
-                value: "2",
-                label: "Sample Item 2",
-            },
-            { value: "3", label: "Sample Item 3" },
-            { value: "4", label: "Sample Item 4" },
-        ],
+        options: options,
     },
 };
 export const LabelledErrorDropdown: Story = {
@@ -238,15 +191,7 @@ export const LabelledErrorDropdown: Story = {
         status: "error",
         rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
-        options: [
-            { value: "1", label: "Sample Item 1" },
-            {
-                value: "2",
-                label: "Sample Item 2",
-            },
-            { value: "3", label: "Sample Item 3" },
-            { value: "4", label: "Sample Item 4" },
-        ],
+        options: options,
     },
 };
 export const LabelledDropdownWithSuccessMessage: Story = {
@@ -260,6 +205,14 @@ export const LabelledDropdownWithSuccessMessage: Story = {
         leftStatusMessage: "This is a success message",
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+        options: options,
+    },
+};
+export const DropdownWithLongOptionsList: Story = {
+    args: {
+        placeholder,
+        label: "Label",
+        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         options: [
             { value: "1", label: "Sample Item 1" },
             {
@@ -268,6 +221,21 @@ export const LabelledDropdownWithSuccessMessage: Story = {
             },
             { value: "3", label: "Sample Item 3" },
             { value: "4", label: "Sample Item 4" },
+            { value: "5", label: "Sample Item 5" },
+            {
+                value: "6",
+                label: "Sample Item 6",
+            },
+            { value: "7", label: "Sample Item 7" },
+            { value: "8", label: "Sample Item 8" },
+            { value: "9", label: "Sample Item 9" },
+            { value: "10", label: "Sample Item 10" },
+            {
+                value: "11",
+                label: "Sample Item 11",
+            },
+            { value: "12", label: "Sample Item 12" },
+            { value: "13", label: "Sample Item 13" },
         ],
     },
 };

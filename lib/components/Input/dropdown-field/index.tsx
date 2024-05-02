@@ -93,6 +93,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
                     as={Input}
                     type="select"
                     readOnly
+                    className="dropdown__input"
                     data-testid="dropdown-input"
                     inputSize={inputSize}
                     textAlignment={textAlignment}
@@ -100,7 +101,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
                     onClick={handleDropdownClick}
                     onKeyDown={handleKeyDown}
                     {...rest}
-                    dropdownIcon={
+                    triggerActionIcon={
                         <LabelPairedChevronDownSmBoldIcon
                             data-state={isDropdownOpen ? "open" : "close"}
                             className={clsx(

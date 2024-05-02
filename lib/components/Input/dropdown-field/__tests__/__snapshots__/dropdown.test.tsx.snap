@@ -6,7 +6,7 @@ exports[`InputDropdown component should render a TextField with error status 1`]
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--error"
+      class="dropdown__input quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--error"
     >
       <div
         class="quill-input-no-label__wrapper"
@@ -58,7 +58,7 @@ exports[`InputDropdown component should render a TextField with success status 1
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--success"
+      class="dropdown__input quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--success"
     >
       <div
         class="quill-input-no-label__wrapper"

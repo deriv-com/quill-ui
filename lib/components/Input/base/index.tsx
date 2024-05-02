@@ -22,7 +22,6 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     rightStatusMessage?: string;
     textAlignment?: TextAlignments;
     label?: ReactNode;
-    dropdownIcon?: ReactNode;
     value?: string;
     triggerActionIcon?: ReactNode;
     fieldMarker?: boolean;
@@ -50,7 +49,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             label,
             rightIcon,
             onChange,
-            dropdownIcon,
             triggerActionIcon,
             fieldMarker = true,
             required = false,
@@ -136,7 +134,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             {rightIcon}
                         </span>
                     )}
-                    {dropdownIcon && dropdownIcon}
+
                     {triggerActionIcon && <>{triggerActionIcon}</>}
                 </div>
 

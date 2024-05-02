@@ -1,15 +1,18 @@
 .dropdown {
+    &__input {
+        max-width: 360px;
+    }
     &__container {
         background-color: var(--component-dropdownList-bg);
         border-radius: var(--core-borderRadius-400);
         box-shadow: var(--semantic-elevation-shadow-card-hover);
         display: flex;
-        flex-direction: column;
+         flex-direction: column;
         align-items: flex-start;
         max-height: 420px;
         margin-top: var(--core-size-200);
         max-width: 360px;
-        overflow-y: auto;
+                overflow-y: auto;
 
         &--size {
             &-sm {
@@ -34,13 +37,13 @@
 
         &--size {
             &-sm {
-                height: var(--core-size-1600);
+                min-height: var(--core-size-1600);
                 padding-inline: var(--core-size-600);
                 gap: var(--core-spacing-300);
             }
 
             &-md {
-                height: var(--core-size-2400);
+                min-height: var(--core-size-2400);
                 padding-inline: var(--core-size-800);
                 gap: var(--core-spacing-400);
             }
