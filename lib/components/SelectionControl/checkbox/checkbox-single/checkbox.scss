@@ -2,7 +2,7 @@
     display: flex;
     position: relative;
     align-items: center;
-    gap: var(--semantic-spacing-gap-md);
+    gap: var(--component-selectionControl-spacing-gap-sm);
 
     &__wrapper {
         height: var(--size-generic-sm);
@@ -39,9 +39,9 @@
                 content: "";
                 width: var(--size-generic-xs);
                 height: var(--size-generic-xs);
-                outline: var(--core-borderWidth-100) solid
+                outline: var(--borderWidth-sm) solid
                     var(--core-color-solid-blue-700);
-                border-radius: var(--core-borderRadius-200);
+                border-radius: var(--semantic-borderRadius-sm);
                 position: absolute;
                 top: 52%;
                 left: 50%;
@@ -55,7 +55,7 @@
         fill: var(--component-selectionControl-icon-selectedDefault);
 
         &--pale {
-            fill: var(--component-selectionControl-icon-default)
+            fill: var(--component-selectionControl-icon-default);
         }
     }
 
@@ -65,13 +65,14 @@
     }
 
     &__info-icon {
+        flex-shrink: 0;
         fill: var(--component-selectionControl-icon-default);
     }
 
     &--disabled {
         .quill-checkbox {
             &__box-icon {
-                fill: var(--component-selectionControl-icon-disabled)
+                fill: var(--component-selectionControl-icon-disabled);
             }
 
             &__label {

@@ -7,6 +7,7 @@ import {
     StandaloneCircleRegularIcon,
 } from "@deriv/quill-icons";
 import { Text } from "@components/Typography";
+import { KEY } from "@utils/common-utils";
 import "./radio-button.scss";
 import { TMediumSizes } from "@types";
 
@@ -53,7 +54,7 @@ const RadioButton = ({
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLSpanElement>) => {
-        if (!disabled && (e.key === "Enter" || e.key === " ")) {
+        if (!disabled && (e.key === KEY.ENTER || e.key === KEY.SPACE)) {
             handleChange();
         }
     };

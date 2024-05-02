@@ -1,9 +1,9 @@
 .quill-checkbox-group {
     .quill-checkbox {
-        margin-bottom: var(--semantic-spacing-general-sm);
+        margin-bottom: var(--component-selectionControl-spacing-gap-sm);
     }
 
     &__children-wrapper {
-        margin-left: var(--semantic-spacing-general-2xl);
+        margin-left: var(--core-spacing-1600);
     }
 }
