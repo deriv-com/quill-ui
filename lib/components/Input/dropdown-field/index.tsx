@@ -8,13 +8,13 @@ import { Text } from "@components/Typography";
 import { TMediumSizes } from "@types";
 import "./dropdown.scss";
 
-export type TSingleSelectItem = {
+export type TSingleSelectOption = {
     value: number | string;
     label: string | React.ReactNode;
 };
 
 export type TDropdownOption = {
-    item: TSingleSelectItem;
+    item: TSingleSelectOption;
     inputSize: TMediumSizes;
     textAlignment?: "left" | "center";
     closeDropdown: () => void;
@@ -22,8 +22,8 @@ export type TDropdownOption = {
 };
 
 export interface DropdownOptionProps extends TextFieldProps {
-    options?: TSingleSelectItem[];
-    defaultOption?: TSingleSelectItem;
+    options?: TSingleSelectOption[];
+    defaultOption?: TSingleSelectOption;
 }
 
 const Options = ({
