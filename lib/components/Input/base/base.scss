@@ -70,6 +70,10 @@
         }
     }
 
+    &-no-label__wrapper {
+        width: 100%;
+    }
+
     &__wrapper {
         width: 100%;
         display: inline-flex;
@@ -199,6 +203,7 @@
         }
 
         .input {
+            width: 100%;
             height: var(--core-size-1200);
             background-color: transparent;
             line-height: var(--core-lineHeight-300);

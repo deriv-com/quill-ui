@@ -14,7 +14,7 @@ exports[`<SearchField /> renders clear icon when value is not empty and clear ic
         mockedSearchIcon
       </span>
       <div
-        class="quill-input-label__wrapper"
+        class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
@@ -45,7 +45,7 @@ exports[`<SearchField /> renders correctly with default props 1`] = `
         mockedSearchIcon
       </span>
       <div
-        class="quill-input-label__wrapper"
+        class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
@@ -75,7 +75,7 @@ exports[`<SearchField /> renders error status icon when status prop is "error" 1
         mockedSearchIcon
       </span>
       <div
-        class="quill-input-label__wrapper"
+        class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
@@ -110,7 +110,7 @@ exports[`<SearchField /> renders leftStatusMessage when prop is given 1`] = `
         mockedSearchIcon
       </span>
       <div
-        class="quill-input-label__wrapper"
+        class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
@@ -146,7 +146,7 @@ exports[`<SearchField /> renders success status icon when status prop is "succes
         mockedSearchIcon
       </span>
       <div
-        class="quill-input-label__wrapper"
+        class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
@@ -181,7 +181,7 @@ exports[`<SearchField /> updates value correctly on input change 1`] = `
         mockedSearchIcon
       </span>
       <div
-        class="quill-input-label__wrapper"
+        class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
