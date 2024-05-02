@@ -45,7 +45,7 @@ exports[`Input should render a default Input 1`] = `
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
       <div
-        class="quill-input-label__wrapper"
+        class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
@@ -69,7 +69,7 @@ exports[`Input should render a disabled Input with a variant of fill 1`] = `
       class="quill-input__wrapper quill-input__wrapper__variant--fill status--neutral quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
       <div
-        class="quill-input-label__wrapper"
+        class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
@@ -130,7 +130,7 @@ exports[`Input should render an Input with a variant of outline 1`] = `
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
       <div
-        class="quill-input-label__wrapper"
+        class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
@@ -154,7 +154,7 @@ exports[`Input should render an Input with centered text 1`] = `
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
       <div
-        class="quill-input-label__wrapper"
+        class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--center input__size--md"
@@ -178,7 +178,7 @@ exports[`Input should render an Input with status messages 1`] = `
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
     >
       <div
-        class="quill-input-label__wrapper"
+        class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"

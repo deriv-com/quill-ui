@@ -1,12 +1,3 @@
-@keyframes dropIn {
-    from {
-        transform: translateY(-50%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
 .quill-input {
     &__container {
         display: flex;
@@ -21,7 +12,6 @@
             &__text {
                 padding-block: var(--semantic-spacing-general-none);
                 padding-inline: var(--semantic-spacing-general-md);
-                animation-name: dropIn;
                 transition-timing-function: var(--core-motion-ease-400);
                 animation-duration: var(--core-motion-duration-200);
 
@@ -62,12 +52,25 @@
             &:has(label) {
                 padding-top: var(--core-spacing-600);
             }
+
+            & > .label {
+                top: var(--core-spacing-50);
+            }
         }
         &--has-value {
             &:has(label) {
+                top: var(--core-spacing-50);
                 padding-top: var(--core-spacing-600);
             }
+
+            & > .label {
+                top: var(--core-spacing-50);
+            }
         }
+    }
+
+    &-no-label__wrapper {
+        width: 100%;
     }
 
     &__wrapper {
@@ -86,6 +89,14 @@
 
         &:has(input:disabled) {
             cursor: not-allowed;
+
+            .label {
+                color: var(--component-field-label-color-disabled);
+            }
+
+            svg {
+                fill: var(--component-field-label-color-disabled);
+            }
         }
         &:hover {
             transition-property: border;
@@ -124,13 +135,9 @@
                 }
             }
             &--outline {
-                background-color: var(
-                    --component-field-bg-outline-default
-                );
+                background-color: var(--component-field-bg-outline-default);
                 &:has(input:disabled) {
-                    background-color: var(
-                        --component-field-bg-outline-default
-                    );
+                    background-color: var(--component-field-bg-outline-default);
                     color: var(--core-color-opacity-black-100);
                     border-color: var(--core-color-opacity-black-100);
                 }
@@ -166,7 +173,9 @@
             }
             &--success {
                 color: var(--component-field-label-color-success);
-                border-color: var(--component-field-border-color-successDefault);
+                border-color: var(
+                    --component-field-border-color-successDefault
+                );
                 &:focus-within {
                     border-color: var(--core-color-solid-green-900);
                     color: var(--core-color-solid-green-900);
@@ -174,8 +183,12 @@
                 &:has(input:enabled) {
                     &:hover {
                         &:not(:focus-within) {
-                            color: var(--component-field-border-color-successHover);
-                            border-color: var(--component-field-border-color-successHover);
+                            color: var(
+                                --component-field-border-color-successHover
+                            );
+                            border-color: var(
+                                --component-field-border-color-successHover
+                            );
                         }
                     }
                 }
@@ -199,6 +212,7 @@
         }
 
         .input {
+            width: 100%;
             height: var(--core-size-1200);
             background-color: transparent;
             line-height: var(--core-lineHeight-300);
@@ -276,6 +290,7 @@
             }
         }
         .label {
+            z-index: -1;
             position: absolute;
             transition-property: all;
             transition-timing-function: var(--core-motion-ease-400);
@@ -306,7 +321,7 @@
                     }
 
                     &--false {
-                        color: var(--semantic-color-typography-disabled);
+                        color: var(--component-textIcon-normal-disabled);
                     }
                 }
             }
@@ -314,11 +329,9 @@
         .peer {
             &:placeholder-shown + .label {
                 font-size: var(--core-fontSize-100);
-                transform: translateY(0);
                 height: 100%;
             }
             &:focus + .label {
-                transform: translateY(-100%);
                 line-height: var(--core-lineHeight-100);
                 font-size: var(--core-fontSize-50);
                 height: var(--core-size-600);
@@ -331,10 +344,9 @@
                 }
             }
             &:not(placeholder-shown) + .label {
-                transform: translateY(-100%);
                 line-height: var(--core-lineHeight-100);
                 font-size: var(--core-fontSize-50);
-                height: var(--core-size-900);
+                height: var(--core-size-600);
 
                 &-field-marker {
                     font-size: var(

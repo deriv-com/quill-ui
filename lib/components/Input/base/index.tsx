@@ -23,6 +23,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     textAlignment?: TextAlignments;
     label?: ReactNode;
     value?: string;
+    triggerActionIcon?: ReactNode;
     fieldMarker?: boolean;
 }
 
@@ -48,6 +49,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             label,
             rightIcon,
             onChange,
+            triggerActionIcon,
             fieldMarker = true,
             required = false,
             ...rest
@@ -72,7 +74,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     {leftIcon && (
                         <span className="icon_wrapper">{leftIcon}</span>
                     )}
-                    <div className="quill-input-label__wrapper">
+                    <div
+                        className={clsx(
+                            label
+                                ? "quill-input-label__wrapper"
+                                : "quill-input-no-label__wrapper",
+                            hasValue && "quill-input-label__wrapper--has-value",
+                        )}
+                    >
                         <input
                             {...rest}
                             required={required}
@@ -125,6 +134,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             {rightIcon}
                         </span>
                     )}
+                    {triggerActionIcon && <>{triggerActionIcon}</>}
                 </div>
                 <div className="message__container">
                     {leftStatusMessage && (
