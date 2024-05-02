@@ -8,6 +8,7 @@ import {
     LabelPairedPlaceholderXlRegularIcon,
 } from "@deriv/quill-icons/LabelPaired";
 import { ComponentProps } from "react";
+import "./link-stories.scss";
 
 const meta = {
     title: "Components/Links/Link",
@@ -37,10 +38,18 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 const placeholder = {
     caption: <LabelPairedPlaceholderCaptionRegularIcon />,
-    sm: <LabelPairedPlaceholderSmRegularIcon />,
-    md: <LabelPairedPlaceholderMdRegularIcon />,
-    lg: <LabelPairedPlaceholderLgRegularIcon />,
-    xl: <LabelPairedPlaceholderXlRegularIcon />,
+    sm: (
+        <LabelPairedPlaceholderSmRegularIcon fill="var(--component-textIcon-normal-prominent)" />
+    ),
+    md: (
+        <LabelPairedPlaceholderMdRegularIcon fill="var(--component-textIcon-normal-prominent)" />
+    ),
+    lg: (
+        <LabelPairedPlaceholderLgRegularIcon fill="var(--component-textIcon-normal-prominent)" />
+    ),
+    xl: (
+        <LabelPairedPlaceholderXlRegularIcon fill="var(--component-textIcon-normal-prominent)" />
+    ),
 };
 export const DefaultBlackLink: Story = {
     args: {
@@ -53,6 +62,7 @@ export const DefaultBlackLink: Story = {
 };
 export const DefaultWhiteLink: Story = {
     args: {
+        className: "link-stories",
         children: "link",
         size: "md",
         color: "white",
@@ -72,9 +82,12 @@ export const LinkWithIconBlack = (args: ComponentProps<typeof Link>) => (
 export const LinkWithIconWhite = (args: ComponentProps<typeof Link>) => (
     <Link
         {...args}
+        className="link-stories"
         children="link"
         size="md"
         color="white"
-        icon={<LabelPairedPlaceholderMdRegularIcon fill="#ffffff" />}
+        icon={
+            <LabelPairedPlaceholderMdRegularIcon fill="var(--component-textIcon-inverse-prominent)" />
+        }
     />
 );
