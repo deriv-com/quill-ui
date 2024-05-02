@@ -85,6 +85,14 @@
 
         &:has(input:disabled) {
             cursor: not-allowed;
+
+            .label {
+                color: var(--component-field-label-color-disabled);
+            }
+
+            svg {
+                fill: var(--component-field-label-color-disabled);
+            }
         }
         &:hover {
             transition-property: border;
@@ -277,6 +285,7 @@
             }
         }
         .label {
+            z-index: -1;
             position: absolute;
             transition-property: all;
             transition-timing-function: var(--core-motion-ease-400);
@@ -307,7 +316,7 @@
                     }
 
                     &--false {
-                        color: var(--semantic-color-typography-disabled);
+                        color: var(--component-textIcon-normal-disabled);
                     }
                 }
             }
