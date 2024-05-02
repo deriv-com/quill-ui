@@ -76,7 +76,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     )}
                     <div
                         className={clsx(
-                            "quill-input-label__wrapper",
+                            label
+                                ? "quill-input-label__wrapper"
+                                : "quill-input-no-label__wrapper",
                             hasValue && "quill-input-label__wrapper--has-value",
                         )}
                     >
