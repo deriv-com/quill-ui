@@ -17,7 +17,9 @@ const status: Record<string, Status> = {
 };
 
 const leftStatusMessage = "Status message goes here";
-
+/**
+ * Consumer needs to wrap the SearchField in a container with width to make sure that SearchField doesnt get resized.
+ */
 const meta = {
     title: "Components/Inputs/Search Field",
     component: SearchField,
@@ -85,12 +87,14 @@ type Story = StoryObj<typeof meta>;
 const Template = (args: ComponentProps<typeof SearchField>) => {
     const [value, setValue] = useState("");
     return (
-        <SearchField
-            {...args}
-            placeholder={placeholder}
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-        />
+        <div style={{ width: "300px" }}>
+            <SearchField
+                {...args}
+                placeholder={placeholder}
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+            />
+        </div>
     );
 };
 
