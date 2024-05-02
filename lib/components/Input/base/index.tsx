@@ -74,7 +74,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     {leftIcon && (
                         <span className="icon_wrapper">{leftIcon}</span>
                     )}
-                    <div className="quill-input-label__wrapper">
+                    <div className={clsx(label ? "quill-input-label__wrapper" : 'quill-input-no-label__wrapper')}>
                         <input
                             {...rest}
                             required={required}
