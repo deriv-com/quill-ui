@@ -1,6 +1,7 @@
 import React, { ReactNode, RefObject, forwardRef, useEffect } from "react";
 import clsx from "clsx";
 import { Text } from "@components/Typography";
+import { KEY } from "@utils/common-utils";
 import { SegmentedControlProps } from "./base";
 
 interface SegmentProps {
@@ -35,7 +36,7 @@ export const Segment = forwardRef<HTMLButtonElement, SegmentProps>(
         const [focused, setFocused] = React.useState(false);
 
         const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-            if (e.key !== "Tab") setFocused(false);
+            if (e.key !== KEY.TAB) setFocused(false);
             onKeyDown(e);
         };
 
