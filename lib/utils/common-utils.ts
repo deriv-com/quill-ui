@@ -3,5 +3,5 @@ export const KEY = {
     ARROW_RIGHT: "ArrowRight",
     ENTER: "Enter",
     SPACE: " ",
-    TAB: "Tab",
+    TAB: "Tab"
 };
