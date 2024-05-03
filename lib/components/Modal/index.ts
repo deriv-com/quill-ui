@@ -1,1 +1,2 @@
-export * from './bottom';
+export * from "./bottom";
+export * from "./overlay";

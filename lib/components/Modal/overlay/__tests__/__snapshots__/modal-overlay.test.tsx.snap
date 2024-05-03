@@ -1,0 +1,300 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalOverlay should render SVG if it was passed 1`] = `
+<div>
+  <div
+    class="quill-modal-overlay__background"
+    data-testid="dt_overlay"
+  >
+    <div
+      class="quill-modal-overlay__container quill-modal-overlay__container--visible"
+    >
+      <div
+        class="quill-modal-overlay__content-wrapper"
+      >
+        <svg
+          class="quill-modal-overlay__close-icon"
+          height="24"
+          role="img"
+          viewBox="0 0 12 24"
+          width="12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="m10.781 8.281-3.75 3.75 3.719 3.719a.684.684 0 0 1 0 1.031.684.684 0 0 1-1.031 0l-3.75-3.718L2.25 16.78a.684.684 0 0 1-1.031 0c-.313-.281-.313-.75 0-1.062L4.937 12 1.22 8.281c-.313-.281-.313-.75 0-1.062.281-.282.75-.282 1.062 0L6 10.969 9.719 7.25c.281-.312.75-.312 1.062 0a.736.736 0 0 1 0 1.031"
+            />
+          </g>
+          <defs>
+            <clippath
+              id="0eb845b2ab722910e8bf8487d5b230e3__a"
+            >
+              <path
+                d="M0 0h12v24H0z"
+              />
+            </clippath>
+          </defs>
+        </svg>
+        <div
+          class="quill-modal-overlay__content-image"
+        >
+          <svg
+            height="32"
+            role="img"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.164 7.75a.61.61 0 0 0-.508.313L13.031 9h5.899l-.625-.937a.61.61 0 0 0-.508-.313zM20.375 9h3.75c.313 0 .625.313.625.625a.64.64 0 0 1-.625.625h-.742l-.977 13.945c-.117 1.328-1.172 2.305-2.5 2.305h-7.851a2.51 2.51 0 0 1-2.5-2.305L8.578 10.25h-.703a.617.617 0 0 1-.625-.625c0-.312.273-.625.625-.625h3.711l1.016-1.602a1.84 1.84 0 0 1 1.562-.898h3.633c.625 0 1.25.352 1.601.898zm1.758 1.25H9.828l.977 13.867c.039.625.586 1.133 1.25 1.133h7.851c.664 0 1.211-.508 1.25-1.133z"
+            />
+          </svg>
+        </div>
+        <h4
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal-overlay__content-title"
+        >
+          Title
+        </h4>
+      </div>
+      <div
+        class="quill-modal-overlay__button-wrapper"
+      >
+        <button
+          class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
+          data-state=""
+        >
+          <span
+            class="button-label"
+          >
+            <p
+              class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+            >
+              Primary Button Label
+            </p>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ModalOverlay should render container with image as a background if src was passed 1`] = `
+<div>
+  <div
+    class="quill-modal-overlay__background"
+    data-testid="dt_overlay"
+  >
+    <div
+      class="quill-modal-overlay__container quill-modal-overlay__container--visible"
+    >
+      <div
+        class="quill-modal-overlay__content-wrapper"
+      >
+        <svg
+          class="quill-modal-overlay__close-icon"
+          height="24"
+          role="img"
+          viewBox="0 0 12 24"
+          width="12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="m10.781 8.281-3.75 3.75 3.719 3.719a.684.684 0 0 1 0 1.031.684.684 0 0 1-1.031 0l-3.75-3.718L2.25 16.78a.684.684 0 0 1-1.031 0c-.313-.281-.313-.75 0-1.062L4.937 12 1.22 8.281c-.313-.281-.313-.75 0-1.062.281-.282.75-.282 1.062 0L6 10.969 9.719 7.25c.281-.312.75-.312 1.062 0a.736.736 0 0 1 0 1.031"
+            />
+          </g>
+          <defs>
+            <clippath
+              id="0eb845b2ab722910e8bf8487d5b230e3__a"
+            >
+              <path
+                d="M0 0h12v24H0z"
+              />
+            </clippath>
+          </defs>
+        </svg>
+        <div
+          class="quill-modal-overlay__content-image"
+          data-testid="dt_modal_image"
+        />
+        <h4
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal-overlay__content-title"
+        >
+          Title
+        </h4>
+      </div>
+      <div
+        class="quill-modal-overlay__button-wrapper"
+      >
+        <button
+          class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
+          data-state=""
+        >
+          <span
+            class="button-label"
+          >
+            <p
+              class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+            >
+              Primary Button Label
+            </p>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ModalOverlay should render secondary button if showSecondaryButton === true and the label was passed 1`] = `
+<div>
+  <div
+    class="quill-modal-overlay__background"
+    data-testid="dt_overlay"
+  >
+    <div
+      class="quill-modal-overlay__container quill-modal-overlay__container--visible"
+    >
+      <div
+        class="quill-modal-overlay__content-wrapper"
+      >
+        <svg
+          class="quill-modal-overlay__close-icon"
+          height="24"
+          role="img"
+          viewBox="0 0 12 24"
+          width="12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="m10.781 8.281-3.75 3.75 3.719 3.719a.684.684 0 0 1 0 1.031.684.684 0 0 1-1.031 0l-3.75-3.718L2.25 16.78a.684.684 0 0 1-1.031 0c-.313-.281-.313-.75 0-1.062L4.937 12 1.22 8.281c-.313-.281-.313-.75 0-1.062.281-.282.75-.282 1.062 0L6 10.969 9.719 7.25c.281-.312.75-.312 1.062 0a.736.736 0 0 1 0 1.031"
+            />
+          </g>
+          <defs>
+            <clippath
+              id="0eb845b2ab722910e8bf8487d5b230e3__a"
+            >
+              <path
+                d="M0 0h12v24H0z"
+              />
+            </clippath>
+          </defs>
+        </svg>
+        <h4
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal-overlay__content-title"
+        >
+          Title
+        </h4>
+        <div
+          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal-overlay__content-body"
+        >
+          This is some amazing placeholder.
+        </div>
+      </div>
+      <div
+        class="quill-modal-overlay__button-wrapper"
+      >
+        <button
+          class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
+          data-state=""
+        >
+          <span
+            class="button-label"
+          >
+            <p
+              class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+            >
+              Primary Button Label
+            </p>
+          </span>
+        </button>
+        <button
+          class="quill-button quill-button__size--lg quill__color--secondary-black quill-modal-overlay__button quill-button__full-width"
+          data-state=""
+        >
+          <span
+            class="button-label"
+          >
+            <p
+              class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+            >
+              Secondary Button Label
+            </p>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ModalOverlay should render with default values if optional ones were not passed 1`] = `
+<div>
+  <div
+    class="quill-modal-overlay__background"
+    data-testid="dt_overlay"
+  >
+    <div
+      class="quill-modal-overlay__container quill-modal-overlay__container--visible"
+    >
+      <div
+        class="quill-modal-overlay__content-wrapper"
+      >
+        <svg
+          class="quill-modal-overlay__close-icon"
+          height="24"
+          role="img"
+          viewBox="0 0 12 24"
+          width="12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="m10.781 8.281-3.75 3.75 3.719 3.719a.684.684 0 0 1 0 1.031.684.684 0 0 1-1.031 0l-3.75-3.718L2.25 16.78a.684.684 0 0 1-1.031 0c-.313-.281-.313-.75 0-1.062L4.937 12 1.22 8.281c-.313-.281-.313-.75 0-1.062.281-.282.75-.282 1.062 0L6 10.969 9.719 7.25c.281-.312.75-.312 1.062 0a.736.736 0 0 1 0 1.031"
+            />
+          </g>
+          <defs>
+            <clippath
+              id="0eb845b2ab722910e8bf8487d5b230e3__a"
+            >
+              <path
+                d="M0 0h12v24H0z"
+              />
+            </clippath>
+          </defs>
+        </svg>
+        <h4
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal-overlay__content-title"
+        >
+          Title
+        </h4>
+        <div
+          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal-overlay__content-body"
+        >
+          This is some amazing placeholder.
+        </div>
+      </div>
+      <div
+        class="quill-modal-overlay__button-wrapper"
+      >
+        <button
+          class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
+          data-state=""
+        >
+          <span
+            class="button-label"
+          >
+            <p
+              class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+            >
+              Primary Button Label
+            </p>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
