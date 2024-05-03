@@ -2,6 +2,11 @@ import { useState } from "react";
 // import clsx from "clsx";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import "./date-picker.scss";
+import {
+    LabelPairedChevronRightSmFillIcon,
+    LabelPairedChevronLeftSmFillIcon,
+} from "@deriv/quill-icons";
 // import { Text } from "@components/Typography";
 
 // export interface DatePicker {
@@ -18,13 +23,13 @@ export const DatePicker = ({
     activeStartDate,
     allowPartialRange = false,
     calendarType,
-    className,
+    className = "quill-checkbox__date-picker",
     defaultActiveStartDate,
 }: React.ComponentProps<typeof Calendar>) => {
     const [date, setDate] = useState<Value>(new Date());
     console.log("test activeStartDate", activeStartDate);
     return (
-        <div>
+        <div style={{ width: "368px" }}>
             <Calendar
                 activeStartDate={
                     typeof activeStartDate === "number"
@@ -37,14 +42,13 @@ export const DatePicker = ({
                 defaultActiveStartDate={defaultActiveStartDate}
                 onChange={setDate}
                 value={date}
+                next2Label={null}
+                prev2Label={null}
+                nextLabel={<LabelPairedChevronRightSmFillIcon />}
+                prevLabel={<LabelPairedChevronLeftSmFillIcon />}
+                showNeighboringMonth={false}
+                // view={"century"}
             />
-            <button
-                onClick={() => {
-                    setDate(new Date());
-                }}
-            >
-                Set current Date
-            </button>
         </div>
     );
 };

@@ -108,4 +108,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const DefaultDatePicker: Story = {};
+export const DefaultDatePicker: Story = {
+    args: {
+        className: "quill-checkbox__date-picker",
+    },
+};

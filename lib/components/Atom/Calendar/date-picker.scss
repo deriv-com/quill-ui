@@ -1,0 +1,98 @@
+@import "@quill/static.scss";
+
+.quill-checkbox__date-picker {
+    border: none;
+    padding: var(--component-actionSheet-spacing-padding-md);
+    width: unset;
+
+    .react-calendar {
+        &__navigation {
+            height: var(--core-size-1200);
+            margin-bottom: var(--component-dropdownList-spacing-gap-sm);
+            gap: var(--component-dropdownList-spacing-gap-sm);
+
+            &__arrow.react-calendar__navigation__prev-button,
+            &__arrow.react-calendar__navigation__next-button {
+                min-width: 32px;
+                text-align: center;
+            }
+
+            &__label {
+                text-align: center;
+                &__labelText.react-calendar__navigation__label__labelText--from {
+                    color: var(--component-dropdownItem-label-color-default);
+                    font-family: var(
+                        --semantic-typography-body-md-regular-default-fontFamily
+                    );
+                    font-size: var(
+                        --semantic-typography-body-md-regular-default-fontSize
+                    );
+                    font-weight: var(
+                        --semantic-typography-body-md-regular-default-fontWeight
+                    );
+                    line-height: var(
+                        --semantic-typography-body-md-regular-default-lineHeight
+                    );
+                    letter-spacing: var(
+                        --semantic-typography-body-md-regular-default-letterSpacing
+                    );
+                }
+            }
+        }
+
+        &__month-view__weekdays {
+            height: var(--core-size-2400);
+            color: var(--core-color-opacity-black-300);
+            text-transform: none;
+            font-size: inherit;
+            font-weight: inherit;
+
+            &__weekday {
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        &__month-view__days__day {
+            color: var(--component-dropdownItem-label-color-default);
+            border-radius: var(--component-dropdownItem-border-radius);
+            width: 48px;
+            height: 48px;
+        }
+
+        &__tile {
+            &--now {
+                background: unset;
+                color: var(--component-dropdownItem-label-color-default);
+                position: relative;
+
+                &:enabled:hover,
+                &:enabled:focus {
+                    background: #e6e6e6;
+                }
+
+                &:after {
+                    content: "";
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 70%;
+                    left: calc(50% - 2px);
+                    background-color: var(
+                        --component-dropdownItem-label-color-default
+                    );
+                }
+            }
+
+            &--active,
+            &--active:enabled:hover,
+            &--active:enabled:focus {
+                background-color: var(--component-dropdownItem-bg-selected);
+                color: white;
+            }
+        }
+    }
+}
