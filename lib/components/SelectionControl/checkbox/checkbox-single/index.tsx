@@ -89,7 +89,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 
         const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
             e.stopPropagation();
-            if (e.key === KEY.ENTER || e.key === KEY.SPACE) onChangeHandler(e);
+            if (e.key === KEY.ENTER) onChangeHandler(e);
         };
 
         const determinateIcon = isChecked ? (
