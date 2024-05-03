@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import NotificationItem from "../item";
 import type { NotificationItemProps } from "../item";
@@ -20,6 +20,7 @@ const NotificationItemsList = ({
     onClose,
     onMarkAsRead,
 }: NotificationItemsListProps) => {
+    const [activeItemId, setActiveItemId] = useState("");
     const timeoutIds = useRef<Array<ReturnType<typeof setTimeout>>>([]);
 
     useEffect(() => {
@@ -48,6 +49,10 @@ const NotificationItemsList = ({
                     onClick={() => onClick?.(id)}
                     onClose={() => handleClose?.(id)}
                     onMarkAsRead={() => onMarkAsRead?.(id)}
+                    onShowingButtons={
+                        isMobile ? () => setActiveItemId(id) : undefined
+                    }
+                    showButtons={!!isMobile && activeItemId === id}
                 />
             ))}
         </div>

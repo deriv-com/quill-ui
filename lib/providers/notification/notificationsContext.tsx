@@ -15,10 +15,10 @@ export type NotificationsContextValue = {
     removeBanner: (id: string) => void;
     removeNotificationItem: (id: string) => void;
     updateBanners: (
-        banners: Array<NotificationBannerProps & { id: string }>,
+        banners: Array<NotificationBannerProps & { id?: string }>,
     ) => void;
     updateNotificationItems: (
-        notificationItems: Array<NotificationItemProps & { id: string }>,
+        notificationItems: Array<NotificationItemProps & { id?: string }>,
     ) => void;
 };
 
