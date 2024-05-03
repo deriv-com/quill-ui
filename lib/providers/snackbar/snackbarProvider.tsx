@@ -12,10 +12,10 @@ export const SnackbarProvider = ({
 }: PropsWithChildren<SnackbarProviderProps>) => {
     const [queue, setQueue] = useState<SnackbarProps[]>([]);
 
-    const addSnackbar = (props: Omit<SnackbarProps, 'id' | 'isShown'>) => {
+    const addSnackbar = (props: Omit<SnackbarProps, 'id' | 'isVisible'>) => {
         const modifiedSnackbar = {
             ...props,
-            isShown: true,
+            isVisible: true,
             id: uuid(),
         };
         setQueue((prev) => [...prev, { ...modifiedSnackbar }]);
@@ -35,7 +35,7 @@ export const SnackbarProvider = ({
                     setTimeout(() => {
                         removeSnackbarFromQueue(id);
                     }, 500);
-                    return { ...item, isShown: false };
+                    return { ...item, isVisible: false };
                 }
                 return item;
             });

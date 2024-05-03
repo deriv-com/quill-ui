@@ -15,7 +15,7 @@ jest.mock("../../../hooks/useSnackbar", () => ({
 
 describe("Snackbar", () => {
     const testMessage = "test message";
-    let defaultProps: Omit<SnackbarProps, "isShown">;
+    let defaultProps: Omit<SnackbarProps, "isVisible">;
     beforeEach(() => {
         defaultProps = {
             icon: "",
