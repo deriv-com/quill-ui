@@ -1,4 +1,4 @@
-import type { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { useEffect, useState } from "react";
 import {
@@ -127,6 +127,8 @@ const meta = {
 
 export default meta;
 
+type Story = StoryObj<typeof meta>;
+
 const Template: React.FC<Template> = ({
     image,
     src,
@@ -160,47 +162,58 @@ const Template: React.FC<Template> = ({
     );
 };
 
-export const DefaultModalBottom = Template.bind(this, meta.args);
+export const DefaultModalBottom = Template.bind(this) as Story;
+DefaultModalBottom.args = { ...meta.args };
 
-export const ModalBottomWithoutHandleBar = Template.bind(this, {
+export const ModalBottomWithoutHandleBar = Template.bind(this) as Story;
+ModalBottomWithoutHandleBar.args = {
     ...meta.args,
     showHandleBar: false,
-});
+};
 
-export const ModalBottomWithoutSecondaryButton = Template.bind(this, {
+export const ModalBottomWithoutSecondaryButton = Template.bind(this) as Story;
+ModalBottomWithoutSecondaryButton.args = {
     ...meta.args,
     showSecondaryButton: false,
-});
+};
 
-export const ClosingModalBottomOnPrimaryButtonClick = Template.bind(this, {
+export const ClosingModalBottomOnPrimaryButtonClick = Template.bind(
+    this,
+) as Story;
+ClosingModalBottomOnPrimaryButtonClick.args = {
     ...meta.args,
     shouldCloseOnPrimaryButtonClick: true,
     textContent: mediumTextContent,
-});
+} as Story["args"];
 
-export const ModalBottomExpandedByDefault = Template.bind(this, {
+export const ModalBottomExpandedByDefault = Template.bind(this) as Story;
+ModalBottomExpandedByDefault.args = {
     ...meta.args,
     textContent: longTextContent,
-});
+} as Story["args"];
 
-export const ModalBottomWithImage = Template.bind(this, {
+export const ModalBottomWithImage = Template.bind(this) as Story;
+ModalBottomWithImage.args = {
     ...meta.args,
     image: ImageComponent,
-});
+} as Story["args"];
 
-export const ModalBottomWithImageAndLongContent = Template.bind(this, {
+export const ModalBottomWithImageAndLongContent = Template.bind(this) as Story;
+ModalBottomWithImageAndLongContent.args = {
     ...meta.args,
     image: ImageComponent,
     textContent: longTextContent,
-});
+} as Story["args"];
 
-export const ModalBottomWithImageSrc = Template.bind(this, {
+export const ModalBottomWithImageSrc = Template.bind(this) as Story;
+ModalBottomWithImageSrc.args = {
     ...meta.args,
     src: imageSRC,
     textContent: mediumTextContent,
-});
+} as Story["args"];
 
-export const ModalBottomWithIcon = Template.bind(this, {
+export const ModalBottomWithIcon = Template.bind(this) as Story;
+ModalBottomWithIcon.args = {
     ...meta.args,
     image: (
         <StandaloneTrashRegularIcon
@@ -211,9 +224,10 @@ export const ModalBottomWithIcon = Template.bind(this, {
     style: {
         backgroundColor: "var(--core-color-solid-red-100)",
     },
-});
+} as Story["args"];
 
-export const ModalBottomWithIconAndLongContent = Template.bind(this, {
+export const ModalBottomWithIconAndLongContent = Template.bind(this) as Story;
+ModalBottomWithIconAndLongContent.args = {
     ...meta.args,
     image: (
         <StandaloneCircleSterlingRegularIcon
@@ -225,4 +239,4 @@ export const ModalBottomWithIconAndLongContent = Template.bind(this, {
         backgroundColor: "var(--core-color-solid-green-100)",
     },
     textContent: longTextContent,
-});
+} as Story["args"];
