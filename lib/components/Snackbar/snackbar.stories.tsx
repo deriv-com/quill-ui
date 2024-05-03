@@ -25,7 +25,7 @@ const meta = {
     args: {
         icon: <StandalonePlaceholderRegularIcon fill="#ffffff" iconSize="sm" />,
         id: "",
-        isShown: true,
+        isVisible: true,
         message: "Message goes here",
         actionText: "Action",
         onActionClick: fn(),
@@ -41,7 +41,7 @@ const meta = {
             description:
                 "Required. However, unique id is already set in Provider.",
         },
-        isShown: {
+        isVisible: {
             description:
                 "Required. This boolean is set and controlled by Provider. ",
         },
