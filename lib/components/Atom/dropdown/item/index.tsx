@@ -1,23 +1,24 @@
-import React, { ReactNode } from "react";
+import React, { HTMLAttributes, ReactNode } from "react";
 import { TMediumSizes } from "@types";
-import "./dropdown-item.scss";
+import "./item.scss";
 import clsx from "clsx";
 import { Text } from "@components/Typography";
 
-export interface DropdownItemProps {
-    leftIcon?: ReactNode;
-    rightIcon?: ReactNode;
-    as?: "div" | "li";
+export interface DropdownItemProps extends HTMLAttributes<HTMLElement> {
+    as?: keyof HTMLElementTagNameMap;
+    bold?: boolean;
+    italic?: boolean;
     size?: TMediumSizes;
     centered?: boolean;
     label: ReactNode;
     disabled?: boolean;
     selected?: boolean;
-    className?: string;
+    leftIcon?: ReactNode;
+    rightIcon?: ReactNode;
 }
 
 export const DropdownItem = ({
-    as: Component = "div",
+    as: Component = "li",
     leftIcon,
     rightIcon,
     size = "md",
@@ -26,6 +27,7 @@ export const DropdownItem = ({
     disabled = false,
     selected = false,
     className,
+    ...rest
 }: DropdownItemProps) => {
     return (
         <Component
@@ -35,11 +37,11 @@ export const DropdownItem = ({
                 `quill-dropdown-item__selected--${selected}__disabled--${disabled}`,
                 className,
             )}
+            {...rest}
         >
             {leftIcon}
             <Text
                 size={size}
-                color="disabled"
                 className={clsx(
                     "quill-dropdown-item-label",
                     disabled && "quill-typography__color--disabled",
