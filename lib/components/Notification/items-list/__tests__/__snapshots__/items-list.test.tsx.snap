@@ -53,7 +53,7 @@ exports[`NotificationItemsList should render all notification items 1`] = `
               aria-label="date-time"
               class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
             >
-              23 Apr 2024 09:24 GMT+8
+              23 Apr 2024 09:24 UTC
             </p>
           </div>
         </div>
@@ -155,7 +155,7 @@ exports[`NotificationItemsList should render all notification items 1`] = `
               aria-label="date-time"
               class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
             >
-              23 Apr 2024 09:24 GMT+8
+              23 Apr 2024 09:24 UTC
             </p>
           </div>
         </div>
@@ -274,7 +274,7 @@ exports[`NotificationItemsList should render notifications correctly for mobile 
               aria-label="date-time"
               class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
             >
-              23 Apr 2024 09:24 GMT+8
+              23 Apr 2024 09:24 UTC
             </p>
           </div>
         </div>
@@ -376,7 +376,7 @@ exports[`NotificationItemsList should render notifications correctly for mobile 
               aria-label="date-time"
               class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
             >
-              23 Apr 2024 09:24 GMT+8
+              23 Apr 2024 09:24 UTC
             </p>
           </div>
         </div>
