@@ -3,6 +3,7 @@ import { TGenericSizes } from "@types";
 import "@quill/quill.scss";
 import "@styles/index.scss";
 import "./typography.scss";
+import clsx from "clsx";
 
 export interface TypographyProps extends ComponentProps<THeaders> {
     size?: Extract<TGenericSizes, "lg" | "md" | "sm" | "xl">;
@@ -19,6 +20,8 @@ type THeaders = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 export const Typography = ({
     children,
     as = "p",
+    centered = false,
+    className,
     ...rest
 }: TypographyProps) => {
     const tag = typeof as === "string" ? as : undefined;
@@ -26,6 +29,7 @@ export const Typography = ({
     return React.createElement(
         tag || "p",
         {
+            className: clsx(centered && "quill-typography-centered", className),
             ...rest,
         },
         children,
