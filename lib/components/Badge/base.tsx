@@ -10,6 +10,7 @@ export const BadgeBase = forwardRef<HTMLSpanElement, BadgeProps>(
         ref,
     ) => {
         const labelColor = "badge__base-color";
+        const truncatedLabel = label && label.length > 2 ? "99+" : label;
         return (
             <span
                 className={clsx(
@@ -21,18 +22,18 @@ export const BadgeBase = forwardRef<HTMLSpanElement, BadgeProps>(
                 ref={ref}
                 {...rest}
             >
-                {label &&
+                {truncatedLabel &&
                     (size === "sm" ? (
                         <CaptionText bold color={labelColor}>
-                            {label}
+                            {truncatedLabel}
                         </CaptionText>
                     ) : size === "md" ? (
                         <Text bold color={labelColor}>
-                            {label}
+                            {truncatedLabel}
                         </Text>
                     ) : size === "lg" ? (
                         <Text size="xl" bold color={labelColor}>
-                            {label}
+                            {truncatedLabel}
                         </Text>
                     ) : null)}
             </span>

@@ -8,6 +8,6 @@ export type BadgeProps = {
     size?: TRegularSizes;
     color?: TBadgeColorVariants;
     className?: string;
-    label?: React.ReactNode | string;
+    label?: string;
     badgeClassName?: string;
 };

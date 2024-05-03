@@ -90,13 +90,13 @@
                 }
 
                 &-md {
-                    padding-inline: var(--temp-static-spacing-5);
+                    padding-inline: var(--temp-static-spacing-7);
                     height: var(--core-size-1200);
                     min-width: var(--core-size-1200);
                 }
 
                 &-lg {
-                    padding-inline: var(--temp-static-spacing-5);
+                    padding-inline: var(--core-spacing-500);
                     height: var(--core-size-1800);
                     min-width: var(--core-size-1800);
                 }
