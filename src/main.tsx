@@ -17,10 +17,15 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
                 <DropdownItem
                     label="Label"
-                    leftIcon={<StandalonePlaceholderRegularIcon />}
-                    rightIcon={<StandalonePlaceholderRegularIcon />}
+                    leftIcon={
+                        <StandalonePlaceholderRegularIcon iconSize="sm" />
+                    }
+                    rightIcon={
+                        <StandalonePlaceholderRegularIcon iconSize="sm" />
+                    }
                     // disabled
                     selected
+                    checkbox
                 />
             </div>
         </ThemeProvider>

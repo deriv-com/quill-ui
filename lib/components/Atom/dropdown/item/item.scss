@@ -93,4 +93,78 @@
             }
         }
     }
+
+    &-checkbox {
+        &__selected {
+            &--true {
+                &__disabled {
+                    &--true {
+                        & > p {
+                            color: var(
+                                --component-dropdownItem-label-color-disabled
+                            );
+                        }
+
+                        & > svg {
+                            fill: var(
+                                --component-selectionControl-icon-disabled
+                            );
+                        }
+                    }
+
+                    &--false {
+                        &:hover {
+                            background-color: var(
+                                --component-dropdownItem-bg-hover
+                            );
+                        }
+
+                        &:active {
+                            background-color: var(
+                                --component-dropdownItem-bg-active
+                            );
+                        }
+                    }
+                }
+            }
+
+            &--false {
+                &__disabled {
+                    &--true {
+                        & > svg {
+                            fill: var(
+                                --component-selectionControl-icon-disabled
+                            );
+                        }
+                    }
+
+                    &--false {
+                        & > p {
+                            color: var(
+                                --component-dropdownItem-label-color-white
+                            );
+                        }
+
+                        & > svg {
+                            fill: var(
+                                --component-dropdownItem-label-color-white
+                            );
+                        }
+
+                        &:hover {
+                            background-color: var(
+                                --component-dropdownItem-bg-hover
+                            );
+                        }
+
+                        &:active {
+                            background-color: var(
+                                --component-dropdownItem-bg-active
+                            );
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

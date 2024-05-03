@@ -3,6 +3,10 @@ import { TMediumSizes } from "@types";
 import "./item.scss";
 import clsx from "clsx";
 import { Text } from "@components/Typography";
+import {
+    StandaloneSquareCheckFillIcon,
+    StandaloneSquareRegularIcon,
+} from "@deriv/quill-icons";
 
 export interface DropdownItemProps extends HTMLAttributes<HTMLElement> {
     as?: keyof HTMLElementTagNameMap;
@@ -15,6 +19,7 @@ export interface DropdownItemProps extends HTMLAttributes<HTMLElement> {
     selected?: boolean;
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
+    checkbox?: boolean;
 }
 
 export const DropdownItem = ({
@@ -27,6 +32,7 @@ export const DropdownItem = ({
     disabled = false,
     selected = false,
     className,
+    checkbox = false,
     ...rest
 }: DropdownItemProps) => {
     return (
@@ -34,12 +40,22 @@ export const DropdownItem = ({
             className={clsx(
                 "quill-dropdown-item",
                 `quill-dropdown-item__size--${size}`,
-                `quill-dropdown-item__selected--${selected}__disabled--${disabled}`,
+                checkbox
+                    ? `quill-dropdown-item-checkbox__selected--${selected}__disabled--${disabled}`
+                    : `quill-dropdown-item__selected--${selected}__disabled--${disabled}`,
                 className,
             )}
             {...rest}
         >
-            {leftIcon}
+            {checkbox ? (
+                selected ? (
+                    <StandaloneSquareCheckFillIcon iconSize="sm" />
+                ) : (
+                    <StandaloneSquareRegularIcon iconSize="sm" />
+                )
+            ) : (
+                leftIcon
+            )}
             <Text
                 size={size}
                 className={clsx(

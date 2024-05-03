@@ -47,4 +47,18 @@ describe("DropdownItem component", () => {
         const renderedRightIcon = getByText("Right Icon");
         expect(renderedRightIcon).toBeInTheDocument();
     });
+
+    it("renders checkbox when provided", () => {
+        const label = "Test Label";
+        const { container } = render(<DropdownItem label={label} checkbox />);
+        expect(container).toMatchSnapshot();
+    });
+
+    it("renders checkbox selected when provided", () => {
+        const label = "Test Label";
+        const { container } = render(
+            <DropdownItem label={label} checkbox selected />,
+        );
+        expect(container).toMatchSnapshot();
+    });
 });
