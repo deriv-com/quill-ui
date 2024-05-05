@@ -16,6 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                     <TextField
                         type="tel"
                         variant="fill"
+                        value="hello"
                         status="success"
                         label="hello"
                         maxLength={10}

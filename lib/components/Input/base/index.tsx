@@ -1,5 +1,11 @@
 import clsx from "clsx";
-import { InputHTMLAttributes, ReactNode, forwardRef, useState } from "react";
+import {
+    InputHTMLAttributes,
+    ReactNode,
+    forwardRef,
+    useEffect,
+    useState,
+} from "react";
 import "@quill/quill.scss";
 import "./base.scss";
 import React from "react";
@@ -71,6 +77,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         ref,
     ) => {
         const [inputValue, setInputValue] = useState(value || "");
+        useEffect(() => {
+            setInputValue(value || "");
+        }, [value]);
 
         return (
             <div className="quill-input__container">
