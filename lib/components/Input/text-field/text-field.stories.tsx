@@ -44,7 +44,7 @@ const meta = {
         textAlignment: "left",
         fieldMarker: false,
         required: false,
-        charactorCounter: false,
+        characterCounter: false,
         maxLength: 15,
     },
     argTypes: {
@@ -169,7 +169,7 @@ export const StatusMessageWithCharacterCounterTextField: Story = {
         variant: variants.outline,
         status: status.error,
         message,
-        charactorCounter: true,
+        characterCounter: true,
     },
 };
 
@@ -179,7 +179,7 @@ export const SuccessMessageTextFieldWithIcons: Story = {
         variant: variants.outline,
         status: status.success,
         message,
-        charactorCounter: true,
+        characterCounter: true,
         rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     },
     argTypes: {
@@ -196,7 +196,7 @@ export const ErrorMessageTextFieldWithIcons: Story = {
         variant: variants.outline,
         status: status.error,
         message,
-        charactorCounter: true,
+        characterCounter: true,
         rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
     },
     argTypes: {

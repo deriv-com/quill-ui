@@ -23,7 +23,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     disabled?: boolean;
     variant?: Variants;
     message?: string;
-    charactorCounter?: boolean;
+    characterCounter?: boolean;
     maxLength?: number;
     textAlignment?: TextAlignments;
     label?: ReactNode;
@@ -56,7 +56,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             placeholder = "",
             leftIcon,
             message,
-            charactorCounter,
+            characterCounter,
             maxLength,
             textAlignment = "left",
             label,
@@ -159,7 +159,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
                     {triggerActionIcon && <>{triggerActionIcon}</>}
                 </div>
-                {(message || charactorCounter) && (
+                {(message || characterCounter) && (
                     <div
                         className={clsx(
                             "message__container",
@@ -171,7 +171,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         <span className="message__container__text">
                             {message}
                         </span>
-                        {charactorCounter && maxLength && (
+                        {characterCounter && maxLength && (
                             <span className="message__container__text">
                                 {inputValue.length}/{maxLength}
                             </span>

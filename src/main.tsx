@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                         label="hello"
                         maxLength={10}
                         message="message here message here message here message here message here message here"
-                        charactorCounter
+                        characterCounter
                     />
                 </div>
             </div>
