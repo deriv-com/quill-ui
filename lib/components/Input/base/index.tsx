@@ -1,13 +1,17 @@
 import clsx from "clsx";
 import { InputHTMLAttributes, ReactNode, forwardRef, useState } from "react";
+import "@quill/quill.scss";
 import "./base.scss";
 import React from "react";
 import { TMediumSizes } from "@types";
-import { CaptionText } from "@components/Typography";
+import {
+    StandaloneCircleCheckBoldIcon,
+    StandaloneTriangleExclamationBoldIcon,
+} from "@deriv/quill-icons/Standalone";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
-export type Types = "text" | "email" | "password";
+export type Types = "text" | "email" | "password" | "tel";
 export type TextAlignments = "left" | "center";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -18,8 +22,9 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     status?: Status;
     disabled?: boolean;
     variant?: Variants;
-    leftStatusMessage?: string;
-    rightStatusMessage?: string;
+    message?: string;
+    charactorCounter?: boolean;
+    maxLength?: number;
     textAlignment?: TextAlignments;
     label?: ReactNode;
     value?: string;
@@ -33,6 +38,12 @@ const statusIconColors = {
     error: "status-icon--error",
 };
 
+const statusIcon = {
+    success: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+    error: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+    neutral: null,
+};
+
 const Input = forwardRef<HTMLInputElement, InputProps>(
     (
         {
@@ -42,21 +53,24 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             status = "neutral",
             disabled = false,
             variant = "outline",
+            placeholder = "",
             leftIcon,
-            leftStatusMessage,
-            rightStatusMessage,
+            message,
+            charactorCounter,
+            maxLength,
             textAlignment = "left",
             label,
+            value,
             rightIcon,
             onChange,
             triggerActionIcon,
-            fieldMarker = true,
+            fieldMarker = false,
             required = false,
             ...rest
         },
         ref,
     ) => {
-        const [hasValue, setHasValue] = useState(false);
+        const [inputValue, setInputValue] = useState(value || "");
 
         return (
             <div className="quill-input__container">
@@ -64,11 +78,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     className={clsx(
                         className,
                         `quill-input__wrapper`,
-                        hasValue && `quill-input__wrapper--has-value`,
+                        inputValue.length > 0 &&
+                            `quill-input__wrapper--has-value`,
                         `quill-input__wrapper__variant--${variant}`,
-                        variant === "fill" && `status--${status}`,
+                        `quill-input__wrapper__variant--${variant}--${status}`,
                         `quill-input__wrapper__size--${inputSize}`,
-                        `quill-input__wrapper__status--${status}`,
                     )}
                 >
                     {leftIcon && (
@@ -79,13 +93,17 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             label
                                 ? "quill-input-label__wrapper"
                                 : "quill-input-no-label__wrapper",
-                            hasValue && "quill-input-label__wrapper--has-value",
+                            inputValue.length > 0 &&
+                                "quill-input-label__wrapper--has-value",
                         )}
                     >
                         <input
                             {...rest}
                             required={required}
                             type={type}
+                            value={inputValue}
+                            maxLength={maxLength}
+                            placeholder={placeholder}
                             className={clsx(
                                 "input",
                                 "peer",
@@ -94,7 +112,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             )}
                             disabled={!!disabled}
                             onChange={(e) => {
-                                setHasValue(!!e.target.value);
+                                setInputValue(e.target.value);
                                 onChange?.(e);
                             }}
                             id={label?.toString()}
@@ -131,36 +149,35 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 statusIconColors[status],
                             )}
                         >
-                            {rightIcon}
+                            {status === "neutral" ? (
+                                <>{rightIcon}</>
+                            ) : (
+                                <>{statusIcon[status]}</>
+                            )}
                         </span>
                     )}
+
                     {triggerActionIcon && <>{triggerActionIcon}</>}
                 </div>
-                <div className="message__container">
-                    {leftStatusMessage && (
-                        <CaptionText
-                            className={clsx(
-                                "message__container__text",
-                                `message__container__text__status--${status}`,
-                                disabled &&
-                                    `message__container__text__disabled`,
-                            )}
-                        >
-                            {leftStatusMessage}
-                        </CaptionText>
-                    )}
-                    {rightStatusMessage && (
-                        <CaptionText
-                            className={clsx(
-                                "self-end",
-                                "message__container__text",
-                                `message__container__text__status--${status}`,
-                            )}
-                        >
-                            {rightStatusMessage}
-                        </CaptionText>
-                    )}
-                </div>
+                {(message || charactorCounter) && (
+                    <div
+                        className={clsx(
+                            "message__container",
+                            `message__container--${inputSize}`,
+                            `message__container__status--${status}`,
+                            disabled && `message__container__disabled`,
+                        )}
+                    >
+                        <span className="message__container__text">
+                            {message}
+                        </span>
+                        {charactorCounter && maxLength && (
+                            <span className="message__container__text">
+                                {inputValue.length}/{maxLength}
+                            </span>
+                        )}
+                    </div>
+                )}
             </div>
         );
     },

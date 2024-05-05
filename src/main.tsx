@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Heading, ThemeProvider } from "../lib/main";
+import { Heading, ThemeProvider, TextField } from "../lib/main";
 import ThemeSwitcher from "./theme-switcher";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -12,6 +12,17 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 <Heading.H1>Quill UI</Heading.H1>
                 <Heading.H1 as="div">Quill UI - h1 as div</Heading.H1>
                 <Heading.H1 as="span">Quill UI - h1 as span</Heading.H1>
+                <div style={{ width: "20rem" }}>
+                    <TextField
+                        type="tel"
+                        variant="fill"
+                        status="success"
+                        label="hello"
+                        maxLength={10}
+                        message="message here message here message here message here message here message here"
+                        charactorCounter
+                    />
+                </div>
             </div>
         </ThemeProvider>
     </React.StrictMode>,
