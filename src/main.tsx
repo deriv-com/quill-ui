@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Heading, ThemeProvider, TextField } from "../lib/main";
+import { Heading, ThemeProvider } from "../lib/main";
 import ThemeSwitcher from "./theme-switcher";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
