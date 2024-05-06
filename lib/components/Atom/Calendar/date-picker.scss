@@ -1,6 +1,6 @@
-@import "@quill/static.scss";
+@import "@quill/quill.scss";
 
-.quill-checkbox__date-picker {
+.quill-date-picker {
     border: none;
     padding: var(--component-actionSheet-spacing-padding-md);
     width: unset;
@@ -62,6 +62,11 @@
             height: 48px;
         }
 
+        &__decade-view__years,
+        &__year-view__months {
+            flex-direction: column;
+        }
+
         &__tile {
             &--now {
                 background: unset;
@@ -94,5 +99,14 @@
                 color: white;
             }
         }
+
+        &__viewContainer {
+            overflow-y: auto;
+            height: 288px;
+        }
+    }
+
+    abbr[title] {
+        text-decoration: none;
     }
 }

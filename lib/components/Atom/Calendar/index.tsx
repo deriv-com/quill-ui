@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import clsx from "clsx";
+import clsx from "clsx";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./date-picker.scss";
@@ -23,23 +23,59 @@ export const DatePicker = ({
     activeStartDate,
     allowPartialRange = false,
     calendarType,
-    className = "quill-checkbox__date-picker",
+    className,
     defaultActiveStartDate,
+    defaultValue,
+    defaultView,
+    formatDay,
+    formatLongDate,
+    formatMonth,
+    formatMonthYear,
+    formatShortWeekday,
+    formatWeekday,
+    formatYear,
+    goToRangeStartOnSelect = true,
+    inputRef,
+    locale,
+    maxDate,
+    maxDetail = "month",
+    minDate,
+    minDetail = "century",
+    navigationAriaLabel,
+    navigationAriaLive,
 }: React.ComponentProps<typeof Calendar>) => {
     const [date, setDate] = useState<Value>(new Date());
-    console.log("test activeStartDate", activeStartDate);
+    // console.log(
+    //     "test  typeof new Date(2017, 0, 1)",
+    //     typeof new Date(2017, 0, 1),
+    //     typeof new Date(),
+    // );
     return (
         <div style={{ width: "368px" }}>
             <Calendar
-                activeStartDate={
-                    typeof activeStartDate === "number"
-                        ? new Date(activeStartDate)
-                        : activeStartDate
-                }
+                activeStartDate={activeStartDate}
                 allowPartialRange={allowPartialRange}
                 calendarType={calendarType}
-                className={className}
+                className={clsx("quill-date-picker", className)}
                 defaultActiveStartDate={defaultActiveStartDate}
+                defaultValue={defaultValue}
+                defaultView={defaultView}
+                formatDay={formatDay}
+                formatLongDate={formatLongDate}
+                formatMonth={formatMonth}
+                formatMonthYear={formatMonthYear}
+                formatShortWeekday={formatShortWeekday}
+                formatWeekday={formatWeekday}
+                formatYear={formatYear}
+                goToRangeStartOnSelect={goToRangeStartOnSelect}
+                inputRef={inputRef}
+                locale={locale}
+                maxDate={maxDate}
+                maxDetail={maxDetail}
+                minDate={minDate}
+                minDetail={minDetail}
+                navigationAriaLabel={navigationAriaLabel}
+                navigationAriaLive={navigationAriaLive}
                 onChange={setDate}
                 value={date}
                 next2Label={null}
@@ -47,7 +83,6 @@ export const DatePicker = ({
                 nextLabel={<LabelPairedChevronRightSmFillIcon />}
                 prevLabel={<LabelPairedChevronLeftSmFillIcon />}
                 showNeighboringMonth={false}
-                // view={"century"}
             />
         </div>
     );
