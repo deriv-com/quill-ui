@@ -47,7 +47,6 @@ const statusIconColors = {
 const statusIcon = {
     success: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     error: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-    neutral: null,
 };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -158,11 +157,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 statusIconColors[status],
                             )}
                         >
-                            {status === "neutral" ? (
-                                <>{rightIcon}</>
-                            ) : (
-                                <>{statusIcon[status]}</>
-                            )}
+                            {status === "neutral"
+                                ? rightIcon
+                                : statusIcon[status]}
                         </span>
                     )}
 
