@@ -20,7 +20,7 @@ describe("Input", () => {
 
     it("should render an Input with status messages", () => {
         const { container } = render(
-            <Input message="Message goes here" characterCounter />,
+            <Input message="Message goes here" showCharacterCounter />,
         );
         expect(container).toMatchSnapshot();
     });
