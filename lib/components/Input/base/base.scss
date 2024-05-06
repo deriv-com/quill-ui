@@ -238,8 +238,8 @@
         .input {
             width: 100%;
             background-color: transparent;
+            border: none;
             cursor: pointer;
-            flex-grow: 1;
             &:disabled {
                 cursor: not-allowed;
             }
