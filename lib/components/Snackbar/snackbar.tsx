@@ -8,7 +8,7 @@ import { useSnackbar } from "@hooks/useSnackbar";
 export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     icon?: ReactNode;
     id: string;
-    isShown: boolean;
+    isVisible: boolean;
     message: string;
     actionText?: string;
     hasCloseButton?: boolean;
@@ -18,7 +18,7 @@ export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
 export const Snackbar = ({
     icon: Icon,
     id,
-    isShown,
+    isVisible,
     message,
     actionText,
     onActionClick,
@@ -56,7 +56,7 @@ export const Snackbar = ({
             {...rest}
             className={clsx(
                 "snackbar",
-                isShown ? "slide-up" : "slide-up slide-down",
+                isVisible ? "slide-up" : "slide-up slide-down",
             )}
         >
             {Icon && <div className="snackbar__icon--container">{Icon}</div>}

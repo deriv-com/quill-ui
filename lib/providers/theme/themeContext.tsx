@@ -4,7 +4,7 @@ export type Theme = "dark" | "light";
 
 export type ThemeContextValue = {
     theme: Theme;
-    toggleTheme: () => void;
+    toggleTheme: (e?: Theme) => void;
 };
 
 export const ThemeContext = React.createContext<ThemeContextValue>({
