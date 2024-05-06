@@ -9,8 +9,20 @@ const ThemeSwitcher = () => {
             <Button
                 size="md"
                 variant="primary"
-                onClick={toggleTheme}
+                onClick={() => toggleTheme()}
                 label="Toggle Theme"
+            ></Button>
+            <Button
+                size="md"
+                variant="primary"
+                onClick={() => toggleTheme("light")}
+                label="Switch to Light"
+            ></Button>
+            <Button
+                size="md"
+                variant="primary"
+                onClick={() => toggleTheme("dark")}
+                label="Switch to Dark"
             ></Button>
         </div>
     );
