@@ -6,7 +6,6 @@ import {
     useEffect,
     useState,
 } from "react";
-import "@quill/quill.scss";
 import "./base.scss";
 import React from "react";
 import { TMediumSizes } from "@types";
