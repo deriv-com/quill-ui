@@ -364,6 +364,17 @@ const meta = {
             options: ["true", "false"],
             control: { type: "boolean" },
         },
+        showNeighboringMonth: {
+            table: {
+                type: {
+                    summary: "boolean | undefined",
+                },
+            },
+            description:
+                "Whether days from previous or next month shall be rendered if the month doesn't start on the first day of the week or doesn't end on the last day of the week, respectively. Default value: false.",
+            options: ["true", "false"],
+            control: { type: "boolean" },
+        },
     },
 } satisfies Meta<typeof DatePicker>;
 

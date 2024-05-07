@@ -67,6 +67,7 @@ export const DatePicker = ({
     returnValue = "start",
     selectRange = false,
     showNavigation = true,
+    showNeighboringMonth = false,
 }: DatePicker) => {
     const [date, setDate] = useState<Value>(new Date());
 
@@ -143,8 +144,9 @@ export const DatePicker = ({
                     returnValue={returnValue}
                     selectRange={selectRange}
                     showNavigation={showNavigation}
-                    // TODO: add all props
-                    showNeighboringMonth={false}
+                    showNeighboringMonth={showNeighboringMonth}
+                    // TODO
+                    tileClassName="test"
                 />
             </div>
         </>

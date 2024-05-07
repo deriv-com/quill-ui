@@ -30,28 +30,37 @@
             }
         }
 
-        // TODO: refactor
-        &__month-view__weekdays {
-            height: var(--core-size-2400);
-            color: var(--core-color-opacity-black-300);
-            text-transform: none;
-            font-size: inherit;
-            font-weight: inherit;
+        &__month-view {
+            &__weekdays {
+                height: var(--core-size-2400);
+                color: var(--component-textIcon-normal-disabled);
+                text-transform: none;
+                font-family: var(--core-fontFamily-ibmPlex-sans);
+                font-size: var(--core-fontSize-100);
+                font-weight: var(--core-fontWeight-regular);
+                line-height: var(--core-lineHeight-300);
+                letter-spacing: normal;
 
-            &__weekday {
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                &__weekday {
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
             }
-        }
+            // TODO: refactor
+            &__days {
+                &__day {
+                    color: var(--component-dropdownItem-label-color-default);
+                    border-radius: var(--component-dropdownItem-border-radius);
+                    width: 48px;
+                    height: 48px;
 
-        // TODO: refactor
-        &__month-view__days__day {
-            color: var(--component-dropdownItem-label-color-default);
-            border-radius: var(--component-dropdownItem-border-radius);
-            width: 48px;
-            height: 48px;
+                    &--neighboringMonth {
+                        color: var(--component-textIcon-normal-disabled);
+                    }
+                }
+            }
         }
 
         &__decade-view__years,
