@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Heading, ThemeProvider } from "../lib/main";
+import { Button, Heading, ThemeProvider } from "../lib/main";
 import ThemeSwitcher from "./theme-switcher";
-import { StandalonePlaceholderFillIcon } from "@deriv/quill-icons";
-import DropdownItem from "@components/Input/dropdown/dropdown-item";
-import DropdownChipSingleSelect from "@components/Chip/dropdown-chip-single-select";
+import DropdownList from "@components/Atom/dropdown/list";
+import { Listbox } from "@headlessui/react";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
@@ -15,26 +14,28 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 <Heading.H1>Quill UI</Heading.H1>
                 <Heading.H1 as="div">Quill UI - h1 as div</Heading.H1>
                 <Heading.H1 as="span">Quill UI - h1 as span</Heading.H1>
-                <DropdownChipSingleSelect
-                    onSelectionChange={() => console.log("123")}
-                    options={[
-                        { value: "1", label: "Sample Item 1" },
-                        {
-                            value: "2",
-                            label: "Sample Item 2 - which is disabled",
-                            disabled: true,
-                        },
-                        { value: "3", label: "Sample Item 3" },
-                        { value: "4", label: "Sample Item 4" },
-                    ]}
-                    defaultOption={{ value: "", label: "dropdowns" }}
-                />
-                <DropdownItem
-                    leftIcon={<StandalonePlaceholderFillIcon />}
-                    rightIcon={<StandalonePlaceholderFillIcon />}
-                    label="testing"
-                    size="md"
-                />
+                <Listbox>
+                    <Listbox.Button as="div">
+                        <Button>Testing</Button>
+                    </Listbox.Button>
+                    <DropdownList
+                        type="listbox"
+                        defaultOption={{
+                            value: "",
+                            label: "Dropdown Chip Single Select",
+                        }}
+                        options={[
+                            { value: "1", label: "Sample Item 1" },
+                            { value: "2", label: "Sample Item 2" },
+                            {
+                                value: "3",
+                                label: "Sample Item 3 - which is disabled",
+                                disabled: true,
+                            },
+                            { value: "4", label: "Sample Item 4" },
+                        ]}
+                    />
+                </Listbox>
             </div>
         </ThemeProvider>
     </React.StrictMode>,

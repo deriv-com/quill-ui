@@ -1,12 +1,12 @@
 import React from "react";
 import { SelectableChipProps } from "../types";
-import Base from "../base";
+import Chip from "../base";
 import clsx from "clsx";
 import "./selectable-chip.scss";
 
 export const SelectableChip = ({ className, ...rest }: SelectableChipProps) => {
     return (
-        <Base className={clsx("quill-selectable-chip", className)} {...rest} />
+        <Chip className={clsx("quill-selectable-chip", className)} {...rest} />
     );
 };
 

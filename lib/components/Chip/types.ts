@@ -1,3 +1,4 @@
+import { DropdownItemProps } from "@components/Atom";
 import { QuillIconComponent, TRegularSizes } from "@types";
 import { ReactNode } from "react";
 
@@ -5,7 +6,7 @@ export interface BaseChipProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     dismissible?: boolean;
     icon?: QuillIconComponent & ReactNode;
-    label?: string;
+    label?: ReactNode;
     labelTag?: string;
     disabled?: boolean;
     isDropdownOpen?: boolean;
@@ -24,14 +25,18 @@ export interface SelectableChipProps
     className?: string;
 }
 
-export type TSingleSelectItem = {
+export interface TSingleSelectItem extends DropdownItemProps {
     value: number | string;
-    label: string;
-    disabled?: boolean;
-};
+}
 
 export interface SingleSelectChipProps extends BaseChipProps {
     options: TSingleSelectItem[];
     defaultOption: TSingleSelectItem;
     onSelectionChange: (item: TSingleSelectItem) => void;
+}
+
+export interface MultiSelectChipProps extends BaseChipProps {
+    options: TSingleSelectItem[];
+    label: string;
+    onSelectionChange: (item: TSingleSelectItem[]) => void;
 }

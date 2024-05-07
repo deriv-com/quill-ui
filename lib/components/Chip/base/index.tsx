@@ -33,7 +33,7 @@ export const LabelTextSizes: Record<TRegularSizes, JSX.Element> = {
     lg: <Text />,
 };
 
-export const Base = forwardRef<HTMLButtonElement, BaseChipProps>(
+export const Chip = forwardRef<HTMLButtonElement, BaseChipProps>(
     (
         {
             icon: Icon,
@@ -86,12 +86,12 @@ export const Base = forwardRef<HTMLButtonElement, BaseChipProps>(
                 {...rest}
             >
                 {Icon && <Icon {...ChipIconSizes[size]} />}
-                {children}
                 {label &&
                     React.cloneElement(LabelTextSizes[size], {
                         ...rest,
                         children: label,
                     })}
+                {children}
                 {labelTag && <CaptionText bold>{labelTag}</CaptionText>}
                 {dismissible && (
                     <StandaloneCircleXmarkRegularIcon
@@ -114,4 +114,4 @@ export const Base = forwardRef<HTMLButtonElement, BaseChipProps>(
     },
 );
 
-export default Base;
+export default Chip;

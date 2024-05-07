@@ -3,35 +3,34 @@ import React from "react";
 import { Fragment, forwardRef } from "react";
 import { useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
-import { Base } from "../base";
+import { Chip } from "../base";
 import type { TSingleSelectItem, SingleSelectChipProps } from "../types";
 import clsx from "clsx";
 import "./dropdown-chip-single-select.scss";
-import { TRegularSizes } from "@types";
-import { Text } from "@components/Typography";
+import { TMediumSizes, TRegularSizes } from "@types";
+import { DropdownItem } from "@components/Atom";
 
-const Options = ({
-    item,
-    size,
-}: {
+export interface OptionsProps {
     item: TSingleSelectItem;
     size: TRegularSizes;
-}) => {
+}
+
+const Option = ({ item, size }: OptionsProps) => {
+    const itemSize: Record<TRegularSizes, TMediumSizes> = {
+        sm: "sm",
+        md: "sm",
+        lg: "md",
+    };
+
     return (
         <Listbox.Option value={item} as={Fragment} disabled={item.disabled}>
             {({ disabled, selected }) => (
-                <li
-                    className={clsx(
-                        "dropdown-item",
-                        `dropdown-item__size--${size}`,
-                        `dropdown-item__selected--${selected}`,
-                        `dropdown-item__disabled--${disabled}`,
-                    )}
-                >
-                    <Text size="sm" color="white">
-                        {item.label}
-                    </Text>
-                </li>
+                <DropdownItem
+                    label={item.label}
+                    disabled={disabled}
+                    selected={selected}
+                    size={itemSize[size]}
+                />
             )}
         </Listbox.Option>
     );
@@ -64,57 +63,54 @@ export const DropdownChipSingleSelect = forwardRef<
         };
 
         return (
-            <div className="flex flex-col">
-                <Listbox value={selectedItem} onChange={handleItemSelect}>
-                    {({ open }) => (
-                        <>
-                            <Listbox.Button as="div">
-                                <Base
-                                    {...rest}
-                                    icon={icon}
-                                    size={size}
-                                    labelTag={labelTag}
-                                    ref={ref}
-                                    dropdown
-                                    selected={
-                                        selectedItem.value !==
-                                        defaultOption.value
-                                    }
-                                    className="dropdown-button"
-                                    isDropdownOpen={open}
-                                    disabled={disabled}
-                                    label={selectedItem?.label}
-                                />
-                            </Listbox.Button>
-                            <Transition
-                                enter="enter"
-                                enterFrom="enter-from"
-                                enterTo="enter-to"
-                                leave="leave"
-                                leaveFrom="enter-from"
-                                leaveTo="leave-to"
+            <Listbox value={selectedItem} onChange={handleItemSelect}>
+                {({ open }) => (
+                    <>
+                        <Listbox.Button as="div">
+                            <Chip
+                                {...rest}
+                                icon={icon}
+                                size={size}
+                                labelTag={labelTag}
+                                ref={ref}
+                                dropdown
+                                selected={
+                                    selectedItem.value !== defaultOption.value
+                                }
+                                className="dropdown-button"
+                                isDropdownOpen={open}
+                                disabled={disabled}
+                                label={selectedItem?.label}
+                            />
+                        </Listbox.Button>
+                        <Transition
+                            enter="enter"
+                            enterFrom="enter-from"
+                            enterTo="enter-to"
+                            leave="leave"
+                            leaveFrom="enter-from"
+                            leaveTo="leave-to"
+                        >
+                            <Listbox.Options
+                                className={clsx(
+                                    "dropdown",
+                                    `dropdown__size--${size}`,
+                                    className,
+                                )}
                             >
-                                <Listbox.Options
-                                    className={clsx(
-                                        "dropdown",
-                                        `dropdown__size--${size}`,
-                                        className,
-                                    )}
-                                >
-                                    <Options item={defaultOption} size={size} />
-                                    {options.map((item) => (
-                                        <Options
-                                            item={item}
-                                            key={`chip-selectable-item-${item.value}`}
-                                            size={size}
-                                        />
-                                    ))}
-                                </Listbox.Options>
-                            </Transition>
-                        </>
-                    )}
-                </Listbox>
-            </div>
+                                <Option item={defaultOption} size={size} />
+                                {options.map((item) => (
+                                    <Option
+                                        item={item}
+                                        key={`chip-selectable-item-${item.value}`}
+                                        size={size}
+                                    />
+                                ))}
+                            </Listbox.Options>
+                        </Transition>
+                    </>
+                )}
+            </Listbox>
         );
     },
 );
