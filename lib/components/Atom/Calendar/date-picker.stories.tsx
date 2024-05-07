@@ -9,7 +9,7 @@ const meta = {
         docs: {
             description: {
                 component:
-                    "*NOTE: this component was created with the help of React Component library. [Repository Link](https://github.com/wojtekmaj/react-calendar)",
+                    "*NOTE: this component was created with the help of React Calendar library. [Repository Link](https://github.com/wojtekmaj/react-calendar)",
             },
         },
     },
@@ -226,11 +226,132 @@ const meta = {
         },
         navigationLabel: {
             table: {
-                type: { summary: "NavigationLabelFunc | undefined" },
+                type: {
+                    summary:
+                        "(({date: Date, label: string, locale: string | undefined, view: 'century' | 'decade' | 'year' | 'month'}) => React.ReactNode) | undefined",
+                },
             },
             description:
                 "Content of a label rendered on calendar navigation bar.",
             control: { type: null },
+        },
+        next2AriaLabel: {
+            table: {
+                type: { summary: "string | undefined" },
+            },
+            description:
+                "aria-label attribute of the 'next on higher level' button on the navigation pane. Example: 'Jump forwards'",
+            control: { type: "text" },
+        },
+        next2Label: {
+            table: {
+                type: {
+                    summary:
+                        "string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null",
+                },
+            },
+            description:
+                "Content of the 'next on higher level' button on the navigation pane. Setting the value explicitly to null will hide the icon. Default value: null. Example: String: '»'",
+            control: { type: "text" },
+        },
+        nextAriaLabel: {
+            table: {
+                type: { summary: "string | undefined" },
+            },
+            description:
+                "aria-label attribute of the 'next' button on the navigation pane. Example: 'Next'",
+            control: { type: "text" },
+        },
+        nextLabel: {
+            table: {
+                type: {
+                    summary:
+                        "string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null",
+                },
+            },
+            description:
+                "Content of the 'next' button on the navigation pane. Setting the value explicitly to null will hide the icon. Default value: LabelPairedChevronRightSmFillIcon. Example: String: '>'",
+            control: { type: "text" },
+        },
+        optionsConfig: {
+            table: {
+                type: {
+                    summary: "Record<string | string> | undefined",
+                },
+            },
+            description:
+                "Config for changing format of the selected date, will be passed inside of Date.toLocaleDateString(). Default value: {day: '2-digit', month: '2-digit', year: 'numeric'}",
+            control: { type: null },
+        },
+        onActiveStartDateChange: {
+            table: {
+                type: {
+                    summary:
+                        "(({ action: 'prev' | 'prev2' | 'next' | 'next2' | 'onChange' | 'drillUp' | 'drillDown', activeStartDate: date | null, value: Date | null, view: 'century' | 'decade' | 'year' | 'month' }) => void) | undefined",
+                },
+            },
+            description:
+                "Function called when the user navigates from one view to another using previous/next button. Note that this function will not be called when e.g. drilling up from January 2021 to 2021 or drilling down the other way around. action signifies the reason for active start date change and can be one of the following values: 'prev', 'prev2', 'next', 'next2', 'drillUp', 'drillDown', 'onChange'. Example: ({ action, activeStartDate, value, view }) => alert('Changed view to: ', activeStartDate, view)",
+            control: { type: null },
+        },
+        prev2AriaLabel: {
+            table: {
+                type: { summary: "string | undefined" },
+            },
+            description:
+                "aria-label attribute of the 'previous on higher level' button on the navigation pane. Example: 'Jump backwards'",
+            control: { type: "text" },
+        },
+        prev2Label: {
+            table: {
+                type: {
+                    summary:
+                        "string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null",
+                },
+            },
+            description:
+                "Content of the 'previous on higher level' button on the navigation pane. Setting the value explicitly to null will hide the icon. Default value: null. Example: String: '«'",
+            control: { type: "text" },
+        },
+        prevAriaLabel: {
+            table: {
+                type: { summary: "string | undefined" },
+            },
+            description:
+                "aria-label attribute of the 'previous' button on the navigation pane. Example: 'Previous'",
+            control: { type: "text" },
+        },
+        prevLabel: {
+            table: {
+                type: {
+                    summary:
+                        "string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null",
+                },
+            },
+            description:
+                "Content of the 'previous' button on the navigation pane. Setting the value explicitly to null will hide the icon. Default value: LabelPairedChevronLeftSmFillIcon. Example: String: '<'",
+            control: { type: "text" },
+        },
+        returnValue: {
+            table: {
+                type: {
+                    summary: "'start' | 'end' | 'range' | undefined",
+                },
+            },
+            description:
+                "Which dates shall be passed by the calendar to the onChange function and onClick{Period} functions. Can be 'start', 'end' or 'range'. The latter will cause an array with start and end values to be passed. Default value: 'start'.",
+            control: { type: "text" },
+        },
+        selectRange: {
+            table: {
+                type: {
+                    summary: "boolean | undefined",
+                },
+            },
+            description:
+                "Whether the user shall select two dates forming a range instead of just one. Note: This feature will make react-calendar return array with two dates regardless of returnValue setting. Default value: false.",
+            options: ["true", "false"],
+            control: { type: "boolean" },
         },
     },
 } satisfies Meta<typeof DatePicker>;
@@ -240,4 +361,8 @@ type Story = StoryObj<typeof meta>;
 
 export const DefaultDatePicker: Story = {
     args: {},
+};
+
+export const DatePickerWithRangeSelection: Story = {
+    args: { selectRange: true },
 };

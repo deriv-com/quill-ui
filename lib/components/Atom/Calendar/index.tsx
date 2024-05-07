@@ -9,10 +9,9 @@ import {
 } from "@deriv/quill-icons";
 import { Text } from "@components/Typography";
 
-// TODO: rewrite interface after adding input
-// export interface DatePicker extends React.ComponentProps<typeof Calendar> {
-//     ...
-// }
+export interface DatePicker extends React.ComponentProps<typeof Calendar> {
+    optionsConfig?: Record<string, string>;
+}
 
 type ValuePiece = Date | null;
 
@@ -47,47 +46,101 @@ export const DatePicker = ({
     navigationAriaLabel,
     navigationAriaLive,
     navigationLabel = ({ label }) => <Text as="span">{label}</Text>,
-}: React.ComponentProps<typeof Calendar>) => {
+    next2AriaLabel,
+    next2Label = null,
+    nextAriaLabel,
+    nextLabel = <LabelPairedChevronRightSmFillIcon />,
+    optionsConfig = {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+    },
+    onActiveStartDateChange,
+    prev2AriaLabel,
+    prev2Label = null,
+    prevAriaLabel,
+    prevLabel = <LabelPairedChevronLeftSmFillIcon />,
+    returnValue = "start",
+    selectRange = false,
+}: DatePicker) => {
     const [date, setDate] = useState<Value>(new Date());
 
+    const formatLocaleString = (
+        date: Date,
+        config: Record<string, string>,
+        locale?: string | string[],
+    ) => date.toLocaleString(locale, config);
+
+    const formatSelectedDate = (date: Value) => {
+        if (!date) return null;
+        if (Array.isArray(date)) {
+            return date
+                .map((item) =>
+                    item
+                        ? formatLocaleString(
+                              item,
+                              optionsConfig,
+                              locale || navigator.language,
+                          )
+                        : "",
+                )
+                .join(" - ");
+        }
+        return formatLocaleString(
+            date,
+            optionsConfig,
+            locale || navigator.language,
+        );
+    };
     // TODO: add input with ability to enabling user typing
     // TODO: add normal wrapper for Calendar
 
     return (
-        <div style={{ width: "368px" }}>
-            <Calendar
-                activeStartDate={activeStartDate}
-                allowPartialRange={allowPartialRange}
-                calendarType={calendarType}
-                className={clsx("quill-date-picker", className)}
-                defaultActiveStartDate={defaultActiveStartDate}
-                defaultValue={defaultValue}
-                defaultView={defaultView}
-                formatDay={formatDay}
-                formatLongDate={formatLongDate}
-                formatMonth={formatMonth}
-                formatMonthYear={formatMonthYear}
-                formatShortWeekday={formatShortWeekday}
-                formatWeekday={formatWeekday}
-                formatYear={formatYear}
-                goToRangeStartOnSelect={goToRangeStartOnSelect}
-                inputRef={inputRef}
-                locale={locale}
-                maxDate={maxDate}
-                maxDetail={maxDetail}
-                minDate={minDate}
-                minDetail={minDetail}
-                navigationAriaLabel={navigationAriaLabel}
-                navigationAriaLive={navigationAriaLive}
-                navigationLabel={navigationLabel}
-                onChange={setDate}
-                value={date}
-                next2Label={null}
-                prev2Label={null}
-                nextLabel={<LabelPairedChevronRightSmFillIcon />}
-                prevLabel={<LabelPairedChevronLeftSmFillIcon />}
-                showNeighboringMonth={false}
-            />
-        </div>
+        <>
+            <div>{formatSelectedDate(date)}</div>
+            <div style={{ width: "368px" }}>
+                <Calendar
+                    activeStartDate={activeStartDate}
+                    allowPartialRange={allowPartialRange}
+                    calendarType={calendarType}
+                    className={clsx("quill-date-picker", className)}
+                    defaultActiveStartDate={defaultActiveStartDate}
+                    defaultValue={defaultValue}
+                    defaultView={defaultView}
+                    formatDay={formatDay}
+                    formatLongDate={formatLongDate}
+                    formatMonth={formatMonth}
+                    formatMonthYear={formatMonthYear}
+                    formatShortWeekday={formatShortWeekday}
+                    formatWeekday={formatWeekday}
+                    formatYear={formatYear}
+                    goToRangeStartOnSelect={goToRangeStartOnSelect}
+                    inputRef={inputRef}
+                    locale={locale}
+                    maxDate={maxDate}
+                    maxDetail={maxDetail}
+                    minDate={minDate}
+                    minDetail={minDetail}
+                    navigationAriaLabel={navigationAriaLabel}
+                    navigationAriaLive={navigationAriaLive}
+                    navigationLabel={navigationLabel}
+                    next2AriaLabel={next2AriaLabel}
+                    value={date}
+                    next2Label={next2Label}
+                    nextAriaLabel={nextAriaLabel}
+                    nextLabel={nextLabel}
+                    onActiveStartDateChange={onActiveStartDateChange}
+                    onChange={(value) => setDate(value)}
+                    prev2AriaLabel={prev2AriaLabel}
+                    prev2Label={prev2Label}
+                    prevAriaLabel={prevAriaLabel}
+                    prevLabel={prevLabel}
+                    returnValue={returnValue}
+                    selectRange={selectRange}
+                    //la
+                    showNeighboringMonth={false}
+                />
+            </div>
+        </>
     );
 };
