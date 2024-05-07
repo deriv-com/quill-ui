@@ -3,6 +3,7 @@ import { ModalOverlay } from "./index";
 import { useEffect, useState } from "react";
 import { Button } from "@components/Button";
 import { fn } from "@storybook/test";
+import Modal from "../base";
 import {
     StandaloneCircleSterlingRegularIcon,
     StandaloneTrashRegularIcon,
@@ -22,7 +23,7 @@ const shortTextContent = "This is some amazing placeholder.";
 const placeHolderText =
     "Lorem ipsum dolor sit amet consectetur. Venenatis malesuada nibh sed ornare rnare id suspendisse sed.";
 const mediumTextContent = placeHolderText.padStart(200, placeHolderText);
-const longTextContent = placeHolderText.padStart(600, placeHolderText);
+const longTextContent = placeHolderText.padStart(2000, placeHolderText);
 const titlePlaceHolderText = "Title";
 const imageSRC =
     "https://live.staticflickr.com/603/21947667154_e63cc9252b_b.jpg";
@@ -35,7 +36,7 @@ const preloadImage = (imageSRC: string) => {
 
 preloadImage(imageSRC);
 const meta = {
-    title: "Components/Modal/Overlay",
+    title: "Components/Modal/Overlay New",
     component: ModalOverlay,
     tags: ["autodocs"],
 
@@ -135,13 +136,13 @@ const Template: React.FC<Template> = ({
             />
 
             <ModalOverlay {...args} isOpened={isOpen} toggleModal={setIsOpen}>
-                <ModalOverlay.Header
+                <Modal.Header
                     title={titlePlaceHolderText}
                     image={image}
                     src={src}
                     style={style}
                 />
-                <ModalOverlay.Body>{textContent}</ModalOverlay.Body>
+                <Modal.Body>{textContent}</Modal.Body>
             </ModalOverlay>
         </>
     );

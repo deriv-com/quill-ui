@@ -1,37 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalOverlay should render SVG if it was passed 1`] = `
+exports[`Modal.Base should render SVG if it was passed 1`] = `
 <div>
   <div
     class="quill-modal__background "
     data-testid="dt_overlay"
   >
     <div
-      class="modal-overlay__container quill-modal__container--visible"
+      class="quill-modal__container--visible"
     >
-      <svg
-        class="quill-modal__close-icon"
-        height="24"
-        role="img"
-        viewBox="0 0 12 24"
-        width="12"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <path
-            d="m10.781 8.281-3.75 3.75 3.719 3.719a.684.684 0 0 1 0 1.031.684.684 0 0 1-1.031 0l-3.75-3.718L2.25 16.78a.684.684 0 0 1-1.031 0c-.313-.281-.313-.75 0-1.062L4.937 12 1.22 8.281c-.313-.281-.313-.75 0-1.062.281-.282.75-.282 1.062 0L6 10.969 9.719 7.25c.281-.312.75-.312 1.062 0a.736.736 0 0 1 0 1.031"
-          />
-        </g>
-        <defs>
-          <clippath
-            id="0eb845b2ab722910e8bf8487d5b230e3__a"
-          >
-            <path
-              d="M0 0h12v24H0z"
-            />
-          </clippath>
-        </defs>
-      </svg>
       <div
         class="quill-modal__content-wrapper"
       >
@@ -79,38 +56,15 @@ exports[`ModalOverlay should render SVG if it was passed 1`] = `
 </div>
 `;
 
-exports[`ModalOverlay should render container with image as a background if src was passed 1`] = `
+exports[`Modal.Base should render container with image as a background if src was passed 1`] = `
 <div>
   <div
     class="quill-modal__background "
     data-testid="dt_overlay"
   >
     <div
-      class="modal-overlay__container quill-modal__container--visible"
+      class="quill-modal__container--visible"
     >
-      <svg
-        class="quill-modal__close-icon"
-        height="24"
-        role="img"
-        viewBox="0 0 12 24"
-        width="12"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <path
-            d="m10.781 8.281-3.75 3.75 3.719 3.719a.684.684 0 0 1 0 1.031.684.684 0 0 1-1.031 0l-3.75-3.718L2.25 16.78a.684.684 0 0 1-1.031 0c-.313-.281-.313-.75 0-1.062L4.937 12 1.22 8.281c-.313-.281-.313-.75 0-1.062.281-.282.75-.282 1.062 0L6 10.969 9.719 7.25c.281-.312.75-.312 1.062 0a.736.736 0 0 1 0 1.031"
-          />
-        </g>
-        <defs>
-          <clippath
-            id="0eb845b2ab722910e8bf8487d5b230e3__a"
-          >
-            <path
-              d="M0 0h12v24H0z"
-            />
-          </clippath>
-        </defs>
-      </svg>
       <div
         class="quill-modal__content-wrapper"
       >
@@ -147,38 +101,15 @@ exports[`ModalOverlay should render container with image as a background if src 
 </div>
 `;
 
-exports[`ModalOverlay should render secondary button if showSecondaryButton === true and the label was passed 1`] = `
+exports[`Modal.Base should render secondary button if showSecondaryButton === true and the label was passed 1`] = `
 <div>
   <div
     class="quill-modal__background "
     data-testid="dt_overlay"
   >
     <div
-      class="modal-overlay__container quill-modal__container--visible"
+      class="quill-modal__container--visible"
     >
-      <svg
-        class="quill-modal__close-icon"
-        height="24"
-        role="img"
-        viewBox="0 0 12 24"
-        width="12"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <path
-            d="m10.781 8.281-3.75 3.75 3.719 3.719a.684.684 0 0 1 0 1.031.684.684 0 0 1-1.031 0l-3.75-3.718L2.25 16.78a.684.684 0 0 1-1.031 0c-.313-.281-.313-.75 0-1.062L4.937 12 1.22 8.281c-.313-.281-.313-.75 0-1.062.281-.282.75-.282 1.062 0L6 10.969 9.719 7.25c.281-.312.75-.312 1.062 0a.736.736 0 0 1 0 1.031"
-          />
-        </g>
-        <defs>
-          <clippath
-            id="0eb845b2ab722910e8bf8487d5b230e3__a"
-          >
-            <path
-              d="M0 0h12v24H0z"
-            />
-          </clippath>
-        </defs>
-      </svg>
       <div
         class="quill-modal__content-wrapper"
       >
@@ -230,38 +161,15 @@ exports[`ModalOverlay should render secondary button if showSecondaryButton === 
 </div>
 `;
 
-exports[`ModalOverlay should render with default values if optional ones were not passed 1`] = `
+exports[`Modal.Base should render with default values if optional ones were not passed 1`] = `
 <div>
   <div
     class="quill-modal__background "
     data-testid="dt_overlay"
   >
     <div
-      class="modal-overlay__container quill-modal__container--visible"
+      class="quill-modal__container--visible"
     >
-      <svg
-        class="quill-modal__close-icon"
-        height="24"
-        role="img"
-        viewBox="0 0 12 24"
-        width="12"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <path
-            d="m10.781 8.281-3.75 3.75 3.719 3.719a.684.684 0 0 1 0 1.031.684.684 0 0 1-1.031 0l-3.75-3.718L2.25 16.78a.684.684 0 0 1-1.031 0c-.313-.281-.313-.75 0-1.062L4.937 12 1.22 8.281c-.313-.281-.313-.75 0-1.062.281-.282.75-.282 1.062 0L6 10.969 9.719 7.25c.281-.312.75-.312 1.062 0a.736.736 0 0 1 0 1.031"
-          />
-        </g>
-        <defs>
-          <clippath
-            id="0eb845b2ab722910e8bf8487d5b230e3__a"
-          >
-            <path
-              d="M0 0h12v24H0z"
-            />
-          </clippath>
-        </defs>
-      </svg>
       <div
         class="quill-modal__content-wrapper"
       >

@@ -1,78 +1,14 @@
-.quill-modal-overlay {
-    &__background {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        background-color: var(--core-color-opacity-black-600);
-    }
+.modal-overlay {
     &__container {
         position: relative;
         overflow: hidden;
         display: flex;
         border-radius: var(--core-borderRadius-1600);
         width: 512px;
+        max-height: 720px;
         justify-content: space-evenly;
         flex-direction: column;
         background-color: var(--component-modal-bg);
         margin : 0 auto;
-        transition: all var(--core-motion-duration-300)
-            var(--motion-easing-linear);
-
-        &--visible {
-            opacity: var(--core-opacity-1300);
-            transform: translateY(0%);
-            pointer-events: auto;
-        }
-    }
-    &__close-icon {
-        position: absolute;
-        cursor: pointer;
-        top: var(--core-spacing-1600);
-        right: var(--core-spacing-1600);
-    }
-    &__content {
-        &-wrapper {
-            flex-grow: 1;
-            overflow-y: scroll;
-        }
-
-        &-image {
-            min-height: var(--temp-static-spacing-144);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            & + .quill-modal-overlay__content-title {
-               padding-top: var(--core-spacing-1200);
-            }
-        }
-
-        &-title {
-            padding: var(--core-spacing-1600);
-           
-        }
-
-        &-body {
-           padding-inline: var(--core-spacing-1600) ;
-           padding-bottom: var(--core-spacing-1200);
-        }
-    }
-    &__button {
-        border-width: var(--core-borderWidth-75);
-
-        &-wrapper {
-            align-self: stretch;
-            padding: var(--core-spacing-1200) var(--core-spacing-1600);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: var(--semantic-spacing-gap-md);
-        }
     }
 }

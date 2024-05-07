@@ -7,6 +7,7 @@ import {
 } from "@deriv/quill-icons";
 import { ModalBottom } from "./index";
 import { Button } from "@components/Button";
+import Modal from "../base";
 
 interface Template extends React.ComponentProps<typeof ModalBottom> {
     image?: React.ReactNode;
@@ -36,7 +37,7 @@ const preloadImage = (imageSRC: string) => {
 preloadImage(imageSRC);
 
 const meta = {
-    title: "Components/Modal/Bottom",
+    title: "Components/Modal/Bottom New",
     component: ModalBottom,
     tags: ["autodocs"],
     parameters: {
@@ -48,9 +49,8 @@ const meta = {
     args: {
         children: <div>{shortTextContent}</div>,
         isOpened: false,
-        showHandleBar: true,
+        // showHandleBar: true,
         showSecondaryButton: true,
-        shouldCloseOnPrimaryButtonClick: false,
         toggleModal: fn(),
         primaryButtonLabel: primaryButtonLabel,
         primaryButtonCallback: fn(),
@@ -87,13 +87,7 @@ const meta = {
             description: "Controls the visibility of the secondary button.",
             control: { type: "boolean" },
         },
-        shouldCloseOnPrimaryButtonClick: {
-            table: { type: { summary: "boolean | undefined" } },
-            options: ["true", "false"],
-            description:
-                "Flag for controlling modal behavior. If it's true, then the modal will be closed after user clicks on the primary button.",
-            control: { type: "boolean" },
-        },
+
         toggleModal: {
             table: { type: { summary: "(isOpened: boolean) => void" } },
             description:
@@ -150,13 +144,13 @@ const Template: React.FC<Template> = ({
                 onClick={() => setIsOpen(true)}
             />
             <ModalBottom {...args} isOpened={isOpen} toggleModal={setIsOpen}>
-                <ModalBottom.Header
+                <Modal.Header
                     title={titlePlaceHolderText}
                     image={image}
                     src={src}
                     style={style}
                 />
-                <ModalBottom.Body>{textContent}</ModalBottom.Body>
+                <Modal.Body>{textContent}</Modal.Body>
             </ModalBottom>
         </>
     );

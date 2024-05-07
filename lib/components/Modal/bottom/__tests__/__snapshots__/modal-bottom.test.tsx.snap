@@ -3,28 +3,28 @@
 exports[`ModalBottom should not render handleBar if showHandleBar === false 1`] = `
 <div>
   <div
-    class="quill-modal-bottom__overlay"
+    class="quill-modal__background "
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal-bottom__container quill-modal-bottom__container--visible"
+      class="modal-bottom__container quill-modal__container--visible"
     >
       <div
-        class="quill-modal-bottom__content-wrapper"
+        class="quill-modal__content-wrapper"
       >
         <h4
-          class="quill-typography__h4 quill-typography__color--prominent quill-modal-bottom__content-title"
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title"
         >
           Title
         </h4>
         <div
-          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal-bottom__content-body"
+          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal__content-body"
         >
           This is some amazing placeholder.
         </div>
       </div>
       <div
-        class="quill-modal-bottom__button-wrapper"
+        class="quill-modal__button-wrapper"
       >
         <button
           class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
@@ -49,21 +49,21 @@ exports[`ModalBottom should not render handleBar if showHandleBar === false 1`] 
 exports[`ModalBottom should render SVG if it was passed 1`] = `
 <div>
   <div
-    class="quill-modal-bottom__overlay"
+    class="quill-modal__background "
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal-bottom__container quill-modal-bottom__container--visible"
+      class="modal-bottom__container quill-modal__container--visible"
     >
       <div
-        class="quill-modal-bottom__handle-bar"
+        class="quill-modal__handle-bar"
         data-testid="dt_handlebar"
       />
       <div
-        class="quill-modal-bottom__content-wrapper"
+        class="quill-modal__content-wrapper"
       >
         <div
-          class="quill-modal-bottom__content-image"
+          class="quill-modal__content-image"
         >
           <svg
             height="32"
@@ -78,13 +78,13 @@ exports[`ModalBottom should render SVG if it was passed 1`] = `
           </svg>
         </div>
         <h4
-          class="quill-typography__h4 quill-typography__color--prominent quill-modal-bottom__content-title"
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title"
         >
           Title
         </h4>
       </div>
       <div
-        class="quill-modal-bottom__button-wrapper"
+        class="quill-modal__button-wrapper"
       >
         <button
           class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
@@ -109,31 +109,31 @@ exports[`ModalBottom should render SVG if it was passed 1`] = `
 exports[`ModalBottom should render container with image as a background if src was passed 1`] = `
 <div>
   <div
-    class="quill-modal-bottom__overlay"
+    class="quill-modal__background "
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal-bottom__container quill-modal-bottom__container--visible"
+      class="modal-bottom__container quill-modal__container--visible"
     >
       <div
-        class="quill-modal-bottom__handle-bar"
+        class="quill-modal__handle-bar"
         data-testid="dt_handlebar"
       />
       <div
-        class="quill-modal-bottom__content-wrapper"
+        class="quill-modal__content-wrapper"
       >
         <div
-          class="quill-modal-bottom__content-image"
+          class="quill-modal__content-image quill-modal__content-image-size"
           data-testid="dt_modal_image"
         />
         <h4
-          class="quill-typography__h4 quill-typography__color--prominent quill-modal-bottom__content-title"
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title"
         >
           Title
         </h4>
       </div>
       <div
-        class="quill-modal-bottom__button-wrapper"
+        class="quill-modal__button-wrapper"
       >
         <button
           class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
@@ -158,21 +158,21 @@ exports[`ModalBottom should render container with image as a background if src w
 exports[`ModalBottom should render passed image if it is ReactNode 1`] = `
 <div>
   <div
-    class="quill-modal-bottom__overlay"
+    class="quill-modal__background "
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal-bottom__container quill-modal-bottom__container--visible"
+      class="modal-bottom__container quill-modal__container--visible"
     >
       <div
-        class="quill-modal-bottom__handle-bar"
+        class="quill-modal__handle-bar"
         data-testid="dt_handlebar"
       />
       <div
-        class="quill-modal-bottom__content-wrapper"
+        class="quill-modal__content-wrapper"
       >
         <div
-          class="quill-modal-bottom__content-image"
+          class="quill-modal__content-image"
         >
           <img
             alt="Apples"
@@ -180,13 +180,13 @@ exports[`ModalBottom should render passed image if it is ReactNode 1`] = `
           />
         </div>
         <h4
-          class="quill-typography__h4 quill-typography__color--prominent quill-modal-bottom__content-title"
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title"
         >
           Title
         </h4>
       </div>
       <div
-        class="quill-modal-bottom__button-wrapper"
+        class="quill-modal__button-wrapper"
       >
         <button
           class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
@@ -211,32 +211,32 @@ exports[`ModalBottom should render passed image if it is ReactNode 1`] = `
 exports[`ModalBottom should render secondary button if showSecondaryButton === true and the label was passed 1`] = `
 <div>
   <div
-    class="quill-modal-bottom__overlay"
+    class="quill-modal__background "
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal-bottom__container quill-modal-bottom__container--visible"
+      class="modal-bottom__container quill-modal__container--visible"
     >
       <div
-        class="quill-modal-bottom__handle-bar"
+        class="quill-modal__handle-bar"
         data-testid="dt_handlebar"
       />
       <div
-        class="quill-modal-bottom__content-wrapper"
+        class="quill-modal__content-wrapper"
       >
         <h4
-          class="quill-typography__h4 quill-typography__color--prominent quill-modal-bottom__content-title"
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title"
         >
           Title
         </h4>
         <div
-          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal-bottom__content-body"
+          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal__content-body"
         >
           This is some amazing placeholder.
         </div>
       </div>
       <div
-        class="quill-modal-bottom__button-wrapper"
+        class="quill-modal__button-wrapper"
       >
         <button
           class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
@@ -253,7 +253,7 @@ exports[`ModalBottom should render secondary button if showSecondaryButton === t
           </span>
         </button>
         <button
-          class="quill-button quill-button__size--lg quill__color--secondary-black quill-modal-bottom__button quill-button__full-width"
+          class="quill-button quill-button__size--lg quill__color--secondary-black quill-modal__button quill-button__full-width"
           data-state=""
         >
           <span
@@ -275,32 +275,32 @@ exports[`ModalBottom should render secondary button if showSecondaryButton === t
 exports[`ModalBottom should render with default values if optional ones were not passed 1`] = `
 <div>
   <div
-    class="quill-modal-bottom__overlay"
+    class="quill-modal__background "
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal-bottom__container quill-modal-bottom__container--visible"
+      class="modal-bottom__container quill-modal__container--visible"
     >
       <div
-        class="quill-modal-bottom__handle-bar"
+        class="quill-modal__handle-bar"
         data-testid="dt_handlebar"
       />
       <div
-        class="quill-modal-bottom__content-wrapper"
+        class="quill-modal__content-wrapper"
       >
         <h4
-          class="quill-typography__h4 quill-typography__color--prominent quill-modal-bottom__content-title"
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title"
         >
           Title
         </h4>
         <div
-          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal-bottom__content-body"
+          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal__content-body"
         >
           This is some amazing placeholder.
         </div>
       </div>
       <div
-        class="quill-modal-bottom__button-wrapper"
+        class="quill-modal__button-wrapper"
       >
         <button
           class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"

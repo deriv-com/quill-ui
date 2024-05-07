@@ -1,2 +1,1 @@
-export * from "./bottom";
-export * from "./overlay";
+export * from "./base";

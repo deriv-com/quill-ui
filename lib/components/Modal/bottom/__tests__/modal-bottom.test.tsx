@@ -4,6 +4,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { StandaloneTrashRegularIcon } from "@deriv/quill-icons";
 import { ModalBottom } from "../index";
+import Modal from "@components/Modal/base";
 
 describe("ModalBottom", () => {
     const primaryButtonLabel = "Primary Button Label";
@@ -15,8 +16,8 @@ describe("ModalBottom", () => {
 
     const children = (
         <>
-            <ModalBottom.Header title={title} />
-            <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
+            <Modal.Header title={title} />
+            <Modal.Body>{shortTextContent}</Modal.Body>
         </>
     );
 
@@ -129,7 +130,7 @@ describe("ModalBottom", () => {
     it("should render passed image if it is ReactNode", () => {
         const { container } = render(
             <ModalBottom {...mockProps}>
-                <ModalBottom.Header
+                <Modal.Header
                     title={title}
                     image={<img src={imageSrc} alt="Apples" />}
                 />
@@ -143,7 +144,7 @@ describe("ModalBottom", () => {
     it("should render container with image as a background if src was passed", () => {
         const { container } = render(
             <ModalBottom {...mockProps}>
-                <ModalBottom.Header src={imageSrc} title={title} />
+                <Modal.Header src={imageSrc} title={title} />
             </ModalBottom>,
         );
 
@@ -154,7 +155,7 @@ describe("ModalBottom", () => {
     it("should render SVG if it was passed", () => {
         const { container } = render(
             <ModalBottom {...mockProps}>
-                <ModalBottom.Header
+                <Modal.Header
                     title={title}
                     image={<StandaloneTrashRegularIcon />}
                 />
