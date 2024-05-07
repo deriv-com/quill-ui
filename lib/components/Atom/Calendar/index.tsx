@@ -7,12 +7,11 @@ import {
     LabelPairedChevronRightSmFillIcon,
     LabelPairedChevronLeftSmFillIcon,
 } from "@deriv/quill-icons";
-// import { Text } from "@components/Typography";
+import { Text } from "@components/Typography";
 
-// export interface DatePicker {
-//     activeStartDate?: Date;
-//     className?: string;
-//     calendarType?: "gregory" | "hebrew" | "islamic" | "iso8601";
+// TODO: rewrite interface after adding input
+// export interface DatePicker extends React.ComponentProps<typeof Calendar> {
+//     ...
 // }
 
 type ValuePiece = Date | null;
@@ -30,7 +29,11 @@ export const DatePicker = ({
     formatDay,
     formatLongDate,
     formatMonth,
-    formatMonthYear,
+    formatMonthYear = (locale, date) =>
+        new Date(date).toLocaleString(locale || navigator.languages, {
+            month: "short",
+            year: "numeric",
+        }),
     formatShortWeekday,
     formatWeekday,
     formatYear,
@@ -43,13 +46,13 @@ export const DatePicker = ({
     minDetail = "century",
     navigationAriaLabel,
     navigationAriaLive,
+    navigationLabel = ({ label }) => <Text as="span">{label}</Text>,
 }: React.ComponentProps<typeof Calendar>) => {
     const [date, setDate] = useState<Value>(new Date());
-    // console.log(
-    //     "test  typeof new Date(2017, 0, 1)",
-    //     typeof new Date(2017, 0, 1),
-    //     typeof new Date(),
-    // );
+
+    // TODO: add input with ability to enabling user typing
+    // TODO: add normal wrapper for Calendar
+
     return (
         <div style={{ width: "368px" }}>
             <Calendar
@@ -76,6 +79,7 @@ export const DatePicker = ({
                 minDetail={minDetail}
                 navigationAriaLabel={navigationAriaLabel}
                 navigationAriaLive={navigationAriaLive}
+                navigationLabel={navigationLabel}
                 onChange={setDate}
                 value={date}
                 next2Label={null}

@@ -112,7 +112,7 @@ const meta = {
                 },
             },
             description:
-                "Function called to override default formatting of months and years. Can be used to use your own formatting function. Default formatter is used if nothing was passed. Example: (locale, date) => formatDate(date, 'MMMM YYYY')",
+                "Function called to override default formatting of months and years. Can be used to use your own formatting function. Default formatter: (locale, date) => new Date(date).toLocaleString(locale || navigator.languages, { month: 'short', year: 'numeric' })`. Example: (locale, date) => formatDate(date, 'MMMM YYYY')",
             control: { type: null },
         },
         formatShortWeekday: {
@@ -221,7 +221,16 @@ const meta = {
             },
             description:
                 "aria-live attribute of a label rendered on calendar navigation bar. Example: 'polite'.",
+            options: ["off", "polite", "assertive"],
             control: { type: "radio" },
+        },
+        navigationLabel: {
+            table: {
+                type: { summary: "NavigationLabelFunc | undefined" },
+            },
+            description:
+                "Content of a label rendered on calendar navigation bar.",
+            control: { type: null },
         },
     },
 } satisfies Meta<typeof DatePicker>;

@@ -3,40 +3,22 @@
 .quill-date-picker {
     border: none;
     padding: var(--component-actionSheet-spacing-padding-md);
+    //TODO: refactor after adding container
     width: unset;
 
     .react-calendar {
         &__navigation {
-            height: var(--core-size-1200);
-            margin-bottom: var(--component-dropdownList-spacing-gap-sm);
-            gap: var(--component-dropdownList-spacing-gap-sm);
+            height: var(--core-size-1600);
+            margin-bottom: var(--semantic-spacing-general-md);
 
             &__arrow.react-calendar__navigation__prev-button,
             &__arrow.react-calendar__navigation__next-button {
-                min-width: 32px;
+                min-width: var(--core-size-1600);
                 text-align: center;
             }
 
             &__label {
                 text-align: center;
-                &__labelText.react-calendar__navigation__label__labelText--from {
-                    color: var(--component-dropdownItem-label-color-default);
-                    font-family: var(
-                        --semantic-typography-body-md-regular-default-fontFamily
-                    );
-                    font-size: var(
-                        --semantic-typography-body-md-regular-default-fontSize
-                    );
-                    font-weight: var(
-                        --semantic-typography-body-md-regular-default-fontWeight
-                    );
-                    line-height: var(
-                        --semantic-typography-body-md-regular-default-lineHeight
-                    );
-                    letter-spacing: var(
-                        --semantic-typography-body-md-regular-default-letterSpacing
-                    );
-                }
             }
         }
 
@@ -64,6 +46,7 @@
 
         &__decade-view__years,
         &__year-view__months {
+            // TODO: add normal style for dropdown list
             flex-direction: column;
         }
 
