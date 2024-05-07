@@ -3,40 +3,49 @@
         display: flex;
         width: 100%;
         flex-direction: column;
+        gap: var(--component-field-spacing-gap-xs);
 
         .message__container {
             display: flex;
+            gap: var(--component-field-spacing-gap-sm);
             justify-content: space-between;
-            padding-top: var(--semantic-spacing-general-sm);
+            &--md {
+                padding-inline: var(--component-field-spacing-padding-md);
+            }
+            &--sm {
+                padding-inline: var(--component-field-spacing-padding-sm);
+            }
+
+            &__status {
+                &--neutral {
+                    color: var(--component-textIcon-normal-subtle);
+                }
+                &--success {
+                    color: var(--component-textIcon-statusNormal-success);
+                }
+                &--error {
+                    color: var(--component-textIcon-statusNormal-danger);
+                }
+            }
+            &__disabled {
+                color: var(--component-textIcon-normal-subtle);
+            }
 
             &__text {
-                padding-block: var(--semantic-spacing-general-none);
-                padding-inline: var(--semantic-spacing-general-md);
-                transition-timing-function: var(--core-motion-ease-400);
-                animation-duration: var(--core-motion-duration-200);
-
-                &__status {
-                    &--neutral {
-                        color: var(--core-color-opacity-black-400);
-                    }
-                    &--error {
-                        color: var(--core-color-solid-red-900);
-                    }
-                    &--success {
-                        color: var(--core-color-solid-green-900);
-                    }
-                }
-
-                &__disabled {
-                    color: var(--core-color-opacity-black-400);
-                }
-            }
-
-            .self-end {
-                align-self: flex-end;
+                font-size: var(
+                    --semantic-typography-caption-regular-default-fontSize
+                );
+                line-height: var(
+                    --semantic-typography-caption-regular-default-lineHeight
+                );
+                font-weight: var(
+                    --semantic-typography-caption-regular-default-fontWeight
+                );
+                font-family: var(
+                    --semantic-typography-caption-regular-default-fontFamily
+                );
             }
         }
-
         .icon_wrapper {
             display: flex;
         }
@@ -55,8 +64,12 @@
 
             & > .label {
                 top: var(--core-spacing-50);
+                &__status--neutral {
+                    color: var(--component-field-label-color-focus);
+                }
             }
         }
+
         &--has-value {
             &:has(label) {
                 top: var(--core-spacing-50);
@@ -77,15 +90,11 @@
         width: 100%;
         display: inline-flex;
         align-items: center;
-        padding-block: var(--core-size-50);
-        border-radius: var(--core-borderRadius-400);
-        border-width: var(--borderWidth-xs);
-        font-family: "IBM Plex Sans";
+        font-family: var(--core-fontFamily-ibmPlex-sans);
         overflow: hidden;
         position: relative;
-        border-style: solid;
         display: flex;
-        gap: var(--semantic-spacing-gap-md);
+        gap: var(--component-field-spacing-gap-sm);
 
         &:has(input:disabled) {
             cursor: not-allowed;
@@ -104,121 +113,140 @@
             transition-duration: var(--core-motion-duration-200);
         }
         &__variant {
-            &--fill {
-                background-color: var(--core-color-opacity-black-75);
+            &--outline {
+                background-color: var(--component-field-bg-outline-default);
+                border: var(--component-field-border-width) solid
+                    var(--component-field-border-color-default);
 
-                &:hover {
-                    background-color: var(--core-color-opacity-black-100);
+                &:has(input:disabled) {
+                    border-color: var(--component-field-border-color-default);
                 }
 
-                &:focus-within {
-                    background-color: var(--core-color-opacity-black-75);
-                    color: var(--component-field-input-color-focus);
-                    border-color: var(--component-field-input-color-focus);
-                }
-                &:has(input) {
-                    &:disabled {
-                        background-color: var(--core-color-opacity-black-75);
+                &--neutral {
+                    &:hover {
+                        border-color: var(--component-field-border-color-hover);
                     }
-                    &:enabled {
-                        &:hover {
-                            &:not(:focus-within) {
-                                color: var(
-                                    --component-field-label-color-disabled
-                                );
-                                background-color: var(
-                                    --core-color-opacity-black-100
-                                );
-                            }
-                        }
+                    &:focus-within,
+                    &:focus {
+                        border-color: var(--component-field-border-color-focus);
+                    }
+                }
+
+                &--success {
+                    border-color: var(
+                        --component-field-border-color-successDefault
+                    );
+                    &:hover {
+                        border-color: var(
+                            --component-field-border-color-successHover
+                        );
+                    }
+                    &:focus-within,
+                    &:focus {
+                        border-color: var(
+                            --component-field-border-color-successFocus
+                        );
+                    }
+                }
+
+                &--error {
+                    border-color: var(
+                        --component-field-border-color-failDefault
+                    );
+                    &:hover {
+                        border-color: var(
+                            --component-field-border-color-failHover
+                        );
+                    }
+                    &:focus-within,
+                    &:focus {
+                        border-color: var(
+                            --component-field-border-color-failFocus
+                        );
                     }
                 }
             }
-            &--outline {
-                background-color: var(--component-field-bg-outline-default);
+
+            &--fill {
                 &:has(input:disabled) {
-                    background-color: var(--component-field-bg-outline-default);
-                    color: var(--core-color-opacity-black-100);
-                    border-color: var(--core-color-opacity-black-100);
+                    background-color: var(--component-field-bg-fill-default);
+                }
+
+                &--neutral {
+                    background-color: var(--component-field-bg-fill-default);
+                    &:hover {
+                        background-color: var(--component-field-bg-fill-hover);
+                    }
+                    &:focus-within,
+                    &:focus {
+                        border: var(--component-field-border-width) solid
+                            var(--component-field-border-color-focus);
+                        background-color: var(--component-field-bg-fill-focus);
+                    }
+                }
+
+                &--success {
+                    background-color: var(
+                        --component-field-bg-fill-successDefault
+                    );
+                    &:hover {
+                        background-color: var(
+                            --component-field-bg-fill-successHover
+                        );
+                    }
+                    &:focus-within,
+                    &:focus {
+                        border: var(--component-field-border-width) solid
+                            var(--component-field-border-color-successFocus);
+                        background-color: var(
+                            --component-field-bg-fill-successFocus
+                        );
+                    }
+                }
+
+                &--error {
+                    background-color: var(
+                        --component-field-bg-fill-failDefault
+                    );
+                    &:hover {
+                        background-color: var(
+                            --component-field-bg-fill-failHover
+                        );
+                    }
+                    &:focus-within,
+                    &:focus {
+                        border: var(--component-field-border-width) solid
+                            var(--component-field-border-color-failFocus);
+                        background-color: var(
+                            --component-field-bg-fill-failFocus
+                        );
+                    }
                 }
             }
         }
 
         &__size {
             &--sm {
-                padding-inline: var(--semantic-spacing-general-sm);
-                height: var(--core-spacing-1600);
+                padding-inline: var(--component-field-spacing-padding-sm);
+                height: var(--component-field-height-sm);
+                border-radius: var(--component-field-border-radius-sm);
             }
             &--md {
-                padding-inline: var(--semantic-spacing-general-md);
-                height: var(--core-spacing-2800);
-            }
-        }
-
-        &__status {
-            &--neutral {
-                color: var(--core-color-opacity-black-100);
-                &:focus-within {
-                    border-color: var(--component-field-border-color-focus);
-                    color: var(--component-field-label-color-default);
-                }
-                &:has(input:enabled) {
-                    &:hover {
-                        &:not(:focus-within) {
-                            color: var(--core-color-opacity-black-200);
-                            border-color: var(--core-color-opacity-black-200);
-                        }
-                    }
-                }
-            }
-            &--success {
-                color: var(--component-field-label-color-success);
-                border-color: var(
-                    --component-field-border-color-successDefault
-                );
-                &:focus-within {
-                    border-color: var(--core-color-solid-green-900);
-                    color: var(--core-color-solid-green-900);
-                }
-                &:has(input:enabled) {
-                    &:hover {
-                        &:not(:focus-within) {
-                            color: var(
-                                --component-field-border-color-successHover
-                            );
-                            border-color: var(
-                                --component-field-border-color-successHover
-                            );
-                        }
-                    }
-                }
-            }
-            &--error {
-                color: var(--component-field-label-color-fail);
-                border-color: var(--component-field-border-color-failDefault);
-                &:focus-within {
-                    border-color: var(--core-color-solid-red-900);
-                    color: var(--core-color-solid-red-900);
-                }
-                &:has(input:enabled) {
-                    &:hover {
-                        &:not(:focus-within) {
-                            color: var(--core-color-opacity-red-800);
-                            border-color: var(--core-color-opacity-red-800);
-                        }
-                    }
-                }
+                padding-inline: var(--component-field-spacing-padding-md);
+                height: var(--component-field-height-md);
+                border-radius: var(--component-field-border-radius-md);
             }
         }
 
         .input {
             width: 100%;
-            height: var(--core-size-1200);
             background-color: transparent;
-            line-height: var(--core-lineHeight-300);
+            border: none;
             cursor: pointer;
-            flex-grow: 1;
             &:disabled {
+                cursor: not-allowed;
+            }
+            &:disabled + .label {
                 cursor: not-allowed;
             }
             &:focus {
@@ -276,21 +304,24 @@
             }
             &__size {
                 &--sm {
-                    height: var(--core-size-1100);
                     font-size: var(
                         --semantic-typography-body-sm-regular-default-fontSize
                     );
+                    line-height: var(
+                        --semantic-typography-body-sm-regular-default-lineHeight
+                    );
                 }
                 &--md {
-                    height: var(--core-size-1200);
                     font-size: var(
                         --semantic-typography-body-md-regular-default-fontSize
+                    );
+                    line-height: var(
+                        --semantic-typography-body-md-regular-default-lineHeight
                     );
                 }
             }
         }
         .label {
-            z-index: -1;
             position: absolute;
             transition-property: all;
             transition-timing-function: var(--core-motion-ease-400);
@@ -307,10 +338,10 @@
                     color: var(--component-field-label-color-default);
                 }
                 &--success {
-                    color: var(--core-color-opacity-green-900);
+                    color: var(--component-field-label-color-success);
                 }
                 &--error {
-                    color: var(--core-color-opacity-red-900);
+                    color: var(--component-field-label-color-fail);
                 }
             }
 
@@ -328,6 +359,7 @@
         }
         .peer {
             &:placeholder-shown + .label {
+                line-height: var(--core-lineHeight-300);
                 font-size: var(--core-fontSize-100);
                 height: 100%;
             }
@@ -358,48 +390,13 @@
 
         .status-icon {
             &--neutral {
-                fill: var(--component-field-label-color-default);
+                fill: var(--component-textIcon-normal-default);
             }
             &--success {
-                fill: var(--core-color-solid-green-900);
+                fill: var(--component-textIcon-statusNormal-success);
             }
             &--error {
-                fill: var(--core-color-solid-red-900);
-            }
-        }
-    }
-}
-
-.quill-input__wrapper__variant--fill.status {
-    &--success {
-        background-color: var(--core-color-opacity-green-100);
-        border-color: var(--core-color-opacity-green-100);
-        &:focus-within {
-            background-color: var(--core-color-opacity-green-100);
-            border-color: var(--core-color-solid-green-900);
-        }
-        &:has(input:enabled) {
-            &:hover {
-                &:not(:focus-within) {
-                    background-color: var(--core-color-opacity-green-200);
-                    border-color: var(--core-color-opacity-green-200);
-                }
-            }
-        }
-    }
-    &--error {
-        background-color: var(--core-color-opacity-red-100);
-        border-color: var(--core-color-opacity-red-100);
-        &:focus-within {
-            background-color: var(--core-color-opacity-red-100);
-            border-color: var(--core-color-solid-red-900);
-        }
-        &:has(input:enabled) {
-            &:hover {
-                &:not(:focus-within) {
-                    background-color: var(--core-color-opacity-red-200);
-                    border-color: var(--core-color-opacity-red-200);
-                }
+                fill: var(--component-textIcon-statusNormal-danger);
             }
         }
     }

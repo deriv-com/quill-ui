@@ -3,7 +3,7 @@ import { createContext } from "react";
 
 export type SnackbarContextValue = {
   queue:  SnackbarProps[];
-  addSnackbar: (props: Omit<SnackbarProps, 'id' | 'isShown'>) => void;
+  addSnackbar: (props: Omit<SnackbarProps, 'id' | 'isVisible'>) => void;
   removeSnackbar: (id: string) => void;
 };
 

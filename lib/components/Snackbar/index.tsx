@@ -11,7 +11,7 @@ export const SnackbarController = () => {
                 return (
                     <Snackbar
                         id={item.id}
-                        isShown={item.isShown}
+                        isVisible={item.isVisible}
                         message={item.message}
                         actionText={item.actionText}
                         hasCloseButton={item.hasCloseButton}

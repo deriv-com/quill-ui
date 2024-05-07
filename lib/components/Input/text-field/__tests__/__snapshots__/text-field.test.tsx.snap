@@ -6,20 +6,19 @@ exports[`TextField It should render a default Textfiled 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
     >
       <div
         class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
+          placeholder=""
           type="text"
+          value=""
         />
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -32,6 +31,7 @@ exports[`TextField should handle the hover for outline variant 1`] = `
     class="input peer input__align--left input__size--md"
     placeholder="Placeholder"
     type="text"
+    value=""
   />
 </div>
 `;
@@ -42,20 +42,19 @@ exports[`TextField should render a TextField with error status 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--error"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--error quill-input__wrapper__size--md"
     >
       <div
         class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
+          placeholder=""
           type="text"
+          value=""
         />
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;
@@ -66,20 +65,19 @@ exports[`TextField should render a TextField with success status 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--success"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--success quill-input__wrapper__size--md"
     >
       <div
         class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
+          placeholder=""
           type="text"
+          value=""
         />
       </div>
     </div>
-    <div
-      class="message__container"
-    />
   </div>
 </div>
 `;

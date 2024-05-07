@@ -6569,6 +6569,10 @@
     --component-toggle-spacing-padding: var(--semantic-spacing-general-2xs);
     --component-toggle-width: var(--core-size-2200);
     --component-toggle-height: var(--core-size-1200);
+    --component-modal-title-typography: var(--semantic-typography-heading-h4);
+    --component-modal-description-typography: var(
+        --semantic-typography-body-md-regular-default
+    );
     --component-modal-bg: var(--semantic-color-slate-solid-surface-frame-low);
     --component-modal-border-radius-bottom: var(--core-borderRadius-800);
     --component-modal-border-radius-overlay: var(--core-borderRadius-1600);
@@ -6605,6 +6609,14 @@
     --component-button-icon-sell-primary: var(--core-color-solid-slate-50);
     --component-button-icon-sell-secondary: var(--core-color-solid-cherry-700);
     --component-button-icon-sell-tertiary: var(--core-color-solid-cherry-700);
+    --component-button-icon-success-primary: var(--core-color-solid-slate-50);
+    --component-button-icon-success-secondary: var(
+        --core-color-solid-green-700
+    );
+    --component-button-icon-success-tertiary: var(--core-color-solid-green-700);
+    --component-button-icon-fail-primary: var(--core-color-solid-slate-50);
+    --component-button-icon-fail-secondary: var(--core-color-solid-red-700);
+    --component-button-icon-fail-tertiary: var(--core-color-solid-red-700);
     --component-button-label-typography-primary-sm: var(
         --semantic-typography-caption-bold-default
     );
@@ -6694,6 +6706,24 @@
     );
     --component-button-label-color-sell-tertiary: var(
         --core-color-solid-cherry-700
+    );
+    --component-button-label-color-success-primary: var(
+        --core-color-solid-slate-50
+    );
+    --component-button-label-color-success-secondary: var(
+        --core-color-solid-green-700
+    );
+    --component-button-label-color-success-tertiary: var(
+        --core-color-solid-green-700
+    );
+    --component-button-label-color-fail-primary: var(
+        --core-color-solid-slate-50
+    );
+    --component-button-label-color-fail-secondary: var(
+        --core-color-solid-red-700
+    );
+    --component-button-label-color-fail-tertiary: var(
+        --core-color-solid-red-700
     );
     --component-button-label-color-google-primary: var(
         --component-textIcon-normal-prominent
@@ -6893,6 +6923,58 @@
     --component-button-bg-sell-tertiary-loading: var(
         --core-color-opacity-cherry-200
     );
+    --component-button-bg-success-primary-default: var(
+        --core-color-solid-green-700
+    );
+    --component-button-bg-success-primary-hover: var(
+        --core-color-solid-green-800
+    );
+    --component-button-bg-success-primary-active: var(
+        --core-color-solid-green-900
+    );
+    --component-button-bg-success-primary-loading: var(
+        --core-color-solid-green-900
+    );
+    --component-button-bg-success-secondary-hover: var(
+        --core-color-opacity-green-100
+    );
+    --component-button-bg-success-secondary-active: var(
+        --core-color-opacity-green-200
+    );
+    --component-button-bg-success-secondary-loading: var(
+        --core-color-opacity-green-200
+    );
+    --component-button-bg-success-tertiary-hover: var(
+        --core-color-opacity-green-100
+    );
+    --component-button-bg-success-tertiary-active: var(
+        --core-color-opacity-green-200
+    );
+    --component-button-bg-success-tertiary-loading: var(
+        --core-color-opacity-green-200
+    );
+    --component-button-bg-fail-primary-default: var(--core-color-solid-red-700);
+    --component-button-bg-fail-primary-hover: var(--core-color-solid-red-800);
+    --component-button-bg-fail-primary-active: var(--core-color-solid-red-900);
+    --component-button-bg-fail-primary-loading: var(--core-color-solid-red-900);
+    --component-button-bg-fail-secondary-hover: var(
+        --core-color-opacity-red-100
+    );
+    --component-button-bg-fail-secondary-active: var(
+        --core-color-opacity-red-200
+    );
+    --component-button-bg-fail-secondary-loading: var(
+        --core-color-opacity-red-200
+    );
+    --component-button-bg-fail-tertiary-hover: var(
+        --core-color-opacity-red-100
+    );
+    --component-button-bg-fail-tertiary-active: var(
+        --core-color-opacity-red-200
+    );
+    --component-button-bg-fail-tertiary-loading: var(
+        --core-color-opacity-red-200
+    );
     --component-button-bg-google-primary-default: var(
         --semantic-color-monochrome-surface-normal-lowest
     );
@@ -6962,6 +7044,8 @@
     );
     --component-button-border-color-buy: var(--core-color-solid-emerald-700);
     --component-button-border-color-sell: var(--core-color-solid-cherry-700);
+    --component-button-border-color-success: var(--core-color-solid-green-700);
+    --component-button-border-color-fail: var(--core-color-solid-red-700);
     --component-button-border-color-google: var(
         --semantic-color-monochrome-border-normal-mid
     );
@@ -6975,10 +7059,17 @@
     --component-button-spacing-padding-md: var(--core-spacing-600);
     --component-button-spacing-padding-lg: var(--core-spacing-800);
     --component-button-spacing-padding-xl: var(--core-spacing-1200);
+    --component-button-spacing-padding-2xl: var(--core-spacing-1600);
+    --component-button-spacing-padding-3xl: var(--core-spacing-2000);
+    --component-button-spacing-padding-4xl: var(--core-spacing-2800);
     --component-button-spacing-gap-sm: var(--core-spacing-200);
     --component-button-spacing-gap-md: var(--core-spacing-300);
     --component-button-spacing-gap-lg: var(--core-spacing-400);
     --component-button-spacing-gap-xl: var(--core-spacing-600);
+    --component-button-width-sm: var(--core-size-1200);
+    --component-button-width-md: var(--core-size-1600);
+    --component-button-width-lg: var(--core-size-2400);
+    --component-button-width-xl: var(--core-size-3200);
     --component-button-width-min-sm: 48px;
     --component-button-width-min-md: 64px;
     --component-button-width-min-lg: 96px;
@@ -7354,6 +7445,265 @@
     --component-dropdownList-elevation-shadow: var(
         --semantic-elevation-shadow-menu
     );
+    --component-tag-icon-default: var(--component-textIcon-normal-default);
+    --component-tag-icon-information: var(
+        --component-textIcon-statusNormal-information
+    );
+    --component-tag-icon-success: var(
+        --component-textIcon-statusNormal-success
+    );
+    --component-tag-icon-warning: var(
+        --component-textIcon-statusNormal-warning
+    );
+    --component-tag-icon-danger: var(--component-textIcon-statusNormal-danger);
+    --component-tag-label-typography-regular-xs: var(
+        --semantic-typography-caption-regular-default
+    );
+    --component-tag-label-typography-regular-sm: var(
+        --semantic-typography-body-sm-regular-default
+    );
+    --component-tag-label-typography-regular-md: var(
+        --semantic-typography-body-md-regular-default
+    );
+    --component-tag-label-typography-bold-xs: var(
+        --semantic-typography-caption-bold-default
+    );
+    --component-tag-label-typography-bold-sm: var(
+        --semantic-typography-body-sm-bold-default
+    );
+    --component-tag-label-typography-bold-md: var(
+        --semantic-typography-body-md-bold-default
+    );
+    --component-tag-label-color-default: var(
+        --component-textIcon-normal-default
+    );
+    --component-tag-label-color-information: var(
+        --component-textIcon-statusNormal-information
+    );
+    --component-tag-label-color-success: var(
+        --component-textIcon-statusNormal-success
+    );
+    --component-tag-label-color-warning: var(
+        --component-textIcon-statusNormal-warning
+    );
+    --component-tag-label-color-danger: var(
+        --component-textIcon-statusNormal-danger
+    );
+    --component-tag-bg-default: var(
+        --semantic-color-monochrome-surface-normal-lowest
+    );
+    --component-tag-bg-information: var(
+        --semantic-color-blue-opacity-surface-low
+    );
+    --component-tag-bg-success: var(--semantic-color-green-opacity-surface-low);
+    --component-tag-bg-warning: var(
+        --semantic-color-yellow-opacity-surface-low
+    );
+    --component-tag-bg-danger: var(--semantic-color-red-opacity-surface-low);
+    --component-tag-border-radius-xs: var(--core-borderRadius-200);
+    --component-tag-border-radius-sm: var(--core-borderRadius-300);
+    --component-tag-border-radius-md: var(--core-borderRadius-400);
+    --component-tag-border-width: var(--core-borderWidth-75);
+    --component-tag-border-color-default: var(
+        --semantic-color-monochrome-border-normal-mid
+    );
+    --component-tag-border-color-information: var(
+        --semantic-color-blue-solid-border-inverse-high
+    );
+    --component-tag-border-color-success: var(
+        --semantic-color-green-solid-border-inverse-high
+    );
+    --component-tag-border-color-warning: var(
+        --semantic-color-yellow-solid-border-inverse-high
+    );
+    --component-tag-border-color-danger: var(
+        --semantic-color-red-solid-border-inverse-high
+    );
+    --component-tag-spacing-padding-xs: var(--core-spacing-200);
+    --component-tag-spacing-padding-sm: var(--core-spacing-400);
+    --component-tag-spacing-padding-md: var(--core-spacing-600);
+    --component-tag-spacing-padding-lg: var(--core-spacing-800);
+    --component-tag-spacing-gap-xs: var(--core-spacing-200);
+    --component-tag-spacing-gap-sm: var(--core-spacing-400);
+    --component-tag-spacing-gap-md: var(--core-spacing-600);
+    --component-tag-spacing-gap-lg: var(--core-spacing-800);
+    --component-tag-height-xs: var(--core-size-1100);
+    --component-tag-height-sm: var(--core-size-1200);
+    --component-tag-height-md: var(--core-size-1600);
+    --component-tag-height-lg: var(--core-size-2400);
+    --component-chip-icon-default: var(--component-textIcon-normal-default);
+    --component-chip-icon-selected: var(--component-textIcon-inverse-prominent);
+    --component-chip-icon-disabled: var(--component-textIcon-normal-disabled);
+    --component-chip-icon-disabledWhite: var(
+        --component-textIcon-inverse-disabled
+    );
+    --component-chip-icon-close-default: var(
+        --component-textIcon-normal-subtle
+    );
+    --component-chip-icon-close-hover: var(--component-textIcon-normal-default);
+    --component-chip-icon-close-active: var(
+        --component-textIcon-normal-prominent
+    );
+    --component-chip-label-typography-sm: var(
+        --semantic-typography-caption-regular-default
+    );
+    --component-chip-label-typography-md: var(
+        --semantic-typography-body-sm-regular-default
+    );
+    --component-chip-label-typography-lg: var(
+        --semantic-typography-body-md-regular-default
+    );
+    --component-chip-label-color-default: var(
+        --component-textIcon-normal-default
+    );
+    --component-chip-label-color-selected: var(
+        --component-textIcon-inverse-prominent
+    );
+    --component-chip-label-color-disabled: var(
+        --component-textIcon-normal-disabled
+    );
+    --component-chip-label-color-disabledWhite: var(
+        --component-textIcon-inverse-disabled
+    );
+    --component-chip-item-typography-sm: var(
+        --semantic-typography-caption-regular-default
+    );
+    --component-chip-item-typography-md: var(
+        --semantic-typography-body-sm-regular-default
+    );
+    --component-chip-item-typography-lg: var(
+        --semantic-typography-body-md-regular-default
+    );
+    --component-chip-item-color-default: var(
+        --component-textIcon-inverse-prominent
+    );
+    --component-chip-item-color-disabled: var(
+        --component-textIcon-inverse-disabled
+    );
+    --component-chip-tag-typography-sm: var(
+        --semantic-typography-caption-bold-default
+    );
+    --component-chip-tag-typography-md: var(
+        --semantic-typography-body-sm-bold-default
+    );
+    --component-chip-tag-typography-lg: var(
+        --semantic-typography-body-md-bold-default
+    );
+    --component-chip-tag-color-default: var(
+        --component-textIcon-normal-default
+    );
+    --component-chip-tag-color-selected: var(
+        --component-textIcon-inverse-prominent
+    );
+    --component-chip-tag-color-disabled: var(
+        --component-textIcon-normal-disabled
+    );
+    --component-chip-bg-hover: var(
+        --semantic-color-monochrome-surface-normal-low
+    );
+    --component-chip-bg-active: var(
+        --semantic-color-monochrome-surface-normal-midLow
+    );
+    --component-chip-bg-expand: var(
+        --semantic-color-monochrome-surface-normal-midLow
+    );
+    --component-chip-bg-selected: var(
+        --semantic-color-slate-solid-surface-inverse-lowest
+    );
+    --component-chip-bg-selectedHover: var(
+        --semantic-color-monochrome-surface-normal-high
+    );
+    --component-chip-bg-selectedActive: var(
+        --semantic-color-monochrome-surface-normal-highest
+    );
+    --component-chip-bg-selectedExpand: var(
+        --semantic-color-slate-solid-surface-inverse-lowest
+    );
+    --component-chip-bg-selectedDisabled: var(
+        --semantic-color-monochrome-surface-normal-midHigh
+    );
+    --component-chip-border-radius: var(--semantic-borderRadius-pill);
+    --component-chip-border-width: var(--core-borderWidth-75);
+    --component-chip-border-color: var(
+        --semantic-color-monochrome-border-normal-mid
+    );
+    --component-chip-spacing-padding-xs: var(--core-spacing-300);
+    --component-chip-spacing-padding-sm: var(--core-spacing-400);
+    --component-chip-spacing-padding-md: var(--core-spacing-600);
+    --component-chip-spacing-padding-lg: var(--core-spacing-800);
+    --component-chip-spacing-padding-xl: var(--core-spacing-1200);
+    --component-chip-spacing-gap-xs: var(--core-spacing-300);
+    --component-chip-spacing-gap-sm: var(--core-spacing-400);
+    --component-chip-spacing-gap-md: var(--core-spacing-600);
+    --component-chip-height-sm: var(--core-size-1200);
+    --component-chip-height-md: var(--core-size-1600);
+    --component-chip-height-lg: var(--core-size-2400);
+    --component-notification-title-typography-banner: var(
+        --semantic-typography-body-sm-bold-default
+    );
+    --component-notification-title-typography-item-unread: var(
+        --semantic-typography-body-sm-bold-default
+    );
+    --component-notification-title-typography-item-read: var(
+        --semantic-typography-body-sm-regular-default
+    );
+    --component-notification-title-color-banner: var(
+        --component-textIcon-normal-prominent
+    );
+    --component-notification-title-color-item-unread: var(
+        --component-textIcon-normal-prominent
+    );
+    --component-notification-title-color-item-read: var(
+        --component-textIcon-normal-default
+    );
+    --component-notification-message-typography-banner: var(
+        --semantic-typography-caption-regular-default
+    );
+    --component-notification-message-typography-item: var(
+        --semantic-typography-body-sm-regular-default
+    );
+    --component-notification-message-color-banner: var(
+        --component-textIcon-normal-default
+    );
+    --component-notification-message-color-item-unread: var(
+        --component-textIcon-normal-prominent
+    );
+    --component-notification-message-color-item-read: var(
+        --component-textIcon-normal-default
+    );
+    --component-notification-timestamp-typography: var(
+        --semantic-typography-caption-regular-default
+    );
+    --component-notification-timestamp-color: var(
+        --component-textIcon-normal-subtle
+    );
+    --component-notification-bg-banner: var(
+        --semantic-color-slate-solid-surface-frame-low
+    );
+    --component-notification-bg-item-default: var(
+        --semantic-color-slate-solid-surface-frame-low
+    );
+    --component-notification-bg-item-hover: var(
+        --semantic-color-monochrome-surface-normal-lowest
+    );
+    --component-notification-bg-item-active: var(
+        --semantic-color-monochrome-surface-normal-low
+    );
+    --component-notification-bg-divider: var(
+        --semantic-color-monochrome-surface-normal-low
+    );
+    --component-notification-border-radius: var(--core-borderRadius-800);
+    --component-notification-border-width: var(--core-borderWidth-75);
+    --component-notification-border-color: var(
+        --semantic-color-monochrome-border-normal-mid
+    );
+    --component-notification-spacing-padding-sm: var(--core-spacing-800);
+    --component-notification-spacing-padding-md: var(--core-spacing-1600);
+    --component-notification-spacing-gap-xs: var(--core-spacing-200);
+    --component-notification-spacing-gap-sm: var(--core-spacing-800);
+    --component-notification-spacing-gap-md: var(--core-spacing-1600);
+    --component-notification-sizing-banner: 360px;
+    --component-notification-elevation-shadow: var(--core-elevation-shadow-330);
 }
 @media (min-width: 640px) {
     :root {

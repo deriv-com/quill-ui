@@ -5,9 +5,7 @@ import userEvent from "@testing-library/user-event";
 
 jest.mock("@deriv/quill-icons", () => ({
     ...jest.requireActual("@deriv/quill-icons"),
-    StandaloneCircleCheckBoldIcon: jest.fn(() => "mockedSuccessIcon"),
     StandaloneSearchRegularIcon: jest.fn(() => "mockedSearchIcon"),
-    StandaloneTriangleExclamationBoldIcon: jest.fn(() => "mockedErrorIcon"),
     StandaloneCircleXmarkFillIcon: jest.fn(() => "mockedClearIcon"),
 }));
 
@@ -27,7 +25,7 @@ describe("<SearchField />", () => {
         const { container } = renderSearchField({ onChange: onChangeMock });
         const searchElement = screen.getByPlaceholderText("Search");
 
-        await userEvent.type(searchElement, 'test');
+        await userEvent.type(searchElement, "test");
 
         expect(onChangeMock).toHaveBeenCalledWith(
             expect.objectContaining({
@@ -43,30 +41,26 @@ describe("<SearchField />", () => {
         const mockedClearIcon = screen.getByText("mockedClearIcon");
         expect(mockedClearIcon).toBeInTheDocument();
 
-        await userEvent.click(mockedClearIcon)
-        
+        await userEvent.click(mockedClearIcon);
+
         expect(mockedClearIcon).not.toBeInTheDocument();
         expect(container).toMatchSnapshot();
     });
     it('renders success status icon when status prop is "success"', () => {
         const { container } = renderSearchField({ status: "success" });
-        const mockedSuccessIcon = screen.getByText("mockedSuccessIcon");
-        expect(mockedSuccessIcon).toBeInTheDocument();
-        expect(mockedSuccessIcon).toHaveClass("status-icon--success");
         expect(container).toMatchSnapshot();
     });
     it('renders error status icon when status prop is "error"', () => {
         const { container } = renderSearchField({ status: "error" });
-        const mockedErrorIcon = screen.getByText("mockedErrorIcon");
-        expect(mockedErrorIcon).toBeInTheDocument();
-        expect(mockedErrorIcon).toHaveClass("status-icon--error");
         expect(container).toMatchSnapshot();
     });
-    it('renders leftStatusMessage when prop is given', () => {
-      const { container } = renderSearchField({ leftStatusMessage: "mocked status message" });
-      const statusMessage = screen.getByText('mocked status message')
-      expect(statusMessage).toBeInTheDocument();
-      expect(statusMessage).toHaveClass('message__container__text');
-      expect(container).toMatchSnapshot();
-    })
+    it("renders leftStatusMessage when prop is given", () => {
+        const { container } = renderSearchField({
+            message: "mocked status message",
+        });
+        const statusMessage = screen.getByText("mocked status message");
+        expect(statusMessage).toBeInTheDocument();
+        expect(statusMessage).toHaveClass("message__container__text");
+        expect(container).toMatchSnapshot();
+    });
 });

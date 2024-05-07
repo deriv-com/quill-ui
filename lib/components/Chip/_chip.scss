@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--semantic-spacing-gap-md);
     border: var(--core-borderWidth-75) solid var(--core-color-opacity-black-100);
     border-radius: var(--semantic-borderRadius-pill);
 
@@ -28,14 +27,17 @@
         &--sm {
             padding-inline: var(--core-spacing-600);
             height: var(--core-spacing-1200);
+            gap: var(--component-chip-spacing-padding-xs);
         }
         &--md {
             padding-inline: var(--semantic-spacing-general-md);
             height: var(--core-spacing-1600);
+            gap: var(--component-chip-spacing-padding-sm);
         }
         &--lg {
             padding-inline: var(--semantic-spacing-general-lg);
             height: var(--core-spacing-2400);
+            gap: var(--component-chip-spacing-padding-md);
         }
     }
 }
