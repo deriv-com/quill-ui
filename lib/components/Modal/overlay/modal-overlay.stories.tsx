@@ -36,7 +36,7 @@ const preloadImage = (imageSRC: string) => {
 
 preloadImage(imageSRC);
 const meta = {
-    title: "Components/Modal/Overlay New",
+    title: "Components/Modal/Overlay",
     component: ModalOverlay,
     tags: ["autodocs"],
 

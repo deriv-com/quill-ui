@@ -37,7 +37,7 @@ const preloadImage = (imageSRC: string) => {
 preloadImage(imageSRC);
 
 const meta = {
-    title: "Components/Modal/Bottom New",
+    title: "Components/Modal/Bottom",
     component: ModalBottom,
     tags: ["autodocs"],
     parameters: {
