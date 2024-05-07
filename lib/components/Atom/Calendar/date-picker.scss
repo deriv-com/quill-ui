@@ -3,6 +3,7 @@
 .quill-date-picker {
     border: none;
     padding: var(--component-actionSheet-spacing-padding-md);
+    background-color: var(--semantic-color-slate-solid-surface-frame-low);
     //TODO: refactor after adding container
     width: unset;
 
@@ -10,6 +11,13 @@
         &__navigation {
             height: var(--core-size-1600);
             margin-bottom: var(--semantic-spacing-general-md);
+
+            button:enabled:hover,
+            button:enabled:focus {
+                background-color: var(
+                    --semantic-color-monochrome-surface-normal-low
+                );
+            }
 
             &__arrow.react-calendar__navigation__prev-button,
             &__arrow.react-calendar__navigation__next-button {
@@ -22,6 +30,7 @@
             }
         }
 
+        // TODO: refactor
         &__month-view__weekdays {
             height: var(--core-size-2400);
             color: var(--core-color-opacity-black-300);
@@ -37,6 +46,7 @@
             }
         }
 
+        // TODO: refactor
         &__month-view__days__day {
             color: var(--component-dropdownItem-label-color-default);
             border-radius: var(--component-dropdownItem-border-radius);
@@ -51,16 +61,25 @@
         }
 
         &__tile {
+            &:enabled:hover,
+            &:enabled:focus {
+                background-color: var(
+                    --semantic-color-monochrome-surface-normal-low
+                );
+            }
+
             &--now {
                 background: unset;
                 color: var(--component-dropdownItem-label-color-default);
                 position: relative;
 
+                // TODO: refactor
                 &:enabled:hover,
                 &:enabled:focus {
                     background: #e6e6e6;
                 }
 
+                // TODO: refactor
                 &:after {
                     content: "";
                     width: 4px;
@@ -75,6 +94,7 @@
                 }
             }
 
+            // TODO: refactor
             &--active,
             &--active:enabled:hover,
             &--active:enabled:focus {
@@ -83,6 +103,7 @@
             }
         }
 
+        // TODO: refactor
         &__viewContainer {
             overflow-y: auto;
             height: 288px;

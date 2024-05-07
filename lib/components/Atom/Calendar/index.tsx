@@ -49,7 +49,9 @@ export const DatePicker = ({
     next2AriaLabel,
     next2Label = null,
     nextAriaLabel,
-    nextLabel = <LabelPairedChevronRightSmFillIcon />,
+    nextLabel = (
+        <LabelPairedChevronRightSmFillIcon fill="var(--component-textIcon-normal-prominent)" />
+    ),
     optionsConfig = {
         day: "2-digit",
         month: "2-digit",
@@ -59,9 +61,12 @@ export const DatePicker = ({
     prev2AriaLabel,
     prev2Label = null,
     prevAriaLabel,
-    prevLabel = <LabelPairedChevronLeftSmFillIcon />,
+    prevLabel = (
+        <LabelPairedChevronLeftSmFillIcon fill="var(--component-textIcon-normal-prominent)" />
+    ),
     returnValue = "start",
     selectRange = false,
+    showNavigation = true,
 }: DatePicker) => {
     const [date, setDate] = useState<Value>(new Date());
 
@@ -137,7 +142,8 @@ export const DatePicker = ({
                     prevLabel={prevLabel}
                     returnValue={returnValue}
                     selectRange={selectRange}
-                    //la
+                    showNavigation={showNavigation}
+                    // TODO: add all props
                     showNeighboringMonth={false}
                 />
             </div>

@@ -353,6 +353,17 @@ const meta = {
             options: ["true", "false"],
             control: { type: "boolean" },
         },
+        showNavigation: {
+            table: {
+                type: {
+                    summary: "boolean | undefined",
+                },
+            },
+            description:
+                "Whether a navigation bar with arrows and title shall be rendered. Default value: true.",
+            options: ["true", "false"],
+            control: { type: "boolean" },
+        },
     },
 } satisfies Meta<typeof DatePicker>;
 
