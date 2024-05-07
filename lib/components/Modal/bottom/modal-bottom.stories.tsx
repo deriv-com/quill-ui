@@ -130,11 +130,7 @@ const Template: React.FC<Template> = ({
     textContent = shortTextContent,
     ...args
 }: Template) => {
-    const [isOpen, setIsOpen] = useState(args.isOpened);
-
-    useEffect(() => {
-        setIsOpen(args.isOpened);
-    }, [args.isOpened]);
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <>
