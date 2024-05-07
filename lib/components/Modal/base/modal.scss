@@ -1,4 +1,5 @@
 @import "@quill/breakpoints.scss";
+@import "@quill/static.scss";
 .quill-modal {
     &__background {
         position: fixed;
@@ -62,10 +63,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+           
             &-size {
-                height: 202px;
+                height: var(--temp-static-spacing-202);
                 @include breakpoint("lg") {
-                    height: 288px;
+                    height: var(--temp-static-spacing-288);
                 }
             }
            

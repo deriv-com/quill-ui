@@ -3,7 +3,7 @@
 exports[`Modal.Base should render SVG if it was passed 1`] = `
 <div>
   <div
-    class="quill-modal__background "
+    class="quill-modal__background"
     data-testid="dt_overlay"
   >
     <div
@@ -59,7 +59,7 @@ exports[`Modal.Base should render SVG if it was passed 1`] = `
 exports[`Modal.Base should render container with image as a background if src was passed 1`] = `
 <div>
   <div
-    class="quill-modal__background "
+    class="quill-modal__background"
     data-testid="dt_overlay"
   >
     <div
@@ -104,7 +104,7 @@ exports[`Modal.Base should render container with image as a background if src wa
 exports[`Modal.Base should render secondary button if showSecondaryButton === true and the label was passed 1`] = `
 <div>
   <div
-    class="quill-modal__background "
+    class="quill-modal__background"
     data-testid="dt_overlay"
   >
     <div
@@ -164,7 +164,7 @@ exports[`Modal.Base should render secondary button if showSecondaryButton === tr
 exports[`Modal.Base should render with default values if optional ones were not passed 1`] = `
 <div>
   <div
-    class="quill-modal__background "
+    class="quill-modal__background"
     data-testid="dt_overlay"
   >
     <div

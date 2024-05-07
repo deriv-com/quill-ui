@@ -3,11 +3,11 @@
 exports[`ModalOverlay should render SVG if it was passed 1`] = `
 <div>
   <div
-    class="quill-modal__background "
+    class="quill-modal__background"
     data-testid="dt_overlay"
   >
     <div
-      class="modal-overlay__container quill-modal__container--visible"
+      class="quill-modal__container--visible modal-overlay__container"
     >
       <svg
         class="quill-modal__close-icon"
@@ -82,11 +82,11 @@ exports[`ModalOverlay should render SVG if it was passed 1`] = `
 exports[`ModalOverlay should render container with image as a background if src was passed 1`] = `
 <div>
   <div
-    class="quill-modal__background "
+    class="quill-modal__background"
     data-testid="dt_overlay"
   >
     <div
-      class="modal-overlay__container quill-modal__container--visible"
+      class="quill-modal__container--visible modal-overlay__container"
     >
       <svg
         class="quill-modal__close-icon"
@@ -150,11 +150,11 @@ exports[`ModalOverlay should render container with image as a background if src 
 exports[`ModalOverlay should render secondary button if showSecondaryButton === true and the label was passed 1`] = `
 <div>
   <div
-    class="quill-modal__background "
+    class="quill-modal__background"
     data-testid="dt_overlay"
   >
     <div
-      class="modal-overlay__container quill-modal__container--visible"
+      class="quill-modal__container--visible modal-overlay__container"
     >
       <svg
         class="quill-modal__close-icon"
@@ -233,11 +233,11 @@ exports[`ModalOverlay should render secondary button if showSecondaryButton === 
 exports[`ModalOverlay should render with default values if optional ones were not passed 1`] = `
 <div>
   <div
-    class="quill-modal__background "
+    class="quill-modal__background"
     data-testid="dt_overlay"
   >
     <div
-      class="modal-overlay__container quill-modal__container--visible"
+      class="quill-modal__container--visible modal-overlay__container"
     >
       <svg
         class="quill-modal__close-icon"

@@ -88,7 +88,7 @@ export const ModalBase = ({
         animationTimerRef.current = setTimeout(() => {
             setIsExpanded(false);
             toggleModal(!isOpened);
-        }, 200);
+        }, 300);
     };
 
     const primaryButtonFunctionHandler = () => {
@@ -117,17 +117,17 @@ export const ModalBase = ({
     return ReactDOM.createPortal(
         <div
             {...rest}
-            className="quill-modal__background "
+            className="quill-modal__background"
             data-testid="dt_overlay"
             onClick={isSwiping ? undefined : toggleHandler}
         >
             <div
                 className={clsx(
-                    containerClassName,
                     {
                         "quill-modal__container--visible": isVisible,
                         "quill-modal__container--expanded": isExpanded,
                     },
+                    containerClassName,
                     className,
                 )}
                 onClick={(e) => e.stopPropagation()}
