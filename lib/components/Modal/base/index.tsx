@@ -5,8 +5,10 @@ import "../modal.scss";
 import { useSwipeable } from "react-swipeable";
 import { Button } from "@components/Button";
 import { LabelPairedXmarkMdBoldIcon } from "@deriv/quill-icons/LabelPaired";
+import { ModalHeader } from "./modal-header";
+import { ModalBody } from "./modal-body";
 
-export interface ModalBaseProps extends HTMLAttributes<HTMLDivElement> {
+export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     isOpened?: boolean;
     className?: string;
     containerClassName?: string;
@@ -15,7 +17,7 @@ export interface ModalBaseProps extends HTMLAttributes<HTMLDivElement> {
     showSecondaryButton?: boolean;
     shouldCloseOnPrimaryButtonClick?: boolean;
     shouldCloseOnSecondaryButtonClick?: boolean;
-    toggleModal: (isOpened: boolean) => void;
+    toggleModal?: (isOpened: boolean) => void;
     portalId?: string;
     primaryButtonLabel?: React.ReactNode;
     primaryButtonCallback?: () => void;
@@ -33,7 +35,7 @@ const swipeConfig = {
 
 const MAX_HEIGHT = 85;
 
-export const ModalBase = ({
+export const Modal = ({
     isOpened = false,
     className,
     children,
@@ -49,7 +51,7 @@ export const ModalBase = ({
     secondaryButtonCallback,
     secondaryButtonLabel,
     ...rest
-}: React.PropsWithChildren<ModalBaseProps>) => {
+}: React.PropsWithChildren<ModalProps>) => {
     const [isVisible, setIsVisible] = useState(isOpened);
     const [isExpanded, setIsExpanded] = useState(false);
     const [isSwiping, setIsSwiping] = useState(false);
@@ -87,7 +89,7 @@ export const ModalBase = ({
         setIsVisible(!isVisible);
         animationTimerRef.current = setTimeout(() => {
             setIsExpanded(false);
-            toggleModal(!isOpened);
+            toggleModal && toggleModal(!isOpened);
         }, 300);
     };
 
@@ -175,3 +177,5 @@ export const ModalBase = ({
         modalRoot,
     );
 };
+Modal.Header = ModalHeader;
+Modal.Body = ModalBody;

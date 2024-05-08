@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal.Frame should render SVG if it was passed 1`] = `
+exports[`Modal should render SVG if it was passed 1`] = `
 <div>
   <div
     class="quill-modal__background"
@@ -79,7 +79,7 @@ exports[`Modal.Frame should render SVG if it was passed 1`] = `
 </div>
 `;
 
-exports[`Modal.Frame should render container with image as a background if src was passed 1`] = `
+exports[`Modal should render container with image as a background if src was passed 1`] = `
 <div>
   <div
     class="quill-modal__background"
@@ -147,7 +147,7 @@ exports[`Modal.Frame should render container with image as a background if src w
 </div>
 `;
 
-exports[`Modal.Frame should render secondary button if showSecondaryButton === true and the label was passed 1`] = `
+exports[`Modal should render secondary button if showSecondaryButton === true and the label was passed 1`] = `
 <div>
   <div
     class="quill-modal__background"
@@ -230,7 +230,7 @@ exports[`Modal.Frame should render secondary button if showSecondaryButton === t
 </div>
 `;
 
-exports[`Modal.Frame should render with default values if optional ones were not passed 1`] = `
+exports[`Modal should render with default values if optional ones were not passed 1`] = `
 <div>
   <div
     class="quill-modal__background"

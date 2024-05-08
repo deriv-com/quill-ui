@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Modal from "..";
+import { Modal } from "@components/Modal";
+import { ModalProps } from "../base";
 import { Button } from "@components/Button";
 import "@quill/breakpoints.scss";
-import { ModalBase } from "../base/base";
 
-interface ModalExampleProps extends React.ComponentProps<typeof ModalBase> {
+interface ModalExampleProps extends ModalProps {
     image?: React.ReactNode;
     src?: string;
     style?: React.CSSProperties;
@@ -48,7 +48,7 @@ export const ModalExample = ({
                 label={openModalButtonLabel}
                 onClick={() => setIsOpen(true)}
             />
-            <Modal.Frame
+            <Modal
                 {...args}
                 isMobile={isMobile}
                 isOpened={isOpen}
@@ -64,7 +64,7 @@ export const ModalExample = ({
                     style={style}
                 />
                 <Modal.Body>{textContent}</Modal.Body>
-            </Modal.Frame>
+            </Modal>
         </>
     );
 };
