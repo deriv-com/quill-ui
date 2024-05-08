@@ -29,10 +29,9 @@ export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithS
                 <button className={clsx("quill-input-steppers-decrement", disabled && 'quill-input-steppers--disabled')}
                     onClick={() => {
                         if (!disabled) {
-                            console.log('HERE: click -');
                             onChange?.({
                                 target: { value: getFormatValue(Number(value) - 1) },
-                            } as React.ChangeEvent<HTMLInputElement>);
+                            } as unknown as React.ChangeEvent<HTMLInputElement>);
                         }
                     }}>
                     <LabelPairedMinusSmRegularIcon />
@@ -40,23 +39,15 @@ export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithS
                 <button className={clsx("quill-input-steppers-increment", disabled && 'quill-input-steppers--disabled')}
                     onClick={() => {
                         if (!disabled) {
-                            console.log('HERE: click +');
                             onChange?.({
                                 target: { value: getFormatValue(Number(value) + 1) },
-                            } as React.ChangeEvent<HTMLInputElement>);
+                            } as unknown as React.ChangeEvent<HTMLInputElement>);
                         }
                     }}>
                     <LabelPairedPlusSmRegularIcon />
                 </button>
             </>
         );
-
-        console.log('HERE: value: ', value);
-
-        React.useEffect(() => {
-            // setIsEmpty(!value);
-            console.log('HERE: value changed: ', value);
-        }, [value]);
 
         return (
             <div>

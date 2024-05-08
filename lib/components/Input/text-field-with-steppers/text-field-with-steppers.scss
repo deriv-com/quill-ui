@@ -4,7 +4,7 @@
         cursor: pointer;
     }
     &-increment {
-        padding-left: 8px;
+        padding-left: var(--core-spacing-400);
         cursor: pointer;
     }
     &--disabled {

@@ -16,7 +16,7 @@ import {
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
-export type Types = "text" | "email" | "password" | "tel";
+export type Types = "text" | "email" | "password" | "tel" | "number";
 export type TextAlignments = "left" | "center";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -85,7 +85,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     className={clsx(
                         className,
                         `quill-input__wrapper`,
-                        inputValue.length > 0 &&
+                        inputValue.toString().length > 0 &&
                             `quill-input__wrapper--has-value`,
                         `quill-input__wrapper__variant--${variant}`,
                         `quill-input__wrapper__variant--${variant}--${status}`,
@@ -100,7 +100,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             label
                                 ? "quill-input-label__wrapper"
                                 : "quill-input-no-label__wrapper",
-                            inputValue.length > 0 &&
+                            inputValue.toString().length > 0 &&
                                 "quill-input-label__wrapper--has-value",
                         )}
                     >
@@ -178,7 +178,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         </span>
                         {showCharacterCounter && maxLength && (
                             <span className="message__container__text">
-                                {inputValue.length}/{maxLength}
+                                {inputValue.toString().length}/{maxLength}
                             </span>
                         )}
                     </div>
