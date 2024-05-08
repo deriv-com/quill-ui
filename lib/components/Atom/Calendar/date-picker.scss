@@ -80,9 +80,11 @@
             flex-direction: column;
         }
 
-        &__year-view .react-calendar__tile {
-            padding: 0px var(--component-actionSheet-spacing-padding-md);
-            min-height: var(--core-size-2400);
+        &__year-view {
+            & .react-calendar__tile {
+                padding: 0px var(--component-actionSheet-spacing-padding-md);
+                min-height: var(--core-size-2400);
+            }
         }
 
         &__tile {
@@ -143,10 +145,9 @@
             }
         }
 
-        // TODO: refactor
         &__viewContainer {
             overflow-y: auto;
-            // height: 242.22px;
+            aspect-ratio: 1.12;
         }
     }
 
