@@ -16,6 +16,7 @@ import {
 } from "@deriv/quill-icons";
 import { TMediumSizes } from "@types";
 import { Text } from "@components/Typography";
+import { KEY } from "@utils/common-utils";
 
 export interface CheckboxProps
     extends Omit<
@@ -88,9 +89,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 
         const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
             e.stopPropagation();
-            e.preventDefault();
-
-            if (e.key === "Enter" || e.key === " ") onChangeHandler(e);
+            if (e.key === KEY.SPACE) e.preventDefault();
+            if (e.key === KEY.ENTER || e.key === KEY.SPACE) onChangeHandler(e);
         };
 
         const determinateIcon = isChecked ? (
@@ -125,6 +125,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             >
                 <div className="quill-checkbox__wrapper">
                     <input
+                        {...rest}
                         id={rest.id ?? name}
                         className="quill-checkbox__box"
                         type="checkbox"
@@ -134,7 +135,6 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                         name={name}
                         onChange={onInputChange}
                         onKeyDown={onKeyDown}
-                        {...rest}
                     />
                     {isIndeterminate ? (
                         <StandaloneSquareMinusFillIcon

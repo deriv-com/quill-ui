@@ -74,31 +74,25 @@ type Story = StoryObj<typeof meta>;
 
 const basicBanners = [
     {
-        id: "0",
         message: "This is an information message",
         redirectTo: "https://www.example.com",
         title: "Information",
         type: TYPE.INFO,
     },
     {
-        id: "1",
         message: "This is a warning message",
         redirectTo: "https://www.example.com",
         title: "Warning",
         type: TYPE.WARNING,
     },
     {
-        id: "2",
         message: "This is an error message",
         redirectTo: "https://www.example.com",
         title: "Error",
         type: TYPE.ERROR,
     },
 ];
-const initialBanners = [
-    ...basicBanners,
-    ...basicBanners.map((item) => ({ ...item, id: `${item.id}_unique` })),
-];
+const initialBanners = [...basicBanners, ...basicBanners];
 
 const Template: Story = {
     render: (args) => {

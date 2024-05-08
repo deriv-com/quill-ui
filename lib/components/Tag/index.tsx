@@ -41,9 +41,15 @@ const Tag = forwardRef<HTMLDivElement, BaseTagProps>(
                 />
 
                 {size === "sm" || size === "xs" ? (
-                    <CaptionText bold={isBold}>{label}</CaptionText>
+                    <CaptionText bold={isBold} color={color}>
+                        {label}
+                    </CaptionText>
                 ) : (
-                    <Text size={size === "md" ? "sm" : "md"} bold={isBold}>
+                    <Text
+                        size={size === "md" ? "sm" : "md"}
+                        bold={isBold}
+                        color={color}
+                    >
                         {label}
                     </Text>
                 )}

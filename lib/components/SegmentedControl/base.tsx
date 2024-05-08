@@ -6,6 +6,7 @@ import React, {
     useState,
 } from "react";
 import { TRegularSizes } from "@types";
+import { KEY } from "@utils/common-utils";
 import { Segment } from "./segment";
 import "./segmented-control.scss";
 
@@ -23,14 +24,6 @@ export interface SegmentedControlProps {
     onChange?: (selectedItemIndex: number) => void;
     size?: TRegularSizes;
 }
-
-const KEY = {
-    ARROW_LEFT: "ArrowLeft",
-    ARROW_RIGHT: "ArrowRight",
-    ENTER: "Enter",
-    SPACE: " ",
-    TAB: "Tab",
-};
 
 export const SegmentedControl = ({
     className,

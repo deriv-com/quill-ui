@@ -7,6 +7,7 @@ import {
     StandaloneCircleRegularIcon,
 } from "@deriv/quill-icons";
 import { Text } from "@components/Typography";
+import { KEY } from "@utils/common-utils";
 import "./radio-button.scss";
 import { TMediumSizes } from "@types";
 
@@ -40,25 +41,30 @@ const RadioButton = ({
     ...otherProps
 }: React.PropsWithChildren<IRadio>) => {
     const [checked, setChecked] = React.useState(defaultChecked);
+    const inputRef = React.useRef<HTMLInputElement>(null);
 
     React.useEffect(() => {
         setChecked(defaultChecked);
     }, [defaultChecked]);
 
-    const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setChecked(e.target.checked);
-        onChange?.(e);
+    const handleMouseClick = () => {
+        if (!disabled) {
+            handleChange();
+        }
     };
 
-    const handleIconClick = (
-        e:
-            | React.MouseEvent<HTMLSpanElement>
-            | React.KeyboardEvent<HTMLSpanElement>,
-    ) => {
-        if (!disabled) {
-            const synthesizedEvent = new Event("change");
-            const input = e.currentTarget.previousSibling as HTMLInputElement;
-            input.dispatchEvent(synthesizedEvent);
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLSpanElement>) => {
+        if (!disabled && (e.key === KEY.ENTER || e.key === KEY.SPACE)) {
+            handleChange();
+        }
+    };
+    const handleChange = () => {
+        const input = inputRef.current;
+        if (input) {
+            input.checked = !input.checked;
+            onChange?.({
+                target: input,
+            } as React.ChangeEvent<HTMLInputElement>);
         }
     };
 
@@ -94,9 +100,9 @@ const RadioButton = ({
             <input
                 className="quill-radio-button__input"
                 type="radio"
-                onChange={onInputChange}
                 checked={checked}
                 disabled={disabled}
+                ref={inputRef}
                 value={value}
                 {...otherProps}
             />
@@ -105,8 +111,8 @@ const RadioButton = ({
                 className={clsx("quill-radio-button__icon", {
                     "quill-radio-button__icon--disabled": disabled,
                 })}
-                onClick={handleIconClick}
-                onKeyDown={handleIconClick}
+                onClick={handleMouseClick}
+                onKeyDown={handleKeyDown}
                 id={id}
             >
                 {getIcon()}
@@ -121,6 +127,8 @@ const RadioButton = ({
                     },
                     classNameLabel,
                 )}
+                onClick={handleMouseClick}
+                onKeyDown={handleKeyDown}
             >
                 {children}
             </Text>
