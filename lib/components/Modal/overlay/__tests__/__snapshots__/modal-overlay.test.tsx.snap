@@ -7,7 +7,7 @@ exports[`ModalOverlay should render SVG if it was passed 1`] = `
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal__container--visible modal-overlay__container"
+      class="modal-overlay__container quill-modal__container--visible"
     >
       <svg
         class="quill-modal__close-icon"
@@ -86,7 +86,7 @@ exports[`ModalOverlay should render container with image as a background if src 
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal__container--visible modal-overlay__container"
+      class="modal-overlay__container quill-modal__container--visible"
     >
       <svg
         class="quill-modal__close-icon"
@@ -154,7 +154,7 @@ exports[`ModalOverlay should render secondary button if showSecondaryButton === 
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal__container--visible modal-overlay__container"
+      class="modal-overlay__container quill-modal__container--visible"
     >
       <svg
         class="quill-modal__close-icon"
@@ -237,7 +237,7 @@ exports[`ModalOverlay should render with default values if optional ones were no
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal__container--visible modal-overlay__container"
+      class="modal-overlay__container quill-modal__container--visible"
     >
       <svg
         class="quill-modal__close-icon"

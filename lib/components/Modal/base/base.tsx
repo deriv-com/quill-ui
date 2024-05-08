@@ -123,11 +123,12 @@ export const ModalBase = ({
         >
             <div
                 className={clsx(
+                    containerClassName,
                     {
                         "quill-modal__container--visible": isVisible,
                         "quill-modal__container--expanded": isExpanded,
                     },
-                    containerClassName,
+
                     className,
                 )}
                 onClick={(e) => e.stopPropagation()}

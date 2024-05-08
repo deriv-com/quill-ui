@@ -7,7 +7,7 @@ exports[`ModalBottom should not render handleBar if showHandleBar === false 1`] 
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal__container--visible modal-bottom__container"
+      class="modal-bottom__container quill-modal__container--visible"
     >
       <div
         class="quill-modal__content-wrapper"
@@ -53,7 +53,7 @@ exports[`ModalBottom should render SVG if it was passed 1`] = `
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal__container--visible modal-bottom__container"
+      class="modal-bottom__container quill-modal__container--visible"
     >
       <div
         class="quill-modal__handle-bar"
@@ -113,7 +113,7 @@ exports[`ModalBottom should render container with image as a background if src w
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal__container--visible modal-bottom__container"
+      class="modal-bottom__container quill-modal__container--visible"
     >
       <div
         class="quill-modal__handle-bar"
@@ -162,7 +162,7 @@ exports[`ModalBottom should render passed image if it is ReactNode 1`] = `
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal__container--visible modal-bottom__container"
+      class="modal-bottom__container quill-modal__container--visible"
     >
       <div
         class="quill-modal__handle-bar"
@@ -215,7 +215,7 @@ exports[`ModalBottom should render secondary button if showSecondaryButton === t
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal__container--visible modal-bottom__container"
+      class="modal-bottom__container quill-modal__container--visible"
     >
       <div
         class="quill-modal__handle-bar"
@@ -279,7 +279,7 @@ exports[`ModalBottom should render with default values if optional ones were not
     data-testid="dt_overlay"
   >
     <div
-      class="quill-modal__container--visible modal-bottom__container"
+      class="modal-bottom__container quill-modal__container--visible"
     >
       <div
         class="quill-modal__handle-bar"
