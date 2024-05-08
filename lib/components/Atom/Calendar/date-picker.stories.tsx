@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { Text } from "@components/Typography";
 import {
+    LabelPairedChevronRightSmFillIcon,
+    LabelPairedChevronLeftSmFillIcon,
     LabelPairedChevronsRightSmFillIcon,
     LabelPairedChevronsLeftSmFillIcon,
 } from "@deriv/quill-icons";
@@ -22,6 +24,36 @@ const meta = {
         },
     },
     tags: ["autodocs"],
+    args: {
+        allowPartialRange: false,
+        isWidthFixed: true,
+        formatMonthYear: (locale, date) =>
+            new Date(date).toLocaleString(locale || navigator.languages, {
+                month: "short",
+                year: "numeric",
+            }),
+        goToRangeStartOnSelect: true,
+        maxDetail: "month",
+        minDetail: "century",
+        navigationLabel: ({ label }) => <Text as="span">{label}</Text>,
+        next2Label: null,
+        nextLabel: (
+            <LabelPairedChevronRightSmFillIcon fill="var(--component-textIcon-normal-prominent)" />
+        ),
+        optionsConfig: {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+        },
+        prev2Label: null,
+        prevLabel: (
+            <LabelPairedChevronLeftSmFillIcon fill="var(--component-textIcon-normal-prominent)" />
+        ),
+        returnValue: "start",
+        selectRange: false,
+        showNavigation: true,
+        showNeighboringMonth: false,
+    },
     argTypes: {
         activeStartDate: {
             table: { type: { summary: "Date | undefined" } },
@@ -446,25 +478,29 @@ const Template: React.FC<Template> = ({ ...args }: Template) => {
     return (
         <>
             <Text as="div">Selected date: {formattedDate}</Text>
-            <DatePicker
-                {...args}
-                value={date}
-                onChange={(value) => setDate(value)}
-                onFormattedDate={(value) => setFormattedDate(value)}
-            />
+            <div style={{ width: `${args.isWidthFixed ? "304px" : "90vw"}` }}>
+                <DatePicker
+                    {...args}
+                    value={date}
+                    onChange={(value) => setDate(value)}
+                    onFormattedDate={(value) => setFormattedDate(value)}
+                />
+            </div>
         </>
     );
 };
 export const DefaultDatePicker = Template.bind(this) as Story;
-DefaultDatePicker.args = {};
+DefaultDatePicker.args = { ...meta.args };
 
 export const DatePickerWithRangeSelection = Template.bind(this) as Story;
 DatePickerWithRangeSelection.args = {
+    ...meta.args,
     selectRange: true,
 };
 
 export const DatePickerWithDoubleNavigation = Template.bind(this) as Story;
 DatePickerWithDoubleNavigation.args = {
+    ...meta.args,
     next2Label: (
         <LabelPairedChevronsRightSmFillIcon fill="var(--component-textIcon-normal-prominent)" />
     ),
@@ -476,6 +512,7 @@ DatePickerWithDoubleNavigation.args = {
 export const DatePickerWithCustomConfigForFormattingSelectedDate =
     Template.bind(this) as Story;
 DatePickerWithCustomConfigForFormattingSelectedDate.args = {
+    ...meta.args,
     optionsConfig: {
         day: "numeric",
         month: "short",
@@ -487,6 +524,7 @@ export const DatePickerWithCustomMonthAndYearFormatting = Template.bind(
     this,
 ) as Story;
 DatePickerWithCustomMonthAndYearFormatting.args = {
+    ...meta.args,
     formatMonthYear: (locale, date) =>
         new Date(date).toLocaleString(locale || navigator.languages, {
             month: "2-digit",
@@ -496,30 +534,36 @@ DatePickerWithCustomMonthAndYearFormatting.args = {
 
 export const DatePickerWithoutNavigation = Template.bind(this) as Story;
 DatePickerWithoutNavigation.args = {
+    ...meta.args,
     showNavigation: false,
 };
 
 export const DatePickerWithNeighboringMonth = Template.bind(this) as Story;
 DatePickerWithNeighboringMonth.args = {
+    ...meta.args,
     showNeighboringMonth: true,
 };
 
 export const DatePickerWithCustomActiveStartDate = Template.bind(this) as Story;
 DatePickerWithCustomActiveStartDate.args = {
+    ...meta.args,
     activeStartDate: new Date(2017, 0, 1),
 };
 
 export const DatePickerGregoryType = Template.bind(this) as Story;
 DatePickerGregoryType.args = {
+    ...meta.args,
     calendarType: "gregory",
 };
 
 export const DatePickerIslamicType = Template.bind(this) as Story;
 DatePickerIslamicType.args = {
+    ...meta.args,
     calendarType: "islamic",
 };
 
 export const DatePickerWithNotFixedWidth = Template.bind(this) as Story;
 DatePickerWithNotFixedWidth.args = {
+    ...meta.args,
     isWidthFixed: false,
 };

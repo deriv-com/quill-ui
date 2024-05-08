@@ -7,7 +7,6 @@
     width: unset;
 
     &__wrapper {
-        width: 100%;
         &--fixed-width {
             width: 304px;
 
@@ -81,6 +80,11 @@
             flex-direction: column;
         }
 
+        &__year-view .react-calendar__tile {
+            padding: 0px var(--component-actionSheet-spacing-padding-md);
+            min-height: var(--core-size-2400);
+        }
+
         &__tile {
             font-family: var(--core-fontFamily-ibmPlex-sans);
             font-size: inherit;
@@ -89,6 +93,26 @@
             &:enabled:focus {
                 background-color: var(
                     --semantic-color-monochrome-surface-normal-low
+                );
+            }
+
+            &--range {
+                border-radius: unset;
+            }
+            &--rangeStart {
+                border-top-left-radius: var(
+                    --component-dropdownItem-border-radius
+                );
+                border-bottom-left-radius: var(
+                    --component-dropdownItem-border-radius
+                );
+            }
+            &--rangeEnd {
+                border-top-right-radius: var(
+                    --component-dropdownItem-border-radius
+                );
+                border-bottom-right-radius: var(
+                    --component-dropdownItem-border-radius
                 );
             }
 
@@ -122,7 +146,7 @@
         // TODO: refactor
         &__viewContainer {
             overflow-y: auto;
-            // height: 288px;
+            // height: 242.22px;
         }
     }
 

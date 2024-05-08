@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import clsx from "clsx";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -78,6 +79,10 @@ export const DatePicker = ({
         }
         return formatLocaleString(date);
     };
+
+    useEffect(() => {
+        onFormattedDate?.(formatSelectedDate((value as Value) || new Date()));
+    }, []);
 
     return (
         <div
