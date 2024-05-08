@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { useState } from "react";
+import { Text } from "@components/Typography";
 import { DatePicker } from "./index";
+
+type Template = React.ComponentProps<typeof DatePicker>;
 
 const meta = {
     title: "Components/Atom/DatePicker",
@@ -9,12 +13,11 @@ const meta = {
         docs: {
             description: {
                 component:
-                    "*NOTE: this component was created with the help of React Calendar library. [Repository Link](https://github.com/wojtekmaj/react-calendar)",
+                    "*NOTE: this component was created with the help of React Calendar library. [Repository link](https://github.com/wojtekmaj/react-calendar)",
             },
         },
     },
     tags: ["autodocs"],
-    args: {},
     argTypes: {
         activeStartDate: {
             table: { type: { summary: "Date | undefined" } },
@@ -294,6 +297,27 @@ const meta = {
                 "Function called when the user navigates from one view to another using previous/next button. Note that this function will not be called when e.g. drilling up from January 2021 to 2021 or drilling down the other way around. action signifies the reason for active start date change and can be one of the following values: 'prev', 'prev2', 'next', 'next2', 'drillUp', 'drillDown', 'onChange'. Example: ({ action, activeStartDate, value, view }) => alert('Changed view to: ', activeStartDate, view)",
             control: { type: null },
         },
+        onChange: {
+            table: {
+                type: {
+                    summary:
+                        "((value: Date | null | (Date | null)[], event?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined",
+                },
+            },
+            description:
+                "Function called when the user clicks an item (day on month view, month on year view and so on) on the most detailed view available.",
+            control: { type: null },
+        },
+        onFormattedDate: {
+            table: {
+                type: {
+                    summary: "((value: string) => void) | undefined",
+                },
+            },
+            description:
+                "Function called when the user clicks an item (day on month view, month on year view and so on) on the most detailed view available, will be called together with onChange. Returns formatted chosen date (single or range).",
+            control: { type: null },
+        },
         prev2AriaLabel: {
             table: {
                 type: { summary: "string | undefined" },
@@ -391,10 +415,26 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const DefaultDatePicker: Story = {
-    args: {},
-};
+const Template: React.FC<Template> = ({ ...args }: Template) => {
+    const [date, setDate] = useState<Template["value"]>(new Date());
+    const [formattedDate, setFormattedDate] = useState("");
 
-export const DatePickerWithRangeSelection: Story = {
-    args: { selectRange: true },
+    return (
+        <>
+            <Text as="div">Selected date: {formattedDate}</Text>
+            <DatePicker
+                {...args}
+                value={date}
+                onChange={(value) => setDate(value)}
+                onFormattedDate={(value) => setFormattedDate(value)}
+            />
+        </>
+    );
+};
+export const DefaultDatePicker = Template.bind(this) as Story;
+DefaultDatePicker.args = {};
+
+export const DatePickerWithRangeSelection = Template.bind(this) as Story;
+DatePickerWithRangeSelection.args = {
+    selectRange: true,
 };

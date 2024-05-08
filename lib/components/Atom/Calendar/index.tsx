@@ -1,4 +1,3 @@
-import { useState } from "react";
 import clsx from "clsx";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -9,8 +8,14 @@ import {
 } from "@deriv/quill-icons";
 import { Text } from "@components/Typography";
 
-export interface DatePicker extends React.ComponentProps<typeof Calendar> {
+interface DatePicker
+    extends Omit<React.ComponentProps<typeof Calendar>, "onChange"> {
     optionsConfig?: Record<string, string>;
+    onChange?: (
+        value: Value,
+        event?: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    ) => void;
+    onFormattedDate?: (value: string) => void;
 }
 
 type ValuePiece = Date | null;
@@ -22,33 +27,19 @@ export const DatePicker = ({
     allowPartialRange = false,
     calendarType,
     className,
-    defaultActiveStartDate,
     defaultValue,
     defaultView,
-    formatDay,
-    formatLongDate,
-    formatMonth,
     formatMonthYear = (locale, date) =>
         new Date(date).toLocaleString(locale || navigator.languages, {
             month: "short",
             year: "numeric",
         }),
-    formatShortWeekday,
-    formatWeekday,
-    formatYear,
     goToRangeStartOnSelect = true,
-    inputRef,
     locale,
-    maxDate,
     maxDetail = "month",
-    minDate,
     minDetail = "century",
-    navigationAriaLabel,
-    navigationAriaLive,
     navigationLabel = ({ label }) => <Text as="span">{label}</Text>,
-    next2AriaLabel,
     next2Label = null,
-    nextAriaLabel,
     nextLabel = (
         <LabelPairedChevronRightSmFillIcon fill="var(--component-textIcon-normal-prominent)" />
     ),
@@ -57,10 +48,9 @@ export const DatePicker = ({
         month: "2-digit",
         year: "numeric",
     },
-    onActiveStartDateChange,
-    prev2AriaLabel,
+    onChange,
+    onFormattedDate,
     prev2Label = null,
-    prevAriaLabel,
     prevLabel = (
         <LabelPairedChevronLeftSmFillIcon fill="var(--component-textIcon-normal-prominent)" />
     ),
@@ -69,86 +59,56 @@ export const DatePicker = ({
     showNavigation = true,
     showNeighboringMonth = false,
     tileClassName,
+    value,
+    ...rest
 }: DatePicker) => {
-    const [date, setDate] = useState<Value>(new Date());
-
-    const formatLocaleString = (
-        date: Date,
-        config: Record<string, string>,
-        locale?: string | string[],
-    ) => date.toLocaleString(locale, config);
+    const formatLocaleString = (date: Date) =>
+        date.toLocaleString(locale || navigator.language, optionsConfig);
 
     const formatSelectedDate = (date: Value) => {
-        if (!date) return null;
+        if (!date) return "";
         if (Array.isArray(date)) {
             return date
-                .map((item) =>
-                    item
-                        ? formatLocaleString(
-                              item,
-                              optionsConfig,
-                              locale || navigator.language,
-                          )
-                        : "",
-                )
+                .map((item) => (item ? formatLocaleString(item) : ""))
                 .join(" - ");
         }
-        return formatLocaleString(
-            date,
-            optionsConfig,
-            locale || navigator.language,
-        );
+        return formatLocaleString(date);
     };
+
     // TODO: add input with ability to enabling user typing
     // TODO: add normal wrapper for Calendar
 
     return (
-        <>
-            <div>{formatSelectedDate(date)}</div>
-            <div style={{ width: "368px" }}>
-                <Calendar
-                    activeStartDate={activeStartDate}
-                    allowPartialRange={allowPartialRange}
-                    calendarType={calendarType}
-                    className={clsx("quill-date-picker", className)}
-                    defaultActiveStartDate={defaultActiveStartDate}
-                    defaultValue={defaultValue}
-                    defaultView={defaultView}
-                    formatDay={formatDay}
-                    formatLongDate={formatLongDate}
-                    formatMonth={formatMonth}
-                    formatMonthYear={formatMonthYear}
-                    formatShortWeekday={formatShortWeekday}
-                    formatWeekday={formatWeekday}
-                    formatYear={formatYear}
-                    goToRangeStartOnSelect={goToRangeStartOnSelect}
-                    inputRef={inputRef}
-                    locale={locale}
-                    maxDate={maxDate}
-                    maxDetail={maxDetail}
-                    minDate={minDate}
-                    minDetail={minDetail}
-                    navigationAriaLabel={navigationAriaLabel}
-                    navigationAriaLive={navigationAriaLive}
-                    navigationLabel={navigationLabel}
-                    next2AriaLabel={next2AriaLabel}
-                    next2Label={next2Label}
-                    nextAriaLabel={nextAriaLabel}
-                    nextLabel={nextLabel}
-                    onActiveStartDateChange={onActiveStartDateChange}
-                    onChange={(value) => setDate(value)}
-                    prev2AriaLabel={prev2AriaLabel}
-                    prev2Label={prev2Label}
-                    prevAriaLabel={prevAriaLabel}
-                    prevLabel={prevLabel}
-                    returnValue={returnValue}
-                    selectRange={selectRange}
-                    showNavigation={showNavigation}
-                    showNeighboringMonth={showNeighboringMonth}
-                    tileClassName={tileClassName}
-                    value={date}
-                />
-            </div>
-        </>
+        <div style={{ width: "368px" }}>
+            <Calendar
+                {...rest}
+                activeStartDate={activeStartDate}
+                allowPartialRange={allowPartialRange}
+                calendarType={calendarType}
+                className={clsx("quill-date-picker", className)}
+                defaultValue={defaultValue}
+                defaultView={defaultView}
+                formatMonthYear={formatMonthYear}
+                goToRangeStartOnSelect={goToRangeStartOnSelect}
+                locale={locale}
+                maxDetail={maxDetail}
+                minDetail={minDetail}
+                navigationLabel={navigationLabel}
+                next2Label={next2Label}
+                nextLabel={nextLabel}
+                onChange={(value, event) => {
+                    onChange?.(value, event);
+                    onFormattedDate?.(formatSelectedDate(value));
+                }}
+                prev2Label={prev2Label}
+                prevLabel={prevLabel}
+                returnValue={returnValue}
+                selectRange={selectRange}
+                showNavigation={showNavigation}
+                showNeighboringMonth={showNeighboringMonth}
+                tileClassName={tileClassName}
+                value={value}
+            />
+        </div>
     );
 };
