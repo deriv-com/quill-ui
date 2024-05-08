@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
     StandaloneCircleSterlingRegularIcon,
     StandaloneTrashRegularIcon,
