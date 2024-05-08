@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Selectable Chip should render correctly with lg size 1`] = `
+<button
+  class="quill-chip quill-chip__size--lg"
+  data-state=""
+>
+  Chip - lg
+</button>
+`;
+
+exports[`Selectable Chip should render correctly with md size 1`] = `
+<button
+  class="quill-chip quill-chip__size--md"
+  data-state=""
+>
+  Chip - md
+</button>
+`;
+
+exports[`Selectable Chip should render correctly with sm size 1`] = `
+<button
+  class="quill-chip quill-chip__size--sm"
+  data-state=""
+>
+  Chip - sm
+</button>
+`;

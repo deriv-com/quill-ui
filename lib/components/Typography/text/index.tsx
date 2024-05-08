@@ -11,6 +11,7 @@ export const Text = ({
     color,
     underlined = false,
     bold = false,
+    centered = false,
     ...rest
 }: TypographyProps) => {
     const decoration = getTextDecoration(italic, underlined);
@@ -22,6 +23,7 @@ export const Text = ({
             className={clsx(
                 `quill-typography__body-text__size--${size}__weight--${weight}__decoration--${decoration}`,
                 color ? color : "quill-typography__color--default",
+                centered && "quill-typography-centered",
                 className,
             )}
             {...rest}
