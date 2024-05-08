@@ -6,7 +6,7 @@ import { Listbox, Transition } from "@headlessui/react";
 import { Chip, LabelTextSizes } from "../base";
 import type { TSingleSelectItem, MultiSelectChipProps } from "../types";
 import clsx from "clsx";
-import "./dropdown-chip-multi-select.scss";
+import "../dropdown-chip-single-select/dropdown-chip-single-select.scss";
 import { TMediumSizes, TRegularSizes } from "@types";
 import { DropdownItem } from "@components/Atom";
 
@@ -37,7 +37,7 @@ const Options = ({ item, size }: OptionsProps) => {
     );
 };
 
-export const DropdownChipSingleSelect = forwardRef<
+export const DropdownChipMultiSelect = forwardRef<
     HTMLButtonElement,
     MultiSelectChipProps
 >(
@@ -55,77 +55,74 @@ export const DropdownChipSingleSelect = forwardRef<
         },
         ref,
     ) => {
-        const [selectedItems, setSelectedItems] = useState<Array<number>>([]);
+        const [selectedItems, setSelectedItems] = useState<TSingleSelectItem[]>(
+            [],
+        );
 
-        const handleItemSelect = (items: Array<number>) => {
+        const handleItemSelect = (items: TSingleSelectItem[]) => {
             setSelectedItems(items);
-            const updatedSelectionList = items.map((item) => options[item]);
-            onSelectionChange?.(updatedSelectionList);
+            onSelectionChange?.(items);
         };
 
         return (
-            <div className="flex flex-col">
-                <Listbox
-                    value={selectedItems}
-                    onChange={handleItemSelect}
-                    multiple
-                >
-                    {({ open }) => (
-                        <>
-                            <Listbox.Button as="div">
-                                <Chip
-                                    {...rest}
-                                    icon={icon}
-                                    size={size}
-                                    labelTag={labelTag}
-                                    ref={ref}
-                                    dropdown
-                                    selected={selectedItems.length > 0}
-                                    isDropdownOpen={open}
-                                    disabled={disabled}
-                                    label={label}
-                                >
-                                    {selectedItems.length > 0 &&
-                                        React.cloneElement(
-                                            LabelTextSizes[size],
-                                            {
-                                                children: `(${selectedItems.length})`,
-                                            },
-                                        )}
-                                </Chip>
-                            </Listbox.Button>
-                            <Transition
-                                enter="enter"
-                                enterFrom="enter-from"
-                                enterTo="enter-to"
-                                leave="leave"
-                                leaveFrom="enter-from"
-                                leaveTo="leave-to"
+            <Listbox
+                value={selectedItems}
+                onChange={handleItemSelect}
+                multiple
+                disabled={disabled}
+            >
+                {({ open }) => (
+                    <>
+                        <Listbox.Button as="div">
+                            <Chip
+                                {...rest}
+                                icon={icon}
+                                size={size}
+                                labelTag={labelTag}
+                                ref={ref}
+                                dropdown
+                                selected={selectedItems.length > 0}
+                                isDropdownOpen={open}
+                                disabled={disabled}
+                                label={label}
                             >
-                                <Listbox.Options
-                                    className={clsx(
-                                        "dropdown",
-                                        `dropdown__size--${size}`,
-                                        className,
-                                    )}
-                                >
-                                    {options.map((item) => (
-                                        <Options
-                                            item={item}
-                                            key={`chip-selectable-item-${item.value}`}
-                                            size={size}
-                                        />
-                                    ))}
-                                </Listbox.Options>
-                            </Transition>
-                        </>
-                    )}
-                </Listbox>
-            </div>
+                                {selectedItems.length > 0 &&
+                                    React.cloneElement(LabelTextSizes[size], {
+                                        children: `(${selectedItems.length})`,
+                                    })}
+                            </Chip>
+                        </Listbox.Button>
+                        <Transition
+                            enter="enter"
+                            enterFrom="enter-from"
+                            enterTo="enter-to"
+                            leave="leave"
+                            leaveFrom="enter-from"
+                            leaveTo="leave-to"
+                        >
+                            <Listbox.Options
+                                className={clsx(
+                                    "dropdown",
+                                    `dropdown__size--${size}`,
+                                    className,
+                                )}
+                            >
+                                {options.map((item) => (
+                                    <Options
+                                        item={item}
+                                        key={`chip-selectable-item-${item.value}`}
+                                        size={size}
+                                    />
+                                ))}
+                            </Listbox.Options>
+                        </Transition>
+                    </>
+                )}
+            </Listbox>
         );
     },
 );
 
-DropdownChipSingleSelect.displayName = "DropdownChipSingleSelect";
+DropdownChipMultiSelect.displayName = "DropdownChipMultiSelect";
 
-export default DropdownChipSingleSelect;
+export default DropdownChipMultiSelect;

@@ -63,7 +63,11 @@ export const DropdownChipSingleSelect = forwardRef<
         };
 
         return (
-            <Listbox value={selectedItem} onChange={handleItemSelect}>
+            <Listbox
+                value={selectedItem}
+                onChange={handleItemSelect}
+                disabled={disabled}
+            >
                 {({ open }) => (
                     <>
                         <Listbox.Button as="div">

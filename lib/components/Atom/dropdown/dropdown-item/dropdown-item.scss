@@ -1,8 +1,7 @@
 .quill-dropdown-item {
     display: flex;
     align-items: center;
-    height: var(--core-spacing-1600);
-    border-radius: var(--core-borderRadius-200);
+    border-radius: var(--component-dropdownItem-border-radius);
 
     &-label {
         flex-grow: 1;
@@ -10,14 +9,14 @@
 
     &__size {
         &--sm {
-            height: var(--core-spacing-1600);
-            padding: 0 var(--core-spacing-600);
-            gap: var(--core-spacing-300);
+            height: var(--component-dropdownItem-height-item-sm);
+            padding-inline: var(--component-dropdownItem-spacing-padding-sm);
+            gap: var(--component-dropdownItem-spacing-gap-sm);
         }
         &--md {
-            height: var(--core-spacing-2400);
-            padding: 0 var(--core-spacing-800);
-            gap: var(--core-spacing-400);
+            height: var(--component-dropdownItem-height-item-md);
+            padding-inline: var(--component-dropdownItem-spacing-padding-md);
+            gap: var(--component-dropdownItem-spacing-gap-md);
         }
     }
 
@@ -25,34 +24,46 @@
         &--true {
             &__disabled {
                 &--true {
-                    background-color: var(--core-color-opacity-black-300);
+                    background-color: var(
+                        --component-dropdownItem-bg-selectedDisabled
+                    );
 
                     & > p {
-                        color: var(--core-color-opacity-white-300);
+                        color: var(
+                            --component-dropdownItem-label-color-disabledWhite
+                        );
                     }
 
                     & > svg {
-                        fill: var(--core-color-opacity-white-300);
+                        fill: var(--component-textIcon-inverse-disabled);
                     }
                 }
 
                 &--false {
-                    background-color: var(--core-color-solid-slate-1400);
+                    background-color: var(--component-dropdownItem-bg-selected);
 
                     & > p {
-                        color: var(--core-color-solid-slate-50);
+                        color: var(
+                            --component-dropdownItem-label-color-selectedWhite
+                        );
                     }
 
                     & > svg {
-                        fill: var(--core-color-solid-slate-50);
+                        fill: var(
+                            --component-selectionControl-icon-selectedDefault
+                        );
                     }
 
                     &:hover {
-                        background-color: var(--core-color-opacity-black-700);
+                        background-color: var(
+                            --component-dropdownItem-bg-hover
+                        );
                     }
 
                     &:active {
-                        background-color: var(--core-color-opacity-black-800);
+                        background-color: var(
+                            --component-dropdownItem-bg-active
+                        );
                     }
                 }
             }

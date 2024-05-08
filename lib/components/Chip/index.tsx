@@ -1,14 +1,14 @@
 import SelectableChip from "./selectable-chip";
-// import DismissibleChip from './dismissible-chip'
+import DismissibleChip from "./dismissible-chip";
 import DropdownChipSingleSelect from "./dropdown-chip-single-select";
-// import DropdownChipMultiSelect from './dropdown-chip-multi-select'
+import DropdownChipMultiSelect from "./dropdown-chip-multi-select";
 import { ReactNode } from "react";
 
 type ChipVariants = {
     Selectable: typeof SelectableChip;
-    // Dismissible: typeof DismissibleChip;
+    Dismissible: typeof DismissibleChip;
     SingleSelectDropdown: typeof DropdownChipSingleSelect;
-    // MultiSelectDropdown: typeof DropdownChipMultiSelect;
+    MultiSelectDropdown: typeof DropdownChipMultiSelect;
 };
 
 export const Chip: ChipVariants = ({ children }: { children: ReactNode }) => {
@@ -16,8 +16,8 @@ export const Chip: ChipVariants = ({ children }: { children: ReactNode }) => {
 };
 
 Chip.Selectable = SelectableChip;
-// Chip.Dismissible = DismissibleChip;
+Chip.Dismissible = DismissibleChip;
 Chip.SingleSelectDropdown = DropdownChipSingleSelect;
-// Chip.MultiSelectDropdown = DropdownChipMultiSelect;
+Chip.MultiSelectDropdown = DropdownChipMultiSelect;
 
 export default Chip;

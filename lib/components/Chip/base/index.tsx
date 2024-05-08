@@ -4,28 +4,10 @@ import {
     StandaloneChevronDownRegularIcon,
     StandaloneCircleXmarkRegularIcon,
 } from "@deriv/quill-icons";
-import "../_chip.scss";
+import "./chip.scss";
 import clsx from "clsx";
 import { CaptionText, Text } from "@components/Typography";
 import { TRegularSizes } from "@types";
-
-export const ChipIconSizes: Record<
-    TRegularSizes,
-    { width: number; height: number }
-> = {
-    sm: {
-        width: 11,
-        height: 18,
-    },
-    md: {
-        width: 13,
-        height: 22,
-    },
-    lg: {
-        width: 14,
-        height: 24,
-    },
-};
 
 export const LabelTextSizes: Record<TRegularSizes, JSX.Element> = {
     sm: <CaptionText />,
@@ -53,7 +35,7 @@ export const Chip = forwardRef<HTMLButtonElement, BaseChipProps>(
         ref,
     ) => {
         const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-            // if (dismissible || dropdown) return;
+            if (dismissible || dropdown) return;
             if (selected === undefined) {
                 const target = event.currentTarget;
                 const isSelected =
@@ -73,29 +55,32 @@ export const Chip = forwardRef<HTMLButtonElement, BaseChipProps>(
             onDismiss?.(event);
         };
 
+        const customRightPadding = dismissible || dropdown;
+
         return (
             <button
                 onClick={handleClick}
                 className={clsx(
                     "quill-chip",
                     `quill-chip__size--${size}`,
+                    customRightPadding &&
+                        `quill-chip__custom-right-padding__size--${size}`,
                     className,
                 )}
                 data-state={selected ? "selected" : ""}
                 ref={ref}
                 {...rest}
             >
-                {Icon && <Icon {...ChipIconSizes[size]} />}
+                {Icon && <Icon />}
                 {label &&
                     React.cloneElement(LabelTextSizes[size], {
-                        ...rest,
                         children: label,
                     })}
                 {children}
                 {labelTag && <CaptionText bold>{labelTag}</CaptionText>}
                 {dismissible && (
                     <StandaloneCircleXmarkRegularIcon
-                        {...ChipIconSizes[size]}
+                        iconSize="sm"
                         onClick={handleDismiss}
                         data-testid="dt-chip-dismissible-btn"
                         className="cursor-pointer"

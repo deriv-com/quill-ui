@@ -30,7 +30,7 @@
     width: fit-content;
     border-radius: var(--core-borderRadius-400);
     box-shadow: var(--core-elevation-shadow-530);
-    background-color: var(--core-color-solid-slate-50);
+    background-color: var(--component-dropdownList-bg);
     min-width: 360px;
     margin-top: var(--core-spacing-200);
 
@@ -42,24 +42,6 @@
 
         &--lg {
             padding: var(--semantic-spacing-general-sm);
-        }
-    }
-
-    &-button {
-        &:not([data-state="selected"]):has(.rotate[data-state="open"]) {
-            background-color: var(--core-color-opacity-black-200);
-        }
-
-        &[data-state="selected"]:hover {
-            background-color: var(--core-color-opacity-black-700);
-        }
-
-        &[data-state="selected"]:active {
-            background-color: var(--core-color-opacity-black-800);
-        }
-
-        &[data-state="selected"]:has(.rotate[data-state="open"]) {
-            background-color: var(--core-color-opacity-black-800);
         }
     }
 

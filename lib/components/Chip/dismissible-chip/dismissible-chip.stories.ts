@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import DropdownChipMultiSelect from ".";
+import DismissibleChip from ".";
 import {
     LabelPairedCircleInfoSmBoldIcon,
     LabelPairedAndroidSmIcon,
     LabelPairedAppleSmIcon,
 } from "@deriv/quill-icons/LabelPaired";
-import { action } from "@storybook/addon-actions";
 
 const icons: Record<string, object | null> = {
     sample_1: LabelPairedCircleInfoSmBoldIcon,
@@ -15,8 +14,8 @@ const icons: Record<string, object | null> = {
 };
 
 const meta = {
-    title: "Components/Chips/Dropdown Chip Multi Select",
-    component: DropdownChipMultiSelect,
+    title: "Components/Chips/Dismissible Chip",
+    component: DismissibleChip,
     parameters: {
         docs: {
             story: {
@@ -42,28 +41,13 @@ const meta = {
                 type: "select",
             },
         },
-        onSelectionChange: { action: "onChange" },
     },
     tags: ["autodocs"],
-} satisfies Meta<typeof DropdownChipMultiSelect>;
+} satisfies Meta<typeof DismissibleChip>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    args: {
-        onSelectionChange: () => {
-            action("onSelectionChange");
-        },
-        options: [
-            { value: "1", label: "Sample Item 1" },
-            {
-                value: "2",
-                label: "Sample Item 2 - which is disabled",
-                disabled: true,
-            },
-            { value: "3", label: "Sample Item 3" },
-            { value: "4", label: "Sample Item 4" },
-        ],
-    },
+    args: {},
 };

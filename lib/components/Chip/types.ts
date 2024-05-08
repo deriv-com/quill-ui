@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 export interface BaseChipProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     dismissible?: boolean;
-    icon?: QuillIconComponent & ReactNode;
+    icon?: QuillIconComponent;
     label?: ReactNode;
     labelTag?: string;
     disabled?: boolean;
@@ -39,4 +39,8 @@ export interface MultiSelectChipProps extends BaseChipProps {
     options: TSingleSelectItem[];
     label: string;
     onSelectionChange: (item: TSingleSelectItem[]) => void;
+}
+
+export interface DismissibleChipProps extends BaseChipProps {
+    onDismiss?: (event: React.MouseEvent<SVGSVGElement, MouseEvent>) => void;
 }
