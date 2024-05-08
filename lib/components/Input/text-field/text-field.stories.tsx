@@ -3,20 +3,12 @@ import TextField from ".";
 import {
     StandaloneCircleCheckBoldIcon,
     StandaloneCircleUserRegularIcon,
-    StandalonePlaceholderRegularIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons";
 import { Status, Variants } from "../base";
 
 const icons: Record<string, object | null> = {
-    with_icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
-    none: null,
-};
-
-const statusIcon: Record<string, object | null> = {
-    placeholder: <StandalonePlaceholderRegularIcon iconSize="sm" />,
-    success: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
-    error: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+    with_icon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     none: null,
 };
 
@@ -34,8 +26,7 @@ const status: Record<string, Status> = {
 };
 
 const label = "label";
-const leftStatusMessage = "Status message goes here";
-const rightStatusMessage = "0/0";
+const message = "Status message goes here";
 
 const meta = {
     title: "Components/Inputs/Text Field",
@@ -53,6 +44,8 @@ const meta = {
         textAlignment: "left",
         fieldMarker: false,
         required: false,
+        showCharacterCounter: false,
+        maxLength: 15,
     },
     argTypes: {
         inputSize: {
@@ -64,13 +57,6 @@ const meta = {
         leftIcon: {
             options: Object.keys(icons),
             mapping: icons,
-            control: {
-                type: "select",
-            },
-        },
-        rightIcon: {
-            options: Object.keys(statusIcon),
-            mapping: statusIcon,
             control: {
                 type: "select",
             },
@@ -98,12 +84,7 @@ const meta = {
             },
             options: ["left", "center"],
         },
-        leftStatusMessage: {
-            control: {
-                type: "text",
-            },
-        },
-        rightStatusMessage: {
+        message: {
             control: {
                 type: "text",
             },
@@ -178,17 +159,17 @@ export const StatusMessageTextField: Story = {
         placeholder,
         variant: variants.outline,
         status: status.success,
-        leftStatusMessage,
+        message,
     },
 };
 
-export const DoubleStatusMessageTextField: Story = {
+export const StatusMessageWithCharacterCounterTextField: Story = {
     args: {
         placeholder,
         variant: variants.outline,
         status: status.error,
-        leftStatusMessage,
-        rightStatusMessage,
+        message,
+        showCharacterCounter: true,
     },
 };
 
@@ -197,8 +178,8 @@ export const SuccessMessageTextFieldWithIcons: Story = {
         placeholder,
         variant: variants.outline,
         status: status.success,
-        leftStatusMessage,
-        rightStatusMessage,
+        message,
+        showCharacterCounter: true,
         rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     },
     argTypes: {
@@ -214,8 +195,8 @@ export const ErrorMessageTextFieldWithIcons: Story = {
         placeholder,
         variant: variants.outline,
         status: status.error,
-        leftStatusMessage,
-        rightStatusMessage,
+        message,
+        showCharacterCounter: true,
         rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
     },
     argTypes: {

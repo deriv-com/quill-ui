@@ -16,7 +16,7 @@ const status: Record<string, Status> = {
     error: "error",
 };
 
-const leftStatusMessage = "Status message goes here";
+const message = "Status message goes here";
 /**
  * Consumer needs to wrap the SearchField in a container with width to make sure that SearchField doesnt get resized.
  */
@@ -34,7 +34,7 @@ const meta = {
         disabled: false,
         variant: variants.fill,
         textAlignment: "left",
-        leftStatusMessage: "",
+        message: "",
     },
     argTypes: {
         type: {
@@ -67,7 +67,7 @@ const meta = {
             },
             options: ["left", "center"],
         },
-        leftStatusMessage: {
+        message: {
             control: {
                 type: "text",
             },
@@ -128,12 +128,12 @@ export const SuccessMessageSearchFieldWithIcons = Template.bind({}) as Story;
 SuccessMessageSearchFieldWithIcons.args = {
     variant: variants.outline,
     status: status.success,
-    leftStatusMessage,
+    message,
 };
 
 export const ErrorMessageSearchFieldWithIcons = Template.bind({}) as Story;
 ErrorMessageSearchFieldWithIcons.args = {
     variant: variants.outline,
     status: status.error,
-    leftStatusMessage,
+    message,
 };

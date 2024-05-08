@@ -48,7 +48,7 @@ export default defineConfig({
         copyPublicDir: false,
         cssCodeSplit: false,
         rollupOptions: {
-            external: ["react", "react/jsx-runtime", "react-dom"],
+            external: ["react", "react-dom"],
             input: Object.fromEntries(
                 glob
                     .sync("lib/**/*.{ts,tsx}", {
