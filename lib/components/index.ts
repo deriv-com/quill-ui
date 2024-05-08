@@ -6,4 +6,5 @@ export * from "./Snackbar";
 export * from "./Tab";
 export * from "./Typography";
 export * from "./ActionSheet";
-export * from "./Input"
+export * from "./Input";
+export * from "./Chip";
