@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import { useState, useEffect, useRef, HTMLAttributes } from "react";
 import clsx from "clsx";
-import "./modal.scss";
+import "../modal.scss";
 import { useSwipeable } from "react-swipeable";
 import { Button } from "@components/Button";
 import { LabelPairedXmarkMdBoldIcon } from "@deriv/quill-icons/LabelPaired";
@@ -17,10 +17,11 @@ export interface ModalBaseProps extends HTMLAttributes<HTMLDivElement> {
     shouldCloseOnSecondaryButtonClick?: boolean;
     toggleModal: (isOpened: boolean) => void;
     portalId?: string;
-    primaryButtonLabel: React.ReactNode;
+    primaryButtonLabel?: React.ReactNode;
     primaryButtonCallback?: () => void;
     secondaryButtonCallback?: () => void;
     secondaryButtonLabel?: React.ReactNode;
+    isMobile?: boolean;
 }
 
 const swipeConfig = {
@@ -37,12 +38,11 @@ export const ModalBase = ({
     className,
     children,
     showHandleBar,
-    showCrossIcon,
-    containerClassName,
     showSecondaryButton = false,
     shouldCloseOnPrimaryButtonClick = false,
     shouldCloseOnSecondaryButtonClick = false,
     toggleModal,
+    isMobile,
     portalId,
     primaryButtonLabel,
     primaryButtonCallback,
@@ -123,7 +123,7 @@ export const ModalBase = ({
         >
             <div
                 className={clsx(
-                    containerClassName,
+                    `quill-modal__container${isMobile ? "--mobile" : "--desktop"}`,
                     {
                         "quill-modal__container--visible": isVisible,
                         "quill-modal__container--expanded": isExpanded,
@@ -134,19 +134,21 @@ export const ModalBase = ({
                 onClick={(e) => e.stopPropagation()}
                 ref={scrollableContainerRef}
             >
-                {showHandleBar && (
-                    <div
-                        className="quill-modal__handle-bar"
-                        data-testid="dt_handlebar"
-                        {...swipeHandlers}
-                    />
-                )}
-                {showCrossIcon && (
+                {isMobile ? (
+                    showHandleBar && (
+                        <div
+                            className="quill-modal__handle-bar"
+                            data-testid="dt_handlebar"
+                            {...swipeHandlers}
+                        />
+                    )
+                ) : (
                     <LabelPairedXmarkMdBoldIcon
                         className="quill-modal__close-icon"
                         onClick={toggleHandler}
                     />
                 )}
+
                 <div className="quill-modal__content-wrapper">{children}</div>
                 <div className="quill-modal__button-wrapper">
                     <Button

@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { StandaloneTrashRegularIcon } from "@deriv/quill-icons";
-import Modal from "@components/Modal/base";
+import { Modal } from "../../index";
 
-describe("Modal.Base", () => {
+describe("Modal.Frame", () => {
     const primaryButtonLabel = "Primary Button Label";
     const secondaryButtonLabel = "Secondary Button Label";
     const shortTextContent = "This is some amazing placeholder.";
@@ -38,14 +38,14 @@ describe("Modal.Base", () => {
 
     it("should render with default values if optional ones were not passed", () => {
         const { container } = render(
-            <Modal.Base {...mockProps}>{children}</Modal.Base>,
+            <Modal.Frame {...mockProps}>{children}</Modal.Frame>,
         );
 
         expect(container).toMatchSnapshot();
     });
 
     it("should call toggleModal if user clicks on the overlay", async () => {
-        render(<Modal.Base {...mockProps}>{children}</Modal.Base>);
+        render(<Modal.Frame {...mockProps}>{children}</Modal.Frame>);
 
         userEvent.click(screen.getByTestId("dt_overlay"));
         await waitFor(() => {
@@ -55,13 +55,13 @@ describe("Modal.Base", () => {
 
     it("should render secondary button if showSecondaryButton === true and the label was passed", () => {
         const { container } = render(
-            <Modal.Base
+            <Modal.Frame
                 {...mockProps}
                 showSecondaryButton
                 secondaryButtonLabel={secondaryButtonLabel}
             >
                 {children}
-            </Modal.Base>,
+            </Modal.Frame>,
         );
 
         expect(screen.getByText(secondaryButtonLabel)).toBeInTheDocument();
@@ -70,13 +70,13 @@ describe("Modal.Base", () => {
 
     it("should call toggleModal if user clicks on secondary button", async () => {
         render(
-            <Modal.Base
+            <Modal.Frame
                 {...mockProps}
                 showSecondaryButton
                 secondaryButtonLabel={secondaryButtonLabel}
             >
                 {children}
-            </Modal.Base>,
+            </Modal.Frame>,
         );
 
         userEvent.click(screen.getByText(secondaryButtonLabel));
@@ -87,9 +87,9 @@ describe("Modal.Base", () => {
 
     it("should call toggleModal if user clicks on primary button and shouldCloseOnPrimaryButtonClick == true", async () => {
         render(
-            <Modal.Base {...mockProps} shouldCloseOnPrimaryButtonClick>
+            <Modal.Frame {...mockProps} shouldCloseOnPrimaryButtonClick>
                 {children}
-            </Modal.Base>,
+            </Modal.Frame>,
         );
 
         userEvent.click(screen.getByText(primaryButtonLabel));
@@ -101,12 +101,12 @@ describe("Modal.Base", () => {
     it("should call primaryButtonCallback if user clicks on primary button and primaryButtonCallback was passed", async () => {
         const primaryButtonCallback = jest.fn();
         render(
-            <Modal.Base
+            <Modal.Frame
                 {...mockProps}
                 primaryButtonCallback={primaryButtonCallback}
             >
                 {children}
-            </Modal.Base>,
+            </Modal.Frame>,
         );
 
         userEvent.click(screen.getByText(primaryButtonLabel));
@@ -117,9 +117,9 @@ describe("Modal.Base", () => {
 
     it("should render container with image as a background if src was passed", () => {
         const { container } = render(
-            <Modal.Base {...mockProps}>
+            <Modal.Frame {...mockProps}>
                 <Modal.Header src={imageSrc} title={title} />
-            </Modal.Base>,
+            </Modal.Frame>,
         );
 
         expect(screen.getByTestId("dt_modal_image")).toBeInTheDocument();
@@ -128,12 +128,12 @@ describe("Modal.Base", () => {
 
     it("should render SVG if it was passed", () => {
         const { container } = render(
-            <Modal.Base {...mockProps}>
+            <Modal.Frame {...mockProps}>
                 <Modal.Header
                     title={title}
                     image={<StandaloneTrashRegularIcon />}
                 />
-            </Modal.Base>,
+            </Modal.Frame>,
         );
 
         expect(container).toMatchSnapshot();
