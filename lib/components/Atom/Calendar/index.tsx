@@ -68,6 +68,7 @@ export const DatePicker = ({
     selectRange = false,
     showNavigation = true,
     showNeighboringMonth = false,
+    tileClassName,
 }: DatePicker) => {
     const [date, setDate] = useState<Value>(new Date());
 
@@ -131,7 +132,6 @@ export const DatePicker = ({
                     navigationAriaLive={navigationAriaLive}
                     navigationLabel={navigationLabel}
                     next2AriaLabel={next2AriaLabel}
-                    value={date}
                     next2Label={next2Label}
                     nextAriaLabel={nextAriaLabel}
                     nextLabel={nextLabel}
@@ -145,8 +145,8 @@ export const DatePicker = ({
                     selectRange={selectRange}
                     showNavigation={showNavigation}
                     showNeighboringMonth={showNeighboringMonth}
-                    // TODO
-                    tileClassName="test"
+                    tileClassName={tileClassName}
+                    value={date}
                 />
             </div>
         </>

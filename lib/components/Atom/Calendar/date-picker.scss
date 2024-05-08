@@ -48,13 +48,12 @@
                     align-items: center;
                 }
             }
-            // TODO: refactor
+
             &__days {
                 &__day {
                     color: var(--component-dropdownItem-label-color-default);
                     border-radius: var(--component-dropdownItem-border-radius);
-                    width: 48px;
-                    height: 48px;
+                    height: var(--core-size-2400);
 
                     &--neighboringMonth {
                         color: var(--component-textIcon-normal-disabled);
@@ -63,13 +62,16 @@
             }
         }
 
+        // TODO: add normal style for dropdown list
         &__decade-view__years,
         &__year-view__months {
-            // TODO: add normal style for dropdown list
             flex-direction: column;
         }
 
         &__tile {
+            font-family: var(--core-fontFamily-ibmPlex-sans);
+            font-size: inherit;
+
             &:enabled:hover,
             &:enabled:focus {
                 background-color: var(
@@ -81,12 +83,6 @@
                 background: unset;
                 color: var(--component-dropdownItem-label-color-default);
                 position: relative;
-
-                // TODO: refactor
-                &:enabled:hover,
-                &:enabled:focus {
-                    background: #e6e6e6;
-                }
 
                 // TODO: refactor
                 &:after {
@@ -108,7 +104,7 @@
             &--active:enabled:hover,
             &--active:enabled:focus {
                 background-color: var(--component-dropdownItem-bg-selected);
-                color: white;
+                color: var(--component-dropdownItem-label-color-selectedWhite);
             }
         }
 

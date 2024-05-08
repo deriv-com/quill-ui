@@ -375,6 +375,16 @@ const meta = {
             options: ["true", "false"],
             control: { type: "boolean" },
         },
+        tileClassName: {
+            table: {
+                type: {
+                    summary: "string | undefined",
+                },
+            },
+            description:
+                "Class name(s) that will be applied to a given calendar item (day on month view, month on year view and so on).",
+            control: { type: "text" },
+        },
     },
 } satisfies Meta<typeof DatePicker>;
 
