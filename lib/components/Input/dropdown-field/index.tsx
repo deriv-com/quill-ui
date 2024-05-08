@@ -19,6 +19,7 @@ export type TDropdownOption = {
     textAlignment?: "left" | "center";
     closeDropdown: () => void;
     handleKeyDown: (e: React.KeyboardEvent) => void;
+    handleSelection: (value: React.ReactNode | string) => void;
 };
 
 export interface DropdownOptionProps extends TextFieldProps {
@@ -32,6 +33,7 @@ const Options = ({
     textAlignment,
     closeDropdown,
     handleKeyDown,
+    handleSelection,
 }: TDropdownOption) => {
     return (
         <Combobox.Option value={item.label} as={Fragment}>
@@ -40,6 +42,7 @@ const Options = ({
                     <Combobox.Button
                         onKeyDown={handleKeyDown}
                         onClick={closeDropdown}
+                        onSelect={() => handleSelection(item.label)}
                         className={clsx(
                             "dropdown__item",
                             `dropdown__item--size-${inputSize}`,
@@ -65,17 +68,29 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
     (
         {
             inputSize = "md",
-            leftStatusMessage,
+            message,
             textAlignment,
             options,
             disabled,
+            onSelect,
             ...rest
         },
         ref,
     ) => {
         const [isDropdownOpen, setDropdownOpen] = useState(false);
+        const [selectedValue, setSelectedValue] = useState<
+            null | React.ReactNode | string
+        >(null);
         const handleDropdownClick = () => {
             setDropdownOpen(!isDropdownOpen);
+        };
+        const handleSelection = (value: null | React.ReactNode | string) => {
+            setSelectedValue(value);
+            if (onSelect) {
+                onSelect?.({
+                    target: { value },
+                } as React.ChangeEvent<HTMLInputElement>);
+            }
         };
 
         const closeDropdown = () => {
@@ -97,9 +112,10 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
                     data-testid="dropdown-input"
                     inputSize={inputSize}
                     textAlignment={textAlignment}
-                    leftStatusMessage={leftStatusMessage}
+                    message={message}
                     onClick={handleDropdownClick}
                     onKeyDown={handleKeyDown}
+                    value={selectedValue}
                     {...rest}
                     triggerActionIcon={
                         <LabelPairedChevronDownSmBoldIcon
@@ -128,6 +144,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
                                 handleKeyDown={handleKeyDown}
                                 inputSize={inputSize}
                                 textAlignment={textAlignment}
+                                handleSelection={handleSelection}
                             />
                         ))}
                     </div>

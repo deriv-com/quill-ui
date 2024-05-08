@@ -6,7 +6,7 @@ exports[`Input should render a Input with field marker 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--fill status--neutral quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+      class="quill-input__wrapper quill-input__wrapper__variant--fill quill-input__wrapper__variant--fill--neutral quill-input__wrapper__size--md"
     >
       <div
         class="quill-input-label__wrapper"
@@ -14,7 +14,9 @@ exports[`Input should render a Input with field marker 1`] = `
         <input
           class="input peer input__align--left input__size--md"
           id="label"
+          placeholder=""
           type="text"
+          value=""
         />
         <label
           class="label label__status--neutral"
@@ -39,14 +41,16 @@ exports[`Input should render a default Input 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
     >
       <div
         class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
+          placeholder=""
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -60,7 +64,7 @@ exports[`Input should render a disabled Input with a variant of fill 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--fill status--neutral quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+      class="quill-input__wrapper quill-input__wrapper__variant--fill quill-input__wrapper__variant--fill--neutral quill-input__wrapper__size--md"
     >
       <div
         class="quill-input-no-label__wrapper"
@@ -68,7 +72,9 @@ exports[`Input should render a disabled Input with a variant of fill 1`] = `
         <input
           class="input peer input__align--left input__size--md"
           disabled=""
+          placeholder=""
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -82,7 +88,7 @@ exports[`Input should render an Input with a label 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
     >
       <div
         class="quill-input-label__wrapper"
@@ -90,18 +96,15 @@ exports[`Input should render an Input with a label 1`] = `
         <input
           class="input peer input__align--left input__size--md"
           id="UserName"
+          placeholder=""
           type="text"
+          value=""
         />
         <label
           class="label label__status--neutral"
           for="UserName"
         >
           UserName
-          <div
-            class="label-field-marker label-field-marker__required--false"
-          >
-            (optional)
-          </div>
         </label>
       </div>
     </div>
@@ -115,14 +118,16 @@ exports[`Input should render an Input with a variant of outline 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
     >
       <div
         class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
+          placeholder=""
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -136,14 +141,16 @@ exports[`Input should render an Input with centered text 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
     >
       <div
         class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--center input__size--md"
+          placeholder=""
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -157,34 +164,27 @@ exports[`Input should render an Input with status messages 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__size--md quill-input__wrapper__status--neutral"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
     >
       <div
         class="quill-input-no-label__wrapper"
       >
         <input
           class="input peer input__align--left input__size--md"
+          placeholder=""
           type="text"
+          value=""
         />
       </div>
     </div>
     <div
-      class="message__container"
+      class="message__container message__container--md message__container__status--neutral"
     >
-      <p
-        class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message__container__text message__container__text__status--neutral"
+      <span
+        class="message__container__text"
       >
         Message goes here
-      </p>
-    </div>
-    <div
-      class="message__container"
-    >
-      <p
-        class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent self-end message__container__text message__container__text__status--neutral"
-      >
-        0/0
-      </p>
+      </span>
     </div>
   </div>
 </div>

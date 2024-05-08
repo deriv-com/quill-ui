@@ -127,4 +127,8 @@ $weights: regular, bold;
     &__body-text {
         @include customTypeTextStyles(body, true);
     }
+
+    &-centered {
+        text-align: center;
+    }
 }

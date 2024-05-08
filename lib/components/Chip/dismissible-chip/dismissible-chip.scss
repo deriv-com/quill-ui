@@ -1,0 +1,19 @@
+.quill-dismissible-chip {
+    &:hover {
+        background-color: unset;
+    }
+
+    &:active {
+        background-color: var(--component-chip-bg-active);
+    }
+
+    & > .dismissible-icon {
+        fill: var(--component-chip-icon-close-default);
+    }
+    &:hover > .dismissible-icon {
+        fill: var(--component-chip-icon-close-hover);
+    }
+    &:active > .dismissible-icon {
+        fill: var(--component-chip-icon-close-active);
+    }
+}

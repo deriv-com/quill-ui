@@ -7,11 +7,11 @@
 
     &__color {
         &-black {
-            color: var(--core-color-solid-slate-1400);
+            color: var(--component-textIcon-normal-prominent);
         }
 
         &-white {
-            color: var(--core-color-solid-slate-50);
+            color: var(--component-textIcon-inverse-prominent);
         }
     }
 
@@ -32,11 +32,11 @@
 
     &__icon-color {
         &-black {
-            fill: var(--core-color-solid-slate-1400);
+            fill: var(--component-textIcon-normal-prominent);
         }
 
         &-white {
-            fill: var(--core-color-solid-slate-50);
+            fill: var(--component-textIcon-inverse-prominent);
         }
     }
 
