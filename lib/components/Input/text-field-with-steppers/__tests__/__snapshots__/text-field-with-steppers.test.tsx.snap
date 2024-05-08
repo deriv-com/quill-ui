@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextFieldWithSteppers It should render a default Textfield 1`] = `
+<div>
+  <div>
+    <div
+      class="quill-input__container"
+    >
+      <div
+        class="quill-input__wrapper quill-input__wrapper--has-value quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+      >
+        <div
+          class="quill-input-no-label__wrapper quill-input-label__wrapper--has-value"
+        >
+          <input
+            class="input peer input__align--left input__size--md"
+            placeholder="0 "
+            type="number"
+            value="undefined"
+          />
+        </div>
+        <button
+          class="quill-input-steppers-decrement"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="c40fed2c7c9a99d5ba7a33e5649adc99__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+        <button
+          class="quill-input-steppers-increment"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="50900fe75403faee6560209af269d34b__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextFieldWithSteppers should handle the hover for outline variant 1`] = `
+<div
+  class="quill-input-no-label__wrapper quill-input-label__wrapper--has-value"
+>
+  <input
+    class="input peer input__align--left input__size--md"
+    placeholder="Placeholder "
+    type="number"
+    value="undefined"
+  />
+</div>
+`;
+
+exports[`TextFieldWithSteppers should render a TextFieldWithSteppers with correct currency 1`] = `
+<div>
+  <div>
+    <div
+      class="quill-input__container"
+    >
+      <div
+        class="quill-input__wrapper quill-input__wrapper--has-value quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+      >
+        <div
+          class="quill-input-no-label__wrapper quill-input-label__wrapper--has-value"
+        >
+          <input
+            class="input peer input__align--left input__size--md"
+            currency="USD"
+            placeholder="0 USD"
+            type="number"
+            value="undefined"
+          />
+        </div>
+        <button
+          class="quill-input-steppers-decrement"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="c40fed2c7c9a99d5ba7a33e5649adc99__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+        <button
+          class="quill-input-steppers-increment"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="50900fe75403faee6560209af269d34b__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextFieldWithSteppers should render a TextFieldWithSteppers with error status 1`] = `
+<div>
+  <div>
+    <div
+      class="quill-input__container"
+    >
+      <div
+        class="quill-input__wrapper quill-input__wrapper--has-value quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--error quill-input__wrapper__size--md"
+      >
+        <div
+          class="quill-input-no-label__wrapper quill-input-label__wrapper--has-value"
+        >
+          <input
+            class="input peer input__align--left input__size--md"
+            placeholder="0 "
+            type="number"
+            value="undefined"
+          />
+        </div>
+        <button
+          class="quill-input-steppers-decrement"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="c40fed2c7c9a99d5ba7a33e5649adc99__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+        <button
+          class="quill-input-steppers-increment"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="50900fe75403faee6560209af269d34b__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextFieldWithSteppers should render a TextFieldWithSteppers with success status 1`] = `
+<div>
+  <div>
+    <div
+      class="quill-input__container"
+    >
+      <div
+        class="quill-input__wrapper quill-input__wrapper--has-value quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--success quill-input__wrapper__size--md"
+      >
+        <div
+          class="quill-input-no-label__wrapper quill-input-label__wrapper--has-value"
+        >
+          <input
+            class="input peer input__align--left input__size--md"
+            placeholder="0 "
+            type="number"
+            value="undefined"
+          />
+        </div>
+        <button
+          class="quill-input-steppers-decrement"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="c40fed2c7c9a99d5ba7a33e5649adc99__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+        <button
+          class="quill-input-steppers-increment"
+        >
+          <svg
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="50900fe75403faee6560209af269d34b__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
