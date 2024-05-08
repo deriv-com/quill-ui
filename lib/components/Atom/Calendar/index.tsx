@@ -16,6 +16,8 @@ interface DatePicker
         event?: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     ) => void;
     onFormattedDate?: (value: string) => void;
+    isWidthFixed?: boolean;
+    wrapperClassName?: string;
 }
 
 type ValuePiece = Date | null;
@@ -29,6 +31,7 @@ export const DatePicker = ({
     className,
     defaultValue,
     defaultView,
+    isWidthFixed = true,
     formatMonthYear = (locale, date) =>
         new Date(date).toLocaleString(locale || navigator.languages, {
             month: "short",
@@ -60,6 +63,7 @@ export const DatePicker = ({
     showNeighboringMonth = false,
     tileClassName,
     value,
+    wrapperClassName,
     ...rest
 }: DatePicker) => {
     const formatLocaleString = (date: Date) =>
@@ -75,11 +79,14 @@ export const DatePicker = ({
         return formatLocaleString(date);
     };
 
-    // TODO: add input with ability to enabling user typing
-    // TODO: add normal wrapper for Calendar
-
     return (
-        <div style={{ width: "368px" }}>
+        <div
+            className={clsx(
+                "quill-date-picker__wrapper",
+                { "quill-date-picker__wrapper--fixed-width": isWidthFixed },
+                wrapperClassName,
+            )}
+        >
             <Calendar
                 {...rest}
                 activeStartDate={activeStartDate}

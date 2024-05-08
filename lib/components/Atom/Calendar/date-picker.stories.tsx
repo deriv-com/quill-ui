@@ -78,6 +78,17 @@ const meta = {
             options: ["month", "year", "decade", "century"],
             control: { type: "radio" },
         },
+        isWidthFixed: {
+            table: {
+                type: {
+                    summary: "boolean | undefined",
+                },
+            },
+            description:
+                "Determines if width should be fixed or equal to container width. Default value - true",
+            options: ["true", "false"],
+            control: { type: "boolean" },
+        },
         formatDay: {
             table: {
                 type: {
@@ -413,6 +424,15 @@ const meta = {
                 "Class name(s) that will be applied to a given calendar item (day on month view, month on year view and so on).",
             control: { type: "text" },
         },
+        wrapperClassName: {
+            table: {
+                type: {
+                    summary: "string | undefined",
+                },
+            },
+            description: "Class that will be applied to a calendar wrapper",
+            control: { type: "text" },
+        },
     },
 } satisfies Meta<typeof DatePicker>;
 
@@ -497,4 +517,9 @@ DatePickerGregoryType.args = {
 export const DatePickerIslamicType = Template.bind(this) as Story;
 DatePickerIslamicType.args = {
     calendarType: "islamic",
+};
+
+export const DatePickerWithNotFixedWidth = Template.bind(this) as Story;
+DatePickerWithNotFixedWidth.args = {
+    isWidthFixed: false,
 };

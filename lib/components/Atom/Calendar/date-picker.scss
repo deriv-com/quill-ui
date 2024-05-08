@@ -4,8 +4,18 @@
     border: none;
     padding: var(--component-actionSheet-spacing-padding-md);
     background-color: var(--semantic-color-slate-solid-surface-frame-low);
-    //TODO: refactor after adding container
     width: unset;
+
+    &__wrapper {
+        width: 100%;
+        &--fixed-width {
+            width: 304px;
+
+            @media (max-width: 330px) {
+                width: 280px;
+            }
+        }
+    }
 
     .react-calendar {
         &__navigation {
@@ -55,7 +65,8 @@
                 &__day {
                     color: var(--component-dropdownItem-label-color-default);
                     border-radius: var(--component-dropdownItem-border-radius);
-                    height: var(--core-size-2400);
+                    // aspect-ratio make will make height and width equal. It's important as width is calculated.
+                    aspect-ratio: 1 / 1;
 
                     &--neighboringMonth {
                         color: var(--component-textIcon-normal-disabled);
@@ -111,7 +122,7 @@
         // TODO: refactor
         &__viewContainer {
             overflow-y: auto;
-            height: 288px;
+            // height: 288px;
         }
     }
 
