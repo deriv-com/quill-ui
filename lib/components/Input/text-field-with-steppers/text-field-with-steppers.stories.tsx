@@ -2,7 +2,6 @@ import { Meta, StoryObj } from "@storybook/react";
 import TextFieldWithSteppers from ".";
 import {
     StandaloneCircleCheckBoldIcon,
-    StandaloneCircleUserRegularIcon,
     StandalonePlaceholderRegularIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons";
@@ -33,8 +32,7 @@ const status: Record<string, Status> = {
 };
 
 const label = "label";
-const leftStatusMessage = "Status message goes here";
-const rightStatusMessage = "0/0";
+const message = "Status message goes here";
 
 const meta = {
     title: "Components/Inputs/Text Field with Steppers",
@@ -52,7 +50,7 @@ const meta = {
         textAlignment: "left",
         fieldMarker: false,
         required: false,
-        currency: 'USD',
+        currency: "USD",
         decimals: 2,
     },
     argTypes: {
@@ -99,12 +97,7 @@ const meta = {
             },
             options: ["left", "center"],
         },
-        leftStatusMessage: {
-            control: {
-                type: "text",
-            },
-        },
-        rightStatusMessage: {
+        message: {
             control: {
                 type: "text",
             },
@@ -117,7 +110,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const Template = (args: ComponentProps<typeof TextFieldWithSteppers>) => {
-    const [value, setValue] = useState();
+    const [value, setValue] = useState("");
     return (
         <div style={{ width: "300px" }}>
             <TextFieldWithSteppers
@@ -155,12 +148,6 @@ TextFieldWithLabel.args = {
     label,
 };
 
-export const TextFieldWithIconAndLabel = Template.bind({}) as Story;
-TextFieldWithIconAndLabel.args = {
-    label,
-    leftIcon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
-};
-
 export const SuccessStatusIconTextField = Template.bind({}) as Story;
 SuccessStatusIconTextField.args = {
     variant: variants.outline,
@@ -172,23 +159,21 @@ export const StatusMessageTextField = Template.bind({}) as Story;
 StatusMessageTextField.args = {
     variant: variants.outline,
     status: status.success,
-    leftStatusMessage,
+    message,
 };
 
 export const DoubleStatusMessageTextField = Template.bind({}) as Story;
 DoubleStatusMessageTextField.args = {
     variant: variants.outline,
     status: status.error,
-    leftStatusMessage,
-    rightStatusMessage,
+    message,
 };
 
 export const SuccessMessageTextFieldWithIcons = Template.bind({}) as Story;
 SuccessMessageTextFieldWithIcons.args = {
     variant: variants.outline,
     status: status.success,
-    leftStatusMessage,
-    rightStatusMessage,
+    message,
     rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
 };
 
@@ -196,7 +181,6 @@ export const ErrorMessageTextFieldWithIcons = Template.bind({}) as Story;
 ErrorMessageTextFieldWithIcons.args = {
     variant: variants.outline,
     status: status.error,
-    leftStatusMessage,
-    rightStatusMessage,
+    message,
     rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
 };

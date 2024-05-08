@@ -8,7 +8,10 @@ import {
 } from "@deriv/quill-icons";
 import "./text-field-with-steppers.scss";
 
-export type TextFieldWithSteppersProps = ComponentProps<typeof Input>;
+export interface TextFieldWithSteppersProps extends ComponentProps<typeof Input> {
+    currency?: string;
+    decimals?: number;
+}
 
 export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithSteppersProps>(
     (props, ref) => {
