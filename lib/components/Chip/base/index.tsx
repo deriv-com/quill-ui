@@ -83,7 +83,7 @@ export const Chip = forwardRef<HTMLButtonElement, BaseChipProps>(
                         iconSize="sm"
                         onClick={handleDismiss}
                         data-testid="dt-chip-dismissible-btn"
-                        className="cursor-pointer"
+                        className="dismissible-icon"
                     />
                 )}
                 {dropdown && (
