@@ -1,0 +1,14 @@
+.quill-input-steppers {
+    &-decrement {
+        padding: 0;
+        cursor: pointer;
+    }
+    &-increment {
+        padding-left: 8px;
+        cursor: pointer;
+    }
+    &--disabled {
+        opacity: var(--core-opacity-600);
+        cursor: not-allowed;
+    }
+}
