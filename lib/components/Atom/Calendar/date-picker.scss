@@ -20,7 +20,9 @@
             }
 
             &__arrow.react-calendar__navigation__prev-button,
-            &__arrow.react-calendar__navigation__next-button {
+            &__arrow.react-calendar__navigation__prev2-button,
+            &__arrow.react-calendar__navigation__next-button,
+            &__arrow.react-calendar__navigation__next2-button {
                 min-width: var(--core-size-1600);
                 text-align: center;
             }
@@ -84,22 +86,20 @@
                 color: var(--component-dropdownItem-label-color-default);
                 position: relative;
 
-                // TODO: refactor
                 &:after {
                     content: "";
-                    width: 4px;
-                    height: 4px;
+                    width: var(--core-size-200);
+                    height: var(--core-size-200);
                     border-radius: 50%;
                     position: absolute;
                     top: 70%;
-                    left: calc(50% - 2px);
+                    left: calc(50% - (var(--core-size-200) / 2));
                     background-color: var(
                         --component-dropdownItem-label-color-default
                     );
                 }
             }
 
-            // TODO: refactor
             &--active,
             &--active:enabled:hover,
             &--active:enabled:focus {

@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { Text } from "@components/Typography";
+import {
+    LabelPairedChevronsRightSmFillIcon,
+    LabelPairedChevronsLeftSmFillIcon,
+} from "@deriv/quill-icons";
 import { DatePicker } from "./index";
 
 type Template = React.ComponentProps<typeof DatePicker>;
@@ -437,4 +441,60 @@ DefaultDatePicker.args = {};
 export const DatePickerWithRangeSelection = Template.bind(this) as Story;
 DatePickerWithRangeSelection.args = {
     selectRange: true,
+};
+
+export const DatePickerWithDoubleNavigation = Template.bind(this) as Story;
+DatePickerWithDoubleNavigation.args = {
+    next2Label: (
+        <LabelPairedChevronsRightSmFillIcon fill="var(--component-textIcon-normal-prominent)" />
+    ),
+    prev2Label: (
+        <LabelPairedChevronsLeftSmFillIcon fill="var(--component-textIcon-normal-prominent)" />
+    ),
+};
+
+export const DatePickerWithCustomConfigForFormattingSelectedDate =
+    Template.bind(this) as Story;
+DatePickerWithCustomConfigForFormattingSelectedDate.args = {
+    optionsConfig: {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+    },
+};
+
+export const DatePickerWithCustomMonthAndYearFormatting = Template.bind(
+    this,
+) as Story;
+DatePickerWithCustomMonthAndYearFormatting.args = {
+    formatMonthYear: (locale, date) =>
+        new Date(date).toLocaleString(locale || navigator.languages, {
+            month: "2-digit",
+            year: "2-digit",
+        }),
+};
+
+export const DatePickerWithoutNavigation = Template.bind(this) as Story;
+DatePickerWithoutNavigation.args = {
+    showNavigation: false,
+};
+
+export const DatePickerWithNeighboringMonth = Template.bind(this) as Story;
+DatePickerWithNeighboringMonth.args = {
+    showNeighboringMonth: true,
+};
+
+export const DatePickerWithCustomActiveStartDate = Template.bind(this) as Story;
+DatePickerWithCustomActiveStartDate.args = {
+    activeStartDate: new Date(2017, 0, 1),
+};
+
+export const DatePickerGregoryType = Template.bind(this) as Story;
+DatePickerGregoryType.args = {
+    calendarType: "gregory",
+};
+
+export const DatePickerIslamicType = Template.bind(this) as Story;
+DatePickerIslamicType.args = {
+    calendarType: "islamic",
 };
