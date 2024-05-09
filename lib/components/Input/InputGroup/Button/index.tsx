@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useState } from "react";
-import Input, { InputProps } from "../../base";
+import Input, { InputProps } from "@components/Input/base";
 import { Button, TVariant } from "@components/Button";
 
 export interface InputGroupButtonProps
