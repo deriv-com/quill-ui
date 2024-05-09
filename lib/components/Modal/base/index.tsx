@@ -145,10 +145,12 @@ export const Modal = ({
                         />
                     )
                 ) : (
-                    <LabelPairedXmarkMdBoldIcon
+                    <button
                         className="quill-modal__close-icon"
                         onClick={toggleHandler}
-                    />
+                    >
+                        <LabelPairedXmarkMdBoldIcon fill="var(--component-textIcon-normal-prominent)" />
+                    </button>
                 )}
 
                 <div className="quill-modal__content-wrapper">{children}</div>
