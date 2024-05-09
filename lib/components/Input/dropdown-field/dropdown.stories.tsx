@@ -28,6 +28,7 @@ const options = [
     },
     { value: "3", label: "Sample Item 3" },
     { value: "4", label: "Sample Item 4" },
+    { value: "5", label: "Selected Item 5" },
 ];
 
 const meta = {
@@ -95,12 +96,7 @@ const meta = {
             },
             options: ["left", "center"],
         },
-        leftStatusMessage: {
-            control: {
-                type: "text",
-            },
-        },
-        rightStatusMessage: {
+        message: {
             control: {
                 type: "text",
             },
@@ -152,7 +148,7 @@ export const LabellessDropdownWithErrorMessage: Story = {
         placeholder,
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-        leftStatusMessage: "This is an error message",
+        message: "This is an error message",
         status: "error",
         variant: "fill",
         options: options,
@@ -202,7 +198,7 @@ export const LabelledDropdownWithSuccessMessage: Story = {
         fieldMarker: true,
         variant: "fill",
         status: "success",
-        leftStatusMessage: "This is a success message",
+        message: "This is a success message",
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
         options: options,
