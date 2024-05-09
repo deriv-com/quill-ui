@@ -12,7 +12,7 @@ export interface ModalHeaderProps {
 
 export const ModalHeader = ({
     className,
-    height = "var(--temp-static-spacing-202)",
+    height,
     image,
     src,
     style,
@@ -22,25 +22,28 @@ export const ModalHeader = ({
         {src && (
             <div
                 style={{
-                    background: `url(${src}) lightgray 50% / cover no-repeat`,
-                    height: `${height}`,
+                    background: `url(${src}) 50% / cover no-repeat`,
                     ...style,
                 }}
-                className={clsx("quill-modal-bottom__content-image", className)}
+                className={clsx(
+                    "quill-modal__content-image",
+                    height ? height : "quill-modal__content-image-size",
+                    className,
+                )}
                 data-testid="dt_modal_image"
             />
         )}
         {image && (
             <div
                 style={style}
-                className={clsx("quill-modal-bottom__content-image", className)}
+                className={clsx("quill-modal__content-image", className)}
             >
                 {image}
             </div>
         )}
         {title && (
             <Heading.H4
-                className={clsx("quill-modal-bottom__content-title", className)}
+                className={clsx("quill-modal__content-title", className)}
             >
                 {title}
             </Heading.H4>

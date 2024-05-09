@@ -1,23 +1,29 @@
 import ReactDOM from "react-dom";
 import { useState, useEffect, useRef, HTMLAttributes } from "react";
 import clsx from "clsx";
-import "./modal-bottom.scss";
+import "../modal.scss";
 import { useSwipeable } from "react-swipeable";
+import { Button } from "@components/Button";
+import { LabelPairedXmarkMdBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import { ModalHeader } from "./modal-header";
 import { ModalBody } from "./modal-body";
-import { Button } from "@components/Button";
 
-interface ModalBottomProps extends HTMLAttributes<HTMLDivElement> {
+export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     isOpened?: boolean;
     className?: string;
+    containerClassName?: string;
     showHandleBar?: boolean;
+    showCrossIcon?: boolean;
     showSecondaryButton?: boolean;
     shouldCloseOnPrimaryButtonClick?: boolean;
-    toggleModal: (isOpened: boolean) => void;
+    shouldCloseOnSecondaryButtonClick?: boolean;
+    toggleModal?: (isOpened: boolean) => void;
     portalId?: string;
-    primaryButtonLabel: React.ReactNode;
+    primaryButtonLabel?: React.ReactNode;
     primaryButtonCallback?: () => void;
+    secondaryButtonCallback?: () => void;
     secondaryButtonLabel?: React.ReactNode;
+    isMobile?: boolean;
 }
 
 const swipeConfig = {
@@ -29,20 +35,23 @@ const swipeConfig = {
 
 const MAX_HEIGHT = 85;
 
-export const ModalBottom = ({
+export const Modal = ({
     isOpened = false,
     className,
     children,
-    showHandleBar = true,
+    showHandleBar,
     showSecondaryButton = false,
     shouldCloseOnPrimaryButtonClick = false,
+    shouldCloseOnSecondaryButtonClick = false,
     toggleModal,
+    isMobile,
     portalId,
     primaryButtonLabel,
     primaryButtonCallback,
+    secondaryButtonCallback,
     secondaryButtonLabel,
     ...rest
-}: React.PropsWithChildren<ModalBottomProps>) => {
+}: React.PropsWithChildren<ModalProps>) => {
     const [isVisible, setIsVisible] = useState(isOpened);
     const [isExpanded, setIsExpanded] = useState(false);
     const [isSwiping, setIsSwiping] = useState(false);
@@ -80,13 +89,17 @@ export const ModalBottom = ({
         setIsVisible(!isVisible);
         animationTimerRef.current = setTimeout(() => {
             setIsExpanded(false);
-            toggleModal(!isOpened);
+            toggleModal && toggleModal(!isOpened);
         }, 300);
     };
 
     const primaryButtonFunctionHandler = () => {
         primaryButtonCallback?.();
         if (shouldCloseOnPrimaryButtonClick) toggleHandler();
+    };
+    const secondaryButtonFunctionHandler = () => {
+        secondaryButtonCallback?.();
+        if (shouldCloseOnSecondaryButtonClick) toggleHandler();
     };
 
     const swipeHandlers = useSwipeable({
@@ -106,33 +119,40 @@ export const ModalBottom = ({
     return ReactDOM.createPortal(
         <div
             {...rest}
-            className="quill-modal-bottom__overlay"
+            className="quill-modal__background"
             data-testid="dt_overlay"
             onClick={isSwiping ? undefined : toggleHandler}
         >
             <div
                 className={clsx(
-                    "quill-modal-bottom__container",
+                    `quill-modal__container${isMobile ? "--mobile" : "--desktop"}`,
                     {
-                        "quill-modal-bottom__container--visible": isVisible,
-                        "quill-modal-bottom__container--expanded": isExpanded,
+                        "quill-modal__container--visible": isVisible,
+                        "quill-modal__container--expanded": isExpanded,
                     },
+
                     className,
                 )}
                 onClick={(e) => e.stopPropagation()}
                 ref={scrollableContainerRef}
             >
-                {showHandleBar && (
-                    <div
-                        className="quill-modal-bottom__handle-bar"
-                        data-testid="dt_handlebar"
-                        {...swipeHandlers}
+                {isMobile ? (
+                    showHandleBar && (
+                        <div
+                            className="quill-modal__handle-bar"
+                            data-testid="dt_handlebar"
+                            {...swipeHandlers}
+                        />
+                    )
+                ) : (
+                    <LabelPairedXmarkMdBoldIcon
+                        className="quill-modal__close-icon"
+                        onClick={toggleHandler}
                     />
                 )}
-                <div className="quill-modal-bottom__content-wrapper">
-                    {children}
-                </div>
-                <div className="quill-modal-bottom__button-wrapper">
+
+                <div className="quill-modal__content-wrapper">{children}</div>
+                <div className="quill-modal__button-wrapper">
                     <Button
                         color="black"
                         fullWidth
@@ -147,8 +167,8 @@ export const ModalBottom = ({
                             size="lg"
                             label={secondaryButtonLabel}
                             variant="secondary"
-                            className="quill-modal-bottom__button"
-                            onClick={toggleHandler}
+                            className="quill-modal__button"
+                            onClick={secondaryButtonFunctionHandler}
                         />
                     )}
                 </div>
@@ -157,6 +177,5 @@ export const ModalBottom = ({
         modalRoot,
     );
 };
-
-ModalBottom.Header = ModalHeader;
-ModalBottom.Body = ModalBody;
+Modal.Header = ModalHeader;
+Modal.Body = ModalBody;

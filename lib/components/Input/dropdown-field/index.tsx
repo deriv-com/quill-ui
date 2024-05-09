@@ -86,7 +86,6 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
             if (query === "") {
                 setDropdownOpen(!isDropdownOpen);
             }
-            console.log("query", query);
         }, []);
 
         console.log("query", query);
