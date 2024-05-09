@@ -26,7 +26,6 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     rightIcon?: ReactNode;
     inputSize?: TMediumSizes;
     status?: Status;
-    readOnly?: boolean;
     disabled?: boolean;
     variant?: Variants;
     message?: string;
