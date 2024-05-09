@@ -1,16 +1,19 @@
-import React, { Fragment, forwardRef, useState } from "react";
+import React, { Fragment, forwardRef, useEffect, useState } from "react";
 import { Combobox } from "@headlessui/react";
 import Input from "../base";
 import { TextFieldProps } from "../text-field";
 import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import clsx from "clsx";
-import { Text } from "@components/Typography";
 import { TMediumSizes } from "@types";
 import "./dropdown.scss";
+import { DropdownItem } from "@components/Atom";
 
+export interface TSingleSelectItem {
+    label: string | number;
+}
 export type TSingleSelectOption = {
     value: number | string;
-    label: string | React.ReactNode;
+    label: string;
 };
 
 export type TDropdownOption = {
@@ -34,27 +37,18 @@ const Options = ({
     handleKeyDown,
 }: TDropdownOption) => {
     return (
-        <Combobox.Option value={item.label} as={Fragment}>
+        <Combobox.Option value={item.label} as={Fragment} key={item.value}>
             {({ selected, active }) => {
                 return (
-                    <Combobox.Button
-                        onKeyDown={handleKeyDown}
+                    <DropdownItem
                         onClick={closeDropdown}
-                        className={clsx(
-                            "dropdown__item",
-                            `dropdown__item--size-${inputSize}`,
-                            `dropdown__item__align-${textAlignment}`,
-                            selected && "dropdown__item--selected",
-                            active && `dropdown__item--active`,
-                        )}
-                    >
-                        <Text
-                            as="span"
-                            color="var(--component-dropdownItem-label-color-selectedWhite)"
-                        >
-                            {item.label}
-                        </Text>
-                    </Combobox.Button>
+                        onKeyDown={handleKeyDown}
+                        label={item.label}
+                        selected={selected}
+                        size={inputSize}
+                        active={active}
+                        textAlignment={textAlignment}
+                    ></DropdownItem>
                 );
             }}
         </Combobox.Option>
@@ -74,6 +68,29 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
         ref,
     ) => {
         const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+        const [selectedItem, setSelectedItem] =
+            useState<TSingleSelectOption[]>();
+
+        const [query, setQuery] = useState("");
+
+        const filteredOption =
+            query === ""
+                ? options
+                : options?.filter((option) => {
+                      return option.label
+                          .toLowerCase()
+                          .includes(query.toLowerCase());
+                  });
+        useEffect(() => {
+            if (query === "") {
+                setDropdownOpen(!isDropdownOpen);
+            }
+            console.log("query", query);
+        }, []);
+
+        console.log("query", query);
+
         const handleDropdownClick = () => {
             setDropdownOpen(!isDropdownOpen);
         };
@@ -86,19 +103,24 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
                 setDropdownOpen(false);
             }
         };
-
+        console.log("filteredOption", filteredOption);
+        console.log("selectedItem", selectedItem);
         return (
-            <Combobox disabled={disabled}>
+            <Combobox
+                disabled={disabled}
+                value={selectedItem}
+                onChange={setSelectedItem}
+            >
                 <Combobox.Input
                     as={Input}
                     type="select"
-                    readOnly
                     className="dropdown__input"
                     data-testid="dropdown-input"
                     inputSize={inputSize}
                     textAlignment={textAlignment}
                     message={message}
                     onClick={handleDropdownClick}
+                    onChange={(event) => setQuery(event.target.value)}
                     onKeyDown={handleKeyDown}
                     {...rest}
                     triggerActionIcon={
@@ -122,7 +144,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
                             `dropdown__container--size-${inputSize}`,
                         )}
                     >
-                        {options?.map((item) => (
+                        {filteredOption?.map((item) => (
                             <Options
                                 item={item}
                                 key={item.value}

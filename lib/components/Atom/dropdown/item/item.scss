@@ -1,10 +1,20 @@
 .quill-dropdown-item {
     display: flex;
     align-items: center;
+    width: 100%;
     border-radius: var(--component-dropdownItem-border-radius);
 
     &-label {
         flex-grow: 1;
+    }
+    &__align {
+        &-left {
+            text-align: left;
+        }
+
+        &-center {
+            text-align: center;
+        }
     }
 
     &__size {
@@ -92,6 +102,9 @@
                 }
             }
         }
+    }
+    &__active {
+        background-color: var(--component-dropdownItem-bg-active);
     }
 
     &-checkbox {

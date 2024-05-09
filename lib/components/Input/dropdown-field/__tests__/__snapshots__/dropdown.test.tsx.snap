@@ -18,15 +18,14 @@ exports[`InputDropdown component should render a TextField with error status 1`]
           data-headlessui-state=""
           data-testid="dropdown-input"
           placeholder=""
-          readonly=""
           role="combobox"
           type="select"
           value=""
         />
       </div>
       <svg
-        class="dropdown__transform"
-        data-state="close"
+        class="dropdown__transform dropdown__transform-rotate"
+        data-state="open"
         height="24"
         role="img"
         viewBox="0 0 14 22"
@@ -50,6 +49,52 @@ exports[`InputDropdown component should render a TextField with error status 1`]
       </svg>
     </div>
   </div>
+  <div
+    class="dropdown__container dropdown__container--size-md"
+  >
+    <li
+      aria-selected="false"
+      class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-left quill-dropdown-item__selected--false__disabled--false"
+      data-headlessui-state=""
+      id="headlessui-combobox-option-:rd:"
+      role="option"
+      tabindex="-1"
+    >
+      <p
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+      >
+        Option 1
+      </p>
+    </li>
+    <li
+      aria-selected="false"
+      class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-left quill-dropdown-item__selected--false__disabled--false"
+      data-headlessui-state=""
+      id="headlessui-combobox-option-:re:"
+      role="option"
+      tabindex="-1"
+    >
+      <p
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+      >
+        Option 2
+      </p>
+    </li>
+    <li
+      aria-selected="false"
+      class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-left quill-dropdown-item__selected--false__disabled--false"
+      data-headlessui-state=""
+      id="headlessui-combobox-option-:rf:"
+      role="option"
+      tabindex="-1"
+    >
+      <p
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+      >
+        Option 3
+      </p>
+    </li>
+  </div>
 </div>
 `;
 
@@ -71,15 +116,14 @@ exports[`InputDropdown component should render a TextField with success status 1
           data-headlessui-state=""
           data-testid="dropdown-input"
           placeholder=""
-          readonly=""
           role="combobox"
           type="select"
           value=""
         />
       </div>
       <svg
-        class="dropdown__transform"
-        data-state="close"
+        class="dropdown__transform dropdown__transform-rotate"
+        data-state="open"
         height="24"
         role="img"
         viewBox="0 0 14 22"
@@ -102,6 +146,52 @@ exports[`InputDropdown component should render a TextField with success status 1
         </defs>
       </svg>
     </div>
+  </div>
+  <div
+    class="dropdown__container dropdown__container--size-md"
+  >
+    <li
+      aria-selected="false"
+      class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-left quill-dropdown-item__selected--false__disabled--false"
+      data-headlessui-state=""
+      id="headlessui-combobox-option-:r9:"
+      role="option"
+      tabindex="-1"
+    >
+      <p
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+      >
+        Option 1
+      </p>
+    </li>
+    <li
+      aria-selected="false"
+      class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-left quill-dropdown-item__selected--false__disabled--false"
+      data-headlessui-state=""
+      id="headlessui-combobox-option-:ra:"
+      role="option"
+      tabindex="-1"
+    >
+      <p
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+      >
+        Option 2
+      </p>
+    </li>
+    <li
+      aria-selected="false"
+      class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-left quill-dropdown-item__selected--false__disabled--false"
+      data-headlessui-state=""
+      id="headlessui-combobox-option-:rb:"
+      role="option"
+      tabindex="-1"
+    >
+      <p
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+      >
+        Option 3
+      </p>
+    </li>
   </div>
 </div>
 `;
