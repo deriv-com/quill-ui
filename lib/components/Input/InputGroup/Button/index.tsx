@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import Input, { InputProps } from "../../base";
 import { Button, TVariant } from "@components/Button";
 
@@ -16,6 +16,7 @@ const InputGroupButton = forwardRef<HTMLInputElement, InputGroupButtonProps>(
             buttonPosition = "right",
             buttonVariant = "primary",
             inputSize = "md",
+            value,
             buttonIconPosition,
             buttonLabel,
             disabled,
@@ -26,6 +27,10 @@ const InputGroupButton = forwardRef<HTMLInputElement, InputGroupButtonProps>(
         ref,
     ) => {
         const [isEmpty, setIsEmpty] = useState(true);
+
+        useEffect(() => {
+            setIsEmpty(value ? false : true);
+        }, [value]);
 
         const showInputButton = status === "neutral" || disabled;
 
@@ -50,6 +55,7 @@ const InputGroupButton = forwardRef<HTMLInputElement, InputGroupButtonProps>(
                 buttonPosition={buttonPosition}
                 showInputButton={showInputButton}
                 inputButton={InputButton}
+                value={value}
                 ref={ref}
                 onChange={(e) => {
                     setIsEmpty(!e.target.value);

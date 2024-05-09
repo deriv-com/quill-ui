@@ -61,7 +61,7 @@ const InputButtonWrapper = (
 ) =>
     `quill-input__wrapper-with_button-${position}--${size}
     ${label ? ` quill-input__wrapper-with_button-${position}--${size}--has-label` : ` quill-input__wrapper-with_button-${position}--${size}--no-label`}
-    ${hasValue && ` quill-input__wrapper-with_button-${position}--${size}--has-value`}
+    ${hasValue ? ` quill-input__wrapper-with_button-${position}--${size}--has-value` : ""}
     `;
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
