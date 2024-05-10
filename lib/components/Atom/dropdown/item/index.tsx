@@ -15,10 +15,9 @@ export interface DropdownItemProps extends HTMLAttributes<HTMLElement> {
     size?: TMediumSizes;
     centered?: boolean;
     label: ReactNode;
-    textAlignment?: "left" | "center";
     disabled?: boolean;
     selected?: boolean;
-    active?: boolean;
+    textAlignment?: "left" | "center";
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
     checkbox?: boolean;
@@ -36,7 +35,6 @@ export const DropdownItem = React.forwardRef<HTMLElement, DropdownItemProps>(
             label,
             disabled = false,
             selected = false,
-            active = false,
             className,
             checkbox = false,
             ...rest
@@ -50,7 +48,6 @@ export const DropdownItem = React.forwardRef<HTMLElement, DropdownItemProps>(
                 className: clsx(
                     "quill-dropdown-item",
                     `quill-dropdown-item__size--${size}`,
-                    active && "quill-dropdown-item__active",
                     `quill-dropdown-item__align-${textAlignment}`,
                     checkbox
                         ? `quill-dropdown-item-checkbox__selected--${selected}__disabled--${disabled}`

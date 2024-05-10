@@ -21,14 +21,14 @@ const statusIcon: Record<string, object | null> = {
 
 const placeholder = "Select";
 const options = [
-    { value: "1", label: "Sample Item 1" },
+    { id: "1", name: "Sample Item 1" },
     {
-        value: "2",
-        label: "Sample Item 2",
+        id: "2",
+        name: "Sample Item 2",
     },
-    { value: "3", label: "Sample Item 3" },
-    { value: "4", label: "Sample Item 4" },
-    { value: "5", label: "Selected Item 5" },
+    { id: "3", name: "Sample Item 3" },
+    { id: "4", name: "Sample Item 4" },
+    { id: "5", name: "Selected Item 5" },
 ];
 
 const meta = {
@@ -113,6 +113,7 @@ export const DefaultLabellessDropdown: Story = {
         placeholder,
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         options: options,
+        readOnly: true,
     },
 };
 export const DisabledDropdown: Story = {
@@ -210,28 +211,28 @@ export const DropdownWithLongOptionsList: Story = {
         label: "Label",
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         options: [
-            { value: "1", label: "Sample Item 1" },
+            { id: "1", name: "Sample Item 1" },
             {
-                value: "2",
-                label: "Sample Item 2",
+                id: "2",
+                name: "Sample Item 2",
             },
-            { value: "3", label: "Sample Item 3" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "5", label: "Sample Item 5" },
+            { id: "3", name: "Sample Item 3" },
+            { id: "4", name: "Sample Item 4" },
+            { id: "5", name: "Sample Item 5" },
             {
-                value: "6",
-                label: "Sample Item 6",
+                id: "6",
+                name: "Sample Item 6",
             },
-            { value: "7", label: "Sample Item 7" },
-            { value: "8", label: "Sample Item 8" },
-            { value: "9", label: "Sample Item 9" },
-            { value: "10", label: "Sample Item 10" },
+            { id: "7", name: "Sample Item 7" },
+            { id: "8", name: "Sample Item 8" },
+            { id: "9", name: "Sample Item 9" },
+            { id: "10", name: "Sample Item 10" },
             {
-                value: "11",
-                label: "Sample Item 11",
+                id: "11",
+                name: "Sample Item 11",
             },
-            { value: "12", label: "Sample Item 12" },
-            { value: "13", label: "Sample Item 13" },
+            { id: "12", name: "Sample Item 12" },
+            { id: "13", name: "Sample Item 13" },
         ],
     },
 };

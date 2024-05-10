@@ -8,12 +8,9 @@ import { TMediumSizes } from "@types";
 import "./dropdown.scss";
 import { DropdownItem } from "@components/Atom";
 
-export interface TSingleSelectItem {
-    label: string | number;
-}
 export type TSingleSelectOption = {
-    id: number;
-    number: string;
+    id: string | number;
+    name: string;
 };
 
 export type TDropdownOption = {
@@ -41,12 +38,12 @@ const Options = ({
             {({ selected, active }) => {
                 return (
                     <DropdownItem
+                        className={clsx(active && "dropdown__item--active")}
                         onClick={closeDropdown}
                         onKeyDown={handleKeyDown}
                         label={item.name}
                         selected={selected}
                         size={inputSize}
-                        active={active}
                         textAlignment={textAlignment}
                     ></DropdownItem>
                 );
@@ -61,106 +58,102 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
             inputSize = "md",
             message,
             textAlignment,
-            options,
             disabled,
+            options,
             ...rest
         },
         ref,
     ) => {
-        const people = [
-            { id: 1, name: "Durward Reynolds" },
-            { id: 2, name: "Kenton Towne" },
-            { id: 3, name: "Therese Wunsch" },
-            { id: 4, name: "Benedict Kessler" },
-            { id: 5, name: "Katelyn Rohan" },
-        ];
-        const [selectedPerson, setSelectedPerson] = useState(null);
-        const [query, setQuery] = useState("");
-        const [filteredPeople, setFilteredPeople] = useState(people);
+        const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-        console.log("filteredPeople", filteredPeople);
-        console.log("selectedPerson", selectedPerson);
-        console.log("query", query);
+        const [selectedOption, setselectedOption] = useState("");
+        const [query, setQuery] = useState("");
+        const [filteredOption, setfilteredOption] = useState(options);
+
+        useEffect(() => {
+            const filteredOption = options?.filter((option) => {
+                return option?.name
+                    ?.toLowerCase()
+                    .includes(query.toLowerCase());
+            });
+            if (query.length > 0) setDropdownOpen(true);
+            setfilteredOption(filteredOption);
+        }, [query, selectedOption]);
+
         useEffect(() => {
             if (query === "") {
-                setSelectedPerson(null);
+                setselectedOption("");
             }
         }, [query]);
 
-        const [isDropdownOpen, setDropdownOpen] = useState(false);
-
-        const [selectedItem, setSelectedItem] =
-            useState<TSingleSelectOption[]>();
-
         const handleDropdownClick = () => {
-            setDropdownOpen(true);
-            const filteredPeople =
-                query === ""
-                    ? people
-                    : people.filter((person) => {
-                          return person.name
-                              .toLowerCase()
-                              .includes(query.toLowerCase());
-                      });
-            setFilteredPeople(filteredPeople);
+            setDropdownOpen(!isDropdownOpen);
         };
 
         const closeDropdown = () => {
-            setDropdownOpen(false);
+            setDropdownOpen(!isDropdownOpen);
         };
         const handleKeyDown = (event: { key: string }) => {
             if (event.key === "Enter") {
-                setDropdownOpen(false);
+                setDropdownOpen(!isDropdownOpen);
             }
         };
 
         return (
-            <Combobox value={selectedPerson} onChange={setSelectedPerson}>
-                <Combobox.Input
-                    as={Input}
-                    type="select"
-                    className="dropdown__input"
-                    data-testid="dropdown-input"
-                    inputSize={inputSize}
-                    textAlignment={textAlignment}
-                    message={message}
-                    onClick={handleDropdownClick}
-                    onChange={(event) => setQuery(event.target.value)}
-                    onKeyDown={handleKeyDown}
-                    triggerActionIcon={
-                        <LabelPairedChevronDownSmBoldIcon
-                            data-state={isDropdownOpen ? "open" : "close"}
-                            width={24}
-                            height={24}
-                            className={clsx(
-                                "dropdown__transform",
-                                isDropdownOpen && "dropdown__transform-rotate",
-                            )}
-                        />
-                    }
-                    value={selectedPerson}
-                    {...rest}
-                    ref={ref}
-                />
-                {isDropdownOpen && query === "" && (
-                    <div
-                        className={clsx(
-                            "dropdown__container",
-                            `dropdown__container--size-${inputSize}`,
-                        )}
-                    >
-                        {filteredPeople?.map((item) => (
-                            <Options
-                                item={item}
-                                key={item.id}
-                                closeDropdown={closeDropdown}
-                                handleKeyDown={handleKeyDown}
-                                inputSize={inputSize}
-                                textAlignment={textAlignment}
+            <Combobox
+                value={selectedOption}
+                onChange={setselectedOption}
+                disabled={disabled}
+            >
+                <>
+                    <Combobox.Input
+                        as={Input}
+                        type="select"
+                        className="dropdown__input"
+                        data-testid="dropdown-input"
+                        inputSize={inputSize}
+                        textAlignment={textAlignment}
+                        message={message}
+                        onClick={handleDropdownClick}
+                        onChange={(event) => setQuery(event.target.value)}
+                        onKeyDown={handleKeyDown}
+                        value={selectedOption}
+                        triggerActionIcon={
+                            <LabelPairedChevronDownSmBoldIcon
+                                data-state={isDropdownOpen ? "open" : "close"}
+                                width={24}
+                                height={24}
+                                className={clsx(
+                                    "dropdown__transform",
+                                    isDropdownOpen &&
+                                        "dropdown__transform-rotate",
+                                )}
                             />
-                        ))}
-                    </div>
-                )}
+                        }
+                        {...rest}
+                        ref={ref}
+                    />
+
+                    {isDropdownOpen && (
+                        <div
+                            className={clsx(
+                                "dropdown__container",
+                                `dropdown__container--size-${inputSize}`,
+                            )}
+                        >
+                            {filteredOption?.map((item) => (
+                                <Options
+                                    item={item}
+                                    key={item.id}
+                                    closeDropdown={closeDropdown}
+                                    handleKeyDown={handleKeyDown}
+                                    inputSize={inputSize}
+                                    textAlignment={textAlignment}
+                                />
+                            ))}
+                        </div>
+                    )}
+                </>
             </Combobox>
         );
     },
