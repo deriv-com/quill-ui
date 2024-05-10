@@ -134,6 +134,13 @@
                 color: var(--component-dropdownItem-label-color-default);
                 position: relative;
 
+                &.react-calendar__tile--hover,
+                &:enabled:hover,
+                &:enabled:focus {
+                    background-color: var(
+                        --semantic-color-monochrome-surface-normal-low
+                    );
+                }
                 &:after {
                     content: "";
                     width: var(--core-size-200);
