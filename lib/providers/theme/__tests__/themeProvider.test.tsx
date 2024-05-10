@@ -4,6 +4,21 @@ import ThemeProvider from "../themeProvider";
 import ThemeContext from "../themeContext";
 
 describe("ThemeProvider", () => {
+    beforeAll(() => {
+        Object.defineProperty(window, "matchMedia", {
+            writable: true,
+            value: jest.fn().mockImplementation((query) => ({
+                matches: false,
+                media: query,
+                onchange: null,
+                addListener: jest.fn(),
+                removeListener: jest.fn(),
+                addEventListener: jest.fn(),
+                removeEventListener: jest.fn(),
+                dispatchEvent: jest.fn(),
+            })),
+        });
+    });
     it("renders with light theme by default", () => {
         render(
             <ThemeProvider>
@@ -35,7 +50,6 @@ describe("ThemeProvider", () => {
         const root = document.documentElement;
         expect(root).toHaveClass("dark");
     });
-
     it("renders with provided theme", () => {
         render(
             <ThemeProvider theme="dark">
@@ -46,7 +60,6 @@ describe("ThemeProvider", () => {
         const root = document.documentElement;
         expect(root).toHaveClass("dark");
     });
-
     it("changes theme when theme prop changes", () => {
         const { rerender } = render(
             <ThemeProvider theme="dark">
