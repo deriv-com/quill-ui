@@ -16,7 +16,7 @@ import {
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
-export type Types = "text" | "email" | "password" | "tel";
+export type Types = "text" | "email" | "password" | "tel" | "select";
 export type TextAlignments = "left" | "center";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
