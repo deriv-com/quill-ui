@@ -1,12 +1,12 @@
 import React, { Fragment, forwardRef, useEffect, useState } from "react";
+import clsx from "clsx";
 import { Combobox } from "@headlessui/react";
+import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
+import { TMediumSizes } from "@types";
+import { DropdownItem } from "@components/Atom";
 import Input from "../base";
 import { TextFieldProps } from "../text-field";
-import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
-import clsx from "clsx";
-import { TMediumSizes } from "@types";
 import "./dropdown.scss";
-import { DropdownItem } from "@components/Atom";
 
 export type TSingleSelectOption = {
     id: string | number;
@@ -38,7 +38,9 @@ const Options = ({
             {({ selected, active }) => {
                 return (
                     <DropdownItem
-                        className={clsx(active && "dropdown__item--active")}
+                        className={clsx(
+                            active && !selected && "dropdown__item--active",
+                        )}
                         onClick={closeDropdown}
                         onKeyDown={handleKeyDown}
                         label={item.name}
@@ -125,6 +127,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
                                 height={24}
                                 className={clsx(
                                     "dropdown__transform",
+                                    "dropdown__icon-svg",
                                     isDropdownOpen &&
                                         "dropdown__transform-rotate",
                                 )}

@@ -8,7 +8,7 @@
         border-radius: var(--core-borderRadius-400);
         box-shadow: var(--semantic-elevation-shadow-card-hover);
         display: flex;
-         flex-direction: column;
+        flex-direction: column;
         align-items: flex-start;
         max-height: 420px;
         margin-top: var(--core-size-200);
@@ -36,7 +36,7 @@
     &__transform {
         transition-property: transform;
         transition-duration: var(--core-motion-duration-200);
-        transition-timing-function: ease-in-out;
+        transition-timing-function: var(--motion-easing-inandout);
 
         &-rotate {
             transform: rotate(180deg);

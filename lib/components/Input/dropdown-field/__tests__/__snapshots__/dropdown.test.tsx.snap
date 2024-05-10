@@ -24,7 +24,7 @@ exports[`InputDropdown component should render a TextField with error status 1`]
         />
       </div>
       <svg
-        class="dropdown__transform"
+        class="dropdown__transform dropdown__icon-svg"
         data-state="close"
         height="24"
         role="img"
@@ -76,7 +76,7 @@ exports[`InputDropdown component should render a TextField with success status 1
         />
       </div>
       <svg
-        class="dropdown__transform"
+        class="dropdown__transform dropdown__icon-svg"
         data-state="close"
         height="24"
         role="img"
