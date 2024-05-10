@@ -55,7 +55,7 @@ const meta = {
         showNeighboringMonth: false,
     },
     argTypes: {
-        activeStartDate: {
+        startDate: {
             table: { type: { summary: "Date | undefined" } },
             description:
                 "The beginning of a period that shall be displayed. If you wish to use react-calendar in an uncontrolled way, use defaultActiveStartDate instead. Default value - today. Example values: new Date(2017, 0, 1).",
@@ -561,7 +561,7 @@ DatePickerWithNeighboringMonth.args = {
 export const DatePickerWithCustomActiveStartDate = Template.bind(this) as Story;
 DatePickerWithCustomActiveStartDate.args = {
     ...meta.args,
-    activeStartDate: new Date(2017, 0, 1),
+    startDate: new Date(2017, 0, 1),
 };
 
 export const DatePickerGregoryType = Template.bind(this) as Story;

@@ -10,14 +10,18 @@ import {
 import { Text } from "@components/Typography";
 
 interface DatePicker
-    extends Omit<React.ComponentProps<typeof Calendar>, "onChange"> {
+    extends Omit<
+        React.ComponentProps<typeof Calendar>,
+        "onChange" | "activeStartDate"
+    > {
+    isWidthFixed?: boolean;
     optionsConfig?: Record<string, string>;
     onChange?: (
         value: Value,
         event?: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     ) => void;
     onFormattedDate?: (value: string) => void;
-    isWidthFixed?: boolean;
+    startDate?: Date;
     wrapperClassName?: string;
 }
 
@@ -26,7 +30,7 @@ type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export const DatePicker = ({
-    activeStartDate,
+    startDate,
     allowPartialRange = false,
     calendarType,
     className,
@@ -94,7 +98,7 @@ export const DatePicker = ({
         >
             <Calendar
                 {...rest}
-                activeStartDate={activeStartDate}
+                activeStartDate={startDate}
                 allowPartialRange={allowPartialRange}
                 calendarType={calendarType}
                 className={clsx("quill-date-picker", className)}

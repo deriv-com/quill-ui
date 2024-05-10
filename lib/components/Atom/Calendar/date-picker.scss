@@ -87,6 +87,14 @@
                 padding: 0px var(--component-actionSheet-spacing-padding-md);
                 min-height: var(--core-size-2400);
                 border-radius: var(--component-dropdownItem-border-radius);
+                color: var(--component-dropdownItem-label-color-default);
+
+                &--hasActive,
+                &--hasActive:enabled:hover {
+                    color: var(
+                        --component-dropdownItem-label-color-selectedWhite
+                    );
+                }
             }
         }
 
