@@ -456,6 +456,17 @@ const meta = {
                 "Class name(s) that will be applied to a given calendar item (day on month view, month on year view and so on).",
             control: { type: "text" },
         },
+        value: {
+            table: {
+                type: {
+                    summary:
+                        "string | Date | null | (string | Date | null)[] | undefined",
+                },
+            },
+            description:
+                "Calendar value. Can be either one value or an array of two values. If you wish to use react-calendar in an uncontrolled way, use defaultValue instead.",
+            control: { type: null },
+        },
         wrapperClassName: {
             table: {
                 type: {
@@ -472,7 +483,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const Template: React.FC<Template> = ({ ...args }: Template) => {
-    const [date, setDate] = useState<Template["value"]>(new Date());
     const [formattedDate, setFormattedDate] = useState("");
 
     return (
@@ -481,8 +491,6 @@ const Template: React.FC<Template> = ({ ...args }: Template) => {
             <div style={{ width: `${args.isWidthFixed ? "312px" : "90vw"}` }}>
                 <DatePicker
                     {...args}
-                    value={date}
-                    onChange={(value) => setDate(value)}
                     onFormattedDate={(value) => setFormattedDate(value)}
                 />
             </div>
@@ -496,6 +504,12 @@ export const DatePickerWithRangeSelection = Template.bind(this) as Story;
 DatePickerWithRangeSelection.args = {
     ...meta.args,
     selectRange: true,
+};
+
+export const DatePickerWithSelectedValuePassed = Template.bind(this) as Story;
+DatePickerWithSelectedValuePassed.args = {
+    ...meta.args,
+    value: new Date(),
 };
 
 export const DatePickerWithDoubleNavigation = Template.bind(this) as Story;

@@ -81,7 +81,7 @@ export const DatePicker = ({
     };
 
     useEffect(() => {
-        onFormattedDate?.(formatSelectedDate((value as Value) || new Date()));
+        if (value) onFormattedDate?.(formatSelectedDate(value as Value));
     }, []);
 
     return (
