@@ -478,7 +478,7 @@ const Template: React.FC<Template> = ({ ...args }: Template) => {
     return (
         <>
             <Text as="div">Selected date: {formattedDate}</Text>
-            <div style={{ width: `${args.isWidthFixed ? "304px" : "90vw"}` }}>
+            <div style={{ width: `${args.isWidthFixed ? "312px" : "90vw"}` }}>
                 <DatePicker
                     {...args}
                     value={date}

@@ -8,10 +8,10 @@
 
     &__wrapper {
         &--fixed-width {
-            width: 304px;
+            width: var(--component-dropdownList-width-dateRangePicker-sm);
 
             @media (max-width: 330px) {
-                width: 280px;
+                width: 290px;
             }
         }
     }
@@ -65,7 +65,7 @@
                     color: var(--component-dropdownItem-label-color-default);
                     border-radius: var(--component-dropdownItem-border-radius);
                     // aspect-ratio make will make height and width equal. It's important as width is calculated.
-                    aspect-ratio: 1 / 1;
+                    aspect-ratio: 1;
 
                     &--neighboringMonth {
                         color: var(--component-textIcon-normal-disabled);
@@ -74,16 +74,19 @@
             }
         }
 
-        // TODO: add normal style for dropdown list
+        &__century-view__decades,
         &__decade-view__years,
         &__year-view__months {
             flex-direction: column;
         }
 
-        &__year-view {
+        &__year-view,
+        &__decade-view,
+        &__century-view {
             & .react-calendar__tile {
                 padding: 0px var(--component-actionSheet-spacing-padding-md);
                 min-height: var(--core-size-2400);
+                border-radius: var(--component-dropdownItem-border-radius);
             }
         }
 
@@ -139,7 +142,9 @@
 
             &--active,
             &--active:enabled:hover,
-            &--active:enabled:focus {
+            &--active:enabled:focus,
+            &--hasActive,
+            &--hasActive:enabled:hover {
                 background-color: var(--component-dropdownItem-bg-selected);
                 color: var(--component-dropdownItem-label-color-selectedWhite);
             }
@@ -147,7 +152,7 @@
 
         &__viewContainer {
             overflow-y: auto;
-            aspect-ratio: 1.12;
+            aspect-ratio: 1.16;
         }
     }
 
