@@ -207,3 +207,11 @@ export const ErrorMessageTextFieldWithIcons: Story = {
         },
     },
 };
+export const TextFieldWithDropdown: Story = {
+    args: {
+        placeholder,
+        leftIcon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
+        children: <div>Dropdown</div>,
+        hasDropdown: true,
+    },
+};

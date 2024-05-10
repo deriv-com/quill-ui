@@ -26,6 +26,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     inputSize?: TMediumSizes;
     status?: Status;
     disabled?: boolean;
+    hasDropdown?: boolean;
     variant?: Variants;
     message?: string;
     showCharacterCounter?: boolean;
@@ -35,6 +36,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     value?: string;
     triggerActionIcon?: ReactNode;
     fieldMarker?: boolean;
+    children?: ReactNode;
 }
 
 const statusIconColors = {
@@ -56,6 +58,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             className,
             status = "neutral",
             disabled = false,
+            hasDropdown = false,
+            children,
             variant = "outline",
             placeholder = "",
             leftIcon,
@@ -78,6 +82,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         useEffect(() => {
             setInputValue(value || "");
         }, [value]);
+        const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+        const handleDropdown = () => {
+            setIsDropdownOpen(!isDropdownOpen);
+        };
 
         return (
             <div className="quill-input__container">
@@ -111,6 +119,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             value={inputValue}
                             maxLength={maxLength}
                             placeholder={placeholder}
+                            onClick={handleDropdown}
                             className={clsx(
                                 "input",
                                 "peer",
@@ -164,6 +173,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
                     {triggerActionIcon && <>{triggerActionIcon}</>}
                 </div>
+                {hasDropdown && isDropdownOpen && !disabled && children}
                 {(message || showCharacterCounter) && (
                     <div
                         className={clsx(
