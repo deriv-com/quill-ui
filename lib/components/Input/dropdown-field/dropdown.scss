@@ -1,34 +1,9 @@
-.enter {
-    transition: var(--core-motion-duration-200) var(--core-motion-ease-400);
-    transform-origin: top;
-}
-
-.enter-from {
-    transform: scaleY(0);
-}
-
-.enter-to {
-    transform: scaleY(1);
-}
-
-.leave {
-    transition: transform var(--core-motion-duration-200)
-        var(--core-motion-ease-400);
-    transform-origin: top;
-}
-
-.leave-from {
-    transform: scaleY(1);
-}
-
-.leave-to {
-    transform: scaleY(0);
-}
 .dropdown {
     &__input {
         max-width: 360px;
     }
     &__container {
+        position: absolute;
         background-color: var(--component-dropdownList-bg);
         border-radius: var(--core-borderRadius-400);
         box-shadow: var(--semantic-elevation-shadow-card-hover);
@@ -37,8 +12,8 @@
         align-items: flex-start;
         max-height: 420px;
         margin-top: var(--core-size-200);
-        max-width: 360px;
-                overflow-y: auto;
+        min-width: 360px;
+        overflow-y: auto;
 
         &--size {
             &-sm {

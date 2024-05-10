@@ -32,7 +32,7 @@ const options = [
 ];
 
 const meta = {
-    title: "Components/Inputs/Dropdown",
+    title: "Components/Inputs/Autocomplete Dropdown",
     component: DropdownFeild,
     parameters: {
         docs: {
@@ -108,12 +108,21 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const DefaultLabellessDropdown: Story = {
+export const LablelessDropdown: Story = {
     args: {
         placeholder,
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         options: options,
-        readOnly: true,
+    },
+};
+export const LablelledDropdown: Story = {
+    args: {
+        placeholder,
+        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+        options: options,
+        label: "Label",
+        required: true,
+        fieldMarker: true,
     },
 };
 export const DisabledDropdown: Story = {
@@ -122,10 +131,9 @@ export const DisabledDropdown: Story = {
         disabled: true,
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         options: options,
-        readOnly: true,
     },
 };
-export const LabellessSuccessDropdown: Story = {
+export const DropdownOnSuccess: Story = {
     args: {
         placeholder,
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
@@ -133,10 +141,9 @@ export const LabellessSuccessDropdown: Story = {
         rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
         variant: "fill",
         options: options,
-        readOnly: true,
     },
 };
-export const LabellessErrorDropdown: Story = {
+export const DropdownOnError: Story = {
     args: {
         placeholder,
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
@@ -144,10 +151,9 @@ export const LabellessErrorDropdown: Story = {
         status: "error",
         variant: "fill",
         options: options,
-        readOnly: true,
     },
 };
-export const LabellessDropdownWithErrorMessage: Story = {
+export const DropdownOnErrorWithErrorMessage: Story = {
     args: {
         placeholder,
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
@@ -156,67 +162,12 @@ export const LabellessDropdownWithErrorMessage: Story = {
         status: "error",
         variant: "fill",
         options: options,
-        readOnly: true,
     },
 };
-export const DefaultDropdownFeildWithLabel: Story = {
-    args: {
-        placeholder,
-        label: "Label",
-        required: true,
-        fieldMarker: true,
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
-        options: options,
-        readOnly: true,
-    },
-};
-export const LabelledSuccessDropdown: Story = {
-    args: {
-        placeholder,
-        label: "Label",
-        required: true,
-        fieldMarker: true,
-        variant: "fill",
-        status: "success",
-        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
-        options: options,
-        readOnly: true,
-    },
-};
-export const LabelledErrorDropdown: Story = {
-    args: {
-        placeholder,
-        label: "Label",
-        required: true,
-        fieldMarker: true,
-        variant: "fill",
-        status: "error",
-        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
-        options: options,
-        readOnly: true,
-    },
-};
-export const LabelledDropdownWithSuccessMessage: Story = {
-    args: {
-        placeholder,
-        label: "Label",
-        required: true,
-        fieldMarker: true,
-        variant: "fill",
-        status: "success",
-        message: "This is a success message",
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
-        rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
-        options: options,
-        readOnly: true,
-    },
-};
+
 export const DropdownWithLongOptionsList: Story = {
     args: {
         placeholder,
-        readOnly: true,
         label: "Label",
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         options: [
