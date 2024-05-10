@@ -561,7 +561,7 @@ DatePickerWithNeighboringMonth.args = {
 export const DatePickerWithCustomActiveStartDate = Template.bind(this) as Story;
 DatePickerWithCustomActiveStartDate.args = {
     ...meta.args,
-    startDate: new Date(2017, 0, 1),
+    startDate: new Date("01/01/2017"),
 };
 
 export const DatePickerGregoryType = Template.bind(this) as Story;
