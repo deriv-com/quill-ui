@@ -12,8 +12,8 @@ export interface TSingleSelectItem {
     label: string | number;
 }
 export type TSingleSelectOption = {
-    value: number | string;
-    label: string;
+    id: number;
+    number: string;
 };
 
 export type TDropdownOption = {
@@ -37,13 +37,13 @@ const Options = ({
     handleKeyDown,
 }: TDropdownOption) => {
     return (
-        <Combobox.Option value={item.label} as={Fragment} key={item.value}>
+        <Combobox.Option value={item.name} as={Fragment} key={item.id}>
             {({ selected, active }) => {
                 return (
                     <DropdownItem
                         onClick={closeDropdown}
                         onKeyDown={handleKeyDown}
-                        label={item.label}
+                        label={item.name}
                         selected={selected}
                         size={inputSize}
                         active={active}
@@ -67,31 +67,42 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
         },
         ref,
     ) => {
+        const people = [
+            { id: 1, name: "Durward Reynolds" },
+            { id: 2, name: "Kenton Towne" },
+            { id: 3, name: "Therese Wunsch" },
+            { id: 4, name: "Benedict Kessler" },
+            { id: 5, name: "Katelyn Rohan" },
+        ];
+        const [selectedPerson, setSelectedPerson] = useState(null);
+        const [query, setQuery] = useState("");
+        const [filteredPeople, setFilteredPeople] = useState(people);
+
+        console.log("filteredPeople", filteredPeople);
+        console.log("selectedPerson", selectedPerson);
+        console.log("query", query);
+        useEffect(() => {
+            if (query === "") {
+                setSelectedPerson(null);
+            }
+        }, [query]);
+
         const [isDropdownOpen, setDropdownOpen] = useState(false);
 
         const [selectedItem, setSelectedItem] =
             useState<TSingleSelectOption[]>();
 
-        const [query, setQuery] = useState("");
-
-        const filteredOption =
-            query === ""
-                ? options
-                : options?.filter((option) => {
-                      return option.label
-                          .toLowerCase()
-                          .includes(query.toLowerCase());
-                  });
-        useEffect(() => {
-            if (query === "") {
-                setDropdownOpen(!isDropdownOpen);
-            }
-        }, []);
-
-        console.log("query", query);
-
         const handleDropdownClick = () => {
-            setDropdownOpen(!isDropdownOpen);
+            setDropdownOpen(true);
+            const filteredPeople =
+                query === ""
+                    ? people
+                    : people.filter((person) => {
+                          return person.name
+                              .toLowerCase()
+                              .includes(query.toLowerCase());
+                      });
+            setFilteredPeople(filteredPeople);
         };
 
         const closeDropdown = () => {
@@ -102,14 +113,9 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
                 setDropdownOpen(false);
             }
         };
-        console.log("filteredOption", filteredOption);
-        console.log("selectedItem", selectedItem);
+
         return (
-            <Combobox
-                disabled={disabled}
-                value={selectedItem}
-                onChange={setSelectedItem}
-            >
+            <Combobox value={selectedPerson} onChange={setSelectedPerson}>
                 <Combobox.Input
                     as={Input}
                     type="select"
@@ -121,7 +127,6 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
                     onClick={handleDropdownClick}
                     onChange={(event) => setQuery(event.target.value)}
                     onKeyDown={handleKeyDown}
-                    {...rest}
                     triggerActionIcon={
                         <LabelPairedChevronDownSmBoldIcon
                             data-state={isDropdownOpen ? "open" : "close"}
@@ -133,20 +138,21 @@ export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
                             )}
                         />
                     }
+                    value={selectedPerson}
+                    {...rest}
                     ref={ref}
                 />
-
-                {isDropdownOpen && (
+                {isDropdownOpen && query === "" && (
                     <div
                         className={clsx(
                             "dropdown__container",
                             `dropdown__container--size-${inputSize}`,
                         )}
                     >
-                        {filteredOption?.map((item) => (
+                        {filteredPeople?.map((item) => (
                             <Options
                                 item={item}
-                                key={item.value}
+                                key={item.id}
                                 closeDropdown={closeDropdown}
                                 handleKeyDown={handleKeyDown}
                                 inputSize={inputSize}
