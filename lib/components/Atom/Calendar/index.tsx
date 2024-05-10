@@ -14,7 +14,7 @@ interface DatePicker
         React.ComponentProps<typeof Calendar>,
         "onChange" | "activeStartDate"
     > {
-    isWidthFixed?: boolean;
+    hasFixedWidth?: boolean;
     optionsConfig?: Record<string, string>;
     onChange?: (
         value: Value,
@@ -36,7 +36,7 @@ export const DatePicker = ({
     className,
     defaultValue,
     defaultView,
-    isWidthFixed = true,
+    hasFixedWidth = true,
     formatMonthYear = (locale, date) =>
         new Date(date).toLocaleString(locale || navigator.languages, {
             month: "short",
@@ -92,7 +92,7 @@ export const DatePicker = ({
         <div
             className={clsx(
                 "quill-date-picker__wrapper",
-                { "quill-date-picker__wrapper--fixed-width": isWidthFixed },
+                { "quill-date-picker__wrapper--fixed-width": hasFixedWidth },
                 wrapperClassName,
             )}
         >

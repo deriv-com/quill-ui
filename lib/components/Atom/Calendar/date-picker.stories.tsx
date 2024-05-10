@@ -26,7 +26,7 @@ const meta = {
     tags: ["autodocs"],
     args: {
         allowPartialRange: false,
-        isWidthFixed: true,
+        hasFixedWidth: true,
         formatMonthYear: (locale, date) =>
             new Date(date).toLocaleString(locale || navigator.languages, {
                 month: "short",
@@ -110,7 +110,7 @@ const meta = {
             options: ["month", "year", "decade", "century"],
             control: { type: "radio" },
         },
-        isWidthFixed: {
+        hasFixedWidth: {
             table: {
                 type: {
                     summary: "boolean | undefined",
@@ -488,7 +488,7 @@ const Template: React.FC<Template> = ({ ...args }: Template) => {
     return (
         <>
             <Text as="div">Selected date: {formattedDate}</Text>
-            <div style={{ width: `${args.isWidthFixed ? "312px" : "90vw"}` }}>
+            <div style={{ width: `${args.hasFixedWidth ? "312px" : "90vw"}` }}>
                 <DatePicker
                     {...args}
                     onFormattedDate={(value) => setFormattedDate(value)}
@@ -579,5 +579,5 @@ DatePickerIslamicType.args = {
 export const DatePickerWithNotFixedWidth = Template.bind(this) as Story;
 DatePickerWithNotFixedWidth.args = {
     ...meta.args,
-    isWidthFixed: false,
+    hasFixedWidth: false,
 };
