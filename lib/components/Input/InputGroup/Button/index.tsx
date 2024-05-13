@@ -1,10 +1,10 @@
 import { forwardRef, useEffect, useState } from "react";
 import Input, { InputProps } from "@components/Input/base";
-import { Button, TVariant } from "@components/Button";
+import { Button, TButtonVariant } from "@components/Button";
 
 export interface InputGroupButtonProps
     extends Omit<InputProps, "textAlignment"> {
-    buttonVariant?: TVariant;
+    buttonVariant?: TButtonVariant;
     buttonIconPosition?: "start" | "end";
     buttonLabel: React.ReactNode;
     buttonCallback?: () => void;
