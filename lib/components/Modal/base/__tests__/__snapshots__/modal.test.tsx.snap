@@ -68,7 +68,7 @@ exports[`Modal should render SVG if it was passed 1`] = `
           data-state=""
         >
           <span
-            class="button-label"
+            class="quill-button-label"
           >
             <p
               class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
@@ -140,7 +140,7 @@ exports[`Modal should render container with image as a background if src was pas
           data-state=""
         >
           <span
-            class="button-label"
+            class="quill-button-label"
           >
             <p
               class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
@@ -213,7 +213,7 @@ exports[`Modal should render secondary button if showSecondaryButton === true an
           data-state=""
         >
           <span
-            class="button-label"
+            class="quill-button-label"
           >
             <p
               class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
@@ -227,7 +227,7 @@ exports[`Modal should render secondary button if showSecondaryButton === true an
           data-state=""
         >
           <span
-            class="button-label"
+            class="quill-button-label"
           >
             <p
               class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
@@ -300,7 +300,7 @@ exports[`Modal should render with default values if optional ones were not passe
           data-state=""
         >
           <span
-            class="button-label"
+            class="quill-button-label"
           >
             <p
               class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
