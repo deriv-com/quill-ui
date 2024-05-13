@@ -48,6 +48,7 @@ const meta = {
     args: {
         children: <div>{shortTextContent}</div>,
         isOpened: false,
+        disableCloseOnOverlay: false,
         showHandleBar: true,
         isMobile: true,
         showSecondaryButton: true,
@@ -64,6 +65,7 @@ const meta = {
                 "Modal's content. Can be wrapped with the `<ModalBottom.Header/>` and `<ModalBottom.Body/>` components in order to organize the content inside the modal. Each of them accepts className for customization and `<ModalBottom.Header/>` can also be passed scr and height properties.",
             control: { type: null },
         },
+
         isOpened: {
             table: { type: { summary: "boolean | undefined" } },
             options: ["true", "false"],
@@ -170,6 +172,11 @@ export const ModalBottomWithoutHandleBar = Template.bind(this) as Story;
 ModalBottomWithoutHandleBar.args = {
     ...meta.args,
     showHandleBar: false,
+};
+export const DisableCloseOnOverlay = Template.bind(this) as Story;
+DisableCloseOnOverlay.args = {
+    ...meta.args,
+    disableCloseOnOverlay: true,
 };
 
 export const ModalBottomWithoutSecondaryButton = Template.bind(this) as Story;
