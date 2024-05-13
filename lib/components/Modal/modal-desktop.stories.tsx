@@ -5,7 +5,7 @@ const placeHolderText =
     "Lorem ipsum dolor sit amet consectetur. Venenatis malesuada nibh sed ornare rnare id suspendisse sed.";
 const mediumTextContent = placeHolderText.padStart(200, placeHolderText);
 const longTextContent = placeHolderText.padStart(2000, placeHolderText);
-
+const shortTextContent = "This is a description content.";
 const imageSRC =
     "https://live.staticflickr.com/603/21947667154_e63cc9252b_b.jpg";
 const ImageComponent = <img src={imageSRC} alt="Apples" />;
@@ -96,11 +96,14 @@ export default meta;
 type Story = StoryObj<typeof ModalExample>;
 
 export const Default: Story = {
-    args: {},
+    args: {
+        textContent: shortTextContent,
+    },
 };
 export const ModalOverlayWithoutSecondaryButton: Story = {
     args: {
         showSecondaryButton: false,
+        textContent: shortTextContent,
     },
 };
 export const ClosingModalOverlayOnPrimaryButtonClick: Story = {
