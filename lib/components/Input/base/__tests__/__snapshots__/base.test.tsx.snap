@@ -9,26 +9,30 @@ exports[`Input should render a Input with field marker 1`] = `
       class="quill-input__wrapper quill-input__wrapper__variant--fill quill-input__wrapper__variant--fill--neutral quill-input__wrapper__size--md"
     >
       <div
-        class="quill-input-label__wrapper"
+        class="quill-input-icons__wrapper"
       >
-        <input
-          class="input peer input__align--left input__size--md"
-          id="label"
-          placeholder=""
-          type="text"
-          value=""
-        />
-        <label
-          class="label label__status--neutral"
-          for="label"
+        <div
+          class="quill-input-label__wrapper"
         >
-          label
-          <div
-            class="label-field-marker label-field-marker__required--false"
+          <input
+            class="input peer input__align--left input__size--md"
+            id="label"
+            placeholder=""
+            type="text"
+            value=""
+          />
+          <label
+            class="label label__status--neutral"
+            for="label"
           >
-            (optional)
-          </div>
-        </label>
+            label
+            <div
+              class="label-field-marker label-field-marker__required--false"
+            >
+              (optional)
+            </div>
+          </label>
+        </div>
       </div>
     </div>
   </div>
@@ -44,14 +48,18 @@ exports[`Input should render a default Input 1`] = `
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
     >
       <div
-        class="quill-input-no-label__wrapper"
+        class="quill-input-icons__wrapper"
       >
-        <input
-          class="input peer input__align--left input__size--md"
-          placeholder=""
-          type="text"
-          value=""
-        />
+        <div
+          class="quill-input-no-label__wrapper"
+        >
+          <input
+            class="input peer input__align--left input__size--md"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -67,15 +75,19 @@ exports[`Input should render a disabled Input with a variant of fill 1`] = `
       class="quill-input__wrapper quill-input__wrapper__variant--fill quill-input__wrapper__variant--fill--neutral quill-input__wrapper__size--md"
     >
       <div
-        class="quill-input-no-label__wrapper"
+        class="quill-input-icons__wrapper"
       >
-        <input
-          class="input peer input__align--left input__size--md"
-          disabled=""
-          placeholder=""
-          type="text"
-          value=""
-        />
+        <div
+          class="quill-input-no-label__wrapper"
+        >
+          <input
+            class="input peer input__align--left input__size--md"
+            disabled=""
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -91,21 +103,25 @@ exports[`Input should render an Input with a label 1`] = `
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
     >
       <div
-        class="quill-input-label__wrapper"
+        class="quill-input-icons__wrapper"
       >
-        <input
-          class="input peer input__align--left input__size--md"
-          id="UserName"
-          placeholder=""
-          type="text"
-          value=""
-        />
-        <label
-          class="label label__status--neutral"
-          for="UserName"
+        <div
+          class="quill-input-label__wrapper"
         >
-          UserName
-        </label>
+          <input
+            class="input peer input__align--left input__size--md"
+            id="UserName"
+            placeholder=""
+            type="text"
+            value=""
+          />
+          <label
+            class="label label__status--neutral"
+            for="UserName"
+          >
+            UserName
+          </label>
+        </div>
       </div>
     </div>
   </div>
@@ -121,14 +137,18 @@ exports[`Input should render an Input with a variant of outline 1`] = `
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
     >
       <div
-        class="quill-input-no-label__wrapper"
+        class="quill-input-icons__wrapper"
       >
-        <input
-          class="input peer input__align--left input__size--md"
-          placeholder=""
-          type="text"
-          value=""
-        />
+        <div
+          class="quill-input-no-label__wrapper"
+        >
+          <input
+            class="input peer input__align--left input__size--md"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -144,14 +164,18 @@ exports[`Input should render an Input with centered text 1`] = `
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
     >
       <div
-        class="quill-input-no-label__wrapper"
+        class="quill-input-icons__wrapper"
       >
-        <input
-          class="input peer input__align--center input__size--md"
-          placeholder=""
-          type="text"
-          value=""
-        />
+        <div
+          class="quill-input-no-label__wrapper"
+        >
+          <input
+            class="input peer input__align--center input__size--md"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -167,14 +191,18 @@ exports[`Input should render an Input with status messages 1`] = `
       class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
     >
       <div
-        class="quill-input-no-label__wrapper"
+        class="quill-input-icons__wrapper"
       >
-        <input
-          class="input peer input__align--left input__size--md"
-          placeholder=""
-          type="text"
-          value=""
-        />
+        <div
+          class="quill-input-no-label__wrapper"
+        >
+          <input
+            class="input peer input__align--left input__size--md"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
     <div
