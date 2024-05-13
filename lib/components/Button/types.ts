@@ -8,16 +8,16 @@ import {
 
 export type TButtonVariant = "primary" | "secondary" | "tertiary";
 
-export type TColor = TDefaultColor | "purchase" | "sell";
+export type TButtonColor = TDefaultColor | "purchase" | "sell";
 
-export type TSocial = "google" | "facebook" | "apple";
+export type TButtonSocial = "google" | "facebook" | "apple";
 
 export type QuillIconComponent = React.ForwardRefExoticComponent<
     Omit<QuillSvgProps, "ref">
 >;
 export interface ButtonProps extends ComponentProps<"button"> {
     variant?: TButtonVariant;
-    color?: TColor;
+    color?: TButtonColor;
     icon?: ReactNode;
     isDropdownOpen?: boolean;
     selected?: boolean;
@@ -34,7 +34,7 @@ export interface ButtonProps extends ComponentProps<"button"> {
 
 export interface SocialButtonProps extends ComponentProps<"button"> {
     variant?: "primary" | "secondary";
-    social?: TSocial;
+    social?: TButtonSocial;
     size?: TSemiRegularSizes;
     color?: TDefaultColor;
     hideLabel?: boolean;
