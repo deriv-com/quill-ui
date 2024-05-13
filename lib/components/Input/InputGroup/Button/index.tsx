@@ -9,7 +9,10 @@ export interface InputGroupButtonProps
     buttonLabel: React.ReactNode;
     buttonCallback?: () => void;
 }
-const InputGroupButton = forwardRef<HTMLInputElement, InputGroupButtonProps>(
+export const InputGroupButton = forwardRef<
+    HTMLInputElement,
+    InputGroupButtonProps
+>(
     (
         {
             status = "neutral",
