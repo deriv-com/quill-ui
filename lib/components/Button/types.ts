@@ -6,7 +6,7 @@ import {
     TSemiRegularSizes,
 } from "@types";
 
-export type TVariant = "primary" | "secondary" | "tertiary";
+export type TButtonVariant = "primary" | "secondary" | "tertiary";
 
 export type TColor = TDefaultColor | "purchase" | "sell";
 
@@ -16,7 +16,7 @@ export type QuillIconComponent = React.ForwardRefExoticComponent<
     Omit<QuillSvgProps, "ref">
 >;
 export interface ButtonProps extends ComponentProps<"button"> {
-    variant?: TVariant;
+    variant?: TButtonVariant;
     color?: TColor;
     icon?: ReactNode;
     isDropdownOpen?: boolean;
