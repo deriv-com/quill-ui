@@ -5,10 +5,10 @@ import {
     StandaloneCircleSterlingRegularIcon,
     StandaloneTrashRegularIcon,
 } from "@deriv/quill-icons";
-import { ModalBottom } from "./index";
+import { Modal } from "./index";
 import { Button } from "@components/Button";
 
-interface Template extends React.ComponentProps<typeof ModalBottom> {
+interface Template extends React.ComponentProps<typeof Modal> {
     image?: React.ReactNode;
     src?: string;
     style?: React.CSSProperties;
@@ -37,7 +37,7 @@ preloadImage(imageSRC);
 
 const meta = {
     title: "Components/Modal/Bottom",
-    component: ModalBottom,
+    component: Modal,
     tags: ["autodocs"],
     parameters: {
         layout: "centered",
@@ -49,6 +49,7 @@ const meta = {
         children: <div>{shortTextContent}</div>,
         isOpened: false,
         showHandleBar: true,
+        isMobile: true,
         showSecondaryButton: true,
         shouldCloseOnPrimaryButtonClick: false,
         toggleModal: fn(),
@@ -123,7 +124,7 @@ const meta = {
             control: { type: "string" },
         },
     },
-} satisfies Meta<typeof ModalBottom>;
+} satisfies Meta<typeof Modal>;
 
 export default meta;
 
@@ -149,15 +150,15 @@ const Template: React.FC<Template> = ({
                 label={openModalButtonLabel}
                 onClick={() => setIsOpen(true)}
             />
-            <ModalBottom {...args} isOpened={isOpen} toggleModal={setIsOpen}>
-                <ModalBottom.Header
+            <Modal {...args} isOpened={isOpen} toggleModal={setIsOpen}>
+                <Modal.Header
                     title={titlePlaceHolderText}
                     image={image}
                     src={src}
                     style={style}
                 />
-                <ModalBottom.Body>{textContent}</ModalBottom.Body>
-            </ModalBottom>
+                <Modal.Body>{textContent}</Modal.Body>
+            </Modal>
         </>
     );
 };

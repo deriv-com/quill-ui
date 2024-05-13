@@ -17,37 +17,46 @@ export interface DropdownItemProps extends HTMLAttributes<HTMLElement> {
     label: ReactNode;
     disabled?: boolean;
     selected?: boolean;
+    textAlignment?: "left" | "center";
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
     checkbox?: boolean;
 }
 
-export const DropdownItem = ({
-    as: Component = "li",
-    leftIcon,
-    rightIcon,
-    size = "md",
-    centered,
-    label,
-    disabled = false,
-    selected = false,
-    className,
-    checkbox = false,
-    ...rest
-}: DropdownItemProps) => {
-    return (
-        <Component
-            className={clsx(
-                "quill-dropdown-item",
-                `quill-dropdown-item__size--${size}`,
-                checkbox
-                    ? `quill-dropdown-item-checkbox__selected--${selected}__disabled--${disabled}`
-                    : `quill-dropdown-item__selected--${selected}__disabled--${disabled}`,
-                className,
-            )}
-            {...rest}
-        >
-            {checkbox ? (
+export const DropdownItem = React.forwardRef<HTMLElement, DropdownItemProps>(
+    (
+        {
+            as = "li",
+            leftIcon,
+            rightIcon,
+            size = "md",
+            centered,
+            textAlignment = "left",
+            label,
+            disabled = false,
+            selected = false,
+            className,
+            checkbox = false,
+            ...rest
+        }: DropdownItemProps,
+        ref,
+    ) => {
+        return React.createElement(
+            as,
+            {
+                ref,
+                className: clsx(
+                    "quill-dropdown-item",
+                    `quill-dropdown-item__size--${size}`,
+                    `quill-dropdown-item__align-${textAlignment}`,
+                    checkbox
+                        ? `quill-dropdown-item-checkbox__selected--${selected}__disabled--${disabled}`
+                        : `quill-dropdown-item__selected--${selected}__disabled--${disabled}`,
+                    className,
+                ),
+                ...rest,
+            },
+            checkbox ? (
                 selected ? (
                     <StandaloneSquareCheckFillIcon iconSize="sm" />
                 ) : (
@@ -55,7 +64,7 @@ export const DropdownItem = ({
                 )
             ) : (
                 leftIcon
-            )}
+            ),
             <Text
                 size={size}
                 className={clsx(
@@ -65,10 +74,10 @@ export const DropdownItem = ({
                 centered={centered}
             >
                 {label}
-            </Text>
-            {rightIcon}
-        </Component>
-    );
-};
+            </Text>,
+            rightIcon,
+        );
+    },
+);
 
 export default DropdownItem;

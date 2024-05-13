@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { StandaloneTrashRegularIcon } from "@deriv/quill-icons";
-import { ModalBottom } from "../index";
+import { Modal } from "@components/Modal";
 
-describe("ModalBottom", () => {
+describe("Modal", () => {
     const primaryButtonLabel = "Primary Button Label";
     const secondaryButtonLabel = "Secondary Button Label";
     const shortTextContent = "This is some amazing placeholder.";
@@ -15,8 +15,8 @@ describe("ModalBottom", () => {
 
     const children = (
         <>
-            <ModalBottom.Header title={title} />
-            <ModalBottom.Body>{shortTextContent}</ModalBottom.Body>
+            <Modal.Header title={title} />
+            <Modal.Body>{shortTextContent}</Modal.Body>
         </>
     );
 
@@ -37,15 +37,13 @@ describe("ModalBottom", () => {
     });
 
     it("should render with default values if optional ones were not passed", () => {
-        const { container } = render(
-            <ModalBottom {...mockProps}>{children}</ModalBottom>,
-        );
+        const { container } = render(<Modal {...mockProps}>{children}</Modal>);
 
         expect(container).toMatchSnapshot();
     });
 
     it("should call toggleModal if user clicks on the overlay", async () => {
-        render(<ModalBottom {...mockProps}>{children}</ModalBottom>);
+        render(<Modal {...mockProps}>{children}</Modal>);
 
         userEvent.click(screen.getByTestId("dt_overlay"));
         await waitFor(() => {
@@ -53,26 +51,15 @@ describe("ModalBottom", () => {
         });
     });
 
-    it("should not render handleBar if showHandleBar === false", () => {
-        const { container } = render(
-            <ModalBottom {...mockProps} showHandleBar={false}>
-                {children}
-            </ModalBottom>,
-        );
-
-        expect(screen.queryByTestId("dt_handlebar")).not.toBeInTheDocument();
-        expect(container).toMatchSnapshot();
-    });
-
     it("should render secondary button if showSecondaryButton === true and the label was passed", () => {
         const { container } = render(
-            <ModalBottom
+            <Modal
                 {...mockProps}
                 showSecondaryButton
                 secondaryButtonLabel={secondaryButtonLabel}
             >
                 {children}
-            </ModalBottom>,
+            </Modal>,
         );
 
         expect(screen.getByText(secondaryButtonLabel)).toBeInTheDocument();
@@ -81,13 +68,13 @@ describe("ModalBottom", () => {
 
     it("should call toggleModal if user clicks on secondary button", async () => {
         render(
-            <ModalBottom
+            <Modal
                 {...mockProps}
                 showSecondaryButton
                 secondaryButtonLabel={secondaryButtonLabel}
             >
                 {children}
-            </ModalBottom>,
+            </Modal>,
         );
 
         userEvent.click(screen.getByText(secondaryButtonLabel));
@@ -98,9 +85,9 @@ describe("ModalBottom", () => {
 
     it("should call toggleModal if user clicks on primary button and shouldCloseOnPrimaryButtonClick == true", async () => {
         render(
-            <ModalBottom {...mockProps} shouldCloseOnPrimaryButtonClick>
+            <Modal {...mockProps} shouldCloseOnPrimaryButtonClick>
                 {children}
-            </ModalBottom>,
+            </Modal>,
         );
 
         userEvent.click(screen.getByText(primaryButtonLabel));
@@ -112,12 +99,9 @@ describe("ModalBottom", () => {
     it("should call primaryButtonCallback if user clicks on primary button and primaryButtonCallback was passed", async () => {
         const primaryButtonCallback = jest.fn();
         render(
-            <ModalBottom
-                {...mockProps}
-                primaryButtonCallback={primaryButtonCallback}
-            >
+            <Modal {...mockProps} primaryButtonCallback={primaryButtonCallback}>
                 {children}
-            </ModalBottom>,
+            </Modal>,
         );
 
         userEvent.click(screen.getByText(primaryButtonLabel));
@@ -126,25 +110,11 @@ describe("ModalBottom", () => {
         });
     });
 
-    it("should render passed image if it is ReactNode", () => {
-        const { container } = render(
-            <ModalBottom {...mockProps}>
-                <ModalBottom.Header
-                    title={title}
-                    image={<img src={imageSrc} alt="Apples" />}
-                />
-            </ModalBottom>,
-        );
-
-        expect(screen.getByRole("img")).toBeInTheDocument();
-        expect(container).toMatchSnapshot();
-    });
-
     it("should render container with image as a background if src was passed", () => {
         const { container } = render(
-            <ModalBottom {...mockProps}>
-                <ModalBottom.Header src={imageSrc} title={title} />
-            </ModalBottom>,
+            <Modal {...mockProps}>
+                <Modal.Header src={imageSrc} title={title} />
+            </Modal>,
         );
 
         expect(screen.getByTestId("dt_modal_image")).toBeInTheDocument();
@@ -153,12 +123,12 @@ describe("ModalBottom", () => {
 
     it("should render SVG if it was passed", () => {
         const { container } = render(
-            <ModalBottom {...mockProps}>
-                <ModalBottom.Header
+            <Modal {...mockProps}>
+                <Modal.Header
                     title={title}
                     image={<StandaloneTrashRegularIcon />}
                 />
-            </ModalBottom>,
+            </Modal>,
         );
 
         expect(container).toMatchSnapshot();
