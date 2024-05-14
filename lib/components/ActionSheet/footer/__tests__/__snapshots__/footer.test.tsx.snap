@@ -10,7 +10,7 @@ exports[`<ActionSheet.Footer/> should render correctly with horizontal 1`] = `
     data-state=""
   >
     <span
-      class="button-label"
+      class="quill-button-label"
     >
       <p
         class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
@@ -32,7 +32,7 @@ exports[`<ActionSheet.Footer/> should render correctly with vertical 1`] = `
     data-state=""
   >
     <span
-      class="button-label"
+      class="quill-button-label"
     >
       <p
         class="quill-typography__body-text__size--md__weight--bold__decoration--default black"

@@ -1,14 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
 import TextField from ".";
-import {
-    StandaloneCircleCheckBoldIcon,
-    StandaloneCircleUserRegularIcon,
-    StandaloneTriangleExclamationBoldIcon,
-} from "@deriv/quill-icons";
+import { StandaloneCircleUserRegularIcon } from "@deriv/quill-icons";
 import { Status, Variants } from "../base";
 
 const icons: Record<string, object | null> = {
-    with_icon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+    with_icon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
     none: null,
 };
 
@@ -25,7 +21,6 @@ const status: Record<string, Status> = {
     error: "error",
 };
 
-const label = "label";
 const message = "Status message goes here";
 
 const meta = {
@@ -45,14 +40,21 @@ const meta = {
         fieldMarker: false,
         required: false,
         showCharacterCounter: false,
-        maxLength: 15,
     },
     argTypes: {
+        type: {
+            control: "text",
+        },
         inputSize: {
             control: {
                 type: "radio",
             },
             options: ["sm", "md"],
+        },
+        maxLength: {
+            control: {
+                type: "number",
+            },
         },
         leftIcon: {
             options: Object.keys(icons),
@@ -96,26 +98,26 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const DefaultTextField: Story = {
+export const Default: Story = {
     args: {
         placeholder,
     },
 };
-export const SuccessTextField: Story = {
+export const OutlineSuccess: Story = {
     args: {
         placeholder,
         variant: variants.outline,
         status: status.success,
     },
 };
-export const ErrorTextField: Story = {
+export const FillError: Story = {
     args: {
         placeholder,
-        variant: variants.outline,
+        variant: variants.fill,
         status: status.error,
     },
 };
-export const DisabledTextField: Story = {
+export const Disabled: Story = {
     args: {
         placeholder,
         disabled: true,
@@ -123,38 +125,30 @@ export const DisabledTextField: Story = {
     },
 };
 
-export const TextFieldWithLabel: Story = {
+export const WithLabel: Story = {
     args: {
         placeholder,
-        label,
+        label: "Label",
     },
 };
 
-export const TextFieldWithIconAndLabel: Story = {
+export const WithLeftIconAndLabel: Story = {
     args: {
         placeholder,
-        label,
+        label: "Label",
         leftIcon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
     },
 };
 
-export const SuccessStatusIconTextField: Story = {
+export const ReadonlyWithValue: Story = {
     args: {
-        placeholder,
-        variant: variants.outline,
-        status: status.success,
-        rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
-    },
-    argTypes: {
-        status: {
-            table: {
-                disable: true,
-            },
-        },
+        leftIcon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
+        value: "John Doe",
+        readOnly: true,
     },
 };
 
-export const StatusMessageTextField: Story = {
+export const WithStatusMessage: Story = {
     args: {
         placeholder,
         variant: variants.outline,
@@ -163,47 +157,13 @@ export const StatusMessageTextField: Story = {
     },
 };
 
-export const StatusMessageWithCharacterCounterTextField: Story = {
+export const StatusMessageWithCharacterCounter: Story = {
     args: {
         placeholder,
         variant: variants.outline,
         status: status.error,
         message,
         showCharacterCounter: true,
-    },
-};
-
-export const SuccessMessageTextFieldWithIcons: Story = {
-    args: {
-        placeholder,
-        variant: variants.outline,
-        status: status.success,
-        message,
-        showCharacterCounter: true,
-        rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
-    },
-    argTypes: {
-        rightIcon: {
-            table: {
-                disable: true,
-            },
-        },
-    },
-};
-export const ErrorMessageTextFieldWithIcons: Story = {
-    args: {
-        placeholder,
-        variant: variants.outline,
-        status: status.error,
-        message,
-        showCharacterCounter: true,
-        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-    },
-    argTypes: {
-        rightIcon: {
-            table: {
-                disable: true,
-            },
-        },
+        maxLength: 15,
     },
 };

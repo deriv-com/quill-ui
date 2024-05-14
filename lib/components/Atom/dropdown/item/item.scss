@@ -1,20 +1,31 @@
 .quill-dropdown-item {
     display: flex;
     align-items: center;
+    width: 100%;
+    cursor: pointer;
     border-radius: var(--component-dropdownItem-border-radius);
 
     &-label {
         flex-grow: 1;
     }
+    &__align {
+        &-left {
+            text-align: left;
+        }
+
+        &-center {
+            text-align: center;
+        }
+    }
 
     &__size {
         &--sm {
-            height: var(--component-dropdownItem-height-item-sm);
+            min-height: var(--component-dropdownItem-height-item-sm);
             padding-inline: var(--component-dropdownItem-spacing-padding-sm);
             gap: var(--component-dropdownItem-spacing-gap-sm);
         }
         &--md {
-            height: var(--component-dropdownItem-height-item-md);
+            min-height: var(--component-dropdownItem-height-item-md);
             padding-inline: var(--component-dropdownItem-spacing-padding-md);
             gap: var(--component-dropdownItem-spacing-gap-md);
         }

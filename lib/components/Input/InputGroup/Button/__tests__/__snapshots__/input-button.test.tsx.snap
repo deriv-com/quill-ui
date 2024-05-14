@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputGroupButton Component disables button when input is empty 1`] = `
+<div>
+  <div
+    class="quill-input__container"
+  >
+    <div
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md quill-input__wrapper-with_button-right--md
+     quill-input__wrapper-with_button-right--md--no-label
+    
+    "
+    >
+      <div
+        class="quill-input-icons__wrapper"
+      >
+        <div
+          class="quill-input-no-label__wrapper"
+        >
+          <input
+            class="input peer input__align--left input__size--md"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        class="quill-button quill-button__size--md quill__color--primary-black"
+        data-state=""
+        disabled=""
+      >
+        <span
+          class="quill-button-label"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default black"
+          >
+            Submit
+          </p>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputGroupButton Component enables button when input is not empty 1`] = `
+<div>
+  <div
+    class="quill-input__container"
+  >
+    <div
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md quill-input__wrapper-with_button-right--md
+     quill-input__wrapper-with_button-right--md--has-label
+    
+    "
+    >
+      <div
+        class="quill-input-icons__wrapper"
+      >
+        <div
+          class="quill-input-label__wrapper"
+        >
+          <input
+            class="input peer input__align--left input__size--md"
+            id="input"
+            placeholder=""
+            type="text"
+            value=""
+          />
+          <label
+            class="label label__status--neutral"
+            for="input"
+          >
+            input
+          </label>
+        </div>
+      </div>
+      <button
+        class="quill-button quill-button__size--md quill__color--primary-black"
+        data-state=""
+        disabled=""
+      >
+        <span
+          class="quill-button-label"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default black"
+          >
+            Submit
+          </p>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputGroupButton Component should handle the hover for outline variant 1`] = `
+<div
+  class="quill-input-no-label__wrapper"
+>
+  <input
+    class="input peer input__align--left input__size--md"
+    placeholder="Placeholder"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`InputGroupButton Component should render a default InputGroupButton 1`] = `
+<div>
+  <div
+    class="quill-input__container"
+  >
+    <div
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md quill-input__wrapper-with_button-right--md
+     quill-input__wrapper-with_button-right--md--has-label
+    
+    "
+    >
+      <div
+        class="quill-input-icons__wrapper"
+      >
+        <div
+          class="quill-input-label__wrapper"
+        >
+          <input
+            class="input peer input__align--left input__size--md"
+            id="input"
+            placeholder=""
+            type="text"
+            value=""
+          />
+          <label
+            class="label label__status--neutral"
+            for="input"
+          >
+            input
+          </label>
+        </div>
+      </div>
+      <button
+        class="quill-button quill-button__size--md quill__color--primary-black"
+        data-state=""
+        disabled=""
+      >
+        <span
+          class="quill-button-label"
+        >
+          <p
+            class="quill-typography__body-text__size--sm__weight--bold__decoration--default black"
+          >
+            Submit
+          </p>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

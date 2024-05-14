@@ -66,7 +66,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 {/* To be Added isLoading based on requirement*/}
                 {children && <div>{children}</div>}
                 {label && (
-                    <span className="button-label">
+                    <span className="quill-button-label">
                         {size === "sm" ? (
                             <CaptionText color={color} bold>
                                 {label}

@@ -16,8 +16,9 @@ import {
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
-export type Types = "text" | "email" | "password" | "tel";
+export type Types = "text" | "email" | "password" | "tel" | "select";
 export type TextAlignments = "left" | "center";
+type ButtonPositions = "right" | "bottom";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type?: Types;
@@ -27,7 +28,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     status?: Status;
     disabled?: boolean;
     variant?: Variants;
-    message?: string;
+    message?: ReactNode;
     showCharacterCounter?: boolean;
     maxLength?: number;
     textAlignment?: TextAlignments;
@@ -35,6 +36,9 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     value?: string;
     triggerActionIcon?: ReactNode;
     fieldMarker?: boolean;
+    showInputButton?: boolean;
+    buttonPosition?: ButtonPositions;
+    inputButton?: ReactNode;
 }
 
 const statusIconColors = {
@@ -48,6 +52,17 @@ const statusIcon = {
     error: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
 };
 
+const InputButtonWrapper = (
+    size: TMediumSizes,
+    position: ButtonPositions,
+    label: ReactNode,
+    hasValue: boolean,
+) =>
+    `quill-input__wrapper-with_button-${position}--${size}
+    ${label ? ` quill-input__wrapper-with_button-${position}--${size}--has-label` : ` quill-input__wrapper-with_button-${position}--${size}--no-label`}
+    ${hasValue ? ` quill-input__wrapper-with_button-${position}--${size}--has-value` : ""}
+    `;
+
 const Input = forwardRef<HTMLInputElement, InputProps>(
     (
         {
@@ -55,6 +70,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             inputSize = "md",
             className,
             status = "neutral",
+            readOnly,
             disabled = false,
             variant = "outline",
             placeholder = "",
@@ -70,6 +86,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             triggerActionIcon,
             fieldMarker = false,
             required = false,
+            showInputButton,
+            buttonPosition = "bottom",
+            inputButton: InputButton,
             ...rest
         },
         ref,
@@ -78,6 +97,15 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         useEffect(() => {
             setInputValue(value || "");
         }, [value]);
+
+        if (readOnly) {
+            status = "neutral";
+        }
+
+        rightIcon =
+            (status === "success" || status === "error") && !disabled
+                ? statusIcon[status]
+                : rightIcon;
 
         return (
             <div className="quill-input__container">
@@ -90,79 +118,88 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         `quill-input__wrapper__variant--${variant}`,
                         `quill-input__wrapper__variant--${variant}--${status}`,
                         `quill-input__wrapper__size--${inputSize}`,
+                        showInputButton &&
+                            InputButtonWrapper(
+                                inputSize,
+                                buttonPosition,
+                                label,
+                                inputValue.length > 0,
+                            ),
                     )}
                 >
-                    {leftIcon && (
-                        <span className="icon_wrapper">{leftIcon}</span>
-                    )}
-                    <div
-                        className={clsx(
-                            label
-                                ? "quill-input-label__wrapper"
-                                : "quill-input-no-label__wrapper",
-                            inputValue.length > 0 &&
-                                "quill-input-label__wrapper--has-value",
+                    <div className="quill-input-icons__wrapper">
+                        {leftIcon && (
+                            <span className="icon_wrapper">{leftIcon}</span>
                         )}
-                    >
-                        <input
-                            {...rest}
-                            required={required}
-                            type={type}
-                            value={inputValue}
-                            maxLength={maxLength}
-                            placeholder={placeholder}
+                        <div
                             className={clsx(
-                                "input",
-                                "peer",
-                                `input__align--${textAlignment}`,
-                                `input__size--${inputSize}`,
-                            )}
-                            disabled={!!disabled}
-                            onChange={(e) => {
-                                setInputValue(e.target.value);
-                                onChange?.(e);
-                            }}
-                            id={label?.toString()}
-                            ref={ref}
-                        />
-                        {label && inputSize === "md" && (
-                            <label
-                                className={clsx(
-                                    "label",
-                                    `label__status--${status}`,
-                                    leftIcon && `label__hasIcon`,
-                                )}
-                                htmlFor={label.toString()}
-                            >
-                                {label}
-                                {fieldMarker && (
-                                    <div
-                                        className={clsx(
-                                            "label-field-marker",
-                                            `label-field-marker__required--${required}`,
-                                        )}
-                                    >
-                                        {required ? "*" : "(optional)"}
-                                    </div>
-                                )}
-                            </label>
-                        )}
-                    </div>
-
-                    {rightIcon && (
-                        <span
-                            className={clsx(
-                                "icon_wrapper",
-                                statusIconColors[status],
+                                label
+                                    ? "quill-input-label__wrapper"
+                                    : "quill-input-no-label__wrapper",
+                                inputValue.length > 0 &&
+                                    "quill-input-label__wrapper--has-value",
                             )}
                         >
-                            {status === "neutral"
-                                ? rightIcon
-                                : statusIcon[status]}
-                        </span>
-                    )}
+                            <input
+                                {...rest}
+                                readOnly={readOnly}
+                                required={required}
+                                type={type}
+                                value={inputValue}
+                                maxLength={maxLength}
+                                placeholder={placeholder}
+                                className={clsx(
+                                    "input",
+                                    "peer",
+                                    `input__align--${textAlignment}`,
+                                    `input__size--${inputSize}`,
+                                )}
+                                disabled={!!disabled}
+                                onChange={(e) => {
+                                    setInputValue(e.target.value);
+                                    onChange?.(e);
+                                }}
+                                id={label?.toString()}
+                                ref={ref}
+                            />
+                            {label && inputSize === "md" && (
+                                <label
+                                    className={clsx(
+                                        "label",
+                                        `label__status--${status}`,
+                                        leftIcon && `label__hasIcon`,
+                                    )}
+                                    htmlFor={label.toString()}
+                                >
+                                    {label}
+                                    {fieldMarker && (
+                                        <div
+                                            className={clsx(
+                                                "label-field-marker",
+                                                `label-field-marker__required--${required}`,
+                                            )}
+                                        >
+                                            {required ? "*" : "(optional)"}
+                                        </div>
+                                    )}
+                                </label>
+                            )}
+                        </div>
 
-                    {triggerActionIcon && <>{triggerActionIcon}</>}
+                        {rightIcon && (
+                            <span
+                                className={clsx(
+                                    "icon_wrapper",
+                                    statusIconColors[status],
+                                )}
+                            >
+                                {rightIcon}
+                            </span>
+                        )}
+                        {triggerActionIcon && <>{triggerActionIcon}</>}
+                    </div>
+
+                    {showInputButton && InputButton}
                 </div>
                 {(message || showCharacterCounter) && (
                     <div

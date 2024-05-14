@@ -7,7 +7,7 @@ exports[`Action sheet example Should render action sheet 1`] = `
     data-state=""
   >
     <span
-      class="button-label"
+      class="quill-button-label"
     >
       <p
         class="quill-typography__body-text__size--sm__weight--bold__decoration--default coral"

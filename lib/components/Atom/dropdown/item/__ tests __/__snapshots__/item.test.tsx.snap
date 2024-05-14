@@ -3,7 +3,7 @@
 exports[`DropdownItem component renders checkbox selected when provided 1`] = `
 <div>
   <li
-    class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item-checkbox__selected--true__disabled--false"
+    class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-left quill-dropdown-item-checkbox__selected--true__disabled--false"
   >
     <svg
       height="24"
@@ -28,7 +28,7 @@ exports[`DropdownItem component renders checkbox selected when provided 1`] = `
 exports[`DropdownItem component renders checkbox when provided 1`] = `
 <div>
   <li
-    class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item-checkbox__selected--false__disabled--false"
+    class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-left quill-dropdown-item-checkbox__selected--false__disabled--false"
   >
     <svg
       height="24"

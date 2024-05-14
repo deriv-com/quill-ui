@@ -6,7 +6,15 @@ import { CaptionText, Text } from "@components/Typography";
 
 export const BadgeBase = forwardRef<HTMLSpanElement, BadgeProps>(
     (
-        { size = "sm", color = "success", label, variant, className, ...rest },
+        {
+            size = "sm",
+            color = "success",
+            label,
+            variant,
+            className,
+            badgeClassName,
+            ...rest
+        },
         ref,
     ) => {
         const labelColor = "badge__base-color";
@@ -15,6 +23,7 @@ export const BadgeBase = forwardRef<HTMLSpanElement, BadgeProps>(
             <span
                 className={clsx(
                     className,
+                    badgeClassName,
                     "badge__base",
                     `badge__variant__${variant}--size-${size}`,
                     `badge__color--${color}`,
