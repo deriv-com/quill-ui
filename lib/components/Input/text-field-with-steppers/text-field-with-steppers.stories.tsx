@@ -97,6 +97,12 @@ const meta = {
             },
             options: ["left", "center"],
         },
+        currencyPlacement: {
+            control: {
+                type: "radio",
+            },
+            options: ["left", "right"],
+        },
         message: {
             control: {
                 type: "text",
