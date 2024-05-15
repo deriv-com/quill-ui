@@ -13,6 +13,7 @@ import {
     StandaloneCircleCheckBoldIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons/Standalone";
+import { Text } from "@components/Typography";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
@@ -39,6 +40,8 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     showInputButton?: boolean;
     buttonPosition?: ButtonPositions;
     inputButton?: ReactNode;
+    leftPlaceholder?: string;
+    rightPlaceholder?: string;
 }
 
 const statusIconColors = {
@@ -80,6 +83,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             maxLength,
             textAlignment = "left",
             label,
+            leftPlaceholder,
+            rightPlaceholder,
             value,
             rightIcon,
             onChange,
@@ -94,6 +99,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         ref,
     ) => {
         const [inputValue, setInputValue] = useState(value || "");
+        const [focused, setFocused] = React.useState(false);
         useEffect(() => {
             setInputValue(value || "");
         }, [value]);
@@ -123,7 +129,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 inputSize,
                                 buttonPosition,
                                 label,
-                                inputValue.length > 0,
+                                inputValue.toString().length > 0,
                             ),
                     )}
                 >
@@ -136,10 +142,21 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 label
                                     ? "quill-input-label__wrapper"
                                     : "quill-input-no-label__wrapper",
-                                inputValue.length > 0 &&
+                                inputValue.toString().length > 0 &&
                                     "quill-input-label__wrapper--has-value",
                             )}
                         >
+                            {leftPlaceholder && (!label || label && (value || focused)) && inputSize === "md" && (
+                                <Text
+                                    size="md"
+                                    as="span"
+                                    className={clsx(
+                                        "quill-input-label__label",
+                                        "quill-input-label__label--left",
+                                        (value === '' || focused) && `quill-input-label__label--disabled`,
+                                    )}
+                                >{leftPlaceholder}</Text>
+                            )}
                             <input
                                 {...rest}
                                 readOnly={readOnly}
@@ -159,6 +176,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                     setInputValue(e.target.value);
                                     onChange?.(e);
                                 }}
+                                onFocus={() => setFocused(true)}
+                                onBlur={() => setFocused(false)}
                                 id={label?.toString()}
                                 ref={ref}
                             />
@@ -183,6 +202,17 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                         </div>
                                     )}
                                 </label>
+                            )}
+                            {rightPlaceholder && (!label || label && (value || focused)) && inputSize === "md" && (
+                                <Text
+                                    size="md"
+                                    as="span"
+                                    className={clsx(
+                                        "quill-input-label__label",
+                                        "quill-input-label__label--right",
+                                        (value === '' || focused) && `quill-input-label__label--disabled`,
+                                    )}
+                                >{rightPlaceholder}</Text>
                             )}
                         </div>
 

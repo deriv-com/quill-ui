@@ -60,7 +60,6 @@
 
     &-label__wrapper {
         display: flex;
-        flex-direction: column;
         position: relative;
         flex-grow: 1;
 
@@ -90,7 +89,19 @@
     }
 
     &-no-label__wrapper {
+        display: flex;
         width: 100%;
+    }
+
+    &-label__label {
+        margin: auto 4px auto;
+
+        &--right {
+            margin-left: 4px;
+        }
+        &--disabled {
+            opacity: var(--core-opacity-600);
+        }
     }
 
     &__wrapper {
