@@ -178,6 +178,11 @@ DisableCloseOnOverlay.args = {
     ...meta.args,
     disableCloseOnOverlay: true,
 };
+export const ModalBottomWithoutButtons = Template.bind(this) as Story;
+ModalBottomWithoutButtons.args = {
+    ...meta.args,
+    hasFooter: false,
+};
 
 export const ModalBottomWithoutSecondaryButton = Template.bind(this) as Story;
 ModalBottomWithoutSecondaryButton.args = {
