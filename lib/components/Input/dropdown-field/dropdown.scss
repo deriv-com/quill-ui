@@ -23,7 +23,6 @@
             &-md {
                 padding: var(--core-spacing-400);
             }
-
         }
     }
 
@@ -45,6 +44,7 @@
 
     &__icon {
         &-svg {
+            margin: auto;
             fill: var(--component-textIcon-normal-prominent);
         }
     }
