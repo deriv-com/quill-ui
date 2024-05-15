@@ -20,11 +20,13 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     disableCloseOnOverlay?: boolean;
     toggleModal?: (isOpened: boolean) => void;
     portalId?: string;
+    showPrimaryButton?: boolean;
     primaryButtonLabel?: React.ReactNode;
     primaryButtonCallback?: () => void;
     secondaryButtonCallback?: () => void;
     secondaryButtonLabel?: React.ReactNode;
     isMobile?: boolean;
+    hasFooter?: boolean;
 }
 
 const swipeConfig = {
@@ -42,12 +44,14 @@ export const Modal = ({
     children,
     showHandleBar,
     showCrossIcon,
+    showPrimaryButton = true,
     showSecondaryButton = false,
     shouldCloseOnPrimaryButtonClick = false,
     shouldCloseOnSecondaryButtonClick = false,
     toggleModal,
     disableCloseOnOverlay = false,
     isMobile,
+    hasFooter = true,
     portalId,
     primaryButtonLabel,
     primaryButtonCallback,
@@ -157,26 +161,30 @@ export const Modal = ({
                       )}
 
                 <div className="quill-modal__content-wrapper">{children}</div>
-                <div className="quill-modal__button-wrapper">
-                    <Button
-                        color="black"
-                        fullWidth
-                        size="lg"
-                        label={primaryButtonLabel}
-                        onClick={primaryButtonFunctionHandler}
-                    />
-                    {showSecondaryButton && (
-                        <Button
-                            color="black"
-                            fullWidth
-                            size="lg"
-                            label={secondaryButtonLabel}
-                            variant="secondary"
-                            className="quill-modal__button"
-                            onClick={secondaryButtonFunctionHandler}
-                        />
-                    )}
-                </div>
+                {hasFooter && (
+                    <div className="quill-modal__button-wrapper">
+                        {showPrimaryButton && (
+                            <Button
+                                color="black"
+                                fullWidth
+                                size="lg"
+                                label={primaryButtonLabel}
+                                onClick={primaryButtonFunctionHandler}
+                            />
+                        )}
+                        {showSecondaryButton && (
+                            <Button
+                                color="black"
+                                fullWidth
+                                size="lg"
+                                label={secondaryButtonLabel}
+                                variant="secondary"
+                                className="quill-modal__button"
+                                onClick={secondaryButtonFunctionHandler}
+                            />
+                        )}
+                    </div>
+                )}
             </div>
         </div>,
         modalRoot,

@@ -22,6 +22,7 @@ describe("Modal", () => {
 
     const mockProps = {
         isOpened: true,
+        showPrimaryButton: true,
         toggleModal: jest.fn(),
         primaryButtonLabel,
     };
@@ -54,9 +55,9 @@ describe("Modal", () => {
     it("should render secondary button if showSecondaryButton === true and the label was passed", () => {
         const { container } = render(
             <Modal
-                {...mockProps}
                 showSecondaryButton
                 secondaryButtonLabel={secondaryButtonLabel}
+                {...mockProps}
             >
                 {children}
             </Modal>,
@@ -71,6 +72,7 @@ describe("Modal", () => {
             <Modal
                 {...mockProps}
                 showSecondaryButton
+                shouldCloseOnSecondaryButtonClick
                 secondaryButtonLabel={secondaryButtonLabel}
             >
                 {children}
