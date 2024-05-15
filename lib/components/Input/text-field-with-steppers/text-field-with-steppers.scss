@@ -2,10 +2,14 @@
     &-decrement {
         padding: 0;
         cursor: pointer;
+        display: flex;
+        margin: auto;
     }
     &-increment {
         padding-left: var(--core-spacing-400);
         cursor: pointer;
+        display: flex;
+        margin: auto;
     }
     &--disabled {
         opacity: var(--core-opacity-600);

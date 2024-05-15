@@ -11,11 +11,12 @@ import "./text-field-with-steppers.scss";
 export interface TextFieldWithSteppersProps extends ComponentProps<typeof Input> {
     currency?: string;
     decimals?: number;
+    currencyPlacement?: 'left' | 'right';
 }
 
 export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithSteppersProps>(
     (props, ref) => {
-        const { value, onChange, disabled, placeholder = '0', currency = '', decimals = 2 } = props;
+        const { value, onChange, disabled, placeholder = '0', currency = '', decimals = 2, currencyPlacement = 'left' } = props;
 
         const getFormatValue = (value: number) => {
             let formatValue = value;
@@ -54,8 +55,16 @@ export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithS
 
         return (
             <div>
-                {/* <span id="my-suffix">ms.</span> */}
-                <Input {...props} ref={ref} triggerActionIcon={steppersSection} type='number' value={`${getFormatValue(value as number)}`} placeholder={`${placeholder} ${currency}`} />
+                <Input
+                    {...props}
+                    ref={ref}
+                    triggerActionIcon={steppersSection}
+                    type="number"
+                    value={`${getFormatValue(value as number)}`}
+                    placeholder={placeholder}
+                    leftPlaceholder={currencyPlacement === "left" ? currency : undefined}
+                    rightPlaceholder={currencyPlacement === "right" ? currency : undefined}
+                />
             </div>
         );
     },
