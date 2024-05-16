@@ -30,7 +30,6 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     variant?: Variants;
     message?: ReactNode;
     showCharacterCounter?: boolean;
-    maxLength?: number;
     textAlignment?: TextAlignments;
     label?: ReactNode;
     value?: string;
