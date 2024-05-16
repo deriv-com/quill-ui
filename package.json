@@ -132,6 +132,7 @@
     "dependencies": {
         "@deriv/quill-icons": "^1.19.20",
         "@headlessui/react": "^1.7.18",
+        "react-calendar": "^5.0.0",
         "react-swipeable": "^6.2.1",
         "usehooks-ts": "^3.0.2",
         "uuid": "^9.0.1"
