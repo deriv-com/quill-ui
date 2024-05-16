@@ -3,9 +3,6 @@
 .quill-action-sheet {
     &--header {
         left: var(--semantic-spacing-general-none);
-        padding-top: var(--semantic-spacing-general-md);
-        padding-bottom: var(--semantic-spacing-general-md);
-        gap: var(--semantic-spacing-gap-lg);
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -24,6 +21,8 @@
     &--title {
         display: flex;
         justify-content: space-between;
+        padding: var(--component-actionSheet-spacing-padding-md)
+            var(--component-actionSheet-spacing-padding-lg);
         gap: var(--semantic-spacing-gap-md);
         align-items: center;
         flex-direction: row-reverse;
@@ -53,5 +52,10 @@
                 }
             }
         }
+    }
+
+    &--description {
+        padding-inline: var(--component-actionSheet-spacing-padding-lg);
+        padding-bottom: var(--component-actionSheet-spacing-padding-md);
     }
 }
