@@ -82,7 +82,7 @@ export default defineConfig({
             output: {
                 assetFileNames: (assetInfo) => {
                     if (assetInfo.name.includes("quill.css"))
-                        return "assets/quill.css";
+                        return "quill.css";
 
                     return "assets/[name][extname]";
                 },
