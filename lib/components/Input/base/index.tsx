@@ -13,6 +13,7 @@ import {
     StandaloneCircleCheckBoldIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons/Standalone";
+import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
@@ -25,8 +26,11 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     inputSize?: TMediumSizes;
     status?: Status;
     disabled?: boolean;
+    dropdown?: boolean;
+    isDropdownOpen?: boolean;
     variant?: Variants;
     message?: ReactNode;
+    hideMessage?: boolean;
     showCharacterCounter?: boolean;
     textAlignment?: TLeftOrCenter;
     label?: ReactNode;
@@ -67,12 +71,15 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             inputSize = "md",
             className,
             status = "neutral",
+            dropdown = false,
+            isDropdownOpen,
             readOnly,
             disabled = false,
             variant = "outline",
             placeholder = "",
             leftIcon,
             message,
+            hideMessage = false,
             showCharacterCounter,
             maxLength,
             textAlignment = "left",
@@ -94,11 +101,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         useEffect(() => {
             setInputValue(value || "");
         }, [value]);
-
-        if (readOnly) {
-            status = "neutral";
+        if (isDropdownOpen) {
+            hideMessage = true;
         }
-
         rightIcon =
             (status === "success" || status === "error") && !disabled
                 ? statusIcon[status]
@@ -194,11 +199,22 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             </span>
                         )}
                         {triggerActionIcon && <>{triggerActionIcon}</>}
+                        {dropdown && (
+                            <LabelPairedChevronDownSmBoldIcon
+                                width={24}
+                                height={24}
+                                data-state={isDropdownOpen ? "open" : "close"}
+                                className={clsx(
+                                    "quill-input__rotate",
+                                    "quill-input__icon",
+                                )}
+                            />
+                        )}
                     </div>
 
                     {showInputButton && InputButton}
                 </div>
-                {(message || showCharacterCounter) && (
+                {(message || showCharacterCounter) && !hideMessage && (
                     <div
                         className={clsx(
                             "message__container",

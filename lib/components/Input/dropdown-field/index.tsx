@@ -1,163 +1,177 @@
-import React, { Fragment, forwardRef, useEffect, useState } from "react";
+import React, { forwardRef, useCallback, useEffect, useState } from "react";
 import clsx from "clsx";
-import { Combobox } from "@headlessui/react";
-import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
-import { TLeftOrCenter, TMediumSizes } from "@types";
-import { DropdownItem } from "@components/Atom";
-import Input from "../base";
-import { TextFieldProps } from "../text-field";
+import { useCombobox } from "downshift";
 import "./dropdown.scss";
+import Input, { InputProps } from "../base";
+import { DropdownItem } from "@components/Atom";
+import { reactNodeToString } from "@utils/common-utils";
 
-export type TSingleSelectOption = {
-    id: string | number;
-    name: string;
+export type TOptionList = {
+    text?: React.ReactNode;
+    value?: string;
 };
 
-export type TDropdownOption = {
-    item: TSingleSelectOption;
-    inputSize: TMediumSizes;
-    textAlignment?: TLeftOrCenter;
-    closeDropdown: () => void;
-    handleKeyDown: (e: React.KeyboardEvent) => void;
-};
-
-export interface DropdownOptionProps extends TextFieldProps {
-    options?: TSingleSelectOption[];
-    defaultOption?: TSingleSelectOption;
+export interface TDropdownProps extends InputProps {
+    onSearch?: (inputValue: string) => void;
+    onSelectOption: (value: string) => void; // Ensure this prop name matches the usage
+    isAutocomplete?: boolean;
+    options: TOptionList[];
+    listHeight?: string;
 }
 
-const Options = ({
-    item,
-    inputSize,
-    textAlignment,
-    closeDropdown,
-    handleKeyDown,
-}: TDropdownOption) => {
-    return (
-        <Combobox.Option value={item.name} as={Fragment} key={item.id}>
-            {({ selected, active }) => {
-                return (
-                    <DropdownItem
-                        className={clsx(
-                            active && !selected && "dropdown__item--active",
-                        )}
-                        onClick={closeDropdown}
-                        onKeyDown={handleKeyDown}
-                        label={item.name}
-                        selected={selected}
-                        size={inputSize}
-                        textAlignment={textAlignment}
-                    ></DropdownItem>
-                );
-            }}
-        </Combobox.Option>
-    );
-};
-
-export const InputDropdown = forwardRef<HTMLInputElement, DropdownOptionProps>(
+export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
     (
         {
-            inputSize = "md",
-            message,
-            textAlignment,
             disabled,
+            label,
             options,
+            textAlignment = "left",
+            inputSize = "md",
+            status = "neutral",
+            name,
+            listHeight,
+            onSearch,
+            onSelectOption, // Ensure this prop name matches the interface
+            value,
+            isAutocomplete = false,
             ...rest
         },
         ref,
     ) => {
-        const [isDropdownOpen, setDropdownOpen] = useState(false);
+        const [items, setItems] = useState<TOptionList[]>(options);
+        const [shouldFilterList, setShouldFilterList] = useState(false);
+        const [selectedItem, setSelectedItem] = useState<TOptionList | null>(
+            null,
+        );
+        const [isAnimating, setIsAnimating] = useState(false);
 
-        const [selectedOption, setselectedOption] = useState("");
-        const [query, setQuery] = useState("");
-        const [filteredOption, setfilteredOption] = useState(options);
+        const clearFilter = useCallback(() => {
+            setShouldFilterList(false);
+            setItems(options);
+        }, [options]);
+
+        const {
+            closeMenu,
+            getInputProps,
+            getItemProps,
+            getMenuProps,
+            getToggleButtonProps,
+            isOpen,
+            openMenu,
+
+            highlightedIndex,
+        } = useCombobox({
+            defaultSelectedItem:
+                options.find((item) => item.value === value) ?? null,
+            items,
+            itemToString(item) {
+                return item ? reactNodeToString(item.text) : "";
+            },
+            onInputValueChange({ inputValue }) {
+                onSearch?.(inputValue ?? "");
+                if (isAutocomplete || shouldFilterList) {
+                    setItems(
+                        options.filter((item) =>
+                            reactNodeToString(item.text)
+                                .toLowerCase()
+                                .includes(inputValue?.toLowerCase() ?? ""),
+                        ),
+                    );
+                }
+            },
+            onIsOpenChange({ isOpen }) {
+                setIsAnimating(true);
+                setTimeout(() => {
+                    clearFilter();
+                    setIsAnimating(false);
+                }, 100);
+                if (!isOpen) {
+                    clearFilter();
+                }
+            },
+            onSelectedItemChange({ selectedItem }) {
+                onSelectOption(selectedItem?.value ?? "");
+                setSelectedItem(selectedItem ?? null);
+                closeMenu();
+            },
+        });
+
+        const handleInputClick = useCallback(() => {
+            if (isAutocomplete) setShouldFilterList(true);
+
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        }, [closeMenu, isOpen, openMenu, isAutocomplete]);
 
         useEffect(() => {
-            const filteredOption = options?.filter((option) => {
-                return option?.name
-                    ?.toLowerCase()
-                    .includes(query.toLowerCase());
-            });
-            if (query.length > 0) setDropdownOpen(true);
-            setfilteredOption(filteredOption);
-        }, [query, selectedOption]);
-
-        useEffect(() => {
-            if (query === "") {
-                setselectedOption("");
-            }
-        }, [query]);
-
-        const handleDropdownClick = () => {
-            setDropdownOpen(!isDropdownOpen);
-        };
-
-        const closeDropdown = () => {
-            setDropdownOpen(!isDropdownOpen);
-        };
-        const handleKeyDown = (event: { key: string }) => {
-            if (event.key === "Enter") {
-                setDropdownOpen(!isDropdownOpen);
-            }
-        };
+            setItems(options);
+        }, [options]);
 
         return (
-            <Combobox
-                value={selectedOption}
-                onChange={setselectedOption}
-                disabled={disabled}
-            >
-                <>
-                    <Combobox.Input
-                        as={Input}
-                        type="select"
-                        className="dropdown__input"
-                        data-testid="dropdown-input"
-                        inputSize={inputSize}
-                        textAlignment={textAlignment}
-                        message={message}
-                        onClick={handleDropdownClick}
-                        onChange={(event) => setQuery(event.target.value)}
-                        onKeyDown={handleKeyDown}
-                        value={selectedOption}
-                        triggerActionIcon={
-                            <LabelPairedChevronDownSmBoldIcon
-                                data-state={isDropdownOpen ? "open" : "close"}
-                                width={24}
-                                height={24}
-                                className={clsx(
-                                    "dropdown__transform",
-                                    "dropdown__icon-svg",
-                                    isDropdownOpen &&
-                                        "dropdown__transform-rotate",
-                                )}
-                            />
-                        }
-                        {...rest}
-                        ref={ref}
-                    />
-
-                    {isDropdownOpen && (
+            <div className="dropdown__wrapper" {...getToggleButtonProps()}>
+                <Input
+                    ref={ref}
+                    data-testid="dropdown-input"
+                    disabled={disabled}
+                    label={reactNodeToString(label)}
+                    name={name}
+                    dropdown
+                    textAlignment={textAlignment}
+                    inputSize={inputSize}
+                    status={status}
+                    isDropdownOpen={isOpen}
+                    onClickCapture={handleInputClick}
+                    onKeyUp={() => setShouldFilterList(true)}
+                    onKeyDown={() => setShouldFilterList(true)}
+                    readOnly={!isAutocomplete}
+                    type="select"
+                    value={value}
+                    {...getInputProps()}
+                    {...rest}
+                />
+                <ul
+                    {...getMenuProps()}
+                    className={clsx("deriv-dropdown__menu", {
+                        "deriv-dropdown__menu--open": isOpen && !isAnimating,
+                        "deriv-dropdown__menu--close": !isOpen && isAnimating,
+                    })}
+                >
+                    {isOpen && (
                         <div
                             className={clsx(
                                 "dropdown__container",
+                                listHeight
+                                    ? listHeight
+                                    : `dropdown__container--height`,
                                 `dropdown__container--size-${inputSize}`,
                             )}
                         >
-                            {filteredOption?.map((item) => (
-                                <Options
-                                    item={item}
-                                    key={item.id}
-                                    closeDropdown={closeDropdown}
-                                    handleKeyDown={handleKeyDown}
-                                    inputSize={inputSize}
+                            {items.map((item, index) => (
+                                <DropdownItem
+                                    className={clsx(
+                                        highlightedIndex === index &&
+                                            selectedItem?.value !==
+                                                item.value &&
+                                            "dropdown__item--active",
+                                    )}
+                                    key={item.value}
+                                    onClick={() => clearFilter()}
+                                    label={item.text}
+                                    selected={
+                                        selectedItem?.value === item.value
+                                    }
+                                    size={inputSize}
                                     textAlignment={textAlignment}
+                                    {...getItemProps({ index, item })}
                                 />
                             ))}
                         </div>
                     )}
-                </>
-            </Combobox>
+                </ul>
+            </div>
         );
     },
 );
