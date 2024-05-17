@@ -39,7 +39,7 @@ const ItemWrapper = ({
     return <React.Fragment>{children}</React.Fragment>;
 };
 
-const RadioGroup = ({
+export const RadioGroup = ({
     children,
     className,
     name,

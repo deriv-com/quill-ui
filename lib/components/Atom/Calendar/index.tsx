@@ -9,7 +9,7 @@ import {
 } from "@deriv/quill-icons";
 import { Text } from "@components/Typography";
 
-interface DatePicker
+export interface DatePickerProps
     extends Omit<
         React.ComponentProps<typeof Calendar>,
         "onChange" | "activeStartDate"
@@ -70,7 +70,7 @@ export const DatePicker = ({
     value,
     wrapperClassName,
     ...rest
-}: DatePicker) => {
+}: DatePickerProps) => {
     const formatLocaleString = (date: Date) =>
         date.toLocaleString(locale || navigator.language, optionsConfig);
 
@@ -128,3 +128,5 @@ export const DatePicker = ({
         </div>
     );
 };
+
+export default DatePicker;
