@@ -1,5 +1,5 @@
 import React, { HTMLAttributes, ReactNode } from "react";
-import { TMediumSizes } from "@types";
+import { TLeftOrCenter, TMediumSizes } from "@types";
 import "./item.scss";
 import clsx from "clsx";
 import { Text } from "@components/Typography";
@@ -17,7 +17,7 @@ export interface DropdownItemProps extends HTMLAttributes<HTMLElement> {
     label: ReactNode;
     disabled?: boolean;
     selected?: boolean;
-    textAlignment?: "left" | "center";
+    textAlignment?: TLeftOrCenter;
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
     checkbox?: boolean;

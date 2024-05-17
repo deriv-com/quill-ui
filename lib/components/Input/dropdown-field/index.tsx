@@ -2,7 +2,7 @@ import React, { Fragment, forwardRef, useEffect, useState } from "react";
 import clsx from "clsx";
 import { Combobox } from "@headlessui/react";
 import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
-import { TMediumSizes } from "@types";
+import { TLeftOrCenter, TMediumSizes } from "@types";
 import { DropdownItem } from "@components/Atom";
 import Input from "../base";
 import { TextFieldProps } from "../text-field";
@@ -16,7 +16,7 @@ export type TSingleSelectOption = {
 export type TDropdownOption = {
     item: TSingleSelectOption;
     inputSize: TMediumSizes;
-    textAlignment?: "left" | "center";
+    textAlignment?: TLeftOrCenter;
     closeDropdown: () => void;
     handleKeyDown: (e: React.KeyboardEvent) => void;
 };
