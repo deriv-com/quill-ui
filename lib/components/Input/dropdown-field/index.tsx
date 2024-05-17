@@ -45,7 +45,6 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
     ) => {
         const [items, setItems] = useState<TOptionList[]>(options);
         const [shouldFilterList, setShouldFilterList] = useState(false);
-        const [isOpenDropdown, setIsOpenDropdown] = useState(false);
         const [selectedItem, setSelectedItem] = useState<TOptionList | null>(
             null,
         );
@@ -80,6 +79,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
             getToggleButtonProps,
             isOpen,
             openMenu,
+
             highlightedIndex,
         } = useCombobox({
             defaultSelectedItem:
@@ -119,23 +119,20 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
 
         const handleInputClick = useCallback(() => {
             if (isAutocomplete) setShouldFilterList(true);
+
             if (isOpen) {
                 closeMenu();
             } else {
                 openMenu();
             }
-        }, [closeMenu, isOpen, openMenu, isAutocomplete, isOpenDropdown]);
+        }, [closeMenu, isOpen, openMenu, isAutocomplete]);
 
         useEffect(() => {
             setItems(options);
         }, [options]);
 
         return (
-            <div
-                {...getToggleButtonProps()}
-                className="dropdown__wrapper"
-                onClick={() => setIsOpenDropdown(true)}
-            >
+            <div className="dropdown__wrapper" {...getToggleButtonProps()}>
                 <Input
                     ref={ref}
                     data-testid="dropdown-input"
@@ -147,7 +144,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
                     inputSize={inputSize}
                     status={status}
                     isDropdownOpen={isOpen}
-                    onClick={handleInputClick}
+                    onClickCapture={handleInputClick}
                     onKeyUp={() => setShouldFilterList(true)}
                     onKeyDown={() => setShouldFilterList(true)}
                     readOnly={!isAutocomplete}
@@ -177,6 +174,8 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
                                 <DropdownItem
                                     className={clsx(
                                         highlightedIndex === index &&
+                                            selectedItem?.value !==
+                                                item.value &&
                                             "dropdown__item--active",
                                     )}
                                     key={item.value}
