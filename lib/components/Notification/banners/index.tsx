@@ -13,7 +13,7 @@ export interface NotificationBannersProps {
     zIndex?: number;
 }
 
-const NotificationBanners = ({
+export const NotificationBanners = ({
     autohideTimeout,
     banners = [],
     className,
