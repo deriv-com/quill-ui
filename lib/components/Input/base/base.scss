@@ -57,6 +57,20 @@
         width: 100%;
         gap: var(--component-field-spacing-gap-sm);
     }
+    &__rotate {
+        transition-property: transform;
+        transition-timing-function: var(--core-motion-ease-400);
+        transition-duration: var(--core-motion-duration-200);
+        transform: rotate(0);
+    
+        &[data-state="open"] {
+            transform: rotate(180deg);
+        }
+    }
+    &__icon {
+            margin: auto;
+            fill: var(--component-textIcon-normal-prominent);
+    }
 
     &-label__wrapper {
         display: flex;

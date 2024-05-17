@@ -144,6 +144,7 @@ export const ReadonlyWithValue: Story = {
     args: {
         leftIcon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
         value: "John Doe",
+        status: "neutral",
         readOnly: true,
     },
 };
