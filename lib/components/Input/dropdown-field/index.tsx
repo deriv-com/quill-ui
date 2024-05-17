@@ -45,6 +45,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
     ) => {
         const [items, setItems] = useState<TOptionList[]>(options);
         const [shouldFilterList, setShouldFilterList] = useState(false);
+        const [isOpenDropdown, setIsOpenDropdown] = useState(false);
         const [selectedItem, setSelectedItem] = useState<TOptionList | null>(
             null,
         );
@@ -123,14 +124,18 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
             } else {
                 openMenu();
             }
-        }, [closeMenu, isOpen, openMenu, isAutocomplete]);
+        }, [closeMenu, isOpen, openMenu, isAutocomplete, isOpenDropdown]);
 
         useEffect(() => {
             setItems(options);
         }, [options]);
 
         return (
-            <div {...getToggleButtonProps()} className="dropdown__wrapper">
+            <div
+                {...getToggleButtonProps()}
+                className="dropdown__wrapper"
+                onClick={() => setIsOpenDropdown(true)}
+            >
                 <Input
                     ref={ref}
                     data-testid="dropdown-input"
@@ -142,7 +147,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
                     inputSize={inputSize}
                     status={status}
                     isDropdownOpen={isOpen}
-                    onClickCapture={handleInputClick}
+                    onClick={handleInputClick}
                     onKeyUp={() => setShouldFilterList(true)}
                     onKeyDown={() => setShouldFilterList(true)}
                     readOnly={!isAutocomplete}
