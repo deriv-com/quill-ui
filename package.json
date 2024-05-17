@@ -12,7 +12,8 @@
         ".": {
             "import": "./dist/main.js",
             "types": "./dist/main.d.ts"
-        }
+        },
+        "./quill.css": "./dist/quill.css"
     },
     "sideEffects": [
         "**/*.css"
