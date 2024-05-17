@@ -1,6 +1,11 @@
+@import "@quill/breakpoints.scss";
+
 .action-sheet--content {
-    padding-top: var(--semantic-spacing-general-lg);
-    padding-bottom: var(--semantic-spacing-general-lg);
+    padding: var(--component-actionSheet-spacing-padding-md);
     flex-grow: 1;
     overflow-y: auto;
+
+    @include breakpoint("lg") {
+        padding: var(--component-actionSheet-spacing-padding-lg);
+    }
 }

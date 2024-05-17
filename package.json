@@ -33,7 +33,7 @@
         "build-storybook": "storybook build --output-dir dist/storybook",
         "test": "jest",
         "test:update": "jest --updateSnapshot",
-        "test:staged": "jest --bail --findRelatedTests",
+        "test:staged": "jest --bail --findRelatedTests --passWithNoTests",
         "prepare": "husky install"
     },
     "devDependencies": {
