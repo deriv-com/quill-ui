@@ -1,5 +1,13 @@
 import { QuillSvgProps } from "@deriv/quill-icons";
 
+export type THorizontalPosition = "left" | "center" | "right";
+export type TVerticalPosition = "top" | "center" | "bottom";
+export type TPosition = THorizontalPosition | TVerticalPosition;
+export type TLeftOrRight = Exclude<THorizontalPosition, "center">;
+export type TLeftOrCenter = Exclude<THorizontalPosition, "right">;
+export type TRightOrBottom = "right" | "bottom";
+export type TLeftOrTop = "left" | "top";
+
 export type TGenericSizes =
     | "2xl"
     | "2xs"
