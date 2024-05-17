@@ -8,7 +8,7 @@ import {
 } from "react";
 import "./base.scss";
 import React from "react";
-import { TMediumSizes } from "@types";
+import { TLeftOrCenter, TMediumSizes, TRightOrBottom } from "@types";
 import {
     StandaloneCircleCheckBoldIcon,
     StandaloneTriangleExclamationBoldIcon,
@@ -18,8 +18,6 @@ import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
 export type Types = "text" | "email" | "password" | "tel" | "select";
-export type TextAlignments = "left" | "center";
-type ButtonPositions = "right" | "bottom";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type?: Types;
@@ -34,14 +32,13 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     message?: ReactNode;
     hideMessage?: boolean;
     showCharacterCounter?: boolean;
-    maxLength?: number;
-    textAlignment?: TextAlignments;
+    textAlignment?: TLeftOrCenter;
     label?: ReactNode;
     value?: string;
     triggerActionIcon?: ReactNode;
     fieldMarker?: boolean;
     showInputButton?: boolean;
-    buttonPosition?: ButtonPositions;
+    buttonPosition?: TRightOrBottom;
     inputButton?: ReactNode;
 }
 
@@ -58,7 +55,7 @@ const statusIcon = {
 
 const InputButtonWrapper = (
     size: TMediumSizes,
-    position: ButtonPositions,
+    position: TRightOrBottom,
     label: ReactNode,
     hasValue: boolean,
 ) =>

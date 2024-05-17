@@ -5,6 +5,7 @@ export * from "./Badge";
 export * from "./Chip";
 export * from "./Input";
 export * from "./Modal";
+export * from "./Notification";
 export * from "./SegmentedControl";
 export * from "./SelectionControl";
 export * from "./Snackbar";

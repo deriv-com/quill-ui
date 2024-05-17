@@ -108,6 +108,11 @@ export const ModalOverlayWithoutCrossIcon: Story = {
         textContent: shortTextContent,
     },
 };
+export const ModalBottomWithoutButtons: Story = {
+    args: {
+        hasFooter: false,
+    },
+};
 export const ModalOverlayWithoutSecondaryButton: Story = {
     args: {
         showSecondaryButton: false,

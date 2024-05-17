@@ -42,7 +42,9 @@ const Header = ({
                     {CloseIcon}
                 </button>
             </div>
-            <Text>{description}</Text>
+            <Text className="quill-action-sheet--description">
+                {description}
+            </Text>
         </div>
     );
 };

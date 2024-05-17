@@ -2,10 +2,6 @@
 
 .quill-action-sheet {
     &--header {
-        left: var(--semantic-spacing-general-none);
-        padding-top: var(--semantic-spacing-general-md);
-        padding-bottom: var(--semantic-spacing-general-md);
-        gap: var(--semantic-spacing-gap-lg);
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -24,12 +20,16 @@
     &--title {
         display: flex;
         justify-content: space-between;
-        gap: var(--semantic-spacing-gap-md);
+        padding: var(--component-actionSheet-spacing-padding-sm)
+            var(--component-actionSheet-spacing-padding-md);
+        gap: var(--component-actionSheet-spacing-gap-md);
         align-items: center;
         flex-direction: row-reverse;
 
         @include breakpoint("lg") {
             flex-direction: row;
+            padding: var(--component-actionSheet-spacing-padding-md)
+                var(--component-actionSheet-spacing-padding-lg);
         }
 
         & > h5 {
@@ -38,10 +38,11 @@
 
         &--icon {
             display: flex;
-            width: var(--core-size-2400);
-            height: var(--core-size-2400);
+            width: var(--component-button-height-lg);
+            height: var(--component-button-height-lg);
             justify-content: center;
             align-items: center;
+            border-radius: var(--component-button-border-radius-lg);
             fill: var(--component-textIcon-normal-prominent);
 
             &--close {
@@ -52,6 +53,16 @@
                     visibility: visible;
                 }
             }
+        }
+    }
+
+    &--description {
+        padding-inline: var(--component-actionSheet-spacing-padding-md);
+        padding-bottom: var(--component-actionSheet-spacing-padding-sm);
+
+        @include breakpoint("lg") {
+            padding-inline: var(--component-actionSheet-spacing-padding-lg);
+            padding-bottom: var(--component-actionSheet-spacing-padding-md);
         }
     }
 }

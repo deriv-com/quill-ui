@@ -4,7 +4,12 @@ import { StandaloneCircleUserRegularIcon } from "@deriv/quill-icons";
 import { Status, Variants } from "../base";
 
 const icons: Record<string, object | null> = {
-    with_icon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
+    with_icon: (
+        <StandaloneCircleUserRegularIcon
+            iconSize="sm"
+            fill="var(--component-textIcon-normal-default)"
+        />
+    ),
     none: null,
 };
 

@@ -1,9 +1,14 @@
+@import "@quill/breakpoints.scss";
+
 .quill-action-sheet--footer {
     display: flex;
-    gap: var(--semantic-spacing-gap-md);
-    padding-top: var(--semantic-spacing-general-lg);
-    padding-bottom: var(--semantic-spacing-general-lg);
+    gap: var(--component-button-spacing-gap-lg);
+    padding: var(--component-actionSheet-spacing-padding-md);
     margin-top: auto;
+
+    @include breakpoint("lg") {
+        padding: var(--component-actionSheet-spacing-padding-lg);
+    }
 
     &__variant {
         &--vertical {

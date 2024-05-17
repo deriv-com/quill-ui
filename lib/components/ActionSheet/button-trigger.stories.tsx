@@ -3,7 +3,7 @@ import { fn } from "@storybook/test";
 import { ActionSheetExample } from "./mocks/example";
 import {
     LabelPairedPlaceholderCaptionBoldIcon,
-    StandaloneXmarkRegularIcon,
+    LabelPairedXmarkMdBoldIcon,
 } from "@deriv/quill-icons";
 
 const icons: Record<string, object | null> = {
@@ -19,7 +19,7 @@ const meta: Meta = {
         onClose: fn(),
         title: "Title",
         description: "Description",
-        closeIcon: <StandaloneXmarkRegularIcon />,
+        closeIcon: <LabelPairedXmarkMdBoldIcon />,
     },
     argTypes: {
         isOpen: { table: { disable: true } },
