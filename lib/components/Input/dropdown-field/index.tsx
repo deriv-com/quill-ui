@@ -1,15 +1,10 @@
-import React, {
-    forwardRef,
-    isValidElement,
-    useCallback,
-    useEffect,
-    useState,
-} from "react";
+import React, { forwardRef, useCallback, useEffect, useState } from "react";
 import clsx from "clsx";
 import { useCombobox } from "downshift";
 import "./dropdown.scss";
 import Input, { InputProps } from "../base";
 import { DropdownItem } from "@components/Atom";
+import { reactNodeToString } from "@utils/common-utils";
 
 export type TOptionList = {
     text?: React.ReactNode;
@@ -54,22 +49,6 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
             setShouldFilterList(false);
             setItems(options);
         }, [options]);
-
-        const reactNodeToString = (reactNode: React.ReactNode): string => {
-            let string = "";
-            if (typeof reactNode === "string") {
-                string = reactNode;
-            } else if (typeof reactNode === "number") {
-                string = reactNode.toString();
-            } else if (reactNode instanceof Array) {
-                reactNode.forEach((child) => {
-                    string += reactNodeToString(child);
-                });
-            } else if (isValidElement(reactNode)) {
-                string += reactNodeToString(reactNode.props.children);
-            }
-            return string;
-        };
 
         const {
             closeMenu,
