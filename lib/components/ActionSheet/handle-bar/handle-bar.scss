@@ -2,24 +2,20 @@
 
 .quill-action-sheet--handle-bar {
     position: sticky;
-    left: var(--semantic-spacing-general-none);
-    top: var(--semantic-spacing-general-none);
     display: flex;
     touch-action: none;
     align-items: center;
     justify-content: center;
-    padding-top: var(--semantic-spacing-general-sm);
-    padding-bottom: var(--semantic-spacing-general-sm);
+    padding-block: var(--component-actionSheet-spacing-padding-sm);
 
     @include breakpoint("lg") {
         display: none;
     }
 
     &--line {
-        display: inline-block;
-        height: var(--semantic-spacing-general-xs);
-        width: var(--semantic-spacing-general-4xl);
-        border-radius: var(--semantic-borderRadius-xs);
-        background-color: var(--core-color-solid-slate-200);
+        height: var(--component-handle-height);
+        width: var(--component-handle-width);
+        border-radius: var(--component-handle-border-radius);
+        background-color: var(--component-handle-bg);
     }
 }
