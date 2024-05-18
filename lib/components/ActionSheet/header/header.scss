@@ -19,21 +19,17 @@
 
     &--title {
         display: flex;
-        justify-content: space-between;
-        padding: var(--component-actionSheet-spacing-padding-sm)
+        justify-content: center;
+        margin: var(--component-actionSheet-spacing-padding-sm)
             var(--component-actionSheet-spacing-padding-md);
         gap: var(--component-actionSheet-spacing-gap-md);
         align-items: center;
-        flex-direction: row-reverse;
+        position: relative;
+        height: var(--core-size-2400);
 
         @include breakpoint("lg") {
-            flex-direction: row;
-            padding: var(--component-actionSheet-spacing-padding-md)
+            margin: var(--component-actionSheet-spacing-padding-md)
                 var(--component-actionSheet-spacing-padding-lg);
-        }
-
-        & > h5 {
-            flex: 1;
         }
 
         &--icon {
@@ -44,8 +40,15 @@
             align-items: center;
             border-radius: var(--component-button-border-radius-lg);
             fill: var(--component-textIcon-normal-prominent);
+            position: absolute;
+            top: 0;
+            left: 0;
 
             &--close {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: unset;
                 display: none;
                 cursor: pointer;
 
