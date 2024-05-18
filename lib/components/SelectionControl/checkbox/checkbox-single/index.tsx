@@ -35,6 +35,7 @@ export interface CheckboxProps
             | React.KeyboardEvent<HTMLSpanElement>,
     ) => void;
     className?: string;
+    checkboxPosition?: "left" | "right";
 }
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
@@ -51,6 +52,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             name,
             onChange,
             className,
+            checkboxPosition = "left",
             ...rest
         },
         ref,
@@ -123,7 +125,12 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                     className,
                 )}
             >
-                <div className="quill-checkbox__wrapper">
+                <div
+                    className={clsx("quill-checkbox__wrapper", {
+                        "quill-checkbox__wrapper--right":
+                            checkboxPosition === "right",
+                    })}
+                >
                     <input
                         {...rest}
                         id={rest.id ?? name}
