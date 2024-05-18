@@ -27,7 +27,7 @@ const meta = {
             control: { type: "boolean" },
         },
         checkboxPosition: {
-            table: { type: { summary: "left |right | undefined" } },
+            table: { type: { summary: "left | right | undefined" } },
             description:
                 "String for determining checkbox position. Default value - 'left'",
             options: ["left", "right"],

@@ -6,7 +6,7 @@ exports[`Checkbox should apply className if it was passed 1`] = `
     class="quill-checkbox wrapper_className"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -42,7 +42,7 @@ exports[`Checkbox should apply id if it was passed 1`] = `
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -81,7 +81,7 @@ exports[`Checkbox should apply labelClassName if it was passed 1`] = `
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -117,7 +117,7 @@ exports[`Checkbox should apply name if it was passed 1`] = `
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -157,7 +157,7 @@ exports[`Checkbox should render correct attribute of input if checked === true 1
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         checked=""
@@ -194,7 +194,7 @@ exports[`Checkbox should render correct attribute of input if disabled === true 
     class="quill-checkbox quill-checkbox--disabled"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -231,7 +231,7 @@ exports[`Checkbox should render correct icon if indeterminate === true 1`] = `
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -267,7 +267,7 @@ exports[`Checkbox should render correct label size if size === 'md' 1`] = `
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -303,7 +303,7 @@ exports[`Checkbox should render info icon if showInfoIcon === true 1`] = `
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -362,7 +362,7 @@ exports[`Checkbox should render with default values if optional ones were not pa
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"

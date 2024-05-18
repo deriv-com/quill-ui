@@ -126,10 +126,10 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                 )}
             >
                 <div
-                    className={clsx("quill-checkbox__wrapper", {
-                        "quill-checkbox__wrapper--right":
-                            checkboxPosition === "right",
-                    })}
+                    className={clsx(
+                        "quill-checkbox__wrapper",
+                        `quill-checkbox__wrapper--${checkboxPosition}`,
+                    )}
                 >
                     <input
                         {...rest}
