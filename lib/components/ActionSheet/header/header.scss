@@ -46,11 +46,11 @@
             fill: var(--component-textIcon-normal-prominent);
 
             &--close {
-                visibility: hidden;
+                display: none;
                 cursor: pointer;
 
                 @include breakpoint("lg") {
-                    visibility: visible;
+                    display: flex;
                 }
             }
         }
