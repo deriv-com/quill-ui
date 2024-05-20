@@ -51,7 +51,7 @@ export default defineConfig({
             external: ["react", "react-dom"],
             input: Object.fromEntries(
                 glob
-                    .sync(["lib/**/*.{ts,tsx}", "**/quill.scss"], {
+                    .sync("lib/**/*.{ts,tsx}", {
                         ignore: [
                             "**/*.test.ts",
                             "**/*.test.tsx",
@@ -80,12 +80,7 @@ export default defineConfig({
                     }),
             ),
             output: {
-                assetFileNames: (assetInfo) => {
-                    if (assetInfo.name.includes("quill.css"))
-                        return "quill.css";
-
-                    return "assets/[name][extname]";
-                },
+                assetFileNames: "assets/[name][extname]",
                 entryFileNames: "[name].js",
             },
         },
