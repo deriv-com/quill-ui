@@ -21,7 +21,7 @@ export interface NotificationBannerProps
     isMobile?: boolean;
 }
 
-const NotificationBanner = ({
+export const NotificationBanner = ({
     autohideTimeout,
     className,
     type = "info",

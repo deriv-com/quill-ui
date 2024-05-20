@@ -26,7 +26,7 @@ interface IRadio {
     size?: TMediumSizes;
 }
 
-const RadioButton = ({
+export const RadioButton = ({
     children,
     className,
     classNameInfo,

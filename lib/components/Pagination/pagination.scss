@@ -3,7 +3,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: var(--core-spacing-400);
+        gap: var(--component-pagination-spacing-gap-body);
         
     }
     &__chevron {
@@ -11,9 +11,9 @@
         align-items: center;
         cursor: pointer;
         justify-content: center;
-        height: var(--core-size-1600);
-        width: var(--core-size-1600);
-        border-radius: var(--core-size-200);
+        height: var(--component-pagination-height-number);
+        width: var(--component-pagination-width-number);
+        border-radius: var(--component-pagination-border-radius-button);
         color: var(--component-pagination-bg-default);
      
         &:disabled{
@@ -21,11 +21,11 @@
             color: var(--component-pagination-icon-disabled);
         }
         &:hover:not(:disabled) {
-            background-color: var(--core-color-opacity-black-100);
+            background-color: var(--component-pagination-bg-hover);
                 }
 
         &:active:not(:disabled) {
-            background-color: var(--core-color-opacity-black-200);
+            background-color: var(---component-pagination-bg-active);
              }
         
         &-svg {

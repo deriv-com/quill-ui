@@ -14,7 +14,7 @@ import {
     LabelPairedCircleInfoSmRegularIcon,
     LabelPairedCircleInfoMdRegularIcon,
 } from "@deriv/quill-icons";
-import { TMediumSizes } from "@types";
+import { TMediumSizes, TLeftOrRight } from "@types";
 import { Text } from "@components/Typography";
 import { KEY } from "@utils/common-utils";
 
@@ -35,6 +35,7 @@ export interface CheckboxProps
             | React.KeyboardEvent<HTMLSpanElement>,
     ) => void;
     className?: string;
+    checkboxPosition?: TLeftOrRight;
 }
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
@@ -51,6 +52,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             name,
             onChange,
             className,
+            checkboxPosition = "left",
             ...rest
         },
         ref,
@@ -123,7 +125,12 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                     className,
                 )}
             >
-                <div className="quill-checkbox__wrapper">
+                <div
+                    className={clsx(
+                        "quill-checkbox__wrapper",
+                        `quill-checkbox__wrapper--${checkboxPosition}`,
+                    )}
+                >
                     <input
                         {...rest}
                         id={rest.id ?? name}

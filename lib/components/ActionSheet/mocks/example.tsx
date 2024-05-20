@@ -19,6 +19,8 @@ export const ActionSheetExample = ({
     title,
     closeIcon,
     icon,
+    shouldCloseOnPrimaryButtonClick,
+    shouldCloseOnSecondaryButtonClick,
     ...props
 }: ExampleProps) => {
     const [open, setOpen] = useState<boolean>();
@@ -57,6 +59,12 @@ export const ActionSheetExample = ({
                         primaryAction={primaryAction}
                         secondaryAction={secondaryAction}
                         alignment={alignment}
+                        shouldCloseOnPrimaryButtonClick={
+                            shouldCloseOnPrimaryButtonClick
+                        }
+                        shouldCloseOnSecondaryButtonClick={
+                            shouldCloseOnSecondaryButtonClick
+                        }
                     />
                 </ActionSheet.Portal>
             </ActionSheet.Root>
@@ -72,6 +80,8 @@ export const ActionSheetExampleWithIconTrigger = ({
     title,
     closeIcon,
     icon,
+    shouldCloseOnPrimaryButtonClick,
+    shouldCloseOnSecondaryButtonClick,
     ...props
 }: ExampleProps) => {
     return (
@@ -159,6 +169,12 @@ export const ActionSheetExampleWithIconTrigger = ({
                         primaryAction={primaryAction}
                         secondaryAction={secondaryAction}
                         alignment={alignment}
+                        shouldCloseOnPrimaryButtonClick={
+                            shouldCloseOnPrimaryButtonClick
+                        }
+                        shouldCloseOnSecondaryButtonClick={
+                            shouldCloseOnSecondaryButtonClick
+                        }
                     />
                 </ActionSheet.Portal>
             </ActionSheet.Root>
@@ -174,6 +190,8 @@ export const ActionSheetExampleControlled = ({
     title,
     closeIcon,
     icon,
+    shouldCloseOnPrimaryButtonClick,
+    shouldCloseOnSecondaryButtonClick,
     ...props
 }: ExampleProps) => {
     return (
@@ -207,6 +225,12 @@ export const ActionSheetExampleControlled = ({
                         primaryAction={primaryAction}
                         secondaryAction={secondaryAction}
                         alignment={alignment}
+                        shouldCloseOnPrimaryButtonClick={
+                            shouldCloseOnPrimaryButtonClick
+                        }
+                        shouldCloseOnSecondaryButtonClick={
+                            shouldCloseOnSecondaryButtonClick
+                        }
                     />
                 </ActionSheet.Portal>
             </ActionSheet.Root>

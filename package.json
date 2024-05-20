@@ -71,7 +71,7 @@
         "@zxcvbn-ts/core": "^3.0.4",
         "@zxcvbn-ts/language-common": "^3.0.4",
         "clsx": "^2.1.0",
-        "downshift": "^8.3.1",
+        "downshift": "^8.5.0",
         "eslint": "^8.55.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-react-hooks": "^4.6.0",

@@ -26,7 +26,7 @@ const DIRECTION = {
     RIGHT: "right",
 };
 
-const NotificationItem = ({
+export const NotificationItem = ({
     className,
     status,
     type = "info",
