@@ -69,6 +69,20 @@ const meta: Meta = {
             },
             description: "Same as `primaryAction`",
         },
+        shouldCloseOnPrimaryButtonClick: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            control: { type: "boolean" },
+            description:
+                "This prop controls if Action Sheet should be closed or not when primary button was clicked. Default value: true",
+        },
+        shouldCloseOnSecondaryButtonClick: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            control: { type: "boolean" },
+            description:
+                "This prop controls if Action Sheet should be closed or not when secondary button was clicked. Default value: true",
+        },
         icon: {
             description:
                 "This props allowed you to pass in icon for `ActionSheet.Header`",

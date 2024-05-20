@@ -36,6 +36,8 @@ export interface FooterProps
         actionSheetFooterCVA {
     primaryAction?: ActionType;
     secondaryAction?: ActionType;
+    shouldCloseOnPrimaryButtonClick?: boolean;
+    shouldCloseOnSecondaryButtonClick?: boolean;
 }
 
 export type FooterAlignment = FooterProps["alignment"];
