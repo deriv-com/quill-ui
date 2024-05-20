@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 class Transformer {
     constructor() {
         this.allRules = {};
-        this.semanticTokenNames = [
+        this.semanticViewportNames = [
             "semantic/viewPort/640-plus",
             "semantic/viewPort/768-plus",
             "semantic/viewPort/1024-plus",
@@ -33,7 +33,7 @@ class Transformer {
         ];
         this.allTokenNames = [
             ...this.tokenNames,
-            ...this.semanticTokenNames,
+            ...this.semanticViewportNames,
             ...this.themeTokenNames,
         ];
         this.breakpointNames = ["sm", "md", "lg", "xl", "2xl"];
@@ -46,6 +46,17 @@ class Transformer {
             ),
         );
         this.excludedKeys = ["$themes", "$metadata"];
+        this.getDefaultTokens = () => {
+            const filteredEntries = Object.entries(this.designTokens).filter(
+                ([key]) => {
+                    return (
+                        !this.semanticViewportNames.includes(key) &&
+                        !this.excludedKeys.includes(key)
+                    );
+                },
+            );
+            return Object.fromEntries(filteredEntries);
+        };
 
         this.styleStrings = {
             static: "",
@@ -94,7 +105,7 @@ class Transformer {
     generateBreakpoints = () => {
         const breakpointMap = {};
 
-        this.semanticTokenNames.forEach((tokenName, index) => {
+        this.semanticViewportNames.forEach((tokenName, index) => {
             const parts = tokenName.split("/");
             const minWidth = parseInt(parts[2].split("-")[0]); // Extract the minWidth and convert it to an integer
             const breakpoint = this.breakpointNames[index];
@@ -149,7 +160,7 @@ class Transformer {
         this.styleStrings.quill += `\n
              /* Media Queries for Semantic Tokens */ \n`;
 
-        this.semanticTokenNames.map((name) => {
+        this.semanticViewportNames.map((name) => {
             const semanticTokenGroup = this.getTokenGroup([name]);
             const semanticObjectTokens = this.generateSassVariables({
                 data: semanticTokenGroup,
@@ -210,7 +221,7 @@ class Transformer {
             } else {
                 if (key === valueIdentifier) {
                     const cssKey = finalKey.replaceAll("-", ".");
-                    const finalValue = this.processCSSValue(finalKey, cssValue);
+                    let finalValue = this.processCSSValue(finalKey, cssValue);
 
                     this.coreRules[cssKey] = finalValue;
                     this.allRules[cssKey] = finalValue;
@@ -266,7 +277,7 @@ class Transformer {
 
         // Generate all quill token variables
         const quillObjectTokens = this.generateSassVariables({
-            data: this.designTokens,
+            data: this.getDefaultTokens(),
         });
 
         this.styleStrings.quill += `:root { \n`;
