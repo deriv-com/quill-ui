@@ -14,7 +14,7 @@ import {
     LabelPairedCircleInfoSmRegularIcon,
     LabelPairedCircleInfoMdRegularIcon,
 } from "@deriv/quill-icons";
-import { TMediumSizes } from "@types";
+import { TMediumSizes, TLeftOrRight } from "@types";
 import { Text } from "@components/Typography";
 import { KEY } from "@utils/common-utils";
 
@@ -35,7 +35,7 @@ export interface CheckboxProps
             | React.KeyboardEvent<HTMLSpanElement>,
     ) => void;
     className?: string;
-    checkboxPosition?: "left" | "right";
+    checkboxPosition?: TLeftOrRight;
 }
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
