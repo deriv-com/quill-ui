@@ -7,33 +7,33 @@
         justify-content: center;
         position: relative;
         align-items: center;
-        height: var(--core-size-1600);
-        width: var(--core-size-1600);
-        border-radius: var(--core-size-200);
+        height: var(--component-pagination-height-number);
+        width: var(--component-pagination-width-number);
+        border-radius: var(--component-pagination-border-radius-button);
 
         &:hover {
-            background-color: var(--core-color-opacity-black-100);
+            background-color: var(--component-pagination-bg-hover);
         }
 
         &:active {
-            background-color: var(--core-color-opacity-black-200);
+            background-color: var(--component-pagination-bg-active);
         }
 
         &[aria-current="true"]:not(:active):not(hover) {
-            background-color: var(--core-color-solid-slate-1400);
+            background-color: var(--component-pagination-bg-selected);
         }
     }
 
     &__bullet {
-        width: var(--core-size-400);
-        height: var(--core-size-400);
-        border-radius: var(--core-size-4800);
+        width: var( --component-pagination-width-bullet);
+        height: var( --component-pagination-height-bullet);
+        border-radius: var( --component-pagination-border-radius-bullet);
         position: relative;
         background-color: var(--component-pagination-bg-default);
         cursor: pointer;
 
         &:hover {
-            background-color: var(--component-pagination-bg-active);
+            background-color: var(--component-pagination-bg-hover);
         }
 
         &:active {
@@ -46,18 +46,18 @@
 }
 
 .hidden_pages {
-    height: var(--core-size-1600);
-    width: var(--core-size-1600);
-    border-radius: var(--core-size-200);
+    height: var( --component-pagination-height-number);
+    width: var(--component-pagination-width-number);
+    border-radius: var(--component-pagination-border-radius-button);
 
     &-dots {
         display: flex;
         justify-content: center;
         align-items: center;
         color: var(--component-pagination-icon-disabled);
-        font-size: var(--core-size-600);
-        width: var(--core-size-1600);
-        height: var(--core-size-900);
+        font-size: var(--core-size-700);
+        width: var(--component-pagination-width-number);
+        height: var(--core-size-1100);
         text-align: center;
     }
 }
@@ -66,8 +66,8 @@
     
     &[aria-current="true"] {
         font-weight: bold;
-        color: var(--core-color-solid-slate-50);
+        color: var(--component-pagination-label-color-selected);
     }
 
-    color: var(--component-pagination-icon-default);
+    color: var(--component-pagination-label-color-default);
 }
