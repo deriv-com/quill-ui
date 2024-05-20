@@ -50,6 +50,14 @@ describe("Checkbox", () => {
         expect(container).toMatchSnapshot();
     });
 
+    it("should apply correct className if checkboxPosition is 'right'", () => {
+        const { container } = render(
+            <Checkbox {...mockProps} checkboxPosition="right" />,
+        );
+
+        expect(container).toMatchSnapshot();
+    });
+
     it("should apply className if it was passed", () => {
         const { container } = render(
             <Checkbox {...mockProps} className="wrapper_className" />,

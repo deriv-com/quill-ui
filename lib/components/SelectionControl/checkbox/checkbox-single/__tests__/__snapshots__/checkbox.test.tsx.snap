@@ -6,7 +6,43 @@ exports[`Checkbox should apply className if it was passed 1`] = `
     class="quill-checkbox wrapper_className"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
+    >
+      <input
+        class="quill-checkbox__box"
+        type="checkbox"
+      />
+      <svg
+        class="quill-checkbox__box-icon quill-checkbox__box-icon--pale"
+        height="24"
+        role="img"
+        viewBox="0 0 32 32"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22.25 9.625H9.75a.64.64 0 0 0-.625.625v12.5c0 .352.273.625.625.625h12.5a.64.64 0 0 0 .625-.625v-12.5c0-.312-.312-.625-.625-.625M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5"
+        />
+      </svg>
+    </div>
+    <label>
+      <span
+        class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default quill-checkbox__label"
+      >
+        Checkbox label
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox should apply correct className if checkboxPosition is 'right' 1`] = `
+<div>
+  <div
+    class="quill-checkbox"
+  >
+    <div
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--right"
     >
       <input
         class="quill-checkbox__box"
@@ -42,7 +78,7 @@ exports[`Checkbox should apply id if it was passed 1`] = `
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -81,7 +117,7 @@ exports[`Checkbox should apply labelClassName if it was passed 1`] = `
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -117,7 +153,7 @@ exports[`Checkbox should apply name if it was passed 1`] = `
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -157,7 +193,7 @@ exports[`Checkbox should render correct attribute of input if checked === true 1
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         checked=""
@@ -194,7 +230,7 @@ exports[`Checkbox should render correct attribute of input if disabled === true 
     class="quill-checkbox quill-checkbox--disabled"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -231,7 +267,7 @@ exports[`Checkbox should render correct icon if indeterminate === true 1`] = `
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -267,7 +303,7 @@ exports[`Checkbox should render correct label size if size === 'md' 1`] = `
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -303,7 +339,7 @@ exports[`Checkbox should render info icon if showInfoIcon === true 1`] = `
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
@@ -362,7 +398,7 @@ exports[`Checkbox should render with default values if optional ones were not pa
     class="quill-checkbox"
   >
     <div
-      class="quill-checkbox__wrapper"
+      class="quill-checkbox__wrapper quill-checkbox__wrapper--left"
     >
       <input
         class="quill-checkbox__box"
