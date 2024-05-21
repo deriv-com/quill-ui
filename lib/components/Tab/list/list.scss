@@ -12,7 +12,7 @@ html.dark {
         position: relative;
         display: flex;
         justify-content: center;
-        border-bottom: var(--borderWidth-xs) solid var(--border-bottom-color-default);
+        border-bottom: var(--component-tab-border-width-body) solid var(--component-tab-border-color-default);
     }
 
     &--item {
@@ -27,7 +27,7 @@ html.dark {
         }
 
         &-hug-content {
-            gap: 8px;
+            gap: var(--semantic-spacing-gap-md);
         }
 
     }
