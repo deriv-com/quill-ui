@@ -12,4 +12,5 @@ export * from "./SegmentedControl";
 export * from "./SelectionControl";
 export * from "./Snackbar";
 export * from "./Tab";
+export * from "./Tag";
 export * from "./Typography";
