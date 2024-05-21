@@ -23,6 +23,16 @@ const meta: Meta = {
     },
     argTypes: {
         isOpen: { table: { disable: true } },
+        isPrimaryButtonDisabled: {
+            control: { type: "boolean" },
+            description:
+                "This prop controls if primary button is disabled or not. Default value: false",
+        },
+        isSecondaryButtonDisabled: {
+            control: { type: "boolean" },
+            description:
+                "This prop controls if secondary button is disabled or not. Default value: false",
+        },
         show: { table: { disable: true } },
         handleOpen: { table: { disable: true } },
         handleClose: { table: { disable: true } },

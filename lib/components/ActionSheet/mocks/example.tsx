@@ -21,6 +21,8 @@ export const ActionSheetExample = ({
     icon,
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
+    isPrimaryButtonDisabled,
+    isSecondaryButtonDisabled,
     ...props
 }: ExampleProps) => {
     const [open, setOpen] = useState<boolean>();
@@ -65,6 +67,8 @@ export const ActionSheetExample = ({
                         shouldCloseOnSecondaryButtonClick={
                             shouldCloseOnSecondaryButtonClick
                         }
+                        isPrimaryButtonDisabled={isPrimaryButtonDisabled}
+                        isSecondaryButtonDisabled={isSecondaryButtonDisabled}
                     />
                 </ActionSheet.Portal>
             </ActionSheet.Root>
@@ -82,6 +86,8 @@ export const ActionSheetExampleWithIconTrigger = ({
     icon,
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
+    isPrimaryButtonDisabled,
+    isSecondaryButtonDisabled,
     ...props
 }: ExampleProps) => {
     return (
@@ -175,6 +181,8 @@ export const ActionSheetExampleWithIconTrigger = ({
                         shouldCloseOnSecondaryButtonClick={
                             shouldCloseOnSecondaryButtonClick
                         }
+                        isPrimaryButtonDisabled={isPrimaryButtonDisabled}
+                        isSecondaryButtonDisabled={isSecondaryButtonDisabled}
                     />
                 </ActionSheet.Portal>
             </ActionSheet.Root>
@@ -192,6 +200,8 @@ export const ActionSheetExampleControlled = ({
     icon,
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
+    isPrimaryButtonDisabled,
+    isSecondaryButtonDisabled,
     ...props
 }: ExampleProps) => {
     return (
@@ -231,6 +241,8 @@ export const ActionSheetExampleControlled = ({
                         shouldCloseOnSecondaryButtonClick={
                             shouldCloseOnSecondaryButtonClick
                         }
+                        isPrimaryButtonDisabled={isPrimaryButtonDisabled}
+                        isSecondaryButtonDisabled={isSecondaryButtonDisabled}
                     />
                 </ActionSheet.Portal>
             </ActionSheet.Root>
