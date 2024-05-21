@@ -92,4 +92,22 @@ describe("<ActionSheet.Footer/>", () => {
         expect(onActionButton).toHaveBeenCalled();
         expect(primaryBtn).toBeInTheDocument();
     });
+    it("should disable button and do not call a function onAction if isPrimaryButtonDisabled === true", async () => {
+        const onActionButton = jest.fn();
+        render(
+            <ActionSheet.Footer
+                primaryAction={{
+                    content: "Primary action",
+                    onAction: onActionButton,
+                }}
+                isPrimaryButtonDisabled
+            />,
+        );
+        const primaryBtn = screen.getByRole("button", {
+            name: "Primary action",
+        });
+        await userEvent.click(primaryBtn);
+        expect(onActionButton).not.toHaveBeenCalled();
+        expect(primaryBtn).toBeDisabled();
+    });
 });

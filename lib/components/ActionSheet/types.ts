@@ -38,6 +38,8 @@ export interface FooterProps
     secondaryAction?: ActionType;
     shouldCloseOnPrimaryButtonClick?: boolean;
     shouldCloseOnSecondaryButtonClick?: boolean;
+    isPrimaryButtonDisabled?: boolean;
+    isSecondaryButtonDisabled?: boolean;
 }
 
 export type FooterAlignment = FooterProps["alignment"];
