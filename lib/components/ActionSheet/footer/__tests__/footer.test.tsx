@@ -100,7 +100,7 @@ describe("<ActionSheet.Footer/>", () => {
                     content: "Primary action",
                     onAction: onActionButton,
                 }}
-                isPrimaryButtonDisabled={true}
+                isPrimaryButtonDisabled
             />,
         );
         const primaryBtn = screen.getByRole("button", {

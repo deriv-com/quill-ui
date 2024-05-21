@@ -12,8 +12,8 @@ const Footer = ({
     className,
     shouldCloseOnPrimaryButtonClick = true,
     shouldCloseOnSecondaryButtonClick = true,
-    isPrimaryButtonDisabled = false,
-    isSecondaryButtonDisabled = false,
+    isPrimaryButtonDisabled,
+    isSecondaryButtonDisabled,
     ...rest
 }: FooterProps) => {
     const { handleClose } = useContext(ActionSheetContext);
