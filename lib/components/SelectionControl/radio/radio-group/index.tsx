@@ -10,7 +10,7 @@ interface IItem extends React.HTMLAttributes<HTMLDivElement> {
     hidden?: boolean;
     id?: string;
     label: string;
-    value: string;
+    value: React.ReactNode;
     checkboxPosition?: TLeftOrRight;
 }
 
