@@ -3,8 +3,6 @@ import {
     useState,
     useEffect,
     useRef,
-    ChangeEvent,
-    MouseEvent,
     KeyboardEvent,
     PropsWithChildren,
 } from "react";
@@ -30,16 +28,9 @@ export interface IRadio
     classNameInfo?: string;
     classNameLabel?: string;
     hasInfo?: boolean;
-    onChange?: (
-        e:
-            | ChangeEvent<HTMLInputElement>
-            | MouseEvent<HTMLSpanElement>
-            | KeyboardEvent<HTMLSpanElement>,
-        value?: string | number,
-    ) => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     value?: string | number;
     size?: TMediumSizes;
-    ref?: React.RefObject<HTMLInputElement>;
 }
 
 export const RadioButton = ({
@@ -55,35 +46,34 @@ export const RadioButton = ({
     onChange,
     size = "md",
     value,
-    ref,
     ...otherProps
 }: PropsWithChildren<IRadio>) => {
     const [checked, setChecked] = useState(defaultChecked);
-    const inputRef = ref || useRef<HTMLInputElement>(null);
+    const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         setChecked(defaultChecked);
     }, [defaultChecked]);
 
-    const handleMouseClick = (e: MouseEvent<HTMLSpanElement>) => {
+    const handleMouseClick = () => {
         if (!disabled) {
-            handleChange(e);
+            handleChange();
         }
     };
 
     const handleKeyDown = (e: KeyboardEvent<HTMLSpanElement>) => {
         if (!disabled && (e.key === KEY.ENTER || e.key === KEY.SPACE)) {
-            handleChange(e);
+            handleChange();
         }
     };
-    const handleChange = (
-        e:
-            | ChangeEvent<HTMLInputElement>
-            | MouseEvent<HTMLElement>
-            | KeyboardEvent<HTMLElement>,
-    ) => {
-        setChecked(!checked);
-        if (inputRef.current) onChange?.(e, inputRef.current.value);
+    const handleChange = () => {
+        const input = inputRef.current;
+        if (input) {
+            input.checked = !input.checked;
+            onChange?.({
+                target: input,
+            } as React.ChangeEvent<HTMLInputElement>);
+        }
     };
 
     const getIcon = () => {
@@ -122,7 +112,7 @@ export const RadioButton = ({
                 disabled={disabled}
                 ref={inputRef}
                 value={value}
-                onChange={handleChange}
+                onChange={() => null}
                 {...otherProps}
             />
 

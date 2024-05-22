@@ -1,4 +1,4 @@
-import React, { ChangeEvent, MouseEvent, KeyboardEvent } from "react";
+import React, { ChangeEvent } from "react";
 import clsx from "clsx";
 import RadioButton from "../radio-button";
 import { TMediumSizes, TLeftOrRight } from "@types";
@@ -21,13 +21,7 @@ interface IItemWrapper {
 interface IRadioGroup extends IItemWrapper {
     className?: string;
     name?: string;
-    onToggle?: (
-        e:
-            | ChangeEvent<HTMLInputElement>
-            | MouseEvent<HTMLSpanElement>
-            | KeyboardEvent<HTMLSpanElement>,
-        value?: string | number,
-    ) => void;
+    onToggle?: (e: ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
     selected?: string | number;
     size?: TMediumSizes;
@@ -62,15 +56,9 @@ export const RadioGroup = ({
         setSelectedOption(selected);
     }, [selected]);
 
-    const onChange = (
-        e:
-            | ChangeEvent<HTMLInputElement>
-            | MouseEvent<HTMLSpanElement>
-            | KeyboardEvent<HTMLSpanElement>,
-        value?: string | number,
-    ) => {
-        setSelectedOption(value);
-        onToggle?.(e, value);
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setSelectedOption(e.target.value);
+        onToggle?.(e);
     };
 
     return (

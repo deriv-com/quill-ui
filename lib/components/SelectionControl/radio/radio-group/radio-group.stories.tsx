@@ -7,13 +7,7 @@ interface RadioGroupProps {
     disabledOption?: boolean;
     hiddenOption?: boolean;
     name?: string;
-    onToggle?: (
-        e:
-            | React.ChangeEvent<HTMLInputElement>
-            | React.MouseEvent<HTMLSpanElement>
-            | React.KeyboardEvent<HTMLSpanElement>,
-        value?: string | number,
-    ) => void;
+    onToggle?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     selected?: string;
     shouldWrapItems?: boolean;
     size?: TMediumSizes;
@@ -113,8 +107,8 @@ export const WrappedItems = Template.bind(this, {
 });
 
 export const CustomOnToggleCallback = Template.bind(this, {
-    onToggle: (e, value) => {
-        alert(`Selected option: ${value}, event: ${e}`);
+    onToggle: (e) => {
+        alert(`Selected option: ${e.target.value}`);
     },
 });
 
