@@ -1,4 +1,13 @@
-import React from "react";
+import {
+    ComponentProps,
+    useState,
+    useEffect,
+    useRef,
+    ChangeEvent,
+    MouseEvent,
+    KeyboardEvent,
+    PropsWithChildren,
+} from "react";
 import clsx from "clsx";
 import {
     LabelPairedCircleInfoMdRegularIcon,
@@ -9,25 +18,33 @@ import {
 import { Text } from "@components/Typography";
 import { KEY } from "@utils/common-utils";
 import "./radio-button.scss";
-import { TMediumSizes } from "@types";
+import { TMediumSizes, TLeftOrRight } from "@types";
 
-interface IRadio {
+export interface IRadio
+    extends Omit<
+        ComponentProps<"input">,
+        "placeholder" | "size" | "value" | "ref"
+    > {
+    checkboxPosition?: TLeftOrRight;
     className?: string;
     classNameInfo?: string;
     classNameLabel?: string;
-    defaultChecked?: boolean;
-    disabled?: boolean;
     hasInfo?: boolean;
-    id?: string;
-    name?: string;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    required?: boolean;
-    value?: string;
+    onChange?: (
+        e:
+            | ChangeEvent<HTMLInputElement>
+            | MouseEvent<HTMLSpanElement>
+            | KeyboardEvent<HTMLSpanElement>,
+        value?: string | number,
+    ) => void;
+    value?: string | number;
     size?: TMediumSizes;
+    ref?: React.RefObject<HTMLInputElement>;
 }
 
 export const RadioButton = ({
     children,
+    checkboxPosition = "left",
     className,
     classNameInfo,
     classNameLabel,
@@ -38,34 +55,35 @@ export const RadioButton = ({
     onChange,
     size = "md",
     value,
+    ref,
     ...otherProps
-}: React.PropsWithChildren<IRadio>) => {
-    const [checked, setChecked] = React.useState(defaultChecked);
-    const inputRef = React.useRef<HTMLInputElement>(null);
+}: PropsWithChildren<IRadio>) => {
+    const [checked, setChecked] = useState(defaultChecked);
+    const inputRef = ref || useRef<HTMLInputElement>(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         setChecked(defaultChecked);
     }, [defaultChecked]);
 
-    const handleMouseClick = () => {
+    const handleMouseClick = (e: MouseEvent<HTMLSpanElement>) => {
         if (!disabled) {
-            handleChange();
+            handleChange(e);
         }
     };
 
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLSpanElement>) => {
+    const handleKeyDown = (e: KeyboardEvent<HTMLSpanElement>) => {
         if (!disabled && (e.key === KEY.ENTER || e.key === KEY.SPACE)) {
-            handleChange();
+            handleChange(e);
         }
     };
-    const handleChange = () => {
-        const input = inputRef.current;
-        if (input) {
-            input.checked = !input.checked;
-            onChange?.({
-                target: input,
-            } as React.ChangeEvent<HTMLInputElement>);
-        }
+    const handleChange = (
+        e:
+            | ChangeEvent<HTMLInputElement>
+            | MouseEvent<HTMLElement>
+            | KeyboardEvent<HTMLElement>,
+    ) => {
+        setChecked(!checked);
+        if (inputRef.current) onChange?.(e, inputRef.current.value);
     };
 
     const getIcon = () => {
@@ -104,13 +122,18 @@ export const RadioButton = ({
                 disabled={disabled}
                 ref={inputRef}
                 value={value}
+                onChange={handleChange}
                 {...otherProps}
             />
 
             <span
-                className={clsx("quill-radio-button__icon", {
-                    "quill-radio-button__icon--disabled": disabled,
-                })}
+                className={clsx(
+                    "quill-radio-button__icon",
+                    {
+                        "quill-radio-button__icon--disabled": disabled,
+                    },
+                    `quill-radio-button__icon--${checkboxPosition}`,
+                )}
                 onClick={handleMouseClick}
                 onKeyDown={handleKeyDown}
                 id={id}

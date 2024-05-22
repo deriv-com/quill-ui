@@ -1,14 +1,19 @@
 import React from "react";
 import RadioGroup from "./index";
 import { fn } from "@storybook/test";
-import { TMediumSizes } from "@types";
-
+import { TMediumSizes, TLeftOrRight } from "@types";
 
 interface RadioGroupProps {
     disabledOption?: boolean;
     hiddenOption?: boolean;
     name?: string;
-    onToggle?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onToggle?: (
+        e:
+            | React.ChangeEvent<HTMLInputElement>
+            | React.MouseEvent<HTMLSpanElement>
+            | React.KeyboardEvent<HTMLSpanElement>,
+        value?: string | number,
+    ) => void;
     selected?: string;
     shouldWrapItems?: boolean;
     size?: TMediumSizes;
@@ -17,6 +22,7 @@ interface RadioGroupProps {
 const RadioGroupItem = ({
     value = "",
     label = "",
+    checkboxPosition = "left" as TLeftOrRight,
     disabled = false,
     hidden = false,
 }) => (
@@ -25,6 +31,7 @@ const RadioGroupItem = ({
         label={label}
         disabled={disabled}
         hidden={hidden}
+        checkboxPosition={checkboxPosition}
     />
 );
 
@@ -106,8 +113,8 @@ export const WrappedItems = Template.bind(this, {
 });
 
 export const CustomOnToggleCallback = Template.bind(this, {
-    onToggle: (e) => {
-        alert(`Selected option: ${e.target.value}`);
+    onToggle: (e, value) => {
+        alert(`Selected option: ${value}, event: ${e}`);
     },
 });
 

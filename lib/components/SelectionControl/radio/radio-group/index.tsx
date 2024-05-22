@@ -1,7 +1,7 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, MouseEvent, KeyboardEvent } from "react";
 import clsx from "clsx";
 import RadioButton from "../radio-button";
-import { TMediumSizes } from "@types";
+import { TMediumSizes, TLeftOrRight } from "@types";
 import "./radio-group.scss";
 
 interface IItem extends React.HTMLAttributes<HTMLDivElement> {
@@ -11,6 +11,7 @@ interface IItem extends React.HTMLAttributes<HTMLDivElement> {
     id?: string;
     label: string;
     value: string;
+    checkboxPosition?: TLeftOrRight;
 }
 
 interface IItemWrapper {
@@ -20,9 +21,15 @@ interface IItemWrapper {
 interface IRadioGroup extends IItemWrapper {
     className?: string;
     name?: string;
-    onToggle?: (e: ChangeEvent<HTMLInputElement>) => void;
+    onToggle?: (
+        e:
+            | ChangeEvent<HTMLInputElement>
+            | MouseEvent<HTMLSpanElement>
+            | KeyboardEvent<HTMLSpanElement>,
+        value?: string | number,
+    ) => void;
     required?: boolean;
-    selected?: string;
+    selected?: string | number;
     size?: TMediumSizes;
 }
 
@@ -55,9 +62,15 @@ export const RadioGroup = ({
         setSelectedOption(selected);
     }, [selected]);
 
-    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setSelectedOption(e.target.value);
-        onToggle?.(e);
+    const onChange = (
+        e:
+            | ChangeEvent<HTMLInputElement>
+            | MouseEvent<HTMLSpanElement>
+            | KeyboardEvent<HTMLSpanElement>,
+        value?: string | number,
+    ) => {
+        setSelectedOption(value);
+        onToggle?.(e, value);
     };
 
     return (
@@ -66,7 +79,8 @@ export const RadioGroup = ({
                 children
                     .filter((item) => !item.props.hidden)
                     .map((item) => {
-                        const { id, value, label, disabled } = item.props;
+                        const { id, value, label, disabled, ...rest } =
+                            item.props;
 
                         return (
                             <ItemWrapper
@@ -82,6 +96,7 @@ export const RadioGroup = ({
                                     disabled={disabled}
                                     required={required}
                                     size={size}
+                                    {...rest}
                                 >
                                     {label}
                                 </RadioButton>
