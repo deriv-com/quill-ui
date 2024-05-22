@@ -12,7 +12,11 @@ import { Text } from "@components/Typography";
 export interface DatePickerProps
     extends Omit<
         React.ComponentProps<typeof Calendar>,
-        "onChange" | "activeStartDate"
+        | "onChange"
+        | "activeStartDate"
+        | "maxDetail"
+        | "minDetail"
+        | "defaultView"
     > {
     hasFixedWidth?: boolean;
     optionsConfig?: Record<string, string>;
@@ -35,7 +39,6 @@ export const DatePicker = ({
     calendarType,
     className,
     defaultValue,
-    defaultView,
     hasFixedWidth = true,
     formatMonthYear = (locale, date) =>
         new Date(date).toLocaleString(locale || navigator.languages, {
@@ -44,8 +47,6 @@ export const DatePicker = ({
         }),
     goToRangeStartOnSelect = true,
     locale,
-    maxDetail = "month",
-    minDetail = "century",
     navigationLabel = ({ label }) => <Text as="span">{label}</Text>,
     next2Label = null,
     nextLabel = (
@@ -86,7 +87,9 @@ export const DatePicker = ({
 
     useEffect(() => {
         if (value) onFormattedDate?.(formatSelectedDate(value as Value));
-    }, []);
+        if (defaultValue)
+            onFormattedDate?.(formatSelectedDate(defaultValue as Value));
+    }, [value, defaultValue]);
 
     return (
         <div
@@ -103,12 +106,9 @@ export const DatePicker = ({
                 calendarType={calendarType}
                 className={clsx("quill-date-picker", className)}
                 defaultValue={defaultValue}
-                defaultView={defaultView}
                 formatMonthYear={formatMonthYear}
                 goToRangeStartOnSelect={goToRangeStartOnSelect}
                 locale={locale}
-                maxDetail={maxDetail}
-                minDetail={minDetail}
                 navigationLabel={navigationLabel}
                 next2Label={next2Label}
                 nextLabel={nextLabel}

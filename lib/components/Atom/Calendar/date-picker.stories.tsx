@@ -33,8 +33,6 @@ const meta = {
                 year: "numeric",
             }),
         goToRangeStartOnSelect: true,
-        maxDetail: "month",
-        minDetail: "century",
         navigationLabel: ({ label }) => <Text as="span">{label}</Text>,
         next2Label: null,
         nextLabel: (
@@ -97,18 +95,6 @@ const meta = {
             description:
                 "Calendar value that shall be selected initially. Can be either one value or an array of two values. If you wish to use react-calendar in a controlled way, use value instead. Example values: new Date(2017, 0, 1) or [new Date(2017, 0, 1), new Date(2017, 7, 1)].",
             control: { type: null },
-        },
-        defaultView: {
-            table: {
-                type: {
-                    summary:
-                        "'month'| 'year'| 'decade' | 'century' | undefined",
-                },
-            },
-            description:
-                "Determines which calendar view shall be opened initially. Does not disable navigation. Can be 'month', 'year', 'decade' or 'century'. If you wish to use react-calendar in a controlled way, use view instead. Default value - The most detailed view allowed.",
-            options: ["month", "year", "decade", "century"],
-            control: { type: "radio" },
         },
         hasFixedWidth: {
             table: {
@@ -227,35 +213,11 @@ const meta = {
                 "Maximum date that the user can select. Periods partially overlapped by maxDate will also be selectable, although react-calendar will ensure that no later date is selected. Example values: new Date().",
             control: { type: null },
         },
-        maxDetail: {
-            table: {
-                type: {
-                    summary:
-                        "'month'| 'year'| 'decade' | 'century' | undefined",
-                },
-            },
-            description:
-                "The most detailed view that the user shall see. View defined here also becomes the one on which clicking an item will select a date and pass it to onChange. Can be 'month', 'year', 'decade' or 'century'. Default value - 'month'.",
-            options: ["month", "year", "decade", "century"],
-            control: { type: "radio" },
-        },
         minDate: {
             table: { type: { summary: "Date | undefined" } },
             description:
                 "Minimum date that the user can select. Periods partially overlapped by minDate will also be selectable, although react-calendar will ensure that no earlier date is selected. Example values: new Date().",
             control: { type: null },
-        },
-        minDetail: {
-            table: {
-                type: {
-                    summary:
-                        "'month'| 'year'| 'decade' | 'century' | undefined",
-                },
-            },
-            description:
-                "The least detailed view that the user shall see. Default value - 'century'.",
-            options: ["month", "year", "decade", "century"],
-            control: { type: "radio" },
         },
         navigationAriaLabel: {
             table: {
@@ -506,10 +468,12 @@ DatePickerWithRangeSelection.args = {
     selectRange: true,
 };
 
-export const DatePickerWithSelectedValuePassed = Template.bind(this) as Story;
-DatePickerWithSelectedValuePassed.args = {
+export const DatePickerWithSelectedDefaultValuePassed = Template.bind(
+    this,
+) as Story;
+DatePickerWithSelectedDefaultValuePassed.args = {
     ...meta.args,
-    value: new Date(),
+    defaultValue: new Date(),
 };
 
 export const DatePickerWithDoubleNavigation = Template.bind(this) as Story;
