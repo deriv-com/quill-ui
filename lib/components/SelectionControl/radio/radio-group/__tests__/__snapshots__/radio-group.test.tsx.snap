@@ -10,7 +10,6 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
       data-testid="dt_quill_radio_button"
     >
       <input
-        checked=""
         class="quill-radio-button__input"
         name="test"
         type="radio"
@@ -45,6 +44,7 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
       data-testid="dt_quill_radio_button"
     >
       <input
+        checked=""
         class="quill-radio-button__input"
         name="test"
         type="radio"

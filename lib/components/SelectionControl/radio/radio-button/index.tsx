@@ -108,11 +108,10 @@ export const RadioButton = ({
             <input
                 className="quill-radio-button__input"
                 type="radio"
-                checked={checked}
+                defaultChecked={checked}
                 disabled={disabled}
                 ref={inputRef}
                 value={value}
-                onChange={() => null}
                 {...otherProps}
             />
 
