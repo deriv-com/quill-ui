@@ -26,6 +26,7 @@
             }
 
             button:enabled:hover:is(.react-calendar__navigation__arrow),
+            button:enabled:focus:is(.react-calendar__navigation__arrow),
             button:enabled:active:is(.react-calendar__navigation__arrow) {
                 border-radius: var(--core-borderRadius-600);
                 background-color: var(
@@ -35,6 +36,7 @@
 
             button:enabled:hover:is(.react-calendar__navigation__label),
             button:enabled:active:is(.react-calendar__navigation__label),
+            button:enabled:focus:is(.react-calendar__navigation__label),
             button:disabled:is(.react-calendar__navigation__label) {
                 span {
                     color: var(--component-textIcon-normal-prominent);
