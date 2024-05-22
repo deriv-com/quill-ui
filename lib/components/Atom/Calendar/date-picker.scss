@@ -25,7 +25,6 @@
                 background-color: unset;
             }
 
-            button:enabled:hover:is(.react-calendar__navigation__arrow),
             button:enabled:focus:is(.react-calendar__navigation__arrow),
             button:enabled:active:is(.react-calendar__navigation__arrow) {
                 border-radius: var(--core-borderRadius-600);
@@ -34,7 +33,6 @@
                 );
             }
 
-            button:enabled:hover:is(.react-calendar__navigation__label),
             button:enabled:active:is(.react-calendar__navigation__label),
             button:enabled:focus:is(.react-calendar__navigation__label),
             button:disabled:is(.react-calendar__navigation__label) {
@@ -43,6 +41,23 @@
                     font-weight: var(
                         --semantic-typography-body-sm-bold-default-fontWeight
                     );
+                }
+            }
+
+            @media (hover: hover) {
+                button:enabled:hover:is(.react-calendar__navigation__arrow) {
+                    border-radius: var(--core-borderRadius-600);
+                    background-color: var(
+                        --semantic-color-monochrome-surface-normal-low
+                    );
+                }
+                button:enabled:hover:is(.react-calendar__navigation__label) {
+                    span {
+                        color: var(--component-textIcon-normal-prominent);
+                        font-weight: var(
+                            --semantic-typography-body-sm-bold-default-fontWeight
+                        );
+                    }
                 }
             }
 
