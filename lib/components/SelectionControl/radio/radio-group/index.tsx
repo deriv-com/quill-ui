@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from "react";
 import clsx from "clsx";
 import RadioButton from "../radio-button";
-import { TMediumSizes } from "@types";
+import { TMediumSizes, TLeftOrRight } from "@types";
 import "./radio-group.scss";
 
 interface IItem extends React.HTMLAttributes<HTMLDivElement> {
@@ -9,8 +9,9 @@ interface IItem extends React.HTMLAttributes<HTMLDivElement> {
     hasError?: boolean;
     hidden?: boolean;
     id?: string;
-    label: string;
-    value: string;
+    label: React.ReactNode;
+    value: string | number;
+    radioButtonPosition?: TLeftOrRight;
 }
 
 interface IItemWrapper {
@@ -22,7 +23,7 @@ interface IRadioGroup extends IItemWrapper {
     name?: string;
     onToggle?: (e: ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
-    selected?: string;
+    selected?: string | number;
     size?: TMediumSizes;
 }
 
@@ -66,7 +67,8 @@ export const RadioGroup = ({
                 children
                     .filter((item) => !item.props.hidden)
                     .map((item) => {
-                        const { id, value, label, disabled } = item.props;
+                        const { id, value, label, disabled, ...rest } =
+                            item.props;
 
                         return (
                             <ItemWrapper
@@ -82,6 +84,7 @@ export const RadioGroup = ({
                                     disabled={disabled}
                                     required={required}
                                     size={size}
+                                    {...rest}
                                 >
                                     {label}
                                 </RadioButton>

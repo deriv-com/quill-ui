@@ -1,12 +1,20 @@
 import React from "react";
 import RadioButton from "./index";
 import "./radio-button.stories.scss";
-import { TMediumSizes } from "@types";
+import type { Meta, StoryObj } from "@storybook/react";
 
 const RadioButtonMeta = {
     title: "Components/Selection Control/Radio/RadioButton",
     component: RadioButton,
-    parameters: { layout: "centered" },
+    parameters: {
+        layout: "centered",
+        docs: {
+            description: {
+                component:
+                    "The RadioButton component is used to create radio button elements for user selection within a group.",
+            },
+        },
+    },
     tags: ["autodocs"],
     args: {
         className: "",
@@ -16,6 +24,7 @@ const RadioButtonMeta = {
         disabled: false,
         hasInfo: false,
         id: "radio-1",
+        radioButtonPosition: "left",
     },
     argTypes: {
         id: {
@@ -56,6 +65,12 @@ const RadioButtonMeta = {
             description: "Sets the radio button as a required field.",
             control: { type: "boolean" },
         },
+        radioButtonPosition: {
+            description:
+                "Controls left or right position of the radio button. Default value is 'left'.",
+            control: { type: "select" },
+            options: ["left", "right"],
+        },
         value: {
             description: "Value of the radio button element.",
         },
@@ -65,60 +80,71 @@ const RadioButtonMeta = {
             options: ["sm", "md"],
         },
     },
-    description:
-        "The RadioButton component is used to create radio button elements for user selection within a group.",
-};
+} satisfies Meta<typeof RadioButton>;
 
 export default RadioButtonMeta;
+type Story = StoryObj<typeof RadioButtonMeta>;
 
-interface RadioButtonProps {
-    defaultChecked?: boolean;
-    disabled?: boolean;
-    hasInfo?: boolean;
-    id?: string;
-    className?: string;
-    classNameLabel?: string;
-    classNameInfo?: string;
-    size?: TMediumSizes;
-}
-
-const Template: React.FC<RadioButtonProps> = (args) => (
+const Template: React.FC<React.ComponentProps<typeof RadioButton>> = (args) => (
     <RadioButton {...args}>Option</RadioButton>
 );
 
-export const Default = Template.bind({});
+export const Default = Template.bind(this) as Story;
+Default.args = { ...RadioButtonMeta.args };
 
-export const Unchecked = Template.bind(this, {
+export const Unchecked = Template.bind(this) as Story;
+Unchecked.args = {
+    ...RadioButtonMeta.args,
     defaultChecked: false,
-});
+};
 
-export const CustomClassButton = Template.bind(this, {
+export const CustomClassButton = Template.bind(this) as Story;
+CustomClassButton.args = {
+    ...RadioButtonMeta.args,
     className: "custom-radio",
-});
+};
 
-export const CustomLabelClassButton = Template.bind(this, {
+export const CustomLabelClassButton = Template.bind(this) as Story;
+CustomLabelClassButton.args = {
+    ...RadioButtonMeta.args,
     classNameLabel: "custom-label",
-});
+};
 
-export const DisabledButton = Template.bind(this, {
+export const DisabledButton = Template.bind(this) as Story;
+DisabledButton.args = {
+    ...RadioButtonMeta.args,
     disabled: true,
-});
+};
 
-export const ButtonWithInfo = Template.bind(this, {
+export const ButtonWithInfo = Template.bind(this) as Story;
+ButtonWithInfo.args = {
+    ...RadioButtonMeta.args,
     hasInfo: true,
-});
+};
 
-export const DefaultSmall = Template.bind(this, {
+export const DefaultSmall = Template.bind(this) as Story;
+DefaultSmall.args = {
+    ...RadioButtonMeta.args,
     defaultChecked: true,
     size: "sm",
-});
+};
 
-export const UncheckedSmall = Template.bind(this, {
+export const UncheckedSmall = Template.bind(this) as Story;
+UncheckedSmall.args = {
+    ...RadioButtonMeta.args,
     defaultChecked: false,
     size: "sm",
-});
+};
 
-export const DisabledButtonSmall = Template.bind(this, {
+export const DisabledButtonSmall = Template.bind(this) as Story;
+DisabledButtonSmall.args = {
+    ...RadioButtonMeta.args,
     disabled: true,
     size: "sm",
-});
+};
+
+export const ButtonWithRightPosition = Template.bind(this) as Story;
+ButtonWithRightPosition.args = {
+    ...RadioButtonMeta.args,
+    radioButtonPosition: "right",
+};
