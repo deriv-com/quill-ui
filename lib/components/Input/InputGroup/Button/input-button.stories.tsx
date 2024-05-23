@@ -52,6 +52,13 @@ const meta = {
                 type: "select",
             },
         },
+        rightIcon: {
+            options: Object.keys(icons),
+            mapping: icons,
+            control: {
+                type: "select",
+            },
+        },
         status: {
             control: {
                 type: "radio",
