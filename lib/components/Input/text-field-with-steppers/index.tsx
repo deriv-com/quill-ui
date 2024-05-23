@@ -7,11 +7,12 @@ import {
     LabelPairedMinusSmRegularIcon,
 } from "@deriv/quill-icons";
 import "./text-field-with-steppers.scss";
+import { TLeftOrRight } from "@types";
 
 export interface TextFieldWithSteppersProps extends ComponentProps<typeof Input> {
     unit?: string;
     decimals?: number;
-    unitPlacement?: 'left' | 'right';
+    unitPlacement?: TLeftOrRight;
 }
 
 export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithSteppersProps>(
