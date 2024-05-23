@@ -146,17 +146,21 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                     "quill-input-label__wrapper--has-value",
                             )}
                         >
-                            {leftPlaceholder && (!label || label && (value || focused)) && inputSize === "md" && (
-                                <Text
-                                    size="md"
-                                    as="span"
-                                    className={clsx(
-                                        "quill-input-label__label",
-                                        "quill-input-label__label--left",
-                                        (value === '' || focused) && `quill-input-label__label--disabled`,
-                                    )}
-                                >{leftPlaceholder}</Text>
-                            )}
+                            {leftPlaceholder &&
+                                (!label || (label && (value || focused))) &&
+                                (
+                                    <Text
+                                        size={inputSize}
+                                        as="span"
+                                        className={clsx(
+                                            "quill-input-label__label",
+                                            "quill-input-label__label--left",
+                                            `quill-input-label__label--disabled`,
+                                        )}
+                                    >
+                                        {leftPlaceholder}
+                                    </Text>
+                                )}
                             <input
                                 {...rest}
                                 readOnly={readOnly}
@@ -203,17 +207,21 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                     )}
                                 </label>
                             )}
-                            {rightPlaceholder && (!label || label && (value || focused)) && inputSize === "md" && (
-                                <Text
-                                    size="md"
-                                    as="span"
-                                    className={clsx(
-                                        "quill-input-label__label",
-                                        "quill-input-label__label--right",
-                                        (value === '' || focused) && `quill-input-label__label--disabled`,
-                                    )}
-                                >{rightPlaceholder}</Text>
-                            )}
+                            {rightPlaceholder &&
+                                (!label || (label && (value || focused))) &&
+                                (
+                                    <Text
+                                        size={inputSize}
+                                        as="span"
+                                        className={clsx(
+                                            "quill-input-label__label",
+                                            "quill-input-label__label--right",
+                                            `quill-input-label__label--disabled`,
+                                        )}
+                                    >
+                                        {rightPlaceholder}
+                                    </Text>
+                                )}
                         </div>
 
                         {rightIcon && (
