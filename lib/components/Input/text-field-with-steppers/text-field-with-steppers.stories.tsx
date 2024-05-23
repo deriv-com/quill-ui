@@ -51,6 +51,7 @@ const meta = {
         required: false,
         unit: "USD",
         decimals: 2,
+        placeholder: '0',
     },
     argTypes: {
         inputSize: {
