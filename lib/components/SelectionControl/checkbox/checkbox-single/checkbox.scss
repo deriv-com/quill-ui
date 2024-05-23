@@ -8,6 +8,10 @@
         height: var(--size-generic-sm);
         width: var(--size-generic-sm);
         position: relative;
+
+        &--right {
+            order: 3;
+        }
     }
 
     &__box {

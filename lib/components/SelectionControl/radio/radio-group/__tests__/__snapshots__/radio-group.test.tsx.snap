@@ -10,14 +10,13 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
       data-testid="dt_quill_radio_button"
     >
       <input
-        checked=""
         class="quill-radio-button__input"
         name="test"
         type="radio"
         value="option1"
       />
       <span
-        class="quill-radio-button__icon"
+        class="quill-radio-button__icon quill-radio-button__icon--left"
       >
         <svg
           data-testid="dt_unchecked_icon_option1_false"
@@ -51,7 +50,7 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
         value="option2"
       />
       <span
-        class="quill-radio-button__icon"
+        class="quill-radio-button__icon quill-radio-button__icon--left"
       >
         <svg
           data-testid="dt_unchecked_icon_option2_false"
@@ -79,13 +78,14 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
       data-testid="dt_quill_radio_button"
     >
       <input
+        checked=""
         class="quill-radio-button__input"
         name="test"
         type="radio"
         value="option3"
       />
       <span
-        class="quill-radio-button__icon"
+        class="quill-radio-button__icon quill-radio-button__icon--left"
       >
         <svg
           data-testid="dt_checked_icon_option3_false"
@@ -128,7 +128,7 @@ exports[`RadioGroup component renders radio buttons with correct labels 1`] = `
         value="option1"
       />
       <span
-        class="quill-radio-button__icon"
+        class="quill-radio-button__icon quill-radio-button__icon--left"
       >
         <svg
           data-testid="dt_checked_icon_option1_false"
@@ -161,7 +161,7 @@ exports[`RadioGroup component renders radio buttons with correct labels 1`] = `
         value="option2"
       />
       <span
-        class="quill-radio-button__icon"
+        class="quill-radio-button__icon quill-radio-button__icon--left"
       >
         <svg
           data-testid="dt_unchecked_icon_option2_false"
@@ -195,7 +195,7 @@ exports[`RadioGroup component renders radio buttons with correct labels 1`] = `
         value="option3"
       />
       <span
-        class="quill-radio-button__icon"
+        class="quill-radio-button__icon quill-radio-button__icon--left"
       >
         <svg
           data-testid="dt_unchecked_icon_option3_false"
@@ -239,7 +239,7 @@ exports[`RadioGroup component should not call onToggle when a disabled radio but
         value="option1"
       />
       <span
-        class="quill-radio-button__icon"
+        class="quill-radio-button__icon quill-radio-button__icon--left"
       >
         <svg
           data-testid="dt_checked_icon_option1_false"
@@ -273,7 +273,7 @@ exports[`RadioGroup component should not call onToggle when a disabled radio but
         value="option2"
       />
       <span
-        class="quill-radio-button__icon quill-radio-button__icon--disabled"
+        class="quill-radio-button__icon quill-radio-button__icon--disabled quill-radio-button__icon--left"
       >
         <svg
           data-testid="dt_unchecked_icon_option2_true"
@@ -307,7 +307,7 @@ exports[`RadioGroup component should not call onToggle when a disabled radio but
         value="option3"
       />
       <span
-        class="quill-radio-button__icon"
+        class="quill-radio-button__icon quill-radio-button__icon--left"
       >
         <svg
           data-testid="dt_unchecked_icon_option3_false"

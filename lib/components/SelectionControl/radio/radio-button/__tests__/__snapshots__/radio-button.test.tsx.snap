@@ -14,7 +14,7 @@ exports[`RadioButton component should be checked by default if defaultChecked is
       value="option1"
     />
     <span
-      class="quill-radio-button__icon"
+      class="quill-radio-button__icon quill-radio-button__icon--left"
       id="test-id"
     >
       <svg
@@ -54,7 +54,7 @@ exports[`RadioButton component should be disabled if disabled is true 1`] = `
       value="option3"
     />
     <span
-      class="quill-radio-button__icon quill-radio-button__icon--disabled"
+      class="quill-radio-button__icon quill-radio-button__icon--disabled quill-radio-button__icon--left"
       id="test-id"
     >
       <svg
@@ -94,7 +94,7 @@ exports[`RadioButton component should not be checked by default if defaultChecke
       value="option2"
     />
     <span
-      class="quill-radio-button__icon"
+      class="quill-radio-button__icon quill-radio-button__icon--left"
       id="test-id"
     >
       <svg
@@ -133,7 +133,7 @@ exports[`RadioButton component should not render info icon when hasInfo is false
       value=""
     />
     <span
-      class="quill-radio-button__icon"
+      class="quill-radio-button__icon quill-radio-button__icon--left"
     >
       <svg
         data-testid="dt_unchecked_icon_undefined_false"
@@ -173,7 +173,7 @@ exports[`RadioButton component should not trigger click event on input when info
       value="option4"
     />
     <span
-      class="quill-radio-button__icon quill-radio-button__icon--disabled"
+      class="quill-radio-button__icon quill-radio-button__icon--disabled quill-radio-button__icon--left"
       id="test-id"
     >
       <svg
@@ -212,7 +212,7 @@ exports[`RadioButton component should render correctly with default props 1`] = 
       value=""
     />
     <span
-      class="quill-radio-button__icon"
+      class="quill-radio-button__icon quill-radio-button__icon--left"
     >
       <svg
         data-testid="dt_unchecked_icon_undefined_false"
@@ -250,7 +250,7 @@ exports[`RadioButton component should render info icon when hasInfo is true 1`] 
       value=""
     />
     <span
-      class="quill-radio-button__icon"
+      class="quill-radio-button__icon quill-radio-button__icon--left"
     >
       <svg
         data-testid="dt_unchecked_icon_undefined_false"
@@ -312,7 +312,7 @@ exports[`RadioButton component should render with a custom className 1`] = `
       value=""
     />
     <span
-      class="quill-radio-button__icon"
+      class="quill-radio-button__icon quill-radio-button__icon--left"
     >
       <svg
         data-testid="dt_unchecked_icon_undefined_false"

@@ -38,15 +38,13 @@
         margin-right: auto;
         display: flex;
         max-height: 90vh;
-        min-width: 320px;
+        width: 100%;
         max-width: 800px;
         flex-direction: column;
         overflow-y: auto;
         border-top-left-radius: var(--semantic-borderRadius-lg);
         border-top-right-radius: var(--semantic-borderRadius-lg);
         background-color: var(--component-actionSheet-bg);
-        padding-left: var(--semantic-spacing-general-lg);
-        padding-right: var(--semantic-spacing-general-lg);
         transition-property: all;
         transition-timing-function: var(--motion-easing-inandout);
         transition-duration: var(--core-motion-duration-200);

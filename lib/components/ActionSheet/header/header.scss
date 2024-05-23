@@ -2,10 +2,6 @@
 
 .quill-action-sheet {
     &--header {
-        left: var(--semantic-spacing-general-none);
-        padding-top: var(--semantic-spacing-general-md);
-        padding-bottom: var(--semantic-spacing-general-md);
-        gap: var(--semantic-spacing-gap-lg);
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -23,35 +19,53 @@
 
     &--title {
         display: flex;
-        justify-content: space-between;
-        gap: var(--semantic-spacing-gap-md);
+        justify-content: center;
+        margin: var(--component-actionSheet-spacing-padding-sm)
+            var(--component-actionSheet-spacing-padding-md);
+        gap: var(--component-actionSheet-spacing-gap-md);
         align-items: center;
-        flex-direction: row-reverse;
+        position: relative;
+        height: var(--core-size-2400);
 
         @include breakpoint("lg") {
-            flex-direction: row;
-        }
-
-        & > h5 {
-            flex: 1;
+            margin: var(--component-actionSheet-spacing-padding-md)
+                var(--component-actionSheet-spacing-padding-lg);
         }
 
         &--icon {
             display: flex;
-            width: var(--core-size-2400);
-            height: var(--core-size-2400);
+            width: var(--component-button-height-lg);
+            height: var(--component-button-height-lg);
             justify-content: center;
             align-items: center;
+            border-radius: var(--component-button-border-radius-lg);
             fill: var(--component-textIcon-normal-prominent);
+            position: absolute;
+            top: 0;
+            left: 0;
 
             &--close {
-                visibility: hidden;
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: unset;
+                display: none;
                 cursor: pointer;
 
                 @include breakpoint("lg") {
-                    visibility: visible;
+                    display: flex;
                 }
             }
+        }
+    }
+
+    &--description {
+        padding-inline: var(--component-actionSheet-spacing-padding-md);
+        padding-bottom: var(--component-actionSheet-spacing-padding-sm);
+
+        @include breakpoint("lg") {
+            padding-inline: var(--component-actionSheet-spacing-padding-lg);
+            padding-bottom: var(--component-actionSheet-spacing-padding-md);
         }
     }
 }

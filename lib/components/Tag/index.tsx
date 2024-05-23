@@ -5,7 +5,7 @@ import { CaptionText, Text } from "@components/Typography";
 import "./tag.scss";
 import TagIcon from "./tagIcon";
 
-const Tag = forwardRef<HTMLDivElement, BaseTagProps>(
+export const Tag = forwardRef<HTMLDivElement, BaseTagProps>(
     (
         {
             label,

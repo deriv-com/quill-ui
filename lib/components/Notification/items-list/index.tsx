@@ -12,7 +12,7 @@ export interface NotificationItemsListProps {
     onMarkAsRead?: (itemId: string) => void;
 }
 
-const NotificationItemsList = ({
+export const NotificationItemsList = ({
     items = [],
     className,
     isMobile,

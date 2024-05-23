@@ -22,7 +22,7 @@ exports[`Snackbar calls removeSnackbar after a certain duration when Snackbar is
         data-state=""
       >
         <span
-          class="button-label"
+          class="quill-button-label"
         >
           <p
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
@@ -37,7 +37,7 @@ exports[`Snackbar calls removeSnackbar after a certain duration when Snackbar is
         data-testid="close-button"
       >
         <span
-          class="button-label"
+          class="quill-button-label"
         >
           <p
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
@@ -94,7 +94,7 @@ exports[`Snackbar calls removeSnackbar when action button is clicked 1`] = `
         data-state=""
       >
         <span
-          class="button-label"
+          class="quill-button-label"
         >
           <p
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
@@ -109,7 +109,7 @@ exports[`Snackbar calls removeSnackbar when action button is clicked 1`] = `
         data-testid="close-button"
       >
         <span
-          class="button-label"
+          class="quill-button-label"
         >
           <p
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
@@ -166,7 +166,7 @@ exports[`Snackbar calls removeSnackbar when close button is clicked 1`] = `
         data-state=""
       >
         <span
-          class="button-label"
+          class="quill-button-label"
         >
           <p
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
@@ -181,7 +181,7 @@ exports[`Snackbar calls removeSnackbar when close button is clicked 1`] = `
         data-testid="close-button"
       >
         <span
-          class="button-label"
+          class="quill-button-label"
         >
           <p
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
@@ -246,7 +246,7 @@ exports[`Snackbar renders correctly with custom icon 1`] = `
         data-state=""
       >
         <span
-          class="button-label"
+          class="quill-button-label"
         >
           <p
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
@@ -261,7 +261,7 @@ exports[`Snackbar renders correctly with custom icon 1`] = `
         data-testid="close-button"
       >
         <span
-          class="button-label"
+          class="quill-button-label"
         >
           <p
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
@@ -319,7 +319,7 @@ exports[`Snackbar renders correctly without action button 1`] = `
         data-testid="close-button"
       >
         <span
-          class="button-label"
+          class="quill-button-label"
         >
           <p
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
@@ -376,7 +376,7 @@ exports[`Snackbar renders correctly without close button 1`] = `
         data-state=""
       >
         <span
-          class="button-label"
+          class="quill-button-label"
         >
           <p
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
@@ -412,7 +412,7 @@ exports[`Snackbar renders with default props 1`] = `
         data-state=""
       >
         <span
-          class="button-label"
+          class="quill-button-label"
         >
           <p
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
@@ -427,7 +427,7 @@ exports[`Snackbar renders with default props 1`] = `
         data-testid="close-button"
       >
         <span
-          class="button-label"
+          class="quill-button-label"
         >
           <p
             class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"

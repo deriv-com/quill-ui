@@ -9,6 +9,7 @@ const meta = {
     tags: ["autodocs"],
     args: {
         checked: false,
+        checkboxPosition: "left",
         disabled: false,
         indeterminate: false,
         showInfoIcon: false,
@@ -24,6 +25,13 @@ const meta = {
             description: "Flag for setting initial state",
             options: ["true", "false"],
             control: { type: "boolean" },
+        },
+        checkboxPosition: {
+            table: { type: { summary: "left | right | undefined" } },
+            description:
+                "String for determining checkbox position. Default value - 'left'",
+            options: ["left", "right"],
+            control: { type: "radio" },
         },
         disabled: {
             table: { type: { summary: "boolean | undefined" } },
@@ -158,6 +166,11 @@ export const CheckboxMd: Story = {
     args: {
         size: "md",
         label: "Selection control checkbox md size",
+    },
+};
+export const CheckboxWithRightPosition: Story = {
+    args: {
+        checkboxPosition: "right",
     },
 };
 

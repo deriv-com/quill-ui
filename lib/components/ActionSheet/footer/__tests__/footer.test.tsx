@@ -73,4 +73,41 @@ describe("<ActionSheet.Footer/>", () => {
             expect(footer).toMatchSnapshot();
         });
     });
+    it("should not close the component if user clicked on primary button and shouldCloseOnPrimaryButtonClick === false", async () => {
+        const onActionButton = jest.fn();
+        render(
+            <ActionSheet.Footer
+                primaryAction={{
+                    content: "Primary action",
+                    onAction: onActionButton,
+                }}
+                shouldCloseOnPrimaryButtonClick={false}
+            />,
+        );
+        const primaryBtn = screen.getByRole("button", {
+            name: "Primary action",
+        });
+        expect(primaryBtn).toBeInTheDocument();
+        await userEvent.click(primaryBtn);
+        expect(onActionButton).toHaveBeenCalled();
+        expect(primaryBtn).toBeInTheDocument();
+    });
+    it("should disable button and do not call a function onAction if isPrimaryButtonDisabled === true", async () => {
+        const onActionButton = jest.fn();
+        render(
+            <ActionSheet.Footer
+                primaryAction={{
+                    content: "Primary action",
+                    onAction: onActionButton,
+                }}
+                isPrimaryButtonDisabled
+            />,
+        );
+        const primaryBtn = screen.getByRole("button", {
+            name: "Primary action",
+        });
+        await userEvent.click(primaryBtn);
+        expect(onActionButton).not.toHaveBeenCalled();
+        expect(primaryBtn).toBeDisabled();
+    });
 });

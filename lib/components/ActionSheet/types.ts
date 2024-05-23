@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef } from "react";
-import { ExcludeAllNull } from "../../types";
+import { ExcludeAllNull, TLeftOrRight } from "../../types";
 
 interface OpenType {
     isOpen?: boolean | undefined;
@@ -7,7 +7,7 @@ interface OpenType {
 }
 
 interface actionSheetRootCVA {
-    position?: "left" | "right";
+    position?: TLeftOrRight;
     show?: boolean;
 }
 
@@ -36,6 +36,10 @@ export interface FooterProps
         actionSheetFooterCVA {
     primaryAction?: ActionType;
     secondaryAction?: ActionType;
+    shouldCloseOnPrimaryButtonClick?: boolean;
+    shouldCloseOnSecondaryButtonClick?: boolean;
+    isPrimaryButtonDisabled?: boolean;
+    isSecondaryButtonDisabled?: boolean;
 }
 
 export type FooterAlignment = FooterProps["alignment"];

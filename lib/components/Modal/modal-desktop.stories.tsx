@@ -27,6 +27,7 @@ const meta = {
     args: {
         showHandleBar: true,
         showSecondaryButton: true,
+        disableCloseOnOverlay: false,
     },
     argTypes: {
         children: {
@@ -41,6 +42,7 @@ const meta = {
             description: "Controls the visibility of the modal",
             control: { type: "boolean" },
         },
+
         className: {
             table: { type: { summary: "string | undefined" } },
             description: "ClassName for external tag of the component.",
@@ -98,45 +100,63 @@ type Story = StoryObj<typeof ModalExample>;
 export const Default: Story = {
     args: {
         textContent: shortTextContent,
+        showCrossIcon: true,
+    },
+};
+export const ModalOverlayWithoutCrossIcon: Story = {
+    args: {
+        textContent: shortTextContent,
+    },
+};
+export const ModalBottomWithoutButtons: Story = {
+    args: {
+        hasFooter: false,
     },
 };
 export const ModalOverlayWithoutSecondaryButton: Story = {
     args: {
         showSecondaryButton: false,
         textContent: shortTextContent,
+        showCrossIcon: true,
     },
 };
 export const ClosingModalOverlayOnPrimaryButtonClick: Story = {
     args: {
         shouldCloseOnPrimaryButtonClick: true,
         textContent: mediumTextContent,
+        showCrossIcon: true,
     },
 };
 export const ModalOverlayWithLongContent: Story = {
     args: {
         textContent: longTextContent,
+        showCrossIcon: true,
     },
 };
 
 export const ModalOverlayWithImage: Story = {
     args: {
         image: ImageComponent,
+        showCrossIcon: true,
     },
 };
 export const ModalOverlayWithImageAndLongContent: Story = {
     args: {
         image: ImageComponent,
         textContent: longTextContent,
+        showCrossIcon: true,
     },
 };
 export const ModalOverlayWithImageSrc: Story = {
     args: {
         src: imageSRC,
         textContent: mediumTextContent,
+        showCrossIcon: true,
     },
 };
 export const ModalOverlayWithIcon: Story = {
     args: {
+        showCrossIcon: true,
         image: (
             <StandaloneTrashRegularIcon
                 fill="var(--core-color-solid-red-900)"
@@ -150,6 +170,7 @@ export const ModalOverlayWithIcon: Story = {
 };
 export const ModalOverlayWithIconAndLongContent: Story = {
     args: {
+        showCrossIcon: true,
         image: (
             <StandaloneTrashRegularIcon
                 fill="var(--core-color-solid-red-900)"

@@ -1,22 +1,23 @@
 import React from "react";
 import RadioGroup from "./index";
 import { fn } from "@storybook/test";
-import { TMediumSizes } from "@types";
-
+import { TMediumSizes, TLeftOrRight } from "@types";
 
 interface RadioGroupProps {
     disabledOption?: boolean;
     hiddenOption?: boolean;
     name?: string;
     onToggle?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    selected?: string;
+    selected?: string | number;
     shouldWrapItems?: boolean;
     size?: TMediumSizes;
+    radioButtonPosition?: TLeftOrRight;
 }
 
 const RadioGroupItem = ({
     value = "",
     label = "",
+    radioButtonPosition = "left" as TLeftOrRight,
     disabled = false,
     hidden = false,
 }) => (
@@ -25,21 +26,28 @@ const RadioGroupItem = ({
         label={label}
         disabled={disabled}
         hidden={hidden}
+        radioButtonPosition={radioButtonPosition}
     />
 );
 
 const Template: React.FC<RadioGroupProps> = (args) => (
     <RadioGroup {...args}>
-        <RadioGroupItem value="option1" label="Option 1" />
+        <RadioGroupItem
+            value="option1"
+            label="Option 1"
+            radioButtonPosition={args.radioButtonPosition}
+        />
         <RadioGroupItem
             value="option2"
             label="Option 2"
             disabled={args.disabledOption}
+            radioButtonPosition={args.radioButtonPosition}
         />
         <RadioGroupItem
             value="option3"
             label="Option 3"
             hidden={args.hiddenOption}
+            radioButtonPosition={args.radioButtonPosition}
         />
     </RadioGroup>
 );
@@ -86,6 +94,12 @@ const RadioGroupMeta = {
             description: "Sets the radio group as a required field.",
             control: { type: "boolean" },
         },
+        radioButtonPosition: {
+            description:
+                "Controls left or right position of the radio button. Default value is 'left'.",
+            control: { type: "select" },
+            options: ["left", "right"],
+        },
     },
 };
 
@@ -113,4 +127,8 @@ export const CustomOnToggleCallback = Template.bind(this, {
 
 export const BasicRadioGroupSmall = Template.bind(this, {
     size: "sm",
+});
+
+export const RadioGroupRight = Template.bind(this, {
+    radioButtonPosition: "right",
 });

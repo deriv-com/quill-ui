@@ -15,22 +15,22 @@ html.dark {
     position: relative;
     white-space: nowrap;
     z-index: 2;
-    border-bottom: var(--core-borderRadius-100) solid transparent;
+    border-bottom: var(--component-tab-border-width-item) solid transparent;
 
     &:hover:not(:disabled) {
-        border-bottom: var(--core-borderRadius-100) solid var(--border-bottom-color-hover);
+        border-bottom: var(--component-tab-border-width-item) solid var(--border-bottom-color-hover);
     }
 
     &:active:not(:disabled) {
-        border-bottom: var(--core-borderRadius-100) solid var(--border-bottom-color-active);
+        border-bottom: var(--component-tab-border-width-item) solid var(--border-bottom-color-active);
     }
 
     &[aria-selected="true"]:not(:disabled):not(:active):not(hover) {
-        border-bottom: var(--core-borderRadius-100) solid var(--component-tab-icon-selected);
+        border-bottom: var(--component-tab-border-width-item) solid var(--component-tab-icon-selected);
     }
 
     &:disabled {
-        opacity: var(--core-opacity-600);
+        opacity: var(--core-opacity-300);
         cursor: auto;
     }
 
@@ -38,19 +38,19 @@ html.dark {
         &__fill {
             &-size {
                 &-sm {
-                    padding: var(--core-spacing-200) var(--core-spacing-400);
+                    padding: var(--semantic-spacing-general-xs) var( --component-tab-spacing-padding-sm);
                     min-width: 106px;
                     text-wrap: nowrap;
                     justify-content: center;
-                    gap: var(--core-spacing-200);
+                    gap: var(--semantic-spacing-general-xs);
                 }
 
                 &-md {
                     min-width: 106px;
                     text-wrap: nowrap;
-                    padding: var(--core-spacing-400) var(--core-spacing-800);
+                    padding: var(--component-tab-spacing-padding-sm) var(--component-tab-spacing-padding-md);
                     justify-content: center;
-                    gap: var(--core-spacing-400);
+                    gap: var(--component-tab-spacing-padding-sm);
                 }
             }
         }
@@ -58,17 +58,17 @@ html.dark {
         &__hug {
             &-size {
                 &-sm {
-                    padding: var(--core-spacing-200) var(--core-spacing-400);
+                    padding: var(--semantic-spacing-general-xs) var(--component-tab-spacing-padding-sm);
                     justify-content: center;
                     text-wrap: nowrap;
-                    gap: var(--core-spacing-200);
+                    gap: var(--semantic-spacing-general-xs);
                 }
 
                 &-md {
-                    padding: var(--core-spacing-400) var(--core-spacing-800);
+                    padding: var(--component-tab-spacing-padding-sm) var(--component-tab-spacing-padding-md);
                     justify-content: center;
                     text-wrap: nowrap;
-                    gap: var(--core-spacing-400);
+                    gap: var(--component-tab-spacing-padding-sm);
                 }
             }
         }

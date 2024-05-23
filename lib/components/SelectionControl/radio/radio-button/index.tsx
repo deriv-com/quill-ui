@@ -1,4 +1,11 @@
-import React from "react";
+import {
+    ComponentProps,
+    useState,
+    useEffect,
+    useRef,
+    KeyboardEvent,
+    PropsWithChildren,
+} from "react";
 import clsx from "clsx";
 import {
     LabelPairedCircleInfoMdRegularIcon,
@@ -9,24 +16,20 @@ import {
 import { Text } from "@components/Typography";
 import { KEY } from "@utils/common-utils";
 import "./radio-button.scss";
-import { TMediumSizes } from "@types";
+import { TMediumSizes, TLeftOrRight } from "@types";
 
-interface IRadio {
+export interface IRadio
+    extends Omit<ComponentProps<"input">, "placeholder" | "size" | "ref"> {
     className?: string;
     classNameInfo?: string;
     classNameLabel?: string;
-    defaultChecked?: boolean;
-    disabled?: boolean;
     hasInfo?: boolean;
-    id?: string;
-    name?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    required?: boolean;
-    value?: string;
     size?: TMediumSizes;
+    radioButtonPosition?: TLeftOrRight;
 }
 
-const RadioButton = ({
+export const RadioButton = ({
     children,
     className,
     classNameInfo,
@@ -38,12 +41,13 @@ const RadioButton = ({
     onChange,
     size = "md",
     value,
+    radioButtonPosition = "left",
     ...otherProps
-}: React.PropsWithChildren<IRadio>) => {
-    const [checked, setChecked] = React.useState(defaultChecked);
-    const inputRef = React.useRef<HTMLInputElement>(null);
+}: PropsWithChildren<IRadio>) => {
+    const [checked, setChecked] = useState(defaultChecked);
+    const inputRef = useRef<HTMLInputElement>(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         setChecked(defaultChecked);
     }, [defaultChecked]);
 
@@ -53,7 +57,7 @@ const RadioButton = ({
         }
     };
 
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLSpanElement>) => {
+    const handleKeyDown = (e: KeyboardEvent<HTMLSpanElement>) => {
         if (!disabled && (e.key === KEY.ENTER || e.key === KEY.SPACE)) {
             handleChange();
         }
@@ -100,7 +104,7 @@ const RadioButton = ({
             <input
                 className="quill-radio-button__input"
                 type="radio"
-                checked={checked}
+                defaultChecked={checked}
                 disabled={disabled}
                 ref={inputRef}
                 value={value}
@@ -108,9 +112,13 @@ const RadioButton = ({
             />
 
             <span
-                className={clsx("quill-radio-button__icon", {
-                    "quill-radio-button__icon--disabled": disabled,
-                })}
+                className={clsx(
+                    "quill-radio-button__icon",
+                    {
+                        "quill-radio-button__icon--disabled": disabled,
+                    },
+                    `quill-radio-button__icon--${radioButtonPosition}`,
+                )}
                 onClick={handleMouseClick}
                 onKeyDown={handleKeyDown}
                 id={id}

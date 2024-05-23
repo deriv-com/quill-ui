@@ -34,6 +34,16 @@ const meta: Meta = {
                 "If you wish to manage the opening and closing states, transmit the `open` state from your component. Set the initial value to `false` when passing it.",
             control: { type: "boolean" },
         },
+        isPrimaryButtonDisabled: {
+            control: { type: "boolean" },
+            description:
+                "This prop controls if primary button is disabled or not.",
+        },
+        isSecondaryButtonDisabled: {
+            control: { type: "boolean" },
+            description:
+                "This prop controls if secondary button is disabled or not.",
+        },
         show: { table: { disable: true } },
         handleOpen: { table: { disable: true } },
         handleClose: { table: { disable: true } },
@@ -82,6 +92,20 @@ const meta: Meta = {
                 type: "object",
             },
             description: "Same as `primaryAction`",
+        },
+        shouldCloseOnPrimaryButtonClick: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            control: { type: "boolean" },
+            description:
+                "This prop controls if Action Sheet should be closed or not when primary button was clicked. Default value: true",
+        },
+        shouldCloseOnSecondaryButtonClick: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            control: { type: "boolean" },
+            description:
+                "This prop controls if Action Sheet should be closed or not when secondary button was clicked. Default value: true",
         },
         alignment: {
             control: {

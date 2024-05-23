@@ -14,7 +14,7 @@ export interface SegmentedControlSingleChoiceProps
     selectedItemIndex?: number;
 }
 
-const SegmentedControlSingleChoice = ({
+export const SegmentedControlSingleChoice = ({
     className,
     options = [],
     onChange,

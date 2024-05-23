@@ -13,7 +13,7 @@ export interface SwitchToggleProps {
     checked?: boolean;
 }
 
-const ToggleSwitch = ({
+export const ToggleSwitch = ({
     disabled = false,
     onChange,
     className,

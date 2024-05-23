@@ -17,13 +17,16 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     showSecondaryButton?: boolean;
     shouldCloseOnPrimaryButtonClick?: boolean;
     shouldCloseOnSecondaryButtonClick?: boolean;
+    disableCloseOnOverlay?: boolean;
     toggleModal?: (isOpened: boolean) => void;
     portalId?: string;
+    showPrimaryButton?: boolean;
     primaryButtonLabel?: React.ReactNode;
     primaryButtonCallback?: () => void;
     secondaryButtonCallback?: () => void;
     secondaryButtonLabel?: React.ReactNode;
     isMobile?: boolean;
+    hasFooter?: boolean;
 }
 
 const swipeConfig = {
@@ -40,11 +43,15 @@ export const Modal = ({
     className,
     children,
     showHandleBar,
+    showCrossIcon,
+    showPrimaryButton = true,
     showSecondaryButton = false,
     shouldCloseOnPrimaryButtonClick = false,
     shouldCloseOnSecondaryButtonClick = false,
     toggleModal,
+    disableCloseOnOverlay = false,
     isMobile,
+    hasFooter = true,
     portalId,
     primaryButtonLabel,
     primaryButtonCallback,
@@ -54,7 +61,7 @@ export const Modal = ({
 }: React.PropsWithChildren<ModalProps>) => {
     const [isVisible, setIsVisible] = useState(isOpened);
     const [isExpanded, setIsExpanded] = useState(false);
-    const [isSwiping, setIsSwiping] = useState(false);
+    const [isSwiping, setIsSwiping] = useState(disableCloseOnOverlay);
 
     const animationTimerRef = useRef<ReturnType<typeof setTimeout>>();
     const swipingTimerRef = useRef<ReturnType<typeof setTimeout>>();
@@ -136,44 +143,48 @@ export const Modal = ({
                 onClick={(e) => e.stopPropagation()}
                 ref={scrollableContainerRef}
             >
-                {isMobile ? (
-                    showHandleBar && (
-                        <div
-                            className="quill-modal__handle-bar"
-                            data-testid="dt_handlebar"
-                            {...swipeHandlers}
-                        />
-                    )
-                ) : (
-                    <button
-                        className="quill-modal__close-icon"
-                        onClick={toggleHandler}
-                    >
-                        <LabelPairedXmarkMdBoldIcon fill="var(--component-textIcon-normal-prominent)" />
-                    </button>
-                )}
+                {isMobile
+                    ? showHandleBar && (
+                          <div
+                              className="quill-modal__handle-bar"
+                              data-testid="dt_handlebar"
+                              {...swipeHandlers}
+                          />
+                      )
+                    : showCrossIcon && (
+                          <button
+                              className="quill-modal__close-icon"
+                              onClick={toggleHandler}
+                          >
+                              <LabelPairedXmarkMdBoldIcon fill="var(--component-textIcon-normal-prominent)" />
+                          </button>
+                      )}
 
                 <div className="quill-modal__content-wrapper">{children}</div>
-                <div className="quill-modal__button-wrapper">
-                    <Button
-                        color="black"
-                        fullWidth
-                        size="lg"
-                        label={primaryButtonLabel}
-                        onClick={primaryButtonFunctionHandler}
-                    />
-                    {showSecondaryButton && (
-                        <Button
-                            color="black"
-                            fullWidth
-                            size="lg"
-                            label={secondaryButtonLabel}
-                            variant="secondary"
-                            className="quill-modal__button"
-                            onClick={secondaryButtonFunctionHandler}
-                        />
-                    )}
-                </div>
+                {hasFooter && (
+                    <div className="quill-modal__button-wrapper">
+                        {showPrimaryButton && (
+                            <Button
+                                color="black"
+                                fullWidth
+                                size="lg"
+                                label={primaryButtonLabel}
+                                onClick={primaryButtonFunctionHandler}
+                            />
+                        )}
+                        {showSecondaryButton && (
+                            <Button
+                                color="black"
+                                fullWidth
+                                size="lg"
+                                label={secondaryButtonLabel}
+                                variant="secondary"
+                                className="quill-modal__button"
+                                onClick={secondaryButtonFunctionHandler}
+                            />
+                        )}
+                    </div>
+                )}
             </div>
         </div>,
         modalRoot,
