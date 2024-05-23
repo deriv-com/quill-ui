@@ -62,14 +62,14 @@
         transition-timing-function: var(--core-motion-ease-400);
         transition-duration: var(--core-motion-duration-200);
         transform: rotate(0);
-    
+
         &[data-state="open"] {
             transform: rotate(180deg);
         }
     }
     &__icon {
-            margin: auto;
-            fill: var(--component-textIcon-normal-prominent);
+        margin: auto;
+        fill: var(--component-textIcon-normal-prominent);
     }
 
     &-label__wrapper {
@@ -77,7 +77,6 @@
         flex-direction: column;
         position: relative;
         flex-grow: 1;
-        z-index: -1;
 
         &:focus-within {
             &:has(label) {
