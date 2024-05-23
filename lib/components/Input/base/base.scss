@@ -109,10 +109,10 @@
     }
 
     &-label__label {
-        margin: auto 4px auto;
+        margin: auto var(--core-spacing-200) auto;
 
         &--right {
-            margin-left: 4px;
+            margin-left: var(--core-spacing-200);
         }
         &--disabled {
             opacity: var(--core-opacity-600);
