@@ -100,14 +100,14 @@
     &__banners--mobile {
         position: absolute;
         width: 360px;
-        bottom: var(--semantic-spacing-general-sm);
+        inset-block-end: var(--semantic-spacing-general-sm);
         inset-inline-start: var(--semantic-spacing-general-sm);
         z-index: 6;
 
         &--mobile {
             width: calc(100% - var(--semantic-spacing-general-md));
-            top: var(--semantic-spacing-general-sm);
-            bottom: unset;
+            inset-block-start: var(--semantic-spacing-general-sm);
+            inset-block-end: unset;
             width: calc(100vw - var(--size-generic-xs));
         }
     }
