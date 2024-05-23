@@ -148,11 +148,6 @@ DisabledTextField.args = {
     variant: variants.outline,
 };
 
-export const TextFieldWithLabel = Template.bind({}) as Story;
-TextFieldWithLabel.args = {
-    label,
-};
-
 export const SuccessStatusIconTextField = Template.bind({}) as Story;
 SuccessStatusIconTextField.args = {
     variant: variants.outline,

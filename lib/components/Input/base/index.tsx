@@ -14,6 +14,7 @@ import {
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons/Standalone";
 import { Text } from "@components/Typography";
+import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
