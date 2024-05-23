@@ -1,15 +1,16 @@
 .quill-input-steppers {
     &-decrement {
-        padding: 0;
+        padding: var(--core-spacing-400);
         cursor: pointer;
         display: flex;
         margin: auto;
     }
     &-increment {
-        padding-left: var(--core-spacing-400);
+        padding: var(--core-spacing-400);
         cursor: pointer;
         display: flex;
         margin: auto;
+        margin-left: var(--core-spacing-400);
     }
     &--disabled {
         opacity: var(--core-opacity-600);

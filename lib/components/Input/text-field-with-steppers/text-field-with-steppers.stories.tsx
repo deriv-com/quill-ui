@@ -50,7 +50,7 @@ const meta = {
         textAlignment: "left",
         fieldMarker: false,
         required: false,
-        currency: "USD",
+        unit: "USD",
         decimals: 2,
     },
     argTypes: {
@@ -97,7 +97,7 @@ const meta = {
             },
             options: ["left", "center"],
         },
-        currencyPlacement: {
+        unitPlacement: {
             control: {
                 type: "radio",
             },
@@ -134,7 +134,6 @@ export const SuccessTextField = Template.bind({}) as Story;
 SuccessTextField.args = {
     variant: variants.outline,
     status: status.success,
-    // currency: 'USD',
 };
 
 export const ErrorTextField = Template.bind({}) as Story;
