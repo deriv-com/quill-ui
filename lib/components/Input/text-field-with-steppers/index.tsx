@@ -9,14 +9,14 @@ import {
 import "./text-field-with-steppers.scss";
 
 export interface TextFieldWithSteppersProps extends ComponentProps<typeof Input> {
-    currency?: string;
+    unit?: string;
     decimals?: number;
-    currencyPlacement?: 'left' | 'right';
+    unitPlacement?: 'left' | 'right';
 }
 
 export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithSteppersProps>(
     (props, ref) => {
-        const { value, onChange, disabled, placeholder = '0', currency = '', decimals = 2, currencyPlacement = 'left' } = props;
+        const { value, onChange, disabled, textAlignment, placeholder = 0, unit = '', decimals = 2, unitPlacement = 'left' } = props;
 
         const getFormatValue = (value: number) => {
             let formatValue = value;
@@ -28,9 +28,9 @@ export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithS
             return formatValue;
         }
 
-        const steppersSection = (
+        const steppersSectionRight = (
             <>
-                <button className={clsx("quill-input-steppers-decrement", disabled && 'quill-input-steppers--disabled')}
+                {textAlignment !== 'center' && (<button className={clsx("quill-input-steppers-decrement", disabled && 'quill-input-steppers--disabled')}
                     onClick={() => {
                         if (!disabled) {
                             onChange?.({
@@ -39,7 +39,7 @@ export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithS
                         }
                     }}>
                     <LabelPairedMinusSmRegularIcon />
-                </button>
+                </button>)}
                 <button className={clsx("quill-input-steppers-increment", disabled && 'quill-input-steppers--disabled')}
                     onClick={() => {
                         if (!disabled) {
@@ -53,17 +53,33 @@ export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithS
             </>
         );
 
+        const steppersSectionLeft = (
+            <>
+                <button className={clsx("quill-input-steppers-decrement", disabled && 'quill-input-steppers--disabled')}
+                    onClick={() => {
+                        if (!disabled) {
+                            onChange?.({
+                                target: { value: getFormatValue(Number(value) - 1) },
+                            } as unknown as React.ChangeEvent<HTMLInputElement>);
+                        }
+                    }}>
+                    <LabelPairedMinusSmRegularIcon />
+                </button>
+            </>
+        );
+
         return (
             <div>
                 <Input
                     {...props}
                     ref={ref}
-                    triggerActionIcon={steppersSection}
+                    triggerActionIcon={steppersSectionRight}
+                    leftIcon={textAlignment === 'center' && steppersSectionLeft}
                     type="number"
                     value={`${getFormatValue(value as number)}`}
-                    placeholder={placeholder}
-                    leftPlaceholder={currencyPlacement === "left" ? currency : undefined}
-                    rightPlaceholder={currencyPlacement === "right" ? currency : undefined}
+                    placeholder={placeholder.toLocaleString("en", { minimumFractionDigits: decimals })}
+                    leftPlaceholder={unitPlacement === "left" ? unit : undefined}
+                    rightPlaceholder={unitPlacement === "right" ? unit : undefined}
                 />
             </div>
         );
