@@ -37,7 +37,12 @@
             button:enabled:focus:is(.react-calendar__navigation__label),
             button:disabled:is(.react-calendar__navigation__label) {
                 span {
-                    color: var(--component-textIcon-normal-prominent);
+                    color: var(-component-dropdownItem-label-color-selected);
+                }
+            }
+            button:enabled:active:is(.react-calendar__navigation__label) {
+                span {
+                    color: var(-component-dropdownItem-label-color-selected);
                     font-weight: var(
                         --semantic-typography-body-sm-bold-default-fontWeight
                     );
@@ -54,9 +59,6 @@
                 button:enabled:hover:is(.react-calendar__navigation__label) {
                     span {
                         color: var(--component-textIcon-normal-prominent);
-                        font-weight: var(
-                            --semantic-typography-body-sm-bold-default-fontWeight
-                        );
                     }
                 }
             }
