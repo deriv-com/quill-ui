@@ -18,6 +18,7 @@ const meta = {
     },
     args: {
         size: "md",
+        color: "black",
     },
     argTypes: {
         size: {
@@ -49,6 +50,23 @@ const placeholder = {
     ),
     xl: (
         <LabelPairedPlaceholderXlRegularIcon fill="var(--component-textIcon-normal-prominent)" />
+    ),
+};
+const placeholderWhiteIcon = {
+    caption: (
+        <LabelPairedPlaceholderCaptionRegularIcon fill="var(--component-textIcon-inverse-prominent)" />
+    ),
+    sm: (
+        <LabelPairedPlaceholderSmRegularIcon fill="var(--component-textIcon-inverse-prominent)" />
+    ),
+    md: (
+        <LabelPairedPlaceholderMdRegularIcon fill="var(--component-textIcon-inverse-prominent)" />
+    ),
+    lg: (
+        <LabelPairedPlaceholderLgRegularIcon fill="var(--component-textIcon-inverse-prominent)" />
+    ),
+    xl: (
+        <LabelPairedPlaceholderXlRegularIcon fill="var(--component-textIcon-inverse-prominent)" />
     ),
 };
 export const DefaultBlackLink: Story = {
@@ -84,10 +102,11 @@ export const LinkWithIconWhite = (args: ComponentProps<typeof Link>) => (
         {...args}
         className="link-stories"
         children="link"
-        size="md"
         color="white"
         icon={
-            <LabelPairedPlaceholderMdRegularIcon fill="var(--component-textIcon-inverse-prominent)" />
+            placeholderWhiteIcon[
+                args?.size as keyof typeof placeholderWhiteIcon
+            ]
         }
     />
 );
