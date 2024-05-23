@@ -20,10 +20,42 @@
             margin-bottom: var(--semantic-spacing-general-md);
 
             button:enabled:hover,
-            button:enabled:focus {
+            button:enabled:focus,
+            button:disabled {
+                background-color: unset;
+            }
+
+            button:enabled:focus:is(.react-calendar__navigation__arrow),
+            button:enabled:active:is(.react-calendar__navigation__arrow) {
+                border-radius: var(--core-borderRadius-600);
                 background-color: var(
                     --semantic-color-monochrome-surface-normal-low
                 );
+            }
+
+            button:enabled:focus:is(.react-calendar__navigation__label),
+            button:disabled:is(.react-calendar__navigation__label),
+            button:enabled:active:is(.react-calendar__navigation__label) {
+                span {
+                    color: var(-component-dropdownItem-label-color-selected);
+                    font-weight: var(
+                        --semantic-typography-body-sm-bold-default-fontWeight
+                    );
+                }
+            }
+
+            @media (hover: hover) {
+                button:enabled:hover:is(.react-calendar__navigation__arrow) {
+                    border-radius: var(--core-borderRadius-600);
+                    background-color: var(
+                        --semantic-color-monochrome-surface-normal-low
+                    );
+                }
+                button:enabled:hover:is(.react-calendar__navigation__label) {
+                    span {
+                        color: var(--component-textIcon-normal-prominent);
+                    }
+                }
             }
 
             &__arrow.react-calendar__navigation__prev-button,
