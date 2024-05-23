@@ -31,7 +31,6 @@ const status: Record<string, Status> = {
     error: "error",
 };
 
-const label = "label";
 const message = "Status message goes here";
 
 const meta = {
