@@ -1,10 +1,9 @@
 import { forwardRef, useEffect, useState } from "react";
 import Input, { InputProps } from "@components/Input/base";
-import { Button, TButtonVariant } from "@components/Button";
+import { Button } from "@components/Button";
 
 export interface InputGroupButtonProps
     extends Omit<InputProps, "textAlignment"> {
-    buttonVariant?: TButtonVariant;
     buttonIconPosition?: "start" | "end";
     buttonLabel: React.ReactNode;
     buttonCallback?: () => void;
@@ -17,7 +16,6 @@ export const InputGroupButton = forwardRef<
         {
             status = "neutral",
             buttonPosition = "right",
-            buttonVariant = "primary",
             inputSize = "md",
             value,
             buttonIconPosition,
@@ -42,7 +40,7 @@ export const InputGroupButton = forwardRef<
                 disabled={isEmpty || disabled}
                 color="black"
                 fullWidth={buttonPosition === "bottom"}
-                variant={buttonVariant}
+                variant="primary"
                 size={inputSize}
                 iconPosition={buttonIconPosition}
                 label={buttonLabel}

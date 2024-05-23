@@ -33,7 +33,6 @@ const meta = {
         showCharacterCounter: false,
         buttonLabel: "Button",
         buttonPosition: "right",
-        buttonVariant: "primary",
     },
     argTypes: {
         type: {
@@ -89,10 +88,6 @@ const meta = {
         buttonPosition: {
             control: { type: "radio" },
             options: ["right", "bottom"],
-        },
-        buttonVariant: {
-            control: { type: "radio" },
-            options: ["primary", "secondary", "tertiary"],
         },
     },
 } satisfies Meta<typeof InputGroupButton>;
