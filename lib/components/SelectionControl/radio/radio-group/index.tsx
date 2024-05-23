@@ -9,9 +9,9 @@ interface IItem extends React.HTMLAttributes<HTMLDivElement> {
     hasError?: boolean;
     hidden?: boolean;
     id?: string;
-    label: string;
-    value: React.ReactNode;
-    checkboxPosition?: TLeftOrRight;
+    label: React.ReactNode;
+    value: string | number;
+    radioButtonPosition?: TLeftOrRight;
 }
 
 interface IItemWrapper {

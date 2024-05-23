@@ -20,11 +20,11 @@ const RadioButtonMeta = {
         className: "",
         classNameInfo: "",
         classNameLabel: "",
-        checkboxPosition: "left",
         defaultChecked: true,
         disabled: false,
         hasInfo: false,
         id: "radio-1",
+        radioButtonPosition: "left",
     },
     argTypes: {
         id: {
@@ -52,12 +52,6 @@ const RadioButtonMeta = {
         classNameInfo: {
             description: "CSS class name applied to the informational content.",
         },
-        checkboxPosition: {
-            description:
-                "Controls left pr right position of the radio button. Default value is 'left'.",
-            control: { type: "select" },
-            options: ["left", "right"],
-        },
         name: {
             description:
                 "Unique name for the radio group to identify selected radio button.",
@@ -70,6 +64,12 @@ const RadioButtonMeta = {
         required: {
             description: "Sets the radio button as a required field.",
             control: { type: "boolean" },
+        },
+        radioButtonPosition: {
+            description:
+                "Controls left or right position of the radio button. Default value is 'left'.",
+            control: { type: "select" },
+            options: ["left", "right"],
         },
         value: {
             description: "Value of the radio button element.",
@@ -146,5 +146,5 @@ DisabledButtonSmall.args = {
 export const ButtonWithRightPosition = Template.bind(this) as Story;
 ButtonWithRightPosition.args = {
     ...RadioButtonMeta.args,
-    checkboxPosition: "right",
+    radioButtonPosition: "right",
 };

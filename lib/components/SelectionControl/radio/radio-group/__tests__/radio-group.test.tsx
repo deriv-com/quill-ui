@@ -46,13 +46,40 @@ describe("RadioGroup component", () => {
 
         fireEvent.click(screen.getByTestId("dt_unchecked_icon_option2_false"));
 
-        expect(handleToggle).toHaveBeenCalled();
+        expect(handleToggle).toHaveBeenCalledTimes(1);
         expect(
             screen.queryByTestId("dt_unchecked_icon_option2_false"),
         ).not.toBeInTheDocument();
         expect(
             screen.queryByTestId("dt_checked_icon_option2_false"),
         ).toBeInTheDocument();
+
+        fireEvent.click(screen.getByTestId("dt_unchecked_icon_option1_false"));
+        expect(handleToggle).toHaveBeenCalledTimes(2);
+        expect(
+            screen.queryByTestId("dt_unchecked_icon_option1_false"),
+        ).not.toBeInTheDocument();
+        expect(
+            screen.queryByTestId("dt_checked_icon_option1_false"),
+        ).toBeInTheDocument();
+        expect(
+            screen.queryByTestId("dt_checked_icon_option2_false"),
+        ).not.toBeInTheDocument();
+
+        fireEvent.click(screen.getByTestId("dt_unchecked_icon_option3_false"));
+        expect(handleToggle).toHaveBeenCalledTimes(3);
+        expect(
+            screen.queryByTestId("dt_unchecked_icon_option3_false"),
+        ).not.toBeInTheDocument();
+        expect(
+            screen.queryByTestId("dt_checked_icon_option3_false"),
+        ).toBeInTheDocument();
+        expect(
+            screen.queryByTestId("dt_checked_icon_option1_false"),
+        ).not.toBeInTheDocument();
+        expect(
+            screen.queryByTestId("dt_checked_icon_option2_false"),
+        ).not.toBeInTheDocument();
 
         expect(container).toMatchSnapshot();
     });

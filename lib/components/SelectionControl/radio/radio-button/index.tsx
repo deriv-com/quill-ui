@@ -19,23 +19,18 @@ import "./radio-button.scss";
 import { TMediumSizes, TLeftOrRight } from "@types";
 
 export interface IRadio
-    extends Omit<
-        ComponentProps<"input">,
-        "placeholder" | "size" | "value" | "ref"
-    > {
-    checkboxPosition?: TLeftOrRight;
+    extends Omit<ComponentProps<"input">, "placeholder" | "size" | "ref"> {
     className?: string;
     classNameInfo?: string;
     classNameLabel?: string;
     hasInfo?: boolean;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    value?: string | number;
     size?: TMediumSizes;
+    radioButtonPosition?: TLeftOrRight;
 }
 
 export const RadioButton = ({
     children,
-    checkboxPosition = "left",
     className,
     classNameInfo,
     classNameLabel,
@@ -46,6 +41,7 @@ export const RadioButton = ({
     onChange,
     size = "md",
     value,
+    radioButtonPosition = "left",
     ...otherProps
 }: PropsWithChildren<IRadio>) => {
     const [checked, setChecked] = useState(defaultChecked);
@@ -121,7 +117,7 @@ export const RadioButton = ({
                     {
                         "quill-radio-button__icon--disabled": disabled,
                     },
-                    `quill-radio-button__icon--${checkboxPosition}`,
+                    `quill-radio-button__icon--${radioButtonPosition}`,
                 )}
                 onClick={handleMouseClick}
                 onKeyDown={handleKeyDown}
