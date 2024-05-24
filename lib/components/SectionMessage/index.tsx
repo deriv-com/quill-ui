@@ -23,13 +23,29 @@ export interface SectionMessageProps
 }
 
 const Icons = {
-    danger: (
-        <StandaloneTriangleExclamationBoldIcon fill="#DB0800" iconSize="sm" />
+    info: (
+        <StandaloneCircleInfoBoldIcon
+            fill="var(--core-color-solid-blue-800)"
+            iconSize="sm"
+        />
     ),
-    success: <StandaloneCircleCheckBoldIcon fill="#00822A" iconSize="sm" />,
-    info: <StandaloneCircleInfoBoldIcon fill="#1789E1" iconSize="sm" />,
+    danger: (
+        <StandaloneTriangleExclamationBoldIcon
+            fill="var(--core-color-solid-red-800)"
+            iconSize="sm"
+        />
+    ),
+    success: (
+        <StandaloneCircleCheckBoldIcon
+            fill="var(--core-color-solid-green-800)"
+            iconSize="sm"
+        />
+    ),
     warning: (
-        <StandaloneCircleExclamationBoldIcon fill="#E18D00" iconSize="sm" />
+        <StandaloneCircleExclamationBoldIcon
+            fill="var(--core-color-solid-yellow-800)"
+            iconSize="sm"
+        />
     ),
 };
 
