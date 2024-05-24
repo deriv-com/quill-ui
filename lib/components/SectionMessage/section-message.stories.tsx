@@ -1,6 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { SectionMessage } from "./index";
 import Link from "@components/Link";
+import { StandaloneCircleUserRegularIcon } from "@deriv/quill-icons/Standalone";
+
+const icons = {
+    with_icon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
+    none: null,
+};
 
 const meta = {
     title: "Components/SectionMessage",
@@ -26,6 +32,13 @@ const meta = {
             control: { type: "radio" },
             description: "To select the status",
         },
+        icon: {
+            options: Object.keys(icons),
+            mapping: icons,
+            control: {
+                type: "select",
+            },
+        },
     },
     tags: ["autodocs"],
 } satisfies Meta<typeof SectionMessage>;
@@ -38,6 +51,7 @@ export const Default: Story = {
         title: "Default",
         message: "This is a message",
         size: "md",
+        icon: icons.with_icon,
     },
 };
 
