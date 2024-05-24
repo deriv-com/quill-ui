@@ -80,6 +80,39 @@ export const DefaultInputDropdownWithLabel: Story = {
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };
+export const LabelledDropdownOutlined: Story = {
+    args: {
+        label: "Label",
+        required: true,
+        fieldMarker: true,
+        variant: "outline",
+        status: "neutral",
+        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+    },
+};
+export const LabelledSuccessDropdownOutlined: Story = {
+    args: {
+        label: "Label",
+        required: true,
+        fieldMarker: true,
+        variant: "outline",
+        status: "success",
+        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+    },
+};
+export const LabelledErrorDropdownOutlined: Story = {
+    args: {
+        label: "Label",
+        required: true,
+        fieldMarker: true,
+        variant: "outline",
+        status: "error",
+        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+    },
+};
 export const LabelledSuccessDropdown: Story = {
     args: {
         label: "Label",
