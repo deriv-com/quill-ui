@@ -1,4 +1,4 @@
-import { ComponentProps, ReactElement, ReactNode } from "react";
+import { ComponentProps, ReactNode } from "react";
 import { TMediumSizes } from "@types";
 import "./section-message.scss";
 import clsx from "clsx";
@@ -10,7 +10,12 @@ import {
 } from "@deriv/quill-icons/Standalone";
 import { Text } from "@components/Typography";
 import Link from "@components/Link";
+import { LinkProps } from "@components/Link/types";
 
+export type LinkList = {
+    id: number;
+    linkProps: LinkProps;
+};
 export interface SectionMessageProps
     extends Omit<ComponentProps<"div">, "title"> {
     title: string;
@@ -19,7 +24,7 @@ export interface SectionMessageProps
     size: TMediumSizes;
     status?: "info" | "success" | "danger" | "warning";
     icon?: ReactNode;
-    links?: ReactElement<typeof Link>[];
+    linkList?: LinkList[];
 }
 
 const Icons = {
@@ -56,7 +61,7 @@ export const SectionMessage = ({
     status,
     icon,
     size = "md",
-    links,
+    linkList,
 }: SectionMessageProps) => {
     return (
         <div
@@ -74,10 +79,12 @@ export const SectionMessage = ({
                     </Text>
                     <Text size={size}>{message}</Text>
                 </div>
-                {links && links.length > 0 && (
+                {linkList && linkList.length > 0 && (
                     <div className="section-message-links">
-                        {links.map((link, index) => (
-                            <div key={index}>{link}</div>
+                        {linkList.map(({ id, linkProps }) => (
+                            <Link key={id} {...linkProps} size={size}>
+                                {linkProps.children}
+                            </Link>
                         ))}
                     </div>
                 )}

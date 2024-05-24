@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { SectionMessage } from "./index";
-import Link from "@components/Link";
 import { StandaloneCircleUserRegularIcon } from "@deriv/quill-icons/Standalone";
 
 const icons = {
@@ -61,7 +60,16 @@ export const Info: Story = {
         message: "This is an information message",
         size: "md",
         status: "info",
-        links: [<Link>Click here</Link>],
+        linkList: [
+            {
+                id: 1,
+                linkProps: {
+                    hasChevron: true,
+                    children: "Click here",
+                    href: "/",
+                },
+            },
+        ],
     },
 };
 
@@ -71,7 +79,25 @@ export const Success: Story = {
         message: "This is a success message",
         size: "md",
         status: "success",
-        links: [<Link>Click here</Link>, <Link>Click here</Link>],
+        linkList: [
+            {
+                id: 1,
+                linkProps: {
+                    hasChevron: true,
+                    children: "Click here",
+                    href: "/",
+                },
+            },
+            {
+                id: 2,
+                linkProps: {
+                    hasChevron: true,
+                    children: "Click here",
+                    href: "/",
+                    disabled: true,
+                },
+            },
+        ],
     },
 };
 
@@ -81,7 +107,16 @@ export const Danger: Story = {
         message: "This is a danger message",
         size: "md",
         status: "danger",
-        links: [<Link>Click here</Link>],
+        linkList: [
+            {
+                id: 1,
+                linkProps: {
+                    hasChevron: true,
+                    children: "Click here",
+                    href: "/",
+                },
+            },
+        ],
     },
 };
 
@@ -91,6 +126,5 @@ export const Warning: Story = {
         message: "This is a warning message",
         size: "md",
         status: "warning",
-        links: [<Link>Click here</Link>],
     },
 };

@@ -5,7 +5,7 @@ import clsx from "clsx";
 import "./link.scss";
 import { CaptionText, Text } from "@components/Typography";
 
-export const Link = forwardRef<HTMLButtonElement, LinkProps>(
+export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
     (
         {
             className,
@@ -15,16 +15,24 @@ export const Link = forwardRef<HTMLButtonElement, LinkProps>(
             icon,
             hasChevron = false,
             children,
+            target = "_blank",
+            href,
             ...rest
         },
         ref,
     ) => {
         return (
-            <button
+            <a
                 ref={ref}
+                target={target}
+                href={disabled ? "javascript:void(0)" : href}
                 {...rest}
-                className={clsx("link", `link__color-${color}`, className)}
-                disabled={disabled}
+                className={clsx(
+                    "link",
+                    `link__color-${color}`,
+                    disabled && "link--disabled",
+                    className,
+                )}
             >
                 {icon && (
                     <span data-testid="dt-link-icon" className="link__icon">
@@ -59,7 +67,7 @@ export const Link = forwardRef<HTMLButtonElement, LinkProps>(
                         )}
                     />
                 )}
-            </button>
+            </a>
         );
     },
 );

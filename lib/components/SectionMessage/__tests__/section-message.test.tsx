@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import SectionMessage, { SectionMessageProps } from "..";
 import { StandaloneCircleInfoBoldIcon } from "@deriv/quill-icons/Standalone";
-import Link from "@components/Link";
 
 describe("SectionMessage", () => {
     const defaultProps: SectionMessageProps = {
@@ -37,11 +36,26 @@ describe("SectionMessage", () => {
     });
 
     it("renders with links", () => {
-        const links = [
-            <Link>Example Link 1</Link>,
-            <Link>Example Link 2</Link>,
+        const linkList = [
+            {
+                id: 1,
+                linkProps: {
+                    hasChevron: true,
+                    children: "Example Link 1",
+                    href: "/",
+                },
+            },
+            {
+                id: 2,
+                linkProps: {
+                    hasChevron: true,
+                    children: "Example Link 2",
+                    href: "/",
+                    disabled: true,
+                },
+            },
         ];
-        renderComponent({ links });
+        renderComponent({ linkList });
         expect(screen.getByText("Test Title")).toBeInTheDocument();
         expect(screen.getByText("Test message content")).toBeInTheDocument();
         expect(screen.getByText("Example Link 1")).toBeInTheDocument();

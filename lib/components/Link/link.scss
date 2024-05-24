@@ -25,7 +25,7 @@
         text-decoration: var(--core-fontDecoration-underline);
     }
 
-    &:disabled {
+    &--disabled {
         pointer-events: none;
         opacity: var(--opacity-disabled);
     }
@@ -70,5 +70,4 @@
             }
         }
     }
-
 }
