@@ -6,6 +6,10 @@ import {
     LabelPairedChevronDownMdBoldIcon,
     LabelPairedChevronDownSmBoldIcon,
     LabelPairedChevronDownXlBoldIcon,
+    LabelPairedSunBrightLgRegularIcon,
+    LabelPairedSunBrightMdRegularIcon,
+    LabelPairedSunBrightSmRegularIcon,
+    LabelPairedSunBrightXlRegularIcon,
 } from "@deriv/quill-icons";
 import "../button.scss";
 import { CaptionText, Text } from "@components/Typography";
@@ -22,6 +26,12 @@ const dropdownIcons = {
     md: LabelPairedChevronDownMdBoldIcon,
     lg: LabelPairedChevronDownLgBoldIcon,
     xl: LabelPairedChevronDownXlBoldIcon,
+};
+const loaderIcons = {
+    sm: LabelPairedSunBrightSmRegularIcon,
+    md: LabelPairedSunBrightMdRegularIcon,
+    lg: LabelPairedSunBrightLgRegularIcon,
+    xl: LabelPairedSunBrightXlRegularIcon,
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -47,6 +57,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         const buttonColorClass = `quill__color--${variant}-${color}`;
         const labelSize = size === "md" ? "sm" : size === "lg" ? "md" : "xl";
         const DropdownIcon = dropdownIcons[size];
+        const LoaderIcon = loaderIcons[size];
 
         return (
             <button
@@ -64,8 +75,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             >
                 {iconPosition === "start" && icon && !isLoading && icon}
                 {/* To be Added isLoading based on requirement*/}
+                {isLoading && (
+                    <LoaderIcon className="quill-button__loader-icon" />
+                )}
                 {children && <div>{children}</div>}
-                {label && (
+                {label && !isLoading && (
                     <span className="quill-button-label">
                         {size === "sm" ? (
                             <CaptionText color={color} bold>
