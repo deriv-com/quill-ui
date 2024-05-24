@@ -33,7 +33,6 @@ const meta = {
         showCharacterCounter: false,
         buttonLabel: "Button",
         buttonPosition: "right",
-        buttonVariant: "primary",
     },
     argTypes: {
         type: {
@@ -46,6 +45,13 @@ const meta = {
             options: ["sm", "md"],
         },
         leftIcon: {
+            options: Object.keys(icons),
+            mapping: icons,
+            control: {
+                type: "select",
+            },
+        },
+        rightIcon: {
             options: Object.keys(icons),
             mapping: icons,
             control: {
@@ -82,10 +88,6 @@ const meta = {
         buttonPosition: {
             control: { type: "radio" },
             options: ["right", "bottom"],
-        },
-        buttonVariant: {
-            control: { type: "radio" },
-            options: ["primary", "secondary", "tertiary"],
         },
     },
 } satisfies Meta<typeof InputGroupButton>;
