@@ -17,7 +17,6 @@ const meta = {
         size: "md",
         isBold: true,
         variant: "custom",
-        color: "custom",
     },
     argTypes: {
         label: {
@@ -56,7 +55,7 @@ type Story = StoryObj<typeof meta>;
 export const CustomTagFillWithIcon: Story = {
     args: {
         variant: "custom",
-        icon: LabelPairedPlaceholderSmRegularIcon,
+        icon: <LabelPairedPlaceholderSmRegularIcon />,
         className: "custom-tag",
         iconClassName: "custom-tag-icon",
     },
@@ -64,7 +63,7 @@ export const CustomTagFillWithIcon: Story = {
 export const CustomTagWithIcon: Story = {
     args: {
         variant: "custom",
-        icon: LabelPairedThumbsUpCaptionFillIcon,
+        icon: <LabelPairedThumbsUpCaptionFillIcon />,
         className: "custom-tag-outline",
         label: "Best seller",
         iconClassName: "custom-tag-outline-icon",
@@ -75,7 +74,6 @@ export const CustomTagWithIcon: Story = {
 export const CustomTagWithoutIcon: Story = {
     args: {
         variant: "custom",
-        color: "custom",
         className: "custom-tag-without-icon-outline",
         isBold: false,
         size: "md",
