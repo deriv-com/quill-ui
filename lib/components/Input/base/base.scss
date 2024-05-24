@@ -137,6 +137,7 @@
         }
         &__variant {
             &--outline {
+                z-index: 1;
                 background-color: var(--component-field-bg-outline-default);
                 border: var(--component-field-border-width) solid
                     var(--component-field-border-color-default);

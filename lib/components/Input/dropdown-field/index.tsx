@@ -13,7 +13,7 @@ export type TOptionList = {
 
 export interface TDropdownProps extends InputProps {
     onSearch?: (inputValue: string) => void;
-    onSelectOption: (value: string) => void; // Ensure this prop name matches the usage
+    onSelectOption: (value: string) => void;
     isAutocomplete?: boolean;
     options: TOptionList[];
     listHeight?: string;
@@ -31,7 +31,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
             name,
             listHeight,
             onSearch,
-            onSelectOption, // Ensure this prop name matches the interface
+            onSelectOption,
             value,
             isAutocomplete = false,
             ...rest
@@ -139,7 +139,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
                         "deriv-dropdown__menu--close": !isOpen && isAnimating,
                     })}
                 >
-                    {isOpen && (
+                    {isOpen && items.length > 0 && (
                         <div
                             className={clsx(
                                 "dropdown__container",
