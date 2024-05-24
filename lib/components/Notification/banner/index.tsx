@@ -63,7 +63,7 @@ export const NotificationBanner = ({
         <Notification
             {...rest}
             className={clsx(
-                `notification__banner${isMobile ? "--mobile" : ""}`,
+                `quill-notification__banner${isMobile ? "--mobile" : ""}`,
                 isHidden && "hidden",
                 className,
             )}

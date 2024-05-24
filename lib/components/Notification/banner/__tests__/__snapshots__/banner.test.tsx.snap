@@ -3,7 +3,7 @@
 exports[`NotificationBanner should display correct banner with a custom icon 1`] = `
 <div>
   <a
-    class="notification notification__banner test"
+    class="quill-notification quill-notification__banner test"
     href="https://www.example.com"
   >
     <div
@@ -66,7 +66,7 @@ exports[`NotificationBanner should display correct banner with a custom icon 1`]
 exports[`NotificationBanner should display correct content 1`] = `
 <div>
   <a
-    class="notification notification__banner test"
+    class="quill-notification quill-notification__banner test"
     href="https://www.example.com"
   >
     <div
@@ -137,7 +137,7 @@ exports[`NotificationBanner should display correct content 1`] = `
 exports[`NotificationBanner should hide after autohideTimeout + 240ms of animation 1`] = `
 <div>
   <a
-    class="notification notification__banner test"
+    class="quill-notification quill-notification__banner test"
     href="https://www.example.com"
   >
     <div
@@ -208,7 +208,7 @@ exports[`NotificationBanner should hide after autohideTimeout + 240ms of animati
 exports[`NotificationBanner should render correctly for mobile - without close button 1`] = `
 <div>
   <a
-    class="notification notification__banner--mobile test"
+    class="quill-notification quill-notification__banner--mobile test"
     href="https://www.example.com"
   >
     <div
@@ -252,7 +252,7 @@ exports[`NotificationBanner should render correctly for mobile - without close b
 exports[`NotificationBanner should render notification correctly based on the notification type 1`] = `
 <div>
   <a
-    class="notification notification__banner test"
+    class="quill-notification quill-notification__banner test"
     href="https://www.example.com"
   >
     <div

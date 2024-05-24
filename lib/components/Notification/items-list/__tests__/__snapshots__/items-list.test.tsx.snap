@@ -5,13 +5,13 @@ exports[`NotificationItemsList should not render if items are empty 1`] = `<div 
 exports[`NotificationItemsList should render all notification items 1`] = `
 <div>
   <div
-    class="notification__items-list test"
+    class="quill-notification__items-list test"
   >
     <div
-      class="notification__item-wrapper"
+      class="quill-notification__item-wrapper"
     >
       <a
-        class="notification notification__item"
+        class="quill-notification quill-notification__item"
         href="https://www.example.com"
       >
         <div
@@ -118,10 +118,10 @@ exports[`NotificationItemsList should render all notification items 1`] = `
       </a>
     </div>
     <div
-      class="notification__item-wrapper"
+      class="quill-notification__item-wrapper"
     >
       <a
-        class="notification notification__item"
+        class="quill-notification quill-notification__item"
         href="https://www.example.com"
       >
         <div
@@ -226,13 +226,13 @@ exports[`NotificationItemsList should render all notification items 1`] = `
 exports[`NotificationItemsList should render notifications correctly for mobile 1`] = `
 <div>
   <div
-    class="notification__items-list test"
+    class="quill-notification__items-list test"
   >
     <div
-      class="notification__item-wrapper"
+      class="quill-notification__item-wrapper"
     >
       <a
-        class="notification notification__item--mobile"
+        class="quill-notification quill-notification__item--mobile"
         href="https://www.example.com"
       >
         <div
@@ -339,10 +339,10 @@ exports[`NotificationItemsList should render notifications correctly for mobile 
       </a>
     </div>
     <div
-      class="notification__item-wrapper"
+      class="quill-notification__item-wrapper"
     >
       <a
-        class="notification notification__item--mobile"
+        class="quill-notification quill-notification__item--mobile"
         href="https://www.example.com"
       >
         <div

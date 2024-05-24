@@ -86,7 +86,7 @@ export const Notification = ({
         <a
             {...rest}
             {...swipeHandlers}
-            className={clsx("notification", className)}
+            className={clsx("quill-notification", className)}
             href={redirectTo}
             onDragStart={(e) => e.preventDefault()}
         >

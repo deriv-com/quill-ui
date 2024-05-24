@@ -3,10 +3,10 @@
 exports[`NotificationItem should display correct content 1`] = `
 <div>
   <div
-    class="notification__item-wrapper"
+    class="quill-notification__item-wrapper"
   >
     <a
-      class="notification notification__item test"
+      class="quill-notification quill-notification__item test"
       href="https://www.example.com"
     >
       <div
@@ -118,10 +118,10 @@ exports[`NotificationItem should display correct content 1`] = `
 exports[`NotificationItem should display correct notification with a custom icon 1`] = `
 <div>
   <div
-    class="notification__item-wrapper"
+    class="quill-notification__item-wrapper"
   >
     <a
-      class="notification notification__item test"
+      class="quill-notification quill-notification__item test"
       href="https://www.example.com"
     >
       <div
@@ -225,10 +225,10 @@ exports[`NotificationItem should display correct notification with a custom icon
 exports[`NotificationItem should render correctly for mobile 1`] = `
 <div>
   <div
-    class="notification__item-wrapper"
+    class="quill-notification__item-wrapper"
   >
     <a
-      class="notification notification__item--mobile test"
+      class="quill-notification quill-notification__item--mobile test"
       href="https://www.example.com"
     >
       <div
@@ -340,10 +340,10 @@ exports[`NotificationItem should render correctly for mobile 1`] = `
 exports[`NotificationItem should render notification correctly based on the notification type 1`] = `
 <div>
   <div
-    class="notification__item-wrapper"
+    class="quill-notification__item-wrapper"
   >
     <a
-      class="notification notification__item test"
+      class="quill-notification quill-notification__item test"
       href="https://www.example.com"
     >
       <div
@@ -455,10 +455,10 @@ exports[`NotificationItem should render notification correctly based on the noti
 exports[`NotificationItem should render notification correctly when status is 'read' 1`] = `
 <div>
   <div
-    class="notification__item-wrapper"
+    class="quill-notification__item-wrapper"
   >
     <a
-      class="notification notification__item test"
+      class="quill-notification quill-notification__item test"
       href="https://www.example.com"
     >
       <div

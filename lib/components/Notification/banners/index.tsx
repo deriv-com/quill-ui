@@ -26,7 +26,7 @@ export const NotificationBanners = ({
     return (
         <div
             className={clsx(
-                `notification__banners${isMobile ? "--mobile" : ""}`,
+                `quill-notification__banners${isMobile ? "--mobile" : ""}`,
                 className,
             )}
             style={{ zIndex }}

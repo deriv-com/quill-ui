@@ -75,14 +75,14 @@ export const NotificationItem = ({
     return (
         <div
             className={clsx(
-                "notification__item-wrapper",
+                "quill-notification__item-wrapper",
                 isDeleted && "deleted",
             )}
         >
             <Notification
                 {...rest}
                 className={clsx(
-                    `notification__item${isMobile ? "--mobile" : ""}`,
+                    `quill-notification__item${isMobile ? "--mobile" : ""}`,
                     isMobile &&
                         shouldShowButtons &&
                         `show-buttons${isRead ? "--read" : ""}`,

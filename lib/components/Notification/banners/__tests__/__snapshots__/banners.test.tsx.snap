@@ -5,11 +5,11 @@ exports[`NotificationBanners should not render if banners are empty 1`] = `<div 
 exports[`NotificationBanners should render notifications correctly for mobile - without close button 1`] = `
 <div>
   <div
-    class="notification__banners--mobile test"
+    class="quill-notification__banners--mobile test"
     style="z-index: 6;"
   >
     <a
-      class="notification notification__banner--mobile"
+      class="quill-notification quill-notification__banner--mobile"
       href="https://www.example.com"
     >
       <div
@@ -54,11 +54,11 @@ exports[`NotificationBanners should render notifications correctly for mobile - 
 exports[`NotificationBanners should render the first banner from the list of banners and auto-close it after autohideTimeout + 240ms of animation 1`] = `
 <div>
   <div
-    class="notification__banners test"
+    class="quill-notification__banners test"
     style="z-index: 6;"
   >
     <a
-      class="notification notification__banner"
+      class="quill-notification quill-notification__banner"
       href="https://www.example.com"
     >
       <div
