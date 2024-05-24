@@ -40,7 +40,7 @@ export const NotificationItemsList = ({
 
     if (!items.length) return null;
     return (
-        <div className={clsx("notification__items-list", className)}>
+        <div className={clsx("quill-notification__items-list", className)}>
             {items.map(({ id, ...rest }) => (
                 <NotificationItem
                     {...rest}
