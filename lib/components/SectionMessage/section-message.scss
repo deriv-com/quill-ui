@@ -1,0 +1,37 @@
+.section-message {
+    display: flex;
+    padding: var(--semantic-spacing-general-md);
+    gap: var(--semantic-spacing-gap-md);
+    background-color: var(--core-color-opacity-black-75);
+    border-radius: var(--core-borderRadius-800);
+
+    &--info {
+        background-color: var(--core-color-opacity-blue-100);
+    }
+    &--success {
+        background-color: var(--core-color-opacity-green-100);
+    }
+    &--danger {
+        background-color: var(--core-color-opacity-red-100);
+    }
+    &--warning {
+        background-color: var(--core-color-opacity-yellow-100);
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--semantic-spacing-gap-lg);
+
+        .title-and-message {
+            display: flex;
+            flex-direction: column;
+            gap: var(--semantic-spacing-gap-md);
+        }
+    }
+
+    &-links {
+        display: flex;
+        gap: var(--semantic-spacing-gap-lg);
+    }
+}

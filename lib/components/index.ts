@@ -14,3 +14,4 @@ export * from "./Snackbar";
 export * from "./Tab";
 export * from "./Tag";
 export * from "./Typography";
+export * from "./SectionMessage";
