@@ -9,6 +9,7 @@ import {
 } from "@deriv/quill-icons";
 import "../button.scss";
 import { CaptionText, Text } from "@components/Typography";
+import { Loader } from "@components/Atom/Loader";
 
 export const ButtonSize = {
     xl: "quill-button__size--xl",
@@ -64,8 +65,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             >
                 {iconPosition === "start" && icon && !isLoading && icon}
                 {/* To be Added isLoading based on requirement*/}
+                {isLoading && (
+                    <Loader color={color} variant={variant} size={size} />
+                )}
                 {children && <div>{children}</div>}
-                {label && (
+                {label && !isLoading && (
                     <span className="quill-button-label">
                         {size === "sm" ? (
                             <CaptionText color={color} bold>

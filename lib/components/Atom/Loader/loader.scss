@@ -1,0 +1,129 @@
+
+.quill-loader {
+    
+    &--size {
+        &-sm {
+           width: 12px;
+        }
+        &-md {
+            width: 14px;
+        }
+        &-lg {
+            width: 16px;
+        }
+        &-xl {
+            width: 20px;
+        }
+    }
+    aspect-ratio: 1;
+    display: grid;
+    border-radius: 50%;
+    &--color {
+        &--primary {
+            &-coral {
+                background:
+                    linear-gradient(
+                        0deg ,
+                        var(--core-color-solid-slate-50) 30%,
+                        #0000 0 70%,
+                        var(--core-color-solid-slate-50) 0) 50%/8% 100%,
+                    linear-gradient(
+                        90deg,
+                        var(--core-color-solid-slate-50) 30%,
+                        #0000 0 70%, 
+                        var(--core-color-solid-slate-50) 0) 50%/100% 8%;
+                background-repeat: no-repeat;
+                animation: l23 1s infinite steps(8);
+            
+            }
+            &-black {
+                background:
+                    linear-gradient(0deg , var(--core-color-solid-slate-50) 30%,#0000 0 70%, var(--core-color-solid-slate-50)0) 50%/8% 100%,
+                    linear-gradient(90deg, var(--core-color-solid-slate-50) 30%,#0000 0 70%, var(--core-color-solid-slate-50) 0) 50%/100% 8%;
+                background-repeat: no-repeat;
+                animation: l23 1s infinite steps(12);
+            
+            }
+            &-white {
+                background:
+                linear-gradient(0deg ,var(--core-color-solid-slate-1400) 30%,#0000 0 70%,var(--core-color-solid-slate-1400)0) 50%/8% 100%,
+                linear-gradient(90deg,var(--core-color-solid-slate-1400) 30%,#0000 0 70%,var(--core-color-solid-slate-1400) 0) 50%/100% 8%;
+                background-repeat: no-repeat;
+                animation: l23 1s infinite steps(12);
+            
+            }
+            &-purchase {
+                background:
+                linear-gradient(0deg ,var(--core-color-solid-slate-50) 30%,#0000 0 70%,var(--core-color-solid-slate-50) 0) 50%/8% 100%,
+                linear-gradient(90deg,var(--core-color-solid-slate-50) 30%,#0000 0 70%,var(--core-color-solid-slate-50) 0) 50%/100% 8%;
+                background-repeat: no-repeat;
+                animation: l23 1s infinite steps(12);
+            
+            }
+            &-sell {
+                background:
+                linear-gradient(0deg , var(--core-color-solid-slate-50) 30%,#0000 0 70%,var(--core-color-solid-slate-50) 0) 50%/8% 100%,
+                linear-gradient(90deg,var(--core-color-solid-slate-50) 30%,#0000 0 70%,var(--core-color-solid-slate-50) 0) 50%/100% 8%;
+                background-repeat: no-repeat;
+                animation: l23 1s infinite steps(12);
+            
+            }
+        }
+        &-coral {
+            background:
+                linear-gradient(0deg ,var(--core-color-solid-coral-700) 30%,#0000 0 70%, var(--core-color-solid-coral-700) 0) 50%/8% 100%,
+                linear-gradient(90deg,var(--core-color-solid-coral-700) 30%,#0000 0 70%, var(--core-color-solid-coral-700) 0) 50%/100% 8%;
+            background-repeat: no-repeat;
+            animation: l23 1s infinite steps(12);
+        
+        }
+        &-black {
+            background:
+                linear-gradient(0deg , var(--core-color-solid-slate-1400) 30%,#0000 0 70%, var(--core-color-solid-slate-1400)0) 50%/8% 100%,
+                linear-gradient(90deg, var(--core-color-solid-slate-1400) 30%,#0000 0 70%, var(--core-color-solid-slate-1400) 0) 50%/100% 8%;
+            background-repeat: no-repeat;
+            animation: l23 1s infinite steps(12);
+        
+        }
+        &-white {
+            background:
+            linear-gradient(0deg ,var(--core-color-solid-slate-50) 30%,#0000 0 70%,var(--core-color-solid-slate-50)0) 50%/8% 100%,
+            linear-gradient(90deg,var(--core-color-solid-slate-50) 30%,#0000 0 70%,var(--core-color-solid-slate-50) 0) 50%/100% 8%;
+            background-repeat: no-repeat;
+            animation: l23 1s infinite steps(12);
+        
+        }
+        &-purchase {
+            background:
+            linear-gradient(0deg ,var(--core-color-solid-emerald-700) 30%,#0000 0 70%,var(--core-color-solid-emerald-700) 0) 50%/8% 100%,
+            linear-gradient(90deg,var(--core-color-solid-emerald-700) 30%,#0000 0 70%,var(--core-color-solid-emerald-700) 0) 50%/100% 8%;
+            background-repeat: no-repeat;
+            animation: l23 1s infinite steps(12);
+        
+        }
+        &-sell {
+            background:
+            linear-gradient(0deg , var(--core-color-solid-cherry-700) 30%,#0000 0 70%,var(--core-color-solid-cherry-700) 0) 50%/8% 100%,
+            linear-gradient(90deg,var(--core-color-solid-cherry-700) 30%,#0000 0 70%,var(--core-color-solid-cherry-700) 0) 50%/100% 8%;
+            background-repeat: no-repeat;
+            animation: l23 1s infinite steps(12);
+        
+        }
+    }
+  }
+  .quill-loader::before,
+  .quill-loader::after {
+     content: "";
+     grid-area: 1/1;
+     border-radius: 50%;
+     background: inherit;
+     opacity: 0.915;
+     transform: rotate(30deg);
+  }
+  .quill-loader::after {
+     opacity: 0.83;
+     transform: rotate(60deg);
+  }
+  @keyframes l23 {
+    100% {transform: rotate(1turn)}
+  }
