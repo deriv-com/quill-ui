@@ -78,6 +78,10 @@
         position: relative;
         flex-grow: 1;
 
+        &:has(input[type="select"]) {
+            z-index: -1;
+        }
+
         &:focus-within {
             &:has(label) {
                 padding-top: var(--core-spacing-600);
