@@ -19,15 +19,7 @@ export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithS
     (props, ref) => {
         const { value, onChange, disabled, textAlignment, placeholder = 0, unit = '', decimals = 2, unitPlacement = 'left' } = props;
 
-        const getFormatValue = (value: number) => {
-            let formatValue = value;
-
-            if (typeof formatValue === 'number') {
-                formatValue = parseFloat(formatValue.toFixed(decimals));
-            }
-
-            return formatValue;
-        }
+        const getFormatValue = (value: number) => parseFloat(value.toFixed(decimals));
 
         const steppersSectionRight = (
             <>
@@ -77,7 +69,7 @@ export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithS
                     triggerActionIcon={steppersSectionRight}
                     leftIcon={textAlignment === 'center' && steppersSectionLeft}
                     type="number"
-                    value={`${getFormatValue(value as number)}`}
+                    value={`${value && getFormatValue(Number(value))}`}
                     placeholder={placeholder.toLocaleString("en", { minimumFractionDigits: decimals })}
                     leftPlaceholder={unitPlacement === "left" ? unit : undefined}
                     rightPlaceholder={unitPlacement === "right" ? unit : undefined}
