@@ -8,7 +8,7 @@ const icons = {
 };
 
 const meta = {
-    title: "Components/SectionMessage",
+    title: "Components/SectionMessage/SectionMessage",
     component: SectionMessage,
     decorators: [
         (Story) => (
