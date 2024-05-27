@@ -67,6 +67,36 @@ class Transformer {
         this.generateFiles();
     }
 
+    addPxToShadows = (cssString) => {
+        const shadowKeys = ["elevation"];
+
+        // Regular expression to match numeric values within the rules (not keys), excluding values inside rgba
+        const shadowPattern = /(?<!rgba\()\b-?\d+\b(?!\s*%\s*)(?![^(]*\))/g;
+
+        // Function to add 'px' to each matched number
+        const replaceWithPx = (match) => `${match}px`;
+
+        // Split the CSS string by ';' to handle each rule separately
+        const rules = cssString.split(";");
+
+        const processedRules = rules.map((rule) => {
+            // Split each rule into key and value by the colon
+            const [key, value] = rule.split(":");
+
+            // Check if the key includes any of the keywords
+            if (shadowKeys.some((keyword) => key.includes(keyword))) {
+                // Apply 'px' to all numeric values within the value
+                const newValue = value.replace(shadowPattern, replaceWithPx);
+                return `${key}:${newValue}`;
+            } else {
+                return rule; // Preserve rules without matching keywords
+            }
+        });
+
+        // Join the processed rules back together with semicolons
+        return processedRules.join(";").trim();
+    };
+
     convertCSSkey = (cssKey, prefix = true) => {
         const pref = prefix ? "--" : "";
         return `${pref}${cssKey.replaceAll(".", "-")}`;
@@ -305,6 +335,9 @@ class Transformer {
 
         // Convert HEX values to RGBA
         this.styleStrings.quill = this.convertHexes(this.styleStrings.quill);
+
+        // Fix Elevation values
+        this.styleStrings.quill = this.addPxToShadows(this.styleStrings.quill);
 
         // Generate Breakpoint Mixins
         this.styleStrings.breakpoints = this.generateBreakpoints();
