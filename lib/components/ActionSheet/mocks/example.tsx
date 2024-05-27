@@ -7,6 +7,7 @@ import { Text } from "@components/Typography";
 import "./mock.scss";
 
 type ExampleProps = ActionSheetContextType &
+    ComponentProps<typeof ActionSheet.Portal> &
     ComponentProps<typeof ActionSheet.Root> &
     ComponentProps<typeof ActionSheet.Footer> &
     ComponentProps<typeof ActionSheet.Header>;
@@ -21,6 +22,7 @@ export const ActionSheetExample = ({
     icon,
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
+    shouldCloseOnDrag,
     isPrimaryButtonDisabled,
     isSecondaryButtonDisabled,
     ...props
@@ -33,7 +35,7 @@ export const ActionSheetExample = ({
         <>
             <ActionSheet.Root {...props} isOpen={open} onOpen={openHandler}>
                 <ActionSheet.Trigger label="Click Here" />
-                <ActionSheet.Portal>
+                <ActionSheet.Portal shouldCloseOnDrag={shouldCloseOnDrag}>
                     <ActionSheet.Header
                         title={title}
                         description={description}
@@ -86,6 +88,7 @@ export const ActionSheetExampleWithIconTrigger = ({
     icon,
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
+    shouldCloseOnDrag,
     isPrimaryButtonDisabled,
     isSecondaryButtonDisabled,
     ...props
@@ -97,7 +100,7 @@ export const ActionSheetExampleWithIconTrigger = ({
                     iconComponent={LabelPairedBarsSmBoldIcon}
                     iconClassName="mock-action-sheet--trigger"
                 />
-                <ActionSheet.Portal>
+                <ActionSheet.Portal shouldCloseOnDrag={shouldCloseOnDrag}>
                     <ActionSheet.Header
                         title={title}
                         description={description}
@@ -200,6 +203,7 @@ export const ActionSheetExampleControlled = ({
     icon,
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
+    shouldCloseOnDrag,
     isPrimaryButtonDisabled,
     isSecondaryButtonDisabled,
     ...props
@@ -207,7 +211,7 @@ export const ActionSheetExampleControlled = ({
     return (
         <>
             <ActionSheet.Root {...props}>
-                <ActionSheet.Portal>
+                <ActionSheet.Portal shouldCloseOnDrag={shouldCloseOnDrag}>
                     <ActionSheet.Header
                         title={title}
                         description={description}

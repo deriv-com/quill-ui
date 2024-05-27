@@ -5,9 +5,14 @@ import { useMediaQuery } from "usehooks-ts";
 interface SwipeBlockType {
     show?: boolean;
     onClose?: () => void;
+    shouldCloseOnDrag?: boolean;
 }
 
-export const useSwipeBlock = ({ show, onClose }: SwipeBlockType) => {
+export const useSwipeBlock = ({
+    show,
+    onClose,
+    shouldCloseOnDrag,
+}: SwipeBlockType) => {
     const [height, setHeight] = useState("auto");
     const [isScrolled, setIsScrolled] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -55,7 +60,10 @@ export const useSwipeBlock = ({ show, onClose }: SwipeBlockType) => {
             const clientHeight = containerRef.current?.clientHeight || 0;
             let draggingPoint = clientHeight;
             const isGoingDown = initial[1] < xy[1];
-
+            if (shouldCloseOnDrag && isGoingDown) {
+                onClose?.();
+                return;
+            }
             if (isGoingDown) {
                 draggingPoint = draggingPoint - distance[1];
             } else {

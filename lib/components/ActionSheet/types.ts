@@ -27,7 +27,7 @@ export interface RootProps
 export type RootPosition = RootProps["position"];
 
 interface ActionType {
-    content: string;
+    content: React.ReactNode;
     onAction: () => void;
 }
 

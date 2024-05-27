@@ -45,6 +45,11 @@ const meta: Meta = {
                 "This prop controls if secondary button is disabled or not.",
         },
         show: { table: { disable: true } },
+        shouldCloseOnDrag: {
+            control: { type: "boolean" },
+            description:
+                "This prop controls if action sheet should be closed on drag down or not. Default value: false. Property should be passed to ActionSheet.Portal",
+        },
         handleOpen: { table: { disable: true } },
         handleClose: { table: { disable: true } },
         onOpen: {
