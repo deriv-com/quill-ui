@@ -11,7 +11,7 @@ interface SwipeBlockType {
 export const useSwipeBlock = ({
     show,
     onClose,
-    shouldCloseOnDrag = false,
+    shouldCloseOnDrag,
 }: SwipeBlockType) => {
     const [height, setHeight] = useState("auto");
     const [isScrolled, setIsScrolled] = useState(false);
