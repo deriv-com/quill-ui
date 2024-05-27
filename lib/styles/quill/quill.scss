@@ -562,63 +562,63 @@
         var(--core-color-opacity-overflow-300) 1.63%,
         var(--core-color-solid-slate-1200) 49.98%
     );
-    --core-elevation-shadow-50: 0 0 0 0;
-    --core-elevation-shadow-110: 0 -1 2 0 rgba(0, 0, 0, 6%),
-        0 -1 2 0 rgba(0, 0, 0, 3%);
-    --core-elevation-shadow-120: 1 0 2 0 rgba(0, 0, 0, 6%),
-        1 0 2 0 rgba(0, 0, 0, 3%);
-    --core-elevation-shadow-130: 0 1 2 0 rgba(0, 0, 0, 6%),
-        0 1 2 0 rgba(0, 0, 0, 3%);
-    --core-elevation-shadow-140: -1 0 2 0 rgba(0, 0, 0, 6%),
-        -1 0 2 0 rgba(0, 0, 0, 3%);
-    --core-elevation-shadow-210: 0 -1 4 0 rgba(0, 0, 0, 8%),
-        0 -1 4 0 rgba(0, 0, 0, 4%);
-    --core-elevation-shadow-220: 1 0 4 0 rgba(0, 0, 0, 8%),
-        1 0 4 0 rgba(0, 0, 0, 4%);
-    --core-elevation-shadow-230: 0 1 4 0 rgba(0, 0, 0, 8%),
-        0 1 4 0 rgba(0, 0, 0, 4%);
-    --core-elevation-shadow-240: -1 0 4 0 rgba(0, 0, 0, 8%),
-        -1 0 4 0 rgba(0, 0, 0, 4%);
-    --core-elevation-shadow-310: 0 -4 8 2 rgba(0, 0, 0, 3%),
-        0 -4 8 2 rgba(0, 0, 0, 2%);
-    --core-elevation-shadow-320: 4 0 8 2 rgba(0, 0, 0, 3%),
-        4 0 8 2 rgba(0, 0, 0, 2%);
-    --core-elevation-shadow-330: 0 4 8 2 rgba(0, 0, 0, 3%),
-        0 4 8 2 rgba(0, 0, 0, 2%);
-    --core-elevation-shadow-340: -4 0 8 2 rgba(0, 0, 0, 3%),
-        -4 0 8 2 rgba(0, 0, 0, 2%);
-    --core-elevation-shadow-410: 0 -8 16 2 rgba(0, 0, 0, 4%),
-        0 -8 16 2 rgba(0, 0, 0, 2%);
-    --core-elevation-shadow-420: 8 0 16 2 rgba(0, 0, 0, 4%),
-        8 0 16 2 rgba(0, 0, 0, 2%);
-    --core-elevation-shadow-430: 0 8 16 2 rgba(0, 0, 0, 4%),
-        0 8 16 2 rgba(0, 0, 0, 2%);
-    --core-elevation-shadow-440: -8 0 16 2 rgba(0, 0, 0, 4%),
-        -8 0 16 2 rgba(0, 0, 0, 2%);
-    --core-elevation-shadow-510: 0 -16 24 4 rgba(0, 0, 0, 4%),
-        0 -16 24 4 rgba(0, 0, 0, 2%);
-    --core-elevation-shadow-520: 16 0 24 4 rgba(0, 0, 0, 4%),
-        16 0 24 4 rgba(0, 0, 0, 2%);
-    --core-elevation-shadow-530: 0 16 24 4 rgba(0, 0, 0, 4%),
-        0 16 24 4 rgba(0, 0, 0, 2%);
-    --core-elevation-shadow-540: -16 0 24 4 rgba(0, 0, 0, 4%),
-        -16 0 24 4 rgba(0, 0, 0, 2%);
-    --core-elevation-shadow-610: 0 -24 48 8 rgba(0, 0, 0, 6%),
-        0 -24 48 8 rgba(0, 0, 0, 3%);
-    --core-elevation-shadow-620: 24 0 48 8 rgba(0, 0, 0, 6%),
-        24 0 48 8 rgba(0, 0, 0, 3%);
-    --core-elevation-shadow-630: 0 24 48 8 rgba(0, 0, 0, 6%),
-        0 24 48 8 rgba(0, 0, 0, 3%);
-    --core-elevation-shadow-640: -24 0 48 8 rgba(0, 0, 0, 6%),
-        -24 0 48 8 rgba(0, 0, 0, 3%);
-    --core-elevation-shadow-710: 0 -32 64 12 rgba(0, 0, 0, 8%),
-        0 -32 64 12 rgba(0, 0, 0, 4%);
-    --core-elevation-shadow-720: 32 0 64 12 rgba(0, 0, 0, 8%),
-        32 0 64 12 rgba(0, 0, 0, 4%);
-    --core-elevation-shadow-730: 0 32 64 12 rgba(0, 0, 0, 8%),
-        0 32 64 12 rgba(0, 0, 0, 4%);
-    --core-elevation-shadow-740: -32 0 64 12 rgba(0, 0, 0, 8%),
-        -32 0 64 12 rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-50: 0px 0px 0px 0px;
+    --core-elevation-shadow-110: 0px -1px 2px 0px rgba(0, 0, 0, 6%),
+        0px -1px 2px 0px rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-120: 1px 0px 2px 0px rgba(0, 0, 0, 6%),
+        1px 0px 2px 0px rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-130: 0px 1px 2px 0px rgba(0, 0, 0, 6%),
+        0px 1px 2px 0px rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-140: -1px 0px 2px 0px rgba(0, 0, 0, 6%),
+        -1px 0px 2px 0px rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-210: 0px -1px 4px 0px rgba(0, 0, 0, 8%),
+        0px -1px 4px 0px rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-220: 1px 0px 4px 0px rgba(0, 0, 0, 8%),
+        1px 0px 4px 0px rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-230: 0px 1px 4px 0px rgba(0, 0, 0, 8%),
+        0px 1px 4px 0px rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-240: -1px 0px 4px 0px rgba(0, 0, 0, 8%),
+        -1px 0px 4px 0px rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-310: 0px -4px 8px 2px rgba(0, 0, 0, 3%),
+        0px -4px 8px 2px rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-320: 4px 0px 8px 2px rgba(0, 0, 0, 3%),
+        4px 0px 8px 2px rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-330: 0px 4px 8px 2px rgba(0, 0, 0, 3%),
+        0px 4px 8px 2px rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-340: -4px 0px 8px 2px rgba(0, 0, 0, 3%),
+        -4px 0px 8px 2px rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-410: 0px -8px 16px 2px rgba(0, 0, 0, 4%),
+        0px -8px 16px 2px rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-420: 8px 0px 16px 2px rgba(0, 0, 0, 4%),
+        8px 0px 16px 2px rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-430: 0px 8px 16px 2px rgba(0, 0, 0, 4%),
+        0px 8px 16px 2px rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-440: -8px 0px 16px 2px rgba(0, 0, 0, 4%),
+        -8px 0px 16px 2px rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-510: 0px -16px 24px 4px rgba(0, 0, 0, 4%),
+        0px -16px 24px 4px rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-520: 16px 0px 24px 4px rgba(0, 0, 0, 4%),
+        16px 0px 24px 4px rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-530: 0px 16px 24px 4px rgba(0, 0, 0, 4%),
+        0px 16px 24px 4px rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-540: -16px 0px 24px 4px rgba(0, 0, 0, 4%),
+        -16px 0px 24px 4px rgba(0, 0, 0, 2%);
+    --core-elevation-shadow-610: 0px -24px 48px 8px rgba(0, 0, 0, 6%),
+        0px -24px 48px 8px rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-620: 24px 0px 48px 8px rgba(0, 0, 0, 6%),
+        24px 0px 48px 8px rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-630: 0px 24px 48px 8px rgba(0, 0, 0, 6%),
+        0px 24px 48px 8px rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-640: -24px 0px 48px 8px rgba(0, 0, 0, 6%),
+        -24px 0px 48px 8px rgba(0, 0, 0, 3%);
+    --core-elevation-shadow-710: 0px -32px 64px 12px rgba(0, 0, 0, 8%),
+        0px -32px 64px 12px rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-720: 32px 0px 64px 12px rgba(0, 0, 0, 8%),
+        32px 0px 64px 12px rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-730: 0px 32px 64px 12px rgba(0, 0, 0, 8%),
+        0px 32px 64px 12px rgba(0, 0, 0, 4%);
+    --core-elevation-shadow-740: -32px 0px 64px 12px rgba(0, 0, 0, 8%),
+        -32px 0px 64px 12px rgba(0, 0, 0, 4%);
     --core-opacity-50: 0;
     --core-opacity-75: 0.04;
     --core-opacity-100: 0.08;
