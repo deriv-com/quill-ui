@@ -133,6 +133,7 @@
         "@headlessui/react": "^1.7.18",
         "react-calendar": "^5.0.0",
         "react-swipeable": "^6.2.1",
+        "react-tiny-popover": "^8.0.4",
         "usehooks-ts": "^3.0.2",
         "uuid": "^9.0.1"
     }
