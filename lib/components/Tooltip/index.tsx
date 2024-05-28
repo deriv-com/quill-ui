@@ -11,12 +11,14 @@ import { CaptionText } from "@components/Typography";
 import { LabelPairedXmarkMdBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import { Link } from "@components/Link";
 import "./tooltip.scss";
+import { TPosition } from "@types";
 
 type AsElement = "a" | "div" | "button";
+type TPositionWithoutCenter = Exclude<TPosition, "center">;
 type TTooltipMenuIcon<T extends AsElement> = ComponentProps<T> & {
     as?: T;
     tooltipContent: string | JSX.Element;
-    tooltipPosition?: "top" | "bottom" | "left" | "right";
+    tooltipPosition?: TPositionWithoutCenter;
     popoverAlign?: "start" | "center" | "end";
     tooltipColor?: string;
     linkText?: ReactNode;
