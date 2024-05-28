@@ -20,14 +20,6 @@ const meta = {
         title: "Title",
     },
     argTypes: {
-        tooltipPosition: {
-            table: { type: { summary: "string" } },
-            description: "Position of the tooltip",
-            control: {
-                type: "select",
-                options: ["top", "bottom", "left", "right"],
-            },
-        },
         variant: {
             table: { type: { summary: "string" } },
             description: "Variant of the tooltip",
