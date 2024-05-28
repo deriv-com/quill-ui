@@ -79,6 +79,7 @@ export const Tooltip = <T extends AsElement>({
                                         <CaptionText
                                             color="var(--component-textIcon-inverse-prominent)"
                                             bold
+                                            className="tooltip-content__variant-rich-title"
                                         >
                                             {title}
                                         </CaptionText>
