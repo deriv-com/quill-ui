@@ -7,19 +7,44 @@ const icons = {
     none: null,
 };
 
+const data = [
+    {
+        id: 1,
+        linkProps: {
+            hasChevron: true,
+            children: "Click here",
+            href: "/",
+        },
+    },
+    {
+        id: 2,
+        linkProps: {
+            hasChevron: true,
+            children: "Click here",
+            href: "/",
+        },
+    },
+    {
+        id: 3,
+        linkProps: {
+            hasChevron: true,
+            children: "Disabled Link",
+            href: "/",
+            disabled: true,
+        },
+    },
+];
+
+const links = {
+    one: data.slice(0, 1),
+    two: data.slice(0, 2),
+    three: data,
+    none: null,
+};
+
 const meta = {
     title: "Components/SectionMessage/SectionMessage",
     component: SectionMessage,
-    decorators: [
-        (Story) => (
-            <div style={{ width: "800px" }}>
-                <Story />
-            </div>
-        ),
-    ],
-    parameters: {
-        layout: "centered",
-    },
     argTypes: {
         size: {
             options: ["sm", "md"],
@@ -34,6 +59,13 @@ const meta = {
         icon: {
             options: Object.keys(icons),
             mapping: icons,
+            control: {
+                type: "select",
+            },
+        },
+        linkList: {
+            options: Object.keys(links),
+            mapping: links,
             control: {
                 type: "select",
             },
