@@ -1,0 +1,37 @@
+.tooltip-content {  
+    border-radius: var(--core-borderRadius-400);
+    &__variant {
+        &-base {
+            padding: var(--core-size-400) var(--core-size-800);
+            color:var(--component-textIcon-inverse-default);
+            min-height: var(--core-size-1600);
+        }
+        &-rich {
+            padding: var(--core-size-800);
+            &-content {
+                display: flex;
+                gap: var(--core-size-800);
+                flex-direction: column;
+                min-width: var(--core-size-4300);
+            }
+            &-header {
+                display: flex;
+                justify-content: space-between;
+                color: var(--component-textIcon-inverse-prominent)
+            }
+            &-text {
+                display: flex;
+                flex-direction: column;
+                gap: var(--core-size-200);
+                color:var(--component-textIcon-inverse-default);
+            }
+            &-icon {
+                position: absolute;
+                cursor: pointer;
+                right: var(--core-size-900);
+                top: var(--core-size-700);
+            }
+        }
+    }
+}
+
