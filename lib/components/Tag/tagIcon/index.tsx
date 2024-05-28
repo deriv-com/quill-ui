@@ -1,4 +1,3 @@
-import { QuillIconComponent } from "@types";
 import { BaseTagProps } from "../types";
 import {
     LabelPairedCircleCheckSmBoldIcon,
@@ -20,32 +19,31 @@ export const TagIcon = ({
     isBold,
     color,
 }: BaseTagProps) => {
-    let IconComponent: QuillIconComponent | undefined;
-
     const TagIcons: Record<
         Exclude<NonNullable<BaseTagProps["color"]>, "custom">,
         {
-            bold: QuillIconComponent;
-            regular: QuillIconComponent;
+            bold: React.ReactNode;
+            regular: React.ReactNode;
         }
     > = {
         error: {
-            bold: LabelPairedTriangleExclamationSmBoldIcon,
-            regular: LabelPairedTriangleExclamationSmRegularIcon,
+            bold: <LabelPairedTriangleExclamationSmBoldIcon />,
+            regular: <LabelPairedTriangleExclamationSmRegularIcon />,
         },
         warning: {
-            bold: LabelPairedCircleExclamationSmBoldIcon,
-            regular: LabelPairedCircleExclamationSmRegularIcon,
+            bold: <LabelPairedCircleExclamationSmBoldIcon />,
+            regular: <LabelPairedCircleExclamationSmRegularIcon />,
         },
         success: {
-            bold: LabelPairedCircleCheckSmBoldIcon,
-            regular: LabelPairedCircleCheckSmRegularIcon,
+            bold: <LabelPairedCircleCheckSmBoldIcon />,
+            regular: <LabelPairedCircleCheckSmRegularIcon />,
         },
         info: {
-            bold: LabelPairedCircleInfoSmBoldIcon,
-            regular: LabelPairedCircleInfoSmRegularIcon,
+            bold: <LabelPairedCircleInfoSmBoldIcon />,
+            regular: <LabelPairedCircleInfoSmRegularIcon />,
         },
     };
+    let IconComponent: React.ReactNode;
     if (color === "custom") {
         IconComponent = Icon;
     } else {
@@ -76,14 +74,18 @@ export const TagIcon = ({
     return (
         <>
             {Icon && color === "custom" ? (
-                <Icon className={className} {...TagIconSizes[size ?? "md"]} />
+                <div className={className} {...TagIconSizes[size ?? "md"]}>
+                    {Icon}
+                </div>
             ) : (
                 <>
                     {IconComponent && (
-                        <IconComponent
+                        <div
                             className={clsx(`tag__color--${color}-svg`)}
                             {...TagIconSizes[size ?? "md"]}
-                        />
+                        >
+                            {IconComponent}
+                        </div>
                     )}
                 </>
             )}

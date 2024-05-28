@@ -20,14 +20,15 @@ export const Tag = forwardRef<HTMLDivElement, BaseTagProps>(
         },
         ref,
     ) => {
+        const tagColor = variant === "custom" ? "custom" : color;
         return (
             <div
                 className={clsx(
                     className,
                     "tag",
                     `tag__size-${size}`,
-                    `tag__color--${color}`,
-                    `tag__color--${color}-${variant}`,
+                    `tag__color--${tagColor}`,
+                    `tag__color--${tagColor}-${variant}`,
                 )}
                 {...rest}
                 ref={ref}
@@ -36,19 +37,19 @@ export const Tag = forwardRef<HTMLDivElement, BaseTagProps>(
                     isBold={isBold}
                     className={iconClassName}
                     icon={icon}
-                    color={color}
+                    color={tagColor}
                     size={size}
                 />
 
                 {size === "sm" || size === "xs" ? (
-                    <CaptionText bold={isBold} color={color}>
+                    <CaptionText bold={isBold} color={tagColor}>
                         {label}
                     </CaptionText>
                 ) : (
                     <Text
                         size={size === "md" ? "sm" : "md"}
                         bold={isBold}
-                        color={color}
+                        color={tagColor}
                     >
                         {label}
                     </Text>

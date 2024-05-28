@@ -16,7 +16,7 @@ describe("Tag", () => {
     it("Should render Custom Tag with Icon", () => {
         const { container } = render(
             <Tag
-                icon={StandalonePlaceholderRegularIcon}
+                icon={<StandalonePlaceholderRegularIcon />}
                 variant="custom"
                 color="custom"
                 label="Label"
@@ -49,7 +49,7 @@ describe("Tag", () => {
     it("Should render Custom Tag Outline with Icon", () => {
         const { container } = render(
             <Tag
-                icon={StandalonePlaceholderRegularIcon}
+                icon={<StandalonePlaceholderRegularIcon />}
                 color="custom"
                 variant="outline"
                 label="Label"
