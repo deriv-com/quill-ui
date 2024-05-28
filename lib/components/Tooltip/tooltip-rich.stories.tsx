@@ -30,6 +30,11 @@ const meta = {
             description: "Content of the tooltip",
             control: { type: "text" },
         },
+        tooltipActionProps: {
+            table: { type: { summary: "object" } },
+            description: "Props for tooltip action link or button",
+            control: { type: "object" },
+        },
         shouldCloseToolTipOnMouseLeave: {
             table: { type: { summary: "boolean" } },
             description:
@@ -86,7 +91,7 @@ export const DefaultTooltipRichBottom: Story = {
 };
 export const TooltipRichTopCenter: Story = {
     args: {
-        linkProps: {
+        tooltipActionProps: {
             target: "_blank",
             href: "/",
         },
@@ -96,7 +101,7 @@ export const TooltipRichWithButton: Story = {
     args: {
         tooltipAction: "button",
 
-        buttonProps: {
+        tooltipActionProps: {
             onClick: () => {
                 alert("Button clicked");
             },

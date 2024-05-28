@@ -17,6 +17,7 @@ import "./tooltip.scss";
 
 type AsElement = "a" | "div" | "button";
 type TPositionWithoutCenter = Exclude<TPosition, "center">;
+type TooltipActionProps = LinkProps | ButtonProps;
 type TTooltipMenuIcon<T extends AsElement> = ComponentProps<T> & {
     as?: T;
     tooltipContent: string | JSX.Element;
@@ -24,12 +25,11 @@ type TTooltipMenuIcon<T extends AsElement> = ComponentProps<T> & {
     popoverAlign?: "start" | "center" | "end";
     tooltipColor?: string;
     tooltipAction?: "link" | "button";
+    tooltipActionProps?: TooltipActionProps;
     hasArrow?: boolean;
     actionText?: string | ReactNode;
     shouldCloseToolTipOnMouseLeave?: boolean;
     variant?: "base" | "rich";
-    linkProps?: LinkProps;
-    buttonProps?: ButtonProps;
     title?: string | JSX.Element;
 };
 
@@ -41,11 +41,10 @@ export const Tooltip = <T extends AsElement>({
     variant = "base",
     popoverAlign = "center",
     title,
-    linkProps,
-    buttonProps,
     actionText,
     tooltipColor = "var(--component-textIcon-normal-prominent)",
     tooltipAction = "link",
+    tooltipActionProps,
     hasArrow = true,
     children,
     className,
@@ -55,6 +54,8 @@ export const Tooltip = <T extends AsElement>({
 
     const onMouseEnter = () => setShowTooltip(true);
     const onMouseLeave = () => setShowTooltip(false);
+    const linkProps = tooltipActionProps as LinkProps;
+    const buttonProps = tooltipActionProps as ButtonProps;
 
     const Tag = as as ElementType;
 
