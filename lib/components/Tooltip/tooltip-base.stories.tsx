@@ -10,11 +10,17 @@ const meta = {
         variant: "base",
         tooltipContent: "Description",
         children: (
-            <Text
-                style={{ padding: "10px", height: "32px", cursor: "pointer" }}
+            <div
+                style={{
+                    height: "20px",
+                    padding: "16px 10px",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                }}
             >
-                Hover to see tooltip
-            </Text>
+                <Text>Hover to see tooltip</Text>
+            </div>
         ),
         as: "div",
         title: "Title",
@@ -72,10 +78,22 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+export const DefaultTooltipTop: Story = {
+    args: {
+        hasArrow: false,
+    },
+};
+export const DefaultTooltipBottom: Story = {
+    args: {
+        hasArrow: false,
+        tooltipPosition: "bottom",
+    },
+};
 
 export const TooltipTopCenter: Story = {
     args: {},
 };
+
 export const TooltipTopLeft: Story = {
     args: {
         popoverAlign: "end",

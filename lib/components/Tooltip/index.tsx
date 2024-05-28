@@ -20,6 +20,7 @@ type TTooltipMenuIcon<T extends AsElement> = ComponentProps<T> & {
     popoverAlign?: "start" | "center" | "end";
     tooltipColor?: string;
     linkText?: ReactNode;
+    hasArrow?: boolean;
     shouldCloseToolTipOnMouseLeave?: boolean;
     variant?: "base" | "rich";
     title?: string | JSX.Element;
@@ -35,6 +36,7 @@ export const Tooltip = <T extends AsElement>({
     title,
     tooltipColor = "var(--component-textIcon-normal-prominent)",
     linkText,
+    hasArrow = true,
     children,
     className,
     ...rest
@@ -51,14 +53,8 @@ export const Tooltip = <T extends AsElement>({
             isOpen={showTooltip}
             positions={tooltipPosition}
             align={popoverAlign}
-            content={({ position, childRect, popoverRect }) => (
-                <ArrowContainer
-                    position={position}
-                    childRect={childRect}
-                    popoverRect={popoverRect}
-                    arrowColor={tooltipColor}
-                    arrowSize={4}
-                >
+            content={({ position, childRect, popoverRect }) => {
+                const content = (
                     <div
                         style={{ backgroundColor: tooltipColor }}
                         className={clsx(
@@ -100,8 +96,22 @@ export const Tooltip = <T extends AsElement>({
                             </CaptionText>
                         )}
                     </div>
-                </ArrowContainer>
-            )}
+                );
+
+                return hasArrow ? (
+                    <ArrowContainer
+                        position={position}
+                        childRect={childRect}
+                        popoverRect={popoverRect}
+                        arrowColor={tooltipColor}
+                        arrowSize={4}
+                    >
+                        {content}
+                    </ArrowContainer>
+                ) : (
+                    content
+                );
+            }}
         >
             <Tag
                 className={clsx(className)}

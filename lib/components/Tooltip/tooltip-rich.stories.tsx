@@ -11,7 +11,7 @@ const meta = {
         tooltipContent: "Description",
         shouldCloseToolTipOnMouseLeave: false,
         children: (
-            <Text style={{ padding: "16px", cursor: "pointer" }}>
+            <Text style={{ padding: "10px 28px", cursor: "pointer" }}>
                 Hover to see tooltip
             </Text>
         ),
@@ -71,7 +71,17 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
+export const DefaultTooltipRichTop: Story = {
+    args: {
+        hasArrow: false,
+    },
+};
+export const DefaultTooltipRichBottom: Story = {
+    args: {
+        hasArrow: false,
+        tooltipPosition: "bottom",
+    },
+};
 export const TooltipRichTopCenter: Story = {
     args: {},
 };
