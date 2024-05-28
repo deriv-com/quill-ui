@@ -16,8 +16,8 @@ const meta = {
             </Text>
         ),
         as: "div",
+        actionText: "label",
         title: "Title",
-        linkText: "label",
     },
     argTypes: {
         tooltipPosition: {
@@ -59,10 +59,20 @@ const meta = {
             description: "Title of the tooltip",
             control: { type: "text" },
         },
-        linkText: {
+        tooltipAction: {
             table: { type: { summary: "ReactNode" } },
-            description: "Link text of the tooltip",
+            description: "Action of the tooltip",
+            control: { type: "select", options: ["link", "button"] },
+        },
+        actionText: {
+            table: { type: { summary: "string" } },
+            description: "Text for link or button",
             control: { type: "text" },
+        },
+        hasArrow: {
+            table: { type: { summary: "boolean" } },
+            description: "Show arrow in tooltip",
+            control: { type: "boolean" },
         },
     },
     parameters: { layout: "centered" },
@@ -83,7 +93,23 @@ export const DefaultTooltipRichBottom: Story = {
     },
 };
 export const TooltipRichTopCenter: Story = {
-    args: {},
+    args: {
+        linkProps: {
+            target: "_blank",
+            href: "/",
+        },
+    },
+};
+export const TooltipRichWithButton: Story = {
+    args: {
+        tooltipAction: "button",
+
+        buttonProps: {
+            onClick: () => {
+                alert("Button clicked");
+            },
+        },
+    },
 };
 export const TooltipRichTopLeft: Story = {
     args: {

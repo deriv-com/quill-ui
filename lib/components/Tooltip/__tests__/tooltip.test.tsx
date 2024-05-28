@@ -18,7 +18,7 @@ describe("Tooltip Component", () => {
                 tooltipContent="Tooltip text"
                 variant="rich"
                 title="Title"
-                linkText="label"
+                actionText="label"
             >
                 Hover me
             </Tooltip>,

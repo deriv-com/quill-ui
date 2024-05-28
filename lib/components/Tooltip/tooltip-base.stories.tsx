@@ -24,7 +24,7 @@ const meta = {
         ),
         as: "div",
         title: "Title",
-        linkText: "label",
+        actionText: "label",
     },
     argTypes: {
         tooltipPosition: {
@@ -66,10 +66,10 @@ const meta = {
             description: "Title of the tooltip",
             control: { type: "text" },
         },
-        linkText: {
-            table: { type: { summary: "ReactNode" } },
-            description: "Link text of the tooltip",
-            control: { type: "text" },
+        hasArrow: {
+            table: { type: { summary: "boolean" } },
+            description: "Show arrow in tooltip",
+            control: { type: "boolean" },
         },
     },
     parameters: { layout: "centered" },
