@@ -74,7 +74,6 @@
 
     &-label__wrapper {
         display: flex;
-        flex-direction: column;
         position: relative;
         flex-grow: 1;
 
@@ -108,7 +107,19 @@
     }
 
     &-no-label__wrapper {
+        display: flex;
         width: 100%;
+    }
+
+    &-label__label {
+        margin: auto var(--core-spacing-200) auto;
+
+        &--right {
+            margin-left: var(--core-spacing-200);
+        }
+        &--disabled {
+            opacity: var(--core-opacity-600);
+        }
     }
 
     &__wrapper {

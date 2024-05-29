@@ -13,11 +13,12 @@ import {
     StandaloneCircleCheckBoldIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons/Standalone";
+import { Text } from "@components/Typography";
 import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
-export type Types = "text" | "email" | "password" | "tel" | "select";
+export type Types = "text" | "email" | "password" | "tel" | "select" | "number";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type?: Types;
@@ -34,12 +35,14 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     showCharacterCounter?: boolean;
     textAlignment?: TLeftOrCenter;
     label?: ReactNode;
-    value?: string;
+    value?: string | number;
     triggerActionIcon?: ReactNode;
     fieldMarker?: boolean;
     showInputButton?: boolean;
     buttonPosition?: TRightOrBottom;
     inputButton?: ReactNode;
+    leftPlaceholder?: string;
+    rightPlaceholder?: string;
 }
 
 const statusIconColors = {
@@ -84,6 +87,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             maxLength,
             textAlignment = "left",
             label,
+            leftPlaceholder,
+            rightPlaceholder,
             value,
             rightIcon,
             onChange,
@@ -98,6 +103,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         ref,
     ) => {
         const [inputValue, setInputValue] = useState(value || "");
+        const [focused, setFocused] = React.useState(false);
         useEffect(() => {
             setInputValue(value || "");
         }, [value]);
@@ -115,7 +121,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     className={clsx(
                         className,
                         `quill-input__wrapper`,
-                        inputValue.length > 0 &&
+                        inputValue.toString().length > 0 &&
                             `quill-input__wrapper--has-value`,
                         `quill-input__wrapper__variant--${variant}`,
                         `quill-input__wrapper__variant--${variant}--${status}`,
@@ -125,7 +131,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 inputSize,
                                 buttonPosition,
                                 label,
-                                inputValue.length > 0,
+                                inputValue.toString().length > 0,
                             ),
                     )}
                 >
@@ -138,10 +144,25 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 label
                                     ? "quill-input-label__wrapper"
                                     : "quill-input-no-label__wrapper",
-                                inputValue.length > 0 &&
+                                inputValue.toString().length > 0 &&
                                     "quill-input-label__wrapper--has-value",
                             )}
                         >
+                            {leftPlaceholder &&
+                                (!label || (label && (value || focused))) &&
+                                (
+                                    <Text
+                                        size={inputSize}
+                                        as="span"
+                                        className={clsx(
+                                            "quill-input-label__label",
+                                            "quill-input-label__label--left",
+                                            `quill-input-label__label--disabled`,
+                                        )}
+                                    >
+                                        {leftPlaceholder}
+                                    </Text>
+                                )}
                             <input
                                 {...rest}
                                 readOnly={readOnly}
@@ -161,6 +182,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                     setInputValue(e.target.value);
                                     onChange?.(e);
                                 }}
+                                onFocus={() => setFocused(true)}
+                                onBlur={() => setFocused(false)}
                                 id={label?.toString()}
                                 ref={ref}
                             />
@@ -186,6 +209,21 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                     )}
                                 </label>
                             )}
+                            {rightPlaceholder &&
+                                (!label || (label && (value || focused))) &&
+                                (
+                                    <Text
+                                        size={inputSize}
+                                        as="span"
+                                        className={clsx(
+                                            "quill-input-label__label",
+                                            "quill-input-label__label--right",
+                                            `quill-input-label__label--disabled`,
+                                        )}
+                                    >
+                                        {rightPlaceholder}
+                                    </Text>
+                                )}
                         </div>
 
                         {rightIcon && (
@@ -228,7 +266,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         </span>
                         {showCharacterCounter && maxLength && (
                             <span className="message__container__text">
-                                {inputValue.length}/{maxLength}
+                                {inputValue.toString().length}/{maxLength}
                             </span>
                         )}
                     </div>
