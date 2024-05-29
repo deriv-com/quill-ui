@@ -71,7 +71,9 @@ export const SectionMessage = ({
                 className,
             )}
         >
-            {status ? Icons?.[status] : icon && icon}
+            {(status || icon) && (
+                <div>{status ? Icons?.[status] : icon && icon}</div>
+            )}
             <div className="section-message-content">
                 <div className="title-and-message">
                     <Text bold size={size === "md" ? "lg" : "md"}>
