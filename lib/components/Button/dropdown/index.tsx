@@ -7,6 +7,7 @@ import { Button } from "../base";
 import "./dropdown.scss";
 import { Text, CaptionText } from "@components/Typography";
 import { TRegularSizesWithExtraLarge } from "@types";
+import { DropdownItem } from "@components/Atom";
 
 export type TSingleSelectItem = {
     value: number | string;
@@ -27,25 +28,18 @@ const Options = ({
     item: TSingleSelectItem;
     size: TRegularSizesWithExtraLarge;
 }) => {
+    const itemSize = size === "sm" ? "sm" : size === "md" ? "sm" : "md";
     return (
         <Listbox.Option value={item} as={Fragment}>
-            {({ selected, active }) => {
+            {({ selected, disabled, active }) => {
                 return (
-                    <li
-                        className={clsx(
-                            "dropdown-menu__item",
-                            `dropdown-menu__item--size-${size}`,
-                            selected && "dropdown-menu__item--selected",
-                            active && `dropdown-menu__item--active`,
-                        )}
-                    >
-                        <Text
-                            as="span"
-                            color="var(--component-dropdownItem-label-color-selectedWhite)"
-                        >
-                            {item.label}
-                        </Text>
-                    </li>
+                    <DropdownItem
+                        className={clsx(`dropdown-menu__item--${active}`)}
+                        label={item.label}
+                        disabled={disabled}
+                        selected={selected}
+                        size={itemSize}
+                    />
                 );
             }}
         </Listbox.Option>
