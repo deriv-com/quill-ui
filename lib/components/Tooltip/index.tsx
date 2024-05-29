@@ -7,22 +7,27 @@ import {
 } from "react";
 import { Popover, ArrowContainer } from "react-tiny-popover";
 import clsx from "clsx";
-import { CaptionText } from "@components/Typography";
-import { LabelPairedXmarkMdBoldIcon } from "@deriv/quill-icons/LabelPaired";
-import { Link } from "@components/Link";
-import "./tooltip.scss";
 import { TPosition } from "@types";
+import { LabelPairedXmarkMdBoldIcon } from "@deriv/quill-icons/LabelPaired";
+import { CaptionText } from "@components/Typography";
+import { Link } from "@components/Link";
+import { Button, ButtonProps } from "@components/Button";
+import { LinkProps } from "@components/Link/types";
+import "./tooltip.scss";
 
 type AsElement = "a" | "div" | "button";
 type TPositionWithoutCenter = Exclude<TPosition, "center">;
+type TooltipActionProps = LinkProps | ButtonProps;
 type TTooltipMenuIcon<T extends AsElement> = ComponentProps<T> & {
     as?: T;
     tooltipContent: string | JSX.Element;
     tooltipPosition?: TPositionWithoutCenter;
     popoverAlign?: "start" | "center" | "end";
     tooltipColor?: string;
-    linkText?: ReactNode;
+    tooltipAction?: "link" | "button";
+    tooltipActionProps?: TooltipActionProps;
     hasArrow?: boolean;
+    actionText?: string | ReactNode;
     shouldCloseToolTipOnMouseLeave?: boolean;
     variant?: "base" | "rich";
     title?: string | JSX.Element;
@@ -36,8 +41,10 @@ export const Tooltip = <T extends AsElement>({
     variant = "base",
     popoverAlign = "center",
     title,
+    actionText,
     tooltipColor = "var(--component-textIcon-normal-prominent)",
-    linkText,
+    tooltipAction = "link",
+    tooltipActionProps,
     hasArrow = true,
     children,
     className,
@@ -71,6 +78,7 @@ export const Tooltip = <T extends AsElement>({
                                         <CaptionText
                                             color="var(--component-textIcon-inverse-prominent)"
                                             bold
+                                            className="tooltip-content__variant-rich-title"
                                         >
                                             {title}
                                         </CaptionText>
@@ -87,10 +95,21 @@ export const Tooltip = <T extends AsElement>({
                                         {tooltipContent}
                                     </CaptionText>
                                 </div>
-
-                                <Link color="white" hasChevron>
-                                    {linkText}
-                                </Link>
+                                {tooltipAction === "link" ? (
+                                    <Link
+                                        color="white"
+                                        hasChevron
+                                        children={actionText}
+                                        {...(tooltipActionProps as LinkProps)}
+                                    ></Link>
+                                ) : (
+                                    <Button
+                                        color="white"
+                                        variant="secondary"
+                                        {...(tooltipActionProps as ButtonProps)}
+                                        label={actionText}
+                                    ></Button>
+                                )}
                             </div>
                         ) : (
                             <CaptionText color="var(--component-textIcon-inverse-default)">

@@ -16,18 +16,10 @@ const meta = {
             </Text>
         ),
         as: "div",
+        actionText: "label",
         title: "Title",
-        linkText: "label",
     },
     argTypes: {
-        tooltipPosition: {
-            table: { type: { summary: "string" } },
-            description: "Position of the tooltip",
-            control: {
-                type: "select",
-                options: ["top", "bottom", "left", "right"],
-            },
-        },
         variant: {
             table: { type: { summary: "string" } },
             description: "Variant of the tooltip",
@@ -37,6 +29,11 @@ const meta = {
             table: { type: { summary: "string" } },
             description: "Content of the tooltip",
             control: { type: "text" },
+        },
+        tooltipActionProps: {
+            table: { type: { summary: "object" } },
+            description: "Props for tooltip action link or button",
+            control: { type: "object" },
         },
         shouldCloseToolTipOnMouseLeave: {
             table: { type: { summary: "boolean" } },
@@ -59,10 +56,20 @@ const meta = {
             description: "Title of the tooltip",
             control: { type: "text" },
         },
-        linkText: {
+        tooltipAction: {
             table: { type: { summary: "ReactNode" } },
-            description: "Link text of the tooltip",
+            description: "Action of the tooltip",
+            control: { type: "select", options: ["link", "button"] },
+        },
+        actionText: {
+            table: { type: { summary: "string" } },
+            description: "Text for link or button",
             control: { type: "text" },
+        },
+        hasArrow: {
+            table: { type: { summary: "boolean" } },
+            description: "Show arrow in tooltip",
+            control: { type: "boolean" },
         },
     },
     parameters: { layout: "centered" },
@@ -83,7 +90,23 @@ export const DefaultTooltipRichBottom: Story = {
     },
 };
 export const TooltipRichTopCenter: Story = {
-    args: {},
+    args: {
+        tooltipActionProps: {
+            target: "_blank",
+            href: "/",
+        },
+    },
+};
+export const TooltipRichWithButton: Story = {
+    args: {
+        tooltipAction: "button",
+
+        tooltipActionProps: {
+            onClick: () => {
+                alert("Button clicked");
+            },
+        },
+    },
 };
 export const TooltipRichTopLeft: Story = {
     args: {

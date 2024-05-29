@@ -12,5 +12,5 @@ export interface LinkProps extends LinkHTMLAttributes<HTMLAnchorElement> {
     icon?: ReactNode;
     hasChevron?: boolean;
     target?: "_blank" | "_self" | "_parent" | "_top";
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }

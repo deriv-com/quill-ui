@@ -24,17 +24,9 @@ const meta = {
         ),
         as: "div",
         title: "Title",
-        linkText: "label",
+        actionText: "label",
     },
     argTypes: {
-        tooltipPosition: {
-            table: { type: { summary: "string" } },
-            description: "Position of the tooltip",
-            control: {
-                type: "select",
-                options: ["top", "bottom", "left", "right"],
-            },
-        },
         variant: {
             table: { type: { summary: "string" } },
             description: "Variant of the tooltip",
@@ -66,10 +58,10 @@ const meta = {
             description: "Title of the tooltip",
             control: { type: "text" },
         },
-        linkText: {
-            table: { type: { summary: "ReactNode" } },
-            description: "Link text of the tooltip",
-            control: { type: "text" },
+        hasArrow: {
+            table: { type: { summary: "boolean" } },
+            description: "Show arrow in tooltip",
+            control: { type: "boolean" },
         },
     },
     parameters: { layout: "centered" },
