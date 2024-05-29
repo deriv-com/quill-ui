@@ -43,6 +43,7 @@ export const TagIcon = ({
             regular: <LabelPairedCircleInfoSmRegularIcon />,
         },
     };
+
     let IconComponent: React.ReactNode;
     if (color === "custom") {
         IconComponent = Icon;
@@ -50,39 +51,28 @@ export const TagIcon = ({
         IconComponent =
             TagIcons[color ?? "success"][isBold ? "bold" : "regular"];
     }
-    const TagIconSizes: Record<
-        NonNullable<BaseTagProps["size"]>,
-        { width: number; height: number }
-    > = {
-        xs: {
-            width: 12,
-            height: 18,
-        },
-        sm: {
-            width: 12,
-            height: 18,
-        },
-        md: {
-            width: 14,
-            height: 22,
-        },
-        lg: {
-            width: 16,
-            height: 24,
-        },
-    };
+
     return (
         <>
             {Icon && color === "custom" ? (
-                <div className={className} {...TagIconSizes[size ?? "md"]}>
+                <div
+                    className={clsx(
+                        `tag__icon`,
+                        `tag__icon--${size}`,
+                        className,
+                    )}
+                >
                     {Icon}
                 </div>
             ) : (
                 <>
                     {IconComponent && (
                         <div
-                            className={clsx(`tag__color--${color}-svg`)}
-                            {...TagIconSizes[size ?? "md"]}
+                            className={clsx(
+                                `tag__icon`,
+                                `tag__color--${color}-svg`,
+                                `tag__icon--${size}`,
+                            )}
                         >
                             {IconComponent}
                         </div>
