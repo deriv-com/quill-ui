@@ -15,6 +15,11 @@ describe("Button component", () => {
         const buttonText = screen.getByText("Label");
         expect(buttonText).toBeInTheDocument();
     });
+    it("should display loader if isLoading is true", () => {
+        render(<Button isLoading>Label</Button>);
+        const loader = screen.getByTestId("button-loader");
+        expect(loader).toBeInTheDocument();
+    });
 
     it("Should handle onClick", async () => {
         const mockOnClick = jest.fn();

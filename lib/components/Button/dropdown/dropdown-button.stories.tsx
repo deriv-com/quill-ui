@@ -4,14 +4,6 @@ import { DropdownButton } from ".";
 const meta = {
     title: "Components/Button/Dropdown",
     component: DropdownButton,
-    parameters: {
-        docs: {
-            story: {
-                height: "350px",
-                width: "350px",
-            },
-        },
-    },
 
     args: {
         defaultOption: { value: "", label: "Dropdown menu" },

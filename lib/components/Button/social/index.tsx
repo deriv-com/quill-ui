@@ -8,7 +8,7 @@ import {
 } from "@deriv/quill-icons/Social";
 import { SocialButtonProps } from "../types";
 import clsx from "clsx";
-import { ButtonSize } from "../base";
+import { ButtonSize, loaderIcons } from "../base";
 import "./social.scss";
 import "../button.scss";
 import { Text } from "@components/Typography";
@@ -42,6 +42,7 @@ export const SocialButton = forwardRef<HTMLButtonElement, SocialButtonProps>(
             hideLabel = false,
             disabled = false,
             fullWidth,
+            isLoading = false,
             className,
             ...rest
         },
@@ -55,6 +56,7 @@ export const SocialButton = forwardRef<HTMLButtonElement, SocialButtonProps>(
             social.charAt(0).toUpperCase() + social.slice(1);
         const labelSize = size === "md" ? "sm" : size === "lg" ? "md" : "xl";
         const labelColor = `social-button__variant--${social}--${variant}-color`;
+        const LoaderIcon = loaderIcons[size];
 
         return (
             <button
@@ -73,10 +75,11 @@ export const SocialButton = forwardRef<HTMLButtonElement, SocialButtonProps>(
                 disabled={disabled}
                 ref={ref}
             >
-                {social === "google" && (
+                {social === "google" && !isLoading && (
                     <SocialGoogleBrandIcon {...socialButtonIconSize[size]} />
                 )}
                 {social === "facebook" &&
+                    !isLoading &&
                     (variant === "primary" ? (
                         <SocialFacebookBrandDarkIcon
                             {...socialButtonIconSize[size]}
@@ -88,14 +91,21 @@ export const SocialButton = forwardRef<HTMLButtonElement, SocialButtonProps>(
                             fill="#fff"
                         />
                     ))}
-                {social === "apple" && variant === "secondary" ? (
+                {social === "apple" && !isLoading && variant === "secondary" ? (
                     <SocialAppleBlackIcon {...socialButtonIconSize[size]} />
                 ) : (
-                    social === "apple" && (
+                    social === "apple" &&
+                    !isLoading && (
                         <SocialAppleWhiteIcon {...socialButtonIconSize[size]} />
                     )
                 )}
-                {!hideLabel && (
+                {isLoading && !disabled && (
+                    <LoaderIcon
+                        data-testid="button-loader"
+                        className="quill-button__loader-icon"
+                    />
+                )}
+                {!hideLabel && !isLoading && (
                     <Text size={labelSize} bold color={labelColor}>
                         {socialButtonName}
                     </Text>

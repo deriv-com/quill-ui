@@ -12,15 +12,6 @@ import { ComponentProps } from "react";
 const meta = {
     title: "Components/Button/Basic",
     component: Button,
-    parameters: {
-        layout: "centered",
-        docs: {
-            story: {
-                height: "350px",
-                width: "350px",
-            },
-        },
-    },
     tags: ["autodocs"],
     args: {
         variant: "primary",
@@ -104,19 +95,46 @@ export const ButtonWithLabelIconAtStart = (
     args: ComponentProps<typeof Button>,
 ) => (
     <Button
-        {...args}
         size="lg"
         iconPosition="start"
         icon={placeholder[args?.size as keyof typeof placeholder]}
+        {...args}
     />
 );
 export const ButtonWithLabelIconAtEnd = (
     args: ComponentProps<typeof Button>,
 ) => (
     <Button
-        {...args}
         size="lg"
         iconPosition="end"
         icon={placeholder[args?.size as keyof typeof placeholder]}
+        {...args}
+    />
+);
+export const ButtonDisabled = (args: ComponentProps<typeof Button>) => (
+    <Button
+        iconPosition="end"
+        disabled
+        icon={placeholder[args?.size as keyof typeof placeholder]}
+        {...args}
+    />
+);
+export const ButtonWithLoading = (args: ComponentProps<typeof Button>) => (
+    <Button
+        iconPosition="end"
+        isLoading
+        icon={placeholder[args?.size as keyof typeof placeholder]}
+        {...args}
+    />
+);
+export const ButtonWithFullWidthAndLoading = (
+    args: ComponentProps<typeof Button>,
+) => (
+    <Button
+        iconPosition="end"
+        isLoading
+        fullWidth
+        icon={placeholder[args?.size as keyof typeof placeholder]}
+        {...args}
     />
 );
