@@ -20,8 +20,7 @@ exports[`Tag Should render Custom Tag Outline with Icon 1`] = `
     class="tag tag__size-md tag__color--custom tag__color--custom-outline"
   >
     <div
-      height="22"
-      width="14"
+      class="tag__icon tag__icon--md"
     >
       <svg
         height="32"
@@ -64,8 +63,7 @@ exports[`Tag Should render Custom Tag with Icon 1`] = `
     class="tag tag__size-md tag__color--custom tag__color--custom-custom"
   >
     <div
-      height="22"
-      width="14"
+      class="tag__icon tag__icon--md"
     >
       <svg
         height="32"
@@ -108,9 +106,7 @@ exports[`Tag Should render Custom with Icon 1`] = `
     class="tag tag__size-md tag__color--success tag__color--success-fill"
   >
     <div
-      class="tag__color--success-svg"
-      height="22"
-      width="14"
+      class="tag__icon tag__color--success-svg tag__icon--md"
     >
       <svg
         height="22"
@@ -150,9 +146,7 @@ exports[`Tag Should render Error Tag Fill 1`] = `
     class="tag tag__size-md tag__color--error tag__color--error-fill"
   >
     <div
-      class="tag__color--error-svg"
-      height="22"
-      width="14"
+      class="tag__icon tag__color--error-svg tag__icon--md"
     >
       <svg
         height="22"
@@ -192,9 +186,7 @@ exports[`Tag Should render Error Tag Outline 1`] = `
     class="tag tag__size-md tag__color--error tag__color--error-outline"
   >
     <div
-      class="tag__color--error-svg"
-      height="22"
-      width="14"
+      class="tag__icon tag__color--error-svg tag__icon--md"
     >
       <svg
         height="22"
@@ -234,9 +226,7 @@ exports[`Tag Should render Info Tag Fill 1`] = `
     class="tag tag__size-md tag__color--info tag__color--info-fill"
   >
     <div
-      class="tag__color--info-svg"
-      height="22"
-      width="14"
+      class="tag__icon tag__color--info-svg tag__icon--md"
     >
       <svg
         height="22"
@@ -276,9 +266,7 @@ exports[`Tag Should render Info Tag Outline 1`] = `
     class="tag tag__size-md tag__color--info tag__color--info-outline"
   >
     <div
-      class="tag__color--info-svg"
-      height="22"
-      width="14"
+      class="tag__icon tag__color--info-svg tag__icon--md"
     >
       <svg
         height="22"
@@ -318,9 +306,7 @@ exports[`Tag Should render Success Tag Fill 1`] = `
     class="tag tag__size-md tag__color--success tag__color--success-fill"
   >
     <div
-      class="tag__color--success-svg"
-      height="22"
-      width="14"
+      class="tag__icon tag__color--success-svg tag__icon--md"
     >
       <svg
         height="22"
@@ -360,9 +346,7 @@ exports[`Tag Should render Success Tag Outline 1`] = `
     class="tag tag__size-md tag__color--success tag__color--success-outline"
   >
     <div
-      class="tag__color--success-svg"
-      height="22"
-      width="14"
+      class="tag__icon tag__color--success-svg tag__icon--md"
     >
       <svg
         height="22"
@@ -402,9 +386,7 @@ exports[`Tag Should render Tag Default 1`] = `
     class="tag tag__size-md tag__color--success tag__color--success-fill"
   >
     <div
-      class="tag__color--success-svg"
-      height="22"
-      width="14"
+      class="tag__icon tag__color--success-svg tag__icon--md"
     >
       <svg
         height="22"
@@ -444,9 +426,7 @@ exports[`Tag Should render Warning Tag Fill 1`] = `
     class="tag tag__size-md tag__color--warning tag__color--warning-fill"
   >
     <div
-      class="tag__color--warning-svg"
-      height="22"
-      width="14"
+      class="tag__icon tag__color--warning-svg tag__icon--md"
     >
       <svg
         height="22"
@@ -486,9 +466,7 @@ exports[`Tag Should render Warning Tag Outline 1`] = `
     class="tag tag__size-md tag__color--warning tag__color--warning-outline"
   >
     <div
-      class="tag__color--warning-svg"
-      height="22"
-      width="14"
+      class="tag__icon tag__color--warning-svg tag__icon--md"
     >
       <svg
         height="22"

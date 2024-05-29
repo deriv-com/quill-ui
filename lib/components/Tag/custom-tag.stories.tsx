@@ -28,6 +28,12 @@ const meta = {
                 disable: true,
             },
         },
+        size: {
+            options: ["xs", "sm", "md", "lg"],
+            control: { type: "radio" },
+            description: "To select the size of icon and font-size",
+        },
+
         className: {
             name: "Class Name",
             control: "text",
