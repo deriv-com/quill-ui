@@ -26,6 +26,10 @@ const meta = {
             options: ["md", "lg", "xl"],
             control: { type: "radio" },
         },
+        fullWidth: {
+            options: ["true", "false"],
+            control: { type: "boolean" },
+        },
 
         onClick: {
             table: {

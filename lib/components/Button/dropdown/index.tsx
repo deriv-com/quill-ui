@@ -56,6 +56,7 @@ export const DropdownButton = forwardRef<
             size = "md",
             icon,
             label,
+            isLoading,
             color = "coral",
             variant,
             disabled,
@@ -90,6 +91,7 @@ export const DropdownButton = forwardRef<
                                     color={color}
                                     label={label}
                                     variant={variant}
+                                    isLoading={isLoading}
                                     ref={ref}
                                     dropdown
                                     selected={
@@ -99,37 +101,47 @@ export const DropdownButton = forwardRef<
                                     isDropdownOpen={open}
                                     disabled={disabled}
                                 >
-                                    {size === "sm" ? (
-                                        <CaptionText color={color} bold>
-                                            {selectedItem.label}
-                                        </CaptionText>
-                                    ) : (
-                                        <Text
-                                            size={labelSize}
-                                            bold
-                                            color={color}
-                                        >
-                                            {selectedItem.label}
-                                        </Text>
-                                    )}
+                                    {!isLoading &&
+                                        (size === "sm" ? (
+                                            <CaptionText color={color} bold>
+                                                {selectedItem.label}
+                                            </CaptionText>
+                                        ) : (
+                                            <Text
+                                                size={labelSize}
+                                                bold
+                                                color={color}
+                                            >
+                                                {selectedItem.label}
+                                            </Text>
+                                        ))}
                                 </Button>
                             </Listbox.Button>
-                            <Transition
-                                enter={clsx("dropdown-menu__transition--enter")}
-                            >
-                                <Listbox.Options
-                                    className={clsx("dropdown-menu__container")}
+                            {!isLoading && (
+                                <Transition
+                                    enter={clsx(
+                                        "dropdown-menu__transition--enter",
+                                    )}
                                 >
-                                    <Options item={defaultOption} size={size} />
-                                    {options.map((item) => (
+                                    <Listbox.Options
+                                        className={clsx(
+                                            "dropdown-menu__container",
+                                        )}
+                                    >
                                         <Options
-                                            item={item}
-                                            key={item.value}
+                                            item={defaultOption}
                                             size={size}
                                         />
-                                    ))}
-                                </Listbox.Options>
-                            </Transition>
+                                        {options.map((item) => (
+                                            <Options
+                                                item={item}
+                                                key={item.value}
+                                                size={size}
+                                            />
+                                        ))}
+                                    </Listbox.Options>
+                                </Transition>
+                            )}
                         </>
                     )}
                 </Listbox>

@@ -27,7 +27,7 @@ const dropdownIcons = {
     lg: LabelPairedChevronDownLgBoldIcon,
     xl: LabelPairedChevronDownXlBoldIcon,
 };
-const loaderIcons = {
+export const loaderIcons = {
     sm: LabelPairedLoaderCaptionRegularIcon,
     md: LabelPairedLoaderSmRegularIcon,
     lg: LabelPairedLoaderMdRegularIcon,
@@ -97,7 +97,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                     </span>
                 )}
                 {iconPosition === "end" && icon && !isLoading && icon}
-                {dropdown && DropdownIcon && (
+                {dropdown && DropdownIcon && !isLoading && (
                     <DropdownIcon
                         data-state={isDropdownOpen ? "open" : "close"}
                         className={clsx(
