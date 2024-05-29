@@ -54,8 +54,6 @@ export const Tooltip = <T extends AsElement>({
 
     const onMouseEnter = () => setShowTooltip(true);
     const onMouseLeave = () => setShowTooltip(false);
-    const linkProps = tooltipActionProps as LinkProps;
-    const buttonProps = tooltipActionProps as ButtonProps;
 
     const Tag = as as ElementType;
 
@@ -102,13 +100,13 @@ export const Tooltip = <T extends AsElement>({
                                         color="white"
                                         hasChevron
                                         children={actionText}
-                                        {...linkProps}
+                                        {...(tooltipActionProps as LinkProps)}
                                     ></Link>
                                 ) : (
                                     <Button
                                         color="white"
                                         variant="secondary"
-                                        {...buttonProps}
+                                        {...(tooltipActionProps as ButtonProps)}
                                         label={actionText}
                                     ></Button>
                                 )}
