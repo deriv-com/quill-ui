@@ -10,6 +10,7 @@ import {
     LabelPairedLoaderLgRegularIcon,
     LabelPairedLoaderMdRegularIcon,
     LabelPairedLoaderSmRegularIcon,
+    IconTypes
 } from "@deriv/quill-icons";
 import "../button.scss";
 import { CaptionText, Text } from "@components/Typography";
@@ -27,7 +28,7 @@ const dropdownIcons = {
     lg: LabelPairedChevronDownLgBoldIcon,
     xl: LabelPairedChevronDownXlBoldIcon,
 };
-export const loaderIcons = {
+export const loaderIcons: Record<'sm' | 'md' | 'lg' | 'xl', IconTypes> = {
     sm: LabelPairedLoaderCaptionRegularIcon,
     md: LabelPairedLoaderSmRegularIcon,
     lg: LabelPairedLoaderMdRegularIcon,
