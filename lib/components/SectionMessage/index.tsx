@@ -18,7 +18,7 @@ export type LinkList = {
 };
 export interface SectionMessageProps
     extends Omit<ComponentProps<"div">, "title"> {
-    title: string;
+    title?: string;
     className?: string;
     message: ReactNode;
     size: TMediumSizes;
@@ -76,9 +76,11 @@ export const SectionMessage = ({
             )}
             <div className="section-message-content">
                 <div className="title-and-message">
-                    <Text bold size={size === "md" ? "lg" : "md"}>
-                        {title}
-                    </Text>
+                    {title && (
+                        <Text bold size={size === "md" ? "lg" : "md"}>
+                            {title}
+                        </Text>
+                    )}
                     <Text size={size}>{message}</Text>
                 </div>
                 {linkList && linkList.length > 0 && (
