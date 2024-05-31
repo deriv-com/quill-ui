@@ -23,7 +23,7 @@ const meta = {
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
     args: {
-        icon: <StandalonePlaceholderRegularIcon fill="#ffffff" iconSize="sm" />,
+        icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
         id: "",
         isVisible: true,
         message: "Message goes here",
@@ -178,7 +178,7 @@ export const SnackbarWithMessageOnly = Template.bind(this, {
 
 export const SnackbarWithIcon = Template.bind(this, {
     ...meta.args,
-    icon: <StandalonePlaceholderRegularIcon fill="#ffffff" iconSize="sm" />,
+    icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
     hasCloseButton: false,
     actionText: "",
 });
@@ -206,20 +206,22 @@ export const SnackbarWithTwoLinesMessageMobileOnly = Template.bind(this, {
     actionText: "",
 });
 
-export const SnackbarWithTwoLinesMessageWithCloseButtonMobileOnly = Template.bind(this, {
-    ...meta.args,
-    icon: "",
-    message:
-        "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem.",
-    actionText: "",
-});
+export const SnackbarWithTwoLinesMessageWithCloseButtonMobileOnly =
+    Template.bind(this, {
+        ...meta.args,
+        icon: "",
+        message:
+            "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem.",
+        actionText: "",
+    });
 
-export const SnackbarWithTwoLinesMessageWithActionButtonMobileOnly = Template.bind(this, {
-    ...meta.args,
-    icon: "",
-    message:
-        "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem.",
-    actionText: "Action",
-    hasCloseButton: false,
-    onActionClick: fn(),
-});
+export const SnackbarWithTwoLinesMessageWithActionButtonMobileOnly =
+    Template.bind(this, {
+        ...meta.args,
+        icon: "",
+        message:
+            "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem.",
+        actionText: "Action",
+        hasCloseButton: false,
+        onActionClick: fn(),
+    });

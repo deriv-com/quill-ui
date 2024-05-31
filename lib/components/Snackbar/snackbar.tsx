@@ -76,8 +76,10 @@ export const Snackbar = ({
             {hasCloseButton && (
                 <Button
                     variant="tertiary"
-                    label={<LabelPairedXmarkSmBoldIcon />}
+                    iconPosition="start"
+                    icon={<LabelPairedXmarkSmBoldIcon />}
                     color="white"
+                    size="md"
                     onClick={() => handleClose()}
                     data-testid="close-button"
                 />

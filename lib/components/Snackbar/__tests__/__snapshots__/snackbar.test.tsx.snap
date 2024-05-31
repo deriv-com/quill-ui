@@ -36,36 +36,28 @@ exports[`Snackbar calls removeSnackbar after a certain duration when Snackbar is
         data-state=""
         data-testid="close-button"
       >
-        <span
-          class="quill-button-label"
+        <svg
+          height="22"
+          role="img"
+          viewBox="0 0 11 22"
+          width="11"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
-          >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 11 22"
-              width="11"
-              xmlns="http://www.w3.org/2000/svg"
+          <g>
+            <path
+              d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+            />
+          </g>
+          <defs>
+            <clippath
+              id="30e42cfabd8d37cc6e080bc88b873083__a"
             >
-              <g>
-                <path
-                  d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
-                >
-                  <path
-                    d="M0 0h11v22H0z"
-                  />
-                </clippath>
-              </defs>
-            </svg>
-          </p>
-        </span>
+              <path
+                d="M0 0h11v22H0z"
+              />
+            </clippath>
+          </defs>
+        </svg>
       </button>
     </div>
   </div>
@@ -108,36 +100,28 @@ exports[`Snackbar calls removeSnackbar when action button is clicked 1`] = `
         data-state=""
         data-testid="close-button"
       >
-        <span
-          class="quill-button-label"
+        <svg
+          height="22"
+          role="img"
+          viewBox="0 0 11 22"
+          width="11"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
-          >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 11 22"
-              width="11"
-              xmlns="http://www.w3.org/2000/svg"
+          <g>
+            <path
+              d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+            />
+          </g>
+          <defs>
+            <clippath
+              id="30e42cfabd8d37cc6e080bc88b873083__a"
             >
-              <g>
-                <path
-                  d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
-                >
-                  <path
-                    d="M0 0h11v22H0z"
-                  />
-                </clippath>
-              </defs>
-            </svg>
-          </p>
-        </span>
+              <path
+                d="M0 0h11v22H0z"
+              />
+            </clippath>
+          </defs>
+        </svg>
       </button>
     </div>
   </div>
@@ -180,36 +164,28 @@ exports[`Snackbar calls removeSnackbar when close button is clicked 1`] = `
         data-state=""
         data-testid="close-button"
       >
-        <span
-          class="quill-button-label"
+        <svg
+          height="22"
+          role="img"
+          viewBox="0 0 11 22"
+          width="11"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
-          >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 11 22"
-              width="11"
-              xmlns="http://www.w3.org/2000/svg"
+          <g>
+            <path
+              d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+            />
+          </g>
+          <defs>
+            <clippath
+              id="30e42cfabd8d37cc6e080bc88b873083__a"
             >
-              <g>
-                <path
-                  d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
-                >
-                  <path
-                    d="M0 0h11v22H0z"
-                  />
-                </clippath>
-              </defs>
-            </svg>
-          </p>
-        </span>
+              <path
+                d="M0 0h11v22H0z"
+              />
+            </clippath>
+          </defs>
+        </svg>
       </button>
     </div>
   </div>
@@ -260,36 +236,28 @@ exports[`Snackbar renders correctly with custom icon 1`] = `
         data-state=""
         data-testid="close-button"
       >
-        <span
-          class="quill-button-label"
+        <svg
+          height="22"
+          role="img"
+          viewBox="0 0 11 22"
+          width="11"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
-          >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 11 22"
-              width="11"
-              xmlns="http://www.w3.org/2000/svg"
+          <g>
+            <path
+              d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+            />
+          </g>
+          <defs>
+            <clippath
+              id="30e42cfabd8d37cc6e080bc88b873083__a"
             >
-              <g>
-                <path
-                  d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
-                >
-                  <path
-                    d="M0 0h11v22H0z"
-                  />
-                </clippath>
-              </defs>
-            </svg>
-          </p>
-        </span>
+              <path
+                d="M0 0h11v22H0z"
+              />
+            </clippath>
+          </defs>
+        </svg>
       </button>
     </div>
   </div>
@@ -318,36 +286,28 @@ exports[`Snackbar renders correctly without action button 1`] = `
         data-state=""
         data-testid="close-button"
       >
-        <span
-          class="quill-button-label"
+        <svg
+          height="22"
+          role="img"
+          viewBox="0 0 11 22"
+          width="11"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
-          >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 11 22"
-              width="11"
-              xmlns="http://www.w3.org/2000/svg"
+          <g>
+            <path
+              d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+            />
+          </g>
+          <defs>
+            <clippath
+              id="30e42cfabd8d37cc6e080bc88b873083__a"
             >
-              <g>
-                <path
-                  d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
-                >
-                  <path
-                    d="M0 0h11v22H0z"
-                  />
-                </clippath>
-              </defs>
-            </svg>
-          </p>
-        </span>
+              <path
+                d="M0 0h11v22H0z"
+              />
+            </clippath>
+          </defs>
+        </svg>
       </button>
     </div>
   </div>
@@ -426,36 +386,28 @@ exports[`Snackbar renders with default props 1`] = `
         data-state=""
         data-testid="close-button"
       >
-        <span
-          class="quill-button-label"
+        <svg
+          height="22"
+          role="img"
+          viewBox="0 0 11 22"
+          width="11"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default white"
-          >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 11 22"
-              width="11"
-              xmlns="http://www.w3.org/2000/svg"
+          <g>
+            <path
+              d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
+            />
+          </g>
+          <defs>
+            <clippath
+              id="30e42cfabd8d37cc6e080bc88b873083__a"
             >
-              <g>
-                <path
-                  d="m9.684 7.496-3.282 3.281 3.254 3.254a.6.6 0 0 1 0 .903.6.6 0 0 1-.902 0L5.473 11.68l-3.254 3.254a.6.6 0 0 1-.903 0c-.273-.246-.273-.657 0-.93L4.57 10.75 1.316 7.496c-.273-.246-.273-.656 0-.93.246-.246.657-.246.93 0L5.5 9.848l3.254-3.254c.246-.274.656-.274.93 0a.644.644 0 0 1 0 .902"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
-                >
-                  <path
-                    d="M0 0h11v22H0z"
-                  />
-                </clippath>
-              </defs>
-            </svg>
-          </p>
-        </span>
+              <path
+                d="M0 0h11v22H0z"
+              />
+            </clippath>
+          </defs>
+        </svg>
       </button>
     </div>
   </div>
