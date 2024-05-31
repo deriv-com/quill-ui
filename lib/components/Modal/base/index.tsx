@@ -152,12 +152,15 @@ export const Modal = ({
                           />
                       )
                     : showCrossIcon && (
-                          <button
+                          <Button
+                              variant="tertiary"
+                              color="black"
+                              size="lg"
+                              iconPosition="start"
                               className="quill-modal__close-icon"
                               onClick={toggleHandler}
-                          >
-                              <LabelPairedXmarkMdBoldIcon fill="var(--component-textIcon-normal-prominent)" />
-                          </button>
+                              icon={<LabelPairedXmarkMdBoldIcon />}
+                          />
                       )}
 
                 <div className="quill-modal__content-wrapper">{children}</div>
