@@ -55,28 +55,28 @@
     &__base {
         display: inline-flex;
         position: absolute;
-        border-radius: var(--core-borderRadius-4800);
+        border-radius: var(--component-badge-status-border-radius);
         align-items: center;
         justify-content: center;
-        color: var(--core-color-solid-slate-50);
+        color: var(--component-badge-notification-label-color);
     }
 
     &__variant {
         &__status {
             &--size {
                 &-sm {
-                    height: var(--core-size-400);
-                    min-width: var(--core-size-400);
+                    height: var(--component-badge-status-height-sm);
+                    min-width: var(--component-badge-status-width-sm);
                 }
 
                 &-md {
-                    height: var(--core-size-800);
-                    min-width: var(--core-size-800);
+                    height: var(--component-badge-status-height-md);
+                    min-width: var(--component-badge-status-width-md);
                 }
 
                 &-lg {
-                    height: var(--core-size-1200);
-                    min-width: var(--core-size-1200);
+                    height: var(--component-badge-status-height-lg);
+                    min-width: var(--component-badge-status-width-lg);
                 }
             }
         }
@@ -84,37 +84,31 @@
         &__notification {
             &--size {
                 &-sm {
-                    padding-inline: var(--temp-static-spacing-5);
-                    height: var(--core-size-900);
-                    min-width: var(--core-size-900);
-                }
+                    padding-inline: var(--component-badge-notification-spacing-padding-sm);
+               }
 
                 &-md {
-                    padding-inline: var(--temp-static-spacing-7);
-                    height: var(--core-size-1200);
-                    min-width: var(--core-size-1200);
-                }
+                    padding-inline: var(--component-badge-notification-spacing-padding-md);
+                  }
 
                 &-lg {
-                    padding-inline: var(--core-spacing-500);
-                    height: var(--core-size-1800);
-                    min-width: var(--core-size-1800);
-                }
+                    padding-inline: var(--component-badge-notification-spacing-padding-lg);
+                     }
             }
         }
     }
 
     &__color {
         &--success {
-            background-color: var(--core-color-solid-green-700);
+            background-color: var(--component-badge-status-bg-success);
         }
 
         &--warning {
-            background-color: var(--core-color-solid-yellow-700);
+            background-color: var(--component-badge-status-bg-warning);
         }
 
         &--danger {
-            background-color: var(--core-color-solid-red-700);
+            background-color: var(--component-badge-status-bg-danger);
         }
     }
 }
