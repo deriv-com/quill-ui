@@ -85,14 +85,17 @@
             &--size {
                 &-sm {
                     padding-inline: var(--component-badge-notification-spacing-padding-sm);
+                    min-width: var(--core-spacing-900);
                }
 
                 &-md {
                     padding-inline: var(--component-badge-notification-spacing-padding-md);
+                    min-width: var(--core-spacing-1200);
                   }
 
                 &-lg {
                     padding-inline: var(--component-badge-notification-spacing-padding-lg);
+                    
                      }
             }
         }
