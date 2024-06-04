@@ -19,6 +19,7 @@ export interface TextAreaProps
     textAreaClassName?: string;
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
+    resizable?: boolean;
     message?: ReactNode;
     status?: Status;
     fieldMarker?: boolean;
@@ -48,13 +49,14 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             disabled,
             size = "md",
             message,
+            maxLength,
             showCharacterCounter = true,
-            maxLength = 200,
             status = "neutral",
             textvalue = "",
             onChange,
             fieldMarker,
             required,
+            resizable = true,
         } = props;
 
         const [value, setValue] = useState(textvalue);
@@ -73,6 +75,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                         `quill-textarea__wrapper__variant--${variant}`,
                         `quill-textarea__wrapper__size--${label ? "md" : size}`,
                         `quill-textarea__wrapper__variant--${variant}--${status}`,
+                        `quill-textarea__wrapper__resize--${resizable}`,
                     )}
                 >
                     {leftIcon && <span className="left-icon">{leftIcon}</span>}

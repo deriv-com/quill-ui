@@ -49,10 +49,18 @@
     &__wrapper {
         border-radius: var(--semantic-borderRadius-md);
         overflow: hidden;
-        resize: both;
         min-height: 128px;
         position: relative;
         box-sizing: border-box;
+
+        &__resize {
+            &--true {
+                resize: both;
+            }
+            &--false {
+                resize: none;
+            }
+        }
 
         &__variant {
             &--outline {
@@ -213,7 +221,7 @@
                 }
                 &:focus,
                 &.has-value {
-                    padding-top: 8px;
+                    margin-top: 8px;
                     &::placeholder {
                         color: var(--component-field-label-color-disabled);
                     }
