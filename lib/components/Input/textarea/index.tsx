@@ -3,6 +3,11 @@ import { Status, Variants } from "../base";
 import "./textarea.scss";
 import clsx from "clsx";
 import { TMediumSizes } from "@types";
+import { CaptionText } from "@components/Typography";
+import {
+    StandaloneCircleCheckBoldIcon,
+    StandaloneTriangleExclamationBoldIcon,
+} from "@deriv/quill-icons/Standalone";
 
 export interface TextAreaProps
     extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -11,34 +16,53 @@ export interface TextAreaProps
     textvalue?: string;
     size?: TMediumSizes;
     wrapperClassName?: string;
+    textAreaClassName?: string;
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
-    resizable?: boolean;
     message?: ReactNode;
     status?: Status;
     fieldMarker?: boolean;
     showCharacterCounter?: boolean;
 }
 
+const statusIconColors = {
+    neutral: "status-icon--neutral",
+    success: "status-icon--success",
+    error: "status-icon--error",
+};
+const statusIcon = {
+    success: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+    error: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+};
+
 export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     (props, ref) => {
         const {
             wrapperClassName,
+            textAreaClassName,
             label,
             variant = "outline",
-            // leftIcon,
-            // rightIcon,
-            // resizable = true,
+            leftIcon,
+            rightIcon,
+            placeholder,
+            disabled,
             size = "md",
             message,
-            showCharacterCounter,
-            maxLength,
+            showCharacterCounter = true,
+            maxLength = 200,
             status = "neutral",
             textvalue = "",
             onChange,
+            fieldMarker,
+            required,
         } = props;
 
         const [value, setValue] = useState(textvalue);
+
+        const rightSideIcon =
+            (status === "success" || status === "error") && !disabled
+                ? statusIcon[status]
+                : rightIcon;
 
         return (
             <div className="quill-textarea__container">
@@ -49,21 +73,53 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                         `quill-textarea__wrapper__variant--${variant}`,
                         `quill-textarea__wrapper__size--${label ? "md" : size}`,
                         `quill-textarea__wrapper__variant--${variant}--${status}`,
-                        // value && "has-value",
                     )}
                 >
-                    <span className="left-icon">&#x1F50D;</span>
+                    {leftIcon && <span className="left-icon">{leftIcon}</span>}
                     <textarea
-                        className="quill-textarea"
+                        className={clsx(
+                            "quill-textarea",
+                            textAreaClassName,
+                            value && "has-value",
+                        )}
+                        placeholder={placeholder}
                         value={value}
+                        disabled={!!disabled}
                         onChange={(e) => {
                             setValue(e.target.value);
                             onChange?.(e);
                         }}
                         {...props}
+                        id={label?.toString()}
                         ref={ref}
                     />
-                    <span className="right-icon">&#x2709;</span>
+                    {label && size === "md" && (
+                        <label
+                            className={clsx("label", `label--${status}`)}
+                            htmlFor={label.toString()}
+                        >
+                            {label}
+                            {fieldMarker && (
+                                <div
+                                    className={clsx(
+                                        `label-field-marker__required--${required}`,
+                                    )}
+                                >
+                                    {required ? "*" : "(optional)"}
+                                </div>
+                            )}
+                        </label>
+                    )}
+                    {rightSideIcon && (
+                        <span
+                            className={clsx(
+                                "right-icon",
+                                statusIconColors[status],
+                            )}
+                        >
+                            {rightSideIcon}
+                        </span>
+                    )}
                 </div>
                 <div className="quill-textarea__resizer"></div>
 
@@ -71,18 +127,26 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                     <div
                         className={clsx(
                             "message__container",
-                            // `message__container--${inputSize}`,
-                            `message__container__status--${status}`,
-                            // disabled && `message__container__disabled`,
+                            `message__container--${size}`,
                         )}
                     >
-                        <span className="message__container__text">
+                        <CaptionText
+                            className={clsx(
+                                `message--${status}`,
+                                disabled && "message--disabled",
+                            )}
+                        >
                             {message}
-                        </span>
+                        </CaptionText>
                         {showCharacterCounter && maxLength && (
-                            <span className="message__container__text">
-                                {/* {inputValue.toString().length}/{maxLength} */}
-                            </span>
+                            <CaptionText
+                                className={clsx(
+                                    `message--${status}`,
+                                    disabled && "message--disabled",
+                                )}
+                            >
+                                {value.toString().length}/{maxLength}
+                            </CaptionText>
                         )}
                     </div>
                 )}
