@@ -218,7 +218,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                         className={clsx(
                                             "quill-input-label__label",
                                             "quill-input-label__label--right",
-                                            `quill-input-label__label--disabled`,
+                                            disabled && "quill-input-label__label--disabled",
                                         )}
                                     >
                                         {rightPlaceholder}

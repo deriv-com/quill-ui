@@ -118,7 +118,7 @@
             margin-left: var(--core-spacing-200);
         }
         &--disabled {
-            opacity: var(--core-opacity-600);
+            color: var(--component-field-label-color-disabled) !important;
         }
     }
 
