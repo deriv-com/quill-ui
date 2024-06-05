@@ -24,11 +24,9 @@ export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithS
             <>
                 {textAlignment !== 'center' && (<button className={clsx("quill-input-steppers-button", "quill-input-steppers-button--decrement")}
                     onClick={() => {
-                        if (!disabled) {
                             onChange?.({
                                 target: { value: getFormatValue(Number(value) - 1) },
                             } as unknown as React.ChangeEvent<HTMLInputElement>);
-                        }
                     }}
                     disabled={disabled}
                     >
@@ -36,11 +34,9 @@ export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithS
                 </button>)}
                 <button className={clsx("quill-input-steppers-button", "quill-input-steppers-button--increment")}
                     onClick={() => {
-                        if (!disabled) {
                             onChange?.({
                                 target: { value: getFormatValue(Number(value) + 1) },
                             } as unknown as React.ChangeEvent<HTMLInputElement>);
-                        }
                     }}
                     disabled={disabled}
                     >
@@ -53,11 +49,9 @@ export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithS
             <>
                 <button className={clsx("quill-input-steppers-button", "quill-input-steppers-button--decrement")}
                     onClick={() => {
-                        if (!disabled) {
                             onChange?.({
                                 target: { value: getFormatValue(Number(value) - 1) },
                             } as unknown as React.ChangeEvent<HTMLInputElement>);
-                        }
                     }}
                     disabled={disabled}
                     >
