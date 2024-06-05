@@ -174,7 +174,7 @@
         &--tertiary-black {
             background-color: transparent;
             color: var(--core-color-solid-black-1400);
-            fill: var(--core-color-solid-black-1400);
+            fill: var(--component-textIcon-normal-prominent);
             text-decoration: underline;
             border: none;
             &:hover:not(:disabled) {
@@ -189,8 +189,8 @@
         }
         &--tertiary-white {
             background-color: transparent;
-            color: var(--core-color-solid-slate-50);
-            fill: var(--core-color-solid-slate-50);
+            color: var(--component-button-label-color-blackWhite-primary);
+            fill: var(--component-textIcon-inverse-prominent);
             text-decoration: underline;
             border: none;
             &:hover:not(:disabled) {

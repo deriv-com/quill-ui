@@ -7,6 +7,7 @@ import { Button } from "../base";
 import "./dropdown.scss";
 import { Text, CaptionText } from "@components/Typography";
 import { TRegularSizesWithExtraLarge } from "@types";
+import { DropdownItem } from "@components/Atom";
 
 export type TSingleSelectItem = {
     value: number | string;
@@ -27,25 +28,18 @@ const Options = ({
     item: TSingleSelectItem;
     size: TRegularSizesWithExtraLarge;
 }) => {
+    const itemSize = size === "sm" ? "sm" : size === "md" ? "sm" : "md";
     return (
         <Listbox.Option value={item} as={Fragment}>
-            {({ selected, active }) => {
+            {({ selected, disabled, active }) => {
                 return (
-                    <li
-                        className={clsx(
-                            "dropdown-menu__item",
-                            `dropdown-menu__item--size-${size}`,
-                            selected && "dropdown-menu__item--selected",
-                            active && `dropdown-menu__item--active`,
-                        )}
-                    >
-                        <Text
-                            as="span"
-                            color="var(--component-dropdownItem-label-color-selectedWhite)"
-                        >
-                            {item.label}
-                        </Text>
-                    </li>
+                    <DropdownItem
+                        className={clsx(`dropdown-menu__item--${active}`)}
+                        label={item.label}
+                        disabled={disabled}
+                        selected={selected}
+                        size={itemSize}
+                    />
                 );
             }}
         </Listbox.Option>
@@ -62,6 +56,7 @@ export const DropdownButton = forwardRef<
             size = "md",
             icon,
             label,
+            isLoading,
             color = "coral",
             variant,
             disabled,
@@ -96,6 +91,7 @@ export const DropdownButton = forwardRef<
                                     color={color}
                                     label={label}
                                     variant={variant}
+                                    isLoading={isLoading}
                                     ref={ref}
                                     dropdown
                                     selected={
@@ -105,37 +101,47 @@ export const DropdownButton = forwardRef<
                                     isDropdownOpen={open}
                                     disabled={disabled}
                                 >
-                                    {size === "sm" ? (
-                                        <CaptionText color={color} bold>
-                                            {selectedItem.label}
-                                        </CaptionText>
-                                    ) : (
-                                        <Text
-                                            size={labelSize}
-                                            bold
-                                            color={color}
-                                        >
-                                            {selectedItem.label}
-                                        </Text>
-                                    )}
+                                    {!isLoading &&
+                                        (size === "sm" ? (
+                                            <CaptionText color={color} bold>
+                                                {selectedItem.label}
+                                            </CaptionText>
+                                        ) : (
+                                            <Text
+                                                size={labelSize}
+                                                bold
+                                                color={color}
+                                            >
+                                                {selectedItem.label}
+                                            </Text>
+                                        ))}
                                 </Button>
                             </Listbox.Button>
-                            <Transition
-                                enter={clsx("dropdown-menu__transition--enter")}
-                            >
-                                <Listbox.Options
-                                    className={clsx("dropdown-menu__container")}
+                            {!isLoading && (
+                                <Transition
+                                    enter={clsx(
+                                        "dropdown-menu__transition--enter",
+                                    )}
                                 >
-                                    <Options item={defaultOption} size={size} />
-                                    {options.map((item) => (
+                                    <Listbox.Options
+                                        className={clsx(
+                                            "dropdown-menu__container",
+                                        )}
+                                    >
                                         <Options
-                                            item={item}
-                                            key={item.value}
+                                            item={defaultOption}
                                             size={size}
                                         />
-                                    ))}
-                                </Listbox.Options>
-                            </Transition>
+                                        {options.map((item) => (
+                                            <Options
+                                                item={item}
+                                                key={item.value}
+                                                size={size}
+                                            />
+                                        ))}
+                                    </Listbox.Options>
+                                </Transition>
+                            )}
                         </>
                     )}
                 </Listbox>

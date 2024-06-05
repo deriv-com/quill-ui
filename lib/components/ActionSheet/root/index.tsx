@@ -16,7 +16,7 @@ const Root = ({
     isOpen,
     children,
     className,
-    position,
+    position = "right",
     type = "modal",
     expandable = true,
     onOpen,

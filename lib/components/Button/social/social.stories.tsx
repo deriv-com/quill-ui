@@ -4,9 +4,7 @@ import SocialButton from ".";
 const meta = {
     title: "Components/Button/Social",
     component: SocialButton,
-    parameters: {
-        layout: "centered",
-    },
+
     tags: ["autodocs"],
     args: {
         size: "md",
@@ -27,6 +25,10 @@ const meta = {
         size: {
             options: ["md", "lg", "xl"],
             control: { type: "radio" },
+        },
+        fullWidth: {
+            options: ["true", "false"],
+            control: { type: "boolean" },
         },
 
         onClick: {

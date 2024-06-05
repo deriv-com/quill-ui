@@ -25,8 +25,8 @@
             justify-content: space-evenly;
             flex-direction: column;
             background-color: var(--component-modal-bg);
-            border-top-left-radius: var(--core-borderRadius-800);
-            border-top-right-radius: var(--core-borderRadius-800);
+            border-top-left-radius: var(--component-modal-border-radius-bottom);
+            border-top-right-radius: var(--component-modal-border-radius-bottom);
             opacity: var(--core-opacity-50);
             transform: translateY(100%);
             pointer-events: none;
@@ -37,8 +37,8 @@
             position: relative;
             overflow: hidden;
             display: flex;
-            border-radius: var(--core-borderRadius-1600);
-            width: 512px;
+            border-radius: var(--component-modal-border-radius-overlay);
+            width: var(--component-modal-width-overlay);
             max-height: 720px;
             justify-content: space-evenly;
             flex-direction: column;
@@ -63,10 +63,10 @@
         cursor: pointer;
         top: var(--semantic-spacing-general-sm);
         left: calc(50% - (var(--core-size-2400) / 2));
-        width: var(--core-size-2400);
-        height: var(--core-size-200);
-        background-color: var(--core-color-opacity-black-300);
-        border-radius: var(--core-borderRadius-100);
+        width: var(--component-handle-width);
+        height: var(--component-handle-height);
+        background-color: var(--component-handle-bg);
+        border-radius: var(--component-handle-border-radius);
 
         // Pseudo-element for increasing swipeable area
         &:before {
@@ -81,12 +81,7 @@
     }
     &__close-icon {
         position: absolute;
-        cursor: pointer;
-        top: var(--core-spacing-800);
-        width: var(--core-spacing-2400);
-        padding: var(--core-spacing-600) var(--core-spacing-800);
-        justify-content: center;
-        display: flex;
+        top: var(--core-spacing-1000);
         right: var(--core-spacing-800);
     }
     &__content {
@@ -113,26 +108,26 @@
            
 
             & + .quill-modal-bottom__content-title {
-                margin-top: var(--semantic-spacing-general-lg);
+                margin-top: var(--component-modal-spacing-overlay-padding-sm);
                 @include breakpoint("lg") {
-                    margin-top:  var(--core-spacing-1200);
+                    margin-top:  var(--component-modal-spacing-overlay-padding-sm);
                 }
             }
         }
 
         &-title {
-            margin: var(--core-spacing-2200) var(--semantic-spacing-general-lg)
+            margin: var(--component-modal-spacing-bottom-padding-lg) var(--component-modal-spacing-overlay-padding-sm)
                 0;
                 @include breakpoint("lg") {
-                    margin: var(--core-spacing-1600);
+                    margin: var(--component-modal-spacing-overlay-padding-md);
                 }
         }
 
         &-body {
-            margin: var(--semantic-spacing-general-lg)
-                var(--semantic-spacing-general-lg);
+            margin: var(--component-modal-spacing-overlay-padding-sm)
+                var(--component-modal-spacing-overlay-padding-sm);
                 @include breakpoint("lg") {
-                    margin: var(--core-spacing-1200) var(--core-spacing-1600);
+                    margin: var(--component-modal-spacing-overlay-padding-sm) var(--component-modal-spacing-overlay-padding-md);
                 }
         }
     }
@@ -141,14 +136,14 @@
 
         &-wrapper {
             align-self: stretch;
-            padding: var(--semantic-spacing-general-lg);
+            padding: var(--component-modal-spacing-overlay-padding-sm);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
             gap: var(--semantic-spacing-gap-md);
             @include breakpoint("lg") {
-                padding: var(--core-spacing-1200) var(--core-spacing-1600);
+                padding: var(--component-modal-spacing-overlay-padding-sm) var(--component-modal-spacing-overlay-padding-md);
             }
         }
     }

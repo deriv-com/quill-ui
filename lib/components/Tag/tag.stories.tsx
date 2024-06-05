@@ -19,6 +19,16 @@ const meta = {
             name: "Label",
             control: "text",
         },
+        size: {
+            options: ["xs", "sm", "md", "lg"],
+            control: { type: "radio" },
+            description: "To select the size of icon and font-size",
+        },
+        variant: {
+            options: ["fill", "outline"],
+            control: { type: "radio" },
+            description: "To select the variant of the tag",
+        },
         icon: {
             table: {
                 disable: true,

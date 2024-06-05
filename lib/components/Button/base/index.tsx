@@ -6,10 +6,11 @@ import {
     LabelPairedChevronDownMdBoldIcon,
     LabelPairedChevronDownSmBoldIcon,
     LabelPairedChevronDownXlBoldIcon,
-    LabelPairedSunBrightLgRegularIcon,
-    LabelPairedSunBrightMdRegularIcon,
-    LabelPairedSunBrightSmRegularIcon,
-    LabelPairedSunBrightXlRegularIcon,
+    LabelPairedLoaderCaptionRegularIcon,
+    LabelPairedLoaderLgRegularIcon,
+    LabelPairedLoaderMdRegularIcon,
+    LabelPairedLoaderSmRegularIcon,
+    IconTypes
 } from "@deriv/quill-icons";
 import "../button.scss";
 import { CaptionText, Text } from "@components/Typography";
@@ -27,11 +28,11 @@ const dropdownIcons = {
     lg: LabelPairedChevronDownLgBoldIcon,
     xl: LabelPairedChevronDownXlBoldIcon,
 };
-const loaderIcons = {
-    sm: LabelPairedSunBrightSmRegularIcon,
-    md: LabelPairedSunBrightMdRegularIcon,
-    lg: LabelPairedSunBrightLgRegularIcon,
-    xl: LabelPairedSunBrightXlRegularIcon,
+export const loaderIcons: Record<'sm' | 'md' | 'lg' | 'xl', IconTypes> = {
+    sm: LabelPairedLoaderCaptionRegularIcon,
+    md: LabelPairedLoaderSmRegularIcon,
+    lg: LabelPairedLoaderMdRegularIcon,
+    xl: LabelPairedLoaderLgRegularIcon,
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -48,6 +49,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             isLoading = false,
             size = "md",
             label,
+            disabled,
             iconPosition,
             variant = "primary",
             ...rest
@@ -68,15 +70,18 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                     className,
                     fullWidth && "quill-button__full-width",
                 )}
-                disabled={rest.disabled}
+                disabled={disabled}
                 data-state={selected ? "selected" : ""}
                 ref={ref}
                 {...rest}
             >
                 {iconPosition === "start" && icon && !isLoading && icon}
-                {/* To be Added isLoading based on requirement*/}
-                {isLoading && (
-                    <LoaderIcon className="quill-button__loader-icon" />
+
+                {isLoading && !disabled && (
+                    <LoaderIcon
+                        data-testid="button-loader"
+                        className="quill-button__loader-icon"
+                    />
                 )}
                 {children && <div>{children}</div>}
                 {label && !isLoading && (
@@ -93,7 +98,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                     </span>
                 )}
                 {iconPosition === "end" && icon && !isLoading && icon}
-                {dropdown && DropdownIcon && (
+                {dropdown && DropdownIcon && !isLoading && (
                     <DropdownIcon
                         data-state={isDropdownOpen ? "open" : "close"}
                         className={clsx(
