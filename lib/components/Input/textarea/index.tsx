@@ -73,9 +73,11 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                         wrapperClassName,
                         "quill-textarea__wrapper",
                         `quill-textarea__wrapper__variant--${variant}`,
-                        `quill-textarea__wrapper__size--${label ? "md" : size}`,
+                        `quill-textarea__wrapper__size--${size}`,
                         `quill-textarea__wrapper__variant--${variant}--${status}`,
                         `quill-textarea__wrapper__resize--${resizable}`,
+                        !leftIcon && "no-left-icon",
+                        !rightSideIcon && "no-right-icon",
                     )}
                 >
                     {leftIcon && <span className="left-icon">{leftIcon}</span>}

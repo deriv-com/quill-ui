@@ -56,7 +56,7 @@ exports[`Snackbar calls removeSnackbar after a certain duration when Snackbar is
               </g>
               <defs>
                 <clippath
-                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
+                  id="30e42cfabd8d37cc6e080bc88b873083__a"
                 >
                   <path
                     d="M0 0h11v22H0z"
@@ -128,7 +128,7 @@ exports[`Snackbar calls removeSnackbar when action button is clicked 1`] = `
               </g>
               <defs>
                 <clippath
-                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
+                  id="30e42cfabd8d37cc6e080bc88b873083__a"
                 >
                   <path
                     d="M0 0h11v22H0z"
@@ -200,7 +200,7 @@ exports[`Snackbar calls removeSnackbar when close button is clicked 1`] = `
               </g>
               <defs>
                 <clippath
-                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
+                  id="30e42cfabd8d37cc6e080bc88b873083__a"
                 >
                   <path
                     d="M0 0h11v22H0z"
@@ -280,7 +280,7 @@ exports[`Snackbar renders correctly with custom icon 1`] = `
               </g>
               <defs>
                 <clippath
-                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
+                  id="30e42cfabd8d37cc6e080bc88b873083__a"
                 >
                   <path
                     d="M0 0h11v22H0z"
@@ -338,7 +338,7 @@ exports[`Snackbar renders correctly without action button 1`] = `
               </g>
               <defs>
                 <clippath
-                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
+                  id="30e42cfabd8d37cc6e080bc88b873083__a"
                 >
                   <path
                     d="M0 0h11v22H0z"
@@ -446,7 +446,7 @@ exports[`Snackbar renders with default props 1`] = `
               </g>
               <defs>
                 <clippath
-                  id="bc20b7afc9245ecd8673f572bfeb5871__a"
+                  id="30e42cfabd8d37cc6e080bc88b873083__a"
                 >
                   <path
                     d="M0 0h11v22H0z"

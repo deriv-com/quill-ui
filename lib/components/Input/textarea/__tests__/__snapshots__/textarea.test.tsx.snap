@@ -13,7 +13,7 @@ exports[`TextArea Component renders with the correct size 1`] = `
     class="quill-textarea__container"
   >
     <div
-      class="quill-textarea__wrapper quill-textarea__wrapper__variant--outline quill-textarea__wrapper__size--sm quill-textarea__wrapper__variant--outline--neutral quill-textarea__wrapper__resize--true"
+      class="quill-textarea__wrapper quill-textarea__wrapper__variant--outline quill-textarea__wrapper__size--sm quill-textarea__wrapper__variant--outline--neutral quill-textarea__wrapper__resize--true no-left-icon no-right-icon"
     >
       <textarea
         class="quill-textarea"
