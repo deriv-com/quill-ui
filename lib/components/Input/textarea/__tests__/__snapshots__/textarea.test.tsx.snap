@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextArea Component handles onChange correctly 1`] = `
+<textarea
+  class="quill-textarea"
+  placeholder="Test Placeholder"
+/>
+`;
+
+exports[`TextArea Component renders with the correct size 1`] = `
+<div>
+  <div
+    class="quill-textarea__container"
+  >
+    <div
+      class="quill-textarea__wrapper quill-textarea__wrapper__variant--outline quill-textarea__wrapper__size--sm quill-textarea__wrapper__variant--outline--neutral quill-textarea__wrapper__resize--true"
+    >
+      <textarea
+        class="quill-textarea"
+      />
+    </div>
+    <div
+      class="quill-textarea__resizer"
+    />
+    <div
+      class="message__container message__container--sm"
+    >
+      <p
+        class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message--neutral"
+      />
+    </div>
+  </div>
+</div>
+`;
