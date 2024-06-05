@@ -121,7 +121,7 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
             class="quill-input-no-label__wrapper quill-input-label__wrapper--has-value"
           >
             <span
-              class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-input-label__label quill-input-label__label--left quill-input-label__label--disabled"
+              class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--disabled quill-input-label__label quill-input-label__label--left"
             >
               $
             </span>
