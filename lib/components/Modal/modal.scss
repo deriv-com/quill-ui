@@ -116,10 +116,16 @@
         }
 
         &-title {
-            margin: var(--component-modal-spacing-bottom-padding-lg) var(--component-modal-spacing-overlay-padding-sm)
+                margin: var(--component-modal-spacing-bottom-padding-lg) var(--component-modal-spacing-overlay-padding-sm)
                 0;
                 @include breakpoint("lg") {
                     margin: var(--component-modal-spacing-overlay-padding-md);
+                }
+                &-has-image {
+                    margin: var(--component-modal-spacing-overlay-padding-sm);
+                    @include breakpoint("lg") {
+                        margin: var(--component-modal-spacing-overlay-padding-sm) var(--component-modal-spacing-overlay-padding-md) var(--component-modal-spacing-overlay-padding-md);
+                    }
                 }
         }
 

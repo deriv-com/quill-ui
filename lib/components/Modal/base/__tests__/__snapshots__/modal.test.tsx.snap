@@ -28,7 +28,7 @@ exports[`Modal should render SVG if it was passed 1`] = `
           </svg>
         </div>
         <h4
-          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title"
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title-has-image"
         >
           Title
         </h4>
@@ -73,7 +73,7 @@ exports[`Modal should render container with image as a background if src was pas
           data-testid="dt_modal_image"
         />
         <h4
-          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title"
+          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title-has-image"
         >
           Title
         </h4>

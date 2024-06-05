@@ -43,7 +43,12 @@ export const ModalHeader = ({
         )}
         {title && (
             <Heading.H4
-                className={clsx("quill-modal__content-title", className)}
+                className={clsx(
+                    image || src
+                        ? "quill-modal__content-title-has-image"
+                        : "quill-modal__content-title",
+                    className,
+                )}
             >
                 {title}
             </Heading.H4>
