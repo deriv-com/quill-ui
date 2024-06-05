@@ -49,7 +49,8 @@ const meta = {
         textAlignment: "left",
         fieldMarker: false,
         required: false,
-        unit: "USD",
+        unitLeft: "$",
+        unitRight: "USD",
         decimals: 2,
         placeholder: '0.00',
     },
@@ -97,12 +98,6 @@ const meta = {
             },
             options: ["left", "center"],
         },
-        unitPlacement: {
-            control: {
-                type: "radio",
-            },
-            options: ["left", "right"],
-        },
         message: {
             control: {
                 type: "text",
@@ -118,7 +113,7 @@ type Story = StoryObj<typeof meta>;
 const Template = (args: ComponentProps<typeof TextFieldWithSteppers>) => {
     const [value, setValue] = useState("");
     return (
-        <div style={{ width: "300px" }}>
+        <div style={{ width: "360px" }}>
             <TextFieldWithSteppers
                 {...args}
                 value={value}

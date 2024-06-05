@@ -157,8 +157,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                         className={clsx(
                                             "quill-input-label__label",
                                             "quill-input-label__label--left",
-                                            `quill-input-label__label--disabled`,
                                         )}
+                                        color="quill-typography__color--disabled"
                                     >
                                         {leftPlaceholder}
                                     </Text>
@@ -218,8 +218,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                         className={clsx(
                                             "quill-input-label__label",
                                             "quill-input-label__label--right",
-                                            `quill-input-label__label--disabled`,
                                         )}
+                                        color={disabled ? "quill-typography__color--disabled" : ""}
                                     >
                                         {rightPlaceholder}
                                     </Text>
