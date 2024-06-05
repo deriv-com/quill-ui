@@ -30,9 +30,6 @@ const message = "Status message goes here";
 
 const meta = {
     title: "Components/Inputs/TextArea",
-    parameters: {
-        layout: "centered",
-    },
     component: TextArea,
     tags: ["autodocs"],
     args: {
