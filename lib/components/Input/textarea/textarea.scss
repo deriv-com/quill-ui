@@ -1,0 +1,354 @@
+.quill-textarea {
+    &__container {
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: var(--semantic-spacing-gap-sm);
+        font-family: var(--core-fontFamily-ibmPlex-sans);
+
+        &:has(textarea:disabled) {
+            cursor: not-allowed;
+            svg {
+                fill: var(--component-field-label-color-disabled);
+            }
+            .label {
+                color: var(--component-field-label-color-disabled);
+            }
+        }
+
+        .message__container {
+            display: flex;
+            gap: var(--component-field-spacing-gap-sm);
+            justify-content: space-between;
+            &--md {
+                padding-inline: var(--semantic-spacing-general-md);
+            }
+            &--sm {
+                padding-inline: var(--semantic-spacing-general-sm);
+            }
+
+            .message {
+                &--neutral {
+                    color: var(--component-textIcon-normal-subtle);
+                }
+                &--success {
+                    color: var(--component-textIcon-statusNormal-success);
+                }
+                &--error {
+                    color: var(--component-textIcon-statusNormal-danger);
+                }
+                &--disabled {
+                    color: var(--component-textIcon-normal-subtle);
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        border-radius: var(--semantic-borderRadius-md);
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+
+        &__resize {
+            &--true {
+                resize: both;
+            }
+            &--false {
+                resize: none;
+            }
+        }
+
+        &__variant {
+            &--outline {
+                background-color: var(--component-field-bg-outline-default);
+                border: var(--component-field-border-width) solid
+                    var(--component-field-border-color-default);
+
+                &:has(textarea:disabled) {
+                    border-color: var(--component-field-border-color-default);
+                }
+
+                &--neutral {
+                    &:hover {
+                        border-color: var(--component-field-border-color-hover);
+                    }
+                    &:has(textarea:focus) {
+                        border-color: var(--component-field-border-color-focus);
+                    }
+                }
+
+                &--success {
+                    border-color: var(
+                        --component-field-border-color-successDefault
+                    );
+                    &:hover {
+                        border-color: var(
+                            --component-field-border-color-successHover
+                        );
+                    }
+                    &:has(textarea:focus) {
+                        border-color: var(
+                            --component-field-border-color-successFocus
+                        );
+                    }
+                }
+
+                &--error {
+                    border-color: var(
+                        --component-field-border-color-failDefault
+                    );
+                    &:hover {
+                        border-color: var(
+                            --component-field-border-color-failHover
+                        );
+                    }
+                    &:has(textarea:focus) {
+                        border-color: var(
+                            --component-field-border-color-failFocus
+                        );
+                    }
+                }
+            }
+
+            &--fill {
+                border: var(--component-field-border-width) solid transparent;
+
+                &:has(textarea:disabled) {
+                    background-color: var(--component-field-bg-fill-default);
+                }
+
+                &--neutral {
+                    background-color: var(--component-field-bg-fill-default);
+                    &:hover {
+                        background-color: var(--component-field-bg-fill-hover);
+                    }
+                    &:has(textarea:focus) {
+                        background-color: var(--component-field-bg-fill-focus);
+                        border-color: var(--component-field-border-color-focus);
+                    }
+                }
+
+                &--success {
+                    background-color: var(
+                        --component-field-bg-fill-successDefault
+                    );
+                    &:hover {
+                        background-color: var(
+                            --component-field-bg-fill-successHover
+                        );
+                    }
+                    &:has(textarea:focus) {
+                        background-color: var(
+                            --component-field-bg-fill-successFocus
+                        );
+                        border-color: var(
+                            --component-field-border-color-successFocus
+                        );
+                    }
+                }
+
+                &--error {
+                    background-color: var(
+                        --component-field-bg-fill-failDefault
+                    );
+                    &:hover {
+                        background-color: var(
+                            --component-field-bg-fill-failHover
+                        );
+                    }
+                    &:has(textarea:focus) {
+                        background-color: var(
+                            --component-field-bg-fill-failFocus
+                        );
+                        border-color: var(
+                            --component-field-border-color-failFocus
+                        );
+                    }
+                }
+            }
+        }
+
+        &__size {
+            &--md {
+                padding-inline: var(--core-spacing-2400);
+                &.no-left-icon {
+                    padding-left: var(--core-spacing-800);
+                }
+                &.no-right-icon {
+                    padding-right: var(--core-spacing-800);
+                }
+                padding-top: var(--core-spacing-800);
+                .quill-textarea {
+                    font-size: var(
+                        --semantic-typography-body-md-regular-default-fontSize
+                    );
+                    line-height: var(
+                        --semantic-typography-body-md-regular-default-lineHeight
+                    );
+                }
+
+                .left-icon,
+                .right-icon {
+                    top: var(--core-size-800);
+                }
+                .left-icon {
+                    left: var(--core-size-800);
+                }
+                .right-icon {
+                    right: var(--core-size-500);
+                }
+            }
+            &--sm {
+                padding-inline: var(--core-spacing-2000);
+                &.no-left-icon {
+                    padding-left: var(--core-spacing-400);
+                }
+                &.no-right-icon {
+                    padding-right: var(--core-spacing-400);
+                }
+                padding-top: var(--core-spacing-200);
+
+                .quill-textarea {
+                    padding-top: var(--core-spacing-200);
+                    font-size: var(
+                        --semantic-typography-body-sm-regular-default-fontSize
+                    );
+                    line-height: var(
+                        --semantic-typography-body-sm-regular-default-lineHeight
+                    );
+                }
+
+                .left-icon,
+                .right-icon {
+                    top: var(--core-spacing-400);
+                }
+                .left-icon {
+                    left: var(--core-spacing-200);
+                }
+                .right-icon {
+                    right: var(--core-spacing-200);
+                }
+            }
+        }
+
+        .quill-textarea {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            resize: none;
+            box-sizing: border-box;
+            word-break: break-word;
+            color: var(--component-field-input-color-enabled);
+
+            &::placeholder {
+                color: var(--component-field-placeholder-color);
+            }
+
+            &:focus {
+                color: var(--component-field-input-color-focus);
+            }
+
+            &:has(~ label) {
+                &::placeholder {
+                    color: transparent;
+                }
+                &:focus,
+                &.has-value {
+                    margin-top: var(--core-spacing-400);
+                    &::placeholder {
+                        color: var(--component-field-label-color-disabled);
+                    }
+                }
+            }
+            &.has-value + .label {
+                top: var(--core-spacing-300);
+                font-size: var(--core-fontSize-50);
+                line-height: var(--core-lineHeight-100);
+            }
+
+            &:focus + .label {
+                line-height: var(--core-lineHeight-100);
+                font-size: var(--core-fontSize-50);
+                height: var(--core-size-600);
+                &--neutral {
+                    color: var(--component-field-label-color-focus);
+                }
+                top: var(--core-spacing-300);
+
+                &-field-marker {
+                    font-size: var(
+                        --semantic-typography-caption-regular-default-fontSize
+                    );
+                }
+            }
+        }
+
+        textarea:disabled {
+            color: var(--component-field-label-color-disabled);
+        }
+
+        .left-icon,
+        .right-icon {
+            display: flex;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .status-icon {
+            &--neutral {
+                fill: var(--component-textIcon-normal-default);
+            }
+            &--success {
+                fill: var(--component-textIcon-statusNormal-success);
+            }
+            &--error {
+                fill: var(--component-textIcon-statusNormal-danger);
+            }
+        }
+
+        .label {
+            position: absolute;
+            top: var(--core-spacing-800);
+            padding-top: var(--core-spacing-100);
+            transition-property: all;
+            transition-timing-function: var(--core-motion-ease-400);
+            transition-duration: var(--core-motion-duration-200);
+            display: flex;
+            gap: var(--semantic-spacing-gap-sm);
+            color: var(--component-field-label-color-default);
+
+            &--neutral {
+                color: var(--component-field-label-color-default);
+            }
+            &--success {
+                color: var(--component-field-label-color-success);
+            }
+            &--error {
+                color: var(--component-field-label-color-fail);
+            }
+
+            &-field-marker {
+                &__required {
+                    &--true {
+                        color: var(--core-color-solid-red-900);
+                    }
+
+                    &--false {
+                        color: var(--component-textIcon-normal-disabled);
+                    }
+                }
+            }
+        }
+    }
+
+    &__resizer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        cursor: se-resize;
+    }
+}

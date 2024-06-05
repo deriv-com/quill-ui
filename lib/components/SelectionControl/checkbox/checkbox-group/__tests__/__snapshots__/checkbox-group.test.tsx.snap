@@ -54,7 +54,7 @@ exports[`CheckboxGroup should render checkbox components according to passed con
           </g>
           <defs>
             <clippath
-              id="1c46262142574a7a3675d7c9e5e6dfb8__a"
+              id="e6d847cd71f49a499afe74355fd3fa7e__a"
             >
               <path
                 d="M0 0h14v22H0z"
@@ -295,7 +295,7 @@ exports[`CheckboxGroup should render checkbox components according to passed con
           </g>
           <defs>
             <clippath
-              id="1c46262142574a7a3675d7c9e5e6dfb8__a"
+              id="e6d847cd71f49a499afe74355fd3fa7e__a"
             >
               <path
                 d="M0 0h14v22H0z"
@@ -393,7 +393,7 @@ exports[`CheckboxGroup should render checkbox components according to passed con
             </g>
             <defs>
               <clippath
-                id="1c46262142574a7a3675d7c9e5e6dfb8__a"
+                id="e6d847cd71f49a499afe74355fd3fa7e__a"
               >
                 <path
                   d="M0 0h14v22H0z"
