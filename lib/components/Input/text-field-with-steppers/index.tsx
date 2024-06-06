@@ -16,7 +16,7 @@ export interface TextFieldWithSteppersProps extends ComponentProps<typeof Input>
 
 export const TextFieldWithSteppers = forwardRef<HTMLInputElement, TextFieldWithSteppersProps>(
     (props, ref) => {
-        const { value, onChange, disabled, textAlignment, placeholder = 0, unitLeft = '', unitRight = '', decimals = 2, inputSize, ...rest } = props;
+        const { value, onChange, disabled, textAlignment, placeholder = 0, unitLeft = '', unitRight = '', decimals = 2, inputSize = 'md', ...rest } = props;
 
         const getFormatValue = (value: number) => parseFloat(value.toFixed(decimals));
 
