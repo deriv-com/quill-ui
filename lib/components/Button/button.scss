@@ -1,67 +1,98 @@
 @import "@quill-custom/color.scss";
 
-.quill-button {
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    &:disabled {
-        cursor: auto;
-    }
-
-    &__size {
-        &--sm {
-            padding-inline: var(--core-spacing-400);
-            height: var(--core-size-1200);
-            border-radius: var(--core-borderRadius-400);
-            gap: var(--core-spacing-200);
-        }
-
-        &--md {
-            padding-inline: var(--core-spacing-600);
-            height: var(--core-size-1600);
-            border-radius: var(--core-borderRadius-600);
-            gap: var(--core-spacing-300);
-        }
-
-        &--lg {
-            padding-inline: var(--core-spacing-800);
-            height: var(--core-size-2400);
-            border-radius: var(--core-borderRadius-800);
-            gap: var(--core-spacing-400);
-        }
-
-        &--xl {
-            padding-inline: var(--core-spacing-1200);
-            height: var(--core-size-3200);
-            border-radius: var(--core-borderRadius-1200);
-            gap: var(--core-spacing-600);
+.quill {
+    &-icon-button {
+        &__size {
+            &--sm {
+                min-height: var(--core-spacing-1200);
+                min-width: var(--core-spacing-1200);
+                border-radius: var(--core-borderRadius-400);
+            }
+            &--md {
+                min-height: var(--core-spacing-1600);
+                min-width: var(--core-spacing-1600);
+                border-radius: var(--core-borderRadius-600);
+            }
+            &--lg {
+                min-height: var(--core-spacing-2400);
+                min-width: var(--core-spacing-2400);
+                border-radius: var(--core-borderRadius-800);
+            }
+            &--xl {
+                min-height: var(--core-spacing-3200);
+                min-width: var(--core-spacing-3200);
+                border-radius: var(--core-borderRadius-1200);
+            }
         }
     }
 
-    &__transform {
-        transition-property: transform;
-        transition-duration: var(--core-motion-duration-200);
-        transition-timing-function: ease-in-out;
-        &-rotate {
-            transform: rotate(180deg);
+    &-button {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        &:disabled {
+            cursor: auto;
         }
-    }
-    &__loader-icon {
-        animation: spin 2s linear infinite;
-    }
-    
-    @keyframes spin {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
 
-    &__full-width {
-        width: 100%;
-    }
+        &__size {
+            &--sm {
+                padding-inline: var(--core-spacing-400);
+                height: var(--core-size-1200);
+                border-radius: var(--core-borderRadius-400);
+                gap: var(--core-spacing-200);
+            }
 
-    &-label {
-        text-wrap: nowrap;
+            &--md {
+                padding-inline: var(--core-spacing-600);
+                height: var(--core-size-1600);
+                border-radius: var(--core-borderRadius-600);
+                gap: var(--core-spacing-300);
+            }
+
+            &--lg {
+                padding-inline: var(--core-spacing-800);
+                height: var(--core-size-2400);
+                border-radius: var(--core-borderRadius-800);
+                gap: var(--core-spacing-400);
+            }
+
+            &--xl {
+                padding-inline: var(--core-spacing-1200);
+                height: var(--core-size-3200);
+                border-radius: var(--core-borderRadius-1200);
+                gap: var(--core-spacing-600);
+            }
+        }
+
+        &__transform {
+            transition-property: transform;
+            transition-duration: var(--core-motion-duration-200);
+            transition-timing-function: ease-in-out;
+            &-rotate {
+                transform: rotate(180deg);
+            }
+        }
+        &__loader-icon {
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        &__full-width {
+            width: 100%;
+        }
+
+        &-label {
+            text-wrap: nowrap;
+        }
     }
 }

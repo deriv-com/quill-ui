@@ -6,9 +6,7 @@ exports[`Button component Should render BasicButton with Icon 1`] = `
     class="quill-button quill-button__size--md quill__color--primary-coral"
     data-state=""
   >
-    <div>
-      Label
-    </div>
+    Label
   </button>
 </div>
 `;
@@ -19,9 +17,7 @@ exports[`Button component Should render BasicButton with variant=primary 1`] = `
     class="quill-button quill-button__size--md quill__color--primary-coral"
     data-state=""
   >
-    <div>
-      Label
-    </div>
+    Label
   </button>
 </div>
 `;
@@ -32,9 +28,7 @@ exports[`Button component Should render BasicButton with variant=secondary 1`] =
     class="quill-button quill-button__size--md quill__color--secondary-coral"
     data-state=""
   >
-    <div>
-      Label
-    </div>
+    Label
   </button>
 </div>
 `;
@@ -45,9 +39,7 @@ exports[`Button component Should render BasicButton with variant=tertiary 1`] = 
     class="quill-button quill-button__size--md quill__color--tertiary-coral"
     data-state=""
   >
-    <div>
-      Label
-    </div>
+    Label
   </button>
 </div>
 `;

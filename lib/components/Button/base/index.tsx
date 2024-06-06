@@ -10,7 +10,7 @@ import {
     LabelPairedLoaderLgRegularIcon,
     LabelPairedLoaderMdRegularIcon,
     LabelPairedLoaderSmRegularIcon,
-    IconTypes
+    IconTypes,
 } from "@deriv/quill-icons";
 import "../button.scss";
 import { CaptionText, Text } from "@components/Typography";
@@ -28,7 +28,7 @@ const dropdownIcons = {
     lg: LabelPairedChevronDownLgBoldIcon,
     xl: LabelPairedChevronDownXlBoldIcon,
 };
-export const loaderIcons: Record<'sm' | 'md' | 'lg' | 'xl', IconTypes> = {
+export const loaderIcons: Record<"sm" | "md" | "lg" | "xl", IconTypes> = {
     sm: LabelPairedLoaderCaptionRegularIcon,
     md: LabelPairedLoaderSmRegularIcon,
     lg: LabelPairedLoaderMdRegularIcon,
@@ -52,11 +52,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             disabled,
             iconPosition,
             variant = "primary",
+            iconButton = false,
             ...rest
         },
         ref,
     ) => {
         const buttonColorClass = `quill__color--${variant}-${color}`;
+        const iconButtonClass = `quill-icon-button__size--${size}`;
         const labelSize = size === "md" ? "sm" : size === "lg" ? "md" : "xl";
         const DropdownIcon = dropdownIcons[size];
         const LoaderIcon = loaderIcons[size];
@@ -65,7 +67,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             <button
                 className={clsx(
                     "quill-button",
-                    ButtonSize[size],
+                    iconButton ? iconButtonClass : ButtonSize[size],
                     buttonColorClass,
                     className,
                     fullWidth && "quill-button__full-width",
@@ -83,7 +85,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                         className="quill-button__loader-icon"
                     />
                 )}
-                {children && <div>{children}</div>}
+                {children}
                 {label && !isLoading && (
                     <span className="quill-button-label">
                         {size === "sm" ? (
