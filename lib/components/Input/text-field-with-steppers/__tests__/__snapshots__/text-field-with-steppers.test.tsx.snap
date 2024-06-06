@@ -38,7 +38,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
             </svg>
           </span>
           <button
-            class="quill-input-steppers-button quill-input-steppers-button--decrement"
+            class="quill-input-steppers-button quill-input-steppers-button--decrement quill-input-steppers-button--undefined"
           >
             <svg
               height="22"
@@ -64,7 +64,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
             </svg>
           </button>
           <button
-            class="quill-input-steppers-button quill-input-steppers-button--increment"
+            class="quill-input-steppers-button quill-input-steppers-button--increment quill-input-steppers-button--undefined"
           >
             <svg
               height="22"
@@ -133,7 +133,7 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
             />
           </div>
           <button
-            class="quill-input-steppers-button quill-input-steppers-button--decrement"
+            class="quill-input-steppers-button quill-input-steppers-button--decrement quill-input-steppers-button--undefined"
           >
             <svg
               height="22"
@@ -159,7 +159,7 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
             </svg>
           </button>
           <button
-            class="quill-input-steppers-button quill-input-steppers-button--increment"
+            class="quill-input-steppers-button quill-input-steppers-button--increment quill-input-steppers-button--undefined"
           >
             <svg
               height="22"
@@ -219,7 +219,7 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
             </span>
           </div>
           <button
-            class="quill-input-steppers-button quill-input-steppers-button--decrement"
+            class="quill-input-steppers-button quill-input-steppers-button--decrement quill-input-steppers-button--undefined"
           >
             <svg
               height="22"
@@ -245,7 +245,7 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
             </svg>
           </button>
           <button
-            class="quill-input-steppers-button quill-input-steppers-button--increment"
+            class="quill-input-steppers-button quill-input-steppers-button--increment quill-input-steppers-button--undefined"
           >
             <svg
               height="22"
@@ -313,7 +313,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
             />
           </div>
           <button
-            class="quill-input-steppers-button quill-input-steppers-button--decrement"
+            class="quill-input-steppers-button quill-input-steppers-button--decrement quill-input-steppers-button--undefined"
           >
             <svg
               height="22"
@@ -339,7 +339,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
             </svg>
           </button>
           <button
-            class="quill-input-steppers-button quill-input-steppers-button--increment"
+            class="quill-input-steppers-button quill-input-steppers-button--increment quill-input-steppers-button--undefined"
           >
             <svg
               height="22"
