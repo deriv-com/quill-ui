@@ -5,8 +5,8 @@
     width: calc(100vw - var(--core-spacing-1600));
     max-width: 560px;
     min-height: var(--component-snackbar-height-min);
-    padding: var(--component-snackbar-spacing-padding-sm)
-        var(--component-snackbar-spacing-padding-md) var(--component-snackbar-spacing-padding-sm);
+    padding-inline: var(--component-snackbar-spacing-padding-md) var(--component-snackbar-spacing-padding-sm);
+    padding-block :var(--component-snackbar-spacing-padding-sm);
     align-items: center;
     gap: var(--component-snackbar-spacing-gap);
     border-radius: var(--component-snackbar-border-radius);
