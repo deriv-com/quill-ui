@@ -32,6 +32,27 @@ const meta = {
         placeholder: "Select",
         variant: "fill",
     },
+    argTypes: {
+        status: {
+            options: ["neutral", "success", "error"],
+            control: { type: "radio" },
+        },
+        textAlignment: {
+            options: ["left", "center"],
+            control: { type: "radio" },
+        },
+        inputSize: {
+            options: ["sm", "md"],
+            control: { type: "radio" },
+        },
+        variant: {
+            options: ["fill", "outline"],
+            control: { type: "radio" },
+        },
+        isAutocomplete: {
+            control: { type: "boolean" },
+        },
+    },
 } satisfies Meta<typeof InputDropdown>;
 
 export default meta;
