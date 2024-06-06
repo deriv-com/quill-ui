@@ -6,6 +6,11 @@
         margin: auto;
         padding: var(--core-spacing-300) var(--core-spacing-500);
 
+        &--sm {
+            padding: var(--core-spacing-100) var(--core-spacing-300);
+            border-radius: var(--core-borderRadius-400);
+        }
+
         &:hover:not(:disabled) {
             background-color: var(--core-color-opacity-black-100);
         }
