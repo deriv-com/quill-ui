@@ -1,20 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { IconButton } from ".";
 
-import {
-    LabelPairedPlaceholderSmRegularIcon,
-    LabelPairedPlaceholderMdRegularIcon,
-    LabelPairedPlaceholderLgRegularIcon,
-    LabelPairedPlaceholderXlRegularIcon,
-} from "@deriv/quill-icons/LabelPaired";
-import { ComponentProps } from "react";
-
-const placeholder = {
-    sm: <LabelPairedPlaceholderSmRegularIcon />,
-    md: <LabelPairedPlaceholderMdRegularIcon />,
-    lg: <LabelPairedPlaceholderLgRegularIcon />,
-    xl: <LabelPairedPlaceholderXlRegularIcon />,
-};
+import { LabelPairedPlaceholderSmRegularIcon } from "@deriv/quill-icons/LabelPaired";
 
 const meta = {
     title: "Components/Button/Icon Button",
@@ -62,10 +49,6 @@ const meta = {
                 disable: true,
             },
         },
-        children: {
-            options: Object.keys(placeholder),
-            mapping: placeholder,
-        },
     },
 } satisfies Meta<typeof IconButton>;
 
@@ -75,28 +58,28 @@ type Story = StoryObj<typeof meta>;
 export const BasicPrimaryButton: Story = {
     args: {
         size: "xl",
-        children: placeholder["xl"],
+        children: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };
 export const BasicSecondaryButton: Story = {
     args: {
         variant: "secondary",
         size: "xl",
-        children: placeholder["xl"],
+        children: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };
 export const BasicTertiaryButton: Story = {
     args: {
         variant: "tertiary",
         size: "xl",
-        children: placeholder[meta.args?.size as keyof typeof placeholder],
+        children: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };
 
-export const ButtonDisabled = (args: ComponentProps<typeof IconButton>) => (
-    <IconButton
-        children={placeholder[args?.size as keyof typeof placeholder]}
-        {...args}
-        disabled
-    />
-);
+export const ButtonDisabled: Story = {
+    args: {
+        disabled: true,
+        size: "xl",
+        children: <LabelPairedPlaceholderSmRegularIcon />,
+    },
+};
