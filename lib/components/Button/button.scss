@@ -4,23 +4,23 @@
     &-icon-button {
         &__size {
             &--sm {
-                min-height: var(--core-spacing-1200);
-                min-width: var(--core-spacing-1200);
+                min-height: var(--component-button-height-sm);
+                min-width: var(--component-button-width-sm);
                 border-radius: var(--core-borderRadius-400);
             }
             &--md {
-                min-height: var(--core-spacing-1600);
-                min-width: var(--core-spacing-1600);
+                min-height: var(--component-button-height-md);
+                min-width: var(--component-button-width-md);
                 border-radius: var(--core-borderRadius-600);
             }
             &--lg {
-                min-height: var(--core-spacing-2400);
-                min-width: var(--core-spacing-2400);
+                min-height: var(--component-button-height-lg);
+                min-width: var(--component-button-width-lg);
                 border-radius: var(--core-borderRadius-800);
             }
             &--xl {
-                min-height: var(--core-spacing-3200);
-                min-width: var(--core-spacing-3200);
+                min-height: var(--component-button-height-xl);
+                min-width: var(--component-button-width-xl);
                 border-radius: var(--core-borderRadius-1200);
             }
         }
