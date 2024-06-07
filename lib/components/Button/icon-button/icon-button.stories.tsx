@@ -12,6 +12,7 @@ const meta = {
         color: "coral",
         isLoading: false,
         disabled: false,
+        fullWidth: false,
         type: "button",
         size: "md",
     },
@@ -58,21 +59,21 @@ type Story = StoryObj<typeof meta>;
 export const BasicPrimaryButton: Story = {
     args: {
         size: "xl",
-        children: <LabelPairedPlaceholderSmRegularIcon />,
+        icon: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };
 export const BasicSecondaryButton: Story = {
     args: {
         variant: "secondary",
         size: "xl",
-        children: <LabelPairedPlaceholderSmRegularIcon />,
+        icon: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };
 export const BasicTertiaryButton: Story = {
     args: {
         variant: "tertiary",
         size: "xl",
-        children: <LabelPairedPlaceholderSmRegularIcon />,
+        icon: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };
 
@@ -80,6 +81,6 @@ export const ButtonDisabled: Story = {
     args: {
         disabled: true,
         size: "xl",
-        children: <LabelPairedPlaceholderSmRegularIcon />,
+        icon: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };

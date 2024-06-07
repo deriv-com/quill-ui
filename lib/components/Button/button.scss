@@ -6,22 +6,22 @@
             &--sm {
                 min-height: var(--component-button-height-sm);
                 min-width: var(--component-button-width-sm);
-                border-radius: var(--core-borderRadius-400);
+                border-radius: var(--component-button-border-radius-sm);
             }
             &--md {
                 min-height: var(--component-button-height-md);
                 min-width: var(--component-button-width-md);
-                border-radius: var(--core-borderRadius-600);
+                border-radius: var(--component-button-border-radius-md);
             }
             &--lg {
                 min-height: var(--component-button-height-lg);
                 min-width: var(--component-button-width-lg);
-                border-radius: var(--core-borderRadius-800);
+                border-radius: var(--component-button-border-radius-lg);
             }
             &--xl {
                 min-height: var(--component-button-height-xl);
                 min-width: var(--component-button-width-xl);
-                border-radius: var(--core-borderRadius-1200);
+                border-radius: var(--component-button-border-radius-xl);
             }
         }
     }

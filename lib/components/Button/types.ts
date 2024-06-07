@@ -44,7 +44,4 @@ export interface SocialButtonProps extends ComponentProps<"button"> {
     disabled?: boolean;
 }
 
-export type IconButtonProps = Omit<
-    ButtonProps,
-    "iconPosition" | "label" | "fullWidth"
->;
+export type IconButtonProps = Omit<ButtonProps, "iconPosition" | "label">;

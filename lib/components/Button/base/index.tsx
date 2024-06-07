@@ -50,7 +50,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             size = "md",
             label,
             disabled,
-            iconPosition,
+            iconPosition = "start",
             variant = "primary",
             iconButton = false,
             ...rest
