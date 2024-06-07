@@ -173,7 +173,7 @@
 
         &__size {
             &--md {
-                min-height: 128px;
+                min-height: var(--temp-static-spacing-128);
                 padding-inline: var(--core-spacing-2400);
                 &.no-left-icon {
                     padding-left: var(--core-spacing-800);
@@ -204,7 +204,7 @@
                 }
             }
             &--sm {
-                min-height: 104px;
+                min-height: var(--temp-static-spacing-104);
                 padding-inline: var(--core-spacing-2000);
                 &.no-left-icon {
                     padding-left: var(--core-spacing-400);
@@ -358,10 +358,9 @@
 
 .quill-textarea::-webkit-scrollbar {
     scrollbar-width: thin;
-    width: 4px;
-    // height: 4px;
+    width: var(--core-size-200);
     background-color: transparent;
-    border-radius: 10px;
+    border-radius: var(--core-borderRadius-500);
 }
 
 .quill-textarea::-webkit-scrollbar-track {
@@ -377,7 +376,7 @@
     &::-webkit-scrollbar-thumb {
         scrollbar-width: thin;
         display: unset;
-        border-radius: 10px;
+        border-radius: var(--core-borderRadius-500);;
         background-color: rgba(0, 0, 0, 0.08);
     }
 }
