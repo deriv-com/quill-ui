@@ -30,6 +30,7 @@ export interface ButtonProps extends ComponentProps<"button"> {
     className?: string;
     label?: ReactNode;
     children?: ReactNode;
+    iconButton?: boolean;
 }
 
 export interface SocialButtonProps extends ComponentProps<"button"> {
@@ -42,3 +43,5 @@ export interface SocialButtonProps extends ComponentProps<"button"> {
     isLoading?: boolean;
     disabled?: boolean;
 }
+
+export type IconButtonProps = Omit<ButtonProps, "iconPosition" | "label">;
