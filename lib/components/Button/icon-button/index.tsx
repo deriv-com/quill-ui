@@ -4,7 +4,7 @@ import { IconButtonProps } from "../types";
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     ({ ...rest }, ref) => {
-        return <Button iconButton={true} ref={ref} {...rest} />;
+        return <Button iconButton ref={ref} {...rest} />;
     },
 );
 

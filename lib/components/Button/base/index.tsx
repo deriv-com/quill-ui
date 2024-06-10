@@ -14,21 +14,22 @@ import {
 } from "@deriv/quill-icons";
 import "../button.scss";
 import { CaptionText, Text } from "@components/Typography";
+import { TRegularSizesWithExtraLarge } from "@types";
 
-export const ButtonSize = {
+export const ButtonSize: Record<TRegularSizesWithExtraLarge, string> = {
     xl: "quill-button__size--xl",
     lg: "quill-button__size--lg",
     md: "quill-button__size--md",
     sm: "quill-button__size--sm",
 } as const;
 
-const dropdownIcons = {
+const dropdownIcons: Record<TRegularSizesWithExtraLarge, IconTypes> = {
     sm: LabelPairedChevronDownSmBoldIcon,
     md: LabelPairedChevronDownMdBoldIcon,
     lg: LabelPairedChevronDownLgBoldIcon,
     xl: LabelPairedChevronDownXlBoldIcon,
 };
-export const loaderIcons: Record<"sm" | "md" | "lg" | "xl", IconTypes> = {
+export const loaderIcons: Record<TRegularSizesWithExtraLarge, IconTypes> = {
     sm: LabelPairedLoaderCaptionRegularIcon,
     md: LabelPairedLoaderSmRegularIcon,
     lg: LabelPairedLoaderMdRegularIcon,
