@@ -173,6 +173,7 @@
 
         &__size {
             &--md {
+                min-height: var(--temp-static-spacing-128);
                 padding-inline: var(--core-spacing-2400);
                 &.no-left-icon {
                     padding-left: var(--core-spacing-800);
@@ -182,6 +183,7 @@
                 }
                 padding-top: var(--core-spacing-800);
                 .quill-textarea {
+                    max-height: calc(100% - var(--core-spacing-800));
                     font-size: var(
                         --semantic-typography-body-md-regular-default-fontSize
                     );
@@ -198,10 +200,11 @@
                     left: var(--core-size-800);
                 }
                 .right-icon {
-                    right: var(--core-size-500);
+                    right: var(--core-size-800);
                 }
             }
             &--sm {
+                min-height: var(--temp-static-spacing-104);
                 padding-inline: var(--core-spacing-2000);
                 &.no-left-icon {
                     padding-left: var(--core-spacing-400);
@@ -209,10 +212,10 @@
                 &.no-right-icon {
                     padding-right: var(--core-spacing-400);
                 }
-                padding-top: var(--core-spacing-200);
 
                 .quill-textarea {
-                    padding-top: var(--core-spacing-200);
+                    max-height: calc(100% - var(--core-spacing-400));
+                    margin-block: var(--core-spacing-200);
                     font-size: var(
                         --semantic-typography-body-sm-regular-default-fontSize
                     );
@@ -223,18 +226,19 @@
 
                 .left-icon,
                 .right-icon {
-                    top: var(--core-spacing-400);
+                    top: var(--core-spacing-200);
                 }
                 .left-icon {
-                    left: var(--core-spacing-200);
+                    left: var(--core-spacing-400);
                 }
                 .right-icon {
-                    right: var(--core-spacing-200);
+                    right: var(--core-spacing-400);
                 }
             }
         }
 
         .quill-textarea {
+            text-align: left;
             width: 100%;
             height: 100%;
             border: none;
@@ -350,5 +354,30 @@
         bottom: 0;
         right: 0;
         cursor: se-resize;
+    }
+}
+
+.quill-textarea::-webkit-scrollbar {
+    scrollbar-width: thin;
+    width: var(--core-size-200);
+    background-color: transparent;
+    border-radius: var(--core-borderRadius-500);
+}
+
+.quill-textarea::-webkit-scrollbar-track {
+    scrollbar-width: thin;
+    background-color: transparent;
+}
+
+.quill-textarea::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.quill-textarea:hover {
+    &::-webkit-scrollbar-thumb {
+        scrollbar-width: thin;
+        display: unset;
+        border-radius: var(--core-borderRadius-500);;
+        background-color: rgba(0, 0, 0, 0.08);
     }
 }
