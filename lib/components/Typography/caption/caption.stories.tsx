@@ -14,6 +14,7 @@ const meta = {
     argTypes: {
         as: { table: { disable: true } },
         size: { table: { disable: true } },
+        color: { description: "className for color", control: "text" },
     },
 } satisfies Meta<typeof CaptionText>;
 

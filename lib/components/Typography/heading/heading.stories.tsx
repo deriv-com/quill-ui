@@ -7,6 +7,7 @@ const meta = {
     tags: ["autodocs"],
     argTypes: {
         as: { table: { disable: true } },
+        color: { description: "className for color", control: "text" },
     },
 } satisfies Meta<typeof Heading.H1>;
 

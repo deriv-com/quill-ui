@@ -3,6 +3,12 @@ import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { fn } from "@storybook/test";
 import { STATUS, TYPE } from "@utils/notification-utils";
 import NotificationItem from ".";
+import { LabelPairedPlaceholderCaptionBoldIcon } from "@deriv/quill-icons";
+
+const icons: Record<string, object | null> = {
+    custom_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
+    default_icon: null,
+};
 
 const meta = {
     title: "Components/Notification/NotificationItem",
@@ -52,6 +58,9 @@ const meta = {
         },
         icon: {
             description: "Optional. Custom icon component.",
+            options: Object.keys(icons),
+            mapping: icons,
+            control: "radio",
             table: {
                 type: { summary: "ReactNode | undefined" },
             },

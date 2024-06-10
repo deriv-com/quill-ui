@@ -20,14 +20,6 @@ const data = [
         id: 2,
         linkProps: {
             hasChevron: true,
-            children: "Click here",
-            href: "/",
-        },
-    },
-    {
-        id: 3,
-        linkProps: {
-            hasChevron: true,
             children: "Disabled Link",
             href: "/",
             disabled: true,
@@ -37,8 +29,7 @@ const data = [
 
 const links = {
     one: data.slice(0, 1),
-    two: data.slice(0, 2),
-    three: data,
+    two: data,
     none: null,
 };
 

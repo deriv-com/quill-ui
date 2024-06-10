@@ -1,8 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { StandaloneCirclePlusBoldIcon } from "@deriv/quill-icons";
+import {
+    LabelPairedPlaceholderCaptionBoldIcon,
+    StandaloneCirclePlusBoldIcon,
+} from "@deriv/quill-icons";
 import { TYPE } from "@utils/notification-utils";
 import NotificationBanner from ".";
+
+const icons: Record<string, object | null> = {
+    custom_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
+    default_icon: null,
+};
 
 const meta = {
     title: "Components/Notification/NotificationBanner",
@@ -30,6 +38,9 @@ const meta = {
         },
         icon: {
             description: "Optional. Custom icon component.",
+            options: Object.keys(icons),
+            mapping: icons,
+            control: "radio",
             table: {
                 type: { summary: "ReactNode | undefined" },
             },
