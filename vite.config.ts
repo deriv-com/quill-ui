@@ -1,9 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { extname, relative, resolve } from "path";
-import { fileURLToPath } from "node:url";
+import { resolve, extname, relative } from "path";
+import { fileURLToPath } from "url";
 import { glob } from "glob";
-import { libInjectCss } from "vite-plugin-lib-inject-css";
 import dts from "vite-plugin-dts";
 import sass from "sass";
 
@@ -11,7 +10,6 @@ import sass from "sass";
 export default defineConfig({
     plugins: [
         react(),
-        libInjectCss(),
         dts({
             include: ["lib"],
             exclude: [
@@ -43,10 +41,11 @@ export default defineConfig({
     build: {
         lib: {
             entry: resolve(__dirname, "lib/main.ts"),
-            formats: ["es"],
+            formats: ["es", "cjs"], // Include both ES and CJS formats
+            fileName: (format) => `main.${format === "es" ? "mjs" : "cjs"}`,
         },
         copyPublicDir: false,
-        cssCodeSplit: false,
+        cssCodeSplit: false, // Ensure CSS is not split
         rollupOptions: {
             external: ["react", "react-dom"],
             input: Object.fromEntries(
@@ -82,6 +81,12 @@ export default defineConfig({
             output: {
                 assetFileNames: "assets/[name][extname]",
                 entryFileNames: "[name].js",
+                // Combine all CSS into one file
+                manualChunks(id) {
+                    if (id.includes("node_modules")) {
+                        return "vendor";
+                    }
+                },
             },
         },
     },
