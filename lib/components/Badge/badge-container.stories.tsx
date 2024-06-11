@@ -20,6 +20,12 @@ const meta = {
             control: { type: "radio" },
             description: "To select the color of the badge",
         },
+        contentSize: { table: { disable: true } },
+        position: {
+            options: ["top-right", "center", "bottom-right"],
+            control: { type: "radio" },
+            description: "Position of the badge in the container",
+        },
     },
     tags: ["autodocs"],
 } satisfies Meta<typeof Badge>;

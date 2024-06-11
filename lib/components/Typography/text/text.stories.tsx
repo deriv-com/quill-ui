@@ -14,6 +14,7 @@ const meta = {
     argTypes: {
         as: { table: { disable: true } },
         size: { options: ["sm", "md", "lg", "xl"], control: { type: "radio" } },
+        color: { description: "className for color", control: "text" },
     },
 } satisfies Meta<typeof Text>;
 

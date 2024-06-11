@@ -58,6 +58,7 @@ const meta = {
                 disable: true,
             },
         },
+        dropdown: { table: { disable: true } },
     },
 } satisfies Meta<typeof Button>;
 

@@ -30,7 +30,10 @@ const meta = {
             options: ["true", "false"],
             control: { type: "boolean" },
         },
-
+        social: {
+            options: ["google", "facebook", "apple"],
+            control: { type: "radio" },
+        },
         onClick: {
             table: {
                 disable: true,

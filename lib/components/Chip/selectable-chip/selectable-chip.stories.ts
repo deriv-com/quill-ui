@@ -26,6 +26,7 @@ const meta = {
             description: "disabled the chip",
             control: { type: "boolean" },
         },
+        className: { table: { disable: true } },
     },
 } satisfies Meta<typeof SelectableChip>;
 

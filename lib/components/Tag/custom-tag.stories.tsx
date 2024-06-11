@@ -1,10 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import {
+    LabelPairedPlaceholderCaptionBoldIcon,
     LabelPairedPlaceholderSmRegularIcon,
     LabelPairedThumbsUpCaptionFillIcon,
 } from "@deriv/quill-icons/LabelPaired";
 import "./custom-tag-stories.scss";
 import Tag from ".";
+
+const icons: Record<string, object | null> = {
+    with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
+    none: null,
+};
 
 const meta = {
     title: "Components/Tag/Custom",
@@ -24,16 +30,15 @@ const meta = {
             control: "text",
         },
         icon: {
-            table: {
-                disable: true,
-            },
+            options: Object.keys(icons),
+            mapping: icons,
+            control: "radio",
         },
         size: {
             options: ["xs", "sm", "md", "lg"],
             control: { type: "radio" },
             description: "To select the size of icon and font-size",
         },
-
         className: {
             name: "Class Name",
             control: "text",
@@ -47,6 +52,11 @@ const meta = {
             control: "boolean",
         },
         color: {
+            table: {
+                disable: true,
+            },
+        },
+        variant: {
             table: {
                 disable: true,
             },
