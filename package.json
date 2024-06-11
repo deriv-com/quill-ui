@@ -1,5 +1,5 @@
 {
-    "name": "@deriv-com/quill-ui",
+    "name": "@deriv-com/quill-ui-legacy",
     "private": false,
     "version": "0.0.0-development",
     "type": "module",
