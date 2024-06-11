@@ -1,12 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { resolve, extname, relative } from "path";
-import { fileURLToPath } from "url";
-import { glob } from "glob";
+import { resolve } from "path";
+import { globSync } from "glob";
 import dts from "vite-plugin-dts";
 import sass from "sass";
 
-// https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
         react(),
@@ -41,52 +39,23 @@ export default defineConfig({
     build: {
         lib: {
             entry: resolve(__dirname, "lib/main.ts"),
-            formats: ["es", "cjs"], // Include both ES and CJS formats
             fileName: (format) => `main.${format === "es" ? "mjs" : "cjs"}`,
-        },
-        copyPublicDir: false,
-        cssCodeSplit: false, // Ensure CSS is not split
-        rollupOptions: {
-            external: ["react", "react-dom"],
-            input: Object.fromEntries(
-                glob
-                    .sync("lib/**/*.{ts,tsx}", {
-                        ignore: [
-                            "**/*.test.ts",
-                            "**/*.test.tsx",
-                            "**/*.spec.ts",
-                            "**/*.spec.tsx",
-                            "**/__tests__/**",
-                            "**/*.stories.tsx",
-                            "**/*.stories.ts",
-                        ],
-                    })
-                    .map((file) => {
-                        return [
-                            // The name of the entry point
-                            // lib/nested/foo.ts becomes nested/foo
-                            relative(
-                                "lib",
-                                file.slice(
-                                    0,
-                                    file.length - extname(file).length,
-                                ),
-                            ),
-                            // The absolute path to the entry file
-                            // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
-                            fileURLToPath(new URL(file, import.meta.url)),
-                        ];
-                    }),
-            ),
-            output: {
-                assetFileNames: "assets/[name][extname]",
-                entryFileNames: "[name].js",
-                // Combine all CSS into one file
-                manualChunks(id) {
-                    if (id.includes("node_modules")) {
-                        return "vendor";
-                    }
+            formats: ["es", "cjs"],
+            rollupOptions: {
+                output: {
+                    manualChunks(id) {
+                        if (id.includes("node_modules")) {
+                            return "vendor";
+                        }
+                    },
                 },
+            },
+        },
+        rollupOptions: {
+            output: {
+                entryFileNames: "[name].[format].js",
+                chunkFileNames: "chunks/[name].[format].js",
+                assetFileNames: "assets/[name][extname]",
             },
         },
     },
