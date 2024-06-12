@@ -3,20 +3,19 @@
     "private": false,
     "version": "0.0.0-development",
     "type": "module",
-    "main": "dist/main.cjs",
     "module": "dist/main.js",
+    "main": "dist/main.cjs",
     "files": [
         "dist"
     ],
     "types": "./dist/main.d.ts",
     "exports": {
         ".": {
-            "require": "./dist/main.cjs",
             "import": "./dist/main.js",
             "types": "./dist/main.d.ts"
         },
-        "./styles/*": {
-            "require": "./dist/assets/*"
+        "./styles": {
+            "require": "./dist/assets/style.css"
         }
     },
     "sideEffects": [
@@ -31,7 +30,7 @@
         "build:es": "vite build --mode es",
         "build:cjs": "vite build --mode cjs",
         "merge-dist": "node merge-dist.js",
-        "build": "tsc -p ./tsconfig-build.json && npm run build:es && npm run build:cjs",
+        "build": "tsc -p ./tsconfig-build.json && npm run build:cjs && npm run build:es && npm run merge-dist",
         "prepublish": "npm run build",
         "generate:styles": "node scripts/transformer.js &&  npx prettier --write lib/styles",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
