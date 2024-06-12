@@ -9,6 +9,20 @@ import sass from "sass";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
+
+    const config_resolve = {
+        alias: {
+            "@quill": resolve(__dirname, "lib/styles/quill"),
+            "@quill-custom": resolve(__dirname, "lib/styles/custom"),
+            "@components": resolve(__dirname, "lib/components"),
+            "@hooks": resolve(__dirname, "lib/hooks"),
+            "@providers": resolve(__dirname, "lib/providers"),
+            "@utils": resolve(__dirname, "lib/utils"),
+            "@styles": resolve(__dirname, "lib/styles"),
+            "@types": resolve(__dirname, "lib/types.ts"),
+        },
+    };
+
     const config =
         mode === "es"
             ? {
@@ -31,21 +45,7 @@ export default defineConfig(({ mode }) => {
                         },
                     },
                 },
-                resolve: {
-                    alias: {
-                        "@quill": resolve(__dirname, "lib/styles/quill"),
-                        "@quill-custom": resolve(
-                            __dirname,
-                            "lib/styles/custom",
-                        ),
-                        "@components": resolve(__dirname, "lib/components"),
-                        "@hooks": resolve(__dirname, "lib/hooks"),
-                        "@providers": resolve(__dirname, "lib/providers"),
-                        "@utils": resolve(__dirname, "lib/utils"),
-                        "@styles": resolve(__dirname, "lib/styles"),
-                        "@types": resolve(__dirname, "lib/types.ts"),
-                    },
-                },
+                resolve: config_resolve,
                 build: {
                     outDir: "dist-es",
                     lib: {
@@ -108,21 +108,7 @@ export default defineConfig(({ mode }) => {
                         ],
                     }),
                 ],
-                resolve: {
-                    alias: {
-                        "@quill": resolve(__dirname, "lib/styles/quill"),
-                        "@quill-custom": resolve(
-                            __dirname,
-                            "lib/styles/custom",
-                        ),
-                        "@components": resolve(__dirname, "lib/components"),
-                        "@hooks": resolve(__dirname, "lib/hooks"),
-                        "@providers": resolve(__dirname, "lib/providers"),
-                        "@utils": resolve(__dirname, "lib/utils"),
-                        "@styles": resolve(__dirname, "lib/styles"),
-                        "@types": resolve(__dirname, "lib/types.ts"),
-                    },
-                },
+                resolve: config_resolve,
                 build: {
                     outDir: "dist-cjs",
                     lib: {
