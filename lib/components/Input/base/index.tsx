@@ -149,8 +149,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             )}
                         >
                             {leftPlaceholder &&
-                                (!label || (label && (value || focused))) &&
-                                (
+                                (!label || (label && (value || focused))) && (
                                     <Text
                                         size={inputSize}
                                         as="span"
@@ -210,8 +209,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 </label>
                             )}
                             {rightPlaceholder &&
-                                (!label || (label && (value || focused))) &&
-                                (
+                                (!label || (label && (value || focused))) && (
                                     <Text
                                         size={inputSize}
                                         as="span"
@@ -219,7 +217,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                             "quill-input-label__label",
                                             "quill-input-label__label--right",
                                         )}
-                                        color={disabled ? "quill-typography__color--disabled" : ""}
+                                        color={
+                                            disabled
+                                                ? "quill-typography__color--disabled"
+                                                : ""
+                                        }
                                     >
                                         {rightPlaceholder}
                                     </Text>
@@ -236,7 +238,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 {rightIcon}
                             </span>
                         )}
-                        {triggerActionIcon && <>{triggerActionIcon}</>}
+                        {triggerActionIcon && (
+                            <span className="icon_wrapper">
+                                {triggerActionIcon}
+                            </span>
+                        )}
                         {dropdown && (
                             <LabelPairedChevronDownSmBoldIcon
                                 width={24}
