@@ -3,15 +3,20 @@
     "private": false,
     "version": "0.0.0-development",
     "type": "module",
-    "main": "dist/main.js",
+    "main": "dist/main.cjs",
+    "module": "dist/main.js",
     "files": [
         "dist"
     ],
     "types": "./dist/main.d.ts",
     "exports": {
         ".": {
+            "require": "./dist/main.cjs",
             "import": "./dist/main.js",
             "types": "./dist/main.d.ts"
+        },
+        "./styles/*": {
+            "require": "./dist/assets/*"
         }
     },
     "sideEffects": [
@@ -23,7 +28,10 @@
     },
     "scripts": {
         "dev": "vite --port 4321 --open",
-        "build": "tsc -p ./tsconfig-build.json && vite build",
+        "build:es": "vite build --mode es",
+        "build:cjs": "vite build --mode cjs",
+        "merge-dist": "node merge-dist.js",
+        "build": "tsc -p ./tsconfig-build.json && npm run build:es && npm run build:cjs",
         "prepublish": "npm run build",
         "generate:styles": "node scripts/transformer.js &&  npx prettier --write lib/styles",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -37,6 +45,7 @@
         "prepare": "husky install"
     },
     "devDependencies": {
+        "rimraf": "^3.0.2",
         "@babel/preset-env": "^7.23.9",
         "@babel/preset-react": "^7.23.3",
         "@babel/preset-typescript": "^7.23.3",
@@ -66,7 +75,7 @@
         "@typescript-eslint/eslint-plugin": "^6.14.0",
         "@typescript-eslint/parser": "^6.14.0",
         "@use-gesture/react": "^10.3.1",
-        "@vitejs/plugin-react": "^4.3.1",
+        "@vitejs/plugin-react": "^4.2.1",
         "@zxcvbn-ts/core": "^3.0.4",
         "@zxcvbn-ts/language-common": "^3.0.4",
         "clsx": "^2.1.0",
