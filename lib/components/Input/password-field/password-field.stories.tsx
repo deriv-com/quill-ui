@@ -88,6 +88,7 @@ type Story = StoryObj<typeof meta>;
 export const DefaultPasswordField: Story = {
     args: {
         placeholder,
+        message,
     },
 };
 export const OutlineSuccess: Story = {
@@ -95,6 +96,7 @@ export const OutlineSuccess: Story = {
         placeholder,
         variant: variants.outline,
         status: status.success,
+        message,
     },
 };
 export const OutlineError: Story = {
@@ -102,6 +104,52 @@ export const OutlineError: Story = {
         placeholder,
         variant: variants.outline,
         status: status.error,
+        message,
+    },
+};
+export const PasswordStrengthValidationNeutral: Story = {
+    args: {
+        placeholder,
+        hasPasswordStrengthValidation: true,
+        validationMessages: [
+            "Minimum 8 characters",
+            "At least 1 uppercase letter",
+            "At least 1 lowercase letter",
+            "At least 1 number",
+            "At least 1 special character",
+        ],
+        variant: variants.outline,
+        status: status.neutral,
+    },
+};
+export const PasswordStrengthValidationError: Story = {
+    args: {
+        placeholder,
+        hasPasswordStrengthValidation: true,
+        validationMessages: [
+            "Minimum 8 characters",
+            "At least 1 uppercase letter",
+            "At least 1 lowercase letter",
+            "At least 1 number",
+            "At least 1 special character",
+        ],
+        variant: variants.outline,
+        status: status.error,
+    },
+};
+export const PasswordStrengthValidationSuccess: Story = {
+    args: {
+        placeholder,
+        hasPasswordStrengthValidation: true,
+        validationMessages: [
+            "Minimum 8 characters",
+            "At least 1 uppercase letter",
+            "At least 1 lowercase letter",
+            "At least 1 number",
+            "At least 1 special character",
+        ],
+        variant: variants.outline,
+        status: status.success,
     },
 };
 export const FillSuccess: Story = {
@@ -109,6 +157,7 @@ export const FillSuccess: Story = {
         placeholder,
         variant: variants.fill,
         status: status.success,
+        message,
     },
 };
 export const FillError: Story = {
@@ -116,13 +165,16 @@ export const FillError: Story = {
         placeholder,
         variant: variants.fill,
         status: status.error,
+        message,
     },
 };
+
 export const Disabled: Story = {
     args: {
         placeholder,
         disabled: true,
         variant: variants.outline,
+        message,
     },
 };
 
@@ -130,6 +182,7 @@ export const WithLabel: Story = {
     args: {
         placeholder,
         label: "Password",
+        message,
     },
 };
 
@@ -139,6 +192,7 @@ export const LabelledOutlineSuccess: Story = {
         label: "Password",
         variant: variants.outline,
         status: status.success,
+        message,
     },
 };
 export const LabelledOutlineError: Story = {
@@ -147,6 +201,7 @@ export const LabelledOutlineError: Story = {
         label: "Password",
         variant: variants.outline,
         status: status.error,
+        message,
     },
 };
 export const LabelledFillSuccessWithMessage: Story = {
@@ -167,7 +222,54 @@ export const LabelledFillErrorWithMessage: Story = {
         message,
     },
 };
-
+export const LabelledPasswordStrengthValidationNeutral: Story = {
+    args: {
+        placeholder,
+        label: "Password",
+        hasPasswordStrengthValidation: true,
+        validationMessages: [
+            "Minimum 8 characters",
+            "At least 1 uppercase letter",
+            "At least 1 lowercase letter",
+            "At least 1 number",
+            "At least 1 special character",
+        ],
+        variant: variants.outline,
+        status: status.neutral,
+    },
+};
+export const LabelledPasswordStrengthValidationError: Story = {
+    args: {
+        placeholder,
+        label: "Password",
+        hasPasswordStrengthValidation: true,
+        validationMessages: [
+            "Minimum 8 characters",
+            "At least 1 uppercase letter",
+            "At least 1 lowercase letter",
+            "At least 1 number",
+            "At least 1 special character",
+        ],
+        variant: variants.outline,
+        status: status.error,
+    },
+};
+export const LabelledPasswordStrengthValidationSuccess: Story = {
+    args: {
+        placeholder,
+        label: "Password",
+        hasPasswordStrengthValidation: true,
+        validationMessages: [
+            "Minimum 8 characters",
+            "At least 1 uppercase letter",
+            "At least 1 lowercase letter",
+            "At least 1 number",
+            "At least 1 special character",
+        ],
+        variant: variants.outline,
+        status: status.success,
+    },
+};
 export const StatusMessageWithCharacterCounter: Story = {
     args: {
         placeholder,

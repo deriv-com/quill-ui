@@ -15,6 +15,7 @@ import {
 } from "@deriv/quill-icons/Standalone";
 import { Text } from "@components/Typography";
 import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
+import { PasswordStrengthValidation } from "@components/Atom";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
@@ -26,6 +27,8 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     rightIcon?: ReactNode;
     inputSize?: TMediumSizes;
     status?: Status;
+    hasPasswordStrengthValidation?: boolean;
+    validationMessages?: ReactNode[];
     disabled?: boolean;
     dropdown?: boolean;
     isDropdownOpen?: boolean;
@@ -79,6 +82,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             readOnly,
             disabled = false,
             variant = "outline",
+            hasPasswordStrengthValidation = false,
+            validationMessages,
             placeholder = "",
             leftIcon,
             message,
@@ -258,25 +263,40 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
                     {showInputButton && InputButton}
                 </div>
-                {(message || showCharacterCounter) && !hideMessage && (
-                    <div
-                        className={clsx(
-                            "message__container",
-                            `message__container--${inputSize}`,
-                            `message__container__status--${status}`,
-                            disabled && `message__container__disabled`,
-                        )}
-                    >
-                        <span className="message__container__text">
-                            {message}
-                        </span>
-                        {showCharacterCounter && maxLength && (
+                {(message ||
+                    showCharacterCounter ||
+                    hasPasswordStrengthValidation) &&
+                    !hideMessage && (
+                        <div
+                            className={clsx(
+                                "message__container",
+                                `message__container--${inputSize}`,
+                                `message__container__status--${status}`,
+                                disabled && `message__container__disabled`,
+                            )}
+                        >
+                            {hasPasswordStrengthValidation && (
+                                <div className="message__container__password_validation">
+                                    {validationMessages?.map((msg, idx) => (
+                                        <PasswordStrengthValidation
+                                            key={idx}
+                                            status={status}
+                                            validationMessage={msg}
+                                        />
+                                    ))}
+                                </div>
+                            )}
+
                             <span className="message__container__text">
-                                {inputValue.toString().length}/{maxLength}
+                                {message}
                             </span>
-                        )}
-                    </div>
-                )}
+                            {showCharacterCounter && maxLength && (
+                                <span className="message__container__text">
+                                    {inputValue.toString().length}/{maxLength}
+                                </span>
+                            )}
+                        </div>
+                    )}
             </div>
         );
     },
