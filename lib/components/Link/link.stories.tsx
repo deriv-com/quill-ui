@@ -14,7 +14,7 @@ const meta = {
     title: "Components/Links/Link",
     component: Link,
     parameters: {
-        layout: "centered",
+        // layout: "centered",
     },
     args: {
         size: "md",

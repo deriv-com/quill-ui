@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Heading, TextArea } from "../lib/main";
+import { Heading, SegmentedControlSingleChoice, TextArea } from "../lib/main";
 import ThemeSwitcher from "./theme-switcher";
 import ThemeRenderer from "./theme-renderer";
+import { LabelPairedAndroidCaptionIcon } from "@deriv/quill-icons";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
@@ -30,5 +31,27 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 />
             </div>
         </ThemeRenderer>
+        <SegmentedControlSingleChoice
+            onChange={() => {}}
+            options={[
+                {
+                    icon: <LabelPairedAndroidCaptionIcon />,
+                },
+                {
+                    icon: <LabelPairedAndroidCaptionIcon />,
+                },
+                {
+                    icon: <LabelPairedAndroidCaptionIcon />,
+                },
+                {
+                    icon: <LabelPairedAndroidCaptionIcon />,
+                },
+                {
+                    icon: <LabelPairedAndroidCaptionIcon />,
+                },
+            ]}
+            selectedItemIndex={4}
+            size="md"
+        />
     </React.StrictMode>,
 );

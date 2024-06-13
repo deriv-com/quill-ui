@@ -23,6 +23,7 @@ const meta = {
         size: "md",
         isBold: true,
         variant: "custom",
+        // color: "var(--core-color-solid-blue-1200)",
     },
     argTypes: {
         label: {
@@ -52,9 +53,10 @@ const meta = {
             control: "boolean",
         },
         color: {
-            table: {
-                disable: true,
-            },
+            // table: {
+            //     disable: true,
+            // },
+            control: "color",
         },
         variant: {
             table: {

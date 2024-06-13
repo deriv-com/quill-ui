@@ -10,10 +10,13 @@ const meta = {
         exclude: ["contentLength"],
     },
     tags: ["autodocs"],
+    args: {
+        hideChevron: false,
+    },
     argTypes: {
         variant: {
             options: ["number", "bullet"],
-            control: { type: "select" },
+            control: "radio",
             description: "Type of pagination",
             table: {
                 defaultValue: { summary: "number" },
@@ -23,18 +26,18 @@ const meta = {
             control: { type: "number", min: 1 },
             description: "List of data to be rendered per page",
             table: {
-                defaultValue: { summary: 1 },
+                defaultValue: { summary: "1" },
             },
         },
         contentLength: {
             control: { type: "number", min: 1 },
             description: "Total length of data to be paginated",
             table: {
-                defaultValue: { summary: 1 },
+                defaultValue: { summary: "1" },
             },
         },
         className: {
-            control: { type: "text" },
+            control: false,
             description: "Styles to be applied to Pagination body",
         },
         onClickPagination: {

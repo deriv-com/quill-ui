@@ -22,12 +22,12 @@ const meta = {
     argTypes: {
         tooltipPosition: {
             options: ["left", "right", "bottom", "top"],
-            control: "select",
+            control: "radio",
         },
         variant: {
             table: { type: { summary: "string" } },
             description: "Variant of the tooltip",
-            control: { type: "select", options: ["base", "rich"] },
+            control: { type: "radio", options: ["base", "rich"] },
         },
         tooltipContent: {
             table: { type: { summary: "string" } },
@@ -35,9 +35,9 @@ const meta = {
             control: { type: "text" },
         },
         tooltipActionProps: {
-            table: { type: { summary: "object" } },
+            table: { type: { summary: "LinkProps | ButtonProps" } },
             description: "Props for tooltip action link or button",
-            control: { type: "object" },
+            control: false,
         },
         shouldCloseToolTipOnMouseLeave: {
             table: { type: { summary: "boolean" } },
@@ -48,7 +48,7 @@ const meta = {
         children: {
             table: { type: { summary: "ReactNode" } },
             description: "Content that holds tooltip",
-            control: { type: null },
+            control: false,
         },
         as: {
             table: { type: { summary: "string" } },
@@ -63,7 +63,7 @@ const meta = {
         tooltipAction: {
             table: { type: { summary: "ReactNode" } },
             description: "Action of the tooltip",
-            control: { type: "select", options: ["link", "button"] },
+            control: { type: "radio", options: ["link", "button"] },
         },
         actionText: {
             table: { type: { summary: "string" } },
@@ -75,6 +75,7 @@ const meta = {
             description: "Show arrow in tooltip",
             control: { type: "boolean" },
         },
+        tooltipColor: { table: { disable: true } },
     },
     parameters: { layout: "centered" },
     tags: ["autodocs"],

@@ -1,5 +1,9 @@
 .link-stories {
-    width: 150px;
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: var(--core-spacing-800);
     border-radius: var(--core-borderRadius-200);
     background-color: var(--component-textIcon-normal-prominent);

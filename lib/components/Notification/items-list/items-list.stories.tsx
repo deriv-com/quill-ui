@@ -46,9 +46,12 @@ const meta = {
             </NotificationsProvider>
         ),
     ],
+    args: {
+        isMobile: false,
+    },
     argTypes: {
         className: {
-            control: { type: null },
+            control: false,
             description: "Optional.",
             table: {
                 type: { summary: "string | undefined" },
@@ -62,6 +65,7 @@ const meta = {
                     summary: "Array<NotificationItemProps & { id: string }>",
                 },
             },
+            control: false,
         },
     },
 } satisfies Meta<typeof NotificationItemsList>;

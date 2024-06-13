@@ -27,10 +27,12 @@ const meta = {
         onClick: fn(),
         onClose: fn(),
         title: "Hint",
+        isMobile: false,
+        autohideTimeout: 5000,
     },
     argTypes: {
         className: {
-            control: { type: null },
+            control: false,
             description: "Optional.",
             table: {
                 type: { summary: "string | undefined" },
@@ -51,6 +53,7 @@ const meta = {
             control: { type: "color" },
             table: {
                 type: { summary: "string | undefined" },
+                disable: true,
             },
         },
         isMobile: {
@@ -96,7 +99,7 @@ type Story = StoryObj<typeof meta>;
 
 export const NotificationBannerDesktop: Story = {
     render: (args) => (
-        <div style={{ width: "360px" }}>
+        <div style={{ maxWidth: "360px" }}>
             <NotificationBanner {...args} />
         </div>
     ),
@@ -107,7 +110,7 @@ export const NotificationBannerMobile: Story = {
         isMobile: true,
     },
     render: (args) => (
-        <div style={{ width: "360px" }}>
+        <div style={{ maxWidth: "360px" }}>
             <NotificationBanner {...args} />
         </div>
     ),
@@ -115,7 +118,7 @@ export const NotificationBannerMobile: Story = {
 
 export const NotificationBannerDesktopWithCustomIcon: Story = {
     render: (args) => (
-        <div style={{ width: "360px" }}>
+        <div>
             <NotificationBanner
                 {...args}
                 icon={

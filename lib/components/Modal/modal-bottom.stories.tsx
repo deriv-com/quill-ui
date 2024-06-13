@@ -63,7 +63,7 @@ const meta = {
             table: { type: { summary: "ReactNode" } },
             description:
                 "Modal's content. Can be wrapped with the `<ModalBottom.Header/>` and `<ModalBottom.Body/>` components in order to organize the content inside the modal. Each of them accepts className for customization and `<ModalBottom.Header/>` can also be passed scr and height properties.",
-            control: { type: null },
+            control: false,
         },
 
         isOpened: {
@@ -101,29 +101,29 @@ const meta = {
             table: { type: { summary: "(isOpened: boolean) => void" } },
             description:
                 "Function for changing state of the visibility of the modal.",
-            control: { type: null },
+            control: false,
         },
         portalId: {
             table: { type: { summary: "string | undefined" } },
             description:
                 "ID of the modal container. If it wasn't passed, the modal will try to find any container with 'modal-root' ID. If there is no container with 'modal-root' ID the modal will be insert inside document.body.",
-            control: { type: "string" },
+            control: "text",
         },
         primaryButtonLabel: {
             table: { type: { summary: "ReactNode" } },
             description: "Label for the primary button.",
-            control: { type: "string" },
+            control: "text",
         },
         primaryButtonCallback: {
             table: { type: { summary: "(() => void) | undefined" } },
             description:
                 "Function which will be called on clicking on primary button.",
-            control: { type: null },
+            control: false,
         },
         secondaryButtonLabel: {
             table: { type: { summary: "ReactNode | undefined" } },
             description: "Label for the secondary button.",
-            control: { type: "string" },
+            control: "text",
         },
     },
 } satisfies Meta<typeof Modal>;

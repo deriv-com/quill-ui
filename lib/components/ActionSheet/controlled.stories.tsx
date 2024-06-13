@@ -27,6 +27,11 @@ const meta: Meta = {
         type: "non-modal",
         closeIcon: <StandaloneXmarkRegularIcon />,
         onOpen: fn(),
+        isPrimaryButtonDisabled: false,
+        isSecondaryButtonDisabled: false,
+        shouldCloseOnDrag: true,
+        shouldCloseOnPrimaryButtonClick: true,
+        shouldCloseOnSecondaryButtonClick: true,
     },
     argTypes: {
         isOpen: {

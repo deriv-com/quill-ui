@@ -3,6 +3,12 @@ import MockTab from "@components/Tab/mocks/index";
 import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons";
 import { ComponentProps } from "react";
 
+const icons: Record<string, object | null> = {
+    sm: <StandalonePlaceholderRegularIcon iconSize="sm" />,
+    md: <StandalonePlaceholderRegularIcon iconSize="md" />,
+    none: null,
+};
+
 const meta = {
     title: "Components/Tab/Fill Content",
     component: MockTab,
@@ -16,38 +22,26 @@ const meta = {
     argTypes: {
         size: {
             options: ["sm", "md"],
-            control: { type: "radio" },
+            control: "radio",
             description: "To select the size of icon and font-size",
+        },
+        className: { control: false },
+        icon: {
+            control: "radio",
+            options: Object.keys(icons),
+            mapping: icons,
         },
     },
 } satisfies Meta<typeof MockTab>;
 
 export default meta;
 
-const placeholder = {
-    sm: <StandalonePlaceholderRegularIcon iconSize="sm" />,
-    md: <StandalonePlaceholderRegularIcon iconSize="md" />,
-};
 export const TabFillContentWithIconsOnLeft = (
     args: ComponentProps<typeof MockTab>,
-) => (
-    <MockTab
-        {...args}
-        iconPosition="left"
-        contentStyle="fill"
-        icon={placeholder[args?.size as keyof typeof placeholder]}
-    />
-);
+) => <MockTab {...args} iconPosition="left" contentStyle="fill" />;
 export const TabFillContentWithIconsOnTop = (
     args: ComponentProps<typeof MockTab>,
-) => (
-    <MockTab
-        {...args}
-        iconPosition="top"
-        contentStyle="fill"
-        icon={placeholder[args?.size as keyof typeof placeholder]}
-    />
-);
+) => <MockTab {...args} iconPosition="top" contentStyle="fill" />;
 export const TabFillContentWithoutIcons = (
     args: ComponentProps<typeof MockTab>,
 ) => <MockTab {...args} contentStyle="fill" />;

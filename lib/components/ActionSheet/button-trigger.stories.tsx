@@ -20,6 +20,11 @@ const meta: Meta = {
         title: "Title",
         description: "Description",
         closeIcon: <LabelPairedXmarkMdBoldIcon />,
+        isPrimaryButtonDisabled: false,
+        isSecondaryButtonDisabled: false,
+        shouldCloseOnDrag: true,
+        shouldCloseOnPrimaryButtonClick: true,
+        shouldCloseOnSecondaryButtonClick: true,
     },
     argTypes: {
         isOpen: { table: { disable: true } },
@@ -55,14 +60,14 @@ const meta: Meta = {
                 "This prop controls the expandability of the bottom sheet.",
         },
         type: {
+            control: "radio",
             options: ["modal", "non-modal"],
-            control: { type: "radio" },
             description:
                 "This property is used to specify the type, which offers two options: `modal` and `non-modal`. When set to `modal`, it adds an overlay over the entire body, and clicking on it will close the action sheet. On the other hand, when set to `non-modal`, the area outside of the action sheet remains interactive and no overlay.",
         },
         position: {
+            control: "radio",
             options: ["left", "right"],
-            control: { type: "radio" },
             description: "This prop will make bottom sheet expandable",
         },
         title: {
@@ -72,6 +77,7 @@ const meta: Meta = {
             description: "Description for `ActionSheet.Header`",
         },
         closeIcon: {
+            control: false,
             description:
                 "This props allowed you to pass in icon for close button in `ActionSheet.Header`",
         },
@@ -80,21 +86,15 @@ const meta: Meta = {
                 "This props allowed you to pass in icon for `ActionSheet.Header`",
             options: Object.keys(icons),
             mapping: icons,
-            control: {
-                type: "radio",
-            },
+            control: "radio",
         },
         primaryAction: {
-            control: {
-                type: "object",
-            },
+            control: false,
             description:
                 "This prop is meant for `ActionSheet.Footer`. It accepts two property: `Content`, which accepts a string, and `onAction`, which takes a function.",
         },
         secondaryAction: {
-            control: {
-                type: "object",
-            },
+            control: false,
             description: "Same as `primaryAction`",
         },
         shouldCloseOnPrimaryButtonClick: {
@@ -112,9 +112,7 @@ const meta: Meta = {
                 "This prop controls if Action Sheet should be closed or not when secondary button was clicked. Default value: true",
         },
         alignment: {
-            control: {
-                type: "radio",
-            },
+            control: "radio",
             options: ["vertical", "horizontal"],
             description:
                 "This prop is for `ActionSheet.Footer` buttons alignment",

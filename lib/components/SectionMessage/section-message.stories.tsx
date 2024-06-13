@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { SectionMessage } from "./index";
-import { StandaloneCircleUserRegularIcon } from "@deriv/quill-icons/Standalone";
+import {
+    StandaloneCircleUserRegularIcon,
+    StandaloneAndroidIcon,
+} from "@deriv/quill-icons/Standalone";
 
 const icons = {
-    with_icon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
-    none: null,
+    sample_1: <StandaloneCircleUserRegularIcon iconSize="sm" />,
+    sample_2: <StandaloneAndroidIcon iconSize="sm" />,
 };
 
 const data = [
@@ -39,7 +42,7 @@ const meta = {
     argTypes: {
         size: {
             options: ["sm", "md"],
-            control: { type: "radio" },
+            control: "radio",
             description: "To select the size of the section-message",
         },
         status: {
@@ -50,17 +53,14 @@ const meta = {
         icon: {
             options: Object.keys(icons),
             mapping: icons,
-            control: {
-                type: "select",
-            },
+            control: "radio",
         },
         linkList: {
             options: Object.keys(links),
             mapping: links,
-            control: {
-                type: "select",
-            },
+            control: "radio",
         },
+        className: { table: { disable: true } },
     },
     tags: ["autodocs"],
 } satisfies Meta<typeof SectionMessage>;
