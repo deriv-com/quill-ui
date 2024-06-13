@@ -20,6 +20,10 @@ import { PasswordStrengthValidation } from "@components/Atom";
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
 export type Types = "text" | "email" | "password" | "tel" | "select" | "number";
+export type TValidationMessage = {
+    validationMessage: ReactNode;
+    status: Status;
+};
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type?: Types;
@@ -28,7 +32,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     inputSize?: TMediumSizes;
     status?: Status;
     hasPasswordStrengthValidation?: boolean;
-    validationMessages?: ReactNode[];
+    validationMessages?: TValidationMessage[];
     disabled?: boolean;
     dropdown?: boolean;
     isDropdownOpen?: boolean;
@@ -109,6 +113,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     ) => {
         const [inputValue, setInputValue] = useState(value || "");
         const [focused, setFocused] = React.useState(false);
+        const msgs = [
+            { message: "Minimum 8 characters", status: "success" },
+            { message: "At least 1 uppercase letter", status: "error" },
+        ];
+        msgs.map((msg) => {
+            console.log(msg.message);
+        });
         useEffect(() => {
             setInputValue(value || "");
         }, [value]);
@@ -277,13 +288,17 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         >
                             {hasPasswordStrengthValidation && (
                                 <div className="message__container__password_validation">
-                                    {validationMessages?.map((msg, idx) => (
-                                        <PasswordStrengthValidation
-                                            key={idx}
-                                            status={status}
-                                            validationMessage={msg}
-                                        />
-                                    ))}
+                                    {validationMessages?.map(
+                                        (validation, idx) => (
+                                            <PasswordStrengthValidation
+                                                key={idx}
+                                                status={validation.status}
+                                                validationMessage={
+                                                    validation.validationMessage
+                                                }
+                                            />
+                                        ),
+                                    )}
                                 </div>
                             )}
 

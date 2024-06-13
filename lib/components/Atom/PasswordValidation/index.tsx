@@ -1,21 +1,17 @@
-import { Status } from "@components/Input/base";
+import { TValidationMessage } from "@components/Input/base";
 import {
     LabelPairedCircleCaptionRegularIcon,
     LabelPairedCircleCheckCaptionFillIcon,
     LabelPairedCircleXmarkCaptionFillIcon,
 } from "@deriv/quill-icons/LabelPaired";
-import React, { ReactNode } from "react";
+import React from "react";
 import "./password-validation.scss";
 import { CaptionText } from "@components/Typography";
 
-export type PasswordStrengthValidationProps = {
-    status: Status;
-    validationMessage: ReactNode;
-};
 export const PasswordStrengthValidation = ({
     status,
     validationMessage,
-}: PasswordStrengthValidationProps) => {
+}: TValidationMessage) => {
     return (
         <div className="validation_message">
             {status === "success" ? (

@@ -28,12 +28,14 @@ export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
                             onClick={handlePasswordVisibility}
                             iconSize="sm"
                             data-testid="eye-icon"
+                            className="password_field__eye-icon"
                         />
                     ) : (
                         <StandaloneEyeSlashRegularIcon
                             onClick={handlePasswordVisibility}
                             iconSize="sm"
                             data-testid="eye-slash-icon"
+                            className="password_field__eye-icon"
                         />
                     )
                 }
