@@ -73,7 +73,7 @@ export const Default: Story = {
         title: "Default",
         message: "This is a message",
         size: "md",
-        icon: icons.with_icon,
+        icon: icons.sample_1,
     },
 };
 
