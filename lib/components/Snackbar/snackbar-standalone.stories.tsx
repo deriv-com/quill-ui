@@ -23,7 +23,7 @@ const meta = {
     parameters: {
         docs: {
             story: {
-                height: "200px",
+                height: "80px",
             },
         },
     },
