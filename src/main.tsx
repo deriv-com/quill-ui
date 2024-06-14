@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { Heading, TextArea } from "../lib/main";
 import ThemeSwitcher from "./theme-switcher";
 import ThemeRenderer from "./theme-renderer";
+import SnackbarTest from "./SnackbarTest";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
@@ -30,5 +31,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 />
             </div>
         </ThemeRenderer>
+        <SnackbarTest />
     </React.StrictMode>,
 );
