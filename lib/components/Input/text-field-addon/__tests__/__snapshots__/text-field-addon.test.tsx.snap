@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextFieldAddon component should render correctly with default props 1`] = `
+<div
+  class="quill-input__container"
+>
+  <div
+    class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+  >
+    <div
+      class="quill-addon quill-addon__position--left quill-addon__position--left--outline quill-addon__variant--outline"
+    >
+      <p
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Test Label
+      </p>
+    </div>
+    <div
+      class="quill-input-icons__wrapper"
+    >
+      <div
+        class="quill-input-no-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          placeholder=""
+          type="text"
+          value=""
+        />
+      </div>
+      <span
+        class="icon_wrapper"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextFieldAddon component should render with a different variant 1`] = `
+<div
+  class="quill-input__container"
+>
+  <div
+    class="quill-input__wrapper quill-input__wrapper__variant--fill quill-input__wrapper__variant--fill--neutral quill-input__wrapper__size--md"
+  >
+    <div
+      class="quill-addon quill-addon__position--left quill-addon__position--left--fill quill-addon__variant--fill"
+    >
+      <p
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Test Label
+      </p>
+    </div>
+    <div
+      class="quill-input-icons__wrapper"
+    >
+      <div
+        class="quill-input-no-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          placeholder=""
+          type="text"
+          value=""
+        />
+      </div>
+      <span
+        class="icon_wrapper"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextFieldAddon component should render with a right icon 1`] = `
+<div
+  class="quill-input__container"
+>
+  <div
+    class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+  >
+    <div
+      class="quill-addon quill-addon__position--left quill-addon__position--left--outline quill-addon__variant--outline"
+    >
+      <p
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Test Label
+      </p>
+    </div>
+    <div
+      class="quill-input-icons__wrapper"
+    >
+      <div
+        class="quill-input-no-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          placeholder=""
+          type="text"
+          value=""
+        />
+      </div>
+      <span
+        class="icon_wrapper"
+      >
+        <span
+          class="test-icon"
+        >
+          Icon
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextFieldAddon component should render with the addon on the right 1`] = `
+<div
+  class="quill-input__container"
+>
+  <div
+    class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+  >
+    <div
+      class="quill-input-icons__wrapper"
+    >
+      <div
+        class="quill-input-no-label__wrapper"
+      >
+        <input
+          class="input peer input__align--left input__size--md"
+          placeholder=""
+          type="text"
+          value=""
+        />
+      </div>
+      <span
+        class="icon_wrapper"
+      />
+    </div>
+    <div
+      class="quill-addon quill-addon__position--right quill-addon__position--right--outline quill-addon__variant--outline"
+    >
+      <p
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Test Label
+      </p>
+    </div>
+  </div>
+</div>
+`;
