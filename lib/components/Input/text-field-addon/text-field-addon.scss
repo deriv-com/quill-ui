@@ -1,0 +1,50 @@
+.quill-input__wrapper {
+    &:has(.quill-addon__position--left) {
+        padding-left: 0;
+    }
+    &:has(.quill-addon__position--right) {
+        padding-right: 0;
+    }
+}
+
+.quill-addon {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-inline: var(--semantic-spacing-general-md);
+
+    &__position {
+        &--left {
+            &--outline {
+                border-right: var(--borderWidth-xs) solid
+                    var(--core-color-opacity-black-100);
+            }
+            &--fill {
+                border-right: var(--borderWidth-sm) solid
+                    var(--core-color-solid-slate-50);
+            }
+        }
+
+        &--right {
+            &--outline {
+                border-left: var(--borderWidth-xs) solid
+                    var(--core-color-opacity-black-100);
+            }
+            &--fill {
+                border-left: var(--borderWidth-sm) solid
+                    var(--core-color-solid-slate-50);
+            }
+        }
+    }
+
+    &__variant {
+        &--outline {
+            background-color: var(--core-color-solid-slate-75);
+        
+        }
+    }
+
+    &__label--disabled {
+        color: var(--core-color-opacity-black-300);
+    }
+}

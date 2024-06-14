@@ -8,7 +8,12 @@ import {
 } from "react";
 import "./base.scss";
 import React from "react";
-import { TLeftOrCenter, TMediumSizes, TRightOrBottom } from "@types";
+import {
+    TLeftOrCenter,
+    TLeftOrRight,
+    TMediumSizes,
+    TRightOrBottom,
+} from "@types";
 import {
     StandaloneCircleCheckBoldIcon,
     StandaloneTriangleExclamationBoldIcon,
@@ -43,6 +48,9 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     inputButton?: ReactNode;
     leftPlaceholder?: string;
     rightPlaceholder?: string;
+    addOnPosition?: TLeftOrRight;
+    addOn?: ReactNode;
+    addOnIcon?: ReactNode;
 }
 
 const statusIconColors = {
@@ -98,6 +106,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             showInputButton,
             buttonPosition = "bottom",
             inputButton: InputButton,
+            addOnPosition,
+            addOn,
+            addOnIcon,
             ...rest
         },
         ref,
@@ -110,6 +121,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         if (isDropdownOpen) {
             hideMessage = true;
         }
+
         rightIcon =
             (status === "success" || status === "error") && !disabled
                 ? statusIcon[status]
@@ -135,6 +147,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             ),
                     )}
                 >
+                    {addOnPosition === "left" && addOn}
                     <div className="quill-input-icons__wrapper">
                         {leftIcon && (
                             <span className="icon_wrapper">{leftIcon}</span>
@@ -149,8 +162,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             )}
                         >
                             {leftPlaceholder &&
-                                (!label || (label && (value || focused))) &&
-                                (
+                                (!label || (label && (value || focused))) && (
                                     <Text
                                         size={inputSize}
                                         as="span"
@@ -210,8 +222,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 </label>
                             )}
                             {rightPlaceholder &&
-                                (!label || (label && (value || focused))) &&
-                                (
+                                (!label || (label && (value || focused))) && (
                                     <Text
                                         size={inputSize}
                                         as="span"
@@ -219,7 +230,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                             "quill-input-label__label",
                                             "quill-input-label__label--right",
                                         )}
-                                        color={disabled ? "quill-typography__color--disabled" : ""}
+                                        color={
+                                            disabled
+                                                ? "quill-typography__color--disabled"
+                                                : ""
+                                        }
                                     >
                                         {rightPlaceholder}
                                     </Text>
@@ -236,6 +251,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 {rightIcon}
                             </span>
                         )}
+                        {addOnIcon}
                         {triggerActionIcon && <>{triggerActionIcon}</>}
                         {dropdown && (
                             <LabelPairedChevronDownSmBoldIcon
@@ -249,8 +265,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             />
                         )}
                     </div>
-
                     {showInputButton && InputButton}
+                    {addOnPosition === "right" && addOn}
                 </div>
                 {(message || showCharacterCounter) && !hideMessage && (
                     <div

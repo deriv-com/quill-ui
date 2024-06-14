@@ -126,6 +126,9 @@
         overflow: hidden;
         position: relative;
         display: flex;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
 
         &:has(input:disabled) {
             cursor: not-allowed;
