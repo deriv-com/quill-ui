@@ -63,6 +63,9 @@ const meta = {
             control: "boolean",
             description: "Optional. Set to true by default.",
         },
+        onCloseAction: {
+            table: { disable: true },
+        },
     },
     decorators: [
         (Story) => (
