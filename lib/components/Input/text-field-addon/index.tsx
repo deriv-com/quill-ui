@@ -3,10 +3,12 @@ import Input, { InputProps } from "../base";
 import clsx from "clsx";
 import "./text-field-addon.scss";
 import { Text } from "@components/Typography";
+import { TLeftOrRight } from "@types";
 
 export interface TextFieldAddonProps
     extends Omit<InputProps, "textAlignment" | "leftIcon"> {
     addonLabel: string;
+    addOnPosition: TLeftOrRight
 }
 
 export const TextFieldAddon = forwardRef<HTMLInputElement, TextFieldAddonProps>(
@@ -44,7 +46,6 @@ export const TextFieldAddon = forwardRef<HTMLInputElement, TextFieldAddonProps>(
 
         return (
             <Input
-                addOnPosition={addOnPosition}
                 addOn={addOn}
                 disabled={disabled}
                 addOnIcon={addOnIcon}

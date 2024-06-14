@@ -1,8 +1,12 @@
 .quill-input__wrapper {
+    &:has(.quill-addon) {
+        display: flex;
+    }
     &:has(.quill-addon__position--left) {
         padding-left: 0;
     }
     &:has(.quill-addon__position--right) {
+        flex-direction: row-reverse;
         padding-right: 0;
     }
 }

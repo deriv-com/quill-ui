@@ -125,6 +125,15 @@ exports[`TextFieldAddon component should render with the addon on the right 1`] 
     class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
   >
     <div
+      class="quill-addon quill-addon__position--right quill-addon__position--right--outline quill-addon__variant--outline"
+    >
+      <p
+        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+      >
+        Test Label
+      </p>
+    </div>
+    <div
       class="quill-input-icons__wrapper"
     >
       <div
@@ -140,15 +149,6 @@ exports[`TextFieldAddon component should render with the addon on the right 1`] 
       <span
         class="icon_wrapper"
       />
-    </div>
-    <div
-      class="quill-addon quill-addon__position--right quill-addon__position--right--outline quill-addon__variant--outline"
-    >
-      <p
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
-      >
-        Test Label
-      </p>
     </div>
   </div>
 </div>

@@ -10,7 +10,6 @@ import "./base.scss";
 import React from "react";
 import {
     TLeftOrCenter,
-    TLeftOrRight,
     TMediumSizes,
     TRightOrBottom,
 } from "@types";
@@ -48,7 +47,6 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     inputButton?: ReactNode;
     leftPlaceholder?: string;
     rightPlaceholder?: string;
-    addOnPosition?: TLeftOrRight;
     addOn?: ReactNode;
     addOnIcon?: ReactNode;
 }
@@ -106,7 +104,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             showInputButton,
             buttonPosition = "bottom",
             inputButton: InputButton,
-            addOnPosition,
             addOn,
             addOnIcon,
             ...rest
@@ -147,7 +144,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             ),
                     )}
                 >
-                    {addOnPosition === "left" && addOn}
+                    {addOn}
                     <div className="quill-input-icons__wrapper">
                         {leftIcon && (
                             <span className="icon_wrapper">{leftIcon}</span>
@@ -266,7 +263,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         )}
                     </div>
                     {showInputButton && InputButton}
-                    {addOnPosition === "right" && addOn}
                 </div>
                 {(message || showCharacterCounter) && !hideMessage && (
                     <div
