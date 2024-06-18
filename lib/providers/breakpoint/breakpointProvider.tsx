@@ -1,4 +1,4 @@
-import { useMediaQuery, useWindowSize } from "usehooks-ts";
+import { useMediaQuery } from "usehooks-ts";
 import BreakpointContext, { BreakpointContextValue } from "./breakpointContext";
 import { useMemo } from "react";
 
@@ -15,7 +15,6 @@ export interface ScreenProviderProps {
 }
 
 export const BreakpointProvider = ({ children }: ScreenProviderProps) => {
-    const { width = 0 } = useWindowSize();
     const isXs = useMediaQuery(`(max-width: ${screens.sm})`);
     const isSm = useMediaQuery(`(min-width: ${screens.sm})`);
     const isMd = useMediaQuery(`(min-width: ${screens.md})`);
@@ -39,20 +38,8 @@ export const BreakpointProvider = ({ children }: ScreenProviderProps) => {
             isMobile,
             isTablet,
             isDesktop,
-            width,
         };
-    }, [
-        isDesktop,
-        isLg,
-        isMd,
-        isMobile,
-        isSm,
-        isTablet,
-        is2xl,
-        isXl,
-        isXs,
-        width,
-    ]);
+    }, [isDesktop, isLg, isMd, isMobile, isSm, isTablet, is2xl, isXl, isXs]);
 
     return (
         <BreakpointContext.Provider value={value}>

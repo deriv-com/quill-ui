@@ -10,7 +10,6 @@ export type BreakpointContextValue = {
     isMobile: boolean;
     isTablet: boolean;
     isDesktop: boolean;
-    width: string | undefined;
 };
 
 export const BreakpointContext = createContext<BreakpointContextValue>({
@@ -23,7 +22,6 @@ export const BreakpointContext = createContext<BreakpointContextValue>({
     isMobile: false,
     isTablet: false,
     isDesktop: false,
-    width: undefined,
 });
 
 export default BreakpointContext;
