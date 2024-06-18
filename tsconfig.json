@@ -6,7 +6,7 @@
             "@hooks/*": ["lib/hooks/*"],
             "@providers/*": ["lib/providers/*"],
             "@utils/*": ["lib/utils/*"],
-            "@types": ["lib/types.ts"]
+            "@test-utils": ["lib/test-utils"]
         },
         "target": "ES2020",
         "useDefineForClassFields": true,

@@ -26,6 +26,11 @@ export type TDefaultColor = "coral" | "black" | "white";
 // Extracting regular sizes from TGenericSizes
 export type TRegularSizes = Extract<TGenericSizes, "sm" | "md" | "lg">;
 
+export type Breakpoints = Extract<
+    TGenericSizes,
+    "xs" | "sm" | "md" | "lg" | "xl" | "2xl"
+>;
+
 export type TRegularSizesWithExtraLarge = Extract<
     TGenericSizes,
     "sm" | "md" | "lg" | "xl"
