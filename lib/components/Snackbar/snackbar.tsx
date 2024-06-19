@@ -43,10 +43,10 @@ export const Snackbar = ({
         };
     }, [message]);
 
-    const handleClose = () => {
+    const handleClose = (delay: number = 100) => {
         onCloseAction?.();
         if (timerRef) clearTimeout(timerRef.current ?? "");
-        id && snackbarDelayedRemove(id, 100);
+        id && snackbarDelayedRemove(id, delay);
     };
 
     const handleActionClick = () => {
@@ -83,7 +83,7 @@ export const Snackbar = ({
                     icon={<LabelPairedXmarkSmBoldIcon />}
                     color="white"
                     size="md"
-                    onClick={handleClose}
+                    onClick={() => handleClose()}
                     data-testid="close-button"
                 />
             )}
