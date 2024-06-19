@@ -113,13 +113,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     ) => {
         const [inputValue, setInputValue] = useState(value || "");
         const [focused, setFocused] = React.useState(false);
-        const msgs = [
-            { message: "Minimum 8 characters", status: "success" },
-            { message: "At least 1 uppercase letter", status: "error" },
-        ];
-        msgs.map((msg) => {
-            console.log(msg.message);
-        });
         useEffect(() => {
             setInputValue(value || "");
         }, [value]);
