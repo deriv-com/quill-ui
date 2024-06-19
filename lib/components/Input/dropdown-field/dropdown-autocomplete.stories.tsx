@@ -4,7 +4,15 @@ import {
     StandaloneCircleCheckBoldIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons";
-import { LabelPairedPlaceholderSmRegularIcon } from "@deriv/quill-icons/LabelPaired";
+import {
+    LabelPairedPlaceholderCaptionBoldIcon,
+    LabelPairedPlaceholderSmRegularIcon,
+} from "@deriv/quill-icons/LabelPaired";
+
+const icons: Record<string, object | null> = {
+    with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
+    none: null,
+};
 
 const meta = {
     title: "Components/Inputs/Autocomplete Dropdown",
@@ -49,6 +57,18 @@ const meta = {
         variant: {
             options: ["fill", "outline"],
             control: { type: "radio" },
+        },
+        leftIcon: {
+            table: { type: { summary: "ReactNode" } },
+            control: "radio",
+            options: Object.keys(icons),
+            mapping: icons,
+        },
+        rightIcon: {
+            table: { type: { summary: "ReactNode" } },
+            control: "radio",
+            options: Object.keys(icons),
+            mapping: icons,
         },
     },
 } satisfies Meta<typeof InputDropdown>;

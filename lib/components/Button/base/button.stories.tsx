@@ -9,6 +9,13 @@ import {
 } from "@deriv/quill-icons/LabelPaired";
 import { ComponentProps } from "react";
 
+const icons: Record<string, object | null> = {
+    sm: <LabelPairedPlaceholderSmRegularIcon />,
+    md: <LabelPairedPlaceholderMdRegularIcon />,
+    lg: <LabelPairedPlaceholderLgRegularIcon />,
+    none: null,
+};
+
 const meta = {
     title: "Components/Button/Basic",
     component: Button,
@@ -27,26 +34,33 @@ const meta = {
     argTypes: {
         variant: {
             options: ["primary", "secondary", "tertiary"],
-            control: { type: "radio" },
+            control: "radio",
         },
         "aria-label": {
             table: {
-                disabled: true,
+                disable: true,
             },
         },
         isLoading: {
             options: ["true", "false"],
-            control: { type: "boolean" },
+            control: "boolean",
         },
-
+        iconPosition: {
+            options: ["start", "end"],
+            control: "radio",
+        },
         size: {
             options: ["sm", "md", "lg", "xl"],
-            control: { type: "radio" },
+            control: "radio",
         },
-
+        icon: {
+            options: Object.keys(icons),
+            mapping: icons,
+            control: "radio",
+        },
         color: {
             options: ["coral", "black", "white", "purchase", "sell"],
-            control: { type: "radio" },
+            control: "radio",
         },
         onClick: {
             table: {
@@ -58,7 +72,9 @@ const meta = {
                 disable: true,
             },
         },
+        type: { control: false },
         dropdown: { table: { disable: true } },
+        iconButton: { table: { disable: true } },
     },
 } satisfies Meta<typeof Button>;
 

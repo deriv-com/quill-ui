@@ -36,29 +36,29 @@ const meta = {
         className: {
             table: { type: { summary: "string | undefined" } },
             description: "ClassName for the switch's wrapper",
-            control: { type: "text" },
+            control: false,
         },
         id: {
             table: { type: { summary: "string | undefined" } },
             description:
                 "Input's ID attribute value, for associating the label",
-            control: { type: "text" },
+            control: false,
         },
         onChange: {
             table: { type: { summary: "function | undefined" } },
             description:
                 "Callback function called when the switch's value changes",
-            control: { type: null },
+            control: false,
         },
         onFocus: {
             table: { type: { summary: "function | undefined" } },
             description: "Callback function called when the switch gains focus",
-            control: { type: null },
+            control: false,
         },
         onBlur: {
             table: { type: { summary: "function | undefined" } },
             description: "Callback function called when the switch loses focus",
-            control: { type: null },
+            control: false,
         },
     },
 } satisfies Meta<typeof ToggleSwitch>;

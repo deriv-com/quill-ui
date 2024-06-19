@@ -20,14 +20,14 @@ const meta = {
     },
     argTypes: {
         className: {
-            control: { type: null },
+            control: false,
             description: "Optional.",
             table: {
                 type: { summary: "string | undefined" },
             },
         },
         hasContainerWidth: {
-            control: { type: null },
+            control: false,
             description:
                 "Optional. Makes the component inherit the full width of its container.",
             table: {
@@ -37,10 +37,10 @@ const meta = {
         onChange: {
             description:
                 "Optional. You can use it to react to selection change.",
-            control: { type: null },
+            control: false,
         },
         options: {
-            control: { type: null },
+            control: false,
             description:
                 "Required. The first element in `options` is selected by default. You can pass `selectedItemIndex` prop to make another element selected. `ReactNode` type includes `string`, so `icon` and `label` can be passed as a string.",
         },
@@ -58,6 +58,7 @@ const meta = {
                 type: { summary: "string | undefined" },
             },
         },
+        hasAnimation: { table: { disable: true } },
     },
     parameters: {
         layout: "centered",

@@ -24,14 +24,14 @@ const meta = {
             control: { type: "number", min: 1 },
             description: "List of data to be rendered per page",
             table: {
-                defaultValue: { summary: 1 },
+                defaultValue: { summary: "1" },
             },
         },
         contentLength: {
             control: { type: "number", min: 1 },
             description: "Total length of data to be paginated",
             table: {
-                defaultValue: { summary: 1 },
+                defaultValue: { summary: "1" },
             },
         },
         className: {

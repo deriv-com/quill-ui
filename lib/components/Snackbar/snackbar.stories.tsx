@@ -1,5 +1,5 @@
 import React from "react";
-import type { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons/Standalone";
 import { fn } from "@storybook/test";
 import { Snackbar } from "./snackbar";
@@ -17,13 +17,17 @@ import {
 import { useSnackbar } from "@hooks/useSnackbar";
 import { SnackbarProvider } from "@providers/snackbar/snackbarProvider";
 
+const icons: Record<string, object | null> = {
+    with_icon: <StandalonePlaceholderRegularIcon />,
+    none: null,
+};
+
 const meta = {
     title: "Components/Snackbar/Default",
     component: Snackbar,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
     args: {
-        icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
         id: "",
         isVisible: true,
         message: "Message goes here",
@@ -36,14 +40,19 @@ const meta = {
             description:
                 "Optional. There will be no icon if icon is not provided.",
             table: { type: { summary: "Reactnode | undefined" } },
+            options: Object.keys(icons),
+            mapping: icons,
+            control: "radio",
         },
         id: {
             description:
                 "Required. However, unique id is already set in Provider.",
+            control: false,
         },
         isVisible: {
             description:
                 "Required. This boolean is set and controlled by Provider. ",
+            control: false,
         },
         message: {
             control: "text",
@@ -137,6 +146,7 @@ const { addSnackbar } = useSnackbar();
 } satisfies Meta<typeof Snackbar>;
 
 export default meta;
+type Story = StoryObj<typeof meta>;
 
 const Template = ({
     icon,
@@ -167,61 +177,71 @@ const Template = ({
     );
 };
 
-export const defaultSnackbar = Template.bind(this, meta.args);
+export const defaultSnackbar = Template.bind(this) as Story;
+defaultSnackbar.args = { ...meta.args };
 
-export const SnackbarWithMessageOnly = Template.bind(this, {
+export const SnackbarWithMessageOnly = Template.bind(this) as Story;
+SnackbarWithMessageOnly.args = {
     ...meta.args,
     icon: "",
     hasCloseButton: false,
     actionText: "",
-});
+};
 
-export const SnackbarWithIcon = Template.bind(this, {
+export const SnackbarWithIcon = Template.bind(this) as Story;
+SnackbarWithIcon.args = {
     ...meta.args,
     icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
     hasCloseButton: false,
     actionText: "",
-});
+};
 
-export const SnackbarWithAction = Template.bind(this, {
+export const SnackbarWithAction = Template.bind(this) as Story;
+SnackbarWithAction.args = {
     ...meta.args,
     icon: "",
     hasCloseButton: false,
     actionText: "Action",
     onActionClick: fn(),
-});
+};
 
-export const SnackbarWithCloseButton = Template.bind(this, {
+export const SnackbarWithCloseButton = Template.bind(this) as Story;
+SnackbarWithCloseButton.args = {
     ...meta.args,
     icon: "",
     actionText: "",
-});
+};
 
-export const SnackbarWithTwoLinesMessageMobileOnly = Template.bind(this, {
+export const SnackbarWithTwoLinesMessageMobileOnly = Template.bind(
+    this,
+) as Story;
+SnackbarWithTwoLinesMessageMobileOnly.args = {
     ...meta.args,
     icon: "",
     message:
         "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem. Lorem ipsum lorem lorem. Lorem ipsum lorem lorem.",
     hasCloseButton: false,
     actionText: "",
-});
+};
 
 export const SnackbarWithTwoLinesMessageWithCloseButtonMobileOnly =
-    Template.bind(this, {
-        ...meta.args,
-        icon: "",
-        message:
-            "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem.",
-        actionText: "",
-    });
+    Template.bind(this) as Story;
+SnackbarWithTwoLinesMessageWithCloseButtonMobileOnly.args = {
+    ...meta.args,
+    icon: "",
+    message:
+        "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem.",
+    actionText: "",
+};
 
 export const SnackbarWithTwoLinesMessageWithActionButtonMobileOnly =
-    Template.bind(this, {
-        ...meta.args,
-        icon: "",
-        message:
-            "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem.",
-        actionText: "Action",
-        hasCloseButton: false,
-        onActionClick: fn(),
-    });
+    Template.bind(this) as Story;
+SnackbarWithTwoLinesMessageWithActionButtonMobileOnly.args = {
+    ...meta.args,
+    icon: "",
+    message:
+        "This is an extremely long text that goes on another line. Lorem ipsum lorem lorem.",
+    actionText: "Action",
+    hasCloseButton: false,
+    onActionClick: fn(),
+};

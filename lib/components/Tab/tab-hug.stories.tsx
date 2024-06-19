@@ -3,6 +3,12 @@ import MockTab from "@components/Tab/mocks/index";
 import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons";
 import { ComponentProps } from "react";
 
+const placeholder = {
+    sm: <StandalonePlaceholderRegularIcon iconSize="sm" />,
+    md: <StandalonePlaceholderRegularIcon iconSize="md" />,
+    none: null,
+};
+
 const meta = {
     title: "Components/Tab/Hug Content",
     component: MockTab,
@@ -19,35 +25,23 @@ const meta = {
             control: { type: "radio" },
             description: "To select the size of icon and font-size",
         },
+        className: { control: false },
+        icon: {
+            control: "radio",
+            options: Object.keys(placeholder),
+            mapping: placeholder,
+        },
     },
 } satisfies Meta<typeof MockTab>;
 
 export default meta;
 
-const placeholder = {
-    sm: <StandalonePlaceholderRegularIcon iconSize="sm" />,
-    md: <StandalonePlaceholderRegularIcon iconSize="md" />,
-};
-
 export const TabHugContentWithIconsOnLeft = (
     args: ComponentProps<typeof MockTab>,
-) => (
-    <MockTab
-        {...args}
-        contentStyle="hug"
-        icon={placeholder[args?.size as keyof typeof placeholder]}
-    />
-);
+) => <MockTab {...args} contentStyle="hug" />;
 export const TabHugContentWithIconsOnTop = (
     args: ComponentProps<typeof MockTab>,
-) => (
-    <MockTab
-        {...args}
-        iconPosition="top"
-        contentStyle="hug"
-        icon={placeholder[args?.size as keyof typeof placeholder]}
-    />
-);
+) => <MockTab {...args} iconPosition="top" contentStyle="hug" />;
 export const TabHugContentWithoutIcons = (
     args: ComponentProps<typeof MockTab>,
 ) => <MockTab {...args} contentStyle="hug" />;

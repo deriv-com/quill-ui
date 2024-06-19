@@ -30,6 +30,12 @@ const RadioGroupItem = ({
     />
 );
 
+const items: Record<string, string | null> = {
+    "Option 1": "option1",
+    "Option 2": "option2",
+    "Option 3": "option3",
+};
+
 const Template: React.FC<RadioGroupProps> = (args) => (
     <RadioGroup {...args}>
         <RadioGroupItem
@@ -62,11 +68,13 @@ const RadioGroupMeta = {
         onToggle: fn(),
         selected: "option1",
         shouldWrapItems: false,
+        required: false,
     },
     argTypes: {
         name: {
             description:
                 "Unique name for the radio group to identify selected radio button.",
+            control: false,
         },
         onToggle: {
             description:
@@ -76,10 +84,13 @@ const RadioGroupMeta = {
         selected: {
             description:
                 "Pre-selects a specific radio button value by its value prop.",
+            options: Object.keys(items),
+            mapping: items,
+            control: "radio",
         },
         size: {
             description: "Size of the radio button elements.",
-            control: { type: "select" },
+            control: "radio",
             options: ["sm", "md"],
         },
         shouldWrapItems: {
@@ -89,6 +100,7 @@ const RadioGroupMeta = {
         },
         className: {
             description: "CSS class name applied to the radio group element.",
+            control: false,
         },
         required: {
             description: "Sets the radio group as a required field.",
@@ -97,7 +109,7 @@ const RadioGroupMeta = {
         radioButtonPosition: {
             description:
                 "Controls left or right position of the radio button. Default value is 'left'.",
-            control: { type: "select" },
+            control: "radio",
             options: ["left", "right"],
         },
     },

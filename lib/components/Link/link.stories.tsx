@@ -13,9 +13,6 @@ import "./link-stories.scss";
 const meta = {
     title: "Components/Links/Link",
     component: Link,
-    parameters: {
-        layout: "centered",
-    },
     args: {
         size: "md",
         color: "black",

@@ -4,7 +4,9 @@ import "./styles.scss";
 import "../lib/styles/quill/static.scss";
 
 const preview: Preview = {
+    tags: ["autodocs"],
     parameters: {
+        docs: { source: { format: true } },
         actions: { argTypesRegex: "^on[A-Z].*" },
         controls: {
             matchers: {
