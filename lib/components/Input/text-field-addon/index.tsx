@@ -42,7 +42,7 @@ export const TextFieldAddon = forwardRef<HTMLInputElement, TextFieldAddonProps>(
             </div>
         );
 
-        const addOnIcon = <span className={"icon_wrapper"}>{rightIcon}</span>;
+        const addOnIcon = <span className="icon_wrapper">{rightIcon}</span>;
 
         return (
             <Input
