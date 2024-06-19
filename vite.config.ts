@@ -8,27 +8,9 @@ import dts from "vite-plugin-dts";
 import sass from "sass";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-    plugins: [
-        react(),
-        libInjectCss(),
-        dts({
-            include: ["lib"],
-            exclude: [
-                "lib/**/*.spec.tsx",
-                "lib/**/*.test.tsx",
-                "lib/**/*.stories.tsx",
-            ],
-        }),
-    ],
-    css: {
-        preprocessorOptions: {
-            scss: {
-                implementation: sass,
-            },
-        },
-    },
-    resolve: {
+export default defineConfig(({ mode }) => {
+
+    const config_resolve = {
         alias: {
             "@quill": resolve(__dirname, "lib/styles/quill"),
             "@quill-custom": resolve(__dirname, "lib/styles/custom"),
@@ -39,50 +21,112 @@ export default defineConfig({
             "@styles": resolve(__dirname, "lib/styles"),
             "@types": resolve(__dirname, "lib/types.ts"),
         },
-    },
-    build: {
-        lib: {
-            entry: resolve(__dirname, "lib/main.ts"),
-            formats: ["es"],
-        },
-        copyPublicDir: false,
-        cssCodeSplit: false,
-        rollupOptions: {
-            external: ["react", "react-dom"],
-            input: Object.fromEntries(
-                glob
-                    .sync("lib/**/*.{ts,tsx}", {
-                        ignore: [
-                            "**/*.test.ts",
-                            "**/*.test.tsx",
-                            "**/*.spec.ts",
-                            "**/*.spec.tsx",
-                            "**/__tests__/**",
-                            "**/*.stories.tsx",
-                            "**/*.stories.ts",
+    };
+
+    const config =
+        mode === "es"
+            ? {
+                plugins: [
+                    react(),
+                    libInjectCss(),
+                    dts({
+                        include: ["lib"],
+                        exclude: [
+                            "lib/**/*.spec.tsx",
+                            "lib/**/*.test.tsx",
+                            "lib/**/*.stories.tsx",
                         ],
-                    })
-                    .map((file) => {
-                        return [
-                            // The name of the entry point
-                            // lib/nested/foo.ts becomes nested/foo
-                            relative(
-                                "lib",
-                                file.slice(
-                                    0,
-                                    file.length - extname(file).length,
-                                ),
-                            ),
-                            // The absolute path to the entry file
-                            // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
-                            fileURLToPath(new URL(file, import.meta.url)),
-                        ];
                     }),
-            ),
-            output: {
-                assetFileNames: "assets/[name][extname]",
-                entryFileNames: "[name].js",
-            },
-        },
-    },
+                ],
+                css: {
+                    preprocessorOptions: {
+                        scss: {
+                            implementation: sass,
+                        },
+                    },
+                },
+                resolve: config_resolve,
+                build: {
+                    outDir: "dist-es",
+                    lib: {
+                        entry: resolve(__dirname, "lib/main.ts"),
+                        formats: ["es"],
+                    },
+                    copyPublicDir: false,
+                    cssCodeSplit: false,
+                    rollupOptions: {
+                        external: ["react", "react-dom"],
+                        input: Object.fromEntries(
+                            glob
+                                .sync("lib/**/*.{ts,tsx}", {
+                                    ignore: [
+                                        "**/*.test.ts",
+                                        "**/*.test.tsx",
+                                        "**/*.spec.ts",
+                                        "**/*.spec.tsx",
+                                        "**/__tests__/**",
+                                        "**/*.stories.tsx",
+                                        "**/*.stories.ts",
+                                    ],
+                                })
+                                .map((file) => {
+                                    return [
+                                        // The name of the entry point
+                                        // lib/nested/foo.ts becomes nested/foo
+                                        relative(
+                                            "lib",
+                                            file.slice(
+                                                0,
+                                                file.length -
+                                                    extname(file).length,
+                                            ),
+                                        ),
+                                        // The absolute path to the entry file
+                                        // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
+                                        fileURLToPath(
+                                            new URL(file, import.meta.url),
+                                        ),
+                                    ];
+                                }),
+                        ),
+                        output: {
+                            assetFileNames: "assets/[name][extname]",
+                            entryFileNames: "[name].js",
+                        },
+                    },
+                },
+            }
+        :   {
+                plugins: [
+                    react(),
+                    dts({
+                        include: ["lib"],
+                        exclude: [
+                            "lib/**/*.spec.tsx",
+                            "lib/**/*.test.tsx",
+                            "lib/**/*.stories.tsx",
+                        ],
+                    }),
+                ],
+                resolve: config_resolve,
+                build: {
+                    outDir: "dist-cjs",
+                    lib: {
+                        entry: resolve(__dirname, "lib/main.ts"),
+                        formats: ["cjs"],
+                    },
+                    copyPublicDir: false,
+                    cssCodeSplit: false,
+                    rollupOptions: {
+                        external: ["react", "react-dom"], // Ensure React is externalized here as well
+                        output: {
+                            entryFileNames: "[name].cjs",
+                            chunkFileNames: "chunks/[name].cjs",
+                            assetFileNames: "assets/[name][extname]",
+                        },
+                    },
+                },
+            };
+
+    return config;
 });
