@@ -14,6 +14,7 @@ export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     hasCloseButton?: boolean;
     onActionClick?: () => void;
     onCloseAction?: () => void;
+    delay?: number;
 }
 
 export const Snackbar = ({
@@ -25,6 +26,7 @@ export const Snackbar = ({
     onActionClick,
     onCloseAction,
     hasCloseButton = true,
+    delay,
     ...rest
 }: SnackbarProps) => {
     const { removeSnackbar } = useSnackbar();
@@ -83,7 +85,7 @@ export const Snackbar = ({
                     icon={<LabelPairedXmarkSmBoldIcon />}
                     color="white"
                     size="md"
-                    onClick={() => handleClose()}
+                    onClick={() => handleClose(delay)}
                     data-testid="close-button"
                 />
             )}
