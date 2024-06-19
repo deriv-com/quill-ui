@@ -15,10 +15,15 @@ import {
 } from "@deriv/quill-icons/Standalone";
 import { Text } from "@components/Typography";
 import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
+import { PasswordStrengthValidation } from "@components/Atom";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
 export type Types = "text" | "email" | "password" | "tel" | "select" | "number";
+export type TValidationMessage = {
+    validationMessage: ReactNode;
+    status: Status;
+};
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type?: Types;
@@ -26,6 +31,8 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     rightIcon?: ReactNode;
     inputSize?: TMediumSizes;
     status?: Status;
+    hasPasswordStrengthValidation?: boolean;
+    validationMessages?: TValidationMessage[];
     disabled?: boolean;
     dropdown?: boolean;
     isDropdownOpen?: boolean;
@@ -79,6 +86,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             readOnly,
             disabled = false,
             variant = "outline",
+            hasPasswordStrengthValidation = false,
+            validationMessages,
             placeholder = "",
             leftIcon,
             message,
@@ -149,8 +158,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             )}
                         >
                             {leftPlaceholder &&
-                                (!label || (label && (value || focused))) &&
-                                (
+                                (!label || (label && (value || focused))) && (
                                     <Text
                                         size={inputSize}
                                         as="span"
@@ -210,8 +218,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 </label>
                             )}
                             {rightPlaceholder &&
-                                (!label || (label && (value || focused))) &&
-                                (
+                                (!label || (label && (value || focused))) && (
                                     <Text
                                         size={inputSize}
                                         as="span"
@@ -219,7 +226,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                             "quill-input-label__label",
                                             "quill-input-label__label--right",
                                         )}
-                                        color={disabled ? "quill-typography__color--disabled" : ""}
+                                        color={
+                                            disabled
+                                                ? "quill-typography__color--disabled"
+                                                : ""
+                                        }
                                     >
                                         {rightPlaceholder}
                                     </Text>
@@ -236,7 +247,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 {rightIcon}
                             </span>
                         )}
-                        {triggerActionIcon && <>{triggerActionIcon}</>}
+                        {triggerActionIcon && (
+                            <span className="icon_wrapper">
+                                {triggerActionIcon}
+                            </span>
+                        )}
                         {dropdown && (
                             <LabelPairedChevronDownSmBoldIcon
                                 width={24}
@@ -252,25 +267,44 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
                     {showInputButton && InputButton}
                 </div>
-                {(message || showCharacterCounter) && !hideMessage && (
-                    <div
-                        className={clsx(
-                            "message__container",
-                            `message__container--${inputSize}`,
-                            `message__container__status--${status}`,
-                            disabled && `message__container__disabled`,
-                        )}
-                    >
-                        <span className="message__container__text">
-                            {message}
-                        </span>
-                        {showCharacterCounter && maxLength && (
+                {(message ||
+                    showCharacterCounter ||
+                    hasPasswordStrengthValidation) &&
+                    !hideMessage && (
+                        <div
+                            className={clsx(
+                                "message__container",
+                                `message__container--${inputSize}`,
+                                `message__container__status--${status}`,
+                                disabled && `message__container__disabled`,
+                            )}
+                        >
+                            {hasPasswordStrengthValidation && (
+                                <div className="message__container__password_validation">
+                                    {validationMessages?.map(
+                                        (validation, idx) => (
+                                            <PasswordStrengthValidation
+                                                key={idx}
+                                                status={validation.status}
+                                                validationMessage={
+                                                    validation.validationMessage
+                                                }
+                                            />
+                                        ),
+                                    )}
+                                </div>
+                            )}
+
                             <span className="message__container__text">
-                                {inputValue.toString().length}/{maxLength}
+                                {message}
                             </span>
-                        )}
-                    </div>
-                )}
+                            {showCharacterCounter && maxLength && (
+                                <span className="message__container__text">
+                                    {inputValue.toString().length}/{maxLength}
+                                </span>
+                            )}
+                        </div>
+                    )}
             </div>
         );
     },
