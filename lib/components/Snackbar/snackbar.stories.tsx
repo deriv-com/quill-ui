@@ -4,7 +4,7 @@ import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons/Standalone"
 import { fn } from "@storybook/test";
 import { Snackbar } from "./snackbar";
 import { Button } from "@components/Button";
-import { SnackbarController } from ".";
+import { SnackbarController } from "./snackbar-controller";
 import {
     Title,
     Subtitle,
@@ -71,6 +71,9 @@ const meta = {
         hasCloseButton: {
             control: "boolean",
             description: "Optional. Set to true by default.",
+        },
+        onCloseAction: {
+            table: { disable: true },
         },
     },
     decorators: [

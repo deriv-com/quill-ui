@@ -7,12 +7,14 @@ import { useSnackbar } from "@hooks/useSnackbar";
 
 export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     icon?: ReactNode;
-    id: string;
-    isVisible: boolean;
+    id?: string;
+    isVisible?: boolean;
     message: string;
     actionText?: string;
     hasCloseButton?: boolean;
     onActionClick?: () => void;
+    onCloseAction?: () => void;
+    delay?: number;
 }
 
 export const Snackbar = ({
@@ -22,7 +24,9 @@ export const Snackbar = ({
     message,
     actionText,
     onActionClick,
+    onCloseAction,
     hasCloseButton = true,
+    delay,
     ...rest
 }: SnackbarProps) => {
     const { removeSnackbar } = useSnackbar();
@@ -34,7 +38,7 @@ export const Snackbar = ({
     };
 
     useEffect(() => {
-        timerRef.current = snackbarDelayedRemove(id);
+        id && (timerRef.current = snackbarDelayedRemove(id));
 
         return () => {
             clearTimeout(timerRef.current ?? "");
@@ -42,8 +46,9 @@ export const Snackbar = ({
     }, [message]);
 
     const handleClose = (delay: number = 100) => {
+        onCloseAction?.();
         if (timerRef) clearTimeout(timerRef.current ?? "");
-        snackbarDelayedRemove(id, delay);
+        id && snackbarDelayedRemove(id, delay);
     };
 
     const handleActionClick = () => {
@@ -80,7 +85,7 @@ export const Snackbar = ({
                     icon={<LabelPairedXmarkSmBoldIcon />}
                     color="white"
                     size="md"
-                    onClick={() => handleClose()}
+                    onClick={() => handleClose(delay)}
                     data-testid="close-button"
                 />
             )}
