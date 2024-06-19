@@ -118,6 +118,7 @@ export default defineConfig(({ mode }) => {
                     copyPublicDir: false,
                     cssCodeSplit: false,
                     rollupOptions: {
+                        external: ["react", "react-dom"], // Ensure React is externalized here as well
                         output: {
                             entryFileNames: "[name].cjs",
                             chunkFileNames: "chunks/[name].cjs",
