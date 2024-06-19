@@ -28,7 +28,7 @@ export type TRegularSizes = Extract<TGenericSizes, "sm" | "md" | "lg">;
 
 export type Breakpoints = Extract<
     TGenericSizes,
-    "xs" | "sm" | "md" | "lg" | "xl" | "2xl"
+    "sm" | "md" | "lg" | "xl" | "2xl"
 >;
 
 export type TRegularSizesWithExtraLarge = Extract<

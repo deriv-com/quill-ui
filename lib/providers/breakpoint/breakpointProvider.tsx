@@ -1,8 +1,9 @@
 import { useMediaQuery } from "usehooks-ts";
 import BreakpointContext, { BreakpointContextValue } from "./breakpointContext";
 import { useMemo } from "react";
+import { Breakpoints } from "lib/types";
 
-const screens = {
+const screens: Record<Breakpoints, string> = {
     sm: "640px",
     md: "768px",
     lg: "1024px",
