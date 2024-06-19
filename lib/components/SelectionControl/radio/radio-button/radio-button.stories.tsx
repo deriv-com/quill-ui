@@ -25,6 +25,7 @@ const RadioButtonMeta = {
         hasInfo: false,
         id: "radio-1",
         radioButtonPosition: "left",
+        required: false,
     },
     argTypes: {
         id: {
@@ -45,12 +46,15 @@ const RadioButtonMeta = {
         },
         className: {
             description: "CSS class name applied to the radio button element.",
+            control: false,
         },
         classNameLabel: {
             description: "CSS class name applied to the radio button label.",
+            control: false,
         },
         classNameInfo: {
             description: "CSS class name applied to the informational content.",
+            control: false,
         },
         name: {
             description:
@@ -63,12 +67,12 @@ const RadioButtonMeta = {
         },
         required: {
             description: "Sets the radio button as a required field.",
-            control: { type: "boolean" },
+            control: "boolean",
         },
         radioButtonPosition: {
             description:
                 "Controls left or right position of the radio button. Default value is 'left'.",
-            control: { type: "select" },
+            control: "radio",
             options: ["left", "right"],
         },
         value: {
@@ -76,7 +80,7 @@ const RadioButtonMeta = {
         },
         size: {
             description: "Size of the radio button element.",
-            control: { type: "select" },
+            control: "radio",
             options: ["sm", "md"],
         },
     },

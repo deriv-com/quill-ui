@@ -25,16 +25,20 @@ const meta = {
         as: "div",
         title: "Title",
         actionText: "label",
+        shouldCloseToolTipOnMouseLeave: false,
     },
     argTypes: {
         tooltipPosition: {
             options: ["left", "right", "bottom", "top"],
-            control: "select",
+            control: "radio",
         },
         variant: {
             table: { type: { summary: "string" } },
             description: "Variant of the tooltip",
-            control: { type: "select", options: ["base", "rich"] },
+            control: { type: "radio", options: ["base", "rich"] },
+        },
+        actionText: {
+            control: "text",
         },
         tooltipContent: {
             table: { type: { summary: "string" } },
@@ -50,7 +54,10 @@ const meta = {
         children: {
             table: { type: { summary: "ReactNode" } },
             description: "Content that holds tooltip",
-            control: { type: null },
+            control: false,
+        },
+        tooltipColor: {
+            table: { disable: true },
         },
         as: {
             table: { type: { summary: "string" } },
@@ -66,6 +73,11 @@ const meta = {
             table: { type: { summary: "boolean" } },
             description: "Show arrow in tooltip",
             control: { type: "boolean" },
+        },
+        tooltipActionProps: {
+            description: "Props for tooltip action link or button",
+            table: { type: { summary: "LinkProps | ButtonProps" } },
+            control: false,
         },
     },
     parameters: { layout: "centered" },

@@ -7,3 +7,12 @@ body,
     width: 640px;
     height: 200px;
 }
+
+#storybook-docs .docblock-argstable-body input[type="radio"] {
+    appearance: revert;
+    -webkit-appearance: radio;
+}
+
+#storybook-docs .docblock-argstable-body textarea {
+    resize: both;
+}

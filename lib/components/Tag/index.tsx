@@ -30,6 +30,11 @@ export const Tag = forwardRef<HTMLDivElement, BaseTagProps>(
                     `tag__color--${tagColor}`,
                     `tag__color--${tagColor}-${variant}`,
                 )}
+                style={
+                    variant === "custom"
+                        ? { backgroundColor: color }
+                        : undefined
+                }
                 {...rest}
                 ref={ref}
             >

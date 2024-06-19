@@ -57,7 +57,7 @@ const meta = {
             table: { type: { summary: "Date | undefined" } },
             description:
                 "The beginning of a period that shall be displayed. If you wish to use react-calendar in an uncontrolled way, use defaultActiveStartDate instead. Default value - today. Example values: new Date(2017, 0, 1).",
-            control: { type: null },
+            control: false,
         },
         allowPartialRange: {
             table: { type: { summary: "boolean | undefined" } },
@@ -88,13 +88,13 @@ const meta = {
             table: { type: { summary: "Date | undefined" } },
             description:
                 "The beginning of a period that shall be displayed by default. If you wish to use react-calendar in a controlled way, use activeStartDate instead. Default value - today. Example values: new Date(2017, 0, 1).",
-            control: { type: null },
+            control: false,
         },
         defaultValue: {
             table: { type: { summary: "Date | Date[] | undefined" } },
             description:
                 "Calendar value that shall be selected initially. Can be either one value or an array of two values. If you wish to use react-calendar in a controlled way, use value instead. Example values: new Date(2017, 0, 1) or [new Date(2017, 0, 1), new Date(2017, 7, 1)].",
-            control: { type: null },
+            control: false,
         },
         hasFixedWidth: {
             table: {
@@ -116,7 +116,7 @@ const meta = {
             },
             description:
                 "Function called to override default formatting of day tile labels. Can be used to use your own formatting function. Default formatter is used if nothing was passed. Example: (locale, date) => formatDate(date, 'd')",
-            control: { type: null },
+            control: false,
         },
         formatLongDate: {
             table: {
@@ -127,7 +127,7 @@ const meta = {
             },
             description:
                 "Function called to override default formatting of day tile abbr labels. Can be used to use your own formatting function. Default formatter is used if nothing was passed. Example: (locale, date) => formatDate(date, 'dd MMM YYYY')",
-            control: { type: null },
+            control: false,
         },
         formatMonth: {
             table: {
@@ -138,7 +138,7 @@ const meta = {
             },
             description:
                 "Function called to override default formatting of month names. Can be used to use your own formatting function. Default formatter is used if nothing was passed. Example: (locale, date) => formatDate(date, 'MMM')",
-            control: { type: null },
+            control: false,
         },
         formatMonthYear: {
             table: {
@@ -149,7 +149,7 @@ const meta = {
             },
             description:
                 "Function called to override default formatting of months and years. Can be used to use your own formatting function. Default formatter: (locale, date) => new Date(date).toLocaleString(locale || navigator.languages, { month: 'short', year: 'numeric' })`. Example: (locale, date) => formatDate(date, 'MMMM YYYY')",
-            control: { type: null },
+            control: false,
         },
         formatShortWeekday: {
             table: {
@@ -160,7 +160,7 @@ const meta = {
             },
             description:
                 "Function called to override default formatting of weekday names (shortened). Can be used to use your own formatting function. Default formatter is used if nothing was passed. Example: (locale, date) => formatDate(date, 'dd')",
-            control: { type: null },
+            control: false,
         },
         formatWeekday: {
             table: {
@@ -171,7 +171,7 @@ const meta = {
             },
             description:
                 "Function called to override default formatting of weekday names. Can be used to use your own formatting function. Default formatter is used if nothing was passed. Example: (locale, date) => formatDate(date, 'dd')",
-            control: { type: null },
+            control: false,
         },
         formatYear: {
             table: {
@@ -182,7 +182,7 @@ const meta = {
             },
             description:
                 "Function called to override default formatting of year in the top navigation section. Can be used to use your own formatting function. Default formatter is used if nothing was passed. Example: (locale, date) => formatDate(date, 'YYYY')",
-            control: { type: null },
+            control: false,
         },
         goToRangeStartOnSelect: {
             table: { type: { summary: "boolean | undefined" } },
@@ -197,7 +197,7 @@ const meta = {
             },
             description:
                 "A prop that behaves like ref, but it's passed to main 'div' rendered by 'Calendar' component.",
-            control: { type: null },
+            control: false,
         },
         locale: {
             table: {
@@ -211,13 +211,13 @@ const meta = {
             table: { type: { summary: "Date | undefined" } },
             description:
                 "Maximum date that the user can select. Periods partially overlapped by maxDate will also be selectable, although react-calendar will ensure that no later date is selected. Example values: new Date().",
-            control: { type: null },
+            control: false,
         },
         minDate: {
             table: { type: { summary: "Date | undefined" } },
             description:
                 "Minimum date that the user can select. Periods partially overlapped by minDate will also be selectable, although react-calendar will ensure that no earlier date is selected. Example values: new Date().",
-            control: { type: null },
+            control: false,
         },
         navigationAriaLabel: {
             table: {
@@ -245,7 +245,7 @@ const meta = {
             },
             description:
                 "Content of a label rendered on calendar navigation bar.",
-            control: { type: null },
+            control: false,
         },
         next2AriaLabel: {
             table: {
@@ -293,7 +293,7 @@ const meta = {
             },
             description:
                 "Config for changing format of the selected date, will be passed inside of Date.toLocaleDateString(). Default value: {day: '2-digit', month: '2-digit', year: 'numeric'}",
-            control: { type: null },
+            control: false,
         },
         onActiveStartDateChange: {
             table: {
@@ -304,7 +304,7 @@ const meta = {
             },
             description:
                 "Function called when the user navigates from one view to another using previous/next button. Note that this function will not be called when e.g. drilling up from January 2021 to 2021 or drilling down the other way around. action signifies the reason for active start date change and can be one of the following values: 'prev', 'prev2', 'next', 'next2', 'drillUp', 'drillDown', 'onChange'. Example: ({ action, activeStartDate, value, view }) => alert('Changed view to: ', activeStartDate, view)",
-            control: { type: null },
+            control: false,
         },
         onChange: {
             table: {
@@ -315,7 +315,7 @@ const meta = {
             },
             description:
                 "Function called when the user clicks an item (day on month view, month on year view and so on) on the most detailed view available.",
-            control: { type: null },
+            control: false,
         },
         onFormattedDate: {
             table: {
@@ -325,7 +325,7 @@ const meta = {
             },
             description:
                 "Function called when the user clicks an item (day on month view, month on year view and so on) on the most detailed view available, will be called together with onChange. Returns formatted chosen date (single or range).",
-            control: { type: null },
+            control: false,
         },
         prev2AriaLabel: {
             table: {
@@ -427,7 +427,7 @@ const meta = {
             },
             description:
                 "Calendar value. Can be either one value or an array of two values. If you wish to use react-calendar in an uncontrolled way, use defaultValue instead.",
-            control: { type: null },
+            control: false,
         },
         wrapperClassName: {
             table: {

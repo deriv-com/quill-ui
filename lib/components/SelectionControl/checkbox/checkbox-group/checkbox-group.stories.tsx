@@ -66,9 +66,8 @@ const meta = {
     },
     argTypes: {
         className: {
-            table: { type: { summary: "string | undefined" } },
             description: "ClassName for external tag of the component",
-            control: { type: "text" },
+            control: false,
         },
         checkboxGroupConfig: {
             table: {
@@ -94,7 +93,7 @@ const meta = {
             },
             description:
                 "Config for building Parents and Children Nodes. Each object in array represents Parent Node and includes obligational fields for id and label. Optional are fields which are named the same way as props from Checkbox (single). Also, optional is field 'children', which can include an array with fractal-like Child Nodes objects. Please note, that if you want to change config passed in props, then in order to notify CheckboxGroup component about changed you need to pass config as new one (e.g. with spread operator).",
-            control: { type: null },
+            control: false,
         },
     },
 } satisfies Meta<typeof CheckboxGroup>;

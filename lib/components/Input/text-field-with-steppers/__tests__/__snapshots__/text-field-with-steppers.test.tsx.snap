@@ -37,58 +37,62 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
               />
             </svg>
           </span>
-          <button
-            class="quill-input-steppers-button quill-input-steppers-button--decrement quill-input-steppers-button--md"
+          <span
+            class="icon_wrapper"
           >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 13 22"
-              width="13"
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              class="quill-input-steppers-button quill-input-steppers-button--decrement quill-input-steppers-button--md"
             >
-              <g>
-                <path
-                  d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="23d4f2210a23c1ee0252b195b395b70d__a"
-                >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
                   <path
-                    d="M0 0h13v22H0z"
+                    d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
                   />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
-          <button
-            class="quill-input-steppers-button quill-input-steppers-button--increment quill-input-steppers-button--md"
-          >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 13 22"
-              width="13"
-              xmlns="http://www.w3.org/2000/svg"
+                </g>
+                <defs>
+                  <clippath
+                    id="23d4f2210a23c1ee0252b195b395b70d__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+            <button
+              class="quill-input-steppers-button quill-input-steppers-button--increment quill-input-steppers-button--md"
             >
-              <g>
-                <path
-                  d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="32d4536f6c380db9b492a69ae1c2b4ce__a"
-                >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
                   <path
-                    d="M0 0h13v22H0z"
+                    d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
                   />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
+                </g>
+                <defs>
+                  <clippath
+                    id="32d4536f6c380db9b492a69ae1c2b4ce__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </span>
         </div>
       </div>
       <div
@@ -132,58 +136,62 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
               value="undefined"
             />
           </div>
-          <button
-            class="quill-input-steppers-button quill-input-steppers-button--decrement quill-input-steppers-button--md"
+          <span
+            class="icon_wrapper"
           >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 13 22"
-              width="13"
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              class="quill-input-steppers-button quill-input-steppers-button--decrement quill-input-steppers-button--md"
             >
-              <g>
-                <path
-                  d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="23d4f2210a23c1ee0252b195b395b70d__a"
-                >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
                   <path
-                    d="M0 0h13v22H0z"
+                    d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
                   />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
-          <button
-            class="quill-input-steppers-button quill-input-steppers-button--increment quill-input-steppers-button--md"
-          >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 13 22"
-              width="13"
-              xmlns="http://www.w3.org/2000/svg"
+                </g>
+                <defs>
+                  <clippath
+                    id="23d4f2210a23c1ee0252b195b395b70d__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+            <button
+              class="quill-input-steppers-button quill-input-steppers-button--increment quill-input-steppers-button--md"
             >
-              <g>
-                <path
-                  d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="32d4536f6c380db9b492a69ae1c2b4ce__a"
-                >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
                   <path
-                    d="M0 0h13v22H0z"
+                    d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
                   />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
+                </g>
+                <defs>
+                  <clippath
+                    id="32d4536f6c380db9b492a69ae1c2b4ce__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -218,58 +226,62 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
               USD
             </span>
           </div>
-          <button
-            class="quill-input-steppers-button quill-input-steppers-button--decrement quill-input-steppers-button--md"
+          <span
+            class="icon_wrapper"
           >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 13 22"
-              width="13"
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              class="quill-input-steppers-button quill-input-steppers-button--decrement quill-input-steppers-button--md"
             >
-              <g>
-                <path
-                  d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="23d4f2210a23c1ee0252b195b395b70d__a"
-                >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
                   <path
-                    d="M0 0h13v22H0z"
+                    d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
                   />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
-          <button
-            class="quill-input-steppers-button quill-input-steppers-button--increment quill-input-steppers-button--md"
-          >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 13 22"
-              width="13"
-              xmlns="http://www.w3.org/2000/svg"
+                </g>
+                <defs>
+                  <clippath
+                    id="23d4f2210a23c1ee0252b195b395b70d__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+            <button
+              class="quill-input-steppers-button quill-input-steppers-button--increment quill-input-steppers-button--md"
             >
-              <g>
-                <path
-                  d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="32d4536f6c380db9b492a69ae1c2b4ce__a"
-                >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
                   <path
-                    d="M0 0h13v22H0z"
+                    d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
                   />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
+                </g>
+                <defs>
+                  <clippath
+                    id="32d4536f6c380db9b492a69ae1c2b4ce__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -312,58 +324,62 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
               value="undefined"
             />
           </div>
-          <button
-            class="quill-input-steppers-button quill-input-steppers-button--decrement quill-input-steppers-button--md"
+          <span
+            class="icon_wrapper"
           >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 13 22"
-              width="13"
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              class="quill-input-steppers-button quill-input-steppers-button--decrement quill-input-steppers-button--md"
             >
-              <g>
-                <path
-                  d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="23d4f2210a23c1ee0252b195b395b70d__a"
-                >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
                   <path
-                    d="M0 0h13v22H0z"
+                    d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
                   />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
-          <button
-            class="quill-input-steppers-button quill-input-steppers-button--increment quill-input-steppers-button--md"
-          >
-            <svg
-              height="22"
-              role="img"
-              viewBox="0 0 13 22"
-              width="13"
-              xmlns="http://www.w3.org/2000/svg"
+                </g>
+                <defs>
+                  <clippath
+                    id="23d4f2210a23c1ee0252b195b395b70d__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+            <button
+              class="quill-input-steppers-button quill-input-steppers-button--increment quill-input-steppers-button--md"
             >
-              <g>
-                <path
-                  d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="32d4536f6c380db9b492a69ae1c2b4ce__a"
-                >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
                   <path
-                    d="M0 0h13v22H0z"
+                    d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
                   />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
+                </g>
+                <defs>
+                  <clippath
+                    id="32d4536f6c380db9b492a69ae1c2b4ce__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </span>
         </div>
       </div>
     </div>

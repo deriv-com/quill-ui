@@ -15,6 +15,11 @@
             &--sm {
                 padding-inline: var(--component-field-spacing-padding-sm);
             }
+            &__password_validation {
+                display: flex;
+                flex-direction: column;
+                gap: var(--semantic-spacing-gap-md);
+            }
 
             &__status {
                 &--neutral {
@@ -46,6 +51,7 @@
                 );
             }
         }
+       
         .icon_wrapper {
             display: flex;
             margin: auto;
@@ -126,6 +132,9 @@
         overflow: hidden;
         position: relative;
         display: flex;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
 
         &:has(input:disabled) {
             cursor: not-allowed;
