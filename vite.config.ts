@@ -23,28 +23,33 @@ export default defineConfig(({ mode }) => {
         },
     };
 
+    const dts_plugin = dts({
+        include: ["lib"],
+        exclude: [
+            "**/mocks/**",
+            "lib/**/*.spec.tsx",
+            "lib/**/*.test.tsx",
+            "lib/**/*.stories.tsx",
+        ],
+    });
+
+    const css_preprocessor = {
+        preprocessorOptions: {
+            scss: {
+                implementation: sass,
+            },
+        },
+    };
+
     const config =
         mode === "es"
             ? {
                 plugins: [
                     react(),
                     libInjectCss(),
-                    dts({
-                        include: ["lib"],
-                        exclude: [
-                            "lib/**/*.spec.tsx",
-                            "lib/**/*.test.tsx",
-                            "lib/**/*.stories.tsx",
-                        ],
-                    }),
+                    dts_plugin
                 ],
-                css: {
-                    preprocessorOptions: {
-                        scss: {
-                            implementation: sass,
-                        },
-                    },
-                },
+                css: css_preprocessor,
                 resolve: config_resolve,
                 build: {
                     outDir: "dist-es",
@@ -60,6 +65,7 @@ export default defineConfig(({ mode }) => {
                             glob
                                 .sync("lib/**/*.{ts,tsx}", {
                                     ignore: [
+                                        "**/mocks/**",
                                         "**/*.test.ts",
                                         "**/*.test.tsx",
                                         "**/*.spec.ts",
@@ -99,14 +105,7 @@ export default defineConfig(({ mode }) => {
         :   {
                 plugins: [
                     react(),
-                    dts({
-                        include: ["lib"],
-                        exclude: [
-                            "lib/**/*.spec.tsx",
-                            "lib/**/*.test.tsx",
-                            "lib/**/*.stories.tsx",
-                        ],
-                    }),
+                    dts_plugin
                 ],
                 resolve: config_resolve,
                 build: {
@@ -118,7 +117,7 @@ export default defineConfig(({ mode }) => {
                     copyPublicDir: false,
                     cssCodeSplit: false,
                     rollupOptions: {
-                        external: ["react", "react-dom"], // Ensure React is externalized here as well
+                        external: ["react", "react-dom"],
                         output: {
                             entryFileNames: "[name].cjs",
                             chunkFileNames: "chunks/[name].cjs",
