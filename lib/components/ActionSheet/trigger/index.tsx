@@ -4,7 +4,7 @@ import { IconSize } from "@deriv/quill-icons";
 import { QuillIconComponent } from "@types";
 import { Button, ButtonProps } from "@components/Button";
 
-interface ButtonTriggerProps extends ButtonProps {
+interface ButtonTriggerProps extends Omit<ButtonProps, "ref"> {
     iconComponent?: never;
     iconSize?: never;
     iconClassName?: never;
@@ -27,7 +27,7 @@ const Trigger = ({
     const { handleOpen } = useContext(ActionSheetContext);
     if (Icon) {
         return (
-            <Button onClick={handleOpen} {...restProps}>
+            <Button onClick={handleOpen} {...(restProps as IconTriggerProps)}>
                 <Icon
                     data-testid="dt-actionsheet-icon-button"
                     className={iconClassName}
@@ -35,7 +35,7 @@ const Trigger = ({
             </Button>
         );
     }
-    return <Button onClick={handleOpen} {...restProps} />;
+    return <Button onClick={handleOpen} {...(restProps as ButtonTriggerProps)} />;
 };
 
 Trigger.displayName = "Trigger";

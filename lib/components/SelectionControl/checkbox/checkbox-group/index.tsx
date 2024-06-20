@@ -4,7 +4,7 @@ import "./checkbox-group.scss";
 import { Checkbox } from "../checkbox-single";
 import { CheckboxProps } from "../checkbox-single";
 
-interface Node extends Omit<CheckboxProps, "id" | "children"> {
+interface Node extends Omit<CheckboxProps, "id" | "children" | "ref"> {
     id: string | number;
 }
 

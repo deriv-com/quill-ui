@@ -15,7 +15,7 @@ export type TButtonSocial = "google" | "facebook" | "apple";
 export type QuillIconComponent = React.ForwardRefExoticComponent<
     Omit<QuillSvgProps, "ref">
 >;
-export interface ButtonProps extends ComponentProps<"button"> {
+export interface ButtonProps extends Omit<ComponentProps<"button">, "ref"> {
     variant?: TButtonVariant;
     color?: TButtonColor;
     icon?: ReactNode;
@@ -45,6 +45,6 @@ export interface SocialButtonProps extends ComponentProps<"button"> {
 }
 
 export interface IconButtonProps
-    extends Omit<ButtonProps, "iconPosition" | "label" | "icon"> {
+    extends Omit<ButtonProps, "iconPosition" | "label" | "icon" | "ref"> {
     icon: ReactNode;
 }
