@@ -8,7 +8,11 @@ import {
 } from "react";
 import "./base.scss";
 import React from "react";
-import { TLeftOrCenter, TMediumSizes, TRightOrBottom } from "@types";
+import {
+    TLeftOrCenter,
+    TMediumSizes,
+    TRightOrBottom,
+} from "@types";
 import {
     StandaloneCircleCheckBoldIcon,
     StandaloneTriangleExclamationBoldIcon,
