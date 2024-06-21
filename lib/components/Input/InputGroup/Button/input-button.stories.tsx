@@ -33,60 +33,43 @@ const meta = {
         showCharacterCounter: false,
         buttonLabel: "Button",
         buttonPosition: "right",
+        label: "",
+        message: "",
     },
     argTypes: {
         type: {
-            control: "text",
+            description: "Type of the input",
+            table: {
+                type: {
+                    summary: `"text" | "email" | "password" | "tel" | "select" | "number"`,
+                },
+            },
+            control: false,
         },
         inputSize: {
-            control: {
-                type: "radio",
-            },
+            control: "radio",
             options: ["sm", "md"],
         },
         leftIcon: {
             options: Object.keys(icons),
             mapping: icons,
-            control: {
-                type: "select",
-            },
+            control: "radio",
         },
         rightIcon: {
             options: Object.keys(icons),
             mapping: icons,
-            control: {
-                type: "select",
-            },
+            control: "radio",
         },
         status: {
-            control: {
-                type: "radio",
-            },
+            control: "radio",
             options: ["neutral", "success", "error"],
         },
         variant: {
-            control: {
-                type: "radio",
-            },
+            control: "radio",
             options: ["fill", "outline"],
         },
-        label: {
-            control: {
-                type: "text",
-            },
-        },
-        message: {
-            control: {
-                type: "text",
-            },
-        },
-        maxLength: {
-            control: {
-                type: "number",
-            },
-        },
         buttonPosition: {
-            control: { type: "radio" },
+            control: "radio",
             options: ["right", "bottom"],
         },
     },

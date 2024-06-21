@@ -1,11 +1,10 @@
+import { InputDropdown } from "@components/Input";
 import DropdownDatePicker from "@components/Input/date-picker";
 import { useBreakpoints } from "@hooks/useBreakpoints";
 import React from "react";
 
 const TestingBreakpoints = () => {
     const { isMobile, isDesktop, isTablet } = useBreakpoints();
-
-    console.log(useBreakpoints());
 
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -14,9 +13,16 @@ const TestingBreakpoints = () => {
             <div>{isTablet && "Tablet"}</div>
             <DropdownDatePicker
                 inputSize="md"
-                placeholder="Select"
+                placeholder="dd/mm/yyyy"
                 status="neutral"
                 variant="outline"
+                onSelectOption={() => {}}
+                // label="Date of birth"
+                isAutocomplete
+            />
+            <InputDropdown
+                label="123"
+                onSelectOption={() => {}}
                 options={[
                     {
                         text: "Option 1",
@@ -31,7 +37,9 @@ const TestingBreakpoints = () => {
                         value: "option3",
                     },
                 ]}
-                onSelectOption={() => {}}
+                placeholder="Select"
+                status="neutral"
+                variant="outline"
             />
         </div>
     );

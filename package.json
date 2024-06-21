@@ -140,7 +140,8 @@
     },
     "dependencies": {
         "@deriv/quill-icons": "^1.22.10",
-        "@headlessui/react": "^2.0.4",
+        "@headlessui/react": "^1.7.18",
+        "dayjs": "^1.11.11",
         "react-calendar": "^5.0.0",
         "react-swipeable": "^6.2.1",
         "react-tiny-popover": "^8.0.4",

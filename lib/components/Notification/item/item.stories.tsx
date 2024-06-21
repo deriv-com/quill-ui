@@ -47,10 +47,12 @@ const meta = {
         onMarkAsRead: fn(),
         timestamp: new Date("2024-04-23T09:24:00").getTime(),
         title: "Hint",
+        isMobile: false,
+        showButtons: false,
     },
     argTypes: {
         className: {
-            control: { type: null },
+            control: false,
             description: "Optional.",
             table: {
                 type: { summary: "string | undefined" },
@@ -71,6 +73,7 @@ const meta = {
             control: { type: "color" },
             table: {
                 type: { summary: "string | undefined" },
+                disable: true,
             },
         },
         isMobile: {

@@ -48,10 +48,11 @@ const meta = {
     ],
     args: {
         autohideTimeout: 4000,
+        isMobile: false,
     },
     argTypes: {
         className: {
-            control: { type: null },
+            control: false,
             description: "Optional.",
             table: {
                 type: { summary: "string | undefined" },
@@ -65,7 +66,9 @@ const meta = {
                     summary: "Array<NotificationBannerProps & { id: string }>",
                 },
             },
+            control: false,
         },
+        zIndex: { control: false },
     },
 } satisfies Meta<typeof NotificationBanners>;
 

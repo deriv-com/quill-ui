@@ -52,9 +52,7 @@ const meta = {
             control: "boolean",
         },
         color: {
-            table: {
-                disable: true,
-            },
+            control: "color",
         },
         variant: {
             table: {

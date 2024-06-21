@@ -48,7 +48,7 @@ const meta = {
         infoIconClassName: {
             table: { type: { summary: "string | undefined" } },
             description: "ClassName for info icon",
-            control: { type: "text" },
+            control: false,
         },
         showInfoIcon: {
             table: { type: { summary: "boolean | undefined" } },
@@ -71,7 +71,7 @@ const meta = {
             table: { type: { summary: "string | undefined" } },
             description:
                 "ClassName for label, which will be passed to Text component",
-            control: { type: "text" },
+            control: false,
         },
         name: {
             table: { type: { summary: "string | undefined" } },
@@ -82,13 +82,13 @@ const meta = {
         className: {
             table: { type: { summary: "string | undefined" } },
             description: "ClassName for external tag of the component",
-            control: { type: "text" },
+            control: false,
         },
         onChange: {
             table: { type: { summary: "function | undefined" } },
             description:
                 "Callback function, which will be called as a part of onChange and onKeyDown",
-            control: { type: null },
+            control: false,
         },
         id: {
             table: { type: { summary: "string | undefined" } },
@@ -98,7 +98,7 @@ const meta = {
         },
         ref: {
             description: "Reference for direct manipulations",
-            control: { type: null },
+            control: false,
         },
     },
 } satisfies Meta<typeof Checkbox>;
