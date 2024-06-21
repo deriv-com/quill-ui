@@ -1,5 +1,6 @@
-@import "@quill/breakpoints.scss";
-@import "@quill/static.scss";
+@import "@deriv-com/quill-tokens/dist/breakpoints.scss";
+@import "@styles/static.scss";
+
 .quill-modal {
     &__background {
         position: fixed;

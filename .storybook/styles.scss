@@ -1,3 +1,6 @@
+@import "../lib/styles/reset.scss";
+@import "@deriv-com/quill-tokens/dist/quill.css";
+
 body,
 .docs-story {
     background-color: var(--semantic-color-slate-solid-surface-frame-mid);
