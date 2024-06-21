@@ -1,6 +1,5 @@
 import React, { ComponentProps, ElementType } from "react";
 import { TGenericSizes } from "@types";
-import "@quill/quill.scss";
 import "@styles/index.scss";
 import "./typography.scss";
 import clsx from "clsx";

@@ -138,6 +138,7 @@
         "globalSetup": "<rootDir>/globalSetup.js"
     },
     "dependencies": {
+        "@deriv-com/quill-tokens": "^2.0.7",
         "@deriv/quill-icons": "^1.22.10",
         "@headlessui/react": "^1.7.18",
         "react-calendar": "^5.0.0",
