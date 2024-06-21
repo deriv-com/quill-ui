@@ -22,13 +22,7 @@ To incorporate Quill UI into your  applications, follow these steps:
     npm i @deriv-com/quill-ui
     ```
 
-2. Install the Quill Tokens package using npm:
-
-    ```bash
-    npm i @deriv-com/quill-tokens
-    ```
-
-3. Integrate Quill UI components into your application as needed.
+2. Integrate Quill UI components into your application as needed.
 
 
 **Usage**
@@ -43,14 +37,6 @@ import { Button } from '@deriv-com/quill-ui';
 // ... Your code here
 ```
 you can explore the Storybook to learn about the available props for each component.
-
-Styles:
-
-Quill UI components are styled with Quill Tokens, so ensure you import the corresponding styles.
-
-```javascript
-import "@deriv-com/quill-tokens/dist/quill.css";
-```
 
 **Development**
 

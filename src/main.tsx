@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import { Heading } from "../lib/main";
 import ThemeSwitcher from "./theme-switcher";
 import ThemeRenderer from "./theme-renderer";
-import "@deriv-com/quill-tokens/dist/quill.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
