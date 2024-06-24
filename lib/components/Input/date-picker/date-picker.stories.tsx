@@ -34,6 +34,7 @@ const meta = {
         placeholder: "dd/mm/yyyy",
         variant: "fill",
         label: "",
+        required: false,
     },
     argTypes: {
         status: {

@@ -32,6 +32,7 @@ const meta = {
         status: "neutral",
         placeholder: "dd/mm/yyyy",
         variant: "fill",
+        required: false,
     },
     argTypes: {
         disabled: {
