@@ -8,88 +8,112 @@ import React, {
 import clsx from "clsx";
 import "./date-picker.scss";
 import Input, { InputProps } from "../base";
-import { DatePicker } from "@components/Atom";
+import { DatePicker, DatePickerProps } from "@components/Atom";
 import { reactNodeToString } from "@utils/common-utils";
 import dayjs from "dayjs";
 import useDropdown from "@hooks/useDropdown";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import { StandaloneCalendarRegularIcon } from "@deriv/quill-icons";
 
-// Extend dayjs with customParseFormat plugin
 dayjs.extend(customParseFormat);
 
-export type TOptionList = {
-    text?: React.ReactNode;
-    value?: string;
-};
-
-export interface TDropdownProps extends InputProps {
+export interface TDatePickerDropdownProps extends Omit<InputProps, "leftIcon"> {
     onSearch?: (inputValue: string) => void;
-    onSelectOption: (value: string) => void;
+    onSelectDate: (value: Date) => void;
     isAutocomplete?: boolean;
-    listHeight?: string;
+    datePickerProps?: DatePickerProps;
 }
 
 const dateFormat = "DD/MM/YYYY";
 
-export const DropdownDatePicker = forwardRef<HTMLInputElement, TDropdownProps>(
+export const DatePickerDropdown = forwardRef<
+    HTMLInputElement,
+    TDatePickerDropdownProps
+>(
     (
         {
-            disabled,
             label,
             textAlignment = "left",
             inputSize = "md",
             status = "neutral",
-            name,
-            onSearch,
-            onSelectOption,
-            value,
             isAutocomplete = false,
+            className,
+            datePickerProps = { selectRange: false },
+            onSelectDate,
+            onSearch,
+            disabled,
             ...rest
         },
         ref,
     ) => {
-        const [date, setDate] = useState<Date | undefined>();
+        const [date, setDate] = useState<string | undefined>();
+        const inputRef = useRef<HTMLInputElement>(null);
         const { ref: dropdownRef, isOpen, open, close } = useDropdown();
-        const handleDropdown = () => {
+        const handleDropdown = (e: React.MouseEvent<HTMLDivElement>) => {
+            if (
+                isAutocomplete &&
+                isOpen &&
+                inputRef.current?.contains(e.target as Node)
+            )
+                return;
             isOpen ? close() : open();
         };
 
-        const handleOnchange = (e: ChangeEvent<HTMLInputElement>) => {
+        const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
             const input = e.target.value;
+            onSearch?.(input);
 
-            // Validate the formatted input using dayjs
-            if (dayjs(input, dateFormat, true).isValid()) {
-                // date && dayjs(date).format("DD/MM/YYYY");
-                const formattedInput = dayjs(input, dateFormat);
-                console.log(formattedInput);
-                setDate(formattedInput);
-            }
+            if (dayjs(input, dateFormat, true).isValid() || input === "")
+                setDate(input);
         };
+
+        const convertedLabel = reactNodeToString(label);
+
+        useEffect(() => {
+            if (isOpen) inputRef.current?.focus();
+            if (!date) return;
+            if (!inputRef.current) return;
+            if (dayjs(inputRef.current.value, dateFormat, true).isValid())
+                return;
+
+            inputRef.current.value = date;
+        }, [isOpen]);
 
         return (
             <div
-                className="datepicker__wrapper"
-                style={isOpen ? { zIndex: "999" } : {}}
+                className={clsx(
+                    "datepicker__wrapper",
+                    isOpen && "datepicker__wrapper--open",
+                    disabled && "datepicker__wrapper--disabled",
+                )}
                 ref={dropdownRef}
             >
-                <div onClick={handleDropdown}>
+                <div onClick={handleDropdown} ref={ref}>
                     <Input
-                        ref={ref}
+                        leftIcon={
+                            <StandaloneCalendarRegularIcon
+                                iconSize="sm"
+                                fill="var(--semantic-color-monochrome-textIcon-normal-high)"
+                            />
+                        }
+                        ref={inputRef}
                         data-testid="dropdown-input"
-                        disabled={disabled}
-                        label={reactNodeToString(label)}
-                        name={name}
+                        label={convertedLabel}
                         dropdown
+                        disabled={disabled}
                         textAlignment={textAlignment}
                         inputSize={inputSize}
                         status={status}
                         isDropdownOpen={isOpen}
                         readOnly={!isAutocomplete}
-                        type="select"
-                        value={date && dayjs(date).format("DD/MM/YYYY")}
-                        onChange={handleOnchange}
-                        onKeyDown={}
-                        maxLength={10}
+                        type="tel"
+                        value={date}
+                        className={clsx("datepicker__input", className)}
+                        onChange={handleOnChange}
+                        formatProps={{
+                            format: "##/##/####",
+                            mask: "_",
+                        }}
                         {...rest}
                     />
                 </div>
@@ -104,30 +128,21 @@ export const DropdownDatePicker = forwardRef<HTMLInputElement, TDropdownProps>(
                 >
                     {isOpen && (
                         <DatePicker
-                            goToRangeStartOnSelect
+                            value={date && dayjs(date, dateFormat).toDate()}
                             hasFixedWidth
-                            formatMonthYear={(locale, date) =>
-                                new Date(date).toLocaleString(
-                                    locale || navigator.languages,
-                                    {
-                                        month: "short",
-                                        year: "numeric",
-                                    },
-                                )
-                            }
-                            value={date}
+                            onFormattedDate={(value) => {
+                                setDate(value);
+                            }}
                             onChange={(value) => {
-                                setDate(value as Date);
+                                onSelectDate?.(value as Date);
                                 close();
                             }}
-                            optionsConfig={{
-                                day: "2-digit",
-                                month: "2-digit",
-                                year: "numeric",
-                            }}
-                            returnValue="start"
-                            showNavigation
-                            className="datepicker__container"
+                            className={clsx(
+                                "datepicker__container",
+                                datePickerProps?.className,
+                            )}
+                            selectRange
+                            {...datePickerProps}
                         />
                     )}
                 </div>
@@ -136,4 +151,4 @@ export const DropdownDatePicker = forwardRef<HTMLInputElement, TDropdownProps>(
     },
 );
 
-export default DropdownDatePicker;
+export default DatePickerDropdown;

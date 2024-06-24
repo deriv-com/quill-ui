@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Modal } from "@components/Modal";
 import { ModalProps } from "../base";
 import { Button } from "@components/Button";
-import "@quill/breakpoints.scss";
+import "@deriv-com/quill-tokens/dist/breakpoints.scss";
 
 interface ModalExampleProps extends ModalProps {
     image?: React.ReactNode;

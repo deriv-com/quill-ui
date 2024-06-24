@@ -25,7 +25,6 @@ const meta = {
     },
     tags: ["autodocs"],
     args: {
-        type: "password",
         inputSize: "md",
         status: "neutral",
         disabled: false,
@@ -36,9 +35,6 @@ const meta = {
         showCharacterCounter: false,
     },
     argTypes: {
-        type: {
-            control: "password",
-        },
         inputSize: {
             control: {
                 type: "radio",

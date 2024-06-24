@@ -1,15 +1,29 @@
 .datepicker {
+    &__input {
+        & label {
+            pointer-events: none;
+            cursor: text;
+        }
+    }
+
     &__wrapper {
         position: relative;
         max-width: 360px;
+
+        &--open {
+            z-index: 99;
+        }
+
+        &--disabled {
+            pointer-events: none;
+        }
     }
 
     &__container {
         position: absolute;
-        // background-color: var(--component-dropdownList-bg);
+        background-color: var(--component-dropdownList-bg);
         border-radius: var(--core-borderRadius-400);
         box-shadow: var(--semantic-elevation-shadow-card-hover);
-        // align-items: flex-start;
         margin-top: var(--core-size-200);
         width: 312px;
     }
@@ -21,7 +35,6 @@
             var(--core-motion-ease-400);
         width: inherit;
         display: flex;
-        // justify-content: center;
 
         &--open {
             transform: scaleY(1);
