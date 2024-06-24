@@ -24,17 +24,17 @@ export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
                 leftIcon={<StandaloneLockRegularIcon iconSize="sm" />}
                 triggerActionIcon={
                     showPassword ? (
-                        <StandaloneEyeRegularIcon
-                            onClick={handlePasswordVisibility}
-                            iconSize="sm"
-                            data-testid="eye-icon"
-                            className="password_field__eye-icon"
-                        />
-                    ) : (
                         <StandaloneEyeSlashRegularIcon
                             onClick={handlePasswordVisibility}
                             iconSize="sm"
                             data-testid="eye-slash-icon"
+                            className="password_field__eye-icon"
+                        />
+                    ) : (
+                        <StandaloneEyeRegularIcon
+                            onClick={handlePasswordVisibility}
+                            iconSize="sm"
+                            data-testid="eye-icon"
                             className="password_field__eye-icon"
                         />
                     )
