@@ -24,8 +24,7 @@
                     var(--core-color-opacity-black-100);
             }
             &--fill {
-                border-right: var(--borderWidth-sm) solid
-                    var(--core-color-solid-slate-50);
+                border-right: var(--borderWidth-sm) solid;
             }
         }
 
@@ -35,15 +34,14 @@
                     var(--core-color-opacity-black-100);
             }
             &--fill {
-                border-left: var(--borderWidth-sm) solid
-                    var(--core-color-solid-slate-50);
+                border-left: var(--borderWidth-sm) solid;
             }
         }
     }
 
     &__variant {
         &--outline {
-            background-color: var(--core-color-solid-slate-75);  
+            background-color: var(--core-color-solid-slate-75);
         }
     }
 
