@@ -11,6 +11,7 @@ import React from "react";
 import { TLeftOrCenter, TMediumSizes, TRightOrBottom } from "@types";
 import {
     StandaloneCircleCheckBoldIcon,
+    StandaloneLockRegularIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons/Standalone";
 import { Text } from "@components/Typography";
@@ -43,6 +44,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     validationMessages?: TValidationMessage[];
     disabled?: boolean;
     dropdown?: boolean;
+    passwordLockIcon?: ReactNode;
     isDropdownOpen?: boolean;
     variant?: Variants;
     message?: ReactNode;
@@ -74,17 +76,6 @@ const statusIcon = {
     error: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
 };
 
-const InputButtonWrapper = (
-    size: TMediumSizes,
-    position: TRightOrBottom,
-    label: ReactNode,
-    hasValue: boolean,
-) =>
-    `quill-input__wrapper-with_button-${position}--${size}
-    ${label ? ` quill-input__wrapper-with_button-${position}--${size}--has-label` : ` quill-input__wrapper-with_button-${position}--${size}--no-label`}
-    ${hasValue ? ` quill-input__wrapper-with_button-${position}--${size}--has-value` : ""}
-    `;
-
 const Input = forwardRef<HTMLInputElement, InputProps>(
     (
         {
@@ -95,6 +86,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             dropdown = false,
             isDropdownOpen,
             readOnly,
+            passwordLockIcon = false,
             disabled = false,
             variant = "outline",
             hasPasswordStrengthValidation = false,
@@ -116,7 +108,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             fieldMarker = false,
             required = false,
             showInputButton,
-            buttonPosition = "bottom",
             inputButton: InputButton,
             addOn,
             formatProps,
@@ -165,19 +156,22 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         `quill-input__wrapper__variant--${variant}`,
                         `quill-input__wrapper__variant--${variant}--${status}`,
                         `quill-input__wrapper__size--${inputSize}`,
-                        showInputButton &&
-                            InputButtonWrapper(
-                                inputSize,
-                                buttonPosition,
-                                label,
-                                inputValue.toString().length > 0,
-                            ),
                     )}
                 >
                     {addOn}
                     <div className="quill-input-icons__wrapper">
                         {leftIcon && (
                             <span className="icon_wrapper">{leftIcon}</span>
+                        )}
+                        {passwordLockIcon && (
+                            <span className="icon_wrapper">
+                                {
+                                    <StandaloneLockRegularIcon
+                                        fill="var(--component-textIcon-normal-prominent)"
+                                        iconSize="sm"
+                                    />
+                                }
+                            </span>
                         )}
                         <div
                             className={clsx(
