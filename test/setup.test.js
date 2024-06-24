@@ -1,2 +1,2 @@
 import "@testing-library/jest-dom";
-import "./setupDomTests";
+import "mock-match-media/jest-setup";
