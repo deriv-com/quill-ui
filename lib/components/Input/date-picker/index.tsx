@@ -88,7 +88,11 @@ export const DatePickerDropdown = forwardRef<
                 )}
                 ref={dropdownRef}
             >
-                <div onClick={handleDropdown} ref={ref}>
+                <div
+                    onClick={handleDropdown}
+                    ref={ref}
+                    data-testid="input-container"
+                >
                     <Input
                         leftIcon={
                             <StandaloneCalendarRegularIcon
@@ -97,7 +101,7 @@ export const DatePickerDropdown = forwardRef<
                             />
                         }
                         ref={inputRef}
-                        data-testid="dropdown-input"
+                        data-testid="calendar-input"
                         label={convertedLabel}
                         dropdown
                         disabled={disabled}
@@ -124,14 +128,19 @@ export const DatePickerDropdown = forwardRef<
                         isOpen
                             ? "datepicker-dropdown__menu--open"
                             : "datepicker-dropdown__menu--close",
+                        `datepicker-dropdown__menu--${textAlignment}`,
                     )}
                 >
                     {isOpen && (
                         <DatePicker
+                            data-testid="calendar"
                             value={date && dayjs(date, dateFormat).toDate()}
                             hasFixedWidth
                             onFormattedDate={(value) => {
                                 setDate(value);
+                                onSelectDate?.(
+                                    dayjs(date, dateFormat).toDate(),
+                                );
                             }}
                             onChange={(value) => {
                                 onSelectDate?.(value as Date);

@@ -43,5 +43,9 @@
         &--close {
             transform: scaleY(0.5);
         }
+
+        &--center {
+            justify-content: center;
+        }
     }
 }

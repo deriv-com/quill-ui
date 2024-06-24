@@ -16,7 +16,9 @@ const TestingBreakpoints = () => {
                 placeholder="dd/mm/yyyy"
                 status="neutral"
                 variant="fill"
-                onSelectDate={() => {}}
+                onSelectDate={(value) => {
+                    console.log(value);
+                }}
                 isAutocomplete
             />
         </div>
