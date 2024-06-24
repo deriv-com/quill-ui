@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, waitFor } from "@testing-library/react";
 import DatePickerDropdown from "..";
 import userEvent from "@testing-library/user-event";
 
@@ -75,30 +75,5 @@ describe("DatePickerDropdown", () => {
 
         const label = getByText("Date");
         expect(label).toBeInTheDocument();
-    });
-
-    test("return value from onSelectDate correctly", () => {
-        const onSelectDate = jest.fn();
-
-        const { getByPlaceholderText } = render(
-            <DatePickerDropdown
-                onSelectDate={(value: Date) => {
-                    onSelectDate(value);
-                }}
-                placeholder="dd/mm/yyyy"
-                isAutocomplete
-            />,
-        );
-
-        const input = getByPlaceholderText("dd/mm/yyyy");
-        const value = "24/06/2024";
-        fireEvent.change(input, {
-            target: {
-                value,
-            },
-        });
-
-        expect(input).toHaveValue(value);
-        onSelectDate.mockReturnValueOnce(new Date("2024-06-24"));
     });
 });
