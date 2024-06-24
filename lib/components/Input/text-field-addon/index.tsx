@@ -28,7 +28,7 @@ export const TextFieldAddon = forwardRef<HTMLInputElement, TextFieldAddonProps>(
         const [addonBorderColor, setAddonBorderColor] = useState("");
 
         const getClosestBackgroundColor = (element: HTMLElement | null) => {
-            while (element) {
+            while (element && element !== document.body) {
                 const bgColor = getComputedStyle(element).backgroundColor;
                 if (
                     bgColor !== "transparent" &&
@@ -38,7 +38,7 @@ export const TextFieldAddon = forwardRef<HTMLInputElement, TextFieldAddonProps>(
                 }
                 element = element.parentElement;
             }
-            return "#fff";
+            return getComputedStyle(document.body).backgroundColor;
         };
 
         useEffect(() => {
