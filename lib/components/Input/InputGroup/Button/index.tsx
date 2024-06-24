@@ -38,7 +38,7 @@ export const InputGroupButton = forwardRef<
 
         const showInputButton = status === "neutral" || disabled;
 
-        const InputButtonWrapper =
+        const InputButtonWrapperClassName =
             `quill-input__wrapper-with_button-${buttonPosition}--${inputSize}` +
             `${label ? ` quill-input__wrapper-with_button-${buttonPosition}--${inputSize}--has-label` : ` quill-input__wrapper-with_button-${buttonPosition}--${inputSize}--no-label`}`;
 
@@ -58,7 +58,7 @@ export const InputGroupButton = forwardRef<
         return (
             <Input
                 inputSize={inputSize}
-                className={InputButtonWrapper}
+                className={InputButtonWrapperClassName}
                 label={label}
                 status={status}
                 disabled={disabled}
