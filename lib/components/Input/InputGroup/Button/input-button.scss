@@ -1,0 +1,65 @@
+.quill-input__wrapper {
+    &-with_button {
+        &-right {
+            &--sm {
+                padding-inline-end: var(--core-spacing-200);
+                padding-block: var(--core-spacing-200);
+            }
+            &--md {
+                padding-inline-end: var(--core-spacing-600);
+                padding-block: var(--core-spacing-600);
+            }
+        }
+
+        &-bottom {
+            &--md {
+                flex-direction: column;
+                height: auto;
+                padding: var(--component-field-spacing-padding-md);
+
+                &--has-label {
+                    gap: var(--core-spacing-1200);
+                }
+
+                &--has-label:has(input:focus) {
+                    padding-top: var(--temp-static-spacing-7);
+                    gap: var(--temp-static-spacing-15);
+
+                    .input {
+                        padding-top: var(--core-spacing-300);
+                    }
+                    .label {
+                        top: var(--temp-static-spacing-7);
+                    }
+                }
+
+                &--no-label {
+                    padding: var(--component-field-spacing-padding-md);
+                    gap: var(--component-field-spacing-padding-md);
+
+                    .input {
+                        padding-top: var(--core-spacing-50);
+                    }
+                }
+            }
+            &--sm {
+                flex-direction: column;
+                height: auto;
+                padding-block: var(--core-spacing-200) var(--core-spacing-400);
+                padding-inline: var(--core-spacing-400);
+            }
+        }
+    }
+}
+
+.quill-input__wrapper--has-value.quill-input__wrapper-with_button-bottom--md {
+    padding-top: var(--temp-static-spacing-7);
+    gap: var(--temp-static-spacing-15);
+
+    .input {
+        padding-top: var(--core-spacing-300);
+    }
+    .label {
+        top: var(--temp-static-spacing-7);
+    }
+}

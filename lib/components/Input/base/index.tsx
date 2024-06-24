@@ -8,11 +8,7 @@ import {
 } from "react";
 import "./base.scss";
 import React from "react";
-import {
-    TLeftOrCenter,
-    TMediumSizes,
-    TRightOrBottom,
-} from "@types";
+import { TLeftOrCenter, TMediumSizes, TRightOrBottom } from "@types";
 import {
     StandaloneCircleCheckBoldIcon,
     StandaloneTriangleExclamationBoldIcon,
@@ -69,17 +65,6 @@ const statusIcon = {
     error: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
 };
 
-const InputButtonWrapper = (
-    size: TMediumSizes,
-    position: TRightOrBottom,
-    label: ReactNode,
-    hasValue: boolean,
-) =>
-    `quill-input__wrapper-with_button-${position}--${size}
-    ${label ? ` quill-input__wrapper-with_button-${position}--${size}--has-label` : ` quill-input__wrapper-with_button-${position}--${size}--no-label`}
-    ${hasValue ? ` quill-input__wrapper-with_button-${position}--${size}--has-value` : ""}
-    `;
-
 const Input = forwardRef<HTMLInputElement, InputProps>(
     (
         {
@@ -111,7 +96,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             fieldMarker = false,
             required = false,
             showInputButton,
-            buttonPosition = "bottom",
             inputButton: InputButton,
             addOn,
             addOnIcon,
@@ -144,13 +128,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                         `quill-input__wrapper__variant--${variant}`,
                         `quill-input__wrapper__variant--${variant}--${status}`,
                         `quill-input__wrapper__size--${inputSize}`,
-                        showInputButton &&
-                            InputButtonWrapper(
-                                inputSize,
-                                buttonPosition,
-                                label,
-                                inputValue.toString().length > 0,
-                            ),
                     )}
                 >
                     {addOn}

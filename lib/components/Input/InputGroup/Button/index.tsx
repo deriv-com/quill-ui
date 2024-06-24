@@ -1,6 +1,7 @@
 import { forwardRef, useEffect, useState } from "react";
 import Input, { InputProps } from "@components/Input/base";
 import { Button } from "@components/Button";
+import "./input-button.scss";
 
 export interface InputGroupButtonProps
     extends Omit<InputProps, "textAlignment"> {
@@ -8,6 +9,7 @@ export interface InputGroupButtonProps
     buttonLabel: React.ReactNode;
     buttonCallback?: () => void;
 }
+
 export const InputGroupButton = forwardRef<
     HTMLInputElement,
     InputGroupButtonProps
@@ -18,6 +20,7 @@ export const InputGroupButton = forwardRef<
             buttonPosition = "right",
             inputSize = "md",
             value,
+            label,
             buttonIconPosition,
             buttonLabel,
             disabled,
@@ -35,6 +38,10 @@ export const InputGroupButton = forwardRef<
 
         const showInputButton = status === "neutral" || disabled;
 
+        const InputButtonWrapper =
+            `quill-input__wrapper-with_button-${buttonPosition}--${inputSize}` +
+            `${label ? ` quill-input__wrapper-with_button-${buttonPosition}--${inputSize}--has-label` : ` quill-input__wrapper-with_button-${buttonPosition}--${inputSize}--no-label`}`;
+
         const InputButton = (
             <Button
                 disabled={isEmpty || disabled}
@@ -51,6 +58,8 @@ export const InputGroupButton = forwardRef<
         return (
             <Input
                 inputSize={inputSize}
+                className={InputButtonWrapper}
+                label={label}
                 status={status}
                 disabled={disabled}
                 buttonPosition={buttonPosition}
