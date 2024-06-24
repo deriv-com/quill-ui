@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/react";
 import { withThemeByClassName } from "@storybook/addon-themes";
 import "./styles.scss";
+import "@styles/static.scss";
 
 const preview: Preview = {
     tags: ["autodocs"],
