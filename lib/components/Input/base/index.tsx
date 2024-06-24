@@ -8,13 +8,10 @@ import {
 } from "react";
 import "./base.scss";
 import React from "react";
-import {
-    TLeftOrCenter,
-    TMediumSizes,
-    TRightOrBottom,
-} from "@types";
+import { TLeftOrCenter, TMediumSizes, TRightOrBottom } from "@types";
 import {
     StandaloneCircleCheckBoldIcon,
+    StandaloneLockRegularIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons/Standalone";
 import { Text } from "@components/Typography";
@@ -39,6 +36,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     validationMessages?: TValidationMessage[];
     disabled?: boolean;
     dropdown?: boolean;
+    passwordLockIcon?: ReactNode;
     isDropdownOpen?: boolean;
     variant?: Variants;
     message?: ReactNode;
@@ -90,6 +88,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             dropdown = false,
             isDropdownOpen,
             readOnly,
+            passwordLockIcon = false,
             disabled = false,
             variant = "outline",
             hasPasswordStrengthValidation = false,
@@ -157,6 +156,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     <div className="quill-input-icons__wrapper">
                         {leftIcon && (
                             <span className="icon_wrapper">{leftIcon}</span>
+                        )}
+                        {passwordLockIcon && (
+                            <span className="icon_wrapper">
+                                {
+                                    <StandaloneLockRegularIcon
+                                        fill="var(--component-textIcon-normal-prominent)"
+                                        iconSize="sm"
+                                    />
+                                }
+                            </span>
                         )}
                         <div
                             className={clsx(

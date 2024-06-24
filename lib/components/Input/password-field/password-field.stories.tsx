@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import PasswordField from ".";
 import { Status, Variants } from "../base";
+import { StandaloneLockRegularIcon } from "@deriv/quill-icons/Standalone";
 
 const placeholder = "Enter password";
 
@@ -14,7 +15,15 @@ const status: Record<string, Status> = {
     success: "success",
     error: "error",
 };
-
+const icons: Record<string, object | null> = {
+    with_icon: (
+        <StandaloneLockRegularIcon
+            iconSize="sm"
+            fill="var(--component-textIcon-normal-default)"
+        />
+    ),
+    none: null,
+};
 const message = "Status message goes here";
 
 const meta = {
@@ -28,6 +37,7 @@ const meta = {
         inputSize: "md",
         status: "neutral",
         disabled: false,
+        passwordLockIcon: true,
         variant: "fill",
         textAlignment: "left",
         fieldMarker: false,
@@ -44,6 +54,13 @@ const meta = {
         maxLength: {
             control: {
                 type: "number",
+            },
+        },
+        passwordLockIcon: {
+            options: Object.keys(icons),
+            mapping: icons,
+            control: {
+                type: "select",
             },
         },
         status: {
@@ -85,6 +102,7 @@ export const DefaultPasswordField: Story = {
     args: {
         placeholder,
         message,
+        passwordLockIcon: false,
     },
 };
 export const OutlineSuccess: Story = {
@@ -101,6 +119,7 @@ export const OutlineError: Story = {
         variant: variants.outline,
         status: status.error,
         message,
+        passwordLockIcon: true,
     },
 };
 export const PasswordStrengthValidationNeutral: Story = {

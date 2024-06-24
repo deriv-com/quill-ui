@@ -4,7 +4,6 @@ import React from "react";
 import {
     StandaloneEyeRegularIcon,
     StandaloneEyeSlashRegularIcon,
-    StandaloneLockRegularIcon,
 } from "@deriv/quill-icons/Standalone";
 import "./password-field.scss";
 
@@ -21,7 +20,6 @@ export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
                 {...props}
                 className="password_field"
                 type={showPassword ? "text" : "password"}
-                leftIcon={<StandaloneLockRegularIcon iconSize="sm" />}
                 triggerActionIcon={
                     showPassword ? (
                         <StandaloneEyeSlashRegularIcon
