@@ -21,7 +21,9 @@ export const PasswordStrengthValidation = ({
             ) : (
                 <LabelPairedCircleCaptionRegularIcon fill="var(--component-textIcon-normal-default)" />
             )}
-            <CaptionText color={status}>{validationMessage}</CaptionText>
+            <CaptionText className={`validation_message__status--${status}`}>
+                {validationMessage}
+            </CaptionText>
         </div>
     );
 };
