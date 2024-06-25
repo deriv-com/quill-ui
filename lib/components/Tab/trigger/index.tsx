@@ -21,6 +21,7 @@ export const TabTrigger = ({
             const idx = Array.from(
                 e.currentTarget.parentElement.children,
             ).indexOf(e.currentTarget);
+            if (idx === activeTab) return;
             handleToggle?.(idx);
         }
     };
