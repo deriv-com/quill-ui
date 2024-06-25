@@ -16,9 +16,6 @@ const MockTab = ({
             iconPosition={iconPosition}
             contentStyle={contentStyle}
             selectedTabIndex={selectedTabIndex}
-            onChangeTab={(value) => {
-                console.log(value);
-            }}
         >
             <Tab.List>
                 <Tab.Trigger {...props}>Forex</Tab.Trigger>
