@@ -35,19 +35,24 @@ const meta = {
         variant: "fill",
         label: "",
         required: false,
+        fieldMarker: false,
     },
     argTypes: {
+        disabled: {
+            description: "To disable datepicker dropdown",
+        },
         status: {
-            table: { type: { summary: `"neutral" | "success"| "error"` } },
+            table: { type: { summary: "neutral | success | error" } },
             options: ["neutral", "success", "error"],
             control: { type: "radio" },
         },
         textAlignment: {
-            table: { type: { summary: `"left" | "center"` } },
+            table: { type: { summary: "left | center" } },
             options: ["left", "center"],
             control: { type: "radio" },
         },
         inputSize: {
+            table: { type: { summary: "sm | md" } },
             options: ["sm", "md"],
             control: { type: "radio" },
         },
@@ -55,11 +60,22 @@ const meta = {
             options: ["fill", "outline"],
             control: { type: "radio" },
         },
-        isAutocomplete: {
-            control: "boolean",
+        datePickerProps: {
+            description: "Refer to DatePicker props in Atom",
+            table: {
+                type: { summary: "DatePickerProps" },
+                defaultValue: { summary: "-" },
+            },
+            control: false,
+        },
+        onSelectDate: {
             description:
-                "Choose between input dropdown or only acting as a normal dropdown",
-            table: { type: { summary: "boolean" } },
+                "Function called when user select a date in the calendar. Will return the selected value as `Date`",
+            control: false,
+        },
+        isAutocomplete: {
+            description:
+                "Choose between input datepicker dropdown or only acting as a normal datepicker dropdown",
         },
         rightIcon: {
             table: { type: { summary: "ReactNode" } },

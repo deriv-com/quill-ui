@@ -8,7 +8,7 @@
 
     &__wrapper {
         position: relative;
-        max-width: 360px;
+        max-width: var(--temp-static-spacing-360);
 
         &--open {
             z-index: 99;
@@ -25,7 +25,7 @@
         border-radius: var(--core-borderRadius-400);
         box-shadow: var(--semantic-elevation-shadow-card-hover);
         margin-top: var(--core-size-200);
-        width: 312px;
+        width: var(--temp-static-spacing-312);
     }
 
     &-dropdown__menu {

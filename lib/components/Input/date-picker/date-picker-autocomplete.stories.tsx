@@ -33,20 +33,25 @@ const meta = {
         placeholder: "dd/mm/yyyy",
         variant: "fill",
         required: false,
+        fieldMarker: false,
+        label: "",
     },
     argTypes: {
         disabled: {
             description: "To disable datepicker dropdown",
         },
         status: {
+            table: { type: { summary: "neutral | success | error" } },
             options: ["neutral", "success", "error"],
             control: { type: "radio" },
         },
         textAlignment: {
+            table: { type: { summary: "left | center" } },
             options: ["left", "center"],
             control: { type: "radio" },
         },
         inputSize: {
+            table: { type: { summary: "sm | md" } },
             options: ["sm", "md"],
             control: { type: "radio" },
         },
