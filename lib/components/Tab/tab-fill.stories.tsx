@@ -18,6 +18,7 @@ const meta = {
     },
     args: {
         size: "sm",
+        selectedTabIndex: 0,
     },
     argTypes: {
         size: {

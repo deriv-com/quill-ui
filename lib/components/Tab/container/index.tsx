@@ -17,10 +17,10 @@ export const TabContainer = ({
     iconPosition = "left",
     contentStyle = "fill",
     className,
-    selectedTabIndex,
+    selectedTabIndex = 0,
     onChangeTab,
 }: TabProps) => {
-    const [activeTab, setActiveTab] = useState(selectedTabIndex ?? 0);
+    const [activeTab, setActiveTab] = useState(selectedTabIndex);
 
     const handleToggle = (index: number) => {
         setActiveTab(index);
