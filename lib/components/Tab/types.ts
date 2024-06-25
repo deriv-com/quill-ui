@@ -11,4 +11,6 @@ export interface TabProps extends ComponentProps<"button"> {
     className?: string;
     children?: React.ReactNode;
     contentStyle?: "hug" | "fill";
+    selectedTabIndex?: number;
+    onChangeTab?: (index: number) => void;
 }

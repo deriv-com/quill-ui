@@ -18,6 +18,7 @@ const meta = {
     },
     args: {
         size: "sm",
+        selectedTabIndex: 0,
     },
     argTypes: {
         size: {
@@ -30,6 +31,13 @@ const meta = {
             control: "radio",
             options: Object.keys(icons),
             mapping: icons,
+        },
+        onChangeTab: {
+            description:
+                "Function triggered when the tab changed. Will return index value of the current tab",
+        },
+        selectedTabIndex: {
+            description: "Index value to control current active tab",
         },
     },
 } satisfies Meta<typeof MockTab>;
