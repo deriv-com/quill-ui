@@ -31,9 +31,12 @@ const meta = {
             options: Object.keys(icons),
             mapping: icons,
         },
-        initialActiveTab: {
-            description: "Initial index for the tab component",
-            control: false,
+        onChangeTab: {
+            description:
+                "Function triggered when the tab changed. Will return index value of the current tab",
+        },
+        selectedTabIndex: {
+            description: "Index value to control current active tab",
         },
     },
 } satisfies Meta<typeof MockTab>;
@@ -49,6 +52,3 @@ export const TabFillContentWithIconsOnTop = (
 export const TabFillContentWithoutIcons = (
     args: ComponentProps<typeof MockTab>,
 ) => <MockTab {...args} contentStyle="fill" />;
-export const TabHugContentWithInitialActiveTab = (
-    args: ComponentProps<typeof MockTab>,
-) => <MockTab {...args} contentStyle="hug" initialActiveTab={2} />;
