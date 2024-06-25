@@ -49,3 +49,6 @@ export const TabFillContentWithIconsOnTop = (
 export const TabFillContentWithoutIcons = (
     args: ComponentProps<typeof MockTab>,
 ) => <MockTab {...args} contentStyle="fill" />;
+export const TabHugContentWithInitialActiveTab = (
+    args: ComponentProps<typeof MockTab>,
+) => <MockTab {...args} contentStyle="hug" initialActiveTab={2} />;
