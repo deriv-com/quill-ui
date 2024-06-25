@@ -28,9 +28,7 @@ export const TabContainer = ({
     };
 
     useEffect(() => {
-        if (selectedTabIndex !== undefined) {
-            setActiveTab(selectedTabIndex);
-        }
+        handleToggle(selectedTabIndex);
     }, [selectedTabIndex]);
 
     return (
