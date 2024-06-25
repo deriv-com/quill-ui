@@ -59,7 +59,9 @@ export const useSwipeBlock = ({
 
             const clientHeight = containerRef.current?.clientHeight || 0;
             let draggingPoint = clientHeight;
-            const isGoingDown = initial[1] < xy[1];
+            const isGoingDown =
+                initial[1] < xy[1] &&
+                Math.abs(initial[1] - xy[1]) > Math.abs(initial[0] - xy[0]);
 
             if (isGoingDown) {
                 draggingPoint = draggingPoint - distance[1];
