@@ -110,7 +110,6 @@ export const DatePickerDropdown = forwardRef<
                         status={status}
                         isDropdownOpen={isOpen}
                         readOnly={!isAutocomplete}
-                        type="tel"
                         value={date}
                         className={clsx("datepicker__input", className)}
                         onChange={handleOnChange}

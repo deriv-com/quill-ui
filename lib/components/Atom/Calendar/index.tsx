@@ -98,6 +98,7 @@ export const DatePicker = ({
                 { "quill-date-picker__wrapper--fixed-width": hasFixedWidth },
                 wrapperClassName,
             )}
+            data-testid="atom-calendar"
         >
             <Calendar
                 {...rest}

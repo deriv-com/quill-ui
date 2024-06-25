@@ -1,7 +1,6 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { act, fireEvent, render } from "@testing-library/react";
 import DatePickerDropdown from "..";
-import userEvent from "@testing-library/user-event";
 
 describe("DatePickerDropdown", () => {
     test("renders correctly", () => {
@@ -16,8 +15,8 @@ describe("DatePickerDropdown", () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    test("renders correctly when open", () => {
-        const { container, getByTestId } = render(
+    test("render datepicker initial state correctly", () => {
+        const { getByTestId } = render(
             <DatePickerDropdown
                 label="Date"
                 onSelectDate={(value: Date) => {
@@ -27,8 +26,29 @@ describe("DatePickerDropdown", () => {
             />,
         );
 
-        userEvent.click(getByTestId("input-container"));
-        expect(container).toMatchSnapshot();
+        const datepicker = getByTestId("input-container");
+        expect(datepicker).toBeInTheDocument();
+    });
+
+    test("renders correctly when open", () => {
+        const { getByTestId } = render(
+            <DatePickerDropdown
+                label="Date"
+                onSelectDate={(value: Date) => {
+                    return value;
+                }}
+                placeholder="dd/mm/yyyy"
+            />,
+        );
+
+        const datepicker = getByTestId("input-container");
+
+        act(() => {
+            fireEvent.click(datepicker);
+        });
+
+        const calendar = getByTestId("atom-calendar");
+        expect(calendar).toBeInTheDocument();
     });
 
     test("renders correct label", () => {
