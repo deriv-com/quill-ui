@@ -31,6 +31,10 @@ const meta = {
             options: Object.keys(placeholder),
             mapping: placeholder,
         },
+        initialActiveTab: {
+            description: "Initial index for the tab component",
+            control: false,
+        },
     },
 } satisfies Meta<typeof MockTab>;
 
@@ -45,3 +49,6 @@ export const TabHugContentWithIconsOnTop = (
 export const TabHugContentWithoutIcons = (
     args: ComponentProps<typeof MockTab>,
 ) => <MockTab {...args} contentStyle="hug" />;
+export const TabHugContentWithInitialActiveTab = (
+    args: ComponentProps<typeof MockTab>,
+) => <MockTab {...args} contentStyle="hug" initialActiveTab={2} />;

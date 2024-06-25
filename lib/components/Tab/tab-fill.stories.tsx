@@ -31,6 +31,10 @@ const meta = {
             options: Object.keys(icons),
             mapping: icons,
         },
+        initialActiveTab: {
+            description: "Initial index for the tab component",
+            control: false,
+        },
     },
 } satisfies Meta<typeof MockTab>;
 
