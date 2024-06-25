@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { TabProps } from "@components/Tab/types";
 
 export type TabContextType = TabProps & {
@@ -17,12 +17,19 @@ export const TabContainer = ({
     iconPosition = "left",
     contentStyle = "fill",
     className,
+    selectedTabIndex = 0,
+    onChangeTab,
 }: TabProps) => {
-    const [activeTab, setActiveTab] = useState(0);
+    const [activeTab, setActiveTab] = useState(selectedTabIndex);
 
     const handleToggle = (index: number) => {
         setActiveTab(index);
+        onChangeTab?.(index);
     };
+
+    useEffect(() => {
+        handleToggle(selectedTabIndex);
+    }, [selectedTabIndex]);
 
     return (
         <TabContext.Provider

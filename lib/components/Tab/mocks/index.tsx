@@ -2,13 +2,23 @@ import Tab from "@components/Tab";
 import { Text } from "@components/Typography";
 import { TabProps } from "../types";
 
-const MockTab = ({ size, iconPosition, contentStyle, ...props }: TabProps) => {
+const MockTab = ({
+    size,
+    iconPosition,
+    contentStyle,
+    selectedTabIndex,
+    ...props
+}: TabProps) => {
     return (
         <Tab.Container
             id="test"
             size={size}
             iconPosition={iconPosition}
             contentStyle={contentStyle}
+            selectedTabIndex={selectedTabIndex}
+            onChangeTab={(value) => {
+                console.log(value);
+            }}
         >
             <Tab.List>
                 <Tab.Trigger {...props}>Forex</Tab.Trigger>
