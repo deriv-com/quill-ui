@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef, useState } from "react";
+import React, { forwardRef } from "react";
 import Input, { InputProps } from "../base";
 import clsx from "clsx";
 import "./text-field-addon.scss";
@@ -9,6 +9,7 @@ export interface TextFieldAddonProps
     extends Omit<InputProps, "textAlignment" | "leftIcon"> {
     addonLabel: string;
     addOnPosition?: TLeftOrRight;
+    fillAddonBorderColor?: string;
 }
 
 export const TextFieldAddon = forwardRef<HTMLInputElement, TextFieldAddonProps>(
@@ -16,6 +17,7 @@ export const TextFieldAddon = forwardRef<HTMLInputElement, TextFieldAddonProps>(
         {
             addOnPosition = "left",
             variant = "outline",
+            fillAddonBorderColor,
             rightIcon,
             addonLabel,
             inputSize = "md",
@@ -24,32 +26,8 @@ export const TextFieldAddon = forwardRef<HTMLInputElement, TextFieldAddonProps>(
         },
         ref,
     ) => {
-        const parentRef = useRef<HTMLInputElement>(null);
-        const [addonBorderColor, setAddonBorderColor] = useState("");
-
-        const getClosestBackgroundColor = (element: HTMLElement | null) => {
-            while (element && element !== document.body) {
-                const bgColor = getComputedStyle(element).backgroundColor;
-                if (
-                    bgColor !== "transparent" &&
-                    bgColor !== "rgba(0, 0, 0, 0)"
-                ) {
-                    return bgColor;
-                }
-                element = element.parentElement;
-            }
-            return getComputedStyle(document.body).backgroundColor;
-        };
-
-        useEffect(() => {
-            if (parentRef.current) {
-                const closestBackgroundColor = getClosestBackgroundColor(
-                    parentRef.current.parentElement,
-                );
-                setAddonBorderColor(closestBackgroundColor);
-            }
-        }, []);
-
+        const addOnStyle =
+            variant === "fill" ? { borderColor: fillAddonBorderColor } : {};
         const addOn = (
             <div
                 className={clsx(
@@ -58,9 +36,7 @@ export const TextFieldAddon = forwardRef<HTMLInputElement, TextFieldAddonProps>(
                     `quill-addon__position--${addOnPosition}--${variant}`,
                     `quill-addon__variant--${variant}`,
                 )}
-                style={
-                    variant === "fill" ? { borderColor: addonBorderColor } : {}
-                }
+                style={addOnStyle}
             >
                 <Text
                     size={inputSize}
@@ -74,17 +50,15 @@ export const TextFieldAddon = forwardRef<HTMLInputElement, TextFieldAddonProps>(
         const addOnIcon = <span className="icon_wrapper">{rightIcon}</span>;
 
         return (
-            <div ref={parentRef}>
-                <Input
-                    addOn={addOn}
-                    disabled={disabled}
-                    addOnIcon={addOnIcon}
-                    variant={variant}
-                    inputSize={inputSize}
-                    ref={ref}
-                    {...rest}
-                />
-            </div>
+            <Input
+                addOn={addOn}
+                disabled={disabled}
+                addOnIcon={addOnIcon}
+                variant={variant}
+                inputSize={inputSize}
+                ref={ref}
+                {...rest}
+            />
         );
     },
 );
