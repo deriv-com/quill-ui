@@ -49,6 +49,12 @@ export const DatePickerDropdown = forwardRef<
         const [date, setDate] = useState<string | undefined>();
         const inputRef = useRef<HTMLInputElement>(null);
         const { ref: dropdownRef, isOpen, open, close } = useDropdown();
+        const {
+            selectRange,
+            className: datePickerClassName,
+            ...restDatePickerProps
+        } = datePickerProps;
+
         const handleDropdown = (e: React.MouseEvent<HTMLDivElement>) => {
             if (
                 isAutocomplete &&
@@ -138,7 +144,7 @@ export const DatePickerDropdown = forwardRef<
                             onFormattedDate={(value) => {
                                 setDate(value);
                                 onSelectDate?.(
-                                    dayjs(date, dateFormat).toDate(),
+                                    dayjs(value, dateFormat).toDate(),
                                 );
                             }}
                             onChange={(value) => {
@@ -147,10 +153,10 @@ export const DatePickerDropdown = forwardRef<
                             }}
                             className={clsx(
                                 "datepicker__container",
-                                datePickerProps?.className,
+                                datePickerClassName,
                             )}
-                            selectRange
-                            {...datePickerProps}
+                            selectRange={selectRange}
+                            {...restDatePickerProps}
                         />
                     )}
                 </div>
