@@ -33,7 +33,6 @@ export const TabList = ({ children, className }: TabProps) => {
 
     return (
         <div className={clsx("tab-list--container", className)}>
-            {activeTab}
             <div
                 ref={containerRef}
                 className={clsx(
