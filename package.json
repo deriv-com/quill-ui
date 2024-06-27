@@ -45,7 +45,7 @@
         "prepare": "husky install"
     },
     "devDependencies": {
-        "rimraf": "^3.0.2",
+        "rimraf": "^5.0.7",
         "@babel/preset-env": "^7.23.9",
         "@babel/preset-react": "^7.23.3",
         "@babel/preset-typescript": "^7.23.3",
