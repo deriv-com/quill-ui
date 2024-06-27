@@ -26,8 +26,6 @@ export const TabTrigger = ({
     } = useContext(TabContext);
 
     const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-        onTabClick?.();
-
         if (clickedTabRef) clickedTabRef.current = ref.current;
         if (e.currentTarget.parentElement) {
             const idx = Array.from(
@@ -35,6 +33,7 @@ export const TabTrigger = ({
             ).indexOf(e.currentTarget);
             if (idx === activeTab) return;
             handleToggle?.(idx);
+            onTabClick?.(idx);
         }
     };
 
