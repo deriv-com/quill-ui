@@ -58,7 +58,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
                 </g>
                 <defs>
                   <clippath
-                    id="23d4f2210a23c1ee0252b195b395b70d__a"
+                    id="57b6ef223c6ac0b710a8df05efe5ffaa__a"
                   >
                     <path
                       d="M0 0h13v22H0z"
@@ -85,7 +85,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
                 </g>
                 <defs>
                   <clippath
-                    id="32d4536f6c380db9b492a69ae1c2b4ce__a"
+                    id="37a4ba571159e9956af0c424b127b909__a"
                   >
                     <path
                       d="M0 0h13v22H0z"
@@ -159,7 +159,7 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
                 </g>
                 <defs>
                   <clippath
-                    id="23d4f2210a23c1ee0252b195b395b70d__a"
+                    id="57b6ef223c6ac0b710a8df05efe5ffaa__a"
                   >
                     <path
                       d="M0 0h13v22H0z"
@@ -186,7 +186,7 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
                 </g>
                 <defs>
                   <clippath
-                    id="32d4536f6c380db9b492a69ae1c2b4ce__a"
+                    id="37a4ba571159e9956af0c424b127b909__a"
                   >
                     <path
                       d="M0 0h13v22H0z"
@@ -251,7 +251,7 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
                 </g>
                 <defs>
                   <clippath
-                    id="23d4f2210a23c1ee0252b195b395b70d__a"
+                    id="57b6ef223c6ac0b710a8df05efe5ffaa__a"
                   >
                     <path
                       d="M0 0h13v22H0z"
@@ -278,7 +278,7 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
                 </g>
                 <defs>
                   <clippath
-                    id="32d4536f6c380db9b492a69ae1c2b4ce__a"
+                    id="37a4ba571159e9956af0c424b127b909__a"
                   >
                     <path
                       d="M0 0h13v22H0z"
@@ -351,7 +351,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
                 </g>
                 <defs>
                   <clippath
-                    id="23d4f2210a23c1ee0252b195b395b70d__a"
+                    id="57b6ef223c6ac0b710a8df05efe5ffaa__a"
                   >
                     <path
                       d="M0 0h13v22H0z"
@@ -378,7 +378,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
                 </g>
                 <defs>
                   <clippath
-                    id="32d4536f6c380db9b492a69ae1c2b4ce__a"
+                    id="37a4ba571159e9956af0c424b127b909__a"
                   >
                     <path
                       d="M0 0h13v22H0z"

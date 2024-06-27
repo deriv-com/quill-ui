@@ -1,13 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { InputDropdown } from ".";
+import { DatePickerDropdown } from ".";
 import {
     StandaloneCircleCheckBoldIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons";
-import {
-    LabelPairedPlaceholderCaptionBoldIcon,
-    LabelPairedPlaceholderSmRegularIcon,
-} from "@deriv/quill-icons/LabelPaired";
+import { LabelPairedPlaceholderCaptionBoldIcon } from "@deriv/quill-icons/LabelPaired";
 
 const icons: Record<string, object | null> = {
     with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
@@ -15,12 +12,12 @@ const icons: Record<string, object | null> = {
 };
 
 const meta = {
-    title: "Components/Inputs/Dropdown",
-    component: InputDropdown,
+    title: "Components/Inputs/Autocomplete Date Picker",
+    component: DatePickerDropdown,
     parameters: {
         docs: {
             story: {
-                height: "350px",
+                height: "420px",
                 width: "350px",
             },
         },
@@ -28,32 +25,33 @@ const meta = {
     tags: ["autodocs"],
     args: {
         disabled: false,
-        isAutocomplete: false,
-        options: [
-            { text: "Option 1", value: "option1" },
-            { text: "Option 2", value: "option2" },
-            { text: "Option 3", value: "option3" },
-        ],
-        onSelectOption: (value: string) => {
+        isAutocomplete: true,
+        onSelectDate: (value: Date) => {
             return value;
         },
         status: "neutral",
-        placeholder: "Select",
+        placeholder: "dd/mm/yyyy",
         variant: "fill",
+        required: false,
+        fieldMarker: false,
         label: "",
     },
     argTypes: {
+        disabled: {
+            description: "To disable datepicker dropdown",
+        },
         status: {
-            table: { type: { summary: `"neutral" | "success"| "error"` } },
+            table: { type: { summary: "neutral | success | error" } },
             options: ["neutral", "success", "error"],
             control: { type: "radio" },
         },
         textAlignment: {
-            table: { type: { summary: `"left" | "center"` } },
+            table: { type: { summary: "left | center" } },
             options: ["left", "center"],
             control: { type: "radio" },
         },
         inputSize: {
+            table: { type: { summary: "sm | md" } },
             options: ["sm", "md"],
             control: { type: "radio" },
         },
@@ -61,17 +59,22 @@ const meta = {
             options: ["fill", "outline"],
             control: { type: "radio" },
         },
-        isAutocomplete: {
-            control: "boolean",
-            description:
-                "Choose between input dropdown or only acting as a normal dropdown",
-            table: { type: { summary: "boolean" } },
+        datePickerProps: {
+            description: "Refer to DatePicker props in Atom",
+            table: {
+                type: { summary: "DatePickerProps" },
+                defaultValue: { summary: "-" },
+            },
+            control: false,
         },
-        leftIcon: {
-            table: { type: { summary: "ReactNode" } },
-            control: "radio",
-            options: Object.keys(icons),
-            mapping: icons,
+        onSelectDate: {
+            description:
+                "Function called when user select a date in the calendar. Will return the selected value as `Date`",
+            control: false,
+        },
+        isAutocomplete: {
+            description:
+                "Choose between input datepicker dropdown or only acting as a normal datepicker dropdown",
         },
         rightIcon: {
             table: { type: { summary: "ReactNode" } },
@@ -80,7 +83,7 @@ const meta = {
             mapping: icons,
         },
     },
-} satisfies Meta<typeof InputDropdown>;
+} satisfies Meta<typeof DatePickerDropdown>;
 
 export default meta;
 
@@ -92,12 +95,10 @@ export const DefaultLabellessDropdown: Story = {
 export const DisabledDropdown: Story = {
     args: {
         disabled: true,
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };
 export const LabellessSuccessDropdown: Story = {
     args: {
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         status: "success",
         rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
         variant: "outline",
@@ -105,7 +106,6 @@ export const LabellessSuccessDropdown: Story = {
 };
 export const LabellessErrorDropdown: Story = {
     args: {
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
         status: "error",
         variant: "outline",
@@ -113,7 +113,6 @@ export const LabellessErrorDropdown: Story = {
 };
 export const LabellessDropdownWithErrorMessage: Story = {
     args: {
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
         message: "This is an error message",
         status: "error",
@@ -124,18 +123,6 @@ export const DefaultInputDropdownWithLabel: Story = {
         label: "Label",
         required: true,
         fieldMarker: true,
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
-    },
-};
-export const LabelledSuccessDropdown: Story = {
-    args: {
-        label: "Label",
-        required: true,
-        fieldMarker: true,
-        variant: "fill",
-        status: "success",
-        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };
 export const LabelledDropdownOutlined: Story = {
@@ -146,7 +133,6 @@ export const LabelledDropdownOutlined: Story = {
         variant: "outline",
         status: "neutral",
         rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };
 export const LabelledSuccessDropdownOutlined: Story = {
@@ -157,7 +143,6 @@ export const LabelledSuccessDropdownOutlined: Story = {
         variant: "outline",
         status: "success",
         rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };
 export const LabelledErrorDropdownOutlined: Story = {
@@ -168,7 +153,16 @@ export const LabelledErrorDropdownOutlined: Story = {
         variant: "outline",
         status: "error",
         rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
+    },
+};
+export const LabelledSuccessDropdown: Story = {
+    args: {
+        label: "Label",
+        required: true,
+        fieldMarker: true,
+        variant: "fill",
+        status: "success",
+        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
     },
 };
 export const LabelledErrorDropdown: Story = {
@@ -178,7 +172,6 @@ export const LabelledErrorDropdown: Story = {
         fieldMarker: true,
         status: "error",
         rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };
 export const LabelledDropdownWithSuccessMessage: Story = {
@@ -188,26 +181,6 @@ export const LabelledDropdownWithSuccessMessage: Story = {
         fieldMarker: true,
         status: "success",
         message: "This is a success message",
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
-    },
-};
-export const DropdownWithLongOptionsList: Story = {
-    args: {
-        leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
-        options: [
-            { text: "Option 1", value: "option1" },
-            { text: "Option 2", value: "option2" },
-            { text: "Option 3", value: "option3" },
-            { text: "Option 4", value: "option4" },
-            { text: "Option 5", value: "option5" },
-            { text: "Option 6", value: "option6" },
-            { text: "Option 7", value: "option7" },
-            { text: "Option 8", value: "option8" },
-            { text: "Option 9", value: "option9" },
-            { text: "Option 10", value: "option10" },
-            { text: "Option 11", value: "option11" },
-            { text: "Option 12", value: "option12" },
-        ],
     },
 };

@@ -50,7 +50,7 @@ exports[`NotificationBanner should display correct banner with a custom icon 1`]
         </g>
         <defs>
           <clippath
-            id="7f20579de3b71476e00c6a653e581207__a"
+            id="762d958e2b860715417b42e7e56d1c18__a"
           >
             <path
               d="M0 0h11v22H0z"
@@ -121,7 +121,7 @@ exports[`NotificationBanner should display correct content 1`] = `
         </g>
         <defs>
           <clippath
-            id="7f20579de3b71476e00c6a653e581207__a"
+            id="762d958e2b860715417b42e7e56d1c18__a"
           >
             <path
               d="M0 0h11v22H0z"
@@ -192,7 +192,7 @@ exports[`NotificationBanner should hide after autohideTimeout + 240ms of animati
         </g>
         <defs>
           <clippath
-            id="7f20579de3b71476e00c6a653e581207__a"
+            id="762d958e2b860715417b42e7e56d1c18__a"
           >
             <path
               d="M0 0h11v22H0z"
@@ -307,7 +307,7 @@ exports[`NotificationBanner should render notification correctly based on the no
         </g>
         <defs>
           <clippath
-            id="7f20579de3b71476e00c6a653e581207__a"
+            id="762d958e2b860715417b42e7e56d1c18__a"
           >
             <path
               d="M0 0h11v22H0z"

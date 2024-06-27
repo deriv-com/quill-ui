@@ -52,19 +52,12 @@ describe("PasswordField", () => {
     it("toggles password visibility icon", () => {
         const { getByTestId } = render(<PasswordField />);
 
-        // Check that the eye slash icon is initially rendered
-        expect(getByTestId("eye-slash-icon")).toBeInTheDocument();
-
-        // Click the eye slash icon to show password
-        fireEvent.click(getByTestId("eye-slash-icon"));
-
-        // Check that the eye icon is rendered after clicking
         expect(getByTestId("eye-icon")).toBeInTheDocument();
 
-        // Click the eye icon to hide password
         fireEvent.click(getByTestId("eye-icon"));
-
-        // Check that the eye slash icon is rendered again after clicking
         expect(getByTestId("eye-slash-icon")).toBeInTheDocument();
+
+        fireEvent.click(getByTestId("eye-slash-icon"));
+        expect(getByTestId("eye-icon")).toBeInTheDocument();
     });
 });

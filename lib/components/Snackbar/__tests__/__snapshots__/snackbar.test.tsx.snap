@@ -50,7 +50,7 @@ exports[`Snackbar calls removeSnackbar after a certain duration when Snackbar is
           </g>
           <defs>
             <clippath
-              id="30e42cfabd8d37cc6e080bc88b873083__a"
+              id="9c73289efe993a456e3415b61e09cb3c__a"
             >
               <path
                 d="M0 0h11v22H0z"
@@ -114,7 +114,7 @@ exports[`Snackbar calls removeSnackbar when action button is clicked 1`] = `
           </g>
           <defs>
             <clippath
-              id="30e42cfabd8d37cc6e080bc88b873083__a"
+              id="9c73289efe993a456e3415b61e09cb3c__a"
             >
               <path
                 d="M0 0h11v22H0z"
@@ -178,7 +178,7 @@ exports[`Snackbar calls removeSnackbar when close button is clicked 1`] = `
           </g>
           <defs>
             <clippath
-              id="30e42cfabd8d37cc6e080bc88b873083__a"
+              id="9c73289efe993a456e3415b61e09cb3c__a"
             >
               <path
                 d="M0 0h11v22H0z"
@@ -250,7 +250,7 @@ exports[`Snackbar renders correctly with custom icon 1`] = `
           </g>
           <defs>
             <clippath
-              id="30e42cfabd8d37cc6e080bc88b873083__a"
+              id="9c73289efe993a456e3415b61e09cb3c__a"
             >
               <path
                 d="M0 0h11v22H0z"
@@ -300,7 +300,7 @@ exports[`Snackbar renders correctly without action button 1`] = `
           </g>
           <defs>
             <clippath
-              id="30e42cfabd8d37cc6e080bc88b873083__a"
+              id="9c73289efe993a456e3415b61e09cb3c__a"
             >
               <path
                 d="M0 0h11v22H0z"
@@ -400,7 +400,7 @@ exports[`Snackbar renders with default props 1`] = `
           </g>
           <defs>
             <clippath
-              id="30e42cfabd8d37cc6e080bc88b873083__a"
+              id="9c73289efe993a456e3415b61e09cb3c__a"
             >
               <path
                 d="M0 0h11v22H0z"
