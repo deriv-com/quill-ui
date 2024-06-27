@@ -1,11 +1,23 @@
 import clsx from "clsx";
 import "./list.scss";
 import { TabProps } from "../types";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { TabContext } from "../container";
 
 export const TabList = ({ children, className }: TabProps) => {
-    const { contentStyle } = useContext(TabContext);
+    const { contentStyle, clickedTabRef } = useContext(TabContext);
+
+    useEffect(() => {
+        if (clickedTabRef) {
+            const ref = clickedTabRef.current;
+
+            ref?.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+            });
+        }
+    }, [clickedTabRef?.current]);
+
     return (
         <div className={clsx("tab-list--container", className)}>
             <div
