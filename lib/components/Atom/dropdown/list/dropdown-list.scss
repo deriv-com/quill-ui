@@ -1,0 +1,19 @@
+.quill-dropdown-list {
+    &__container {
+        background-color: var(--component-dropdownList-bg);
+        border: var(--component-dropdownList-border-width) solid
+            var(--component-dropdownList-border-color);
+        border-radius: var(--component-dropdownList-border-radius);
+        box-shadow: var(--component-dropdownList-elevation-shadow);
+    }
+
+    &__size {
+        &--md {
+            padding: var(--component-dropdownList-spacing-padding-md);
+        }
+
+        &--sm {
+            padding: var(--component-dropdownList-spacing-padding-sm);
+        }
+    }
+}
