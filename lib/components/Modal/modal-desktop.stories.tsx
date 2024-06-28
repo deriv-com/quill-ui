@@ -28,6 +28,8 @@ const meta = {
         showHandleBar: true,
         showSecondaryButton: true,
         disableCloseOnOverlay: false,
+        isPrimaryButtonDisabled: false,
+        isSecondaryButtonDisabled: false,
     },
     argTypes: {
         children: {
@@ -61,7 +63,16 @@ const meta = {
             description: "Controls the visibility of the secondary button.",
             control: { type: "boolean" },
         },
-
+        isPrimaryButtonDisabled: {
+            control: { type: "boolean" },
+            description:
+                "This prop controls if primary button is disabled or not.",
+        },
+        isSecondaryButtonDisabled: {
+            control: { type: "boolean" },
+            description:
+                "This prop controls if secondary button is disabled or not.",
+        },
         toggleModal: {
             table: { type: { summary: "(isOpened: boolean) => void" } },
             description:
