@@ -1,9 +1,16 @@
-import { createContext, useEffect, useState } from "react";
+import {
+    MutableRefObject,
+    createContext,
+    useEffect,
+    useRef,
+    useState,
+} from "react";
 import { TabProps } from "@components/Tab/types";
 
 export type TabContextType = TabProps & {
     handleToggle?: (idx: number) => void;
     activeTab?: number;
+    clickedTabRef?: MutableRefObject<HTMLButtonElement | null> | null;
 };
 
 export const TabContext = createContext<TabContextType>({
@@ -19,8 +26,10 @@ export const TabContainer = ({
     className,
     selectedTabIndex = 0,
     onChangeTab,
+    onTabClick,
 }: TabProps) => {
     const [activeTab, setActiveTab] = useState(selectedTabIndex);
+    const clickedTabRef = useRef<HTMLButtonElement>(null);
 
     const handleToggle = (index: number) => {
         setActiveTab(index);
@@ -35,7 +44,9 @@ export const TabContainer = ({
         <TabContext.Provider
             value={{
                 activeTab,
+                clickedTabRef,
                 handleToggle,
+                onTabClick,
                 id,
                 size,
                 iconPosition,

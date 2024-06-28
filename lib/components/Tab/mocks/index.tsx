@@ -7,8 +7,10 @@ const MockTab = ({
     iconPosition,
     contentStyle,
     selectedTabIndex,
+    onTabClick,
     ...props
 }: TabProps) => {
+    const length = 5;
     return (
         <Tab.Container
             id="test"
@@ -16,25 +18,24 @@ const MockTab = ({
             iconPosition={iconPosition}
             contentStyle={contentStyle}
             selectedTabIndex={selectedTabIndex}
+            onTabClick={onTabClick}
         >
             <Tab.List>
-                <Tab.Trigger {...props}>Forex</Tab.Trigger>
-                <Tab.Trigger {...props}>Derived Indices</Tab.Trigger>
-                <Tab.Trigger {...props}>Stocks</Tab.Trigger>
+                {Array.from({ length }).map((_, index) => (
+                    <Tab.Trigger {...props} key={index}>
+                        Tab {index + 1}
+                    </Tab.Trigger>
+                ))}
                 <Tab.Trigger disabled {...props}>
-                    Crypto
+                    Disabled Tab
                 </Tab.Trigger>
             </Tab.List>
             <Tab.Content>
-                <Tab.Panel>
-                    <Text>Forex Tab</Text>
-                </Tab.Panel>
-                <Tab.Panel>
-                    <Text>Derived indices Tab</Text>
-                </Tab.Panel>
-                <Tab.Panel>
-                    <Text>Stocks Tab</Text>
-                </Tab.Panel>
+                {Array.from({ length }).map((_, index) => (
+                    <Tab.Panel key={index}>
+                        <Text>Content in tab {index + 1}</Text>
+                    </Tab.Panel>
+                ))}
             </Tab.Content>
         </Tab.Container>
     );

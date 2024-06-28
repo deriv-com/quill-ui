@@ -13,4 +13,5 @@ export interface TabProps extends ComponentProps<"button"> {
     contentStyle?: "hug" | "fill";
     selectedTabIndex?: number;
     onChangeTab?: (index: number) => void;
+    onTabClick?: (e: number) => void;
 }

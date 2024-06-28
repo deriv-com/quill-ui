@@ -12,20 +12,30 @@ export const TabTrigger = ({
     className,
     ...rest
 }: TabProps) => {
+    const ref = useRef<HTMLButtonElement>(null);
     const [selectedTab, setSelectedTab] = useState(false);
-    const { activeTab, handleToggle, id, size, iconPosition, contentStyle } =
-        useContext(TabContext);
+    const {
+        activeTab,
+        handleToggle,
+        clickedTabRef,
+        onTabClick,
+        id,
+        size,
+        iconPosition,
+        contentStyle,
+    } = useContext(TabContext);
 
-    const onClickTab = (e: MouseEvent<HTMLButtonElement>) => {
+    const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+        if (clickedTabRef) clickedTabRef.current = ref.current;
         if (e.currentTarget.parentElement) {
             const idx = Array.from(
                 e.currentTarget.parentElement.children,
             ).indexOf(e.currentTarget);
             if (idx === activeTab) return;
             handleToggle?.(idx);
+            onTabClick?.(idx);
         }
     };
-    const ref = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
         if (ref.current && ref.current?.parentElement) {
@@ -52,7 +62,7 @@ export const TabTrigger = ({
 
     return (
         <button
-            onClick={onClickTab}
+            onClick={handleClick}
             role="tab"
             ref={ref}
             {...rest}

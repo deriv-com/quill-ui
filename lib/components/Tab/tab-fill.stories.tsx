@@ -39,6 +39,10 @@ const meta = {
         selectedTabIndex: {
             description: "Index value to control current active tab",
         },
+        onTabClick: {
+            description:
+                "Function triggered onClick of each tab. Will trigger the function even click on the same tab",
+        },
     },
 } satisfies Meta<typeof MockTab>;
 

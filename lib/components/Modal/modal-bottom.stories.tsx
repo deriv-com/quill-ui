@@ -57,6 +57,8 @@ const meta = {
         primaryButtonLabel: primaryButtonLabel,
         primaryButtonCallback: fn(),
         secondaryButtonLabel: secondaryButtonLabel,
+        isPrimaryButtonDisabled: false,
+        isSecondaryButtonDisabled: false,
     },
     argTypes: {
         children: {
@@ -65,7 +67,6 @@ const meta = {
                 "Modal's content. Can be wrapped with the `<ModalBottom.Header/>` and `<ModalBottom.Body/>` components in order to organize the content inside the modal. Each of them accepts className for customization and `<ModalBottom.Header/>` can also be passed scr and height properties.",
             control: false,
         },
-
         isOpened: {
             table: { type: { summary: "boolean | undefined" } },
             options: ["true", "false"],
@@ -83,6 +84,16 @@ const meta = {
             description:
                 "Controls the visibility of the handlebar. If handlebar is visible, the modal can be expanded/collapsed by swiping up/down handlebar. Default value is true.",
             control: { type: "boolean" },
+        },
+        isPrimaryButtonDisabled: {
+            control: { type: "boolean" },
+            description:
+                "This prop controls if primary button is disabled or not.",
+        },
+        isSecondaryButtonDisabled: {
+            control: { type: "boolean" },
+            description:
+                "This prop controls if secondary button is disabled or not.",
         },
         showSecondaryButton: {
             table: { type: { summary: "boolean | undefined" } },
