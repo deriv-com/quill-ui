@@ -25,11 +25,11 @@ export const SegmentedControlSingleChoice = ({
         new_options: SegmentedControlProps["options"],
         idx: number,
     ) => {
-        if (idx >= new_options.length) return;
+        const selectedIndex = idx < new_options.length ? idx : 0;
         setItems([
             ...new_options.map((item, i) => ({
                 ...item,
-                selected: !item.disabled && i === idx,
+                selected: !item.disabled && i === selectedIndex,
             })),
         ]);
     };
