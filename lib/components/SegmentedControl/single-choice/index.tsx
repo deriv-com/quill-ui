@@ -1,16 +1,12 @@
-import React, { ReactNode, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import { SegmentedControl } from "../base";
-import type { SegmentedControlProps } from "../base";
+import type { SegmentedControlProps, Option } from "../base";
 
 export interface SegmentedControlSingleChoiceProps
     extends SegmentedControlProps {
     hasContainerWidth?: boolean;
-    options: Array<{
-        icon?: ReactNode;
-        label?: ReactNode;
-        disabled?: boolean;
-    }>;
+    options: Array<Option>;
     selectedItemIndex?: number;
 }
 
@@ -23,7 +19,7 @@ export const SegmentedControlSingleChoice = ({
     size = "md",
 }: SegmentedControlSingleChoiceProps) => {
     const [items, setItems] =
-        React.useState<SegmentedControlProps["options"]>(options);
+        useState<SegmentedControlProps["options"]>(options);
 
     const updateItems = (
         new_options: SegmentedControlProps["options"],
@@ -44,12 +40,12 @@ export const SegmentedControlSingleChoice = ({
     };
 
     useEffect(() => {
-        const selected = items.findIndex((i) => i.selected);
+        const selected = options.findIndex((i) => i.selected);
         if (
             selectedItemIndex !== selected &&
-            !items[selectedItemIndex]?.disabled
+            !options[selectedItemIndex]?.disabled
         ) {
-            updateItems(items, selectedItemIndex);
+            updateItems(options, selectedItemIndex);
         } else if (selectedItemIndex === selected) {
             updateItems(options, selected !== -1 ? selected : 0);
         }
