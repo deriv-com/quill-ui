@@ -5,17 +5,11 @@ exports[`DropdownTitle applies centered class 1`] = `
   <div
     class="quill-dropdown-title__container quill-dropdown-title__container--md"
   >
-    <div
-      class="quill-dropdown-title__icon"
-    />
     <p
       class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--subtle quill-typography-centered quill-dropdown-title__label"
     >
       Test Label
     </p>
-    <div
-      class="quill-dropdown-title__icon"
-    />
   </div>
 </div>
 `;
@@ -30,9 +24,6 @@ exports[`DropdownTitle applies size class 1`] = `
     >
       Test Label
     </p>
-    <div
-      class="quill-dropdown-title__icon"
-    />
   </div>
 </div>
 `;
@@ -47,9 +38,6 @@ exports[`DropdownTitle applies size class 2`] = `
     >
       Test Label
     </p>
-    <div
-      class="quill-dropdown-title__icon"
-    />
   </div>
 </div>
 `;

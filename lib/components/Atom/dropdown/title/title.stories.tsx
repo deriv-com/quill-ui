@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Title from ".";
+import { DropdownTitle } from ".";
 import { LabelPairedPlaceholderCaptionBoldIcon } from "@deriv/quill-icons";
 
 const icons: Record<string, object | null> = {
@@ -9,7 +9,7 @@ const icons: Record<string, object | null> = {
 
 const meta = {
     title: "Components/Atom/Dropdown/Title",
-    component: Title,
+    component: DropdownTitle,
     args: {
         centered: false,
     },
@@ -30,7 +30,7 @@ const meta = {
         },
     },
     tags: ["autodocs"],
-} satisfies Meta<typeof Title>;
+} satisfies Meta<typeof DropdownTitle>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

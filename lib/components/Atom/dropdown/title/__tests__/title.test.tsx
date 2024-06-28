@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import DropdownTitle from "..";
+import { DropdownTitle } from "..";
 
 describe("DropdownTitle", () => {
     it("renders with default div element", () => {

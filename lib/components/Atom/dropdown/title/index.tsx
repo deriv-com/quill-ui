@@ -12,7 +12,7 @@ export interface DropdownTitleProps extends HTMLAttributes<HTMLElement> {
     icon?: ReactNode;
 }
 
-const DropdownTitle = forwardRef<HTMLElement, DropdownTitleProps>(
+export const DropdownTitle = forwardRef<HTMLElement, DropdownTitleProps>(
     ({
         as: Component = "div",
         label,
@@ -31,7 +31,9 @@ const DropdownTitle = forwardRef<HTMLElement, DropdownTitleProps>(
                 )}
                 {...rest}
             >
-                {centered && <div className="quill-dropdown-title__icon" />}
+                {icon && centered && (
+                    <div className="quill-dropdown-title__icon" />
+                )}
                 <Text
                     size={size}
                     className="quill-dropdown-title__label"
@@ -40,10 +42,10 @@ const DropdownTitle = forwardRef<HTMLElement, DropdownTitleProps>(
                 >
                     {label}
                 </Text>
-                <div className="quill-dropdown-title__icon">{icon}</div>
+                {icon && (
+                    <div className="quill-dropdown-title__icon">{icon}</div>
+                )}
             </Component>
         );
     },
 );
-
-export default DropdownTitle;
