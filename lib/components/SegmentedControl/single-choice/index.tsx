@@ -6,7 +6,7 @@ import type { Option, SegmentedControlProps } from "../base";
 export interface SegmentedControlSingleChoiceProps
     extends SegmentedControlProps {
     hasContainerWidth?: boolean;
-    options: Array<Option>;
+    options: Array<Omit<Option, "selected">>;
     selectedItemIndex?: number;
 }
 
@@ -40,15 +40,12 @@ export const SegmentedControlSingleChoice = ({
     };
 
     useEffect(() => {
-        const selected = options.findIndex((i) => i.selected);
-        if (
-            selectedItemIndex !== selected &&
-            !options[selectedItemIndex]?.disabled
-        ) {
-            updateItems(options, selectedItemIndex);
-        } else if (selectedItemIndex === selected) {
-            updateItems(options, selected !== -1 ? selected : 0);
-        }
+        const selected = items.findIndex((i) => i.selected);
+        const currentIndex = selected !== -1 ? selected : 0;
+        updateItems(
+            options,
+            selectedItemIndex === selected ? currentIndex : selectedItemIndex,
+        );
     }, [options, selectedItemIndex]);
 
     if (!options.length) return null;
