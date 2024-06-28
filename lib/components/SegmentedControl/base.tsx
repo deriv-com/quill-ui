@@ -10,7 +10,7 @@ import { KEY } from "@utils/common-utils";
 import { Segment } from "./segment";
 import "./segmented-control.scss";
 
-interface Option {
+export interface Option {
     disabled?: boolean;
     icon?: ReactNode;
     label?: ReactNode;
@@ -93,11 +93,11 @@ export const SegmentedControl = ({
         return () => timeoutId && clearTimeout(timeoutId);
     }, [options]);
 
+    const segmentRef = React.useRef<HTMLButtonElement>(null);
+
     return (
         <div className={className}>
             {options.map(({ disabled, icon, label, selected }, idx) => {
-                const segmentRef = React.useRef<HTMLButtonElement>(null);
-
                 return (
                     <Segment
                         allowFocus={allowFocus}
