@@ -22,6 +22,8 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     portalId?: string;
     showPrimaryButton?: boolean;
     primaryButtonLabel?: React.ReactNode;
+    isPrimaryButtonDisabled?: boolean;
+    isSecondaryButtonDisabled?: boolean;
     primaryButtonCallback?: () => void;
     secondaryButtonCallback?: () => void;
     secondaryButtonLabel?: React.ReactNode;
@@ -54,6 +56,8 @@ export const Modal = ({
     hasFooter = true,
     portalId,
     primaryButtonLabel,
+    isPrimaryButtonDisabled,
+    isSecondaryButtonDisabled,
     primaryButtonCallback,
     secondaryButtonCallback,
     secondaryButtonLabel,
@@ -172,6 +176,7 @@ export const Modal = ({
                                 fullWidth
                                 size="lg"
                                 label={primaryButtonLabel}
+                                disabled={isPrimaryButtonDisabled}
                                 onClick={primaryButtonFunctionHandler}
                             />
                         )}
@@ -181,6 +186,7 @@ export const Modal = ({
                                 fullWidth
                                 size="lg"
                                 label={secondaryButtonLabel}
+                                disabled={isSecondaryButtonDisabled}
                                 variant="secondary"
                                 className="quill-modal__button"
                                 onClick={secondaryButtonFunctionHandler}
