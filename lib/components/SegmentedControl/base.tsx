@@ -10,7 +10,7 @@ import { KEY } from "@utils/common-utils";
 import { Segments } from "./segments";
 import "./segmented-control.scss";
 
-interface Option {
+export interface Option {
     disabled?: boolean;
     icon?: ReactNode;
     label?: ReactNode;
