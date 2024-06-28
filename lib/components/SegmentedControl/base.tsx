@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { TRegularSizes } from "@types";
 import { KEY } from "@utils/common-utils";
-import { Segment } from "./segment";
+import { Segments } from "./segments";
 import "./segmented-control.scss";
 
 interface Option {
@@ -95,35 +95,30 @@ export const SegmentedControl = ({
 
     return (
         <div className={className}>
-            {options.map(({ disabled, icon, label, selected }, idx) => {
-                const segmentRef = React.useRef<HTMLButtonElement>(null);
-
-                return (
-                    <Segment
-                        allowFocus={allowFocus}
-                        key={`${idx}_${label}`}
-                        icon={icon}
-                        isAnimated={
-                            selected &&
-                            animatedOptionIdx === idx &&
-                            hasAnimation
-                        }
-                        isDisabled={disabled}
-                        isSelected={selected}
-                        label={label}
-                        onClick={() => {
-                            animate(idx, segmentRef);
-                            onChange?.(idx);
-                            setAllowFocus(false);
-                        }}
-                        onKeyDown={(
-                            e: React.KeyboardEvent<HTMLButtonElement>,
-                        ) => handleKeyboardEvents(e, idx)}
-                        size={size}
-                        ref={selected ? selectedRef : segmentRef}
-                    />
-                );
-            })}
+            {options.map((item, idx) => (
+                <Segments
+                    key={idx}
+                    allowFocus={allowFocus}
+                    isAnimated={
+                        item.selected &&
+                        animatedOptionIdx === idx &&
+                        hasAnimation
+                    }
+                    onClick={(
+                        segmentRef: React.RefObject<HTMLButtonElement>,
+                    ) => {
+                        animate(idx, segmentRef);
+                        onChange?.(idx);
+                        setAllowFocus(false);
+                    }}
+                    onKeyDown={(e: React.KeyboardEvent<HTMLButtonElement>) =>
+                        handleKeyboardEvents(e, idx)
+                    }
+                    selectedRef={selectedRef}
+                    size={size}
+                    {...item}
+                />
+            ))}
         </div>
     );
 };
