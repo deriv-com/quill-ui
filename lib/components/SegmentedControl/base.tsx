@@ -93,11 +93,11 @@ export const SegmentedControl = ({
         return () => timeoutId && clearTimeout(timeoutId);
     }, [options]);
 
-    const segmentRef = React.useRef<HTMLButtonElement>(null);
-
     return (
         <div className={className}>
             {options.map(({ disabled, icon, label, selected }, idx) => {
+                const segmentRef = React.useRef<HTMLButtonElement>(null);
+
                 return (
                     <Segment
                         allowFocus={allowFocus}
