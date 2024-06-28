@@ -42,9 +42,12 @@ export const SegmentedControlSingleChoice = ({
     useEffect(() => {
         const selected = items.findIndex((i) => i.selected);
         const currentIndex = selected !== -1 ? selected : 0;
+        const newIndex = items[selectedItemIndex]?.disabled
+            ? currentIndex
+            : selectedItemIndex;
         updateItems(
             options,
-            selectedItemIndex === selected ? currentIndex : selectedItemIndex,
+            selectedItemIndex === selected ? currentIndex : newIndex,
         );
     }, [options, selectedItemIndex]);
 
