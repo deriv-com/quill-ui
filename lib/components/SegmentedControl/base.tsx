@@ -99,9 +99,11 @@ export const SegmentedControl = ({
                 <Segments
                     key={idx}
                     allowFocus={allowFocus}
-                    animatedOptionIdx={animatedOptionIdx}
-                    hasAnimation={hasAnimation}
-                    idx={idx}
+                    isAnimated={
+                        item.selected &&
+                        animatedOptionIdx === idx &&
+                        hasAnimation
+                    }
                     onClick={(
                         segmentRef: React.RefObject<HTMLButtonElement>,
                     ) => {
