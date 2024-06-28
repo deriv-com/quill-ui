@@ -2,6 +2,31 @@
 
 .quill-dropdown-title {
     &__container {
-        // width: var(--temp-static-spacing-360);
+        display: flex;
+        align-items: center;
+
+        &--md {
+            padding-inline: var(--component-dropdownItem-spacing-padding-md);
+            gap: var(--component-dropdownItem-spacing-gap-md);
+            height: var(--core-spacing-2000);
+        }
+
+        &--sm {
+            padding-inline: var(--component-dropdownItem-spacing-padding-sm);
+            gap: var(--component-dropdownItem-spacing-gap-sm);
+            height: var(--core-spacing-1200);
+        }
+    }
+
+    &__label {
+        flex-grow: 1;
+    }
+
+    &__icon {
+        height: var(--core-spacing-1200);
+        width: var(--core-spacing-1200);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
