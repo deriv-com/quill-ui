@@ -1,8 +1,6 @@
 import React from "react";
 import "./divider.scss";
 
-const Divider = () => {
+export const Divider = () => {
     return <div className="quill-dropdown__divider" />;
 };
-
-export default Divider;
