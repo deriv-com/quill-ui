@@ -1,11 +1,16 @@
 import { TMediumSizes } from "@types";
-import React, { HTMLAttributes, ReactNode, forwardRef } from "react";
+import React, {
+    ElementType,
+    HTMLAttributes,
+    ReactNode,
+    forwardRef,
+} from "react";
 import { Text } from "@components/Typography";
 import clsx from "clsx";
 import "./title.scss";
 
 export interface DropdownTitleProps extends HTMLAttributes<HTMLElement> {
-    as?: keyof HTMLElementTagNameMap;
+    as?: ElementType;
     size?: TMediumSizes;
     centered?: boolean;
     label: ReactNode;
@@ -13,15 +18,18 @@ export interface DropdownTitleProps extends HTMLAttributes<HTMLElement> {
 }
 
 export const DropdownTitle = forwardRef<HTMLElement, DropdownTitleProps>(
-    ({
-        as: Component = "div",
-        label,
-        size = "md",
-        icon,
-        className,
-        centered,
-        ...rest
-    }: DropdownTitleProps) => {
+    (
+        {
+            as: Component = "div",
+            label,
+            size = "md",
+            icon,
+            className,
+            centered,
+            ...rest
+        }: DropdownTitleProps,
+        ref,
+    ) => {
         return (
             <Component
                 className={clsx(
@@ -29,6 +37,7 @@ export const DropdownTitle = forwardRef<HTMLElement, DropdownTitleProps>(
                     `quill-dropdown-title__container--${size}`,
                     className,
                 )}
+                ref={ref}
                 {...rest}
             >
                 {icon && centered && (
