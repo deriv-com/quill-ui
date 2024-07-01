@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render } from "@testing-library/react";
+import { act, fireEvent, render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import ToggleSwitch from "../index";
 
@@ -8,7 +8,9 @@ describe("ToggleSwitch", () => {
         const onChange = jest.fn();
         const { getByRole } = render(<ToggleSwitch onChange={onChange} />);
         const switchEl = getByRole("button");
-        fireEvent.click(switchEl);
+        act(() => {
+            fireEvent.click(switchEl);
+        });
         expect(onChange).toHaveBeenCalledWith(true);
     });
 
@@ -18,7 +20,9 @@ describe("ToggleSwitch", () => {
             <ToggleSwitch defaultChecked onChange={onChange} />,
         );
         const switchEl = getByRole("button");
-        fireEvent.click(switchEl);
+        act(() => {
+            fireEvent.click(switchEl);
+        });
         expect(onChange).toHaveBeenCalledWith(false);
     });
 
@@ -28,7 +32,9 @@ describe("ToggleSwitch", () => {
             <ToggleSwitch disabled onChange={onChange} />,
         );
         const switchEl = getByRole("button");
-        fireEvent.click(switchEl);
+        act(() => {
+            fireEvent.click(switchEl);
+        });
         expect(onChange).not.toHaveBeenCalled();
     });
 
@@ -38,7 +44,9 @@ describe("ToggleSwitch", () => {
             <ToggleSwitch checked onChange={onChange} />,
         );
         const switchEl = getByRole("button");
-        fireEvent.click(switchEl);
+        act(() => {
+            fireEvent.click(switchEl);
+        });
         expect(onChange).toHaveBeenCalledWith(false);
     });
 
@@ -49,9 +57,13 @@ describe("ToggleSwitch", () => {
             <ToggleSwitch onFocus={onFocus} onBlur={onBlur} />,
         );
         const switchEl = getByRole("button");
-        fireEvent.focus(switchEl);
+        act(() => {
+            fireEvent.focus(switchEl);
+        });
         expect(onFocus).toHaveBeenCalled();
-        fireEvent.blur(switchEl);
+        act(() => {
+            fireEvent.blur(switchEl);
+        });
         expect(onBlur).toHaveBeenCalled();
     });
 
@@ -65,7 +77,9 @@ describe("ToggleSwitch", () => {
         const { getByRole, asFragment } = render(
             <ToggleSwitch onChange={onChange} />,
         );
-        fireEvent.click(getByRole("button"));
+        act(() => {
+            fireEvent.click(getByRole("button"));
+        });
         expect(asFragment()).toMatchSnapshot();
     });
 
@@ -89,7 +103,9 @@ describe("ToggleSwitch", () => {
             <ToggleSwitch onChange={() => {}} onFocus={onFocus} />,
         );
         const toggleElement = getByRole("button");
-        fireEvent.focus(toggleElement);
+        act(() => {
+            fireEvent.focus(toggleElement);
+        });
         expect(onFocus).toHaveBeenCalled();
         expect(asFragment()).toMatchSnapshot();
     });
@@ -100,8 +116,10 @@ describe("ToggleSwitch", () => {
             <ToggleSwitch onChange={() => {}} onBlur={onBlur} />,
         );
         const toggleElement = getByRole("button");
-        fireEvent.focus(toggleElement);
-        fireEvent.blur(toggleElement);
+        act(() => {
+            fireEvent.focus(toggleElement);
+            fireEvent.blur(toggleElement);
+        });
         expect(onBlur).toHaveBeenCalled();
         expect(asFragment()).toMatchSnapshot();
     });

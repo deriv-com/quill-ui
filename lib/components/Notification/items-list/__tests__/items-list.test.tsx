@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 import userEvent from "@testing-library/user-event";
-import { render, screen, waitFor } from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import NotificationItemsList from "..";
 import { STATUS, TYPE } from "@utils/notification-utils";
 
@@ -71,7 +71,9 @@ describe("NotificationItemsList", () => {
         render(<NotificationItemsList {...mokedProps} />);
 
         const warningNotification = screen.getByText(warningMessage);
-        await userEvent.click(warningNotification);
+        await act(async () => {
+            await userEvent.click(warningNotification);
+        });
 
         expect(mokedProps.onClick).toHaveBeenCalledWith("1");
     });
@@ -81,8 +83,9 @@ describe("NotificationItemsList", () => {
         const warningNotificationMarkAsReadBtn = screen.getAllByRole("button", {
             name: "mark-as-read",
         })[1];
-        await userEvent.click(warningNotificationMarkAsReadBtn);
-
+        await act(async () => {
+            await userEvent.click(warningNotificationMarkAsReadBtn);
+        });
         expect(mokedProps.onMarkAsRead).toHaveBeenCalledWith("1");
     });
     it("should call onClose with an id of the deleted notification after delete button is pressed", async () => {
@@ -91,7 +94,9 @@ describe("NotificationItemsList", () => {
         const infoNotificationDeleteBtn = screen.getAllByRole("button", {
             name: "delete",
         })[0];
-        await userEvent.click(infoNotificationDeleteBtn);
+        await act(async () => {
+            await userEvent.click(infoNotificationDeleteBtn);
+        });
 
         await waitFor(() => {
             expect(mokedProps.onClose).toHaveBeenCalledWith("0");

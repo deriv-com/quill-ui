@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import { render, screen, waitFor } from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import NotificationBanners from "..";
 import { TYPE } from "@utils/notification-utils";
 import userEvent from "@testing-library/user-event";
@@ -50,10 +50,11 @@ describe("NotificationBanners", () => {
             screen.getByRole("button", { name: "close" }),
         ).toBeInTheDocument();
         expect(container).toMatchSnapshot();
-
-        jest.advanceTimersByTime(4240);
-        expect(mokedProps.onClose).toHaveBeenCalledTimes(1);
-        jest.useRealTimers();
+        act(() => {
+            jest.advanceTimersByTime(4240);
+            expect(mokedProps.onClose).toHaveBeenCalledTimes(1);
+            jest.useRealTimers();
+        });
     });
     it("should render notifications correctly for mobile - without close button", () => {
         const { container } = render(
@@ -69,7 +70,9 @@ describe("NotificationBanners", () => {
         render(<NotificationBanners {...mokedProps} />);
 
         const infoNotification = screen.getByText(infoMessage);
-        await userEvent.click(infoNotification);
+        await act(async () => {
+            await userEvent.click(infoNotification);
+        });
 
         expect(mokedProps.onClick).toHaveBeenCalledWith("0");
     });
@@ -77,7 +80,9 @@ describe("NotificationBanners", () => {
         render(<NotificationBanners {...mokedProps} />);
 
         const closeButton = screen.getByRole("button", { name: "close" });
-        await userEvent.click(closeButton);
+        await act(async () => {
+            await userEvent.click(closeButton);
+        });
 
         await waitFor(() => {
             expect(mokedProps.onClose).toHaveBeenCalledWith("0");

@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import DropdownChipSingleSelect from "..";
 import userEvent from "@testing-library/user-event";
 
@@ -43,9 +43,13 @@ describe("Dropdown Chip Single Select", () => {
             />,
         );
         const label = screen.getByText("Sample Item 1");
-        await userEvent.click(label);
+        await act(async () => {
+            await userEvent.click(label);
+        });
         const item = screen.getByText("Sample Item 3");
-        await userEvent.click(item);
+        await act(async () => {
+            await userEvent.click(item);
+        });
         expect(onSelectionChange).not.toHaveBeenCalled();
     });
 
@@ -59,9 +63,13 @@ describe("Dropdown Chip Single Select", () => {
             />,
         );
         const label = screen.getByText("Sample Item 1");
-        await userEvent.click(label);
+        await act(async () => {
+            await userEvent.click(label);
+        });
         const item = screen.getByText("Sample Item 3");
-        await userEvent.click(item);
+        await act(async () => {
+            await userEvent.click(item);
+        });
         expect(onSelectionChange).toHaveBeenCalled();
     });
 });

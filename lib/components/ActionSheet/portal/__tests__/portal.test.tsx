@@ -3,6 +3,7 @@ import {
     render as rtlRender,
     RenderResult,
     RenderOptions,
+    act,
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { RootPosition, RootProps } from "../../types";
@@ -39,7 +40,9 @@ describe("<ActionSheet.Portal/>", () => {
             </>,
         );
         const trigger = screen.getByText("Trigger");
-        await userEvent.click(trigger);
+        await act(async () => {
+            await userEvent.click(trigger);
+        });
         const state = screen.getByRole("dialog").getAttribute("data-state");
         expect(state).toBe("open");
     });
@@ -54,9 +57,13 @@ describe("<ActionSheet.Portal/>", () => {
             </>,
         );
         const trigger = screen.getByText("Trigger");
-        await userEvent.click(trigger);
+        await act(async () => {
+            await userEvent.click(trigger);
+        });
         const close = screen.getByText("Close");
-        await userEvent.click(close);
+        await act(async () => {
+            await userEvent.click(close);
+        });
         const state = screen.getByRole("dialog").getAttribute("data-state");
         expect(state).toBe("close");
     });
@@ -86,9 +93,13 @@ describe("<ActionSheet.Portal/>", () => {
             </>,
         );
         const trigger = screen.getByText("Trigger");
-        await userEvent.click(trigger);
+        await act(async () => {
+            await userEvent.click(trigger);
+        });
         const modalOverlay = screen.getByTestId("dt-actionsheet-overlay");
-        await userEvent.click(modalOverlay);
+        await act(async () => {
+            await userEvent.click(modalOverlay);
+        });
         const state = screen.getByRole("dialog").getAttribute("data-state");
         expect(state).toBe("close");
     });

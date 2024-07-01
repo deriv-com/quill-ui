@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import { render, screen, waitFor } from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import NotificationBanner from "..";
 import { TYPE } from "@utils/notification-utils";
 import userEvent from "@testing-library/user-event";
@@ -60,15 +60,18 @@ describe("NotificationBanner", () => {
         render(<NotificationBanner {...mokedProps} />);
 
         const notification = screen.getByText(testMessage);
-        await userEvent.click(notification);
-
+        await act(async () => {
+            await userEvent.click(notification);
+        });
         expect(mokedProps.onClick).toHaveBeenCalled();
     });
     it("should call onClose after close button is clicked", async () => {
         render(<NotificationBanner {...mokedProps} />);
 
         const closeButton = screen.getByRole("button", { name: "close" });
-        await userEvent.click(closeButton);
+        await act(async () => {
+            await userEvent.click(closeButton);
+        });
 
         await waitFor(() => {
             expect(mokedProps.onClose).toHaveBeenCalled();
@@ -80,9 +83,11 @@ describe("NotificationBanner", () => {
             <NotificationBanner {...mokedProps} autohideTimeout={4000} />,
         );
 
-        jest.advanceTimersByTime(4240);
-        expect(mokedProps.onClose).toHaveBeenCalled();
-        jest.useRealTimers();
-        expect(container).toMatchSnapshot();
+        act(() => {
+            jest.advanceTimersByTime(4240);
+            expect(mokedProps.onClose).toHaveBeenCalled();
+            jest.useRealTimers();
+            expect(container).toMatchSnapshot();
+        });
     });
 });

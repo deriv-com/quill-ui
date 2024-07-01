@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import InputGroupButton from "..";
 import userEvent from "@testing-library/user-event";
 import React from "react";
@@ -25,7 +25,9 @@ describe("InputGroupButton Component", () => {
             />,
         );
         const input = screen.getByPlaceholderText("Placeholder");
-        await userEvent.hover(input);
+        await act(async () => {
+            await userEvent.hover(input);
+        });
         expect(onHover).toHaveBeenCalledTimes(1);
         expect(input.parentElement).toMatchSnapshot();
     });

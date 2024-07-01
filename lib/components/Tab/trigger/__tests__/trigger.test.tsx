@@ -1,6 +1,7 @@
 import {
     RenderOptions,
     RenderResult,
+    act,
     render as rtlRender,
     screen,
 } from "@testing-library/react";
@@ -63,7 +64,9 @@ describe("<Tab.Trigger/>", () => {
             </>,
         );
         const secondTab = screen.getByRole("tab", { name: "Tab 2" });
-        await userEvent.click(secondTab);
+        await act(async () => {
+            await userEvent.click(secondTab);
+        });
         expect(secondTab).toHaveAttribute("aria-selected", "true");
         const firstTab = screen.getByRole("tab", { name: "Tab 1" });
         expect(firstTab).toHaveAttribute("aria-selected", "false");

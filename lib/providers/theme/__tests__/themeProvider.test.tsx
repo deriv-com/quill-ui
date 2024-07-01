@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, act } from "@testing-library/react";
 import ThemeProvider from "../themeProvider";
 import ThemeContext from "../themeContext";
 
@@ -45,7 +45,9 @@ describe("ThemeProvider", () => {
         );
 
         const toggleButton = getByTestId("toggle-button");
-        fireEvent.click(toggleButton);
+        act(() => {
+            fireEvent.click(toggleButton);
+        });
 
         const root = document.documentElement;
         expect(root).toHaveClass("dark");

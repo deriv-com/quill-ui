@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Tooltip } from "../index";
 
@@ -33,9 +33,13 @@ describe("Tooltip Component", () => {
             </Tooltip>,
         );
         const button = screen.getByRole("button");
-        await userEvent.hover(button);
+        await act(async () => {
+            await userEvent.hover(button);
+        });
         expect(await screen.findByText("Tooltip text")).toBeVisible();
-        await userEvent.unhover(button);
+        await act(async () => {
+            await userEvent.unhover(button);
+        });
         expect(screen.queryByText("Tooltip text")).not.toBeInTheDocument();
     });
 
@@ -49,8 +53,9 @@ describe("Tooltip Component", () => {
                 Hover me
             </Tooltip>,
         );
-
-        await userEvent.hover(screen.getByRole("button"));
+        await act(async () => {
+            await userEvent.hover(screen.getByRole("button"));
+        });
         expect(await screen.findByText("Tooltip text")).toBeVisible();
     });
 
@@ -65,8 +70,9 @@ describe("Tooltip Component", () => {
                 Hover me
             </Tooltip>,
         );
-
-        await userEvent.hover(screen.getByRole("button"));
+        await act(async () => {
+            await userEvent.hover(screen.getByRole("button"));
+        });
         expect(await screen.findByText("Tooltip text")).toBeVisible();
     });
 

@@ -35,11 +35,13 @@ describe("useDropdown", () => {
                 <button>outside</button>
             </div>,
         );
-
-        await userEvent.click(getByText("inside"));
+        await act(async () => {
+            await userEvent.click(getByText("inside"));
+        });
         expect(result.current.isOpen).toBe(true);
-
-        await userEvent.click(getByText("outside"));
+        await act(async () => {
+            await userEvent.click(getByText("outside"));
+        });
         expect(result.current.isOpen).toBe(false);
     });
 });

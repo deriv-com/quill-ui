@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Pagination from "@components/Pagination";
 
@@ -86,11 +86,18 @@ describe("Pagination", () => {
         );
 
         const elNextButton = screen.getByRole("button", { name: /next/i });
-
-        await userEvent.click(elNextButton);
-        await userEvent.click(elNextButton);
-        await userEvent.click(elNextButton);
-        await userEvent.click(elNextButton);
+        await act(async () => {
+            await userEvent.click(elNextButton);
+        });
+        await act(async () => {
+            await userEvent.click(elNextButton);
+        });
+        await act(async () => {
+            await userEvent.click(elNextButton);
+        });
+        await act(async () => {
+            await userEvent.click(elNextButton);
+        });
 
         expect(elNextButton).toBeDisabled();
     });
@@ -125,14 +132,16 @@ describe("Pagination", () => {
             name: /previous/i,
         });
         const elNextButton = screen.getByRole("button", { name: /next/i });
-
-        await userEvent.click(elNextButton);
+        await act(async () => {
+            await userEvent.click(elNextButton);
+        });
         expect(mockonClickPagination).toHaveBeenCalledWith({
             currentPage: 2,
             totalPageCount: 5,
         });
-
-        await userEvent.click(elPreviousButton);
+        await act(async () => {
+            await userEvent.click(elPreviousButton);
+        });
         expect(mockonClickPagination).toHaveBeenCalledWith({
             currentPage: 1,
             totalPageCount: 5,
