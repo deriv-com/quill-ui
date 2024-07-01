@@ -124,6 +124,10 @@
         "setupFilesAfterEnv": [
             "<rootDir>/test/setup.test.js"
         ],
+        "coveragePathIgnorePatterns": [
+            "/node_modules/",
+            "types.ts"
+        ],
         "testMatch": [
             "<rootDir>/lib/**/*.(test|spec).{js,jsx,ts,tsx}"
         ],

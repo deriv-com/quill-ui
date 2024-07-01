@@ -1,5 +1,5 @@
 import React, { ComponentProps } from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import SearchField from "..";
 import userEvent from "@testing-library/user-event";
 
@@ -24,8 +24,9 @@ describe("<SearchField />", () => {
         const onChangeMock = jest.fn();
         const { container } = renderSearchField({ onChange: onChangeMock });
         const searchElement = screen.getByPlaceholderText("Search");
-
-        await userEvent.type(searchElement, "test");
+        await act(async () => {
+            await userEvent.type(searchElement, "test");
+        });
 
         expect(onChangeMock).toHaveBeenCalledWith(
             expect.objectContaining({
@@ -40,9 +41,9 @@ describe("<SearchField />", () => {
         const { container } = renderSearchField({ value: "test" });
         const mockedClearIcon = screen.getByText("mockedClearIcon");
         expect(mockedClearIcon).toBeInTheDocument();
-
-        await userEvent.click(mockedClearIcon);
-
+        await act(async () => {
+            await userEvent.click(mockedClearIcon);
+        });
         expect(mockedClearIcon).not.toBeInTheDocument();
         expect(container).toMatchSnapshot();
     });

@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import RadioGroup from "../index";
 
 describe("RadioGroup component", () => {
@@ -43,8 +43,11 @@ describe("RadioGroup component", () => {
                 ))}
             </RadioGroup>,
         );
-
-        fireEvent.click(screen.getByTestId("dt_unchecked_icon_option2_false"));
+        act(() => {
+            fireEvent.click(
+                screen.getByTestId("dt_unchecked_icon_option2_false"),
+            );
+        });
 
         expect(handleToggle).toHaveBeenCalledTimes(1);
         expect(
@@ -54,7 +57,11 @@ describe("RadioGroup component", () => {
             screen.queryByTestId("dt_checked_icon_option2_false"),
         ).toBeInTheDocument();
 
-        fireEvent.click(screen.getByTestId("dt_unchecked_icon_option1_false"));
+        act(() => {
+            fireEvent.click(
+                screen.getByTestId("dt_unchecked_icon_option1_false"),
+            );
+        });
         expect(handleToggle).toHaveBeenCalledTimes(2);
         expect(
             screen.queryByTestId("dt_unchecked_icon_option1_false"),
@@ -66,7 +73,11 @@ describe("RadioGroup component", () => {
             screen.queryByTestId("dt_checked_icon_option2_false"),
         ).not.toBeInTheDocument();
 
-        fireEvent.click(screen.getByTestId("dt_unchecked_icon_option3_false"));
+        act(() => {
+            fireEvent.click(
+                screen.getByTestId("dt_unchecked_icon_option3_false"),
+            );
+        });
         expect(handleToggle).toHaveBeenCalledTimes(3);
         expect(
             screen.queryByTestId("dt_unchecked_icon_option3_false"),
@@ -100,7 +111,11 @@ describe("RadioGroup component", () => {
             </RadioGroup>,
         );
 
-        fireEvent.click(screen.getByTestId("dt_unchecked_icon_option2_true"));
+        act(() => {
+            fireEvent.click(
+                screen.getByTestId("dt_unchecked_icon_option2_true"),
+            );
+        });
 
         expect(handleToggle).toHaveBeenCalledTimes(0);
         expect(

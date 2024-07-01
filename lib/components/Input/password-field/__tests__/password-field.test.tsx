@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import PasswordField, { PasswordFieldProps } from "..";
 import React from "react";
 
@@ -36,7 +36,9 @@ describe("PasswordField", () => {
     it("should call onChange handler when input changes", () => {
         const handleChange = jest.fn();
         const { input } = setup({ onChange: handleChange });
-        fireEvent.change(input, { target: { value: "Password1234" } });
+        act(() => {
+            fireEvent.change(input, { target: { value: "Password1234" } });
+        });
         expect(handleChange).toHaveBeenCalledTimes(1);
     });
 
@@ -54,10 +56,13 @@ describe("PasswordField", () => {
 
         expect(getByTestId("eye-icon")).toBeInTheDocument();
 
-        fireEvent.click(getByTestId("eye-icon"));
+        act(() => {
+            fireEvent.click(getByTestId("eye-icon"));
+        });
         expect(getByTestId("eye-slash-icon")).toBeInTheDocument();
-
-        fireEvent.click(getByTestId("eye-slash-icon"));
+        act(() => {
+            fireEvent.click(getByTestId("eye-slash-icon"));
+        });
         expect(getByTestId("eye-icon")).toBeInTheDocument();
     });
 });

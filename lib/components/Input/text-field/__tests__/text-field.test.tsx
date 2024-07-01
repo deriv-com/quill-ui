@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import TextField, { TextFieldProps } from "..";
 import userEvent from "@testing-library/user-event";
 import React from "react";
@@ -31,14 +31,18 @@ describe("TextField", () => {
     it("should call onChange handler when input changes", () => {
         const handleChange = jest.fn();
         const { input } = setup({ onChange: handleChange });
-        fireEvent.change(input, { target: { value: "Hello" } });
+        act(() => {
+            fireEvent.change(input, { target: { value: "Hello" } });
+        });
         expect(handleChange).toHaveBeenCalledTimes(1);
     });
 
     it("should show character counter if enabled", () => {
         setup({ showCharacterCounter: true, maxLength: 10 });
-        fireEvent.change(screen.getByRole("textbox"), {
-            target: { value: "Hello" },
+        act(() => {
+            fireEvent.change(screen.getByRole("textbox"), {
+                target: { value: "Hello" },
+            });
         });
         expect(screen.getByText("5/10")).toBeInTheDocument();
     });

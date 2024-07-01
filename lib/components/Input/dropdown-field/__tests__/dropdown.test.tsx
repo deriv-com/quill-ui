@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, screen } from "@testing-library/react";
+import { render, fireEvent, screen, act } from "@testing-library/react";
 import InputDropdown from "../index";
 
 // Mock options for dropdown
@@ -18,7 +18,9 @@ describe("InputDropdown component", () => {
             },
         };
         render(<InputDropdown {...dropdownProps} />);
-        fireEvent.click(screen.getByTestId("dropdown-input"));
+        act(() => {
+            fireEvent.click(screen.getByTestId("dropdown-input"));
+        });
 
         options.forEach((option) => {
             expect(screen.getByText(option.text)).toBeInTheDocument();
@@ -33,10 +35,12 @@ describe("InputDropdown component", () => {
             },
         };
         render(<InputDropdown {...dropdownProps} />);
-
-        fireEvent.click(screen.getByTestId("dropdown-input"));
-
-        fireEvent.click(screen.getByText(options[0].text));
+        act(() => {
+            fireEvent.click(screen.getByTestId("dropdown-input"));
+        });
+        act(() => {
+            fireEvent.click(screen.getByText(options[0].text));
+        });
 
         expect(screen.getByTestId("dropdown-input")).toHaveValue(
             options[0].text,
@@ -52,9 +56,12 @@ describe("InputDropdown component", () => {
         };
         render(<InputDropdown {...dropdownProps} />);
 
-        fireEvent.click(screen.getByTestId("dropdown-input"));
-
-        fireEvent.click(screen.getByText(options[0].text));
+        act(() => {
+            fireEvent.click(screen.getByTestId("dropdown-input"));
+        });
+        act(() => {
+            fireEvent.click(screen.getByText(options[0].text));
+        });
 
         expect(screen.queryByText(options[0].text)).not.toBeInTheDocument();
     });
