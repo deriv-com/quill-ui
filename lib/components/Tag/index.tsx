@@ -16,6 +16,7 @@ export const Tag = forwardRef<HTMLDivElement, BaseTagProps>(
             isBold = false,
             icon,
             iconClassName,
+            showIcon = true,
             ...rest
         },
         ref,
@@ -38,13 +39,15 @@ export const Tag = forwardRef<HTMLDivElement, BaseTagProps>(
                 {...rest}
                 ref={ref}
             >
-                <TagIcon
-                    isBold={isBold}
-                    className={iconClassName}
-                    icon={icon}
-                    color={tagColor}
-                    size={size}
-                />
+                {showIcon && (
+                    <TagIcon
+                        isBold={isBold}
+                        className={iconClassName}
+                        icon={icon}
+                        color={tagColor}
+                        size={size}
+                    />
+                )}
 
                 {size === "sm" || size === "xs" ? (
                     <CaptionText bold={isBold} color={tagColor}>
