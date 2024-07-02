@@ -1,16 +1,22 @@
 import { renderHook, act, render } from "@testing-library/react";
-import { useDropdown } from ".."; // Adjust the path to your actual file
+import { useDropdown } from "..";
 import userEvent from "@testing-library/user-event";
+import { DropdownProvider } from "@providers/dropdown/dropdownProvider";
+import { ReactNode } from "react";
+
+const wrapper = ({ children }: { children: ReactNode }) => (
+    <DropdownProvider>{children}</DropdownProvider>
+);
 
 describe("useDropdown", () => {
     test("should initialize as closed", () => {
-        const { result } = renderHook(() => useDropdown());
+        const { result } = renderHook(() => useDropdown(), { wrapper });
         const { isOpen } = result.current;
         expect(isOpen).toBe(false);
     });
 
     test("should close the dropdown when open and close is called", () => {
-        const { result } = renderHook(() => useDropdown());
+        const { result } = renderHook(() => useDropdown(), { wrapper });
 
         act(() => {
             result.current.open();
@@ -25,7 +31,7 @@ describe("useDropdown", () => {
     });
 
     test("should close the dropdown when clicking outside", async () => {
-        const { result } = renderHook(() => useDropdown());
+        const { result } = renderHook(() => useDropdown(), { wrapper });
 
         const { getByText } = render(
             <div>
@@ -43,5 +49,23 @@ describe("useDropdown", () => {
             await userEvent.click(getByText("outside"));
         });
         expect(result.current.isOpen).toBe(false);
+    });
+
+    test("should change the dropdown value", async () => {
+        const { result } = renderHook(() => useDropdown(), { wrapper });
+
+        expect(result.current.selectedValue).toBe(undefined);
+
+        act(() => {
+            result.current.setSelectedValue("value");
+        });
+
+        expect(result.current.selectedValue).toBe("value");
+
+        act(() => {
+            result.current.setSelectedValue("selected");
+        });
+
+        expect(result.current.selectedValue).toBe("selected");
     });
 });
