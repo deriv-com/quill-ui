@@ -1,16 +1,14 @@
-import { useState, useCallback, useRef } from "react";
+import { DropdownContext } from "@providers/dropdown/dropdownContext";
+import { useContext, useRef } from "react";
 import { useOnClickOutside } from "usehooks-ts";
 
-const useDropdown = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const ref = useRef(null);
+export const useDropdown = () => {
+    const ref = useRef<HTMLDivElement>(null);
 
-    const open = useCallback(() => setIsOpen(true), []);
-    const close = useCallback(() => setIsOpen(false), []);
+    const { isOpen, close, open, selectedValue, setSelectedValue } =
+        useContext(DropdownContext);
 
     useOnClickOutside(ref, close);
 
-    return { ref, isOpen, open, close };
+    return { ref, selectedValue, isOpen, open, close, setSelectedValue };
 };
-
-export default useDropdown;
