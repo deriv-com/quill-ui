@@ -8,6 +8,7 @@ import {
     LabelPairedChevronLeftSmFillIcon,
 } from "@deriv/quill-icons";
 import { Text } from "@components/Typography";
+import dayjs from "dayjs";
 
 export interface DatePickerProps
     extends Omit<
@@ -52,11 +53,6 @@ export const DatePicker = ({
     nextLabel = (
         <LabelPairedChevronRightSmFillIcon fill="var(--component-textIcon-normal-prominent)" />
     ),
-    optionsConfig = {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-    },
     onChange,
     onFormattedDate,
     prev2Label = null,
@@ -72,8 +68,7 @@ export const DatePicker = ({
     wrapperClassName,
     ...rest
 }: DatePickerProps) => {
-    const formatLocaleString = (date: Date) =>
-        date.toLocaleString(locale || navigator.language, optionsConfig);
+    const formatLocaleString = (date: Date) => dayjs(date).format("DD/MM/YYYY");
 
     const formatSelectedDate = (date: Value) => {
         if (!date) return "";
