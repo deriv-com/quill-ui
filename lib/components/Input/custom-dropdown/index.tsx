@@ -8,6 +8,7 @@ import "./custom-dropdown.scss";
 export interface TCustomDropdown extends InputProps {
     isAutocomplete?: boolean;
     onClickDropdown?: (e: React.MouseEvent<HTMLDivElement>) => void;
+    containerClassName?: string;
 }
 
 const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
@@ -19,6 +20,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             value,
             onClickDropdown,
             onChange,
+            containerClassName,
             ...rest
         },
         ref,
@@ -51,7 +53,13 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
         };
 
         return (
-            <div ref={dropdownRef}>
+            <div
+                ref={dropdownRef}
+                className={clsx(
+                    `quill-custom-dropdown__container--${isOpen}`,
+                    containerClassName,
+                )}
+            >
                 <div ref={ref} onClick={handleInputClick}>
                     <Input
                         dropdown
@@ -59,13 +67,21 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
                         isDropdownOpen={isOpen}
                         readOnly={!isAutocomplete}
                         value={selectedValue}
-                        className={clsx("custom-dropdown__input", className)}
+                        className={clsx(
+                            "quill-custom-dropdown__input",
+                            className,
+                        )}
                         onChange={handleOnChange}
                         {...rest}
                     />
                 </div>
-
-                {isOpen && children}
+                <div className="quill-custom-dropdown__content--container">
+                    {isOpen && (
+                        <div className="quill-custom-dropdown__content">
+                            {children}
+                        </div>
+                    )}
+                </div>
             </div>
         );
     },
