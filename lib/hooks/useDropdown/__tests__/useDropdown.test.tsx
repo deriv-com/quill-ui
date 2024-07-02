@@ -1,5 +1,5 @@
 import { renderHook, act, render } from "@testing-library/react";
-import useDropdown from ".."; // Adjust the path to your actual file
+import { useDropdown } from ".."; // Adjust the path to your actual file
 import userEvent from "@testing-library/user-event";
 
 describe("useDropdown", () => {

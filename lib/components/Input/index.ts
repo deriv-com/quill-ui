@@ -6,3 +6,4 @@ export * from "./text-field";
 export * from "./textarea";
 export * from "./text-field-addon";
 export * from "./date-picker";
+export * from "./custom-dropdown";

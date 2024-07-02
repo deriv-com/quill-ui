@@ -11,9 +11,10 @@ import Input, { InputProps } from "../base";
 import { DatePicker, DatePickerProps } from "@components/Atom";
 import { reactNodeToString } from "@utils/common-utils";
 import dayjs from "dayjs";
-import useDropdown from "@hooks/useDropdown";
+import { useDropdown } from "@hooks/useDropdown";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import { StandaloneCalendarRegularIcon } from "@deriv/quill-icons";
+import { DropdownProvider } from "@providers/dropdown/dropdownProvider";
 
 dayjs.extend(customParseFormat);
 
@@ -26,10 +27,7 @@ export interface TDatePickerDropdownProps extends Omit<InputProps, "leftIcon"> {
 
 const dateFormat = "DD/MM/YYYY";
 
-export const DatePickerDropdown = forwardRef<
-    HTMLInputElement,
-    TDatePickerDropdownProps
->(
+const DatePickerInput = forwardRef<HTMLInputElement, TDatePickerDropdownProps>(
     (
         {
             label,
@@ -46,7 +44,7 @@ export const DatePickerDropdown = forwardRef<
         },
         ref,
     ) => {
-        const [date, setDate] = useState<string | undefined>();
+        const [date, setDate] = useState<string>();
         const inputRef = useRef<HTMLInputElement>(null);
         const { ref: dropdownRef, isOpen, open, close } = useDropdown();
         const {
@@ -164,5 +162,16 @@ export const DatePickerDropdown = forwardRef<
         );
     },
 );
+
+export const DatePickerDropdown = forwardRef<
+    HTMLInputElement,
+    TDatePickerDropdownProps
+>(({ ...rest }, ref) => {
+    return (
+        <DropdownProvider>
+            <DatePickerInput ref={ref} {...rest} />
+        </DropdownProvider>
+    );
+});
 
 export default DatePickerDropdown;

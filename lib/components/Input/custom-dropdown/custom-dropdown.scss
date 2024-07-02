@@ -1,0 +1,8 @@
+.custom-dropdown {
+    &__input {
+        & label {
+            pointer-events: none;
+            cursor: text;
+        }
+    }
+}
