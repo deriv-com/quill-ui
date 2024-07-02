@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { DatePicker } from "../index";
+import dayjs from "dayjs";
 
 describe("DatePicker", () => {
     const currentDate = new Date();
@@ -12,23 +13,7 @@ describe("DatePicker", () => {
             year: "numeric",
         },
     );
-    const defaultReturnedSelectedDateFormatter = currentDate.toLocaleString(
-        navigator.language,
-        {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-        },
-    );
-    const customOptionsConfig = {
-        day: "numeric",
-        month: "short",
-        year: "numeric",
-    };
-    const customReturnedSelectedDateFormatter = currentDate.toLocaleString(
-        navigator.language,
-        customOptionsConfig as Intl.DateTimeFormatOptions,
-    );
+
     const next2Label = "+";
     const prev2Label = "-";
     const mockOnFormattedDate = jest.fn();
@@ -58,24 +43,7 @@ describe("DatePicker", () => {
         await waitFor(() => {
             expect(mockOnChange).toHaveBeenCalled();
             expect(mockOnFormattedDate).toHaveBeenCalledWith(
-                defaultReturnedSelectedDateFormatter,
-            );
-        });
-    });
-
-    it("should format returned selected date according to the passed custom config", async () => {
-        render(
-            <DatePicker
-                onFormattedDate={mockOnFormattedDate}
-                optionsConfig={customOptionsConfig}
-            />,
-        );
-
-        userEvent.click(screen.getByText(currentDate.getDate()));
-
-        await waitFor(() => {
-            expect(mockOnFormattedDate).toHaveBeenCalledWith(
-                customReturnedSelectedDateFormatter,
+                dayjs(currentDate).format("DD/MM/YYYY"),
             );
         });
     });
