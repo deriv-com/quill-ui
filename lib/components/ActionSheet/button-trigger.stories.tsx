@@ -44,6 +44,12 @@ const meta: Meta = {
             description:
                 "This prop controls if action sheet should be closed on drag down or not. Default value: false. Property should be passed to ActionSheet.Portal",
         },
+        fullHeightOnOpen: {
+            description:
+                "This props controls is full height when open the actionsheet",
+            control: { type: "boolean" },
+            table: { type: { summary: "boolean" } },
+        },
         handleOpen: { table: { disable: true } },
         handleClose: { table: { disable: true } },
         onOpen: {

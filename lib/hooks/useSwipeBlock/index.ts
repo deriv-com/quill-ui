@@ -6,12 +6,14 @@ interface SwipeBlockType {
     show?: boolean;
     onClose?: () => void;
     shouldCloseOnDrag?: boolean;
+    fullHeightOnOpen?: boolean;
 }
 
 export const useSwipeBlock = ({
     show,
     onClose,
     shouldCloseOnDrag,
+    fullHeightOnOpen,
 }: SwipeBlockType) => {
     const [height, setHeight] = useState("auto");
     const [isScrolled, setIsScrolled] = useState(false);
@@ -25,7 +27,7 @@ export const useSwipeBlock = ({
             setHeight("100%");
         }
         if (!isLg && show) {
-            setHeight("auto");
+            fullHeightOnOpen ? setHeight("90vh") : setHeight("auto");
         }
     }, [show, isLg]);
 

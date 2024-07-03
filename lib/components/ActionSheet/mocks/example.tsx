@@ -23,6 +23,7 @@ export const ActionSheetExample = ({
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
     shouldCloseOnDrag,
+    fullHeightOnOpen,
     isPrimaryButtonDisabled,
     isSecondaryButtonDisabled,
     ...props
@@ -35,7 +36,10 @@ export const ActionSheetExample = ({
         <>
             <ActionSheet.Root {...props} isOpen={open} onOpen={openHandler}>
                 <ActionSheet.Trigger label="Click Here" />
-                <ActionSheet.Portal shouldCloseOnDrag={shouldCloseOnDrag}>
+                <ActionSheet.Portal
+                    shouldCloseOnDrag={shouldCloseOnDrag}
+                    fullHeightOnOpen={fullHeightOnOpen}
+                >
                     <ActionSheet.Header
                         title={title}
                         description={description}
@@ -89,6 +93,7 @@ export const ActionSheetExampleWithIconTrigger = ({
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
     shouldCloseOnDrag,
+    fullHeightOnOpen,
     isPrimaryButtonDisabled,
     isSecondaryButtonDisabled,
     ...props
@@ -100,7 +105,10 @@ export const ActionSheetExampleWithIconTrigger = ({
                     iconComponent={LabelPairedBarsSmBoldIcon}
                     iconClassName="mock-action-sheet--trigger"
                 />
-                <ActionSheet.Portal shouldCloseOnDrag={shouldCloseOnDrag}>
+                <ActionSheet.Portal
+                    shouldCloseOnDrag={shouldCloseOnDrag}
+                    fullHeightOnOpen={fullHeightOnOpen}
+                >
                     <ActionSheet.Header
                         title={title}
                         description={description}
@@ -204,6 +212,7 @@ export const ActionSheetExampleControlled = ({
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
     shouldCloseOnDrag,
+    fullHeightOnOpen,
     isPrimaryButtonDisabled,
     isSecondaryButtonDisabled,
     ...props
@@ -211,7 +220,10 @@ export const ActionSheetExampleControlled = ({
     return (
         <>
             <ActionSheet.Root {...props}>
-                <ActionSheet.Portal shouldCloseOnDrag={shouldCloseOnDrag}>
+                <ActionSheet.Portal
+                    shouldCloseOnDrag={shouldCloseOnDrag}
+                    fullHeightOnOpen={fullHeightOnOpen}
+                >
                     <ActionSheet.Header
                         title={title}
                         description={description}

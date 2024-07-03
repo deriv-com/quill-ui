@@ -6,9 +6,17 @@ import { useSwipeBlock } from "@hooks/useSwipeBlock";
 import { ActionSheetContext } from "../root";
 import clsx from "clsx";
 
-type PortalProps = ComponentProps<"div"> & { shouldCloseOnDrag?: boolean };
+interface PortalProps extends ComponentProps<"div"> {
+    shouldCloseOnDrag?: boolean;
+    fullHeightOnOpen?: boolean;
+}
 
-const Portal = ({ children, shouldCloseOnDrag, ...restProps }: PortalProps) => {
+const Portal = ({
+    children,
+    shouldCloseOnDrag,
+    fullHeightOnOpen = false,
+    ...restProps
+}: PortalProps) => {
     const { show, handleClose, className, position, type, expandable } =
         useContext(ActionSheetContext);
     const { height, containerRef, bindHandle, isScrolled, isLg } =
@@ -16,6 +24,7 @@ const Portal = ({ children, shouldCloseOnDrag, ...restProps }: PortalProps) => {
             show,
             onClose: handleClose,
             shouldCloseOnDrag,
+            fullHeightOnOpen,
         });
 
     return (
