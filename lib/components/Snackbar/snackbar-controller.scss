@@ -1,0 +1,8 @@
+@import "@deriv-com/quill-tokens/dist/breakpoints.scss";
+
+.snackbar {
+    &--container {
+        display: flex;
+        justify-content: center;
+    }
+}
