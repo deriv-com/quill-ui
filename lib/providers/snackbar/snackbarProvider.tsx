@@ -28,12 +28,12 @@ export const SnackbarProvider = ({
         });
     };
 
-    const removeSnackbar = (id?: string) => {
+    const removeSnackbar = (id: string) => {
         setQueue((prevQueue: SnackbarProps[]) => {
             return prevQueue.map((item, index) => {
                 if (index === 0) {
                     setTimeout(() => {
-                        removeSnackbarFromQueue(id ?? "");
+                        removeSnackbarFromQueue(id);
                     }, 500);
                     return { ...item, isVisible: false };
                 }
