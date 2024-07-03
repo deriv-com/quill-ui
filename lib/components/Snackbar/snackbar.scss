@@ -5,16 +5,18 @@
     width: calc(100vw - var(--core-spacing-1600));
     max-width: 560px;
     min-height: var(--component-snackbar-height-min);
-    padding-inline: var(--component-snackbar-spacing-padding-md) var(--component-snackbar-spacing-padding-sm);
-    padding-block :var(--component-snackbar-spacing-padding-sm);
+    padding-inline: var(--component-snackbar-spacing-padding-md)
+        var(--component-snackbar-spacing-padding-sm);
+    padding-block: var(--component-snackbar-spacing-padding-sm);
     align-items: center;
     gap: var(--component-snackbar-spacing-gap);
     border-radius: var(--component-snackbar-border-radius);
-    border: var( --component-snackbar-border-width) solid var(--component-snackbar-border-color);
+    border: var(--component-snackbar-border-width) solid
+        var(--component-snackbar-border-color);
     background: var(--component-snackbar-bg);
     box-shadow: var(--core-elevation-shadow-330);
     position: fixed;
-    z-index: 1;
+    z-index: 999;
     bottom: -16px;
     transition: bottom var(--motion-duration-snappy)
         var(--motion-easing-inandout);
@@ -25,11 +27,13 @@
     }
 
     &.slide-up {
-        animation: slide-up var(--motion-duration-snappy) var(--motion-easing-inandout) forwards;
+        animation: slide-up var(--motion-duration-snappy)
+            var(--motion-easing-inandout) forwards;
     }
 
     &.slide-down {
-        animation: slide-down var(--motion-duration-snappy) var(--motion-easing-inandout) forwards;
+        animation: slide-down var(--motion-duration-snappy)
+            var(--motion-easing-inandout) forwards;
     }
 
     @include breakpoint("sm") {
@@ -39,12 +43,12 @@
 
     &__icon--container {
         display: flex;
-       flex-direction: column;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         flex-shrink: 0;
-        &>svg {
-           fill : var(--component-snackbar-icon);
+        & > svg {
+            fill: var(--component-snackbar-icon);
         }
     }
     &__message {
