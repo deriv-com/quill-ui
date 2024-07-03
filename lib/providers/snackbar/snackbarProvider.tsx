@@ -1,7 +1,7 @@
 import React, { useState, PropsWithChildren } from "react";
 import { SnackbarContext } from "./snackbarContext";
 import { SnackbarProps } from "@components/Snackbar/snackbar";
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
 
 export interface SnackbarProviderProps {
     children: React.ReactNode;
@@ -12,7 +12,7 @@ export const SnackbarProvider = ({
 }: PropsWithChildren<SnackbarProviderProps>) => {
     const [queue, setQueue] = useState<SnackbarProps[]>([]);
 
-    const addSnackbar = (props: Omit<SnackbarProps, 'id' | 'isVisible'>) => {
+    const addSnackbar = (props: Omit<SnackbarProps, "id" | "isVisible">) => {
         const modifiedSnackbar = {
             ...props,
             isVisible: true,
