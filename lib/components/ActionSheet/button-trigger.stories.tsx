@@ -25,6 +25,7 @@ const meta: Meta = {
         shouldCloseOnDrag: true,
         shouldCloseOnPrimaryButtonClick: true,
         shouldCloseOnSecondaryButtonClick: true,
+        fullHeightOnOpen: true,
     },
     argTypes: {
         isOpen: { table: { disable: true } },
