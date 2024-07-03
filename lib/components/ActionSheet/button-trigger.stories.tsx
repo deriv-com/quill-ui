@@ -25,6 +25,7 @@ const meta: Meta = {
         shouldCloseOnDrag: true,
         shouldCloseOnPrimaryButtonClick: true,
         shouldCloseOnSecondaryButtonClick: true,
+        fullHeightOnOpen: true,
     },
     argTypes: {
         isOpen: { table: { disable: true } },
@@ -43,6 +44,12 @@ const meta: Meta = {
             control: { type: "boolean" },
             description:
                 "This prop controls if action sheet should be closed on drag down or not. Default value: false. Property should be passed to ActionSheet.Portal",
+        },
+        fullHeightOnOpen: {
+            description:
+                "This props controls is full height when open the actionsheet",
+            control: { type: "boolean" },
+            table: { type: { summary: "boolean" } },
         },
         handleOpen: { table: { disable: true } },
         handleClose: { table: { disable: true } },
