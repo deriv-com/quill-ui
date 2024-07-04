@@ -1,6 +1,6 @@
 import React from "react";
 import DropdownChipMultiSelect from "..";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 const mockOptions = [
@@ -42,9 +42,13 @@ describe("Dropdown Chip Multi Select", () => {
             />,
         );
         const label = screen.getByText("Sample Label");
-        await userEvent.click(label);
+        await act(async () => {
+            await userEvent.click(label);
+        });
         const item = screen.getByText("Sample Item 3");
-        await userEvent.click(item);
+        await act(async () => {
+            await userEvent.click(item);
+        });
         expect(onSelectionChange).toHaveBeenCalled();
     });
 
@@ -58,9 +62,13 @@ describe("Dropdown Chip Multi Select", () => {
             />,
         );
         const label = screen.getByText("Sample Label");
-        await userEvent.click(label);
+        await act(async () => {
+            await userEvent.click(label);
+        });
         const item = screen.getByText("Sample Item 5");
-        await userEvent.click(item);
+        await act(async () => {
+            await userEvent.click(item);
+        });
         expect(onSelectionChange).not.toHaveBeenCalled();
     });
 
@@ -74,9 +82,13 @@ describe("Dropdown Chip Multi Select", () => {
             />,
         );
         const label = screen.getByText("Sample Label");
-        await userEvent.click(label);
+        await act(async () => {
+            await userEvent.click(label);
+        });
         const item = screen.getByText("Sample Item 3");
-        await userEvent.click(item);
+        await act(async () => {
+            await userEvent.click(item);
+        });
         expect(onSelectionChange).not.toHaveBeenCalled();
     });
 
@@ -90,11 +102,17 @@ describe("Dropdown Chip Multi Select", () => {
             />,
         );
         const label = screen.getByText("Sample Label");
-        await userEvent.click(label);
+        await act(async () => {
+            await userEvent.click(label);
+        });
         const item1 = screen.getByText("Sample Item 2");
-        await userEvent.click(item1);
+        await act(async () => {
+            await userEvent.click(item1);
+        });
         const item2 = screen.getByText("Sample Item 3");
-        await userEvent.click(item2);
+        await act(async () => {
+            await userEvent.click(item2);
+        });
         expect(onSelectionChange).toHaveBeenCalledWith([
             mockOptions[1],
             mockOptions[2],

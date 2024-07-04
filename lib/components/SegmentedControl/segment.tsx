@@ -4,7 +4,7 @@ import { Text } from "@components/Typography";
 import { KEY } from "@utils/common-utils";
 import { SegmentedControlProps } from "./base";
 
-interface SegmentProps {
+export interface SegmentProps {
     allowFocus?: boolean;
     className?: string;
     icon?: ReactNode;

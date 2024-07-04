@@ -1,0 +1,24 @@
+.quill-custom-dropdown {
+    &__container {
+        &--true {
+            position: relative;
+            z-index: 9;
+        }
+    }
+
+    &__input {
+        & label {
+            pointer-events: none;
+            cursor: text;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        width: 100%;
+
+        &--container {
+            position: relative;
+        }
+    }
+}

@@ -21,6 +21,7 @@ export interface DropdownItemProps extends HTMLAttributes<HTMLElement> {
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
     checkbox?: boolean;
+    labelColor?: string;
 }
 
 export const DropdownItem = React.forwardRef<HTMLElement, DropdownItemProps>(
@@ -37,6 +38,7 @@ export const DropdownItem = React.forwardRef<HTMLElement, DropdownItemProps>(
             selected = false,
             className,
             checkbox = false,
+            labelColor,
             ...rest
         }: DropdownItemProps,
         ref,
@@ -71,6 +73,7 @@ export const DropdownItem = React.forwardRef<HTMLElement, DropdownItemProps>(
                     "quill-dropdown-item-label",
                     disabled && "quill-typography__color--disabled",
                 )}
+                color={labelColor}
                 centered={centered}
             >
                 {label}

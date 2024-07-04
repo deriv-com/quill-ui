@@ -39,6 +39,13 @@ const meta = {
             },
             options: ["sm", "md"],
         },
+        fillAddonBorderColor: {
+            control: {
+                type: "text",
+            },
+            description:
+                "This is an optional prop only for fill variant addon border color. Pass the background color of the container to have the same border style as design.",
+        },
         addOnPosition: {
             control: {
                 type: "radio",
@@ -88,29 +95,33 @@ type Story = StoryObj<typeof meta>;
 
 export const LabelledOutline: Story = {
     args: {
-        label: 'Outline',
+        label: "Outline",
         placeholder: "Placeholder",
-        message: message
+        message: message,
     },
 };
 export const LabelledFill: Story = {
     args: {
-        label: 'Fill',
+        label: "Fill",
         placeholder: "Placeholder",
         variant: "fill",
-        message: message
+        message: message,
+        fillAddonBorderColor:
+            "var(--semantic-color-slate-solid-surface-frame-mid)",
     },
 };
 export const LabelledlessOutline: Story = {
     args: {
         placeholder: "Placeholder",
-        message: message
+        message: message,
     },
 };
 export const LabelledlessFill: Story = {
     args: {
         placeholder: "Placeholder",
         variant: "fill",
-        message: message
+        message: message,
+        fillAddonBorderColor:
+            "var(--semantic-color-slate-solid-surface-frame-mid)",
     },
 };

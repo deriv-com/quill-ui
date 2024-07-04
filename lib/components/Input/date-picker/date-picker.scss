@@ -1,0 +1,51 @@
+.datepicker {
+    &__input {
+        & label {
+            pointer-events: none;
+            cursor: text;
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        max-width: var(--temp-static-spacing-360);
+
+        &--open {
+            z-index: 99;
+        }
+
+        &--disabled {
+            pointer-events: none;
+        }
+    }
+
+    &__container {
+        position: absolute;
+        background-color: var(--component-dropdownList-bg);
+        border-radius: var(--core-borderRadius-400);
+        box-shadow: var(--semantic-elevation-shadow-card-hover);
+        margin-top: var(--core-size-200);
+        width: var(--temp-static-spacing-312);
+    }
+
+    &-dropdown__menu {
+        transform-origin: top;
+        transform: scaleY(0);
+        transition: transform var(--core-motion-duration-200)
+            var(--core-motion-ease-400);
+        width: inherit;
+        display: flex;
+
+        &--open {
+            transform: scaleY(1);
+        }
+
+        &--close {
+            transform: scaleY(0.5);
+        }
+
+        &--center {
+            justify-content: center;
+        }
+    }
+}

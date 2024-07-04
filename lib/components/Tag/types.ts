@@ -10,4 +10,5 @@ export type BaseTagProps = {
     size?: TRegularSizesWithExtraSmall;
     label?: ReactNode;
     className?: string;
+    showIcon?: boolean;
 };

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider renders the divider with the correct class name 1`] = `
+<div>
+  <div
+    class="quill-dropdown__divider"
+  />
+</div>
+`;

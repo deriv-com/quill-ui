@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownTitle applies centered class 1`] = `
+<div>
+  <div
+    class="quill-dropdown-title__container quill-dropdown-title__container--md"
+  >
+    <p
+      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--subtle quill-typography-centered quill-dropdown-title__label"
+    >
+      Test Label
+    </p>
+  </div>
+</div>
+`;
+
+exports[`DropdownTitle applies size class 1`] = `
+<div>
+  <div
+    class="quill-dropdown-title__container quill-dropdown-title__container--sm"
+  >
+    <p
+      class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--subtle quill-dropdown-title__label"
+    >
+      Test Label
+    </p>
+  </div>
+</div>
+`;
+
+exports[`DropdownTitle applies size class 2`] = `
+<div>
+  <div
+    class="quill-dropdown-title__container quill-dropdown-title__container--md"
+  >
+    <p
+      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--subtle quill-dropdown-title__label"
+    >
+      Test Label
+    </p>
+  </div>
+</div>
+`;

@@ -1,14 +1,40 @@
 import clsx from "clsx";
 import "./list.scss";
 import { TabProps } from "../types";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { TabContext } from "../container";
 
 export const TabList = ({ children, className }: TabProps) => {
-    const { contentStyle } = useContext(TabContext);
+    const { activeTab, contentStyle } = useContext(TabContext);
+
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const container = containerRef.current;
+
+        if (container) {
+            const items = container.querySelectorAll<HTMLDivElement>("button");
+            const item = items[activeTab as number];
+
+            if (item) {
+                const containerWidth = container.clientWidth;
+                const itemWidth = item.clientWidth;
+                const itemLeft = item.offsetLeft;
+                const scrollPosition =
+                    itemLeft - containerWidth / 2 + itemWidth / 2;
+
+                container.scrollTo({
+                    left: scrollPosition,
+                    behavior: "smooth",
+                });
+            }
+        }
+    }, [activeTab]);
+
     return (
         <div className={clsx("tab-list--container", className)}>
             <div
+                ref={containerRef}
                 className={clsx(
                     "tab-list--item",
                     contentStyle === "hug" && "tab-list--item-hug-content",

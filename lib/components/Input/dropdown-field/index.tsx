@@ -58,7 +58,6 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
             getToggleButtonProps,
             isOpen,
             openMenu,
-
             highlightedIndex,
         } = useCombobox({
             defaultSelectedItem:

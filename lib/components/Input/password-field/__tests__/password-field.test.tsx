@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import PasswordField, { PasswordFieldProps } from "..";
 import React from "react";
 
@@ -36,7 +36,9 @@ describe("PasswordField", () => {
     it("should call onChange handler when input changes", () => {
         const handleChange = jest.fn();
         const { input } = setup({ onChange: handleChange });
-        fireEvent.change(input, { target: { value: "Password1234" } });
+        act(() => {
+            fireEvent.change(input, { target: { value: "Password1234" } });
+        });
         expect(handleChange).toHaveBeenCalledTimes(1);
     });
 
@@ -52,19 +54,15 @@ describe("PasswordField", () => {
     it("toggles password visibility icon", () => {
         const { getByTestId } = render(<PasswordField />);
 
-        // Check that the eye slash icon is initially rendered
-        expect(getByTestId("eye-slash-icon")).toBeInTheDocument();
-
-        // Click the eye slash icon to show password
-        fireEvent.click(getByTestId("eye-slash-icon"));
-
-        // Check that the eye icon is rendered after clicking
         expect(getByTestId("eye-icon")).toBeInTheDocument();
 
-        // Click the eye icon to hide password
-        fireEvent.click(getByTestId("eye-icon"));
-
-        // Check that the eye slash icon is rendered again after clicking
+        act(() => {
+            fireEvent.click(getByTestId("eye-icon"));
+        });
         expect(getByTestId("eye-slash-icon")).toBeInTheDocument();
+        act(() => {
+            fireEvent.click(getByTestId("eye-slash-icon"));
+        });
+        expect(getByTestId("eye-icon")).toBeInTheDocument();
     });
 });

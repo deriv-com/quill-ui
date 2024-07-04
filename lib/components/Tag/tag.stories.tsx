@@ -13,6 +13,7 @@ const meta = {
         isBold: true,
         variant: "custom",
         color: "custom",
+        showIcon: true,
     },
     argTypes: {
         label: {
@@ -33,6 +34,10 @@ const meta = {
             table: {
                 disable: true,
             },
+        },
+        showIcon: {
+            ontrol: { type: "radio" },
+            description: "To display/ hide tag icon",
         },
         className: {
             name: "Class Name",

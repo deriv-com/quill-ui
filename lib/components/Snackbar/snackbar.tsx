@@ -4,12 +4,13 @@ import clsx from "clsx";
 import { Button } from "@components/Button";
 import { LabelPairedXmarkSmBoldIcon } from "@deriv/quill-icons";
 import { useSnackbar } from "@hooks/useSnackbar";
+import "./snackbar.scss";
 
 export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     icon?: ReactNode;
     id?: string;
     isVisible?: boolean;
-    message: string;
+    message: ReactNode;
     actionText?: string;
     hasCloseButton?: boolean;
     onActionClick?: () => void;

@@ -31,6 +31,7 @@ const meta: Meta = {
         shouldCloseOnDrag: true,
         shouldCloseOnPrimaryButtonClick: true,
         shouldCloseOnSecondaryButtonClick: true,
+        fullHeightOnOpen: false,
     },
     argTypes: {
         isOpen: { table: { disable: true } },
@@ -88,6 +89,12 @@ const meta: Meta = {
                 type: "object",
             },
             description: "Same as `primaryAction`",
+        },
+        fullHeightOnOpen: {
+            description:
+                "This props controls is full height when open the actionsheet",
+            control: { type: "boolean" },
+            table: { type: { summary: "boolean" } },
         },
         shouldCloseOnPrimaryButtonClick: {
             table: { type: { summary: "boolean | undefined" } },

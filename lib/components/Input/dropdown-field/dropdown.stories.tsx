@@ -40,6 +40,7 @@ const meta = {
         status: "neutral",
         placeholder: "Select",
         variant: "fill",
+        label: "",
     },
     argTypes: {
         status: {

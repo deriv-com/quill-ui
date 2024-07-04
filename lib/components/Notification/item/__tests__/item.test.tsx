@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import NotificationItem from "..";
 import userEvent from "@testing-library/user-event";
 import { STATUS, TYPE } from "@utils/notification-utils";
@@ -74,7 +74,9 @@ describe("NotificationItem", () => {
         render(<NotificationItem {...mokedProps} />);
 
         const notification = screen.getByText(testMessage);
-        await userEvent.click(notification);
+        await act(async () => {
+            await userEvent.click(notification);
+        });
 
         expect(mokedProps.onClick).toHaveBeenCalled();
     });
@@ -84,16 +86,18 @@ describe("NotificationItem", () => {
         const markAsReadButton = screen.getByRole("button", {
             name: "mark-as-read",
         });
-        await userEvent.click(markAsReadButton);
-
+        await act(async () => {
+            await userEvent.click(markAsReadButton);
+        });
         expect(mokedProps.onMarkAsRead).toHaveBeenCalled();
     });
     it("should call onClose after delete button is clicked", async () => {
         render(<NotificationItem {...mokedProps} />);
 
         const deleteButton = screen.getByRole("button", { name: "delete" });
-        await userEvent.click(deleteButton);
-
+        await act(async () => {
+            await userEvent.click(deleteButton);
+        });
         expect(mokedProps.onClose).toHaveBeenCalled();
     });
 });

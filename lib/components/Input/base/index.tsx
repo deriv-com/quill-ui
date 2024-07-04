@@ -17,10 +17,18 @@ import {
 import { Text } from "@components/Typography";
 import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import { PasswordStrengthValidation } from "@components/Atom";
+import { PatternFormat, PatternFormatProps } from "react-number-format";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
-export type Types = "text" | "email" | "password" | "tel" | "select" | "number";
+export type Types =
+    | "text"
+    | "email"
+    | "password"
+    | "tel"
+    | "select"
+    | "number"
+    | "date";
 export type TValidationMessage = {
     validationMessage: ReactNode;
     status: Status;
@@ -54,6 +62,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     rightPlaceholder?: string;
     addOn?: ReactNode;
     addOnIcon?: ReactNode;
+    formatProps?: PatternFormatProps;
 }
 
 const statusIconColors = {
@@ -101,6 +110,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             showInputButton,
             inputButton: InputButton,
             addOn,
+            formatProps,
             addOnIcon,
             ...rest
         },
@@ -119,6 +129,21 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             (status === "success" || status === "error") && !disabled
                 ? statusIcon[status]
                 : rightIcon;
+
+        const commonProps = {
+            readOnly,
+            required,
+            value: inputValue,
+            placeholder,
+            className: clsx(
+                "input",
+                "peer",
+                `input__align--${textAlignment}`,
+                `input__size--${inputSize}`,
+            ),
+            disabled: !!disabled,
+            id: label?.toString(),
+        };
 
         return (
             <div className="quill-input__container">
@@ -171,30 +196,31 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                         {leftPlaceholder}
                                     </Text>
                                 )}
-                            <input
-                                {...rest}
-                                readOnly={readOnly}
-                                required={required}
-                                type={type}
-                                value={inputValue}
-                                maxLength={maxLength}
-                                placeholder={placeholder}
-                                className={clsx(
-                                    "input",
-                                    "peer",
-                                    `input__align--${textAlignment}`,
-                                    `input__size--${inputSize}`,
-                                )}
-                                disabled={!!disabled}
-                                onChange={(e) => {
-                                    setInputValue(e.target.value);
-                                    onChange?.(e);
-                                }}
-                                onFocus={() => setFocused(true)}
-                                onBlur={() => setFocused(false)}
-                                id={label?.toString()}
-                                ref={ref}
-                            />
+                            {formatProps ? (
+                                <PatternFormat
+                                    {...commonProps}
+                                    {...formatProps}
+                                    onChange={(e) => {
+                                        setInputValue(e.target.value);
+                                        onChange?.(e);
+                                    }}
+                                    getInputRef={ref}
+                                />
+                            ) : (
+                                <input
+                                    {...rest}
+                                    {...commonProps}
+                                    onChange={(e) => {
+                                        setInputValue(e.target.value);
+                                        onChange?.(e);
+                                    }}
+                                    onFocus={() => setFocused(true)}
+                                    onBlur={() => setFocused(false)}
+                                    type={type}
+                                    maxLength={maxLength}
+                                    ref={ref}
+                                />
+                            )}
                             {label && inputSize === "md" && (
                                 <label
                                     className={clsx(

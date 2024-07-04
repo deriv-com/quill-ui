@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import TextArea from "..";
 
 describe("TextArea Component", () => {
@@ -13,7 +13,9 @@ describe("TextArea Component", () => {
             <TextArea placeholder="Test Placeholder" onChange={handleChange} />,
         );
         const textarea = getByPlaceholderText("Test Placeholder");
-        fireEvent.change(textarea, { target: { value: "Test" } });
+        act(() => {
+            fireEvent.change(textarea, { target: { value: "Test" } });
+        });
         expect(handleChange).toHaveBeenCalled();
         expect(textarea).toMatchSnapshot();
     });
@@ -45,7 +47,9 @@ describe("TextArea Component", () => {
     it("updates character counter as text is entered", () => {
         render(<TextArea showCharacterCounter maxLength={100} />);
         const textarea = screen.getByRole("textbox");
-        fireEvent.change(textarea, { target: { value: "Hello" } });
+        act(() => {
+            fireEvent.change(textarea, { target: { value: "Hello" } });
+        });
         expect(screen.getByText("5/100")).toBeInTheDocument();
     });
 
