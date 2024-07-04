@@ -110,7 +110,7 @@ describe("<ActionSheet.Portal/>", () => {
         const handleBar = screen.getByTestId("dt-actionsheet-handle-bar");
         expect(handleBar).toBeInTheDocument();
     });
-    it("should not render handle bar when expandable prop is false", () => {
+    it("should not render handle bar when showHandlebar prop is false", () => {
         render(
             <ActionSheet.Portal showHandlebar={false}>
                 Portal
