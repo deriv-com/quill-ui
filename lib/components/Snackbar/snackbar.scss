@@ -60,8 +60,7 @@
         text-overflow: ellipsis;
         overflow: hidden;
         word-wrap: break-word; /* Text gets broken up into another line for long words */
-        color: var(--component-snackbar-label-color);
-
+       
         @include breakpoint("sm") {
             -webkit-line-clamp: 1;
         }
