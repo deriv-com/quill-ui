@@ -1,9 +1,13 @@
 .quill-custom-dropdown {
-    &__container {
+    &__is-open {
         &--true {
-            position: relative;
-            z-index: 9;
+            z-index: 100;
         }
+    }
+
+    &__container {
+        position: relative;
+        max-width: 360px;
     }
 
     &__input {
@@ -11,6 +15,16 @@
             pointer-events: none;
             cursor: text;
         }
+
+        // &--hasValue {
+        //     &--true {
+        //         top: var(--core-spacing-50);
+        //     }
+
+        //     & .label {
+        //         top: var(--core-spacing-50);
+        //     }
+        // }
     }
 
     &__content {

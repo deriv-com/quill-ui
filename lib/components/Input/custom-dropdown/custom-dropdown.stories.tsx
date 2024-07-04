@@ -19,8 +19,9 @@ const meta = {
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
     args: {
-        isAutocomplete: false,
+        isAutocomplete: true,
         placeholder: "placeholder",
+        label: "label",
     },
     argTypes: {
         isAutocomplete: {
@@ -42,6 +43,10 @@ const meta = {
             table: { type: { summary: "sm | md" } },
             options: ["sm", "md"],
             control: "radio",
+        },
+        label: {
+            description: "label of the dropdown",
+            table: { type: { summary: "string" } },
         },
     },
     parameters: {

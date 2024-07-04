@@ -26,6 +26,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
         ref,
     ) => {
         const inputRef = useRef<HTMLInputElement>(null);
+
         const {
             ref: dropdownRef,
             isOpen,
@@ -48,7 +49,11 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
         };
 
         const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-            !onChange && setSelectedValue(e.target.value);
+            const { value } = e.target;
+
+            !onChange && !value
+                ? setSelectedValue("")
+                : setSelectedValue(value);
             onChange?.(e);
         };
 
@@ -56,7 +61,8 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             <div
                 ref={dropdownRef}
                 className={clsx(
-                    `quill-custom-dropdown__container--${isOpen}`,
+                    "quill-custom-dropdown__container",
+                    `quill-custom-dropdown__is-open--${isOpen}`,
                     containerClassName,
                 )}
             >
@@ -69,9 +75,11 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
                         value={selectedValue}
                         className={clsx(
                             "quill-custom-dropdown__input",
+                            `quill-custom-dropdown__input--hasValue--${!!selectedValue}`,
                             className,
                         )}
                         onChange={handleOnChange}
+                        type="select"
                         {...rest}
                     />
                 </div>

@@ -12,6 +12,6 @@ export const DropdownContext = React.createContext<DropdownContextValue>({
     isOpen: false,
     open: () => {},
     close: () => {},
-    selectedValue: undefined,
+    selectedValue: "",
     setSelectedValue: () => {},
 });
