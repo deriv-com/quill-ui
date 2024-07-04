@@ -67,7 +67,11 @@ export const Snackbar = ({
         >
             {Icon && <div className="snackbar__icon--container">{Icon}</div>}
             <div className="snackbar__message--container">
-                <Text className="snackbar__message" size="sm">
+                <Text
+                    className="snackbar__message"
+                    size="sm"
+                    style={{ color: "var(--component-snackbar-label-color)" }}
+                >
                     {message}
                 </Text>
             </div>
