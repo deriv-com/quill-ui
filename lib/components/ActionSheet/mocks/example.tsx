@@ -23,6 +23,8 @@ export const ActionSheetExample = ({
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
     shouldCloseOnDrag,
+    showHandlebar,
+    shouldDetectSwipingOnContainer,
     fullHeightOnOpen,
     isPrimaryButtonDisabled,
     isSecondaryButtonDisabled,
@@ -38,6 +40,10 @@ export const ActionSheetExample = ({
                 <ActionSheet.Trigger label="Click Here" />
                 <ActionSheet.Portal
                     shouldCloseOnDrag={shouldCloseOnDrag}
+                    shouldDetectSwipingOnContainer={
+                        shouldDetectSwipingOnContainer
+                    }
+                    showHandlebar={showHandlebar}
                     fullHeightOnOpen={fullHeightOnOpen}
                 >
                     <ActionSheet.Header
@@ -93,6 +99,8 @@ export const ActionSheetExampleWithIconTrigger = ({
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
     shouldCloseOnDrag,
+    shouldDetectSwipingOnContainer,
+    showHandlebar,
     fullHeightOnOpen,
     isPrimaryButtonDisabled,
     isSecondaryButtonDisabled,
@@ -107,6 +115,10 @@ export const ActionSheetExampleWithIconTrigger = ({
                 />
                 <ActionSheet.Portal
                     shouldCloseOnDrag={shouldCloseOnDrag}
+                    shouldDetectSwipingOnContainer={
+                        shouldDetectSwipingOnContainer
+                    }
+                    showHandlebar={showHandlebar}
                     fullHeightOnOpen={fullHeightOnOpen}
                 >
                     <ActionSheet.Header
@@ -212,6 +224,8 @@ export const ActionSheetExampleControlled = ({
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
     shouldCloseOnDrag,
+    shouldDetectSwipingOnContainer,
+    showHandlebar,
     fullHeightOnOpen,
     isPrimaryButtonDisabled,
     isSecondaryButtonDisabled,
@@ -222,6 +236,10 @@ export const ActionSheetExampleControlled = ({
             <ActionSheet.Root {...props}>
                 <ActionSheet.Portal
                     shouldCloseOnDrag={shouldCloseOnDrag}
+                    shouldDetectSwipingOnContainer={
+                        shouldDetectSwipingOnContainer
+                    }
+                    showHandlebar={showHandlebar}
                     fullHeightOnOpen={fullHeightOnOpen}
                 >
                     <ActionSheet.Header
