@@ -8,12 +8,16 @@ import clsx from "clsx";
 
 interface PortalProps extends ComponentProps<"div"> {
     shouldCloseOnDrag?: boolean;
+    shouldDetectSwipingOnContainer?: boolean;
+    showHandlebar?: boolean;
     fullHeightOnOpen?: boolean;
 }
 
 const Portal = ({
     children,
     shouldCloseOnDrag,
+    shouldDetectSwipingOnContainer = false,
+    showHandlebar = true,
     fullHeightOnOpen = false,
     ...restProps
 }: PortalProps) => {
@@ -54,11 +58,21 @@ const Portal = ({
                             )}
                             ref={containerRef}
                             style={{ height }}
-                            {...(!isScrolled && !isLg && expandable
+                            {...(shouldDetectSwipingOnContainer &&
+                            !isScrolled &&
+                            !isLg &&
+                            expandable
                                 ? bindHandle()
                                 : {})}
                         >
-                            {expandable && <HandleBar {...bindHandle()} />}
+                            {showHandlebar && (
+                                <HandleBar
+                                    {...(expandable || shouldCloseOnDrag
+                                        ? bindHandle()
+                                        : {})}
+                                />
+                            )}
+
                             {children}
                         </div>
                     </div>

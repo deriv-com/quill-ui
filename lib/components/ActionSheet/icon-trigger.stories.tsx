@@ -51,6 +51,20 @@ const meta: Meta = {
             description:
                 "This prop controls if action sheet should be closed on drag down or not. Default value: false. Property should be passed to ActionSheet.Portal",
         },
+        shouldDetectSwipingOnContainer: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            control: { type: "boolean" },
+            description:
+                "This prop controls if swiping will be detected on the whole Action Sheet, not only on Handlebar. Default value: false. Property should be passed to ActionSheet.Portal",
+        },
+        showHandlebar: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            control: { type: "boolean" },
+            description:
+                "This prop controls if Handlebar should be visible or not. Default value: true",
+        },
         handleOpen: { table: { disable: true } },
         handleClose: { table: { disable: true } },
         onOpen: {
