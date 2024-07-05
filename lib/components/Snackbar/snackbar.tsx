@@ -22,7 +22,7 @@ export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
 export const Snackbar = ({
     icon: Icon,
     id,
-    isVisible = false,
+    isVisible,
     message,
     actionText,
     onActionClick,
