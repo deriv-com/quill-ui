@@ -1,4 +1,4 @@
-import { ComponentProps, useContext } from "react";
+import { ComponentProps, forwardRef, useContext } from "react";
 import { createPortal } from "react-dom";
 import HandleBar from "../handle-bar";
 import "./portal.scss";
@@ -11,62 +11,63 @@ interface PortalProps extends ComponentProps<"div"> {
     fullHeightOnOpen?: boolean;
 }
 
-const Portal = ({
-    children,
-    shouldCloseOnDrag,
-    fullHeightOnOpen = false,
-    ...restProps
-}: PortalProps) => {
-    const { show, handleClose, className, position, type, expandable } =
-        useContext(ActionSheetContext);
-    const { height, containerRef, bindHandle, isScrolled, isLg } =
-        useSwipeBlock({
-            show,
-            onClose: handleClose,
-            shouldCloseOnDrag,
-            fullHeightOnOpen,
-        });
+const Portal = forwardRef<HTMLDivElement, PortalProps>(
+    (
+        { children, shouldCloseOnDrag, fullHeightOnOpen = false, ...restProps },
+        ref,
+    ) => {
+        const { show, handleClose, className, position, type, expandable } =
+            useContext(ActionSheetContext);
+        const { height, containerRef, bindHandle, isScrolled, isLg } =
+            useSwipeBlock({
+                show,
+                onClose: handleClose,
+                shouldCloseOnDrag,
+                fullHeightOnOpen,
+            });
 
-    return (
-        <>
-            {createPortal(
-                <>
-                    <div
-                        className="quill-action-sheet--portal quill-action-sheet--portal--wrapper"
-                        role="dialog"
-                        data-state={show ? "open" : "close"}
-                        {...restProps}
-                    >
-                        {type === "modal" && (
-                            <div
-                                data-testid="dt-actionsheet-overlay"
-                                onClick={handleClose}
-                                className="quill-action-sheet--portal quill-action-sheet--portal__variant--modal"
-                            />
-                        )}
+        return (
+            <>
+                {createPortal(
+                    <>
                         <div
-                            className={clsx(
-                                "quill-action-sheet--root",
-                                `quill-action-sheet--root__show--${show}`,
-                                `quill-action-sheet--root__position--${position}`,
-                                `quill-action-sheet--root__position--${position}__show--${show}`,
-                                className,
-                            )}
-                            ref={containerRef}
-                            style={{ height }}
-                            {...(!isScrolled && !isLg && expandable
-                                ? bindHandle()
-                                : {})}
+                            className="quill-action-sheet--portal quill-action-sheet--portal--wrapper"
+                            role="dialog"
+                            data-state={show ? "open" : "close"}
+                            ref={ref}
+                            {...restProps}
                         >
-                            {expandable && <HandleBar {...bindHandle()} />}
-                            {children}
+                            {type === "modal" && (
+                                <div
+                                    data-testid="dt-actionsheet-overlay"
+                                    onClick={handleClose}
+                                    className="quill-action-sheet--portal quill-action-sheet--portal__variant--modal"
+                                />
+                            )}
+                            <div
+                                className={clsx(
+                                    "quill-action-sheet--root",
+                                    `quill-action-sheet--root__show--${show}`,
+                                    `quill-action-sheet--root__position--${position}`,
+                                    `quill-action-sheet--root__position--${position}__show--${show}`,
+                                    className,
+                                )}
+                                ref={containerRef}
+                                style={{ height }}
+                                {...(!isScrolled && !isLg && expandable
+                                    ? bindHandle()
+                                    : {})}
+                            >
+                                {expandable && <HandleBar {...bindHandle()} />}
+                                {children}
+                            </div>
                         </div>
-                    </div>
-                </>,
-                document.body,
-            )}
-        </>
-    );
-};
+                    </>,
+                    document.body,
+                )}
+            </>
+        );
+    },
+);
 
 export default Portal;

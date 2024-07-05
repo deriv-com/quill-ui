@@ -23,6 +23,16 @@ const meta = {
         isAutocomplete: true,
         placeholder: "placeholder",
         label: "label",
+        actionSheetFooter: {
+            primaryAction: {
+                content: "123",
+                onAction: () => null,
+            },
+            secondaryAction: {
+                content: "123",
+                onAction: () => null,
+            },
+        },
     },
     argTypes: {
         isAutocomplete: {
@@ -78,9 +88,9 @@ The CustomDropdown component manages the open state for its children using the u
 The CustomDropdown component accepts the following props:
 
 - **isAutocomplete** (boolean): Determines whether the input supports autocomplete functionality. Default is false.
-- **onClickDropdown** ((e: React.MouseEvent<HTMLDivElement>) => void): A callback function that is called when the dropdown is clicked.
+- **onClickDropdown** ((e: React.MouseEvent<'HTMLDivElement'>) => void): A callback function that is called when the dropdown is clicked.
 - **value** (string | number): The current value of the dropdown input.
-- **onChange** ((e: React.ChangeEvent<HTMLInputElement>) => void): A callback function that is called when the input value changes.
+- **onChange** ((e: React.ChangeEvent<'HTMLInputElement'>) => void): A callback function that is called when the input value changes.
 - Additionally, it accepts all props from the Input component.
 
 ### Usage Example
@@ -165,12 +175,13 @@ const Content = () => {
         close();
     };
 
-    return data.map(({ value, text }) => {
+    return data.map(({ value, text }, index) => {
         return (
             <DropdownItem
                 onClick={() => handleClick(value)}
                 label={text}
                 selected={selectedValue == value}
+                key={index}
             >
                 {text}
             </DropdownItem>
@@ -190,5 +201,5 @@ const Template: React.FC<Template> = ({ ...args }: Template) => {
     );
 };
 
-export const defaultSnackbar = Template.bind(this) as Story;
-defaultSnackbar.args = { ...meta.args };
+export const Default = Template.bind(this) as Story;
+Default.args = { ...meta.args };

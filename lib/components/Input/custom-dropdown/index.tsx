@@ -1,4 +1,10 @@
-import React, { ChangeEvent, forwardRef, useEffect, useRef } from "react";
+import React, {
+    ChangeEvent,
+    ComponentProps,
+    forwardRef,
+    useEffect,
+    useRef,
+} from "react";
 import Input, { InputProps } from "../base";
 import { useDropdown } from "@hooks/useDropdown";
 import clsx from "clsx";
@@ -11,6 +17,7 @@ export interface TCustomDropdown extends InputProps {
     isAutocomplete?: boolean;
     onClickDropdown?: (e: React.MouseEvent<HTMLDivElement>) => void;
     containerClassName?: string;
+    actionSheetFooter?: ComponentProps<typeof ActionSheet.Footer>;
 }
 
 const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
@@ -23,20 +30,18 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             onClickDropdown,
             onChange,
             containerClassName,
+            actionSheetFooter,
+            label,
             ...rest
         },
         ref,
     ) => {
         const inputRef = useRef<HTMLInputElement>(null);
+        const containerRef = useRef<HTMLDivElement>(null);
+        const actionSheetRef = useRef<HTMLDivElement>(null);
 
-        const {
-            ref: dropdownRef,
-            isOpen,
-            open,
-            close,
-            selectedValue,
-            setSelectedValue,
-        } = useDropdown();
+        const { isOpen, open, close, selectedValue, setSelectedValue } =
+            useDropdown([containerRef, actionSheetRef]);
 
         const { isMobile } = useBreakpoints();
 
@@ -63,7 +68,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
 
         return (
             <div
-                ref={dropdownRef}
+                ref={containerRef}
                 className={clsx(
                     "quill-custom-dropdown__container",
                     `quill-custom-dropdown__is-open--${isOpen}`,
@@ -84,6 +89,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
                         )}
                         onChange={handleOnChange}
                         type="select"
+                        label={label}
                         {...rest}
                     />
                 </div>
@@ -102,20 +108,13 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
                             <ActionSheet.Portal
                                 shouldCloseOnDrag={true}
                                 fullHeightOnOpen={true}
+                                ref={actionSheetRef}
                             >
+                                {label && <ActionSheet.Header title={label} />}
                                 <ActionSheet.Content>
                                     {children}
                                 </ActionSheet.Content>
-                                <ActionSheet.Footer
-                                    primaryAction={{
-                                        content: "Primary",
-                                        onAction: () => close(),
-                                    }}
-                                    secondaryAction={{
-                                        content: "Secondary",
-                                        onAction: () => close(),
-                                    }}
-                                />
+                                <ActionSheet.Footer {...actionSheetFooter} />
                             </ActionSheet.Portal>
                         </ActionSheet.Root>
                     )}
