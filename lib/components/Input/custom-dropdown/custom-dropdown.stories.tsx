@@ -76,14 +76,17 @@ The CustomDropdown component is a versatile dropdown input that supports autocom
 
 The CustomDropdown component manages the open state for its children using the useDropdown hook. The useDropdown hook returns an object with the following properties:
 
-- **ref**: A React ref object to be attached to the dropdown container. This ref is used to detect click outside events and close the dropdown.
 - **selectedValue**: The current selected value from the dropdown.
 - **isOpen**: A boolean indicating whether the dropdown is currently open. This state is typically managed internally by the children of the CustomDropdown and is not used directly.
 - **open**: A function to open the dropdown.
 - **close**: A function to close the dropdown.
 - **setSelectedValue**: A function to set the selected value in the dropdown.
 
-### Props
+### useDropdown Props
+
+- **ref** (RefObject<'HTMLElement'>[] | RefObject<'HTMLElement'>): A React ref object to be attached to the dropdown container. This ref is used to detect click outside events and close the dropdown.
+
+### CustomDropdown Props
 
 The CustomDropdown component accepts the following props:
 
@@ -91,6 +94,8 @@ The CustomDropdown component accepts the following props:
 - **onClickDropdown** ((e: React.MouseEvent<'HTMLDivElement'>) => void): A callback function that is called when the dropdown is clicked.
 - **value** (string | number): The current value of the dropdown input.
 - **onChange** ((e: React.ChangeEvent<'HTMLInputElement'>) => void): A callback function that is called when the input value changes.
+- **containerClassName** (string): ClassName applied to the dropdown container.
+- **actionSheetFooter** (ComponentProps<typeof ActionSheet.Footer>): Accept all the props from action sheet footer component.
 - Additionally, it accepts all props from the Input component.
 
 ### Usage Example

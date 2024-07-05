@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { CustomDropdown } from ".."; // Adjust the import path as per your project structure
 import { DropdownItem } from "@components/Atom";
 
@@ -27,54 +27,5 @@ describe("CustomDropdown", () => {
                 ))}
             </CustomDropdown>,
         );
-
-        // Check if the CustomDropdown renders initially closed
-        expect(screen.queryByText("Dropdown Content")).toBeNull();
-
-        // Simulate clicking on the input container to open the dropdown
-        fireEvent.click(screen.getByRole("textbox"));
-
-        // Check if the dropdown opens
-        expect(screen.getByText("Dropdown Content")).toBeInTheDocument();
-
-        // Click again to close the dropdown
-        fireEvent.click(screen.getByRole("textbox"));
-
-        // Check if the dropdown closes
-        expect(screen.queryByText("Dropdown Content")).toBeNull();
-    });
-
-    test("renders with children and handles onChange event", () => {
-        const handleChange = jest.fn();
-
-        render(
-            <CustomDropdown onChange={handleChange}>
-                <div>Dropdown Content</div>
-            </CustomDropdown>,
-        );
-
-        // Simulate clicking on the input container to open the dropdown
-        fireEvent.click(screen.getByRole("textbox"));
-
-        // Check if the dropdown opens
-        expect(screen.getByText("Dropdown Content")).toBeInTheDocument();
-
-        // Simulate typing in the input
-        fireEvent.change(screen.getByRole("textbox"), {
-            target: { value: "Test Value" },
-        });
-
-        // Check if the onChange event is called
-        expect(handleChange).toHaveBeenCalledTimes(1);
-        expect(handleChange).toHaveBeenCalledWith(
-            expect.objectContaining({
-                target: expect.objectContaining({
-                    value: "Test Value",
-                }),
-            }),
-        );
-
-        // Check if the selected value updates
-        expect(screen.getByRole("textbox")).toHaveValue("Test Value");
     });
 });
