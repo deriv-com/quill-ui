@@ -31,11 +31,15 @@ describe("useDropdown", () => {
     });
 
     test("should close the dropdown when clicking outside", async () => {
-        const { result } = renderHook(() => useDropdown(), { wrapper });
+        const containerRef = { current: document.createElement("div") };
+
+        const { result } = renderHook(() => useDropdown(containerRef), {
+            wrapper,
+        });
 
         const { getByText } = render(
             <div>
-                <div ref={result.current.ref} onClick={result.current.open}>
+                <div ref={containerRef} onClick={result.current.open}>
                     inside
                 </div>
                 <button>outside</button>
