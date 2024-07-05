@@ -4,6 +4,8 @@ import { useDropdown } from "@hooks/useDropdown";
 import clsx from "clsx";
 import { DropdownProvider } from "@providers/dropdown/dropdownProvider";
 import "./custom-dropdown.scss";
+import useBreakpoints from "@hooks/useBreakpoints";
+import ActionSheet from "@components/ActionSheet";
 
 export interface TCustomDropdown extends InputProps {
     isAutocomplete?: boolean;
@@ -35,6 +37,8 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             selectedValue,
             setSelectedValue,
         } = useDropdown();
+
+        const { isMobile } = useBreakpoints();
 
         useEffect(() => {
             value && setSelectedValue(value);
@@ -84,10 +88,36 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
                     />
                 </div>
                 <div className="quill-custom-dropdown__content--container">
-                    {isOpen && (
-                        <div className="quill-custom-dropdown__content">
-                            {children}
-                        </div>
+                    {!isMobile ? (
+                        isOpen && (
+                            <div className="quill-custom-dropdown__content">
+                                {children}
+                            </div>
+                        )
+                    ) : (
+                        <ActionSheet.Root
+                            isOpen={isOpen}
+                            onClose={() => close()}
+                        >
+                            <ActionSheet.Portal
+                                shouldCloseOnDrag={true}
+                                fullHeightOnOpen={true}
+                            >
+                                <ActionSheet.Content>
+                                    {children}
+                                </ActionSheet.Content>
+                                <ActionSheet.Footer
+                                    primaryAction={{
+                                        content: "Primary",
+                                        onAction: () => close(),
+                                    }}
+                                    secondaryAction={{
+                                        content: "Secondary",
+                                        onAction: () => close(),
+                                    }}
+                                />
+                            </ActionSheet.Portal>
+                        </ActionSheet.Root>
                     )}
                 </div>
             </div>

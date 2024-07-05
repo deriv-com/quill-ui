@@ -12,6 +12,7 @@ import {
 import { CustomDropdown } from ".";
 import { useDropdown } from "@hooks/useDropdown";
 import { DropdownItem } from "@components/Atom";
+import BreakpointProvider from "@providers/breakpoint/breakpointProvider";
 
 const meta = {
     title: "Components/Inputs/CustomDropdown",
@@ -181,9 +182,11 @@ type Template = React.ComponentProps<typeof CustomDropdown>;
 
 const Template: React.FC<Template> = ({ ...args }: Template) => {
     return (
-        <CustomDropdown {...args}>
-            <Content />
-        </CustomDropdown>
+        <BreakpointProvider>
+            <CustomDropdown {...args}>
+                <Content />
+            </CustomDropdown>
+        </BreakpointProvider>
     );
 };
 
