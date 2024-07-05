@@ -18,6 +18,7 @@ export const SnackbarController = () => {
                         key={item.id}
                         icon={item.icon}
                         onActionClick={item.onActionClick}
+                        standalone={false}
                     />
                 );
             })}
