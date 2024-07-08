@@ -7,3 +7,4 @@ export * from "./hooks/useDropdown";
 export * from "./providers/theme/themeProvider";
 export * from "./providers/snackbar/snackbarProvider";
 export * from "./providers/notification/notificationsProvider";
+export * from "./providers/breakpoint/breakpointProvider";
