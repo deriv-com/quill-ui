@@ -46,7 +46,8 @@ const DatePickerInput = forwardRef<HTMLInputElement, TDatePickerDropdownProps>(
     ) => {
         const [date, setDate] = useState<string>();
         const inputRef = useRef<HTMLInputElement>(null);
-        const { ref: dropdownRef, isOpen, open, close } = useDropdown();
+        const dropdownRef = useRef<HTMLInputElement>(null);
+        const { isOpen, open, close } = useDropdown(dropdownRef);
         const {
             selectRange,
             className: datePickerClassName,

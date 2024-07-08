@@ -12,6 +12,7 @@ import {
 import { CustomDropdown } from ".";
 import { useDropdown } from "@hooks/useDropdown";
 import { DropdownItem } from "@components/Atom";
+import BreakpointProvider from "@providers/breakpoint/breakpointProvider";
 
 const meta = {
     title: "Components/Inputs/CustomDropdown",
@@ -19,8 +20,19 @@ const meta = {
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
     args: {
-        isAutocomplete: false,
+        isAutocomplete: true,
         placeholder: "placeholder",
+        label: "label",
+        actionSheetFooter: {
+            primaryAction: {
+                content: "123",
+                onAction: () => null,
+            },
+            secondaryAction: {
+                content: "123",
+                onAction: () => null,
+            },
+        },
     },
     argTypes: {
         isAutocomplete: {
@@ -43,6 +55,10 @@ const meta = {
             options: ["sm", "md"],
             control: "radio",
         },
+        label: {
+            description: "label of the dropdown",
+            table: { type: { summary: "string" } },
+        },
     },
     parameters: {
         docs: {
@@ -60,21 +76,26 @@ The CustomDropdown component is a versatile dropdown input that supports autocom
 
 The CustomDropdown component manages the open state for its children using the useDropdown hook. The useDropdown hook returns an object with the following properties:
 
-- **ref**: A React ref object to be attached to the dropdown container. This ref is used to detect click outside events and close the dropdown.
 - **selectedValue**: The current selected value from the dropdown.
 - **isOpen**: A boolean indicating whether the dropdown is currently open. This state is typically managed internally by the children of the CustomDropdown and is not used directly.
 - **open**: A function to open the dropdown.
 - **close**: A function to close the dropdown.
 - **setSelectedValue**: A function to set the selected value in the dropdown.
 
-### Props
+### useDropdown Props
+
+- **ref** (RefObject<'HTMLElement'>[] | RefObject<'HTMLElement'>): A React ref object to be attached to the dropdown container. This ref is used to detect click outside events and close the dropdown.
+
+### CustomDropdown Props
 
 The CustomDropdown component accepts the following props:
 
 - **isAutocomplete** (boolean): Determines whether the input supports autocomplete functionality. Default is false.
-- **onClickDropdown** ((e: React.MouseEvent<HTMLDivElement>) => void): A callback function that is called when the dropdown is clicked.
+- **onClickDropdown** ((e: React.MouseEvent<'HTMLDivElement'>) => void): A callback function that is called when the dropdown is clicked.
 - **value** (string | number): The current value of the dropdown input.
-- **onChange** ((e: React.ChangeEvent<HTMLInputElement>) => void): A callback function that is called when the input value changes.
+- **onChange** ((e: React.ChangeEvent<'HTMLInputElement'>) => void): A callback function that is called when the input value changes.
+- **containerClassName** (string): ClassName applied to the dropdown container.
+- **actionSheetFooter** (ComponentProps<typeof ActionSheet.Footer>): Accept all the props from action sheet footer component.
 - Additionally, it accepts all props from the Input component.
 
 ### Usage Example
@@ -159,12 +180,13 @@ const Content = () => {
         close();
     };
 
-    return data.map(({ value, text }) => {
+    return data.map(({ value, text }, index) => {
         return (
             <DropdownItem
                 onClick={() => handleClick(value)}
                 label={text}
                 selected={selectedValue == value}
+                key={index}
             >
                 {text}
             </DropdownItem>
@@ -176,11 +198,13 @@ type Template = React.ComponentProps<typeof CustomDropdown>;
 
 const Template: React.FC<Template> = ({ ...args }: Template) => {
     return (
-        <CustomDropdown {...args}>
-            <Content />
-        </CustomDropdown>
+        <BreakpointProvider>
+            <CustomDropdown {...args}>
+                <Content />
+            </CustomDropdown>
+        </BreakpointProvider>
     );
 };
 
-export const defaultSnackbar = Template.bind(this) as Story;
-defaultSnackbar.args = { ...meta.args };
+export const Default = Template.bind(this) as Story;
+Default.args = { ...meta.args };

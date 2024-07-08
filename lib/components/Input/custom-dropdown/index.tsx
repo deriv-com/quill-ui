@@ -1,14 +1,23 @@
-import React, { ChangeEvent, forwardRef, useEffect, useRef } from "react";
+import React, {
+    ChangeEvent,
+    ComponentProps,
+    forwardRef,
+    useEffect,
+    useRef,
+} from "react";
 import Input, { InputProps } from "../base";
 import { useDropdown } from "@hooks/useDropdown";
 import clsx from "clsx";
 import { DropdownProvider } from "@providers/dropdown/dropdownProvider";
 import "./custom-dropdown.scss";
+import useBreakpoints from "@hooks/useBreakpoints";
+import ActionSheet from "@components/ActionSheet";
 
 export interface TCustomDropdown extends InputProps {
     isAutocomplete?: boolean;
     onClickDropdown?: (e: React.MouseEvent<HTMLDivElement>) => void;
     containerClassName?: string;
+    actionSheetFooter?: ComponentProps<typeof ActionSheet.Footer>;
 }
 
 const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
@@ -21,19 +30,20 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             onClickDropdown,
             onChange,
             containerClassName,
+            actionSheetFooter,
+            label,
             ...rest
         },
         ref,
     ) => {
         const inputRef = useRef<HTMLInputElement>(null);
-        const {
-            ref: dropdownRef,
-            isOpen,
-            open,
-            close,
-            selectedValue,
-            setSelectedValue,
-        } = useDropdown();
+        const containerRef = useRef<HTMLDivElement>(null);
+        const actionSheetRef = useRef<HTMLDivElement>(null);
+
+        const { isOpen, open, close, selectedValue, setSelectedValue } =
+            useDropdown([containerRef, actionSheetRef]);
+
+        const { isMobile } = useBreakpoints();
 
         useEffect(() => {
             value && setSelectedValue(value);
@@ -48,15 +58,20 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
         };
 
         const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-            !onChange && setSelectedValue(e.target.value);
+            const { value } = e.target;
+
+            !onChange && !value
+                ? setSelectedValue("")
+                : setSelectedValue(value);
             onChange?.(e);
         };
 
         return (
             <div
-                ref={dropdownRef}
+                ref={containerRef}
                 className={clsx(
-                    `quill-custom-dropdown__container--${isOpen}`,
+                    "quill-custom-dropdown__container",
+                    `quill-custom-dropdown__is-open--${isOpen}`,
                     containerClassName,
                 )}
             >
@@ -69,17 +84,39 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
                         value={selectedValue}
                         className={clsx(
                             "quill-custom-dropdown__input",
+                            `quill-custom-dropdown__input--hasValue--${!!selectedValue}`,
                             className,
                         )}
                         onChange={handleOnChange}
+                        type="select"
+                        label={label}
                         {...rest}
                     />
                 </div>
                 <div className="quill-custom-dropdown__content--container">
-                    {isOpen && (
-                        <div className="quill-custom-dropdown__content">
-                            {children}
-                        </div>
+                    {!isMobile ? (
+                        isOpen && (
+                            <div className="quill-custom-dropdown__content">
+                                {children}
+                            </div>
+                        )
+                    ) : (
+                        <ActionSheet.Root
+                            isOpen={isOpen}
+                            onClose={() => close()}
+                        >
+                            <ActionSheet.Portal
+                                shouldCloseOnDrag={true}
+                                fullHeightOnOpen={true}
+                                ref={actionSheetRef}
+                            >
+                                {label && <ActionSheet.Header title={label} />}
+                                <ActionSheet.Content>
+                                    {children}
+                                </ActionSheet.Content>
+                                <ActionSheet.Footer {...actionSheetFooter} />
+                            </ActionSheet.Portal>
+                        </ActionSheet.Root>
                     )}
                 </div>
             </div>

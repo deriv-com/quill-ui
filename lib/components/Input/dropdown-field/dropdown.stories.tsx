@@ -41,6 +41,7 @@ const meta = {
         placeholder: "Select",
         variant: "fill",
         label: "",
+        value: "",
     },
     argTypes: {
         status: {
