@@ -16,6 +16,7 @@ export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     onActionClick?: () => void;
     onCloseAction?: () => void;
     delay?: number;
+    standalone?: boolean;
 }
 
 export const Snackbar = ({
@@ -28,6 +29,7 @@ export const Snackbar = ({
     onCloseAction,
     hasCloseButton = true,
     delay,
+    standalone = true,
     ...rest
 }: SnackbarProps) => {
     const { removeSnackbar } = useSnackbar();
@@ -56,6 +58,8 @@ export const Snackbar = ({
         onActionClick?.();
         handleClose();
     };
+
+    if (standalone && !isVisible) return;
 
     return (
         <div
