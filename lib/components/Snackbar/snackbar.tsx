@@ -59,7 +59,7 @@ export const Snackbar = ({
         handleClose();
     };
 
-    if (standalone && !isVisible) return;
+    if (standalone && !isVisible) return null;
 
     return (
         <div

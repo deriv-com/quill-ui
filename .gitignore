@@ -2,6 +2,7 @@
 /dist
 dist-es
 dist-cjs
+.idea
 
 # Logs
 logs
