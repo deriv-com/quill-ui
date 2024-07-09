@@ -30,9 +30,9 @@ const meta = {
         variant: "fill",
         fieldMarker: false,
         required: false,
-        showCharacterCounter: false,
+        show_counter: false,
         buttonLabel: "Button",
-        buttonPosition: "right",
+        button_position: "right",
         label: "",
         message: "",
     },
@@ -68,7 +68,7 @@ const meta = {
             control: "radio",
             options: ["fill", "outline"],
         },
-        buttonPosition: {
+        button_position: {
             control: "radio",
             options: ["right", "bottom"],
         },
@@ -88,7 +88,7 @@ export const Default: Story = {
 export const LabelledWithButtonBottom: Story = {
     args: {
         label: "Label",
-        buttonPosition: "bottom",
+        button_position: "bottom",
         variant: "outline",
     },
 };
@@ -97,7 +97,7 @@ export const LabelledWithButtonBottomAndValue: Story = {
     args: {
         label: "Label",
         value: "Input Value",
-        buttonPosition: "bottom",
+        button_position: "bottom",
         variant: "outline",
     },
 };
@@ -105,7 +105,7 @@ export const LabelledWithButtonBottomAndValue: Story = {
 export const LabelledWithButtonRight: Story = {
     args: {
         label: "Label",
-        buttonPosition: "right",
+        button_position: "right",
         variant: "outline",
     },
 };
@@ -115,7 +115,7 @@ export const WithLeftIconAndButtonBottom: Story = {
         variant: "outline",
         placeholder: "Placeholder",
         label: "Label",
-        buttonPosition: "bottom",
+        button_position: "bottom",
         leftIcon: <StandaloneCircleUserRegularIcon iconSize="sm" />,
     },
 };
@@ -125,10 +125,10 @@ export const SuccessWithMessageAndCharacterCounter: Story = {
         label: "Label",
         value: "Hello World",
         status: "success",
-        buttonPosition: "right",
+        button_position: "right",
         variant: "outline",
         message: "Message goes here",
-        showCharacterCounter: true,
+        show_counter: true,
         maxLength: 20,
     },
 };

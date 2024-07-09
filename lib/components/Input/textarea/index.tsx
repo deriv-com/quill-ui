@@ -23,7 +23,7 @@ export interface TextAreaProps
     message?: ReactNode;
     status?: Status;
     fieldMarker?: boolean;
-    showCharacterCounter?: boolean;
+    show_counter?: boolean;
 }
 
 const statusIconColors = {
@@ -50,7 +50,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             size = "md",
             message,
             maxLength,
-            showCharacterCounter = true,
+            show_counter = true,
             status = "neutral",
             textvalue = "",
             onChange,
@@ -128,7 +128,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                 </div>
                 <div className="quill-textarea__resizer"></div>
 
-                {(message || showCharacterCounter) && (
+                {(message || show_counter) && (
                     <div
                         className={clsx(
                             "message__container",
@@ -143,7 +143,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                         >
                             {message}
                         </CaptionText>
-                        {showCharacterCounter && maxLength && (
+                        {show_counter && maxLength && (
                             <CaptionText
                                 className={clsx(
                                     `message--${status}`,

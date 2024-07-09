@@ -30,7 +30,7 @@ const meta = {
         variant: "outline",
         fieldMarker: false,
         required: false,
-        showCharacterCounter: false,
+        show_counter: false,
     },
     argTypes: {
         inputSize: {

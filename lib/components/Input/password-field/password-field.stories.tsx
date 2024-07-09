@@ -42,7 +42,7 @@ const meta = {
         textAlignment: "left",
         fieldMarker: false,
         required: false,
-        showCharacterCounter: false,
+        show_counter: false,
     },
     argTypes: {
         inputSize: {
@@ -345,7 +345,7 @@ export const StatusMessageWithCharacterCounter: Story = {
         variant: variants.outline,
         status: status.error,
         message,
-        showCharacterCounter: true,
+        show_counter: true,
         maxLength: 15,
     },
 };
