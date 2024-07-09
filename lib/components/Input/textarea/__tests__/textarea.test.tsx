@@ -20,13 +20,9 @@ describe("TextArea Component", () => {
         expect(textarea).toMatchSnapshot();
     });
 
-    it("displays character counter when showCharacterCounter is true", () => {
+    it("displays character counter when show_counter is true", () => {
         const { getByText } = render(
-            <TextArea
-                maxLength={50}
-                showCharacterCounter={true}
-                textvalue="Test"
-            />,
+            <TextArea maxLength={50} show_counter={true} textvalue="Test" />,
         );
         expect(getByText("4/50")).toBeInTheDocument();
     });
@@ -45,7 +41,7 @@ describe("TextArea Component", () => {
     });
 
     it("updates character counter as text is entered", () => {
-        render(<TextArea showCharacterCounter maxLength={100} />);
+        render(<TextArea show_counter maxLength={100} />);
         const textarea = screen.getByRole("textbox");
         act(() => {
             fireEvent.change(textarea, { target: { value: "Hello" } });
@@ -53,8 +49,8 @@ describe("TextArea Component", () => {
         expect(screen.getByText("5/100")).toBeInTheDocument();
     });
 
-    it("shows character counter when showCharacterCounter is true and maxLength is provided", () => {
-        render(<TextArea showCharacterCounter maxLength={100} />);
+    it("shows character counter when show_counter is true and maxLength is provided", () => {
+        render(<TextArea show_counter maxLength={100} />);
         expect(screen.getByText("0/100")).toBeInTheDocument();
     });
 });

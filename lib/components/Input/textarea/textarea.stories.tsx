@@ -39,7 +39,7 @@ const meta = {
         variant: "fill",
         fieldMarker: false,
         required: false,
-        showCharacterCounter: false,
+        show_counter: false,
         resizable: true,
         wrapperClassName: "wrapperClass",
         textAreaClassName: "textAreaClass",
@@ -165,7 +165,7 @@ export const StatusMessageWithCharacterCounter: Story = {
         variant: variants.outline,
         status: status.error,
         message,
-        showCharacterCounter: true,
+        show_counter: true,
         maxLength: 200,
     },
 };

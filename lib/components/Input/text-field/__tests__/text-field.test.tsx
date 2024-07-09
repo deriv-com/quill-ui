@@ -38,7 +38,7 @@ describe("TextField", () => {
     });
 
     it("should show character counter if enabled", () => {
-        setup({ showCharacterCounter: true, maxLength: 10 });
+        setup({ show_counter: true, maxLength: 10 });
         act(() => {
             fireEvent.change(screen.getByRole("textbox"), {
                 target: { value: "Hello" },

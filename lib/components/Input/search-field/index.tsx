@@ -8,7 +8,7 @@ import {
 
 export type SearchFieldProps = Omit<
     ComponentProps<typeof Input>,
-    "label" | "icon" | "showCharacterCounter" | "rightIcon"
+    "label" | "icon" | "show_counter" | "rightIcon"
 >;
 
 export const SearchField = forwardRef<HTMLInputElement, SearchFieldProps>(

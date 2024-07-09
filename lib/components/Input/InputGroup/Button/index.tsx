@@ -17,7 +17,7 @@ export const InputGroupButton = forwardRef<
     (
         {
             status = "neutral",
-            buttonPosition = "right",
+            button_position = "right",
             inputSize = "md",
             value,
             label,
@@ -39,14 +39,14 @@ export const InputGroupButton = forwardRef<
         const showInputButton = status === "neutral" || disabled;
 
         const InputButtonWrapperClassName =
-            `quill-input__wrapper-with_button-${buttonPosition}--${inputSize}` +
-            `${label ? ` quill-input__wrapper-with_button-${buttonPosition}--${inputSize}--has-label` : ` quill-input__wrapper-with_button-${buttonPosition}--${inputSize}--no-label`}`;
+            `quill-input__wrapper-with_button-${button_position}--${inputSize}` +
+            `${label ? ` quill-input__wrapper-with_button-${button_position}--${inputSize}--has-label` : ` quill-input__wrapper-with_button-${button_position}--${inputSize}--no-label`}`;
 
         const InputButton = (
             <Button
                 disabled={isEmpty || disabled}
                 color="black"
-                fullWidth={buttonPosition === "bottom"}
+                fullWidth={button_position === "bottom"}
                 variant="primary"
                 size={inputSize}
                 iconPosition={buttonIconPosition}
@@ -62,7 +62,7 @@ export const InputGroupButton = forwardRef<
                 label={label}
                 status={status}
                 disabled={disabled}
-                buttonPosition={buttonPosition}
+                button_position={button_position}
                 showInputButton={showInputButton}
                 inputButton={InputButton}
                 value={value}

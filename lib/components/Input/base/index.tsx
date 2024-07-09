@@ -49,14 +49,14 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     variant?: Variants;
     message?: ReactNode;
     hideMessage?: boolean;
-    showCharacterCounter?: boolean;
+    show_counter?: boolean;
     textAlignment?: TLeftOrCenter;
     label?: ReactNode;
     value?: string | number;
     triggerActionIcon?: ReactNode;
     fieldMarker?: boolean;
     showInputButton?: boolean;
-    buttonPosition?: TRightOrBottom;
+    button_position?: TRightOrBottom;
     inputButton?: ReactNode;
     leftPlaceholder?: string;
     rightPlaceholder?: string;
@@ -95,7 +95,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             leftIcon,
             message,
             hideMessage = false,
-            showCharacterCounter,
+            show_counter,
             maxLength,
             textAlignment = "left",
             label,
@@ -293,9 +293,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     </div>
                     {showInputButton && InputButton}
                 </div>
-                {(message ||
-                    showCharacterCounter ||
-                    hasPasswordStrengthValidation) &&
+                {(message || show_counter || hasPasswordStrengthValidation) &&
                     !hideMessage && (
                         <div
                             className={clsx(
@@ -324,7 +322,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             <span className="message__container__text">
                                 {message}
                             </span>
-                            {showCharacterCounter && maxLength && (
+                            {show_counter && maxLength && (
                                 <span className="message__container__text">
                                     {inputValue.toString().length}/{maxLength}
                                 </span>
