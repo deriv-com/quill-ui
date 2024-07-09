@@ -107,6 +107,12 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
 
         useEffect(() => {
             setItems(options);
+            if (value) {
+                const defaultItem = options.find(
+                    (option) => option.value === value,
+                );
+                defaultItem && setSelectedItem(defaultItem);
+            }
         }, [options]);
 
         return (
