@@ -157,12 +157,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     inputValue = inputValue.slice(0, maxLength);
                     event.target.value = inputValue;
                 }
-                setInputValue(event.target.value);
-                onChange?.(event);
-            } else {
-                setInputValue(event.target.value);
-                onChange?.(event);
             }
+            setInputValue(event.target.value);
+            onChange?.(event);
         };
 
         return (
