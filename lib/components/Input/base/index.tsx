@@ -5,6 +5,7 @@ import {
     forwardRef,
     useEffect,
     useState,
+    ChangeEvent,
 } from "react";
 import "./base.scss";
 import React from "react";
@@ -116,8 +117,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         },
         ref,
     ) => {
+        if (value && maxLength && value.toString().length > maxLength) {
+            value = value.toString().slice(0, maxLength);
+        }
         const [inputValue, setInputValue] = useState(value || "");
         const [focused, setFocused] = React.useState(false);
+
         useEffect(() => {
             setInputValue(value || "");
         }, [value]);
@@ -143,6 +148,21 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             ),
             disabled: !!disabled,
             id: label?.toString(),
+        };
+
+        const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+            if (type === "number") {
+                let inputValue = event.target.value;
+                if (maxLength && inputValue.length > maxLength) {
+                    inputValue = inputValue.slice(0, maxLength);
+                    event.target.value = inputValue;
+                }
+                setInputValue(event.target.value);
+                onChange?.(event);
+            } else {
+                setInputValue(event.target.value);
+                onChange?.(event);
+            }
         };
 
         return (
@@ -210,10 +230,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 <input
                                     {...rest}
                                     {...commonProps}
-                                    onChange={(e) => {
-                                        setInputValue(e.target.value);
-                                        onChange?.(e);
-                                    }}
+                                    onChange={handleChange}
                                     onFocus={() => setFocused(true)}
                                     onBlur={() => setFocused(false)}
                                     type={type}
