@@ -5,6 +5,7 @@ import { Button } from "@components/Button";
 import { LabelPairedXmarkSmBoldIcon } from "@deriv/quill-icons";
 import { useSnackbar } from "@hooks/useSnackbar";
 import "./snackbar.scss";
+import { useOnClickOutside } from "usehooks-ts";
 
 export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     icon?: ReactNode;
@@ -40,6 +41,8 @@ export const Snackbar = ({
         }, delay);
     };
 
+    const ref = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
         id && (timerRef.current = snackbarDelayedRemove(id));
 
@@ -59,6 +62,18 @@ export const Snackbar = ({
         handleClose();
     };
 
+    id && useOnClickOutside(ref, () => removeSnackbar(id));
+
+    useEffect(() => {
+        if (id) {
+            window.addEventListener("scroll", () => removeSnackbar(id));
+
+            return () => {
+                window.removeEventListener("scroll", () => removeSnackbar(id));
+            };
+        }
+    }, []);
+
     if (standalone && !isVisible) return null;
 
     return (
@@ -68,6 +83,7 @@ export const Snackbar = ({
                 "snackbar",
                 isVisible ? "slide-up" : "slide-up slide-down",
             )}
+            ref={ref}
         >
             {Icon && <div className="snackbar__icon--container">{Icon}</div>}
             <div className="snackbar__message--container">
