@@ -44,11 +44,15 @@ const meta = {
                     summary: `"text" | "email" | "password" | "tel" | "select" | "number"`,
                 },
             },
-            control: false,
         },
         inputSize: {
             control: "radio",
             options: ["sm", "md"],
+        },
+        maxLength: {
+            control: {
+                type: "number",
+            },
         },
         leftIcon: {
             options: Object.keys(icons),
