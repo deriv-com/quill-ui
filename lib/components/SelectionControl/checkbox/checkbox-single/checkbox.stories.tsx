@@ -12,7 +12,6 @@ const meta = {
         checkboxPosition: "left",
         disabled: false,
         indeterminate: false,
-        showInfoIcon: false,
         size: "sm",
         label: "Selection control checkbox",
         name: "demo_checkbox",
@@ -45,16 +44,16 @@ const meta = {
             options: ["true", "false"],
             control: { type: "boolean" },
         },
+        infoIconMessage: {
+            description: "Flag for tooltip message with info icon",
+            control: {
+                type: "text",
+            },
+        },
         infoIconClassName: {
             table: { type: { summary: "string | undefined" } },
             description: "ClassName for info icon",
             control: false,
-        },
-        showInfoIcon: {
-            table: { type: { summary: "boolean | undefined" } },
-            description: "Flag for adding info icon",
-            options: ["true", "false"],
-            control: { type: "boolean" },
         },
         size: {
             table: { type: { summary: "string | undefined" } },
@@ -143,14 +142,14 @@ export const CheckboxDisabledChecked: Story = {
 
 export const CheckboxWithInfoIconSm: Story = {
     args: {
-        showInfoIcon: true,
+        infoIconMessage: "Tooltip message",
         label: "Selection control checkbox with info icon sm",
     },
 };
 
 export const CheckboxWithInfoIconMd: Story = {
     args: {
-        showInfoIcon: true,
+        infoIconMessage: "Tooltip message",
         size: "md",
         label: "Selection control checkbox with info icon md",
     },

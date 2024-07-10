@@ -69,6 +69,7 @@
     }
 
     &__info-icon {
+        display: flex;
         flex-shrink: 0;
         fill: var(--component-selectionControl-icon-default);
     }

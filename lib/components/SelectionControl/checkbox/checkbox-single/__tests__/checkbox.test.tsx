@@ -31,7 +31,9 @@ describe("Checkbox", () => {
     });
 
     it("should render info icon if showInfoIcon === true", () => {
-        const { container } = render(<Checkbox {...mockProps} showInfoIcon />);
+        const { container } = render(
+            <Checkbox {...mockProps} infoIconMessage="message here" />,
+        );
 
         expect(container).toMatchSnapshot();
     });
