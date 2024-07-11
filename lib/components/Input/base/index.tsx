@@ -166,13 +166,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             <div className="quill-input__container">
                 <div
                     className={clsx(
-                        className,
                         `quill-input__wrapper`,
                         inputValue.toString().length > 0 &&
                             `quill-input__wrapper--has-value`,
                         `quill-input__wrapper__variant--${variant}`,
                         `quill-input__wrapper__variant--${variant}--${status}`,
                         `quill-input__wrapper__size--${inputSize}`,
+                        className,
                     )}
                 >
                     {addOn}

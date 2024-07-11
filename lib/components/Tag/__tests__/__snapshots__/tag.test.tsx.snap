@@ -6,7 +6,7 @@ exports[`Tag Should render Custom Tag Fill without Icon 1`] = `
     class="tag tag__size-md tag__color--custom tag__color--custom-fill"
   >
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default custom"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default custom"
     >
       Label
     </p>
@@ -35,7 +35,7 @@ exports[`Tag Should render Custom Tag Outline with Icon 1`] = `
       </svg>
     </div>
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default custom"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default custom"
     >
       Label
     </p>
@@ -49,7 +49,7 @@ exports[`Tag Should render Custom Tag Outline without Icon 1`] = `
     class="tag tag__size-md tag__color--custom tag__color--custom-outline"
   >
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default custom"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default custom"
     >
       Label
     </p>
@@ -78,7 +78,7 @@ exports[`Tag Should render Custom Tag with Icon 1`] = `
       </svg>
     </div>
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default custom"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default custom"
     >
       Label
     </p>
@@ -92,7 +92,7 @@ exports[`Tag Should render Custom Tag without Icon 1`] = `
     class="tag tag__size-md tag__color--custom tag__color--custom-custom"
   >
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default custom"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default custom"
     >
       Label
     </p>
@@ -132,7 +132,7 @@ exports[`Tag Should render Custom with Icon 1`] = `
       </svg>
     </div>
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default success"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default success"
     >
       label
     </p>
@@ -172,7 +172,7 @@ exports[`Tag Should render Error Tag Fill 1`] = `
       </svg>
     </div>
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default error"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default error"
     >
       label
     </p>
@@ -212,7 +212,7 @@ exports[`Tag Should render Error Tag Outline 1`] = `
       </svg>
     </div>
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default error"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default error"
     >
       label
     </p>
@@ -252,7 +252,7 @@ exports[`Tag Should render Info Tag Fill 1`] = `
       </svg>
     </div>
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default info"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default info"
     >
       label
     </p>
@@ -292,7 +292,7 @@ exports[`Tag Should render Info Tag Outline 1`] = `
       </svg>
     </div>
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default info"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default info"
     >
       label
     </p>
@@ -332,7 +332,7 @@ exports[`Tag Should render Success Tag Fill 1`] = `
       </svg>
     </div>
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default success"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default success"
     >
       laabel
     </p>
@@ -372,7 +372,7 @@ exports[`Tag Should render Success Tag Outline 1`] = `
       </svg>
     </div>
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default success"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default success"
     >
       label
     </p>
@@ -412,7 +412,7 @@ exports[`Tag Should render Tag Default 1`] = `
       </svg>
     </div>
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default success"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default success"
     >
       label
     </p>
@@ -452,7 +452,7 @@ exports[`Tag Should render Warning Tag Fill 1`] = `
       </svg>
     </div>
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default warning"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default warning"
     >
       label
     </p>
@@ -492,7 +492,7 @@ exports[`Tag Should render Warning Tag Outline 1`] = `
       </svg>
     </div>
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default warning"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default warning"
     >
       label
     </p>

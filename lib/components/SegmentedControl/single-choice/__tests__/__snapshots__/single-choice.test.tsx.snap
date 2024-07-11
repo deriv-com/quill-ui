@@ -12,7 +12,7 @@ exports[`SegmentedControlSingleChoice should inherit container width 1`] = `
         class="item selected"
       >
         <span
-          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+          class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
         >
           Label
         </span>
@@ -21,7 +21,7 @@ exports[`SegmentedControlSingleChoice should inherit container width 1`] = `
         class="item"
       >
         <span
-          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+          class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
         >
           Label
         </span>
@@ -47,7 +47,7 @@ exports[`SegmentedControlSingleChoice should render segments with icons and labe
         </div>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Label
       </span>
@@ -63,7 +63,7 @@ exports[`SegmentedControlSingleChoice should render segments with icons and labe
         </div>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Label
       </span>
@@ -79,7 +79,7 @@ exports[`SegmentedControlSingleChoice should render segments with icons and labe
         </div>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Label
       </span>
@@ -95,7 +95,7 @@ exports[`SegmentedControlSingleChoice should render segments with icons and labe
         </div>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Label
       </span>
@@ -111,7 +111,7 @@ exports[`SegmentedControlSingleChoice should render segments with icons and labe
         </div>
       </span>
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Label
       </span>
@@ -193,7 +193,7 @@ exports[`SegmentedControlSingleChoice should render segments with labels only 1`
       class="item selected"
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Label
       </span>
@@ -202,7 +202,7 @@ exports[`SegmentedControlSingleChoice should render segments with labels only 1`
       class="item"
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Label
       </span>
@@ -211,7 +211,7 @@ exports[`SegmentedControlSingleChoice should render segments with labels only 1`
       class="item"
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Label
       </span>
@@ -220,7 +220,7 @@ exports[`SegmentedControlSingleChoice should render segments with labels only 1`
       class="item"
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Label
       </span>
@@ -229,7 +229,7 @@ exports[`SegmentedControlSingleChoice should render segments with labels only 1`
       class="item"
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Label
       </span>
@@ -247,7 +247,7 @@ exports[`SegmentedControlSingleChoice should render with one disabled option 1`]
       class="item selected"
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Label
       </span>
@@ -257,7 +257,7 @@ exports[`SegmentedControlSingleChoice should render with one disabled option 1`]
       disabled=""
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Label
       </span>
@@ -266,7 +266,7 @@ exports[`SegmentedControlSingleChoice should render with one disabled option 1`]
       class="item"
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Label
       </span>

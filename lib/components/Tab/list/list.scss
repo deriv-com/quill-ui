@@ -6,13 +6,13 @@ html.dark {
     --border-bottom-color-default: var(--core-color-opacity-white-100);
 }
 
-
 .tab-list {
     &--container {
         position: relative;
         display: flex;
         justify-content: center;
-        border-bottom: var(--component-tab-border-width-body) solid var(--component-tab-border-color-default);
+        border-bottom: var(--component-tab-border-width-body) solid
+            var(--component-tab-border-color-default);
     }
 
     &--item {
@@ -29,8 +29,5 @@ html.dark {
         &-hug-content {
             gap: var(--semantic-spacing-gap-md);
         }
-
     }
-
-
 }

@@ -32,7 +32,7 @@ exports[`RadioButton component should be checked by default if defaultChecked is
       </svg>
     </span>
     <span
-      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+      class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
     >
       Radio Option
     </span>
@@ -73,7 +73,7 @@ exports[`RadioButton component should be disabled if disabled is true 1`] = `
       </svg>
     </span>
     <span
-      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label quill-radio-button__label--disabled"
+      class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label quill-radio-button__label--disabled"
     >
       Radio Option
     </span>
@@ -113,7 +113,7 @@ exports[`RadioButton component should not be checked by default if defaultChecke
       </svg>
     </span>
     <span
-      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+      class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
     >
       Radio Option
     </span>
@@ -151,7 +151,7 @@ exports[`RadioButton component should not render info icon when hasInfo is false
       </svg>
     </span>
     <span
-      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+      class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
     >
       Radio Option
     </span>
@@ -192,7 +192,7 @@ exports[`RadioButton component should not trigger click event on input when info
       </svg>
     </span>
     <span
-      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label quill-radio-button__label--disabled"
+      class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label quill-radio-button__label--disabled"
     >
       Radio Option
     </span>
@@ -230,7 +230,7 @@ exports[`RadioButton component should render correctly with default props 1`] = 
       </svg>
     </span>
     <span
-      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+      class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
     >
       Radio Option
     </span>
@@ -268,7 +268,7 @@ exports[`RadioButton component should render info icon when hasInfo is true 1`] 
       </svg>
     </span>
     <span
-      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+      class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
     >
       Radio Option
     </span>
@@ -330,7 +330,7 @@ exports[`RadioButton component should render with a custom className 1`] = `
       </svg>
     </span>
     <span
-      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
+      class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-radio-button__label"
     >
       Radio Option
     </span>

@@ -3,7 +3,7 @@
 exports[`Heading Should render H1 Heading 1`] = `
 <div>
   <h1
-    class="quill-typography__h1 quill-typography__color--prominent"
+    class="quill-typography quill-typography__h1 quill-typography__color--prominent"
   >
     H1
      heading
@@ -14,7 +14,7 @@ exports[`Heading Should render H1 Heading 1`] = `
 exports[`Heading Should render H2 Heading 1`] = `
 <div>
   <h2
-    class="quill-typography__h2 quill-typography__color--prominent"
+    class="quill-typography quill-typography__h2 quill-typography__color--prominent"
   >
     H2
      heading
@@ -25,7 +25,7 @@ exports[`Heading Should render H2 Heading 1`] = `
 exports[`Heading Should render H3 Heading 1`] = `
 <div>
   <h3
-    class="quill-typography__h3 quill-typography__color--prominent"
+    class="quill-typography quill-typography__h3 quill-typography__color--prominent"
   >
     H3
      heading
@@ -36,7 +36,7 @@ exports[`Heading Should render H3 Heading 1`] = `
 exports[`Heading Should render H4 Heading 1`] = `
 <div>
   <h4
-    class="quill-typography__h4 quill-typography__color--prominent"
+    class="quill-typography quill-typography__h4 quill-typography__color--prominent"
   >
     H4
      heading
@@ -47,7 +47,7 @@ exports[`Heading Should render H4 Heading 1`] = `
 exports[`Heading Should render H5 Heading 1`] = `
 <div>
   <h5
-    class="quill-typography__h5 quill-typography__color--prominent"
+    class="quill-typography quill-typography__h5 quill-typography__color--prominent"
   >
     H5
      heading
@@ -58,7 +58,7 @@ exports[`Heading Should render H5 Heading 1`] = `
 exports[`Heading Should render H6 Heading 1`] = `
 <div>
   <h6
-    class="quill-typography__h6 quill-typography__color--prominent"
+    class="quill-typography quill-typography__h6 quill-typography__color--prominent"
   >
     H6
      heading
@@ -69,7 +69,7 @@ exports[`Heading Should render H6 Heading 1`] = `
 exports[`Heading Should render Hero Heading 1`] = `
 <div>
   <h1
-    class="quill-typography__hero quill-typography__color--prominent"
+    class="quill-typography quill-typography__hero quill-typography__color--prominent"
   >
     Hero
      heading

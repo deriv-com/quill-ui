@@ -11,7 +11,7 @@ exports[`TextFieldAddon component should render correctly with default props 1`]
       class="quill-addon quill-addon__position--left quill-addon__position--left--outline quill-addon__variant--outline"
     >
       <p
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Test Label
       </p>
@@ -48,7 +48,7 @@ exports[`TextFieldAddon component should render with a different variant 1`] = `
       class="quill-addon quill-addon__position--left quill-addon__position--left--fill quill-addon__variant--fill"
     >
       <p
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Test Label
       </p>
@@ -85,7 +85,7 @@ exports[`TextFieldAddon component should render with a right icon 1`] = `
       class="quill-addon quill-addon__position--left quill-addon__position--left--outline quill-addon__variant--outline"
     >
       <p
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Test Label
       </p>
@@ -128,7 +128,7 @@ exports[`TextFieldAddon component should render with the addon on the right 1`] 
       class="quill-addon quill-addon__position--right quill-addon__position--right--outline quill-addon__variant--outline"
     >
       <p
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Test Label
       </p>

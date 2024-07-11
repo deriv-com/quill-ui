@@ -1,6 +1,6 @@
 /* Global Styles */
-@import "./reset.scss";
 @import "@deriv-com/quill-tokens/dist/quill.css";
+@import url("https://unpkg.com/modern-normalize");
 
 @at-root {
     @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");

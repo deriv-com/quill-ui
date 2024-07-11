@@ -1,8 +1,8 @@
 import { DOTS } from "@hooks/usePaginationRange.tsx";
 import { PaginationProps } from "@components/Pagination/types";
-import "./pagination-base.scss";
 import { CaptionText } from "@components/Typography";
 import React from "react";
+import "./pagination-base.scss";
 export interface PaginationButtonProps
     extends Pick<PaginationProps, "variant"> {
     pageNumber: number | string;

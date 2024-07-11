@@ -2,8 +2,13 @@
     &__wrapper {
         position: relative;
         max-width: 360px;
+
+        ul {
+            margin: var(--core-spacing-50);
+            padding: var(--core-spacing-50);
+        }
     }
-   
+
     &__container {
         position: absolute;
         background-color: var(--component-dropdownList-bg);
@@ -16,7 +21,7 @@
         min-width: 360px;
         overflow-y: auto;
 
-        &--height{
+        &--height {
             max-height: 420px;
         }
 
@@ -42,14 +47,13 @@
     transform: scaleY(0);
     transition: transform var(--core-motion-duration-200)
         var(--core-motion-ease-400);
-    
+
     &--open {
         opacity: 1;
         transform: scaleY(1);
     }
 
     &--close {
-        
         opacity: 0;
         transform: scaleY(0);
     }

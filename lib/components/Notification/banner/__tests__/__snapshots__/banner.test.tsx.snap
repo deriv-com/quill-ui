@@ -21,12 +21,12 @@ exports[`NotificationBanner should display correct banner with a custom icon 1`]
         class="details"
       >
         <p
-          class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+          class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
         >
           Test title
         </p>
         <p
-          class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
+          class="quill-typography quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
         >
           Test message
         </p>
@@ -34,7 +34,8 @@ exports[`NotificationBanner should display correct banner with a custom icon 1`]
     </div>
     <button
       aria-label="close"
-      class="icon close"
+      class="quill-button quill-icon-button__size--sm quill__color--tertiary-black icon close"
+      data-state=""
     >
       <svg
         height="22"
@@ -92,12 +93,12 @@ exports[`NotificationBanner should display correct content 1`] = `
         class="details"
       >
         <p
-          class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+          class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
         >
           Test title
         </p>
         <p
-          class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
+          class="quill-typography quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
         >
           Test message
         </p>
@@ -105,7 +106,8 @@ exports[`NotificationBanner should display correct content 1`] = `
     </div>
     <button
       aria-label="close"
-      class="icon close"
+      class="quill-button quill-icon-button__size--sm quill__color--tertiary-black icon close"
+      data-state=""
     >
       <svg
         height="22"
@@ -163,12 +165,12 @@ exports[`NotificationBanner should hide after autohideTimeout + 240ms of animati
         class="details"
       >
         <p
-          class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+          class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
         >
           Test title
         </p>
         <p
-          class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
+          class="quill-typography quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
         >
           Test message
         </p>
@@ -176,7 +178,8 @@ exports[`NotificationBanner should hide after autohideTimeout + 240ms of animati
     </div>
     <button
       aria-label="close"
-      class="icon close"
+      class="quill-button quill-icon-button__size--sm quill__color--tertiary-black icon close"
+      data-state=""
     >
       <svg
         height="22"
@@ -234,12 +237,12 @@ exports[`NotificationBanner should render correctly for mobile - without close b
         class="details"
       >
         <p
-          class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+          class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
         >
           Test title
         </p>
         <p
-          class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
+          class="quill-typography quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
         >
           Test message
         </p>
@@ -278,12 +281,12 @@ exports[`NotificationBanner should render notification correctly based on the no
         class="details"
       >
         <p
-          class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+          class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
         >
           Test title
         </p>
         <p
-          class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
+          class="quill-typography quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message"
         >
           Test message
         </p>
@@ -291,7 +294,8 @@ exports[`NotificationBanner should render notification correctly based on the no
     </div>
     <button
       aria-label="close"
-      class="icon close"
+      class="quill-button quill-icon-button__size--sm quill__color--tertiary-black icon close"
+      data-state=""
     >
       <svg
         height="22"

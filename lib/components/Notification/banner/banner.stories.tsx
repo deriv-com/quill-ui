@@ -28,7 +28,7 @@ const meta = {
         onClose: fn(),
         title: "Hint",
         isMobile: false,
-        autohideTimeout: 5000,
+        autohideTimeout: 50000,
     },
     argTypes: {
         className: {

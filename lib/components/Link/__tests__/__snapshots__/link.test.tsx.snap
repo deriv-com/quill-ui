@@ -7,7 +7,7 @@ exports[`Link should render correctly with caption size and color black 1`] = `
     target="_blank"
   >
     <p
-      class="quill-typography__caption-text__weight--regular__decoration--default black"
+      class="quill-typography quill-typography__caption-text__weight--regular__decoration--default black"
     >
       Click me - 
       caption
@@ -23,7 +23,7 @@ exports[`Link should render correctly with caption size and color white 1`] = `
     target="_blank"
   >
     <p
-      class="quill-typography__caption-text__weight--regular__decoration--default white"
+      class="quill-typography quill-typography__caption-text__weight--regular__decoration--default white"
     >
       Click me - 
       caption
@@ -34,7 +34,7 @@ exports[`Link should render correctly with caption size and color white 1`] = `
 
 exports[`Link should render correctly with disabled false 1`] = `
 <p
-  class="quill-typography__body-text__size--md__weight--regular__decoration--default black"
+  class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default black"
 >
   Click me disabled
 </p>
@@ -42,7 +42,7 @@ exports[`Link should render correctly with disabled false 1`] = `
 
 exports[`Link should render correctly with disabled true 1`] = `
 <p
-  class="quill-typography__body-text__size--md__weight--regular__decoration--default black"
+  class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default black"
 >
   Click me disabled
 </p>
@@ -55,7 +55,7 @@ exports[`Link should render correctly with lg size and color black 1`] = `
     target="_blank"
   >
     <p
-      class="quill-typography__body-text__size--lg__weight--regular__decoration--default black"
+      class="quill-typography quill-typography__body-text__size--lg__weight--regular__decoration--default black"
     >
       Click me - 
       lg
@@ -71,7 +71,7 @@ exports[`Link should render correctly with lg size and color white 1`] = `
     target="_blank"
   >
     <p
-      class="quill-typography__body-text__size--lg__weight--regular__decoration--default white"
+      class="quill-typography quill-typography__body-text__size--lg__weight--regular__decoration--default white"
     >
       Click me - 
       lg
@@ -87,7 +87,7 @@ exports[`Link should render correctly with md size and color black 1`] = `
     target="_blank"
   >
     <p
-      class="quill-typography__body-text__size--md__weight--regular__decoration--default black"
+      class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default black"
     >
       Click me - 
       md
@@ -103,7 +103,7 @@ exports[`Link should render correctly with md size and color white 1`] = `
     target="_blank"
   >
     <p
-      class="quill-typography__body-text__size--md__weight--regular__decoration--default white"
+      class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default white"
     >
       Click me - 
       md
@@ -119,7 +119,7 @@ exports[`Link should render correctly with sm size and color black 1`] = `
     target="_blank"
   >
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default black"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default black"
     >
       Click me - 
       sm
@@ -135,7 +135,7 @@ exports[`Link should render correctly with sm size and color white 1`] = `
     target="_blank"
   >
     <p
-      class="quill-typography__body-text__size--sm__weight--regular__decoration--default white"
+      class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default white"
     >
       Click me - 
       sm
@@ -151,7 +151,7 @@ exports[`Link should render correctly with xl size and color black 1`] = `
     target="_blank"
   >
     <p
-      class="quill-typography__body-text__size--xl__weight--regular__decoration--default black"
+      class="quill-typography quill-typography__body-text__size--xl__weight--regular__decoration--default black"
     >
       Click me - 
       xl
@@ -167,7 +167,7 @@ exports[`Link should render correctly with xl size and color white 1`] = `
     target="_blank"
   >
     <p
-      class="quill-typography__body-text__size--xl__weight--regular__decoration--default white"
+      class="quill-typography quill-typography__body-text__size--xl__weight--regular__decoration--default white"
     >
       Click me - 
       xl

@@ -14,8 +14,10 @@ html.dark {
     --switch-hover-enabled-color: var(--core-color-opacity-green-600);
 }
 
-
 .toggle-switch {
+    border: none;
+    padding: var(--core-spacing-50);
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +28,8 @@ html.dark {
     border-width: var(--core-borderRadius-100);
 
     &:focus {
-        outline: var(--core-borderRadius-100) solid var(--core-color-solid-blue-700);
+        outline: var(--core-borderRadius-100) solid
+            var(--core-color-solid-blue-700);
         border-radius: var(--semantic-borderRadius-lg);
     }
 
