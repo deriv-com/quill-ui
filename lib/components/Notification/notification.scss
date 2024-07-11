@@ -1,13 +1,7 @@
 .quill-notification {
-    &:link {
-        text-decoration: none;
-    }
-    &:visited {
-        text-decoration: none;
-    }
-    &:hover {
-        text-decoration: none;
-    }
+    &:link,
+    &:visited,
+    &:hover,
     &:active {
         text-decoration: none;
     }
