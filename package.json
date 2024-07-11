@@ -45,7 +45,6 @@
         "prepare": "husky install"
     },
     "devDependencies": {
-        "rimraf": "^3.0.2",
         "@babel/preset-env": "^7.23.9",
         "@babel/preset-react": "^7.23.3",
         "@babel/preset-typescript": "^7.23.3",
@@ -95,6 +94,7 @@
         "prettier": "3.2.5",
         "react": "18.2.0",
         "react-dom": "18.2.0",
+        "rimraf": "^3.0.2",
         "sass": "^1.69.7",
         "sass-loader": "^13.3.3",
         "semantic-release": "^23.0.6",
@@ -148,7 +148,6 @@
         "@deriv/quill-icons": "^1.22.10",
         "@headlessui/react": "1.7.18",
         "dayjs": "^1.11.11",
-        "modern-normalize": "^2.0.0",
         "react-calendar": "^5.0.0",
         "react-number-format": "^5.4.0",
         "react-swipeable": "^6.2.1",
