@@ -1,8 +1,9 @@
 import { ComponentPropsWithoutRef, ReactNode, useContext } from "react";
 import { ActionSheetContext } from "../root";
 import clsx from "clsx";
-import "./header.scss";
 import { Heading, Text } from "@components/Typography";
+import { IconButton } from "@components/Button";
+import "./header.scss";
 
 interface HeaderProps extends Omit<ComponentPropsWithoutRef<"div">, "title"> {
     title?: ReactNode;
@@ -40,12 +41,17 @@ const Header = ({
                 )}
                 {title && <Heading.H5>{title}</Heading.H5>}
                 {CloseIcon && (
-                    <button
-                        className="quill-action-sheet--title--icon quill-action-sheet--title--icon--close"
+                    <IconButton
+                        color="black"
+                        icon={CloseIcon}
+                        className={clsx(
+                            "quill-action-sheet--title--icon",
+                            "quill-action-sheet--title--icon--close",
+                        )}
                         onClick={handleClose}
-                    >
-                        {CloseIcon}
-                    </button>
+                        size="md"
+                        variant="tertiary"
+                    />
                 )}
             </div>
             {description && (

@@ -9,6 +9,7 @@ import { useSwipeable } from "react-swipeable";
 import { CaptionText, Text } from "../Typography";
 import { NotificationIcon } from "./notification-icon";
 import { STATUS, TYPE } from "@utils/notification-utils";
+import { IconButton } from "@components/Button";
 import "./notification.scss";
 
 export interface NotificationProps
@@ -128,18 +129,22 @@ export const Notification = ({
                 </div>
             </div>
             {isBanner && hasCloseButton && (
-                <button
+                <IconButton
+                    color="black"
+                    icon={<LabelPairedXmarkSmRegularIcon />}
                     className={clsx("icon", "close")}
                     aria-label="close"
                     onClick={handleClose}
-                >
-                    <LabelPairedXmarkSmRegularIcon />
-                </button>
+                    size="sm"
+                    variant="tertiary"
+                />
             )}
             {!isBanner && (
                 <div className="buttons">
                     {status === STATUS.UNREAD && (
-                        <button
+                        <IconButton
+                            color="black"
+                            icon={<LabelPairedCheckSmBoldIcon />}
                             className={clsx("icon", "mark-as-read")}
                             aria-label="mark-as-read"
                             onClick={(e) => {
@@ -147,17 +152,19 @@ export const Notification = ({
                                 e.stopPropagation();
                                 onMarkAsRead?.(e);
                             }}
-                        >
-                            <LabelPairedCheckSmBoldIcon />
-                        </button>
+                            size="sm"
+                            variant="tertiary"
+                        />
                     )}
-                    <button
+                    <IconButton
+                        color="black"
+                        icon={<LabelPairedTrashSmBoldIcon />}
                         className={clsx("icon", "delete")}
                         aria-label="delete"
                         onClick={handleClose}
-                    >
-                        <LabelPairedTrashSmBoldIcon />
-                    </button>
+                        size="sm"
+                        variant="tertiary"
+                    />
                 </div>
             )}
         </a>

@@ -95,7 +95,7 @@ The CustomDropdown component accepts the following props:
 - **value** (string | number): The current value of the dropdown input.
 - **onChange** ((e: React.ChangeEvent<'HTMLInputElement'>) => void): A callback function that is called when the input value changes.
 - **containerClassName** (string): ClassName applied to the dropdown container.
-- **actionSheetFooter** (ComponentProps<typeof ActionSheet.Footer>): Accept all the props from action sheet footer component.
+- **actionSheetFooter** (ComponentProps<'typeof ActionSheet.Footer'>): Accept all the props from action sheet footer component.
 - Additionally, it accepts all props from the Input component.
 
 ### Usage Example

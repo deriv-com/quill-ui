@@ -26,7 +26,7 @@ exports[`TextArea Component renders with the correct size 1`] = `
       class="message__container message__container--sm"
     >
       <p
-        class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message--neutral"
+        class="quill-typography quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent message--neutral"
       />
     </div>
   </div>

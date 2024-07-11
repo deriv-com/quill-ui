@@ -1,4 +1,17 @@
 .quill-notification {
+    &:link {
+        text-decoration: none;
+    }
+    &:visited {
+        text-decoration: none;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+    &:active {
+        text-decoration: none;
+    }
+
     position: relative;
     display: flex;
     width: 100%;
@@ -37,8 +50,8 @@
             top: var(--semantic-spacing-general-sm);
             border-radius: unset;
 
-            svg {
-                fill: var(--component-textIcon-normal-prominent);
+            &:hover {
+                background-color: transparent;
             }
         }
         .badge-unread {

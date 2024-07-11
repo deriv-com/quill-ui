@@ -28,7 +28,11 @@ export const Typography = ({
     return React.createElement(
         tag || "p",
         {
-            className: clsx(centered && "quill-typography-centered", className),
+            className: clsx(
+                "quill-typography",
+                centered && "quill-typography-centered",
+                className,
+            ),
             ...rest,
         },
         children,

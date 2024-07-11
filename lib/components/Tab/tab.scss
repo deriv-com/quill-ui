@@ -8,25 +8,29 @@ html.dark {
     --border-bottom-color-active: var(--core-color-opacity-white-300);
 }
 
-
 .tab-menu {
     display: inline-flex;
     cursor: pointer;
     position: relative;
     white-space: nowrap;
     z-index: 2;
+    border: none;
+    background-color: transparent;
     border-bottom: var(--component-tab-border-width-item) solid transparent;
 
     &:hover:not(:disabled) {
-        border-bottom: var(--component-tab-border-width-item) solid var(--border-bottom-color-hover);
+        border-bottom: var(--component-tab-border-width-item) solid
+            var(--border-bottom-color-hover);
     }
 
     &:active:not(:disabled) {
-        border-bottom: var(--component-tab-border-width-item) solid var(--border-bottom-color-active);
+        border-bottom: var(--component-tab-border-width-item) solid
+            var(--border-bottom-color-active);
     }
 
     &[aria-selected="true"]:not(:disabled):not(:active):not(hover) {
-        border-bottom: var(--component-tab-border-width-item) solid var(--component-tab-icon-selected);
+        border-bottom: var(--component-tab-border-width-item) solid
+            var(--component-tab-icon-selected);
     }
 
     &:disabled {
@@ -38,7 +42,8 @@ html.dark {
         &__fill {
             &-size {
                 &-sm {
-                    padding: var(--semantic-spacing-general-xs) var( --component-tab-spacing-padding-sm);
+                    padding: var(--semantic-spacing-general-xs)
+                        var(--component-tab-spacing-padding-sm);
                     min-width: 106px;
                     text-wrap: nowrap;
                     justify-content: center;
@@ -48,7 +53,8 @@ html.dark {
                 &-md {
                     min-width: 106px;
                     text-wrap: nowrap;
-                    padding: var(--component-tab-spacing-padding-sm) var(--component-tab-spacing-padding-md);
+                    padding: var(--component-tab-spacing-padding-sm)
+                        var(--component-tab-spacing-padding-md);
                     justify-content: center;
                     gap: var(--component-tab-spacing-padding-sm);
                 }
@@ -58,14 +64,16 @@ html.dark {
         &__hug {
             &-size {
                 &-sm {
-                    padding: var(--semantic-spacing-general-xs) var(--component-tab-spacing-padding-sm);
+                    padding: var(--semantic-spacing-general-xs)
+                        var(--component-tab-spacing-padding-sm);
                     justify-content: center;
                     text-wrap: nowrap;
                     gap: var(--semantic-spacing-general-xs);
                 }
 
                 &-md {
-                    padding: var(--component-tab-spacing-padding-sm) var(--component-tab-spacing-padding-md);
+                    padding: var(--component-tab-spacing-padding-sm)
+                        var(--component-tab-spacing-padding-md);
                     justify-content: center;
                     text-wrap: nowrap;
                     gap: var(--component-tab-spacing-padding-sm);

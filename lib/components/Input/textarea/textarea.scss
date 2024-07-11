@@ -1,6 +1,9 @@
 @import "@styles/static.scss";
 
 .quill-textarea {
+    background-color: transparent;
+    padding: var(--core-spacing-50);
+
     &__container {
         position: relative;
         width: fit-content;
@@ -379,7 +382,7 @@
     &::-webkit-scrollbar-thumb {
         scrollbar-width: thin;
         display: unset;
-        border-radius: var(--core-borderRadius-500);;
+        border-radius: var(--core-borderRadius-500);
         background-color: rgba(0, 0, 0, 0.08);
     }
 }

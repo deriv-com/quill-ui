@@ -35,18 +35,18 @@ exports[`NotificationItem should display correct content 1`] = `
           class="details"
         >
           <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+            class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
           >
             Test title
           </p>
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+            class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
           >
             Test message
           </p>
           <p
             aria-label="date-time"
-            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+            class="quill-typography quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
           >
             23 Apr 2024 09:24 UTC
           </p>
@@ -57,7 +57,8 @@ exports[`NotificationItem should display correct content 1`] = `
       >
         <button
           aria-label="mark-as-read"
-          class="icon mark-as-read"
+          class="quill-button quill-icon-button__size--sm quill__color--tertiary-black icon mark-as-read"
+          data-state=""
         >
           <svg
             height="22"
@@ -84,7 +85,8 @@ exports[`NotificationItem should display correct content 1`] = `
         </button>
         <button
           aria-label="delete"
-          class="icon delete"
+          class="quill-button quill-icon-button__size--sm quill__color--tertiary-black icon delete"
+          data-state=""
         >
           <svg
             height="22"
@@ -142,18 +144,18 @@ exports[`NotificationItem should display correct notification with a custom icon
           class="details"
         >
           <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+            class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
           >
             Test title
           </p>
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+            class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
           >
             Test message
           </p>
           <p
             aria-label="date-time"
-            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+            class="quill-typography quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
           >
             23 Apr 2024 09:24 UTC
           </p>
@@ -164,7 +166,8 @@ exports[`NotificationItem should display correct notification with a custom icon
       >
         <button
           aria-label="mark-as-read"
-          class="icon mark-as-read"
+          class="quill-button quill-icon-button__size--sm quill__color--tertiary-black icon mark-as-read"
+          data-state=""
         >
           <svg
             height="22"
@@ -191,7 +194,8 @@ exports[`NotificationItem should display correct notification with a custom icon
         </button>
         <button
           aria-label="delete"
-          class="icon delete"
+          class="quill-button quill-icon-button__size--sm quill__color--tertiary-black icon delete"
+          data-state=""
         >
           <svg
             height="22"
@@ -257,18 +261,18 @@ exports[`NotificationItem should render correctly for mobile 1`] = `
           class="details"
         >
           <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+            class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
           >
             Test title
           </p>
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+            class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
           >
             Test message
           </p>
           <p
             aria-label="date-time"
-            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+            class="quill-typography quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
           >
             23 Apr 2024 09:24 UTC
           </p>
@@ -279,7 +283,8 @@ exports[`NotificationItem should render correctly for mobile 1`] = `
       >
         <button
           aria-label="mark-as-read"
-          class="icon mark-as-read"
+          class="quill-button quill-icon-button__size--sm quill__color--tertiary-black icon mark-as-read"
+          data-state=""
         >
           <svg
             height="22"
@@ -306,7 +311,8 @@ exports[`NotificationItem should render correctly for mobile 1`] = `
         </button>
         <button
           aria-label="delete"
-          class="icon delete"
+          class="quill-button quill-icon-button__size--sm quill__color--tertiary-black icon delete"
+          data-state=""
         >
           <svg
             height="22"
@@ -372,18 +378,18 @@ exports[`NotificationItem should render notification correctly based on the noti
           class="details"
         >
           <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
+            class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default title"
           >
             Test title
           </p>
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+            class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
           >
             Test message
           </p>
           <p
             aria-label="date-time"
-            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+            class="quill-typography quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
           >
             23 Apr 2024 09:24 UTC
           </p>
@@ -394,7 +400,8 @@ exports[`NotificationItem should render notification correctly based on the noti
       >
         <button
           aria-label="mark-as-read"
-          class="icon mark-as-read"
+          class="quill-button quill-icon-button__size--sm quill__color--tertiary-black icon mark-as-read"
+          data-state=""
         >
           <svg
             height="22"
@@ -421,7 +428,8 @@ exports[`NotificationItem should render notification correctly based on the noti
         </button>
         <button
           aria-label="delete"
-          class="icon delete"
+          class="quill-button quill-icon-button__size--sm quill__color--tertiary-black icon delete"
+          data-state=""
         >
           <svg
             height="22"
@@ -484,18 +492,18 @@ exports[`NotificationItem should render notification correctly when status is 'r
           class="details"
         >
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default title"
+            class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default title"
           >
             Test title
           </p>
           <p
-            class="quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
+            class="quill-typography quill-typography__body-text__size--sm__weight--regular__decoration--default quill-typography__color--default message--one-liner"
           >
             Test message
           </p>
           <p
             aria-label="date-time"
-            class="quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
+            class="quill-typography quill-typography__caption-text__weight--regular__decoration--default quill-typography__color--prominent date-time"
           >
             23 Apr 2024 09:24 UTC
           </p>
@@ -506,7 +514,8 @@ exports[`NotificationItem should render notification correctly when status is 'r
       >
         <button
           aria-label="delete"
-          class="icon delete"
+          class="quill-button quill-icon-button__size--sm quill__color--tertiary-black icon delete"
+          data-state=""
         >
           <svg
             height="22"

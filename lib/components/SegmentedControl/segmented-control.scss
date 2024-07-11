@@ -8,7 +8,9 @@
         align-items: stretch;
         width: fit-content;
         height: fit-content;
-        background-color: var(--semantic-color-monochrome-surface-normal-lowest);
+        background-color: var(
+            --semantic-color-monochrome-surface-normal-lowest
+        );
         -webkit-tap-highlight-color: transparent;
 
         .item {
@@ -20,6 +22,9 @@
             z-index: 2;
             min-width: 0;
             text-align: center;
+            background-color: transparent;
+            border: none;
+            outline: none;
 
             * {
                 z-index: 2;
@@ -36,12 +41,16 @@
                     var(--core-color-solid-blue-700) inset;
             }
             &:hover:not(:disabled) {
-                background-color: var(--component-segmentedControl-bg-single-item-hover);
+                background-color: var(
+                    --component-segmentedControl-bg-single-item-hover
+                );
             }
             &:active:not(:disabled, .selected),
             &:active:not(:disabled, .animated)::before {
                 box-shadow: unset;
-                background-color: var(--component-segmentedControl-bg-single-item-active);
+                background-color: var(
+                    --component-segmentedControl-bg-single-item-active
+                );
             }
             &.selected:not(:disabled) {
                 // colors should stay the same for both themes:

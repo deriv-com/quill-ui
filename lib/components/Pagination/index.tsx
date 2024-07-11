@@ -6,8 +6,9 @@ import {
 import { PaginationProps } from "@components/Pagination/types";
 import { UsePaginationRange } from "@hooks/usePaginationRange";
 import PaginationButton from "@components/Pagination/base";
-import "./pagination.scss";
 import clsx from "clsx";
+import { IconButton } from "@components/Button";
+import "./pagination.scss";
 
 export const Pagination = ({
     contentPerPage,
@@ -59,21 +60,25 @@ export const Pagination = ({
             tabIndex={0}
         >
             {!hideChevron && (
-                <button
-                    onClick={gotToPreviousPage}
-                    disabled={currentPage === 1}
+                <IconButton
+                    color="black"
+                    icon={
+                        <StandaloneChevronLeftRegularIcon
+                            iconSize="sm"
+                            className={clsx(
+                                currentPage === 1
+                                    ? "pagination__chevron-disabled"
+                                    : "pagination__chevron-svg",
+                            )}
+                        />
+                    }
                     className="pagination__chevron"
                     aria-label="Go to Previous page"
-                >
-                    <StandaloneChevronLeftRegularIcon
-                        iconSize="sm"
-                        className={clsx(
-                            currentPage === 1
-                                ? "pagination__chevron-disabled"
-                                : "pagination__chevron-svg",
-                        )}
-                    />
-                </button>
+                    onClick={gotToPreviousPage}
+                    disabled={currentPage === 1}
+                    size="sm"
+                    variant="tertiary"
+                />
             )}
             {paginationRange.map((pageNumber, index) => (
                 <PaginationButton
@@ -85,21 +90,25 @@ export const Pagination = ({
                 />
             ))}
             {!hideChevron && (
-                <button
-                    onClick={goToNextPage}
-                    disabled={currentPage === totalPageCount}
+                <IconButton
+                    color="black"
+                    icon={
+                        <StandaloneChevronRightRegularIcon
+                            iconSize="sm"
+                            className={clsx(
+                                currentPage === totalPageCount
+                                    ? "pagination__chevron-disabled"
+                                    : "pagination__chevron-svg",
+                            )}
+                        />
+                    }
                     className="pagination__chevron"
                     aria-label="Go to Next page"
-                >
-                    <StandaloneChevronRightRegularIcon
-                        iconSize="sm"
-                        className={clsx(
-                            currentPage === totalPageCount
-                                ? "pagination__chevron-disabled"
-                                : "pagination__chevron-svg",
-                        )}
-                    />
-                </button>
+                    onClick={goToNextPage}
+                    disabled={currentPage === totalPageCount}
+                    size="sm"
+                    variant="tertiary"
+                />
             )}
         </nav>
     );

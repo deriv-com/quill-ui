@@ -13,7 +13,7 @@ exports[`<ActionSheet.Footer/> should render correctly with horizontal 1`] = `
       class="quill-button-label"
     >
       <p
-        class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+        class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
       >
         action
       </p>
@@ -35,7 +35,7 @@ exports[`<ActionSheet.Footer/> should render correctly with vertical 1`] = `
       class="quill-button-label"
     >
       <p
-        class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+        class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
       >
         action
       </p>
