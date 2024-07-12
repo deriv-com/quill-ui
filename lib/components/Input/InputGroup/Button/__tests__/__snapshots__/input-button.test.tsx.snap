@@ -18,7 +18,6 @@ exports[`InputGroupButton Component disables button when input is empty 1`] = `
             button_position="right"
             class="input peer input__align--left input__size--md"
             placeholder=""
-            type="text"
             value=""
           />
         </div>
@@ -62,7 +61,6 @@ exports[`InputGroupButton Component enables button when input is not empty 1`] =
             class="input peer input__align--left input__size--md"
             id="input"
             placeholder=""
-            type="text"
             value=""
           />
           <label
@@ -101,7 +99,6 @@ exports[`InputGroupButton Component should handle the hover for outline variant 
     button_position="right"
     class="input peer input__align--left input__size--md"
     placeholder="Placeholder"
-    type="text"
     value=""
   />
 </div>
@@ -126,7 +123,6 @@ exports[`InputGroupButton Component should render a default InputGroupButton 1`]
             class="input peer input__align--left input__size--md"
             id="input"
             placeholder=""
-            type="text"
             value=""
           />
           <label

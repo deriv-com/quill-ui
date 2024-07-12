@@ -22,7 +22,6 @@ exports[`<SearchField /> renders clear icon when value is not empty and clear ic
           <input
             class="input peer input__align--left input__size--md"
             placeholder="Search"
-            type="text"
             value="test"
           />
         </div>
@@ -54,7 +53,6 @@ exports[`<SearchField /> renders correctly with default props 1`] = `
           <input
             class="input peer input__align--left input__size--md"
             placeholder="Search"
-            type="text"
             value=""
           />
         </div>
@@ -86,7 +84,6 @@ exports[`<SearchField /> renders error status icon when status prop is "error" 1
           <input
             class="input peer input__align--left input__size--md"
             placeholder="Search"
-            type="text"
             value=""
           />
         </div>
@@ -133,7 +130,6 @@ exports[`<SearchField /> renders leftStatusMessage when prop is given 1`] = `
           <input
             class="input peer input__align--left input__size--md"
             placeholder="Search"
-            type="text"
             value=""
           />
         </div>
@@ -174,7 +170,6 @@ exports[`<SearchField /> renders success status icon when status prop is "succes
           <input
             class="input peer input__align--left input__size--md"
             placeholder="Search"
-            type="text"
             value=""
           />
         </div>
@@ -221,7 +216,6 @@ exports[`<SearchField /> updates value correctly on input change 1`] = `
           <input
             class="input peer input__align--left input__size--md"
             placeholder="Search"
-            type="text"
             value="test"
           />
         </div>
