@@ -34,6 +34,7 @@ exports[`InputDropdown component should render a TextField with error status 1`]
               placeholder=""
               readonly=""
               role="combobox"
+              type="select"
               value=""
             />
           </div>
@@ -123,6 +124,7 @@ exports[`InputDropdown component should render a TextField with success status 1
               placeholder=""
               readonly=""
               role="combobox"
+              type="select"
               value=""
             />
           </div>

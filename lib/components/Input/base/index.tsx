@@ -226,6 +226,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 <input
                                     {...rest}
                                     {...commonProps}
+                                    type={type === "number" ? "text" : type}
                                     onChange={handleChange}
                                     onFocus={() => setFocused(true)}
                                     onBlur={() => setFocused(false)}
