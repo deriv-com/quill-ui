@@ -33,6 +33,7 @@ const meta = {
         show_counter: false,
         buttonLabel: "Button",
         button_position: "right",
+        buttonDisabled: false,
         label: "",
         message: "",
     },

@@ -151,14 +151,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         };
 
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+            let inputValue = event.target.value;
             if (type === "number") {
-                let inputValue = event.target.value;
-                if (maxLength && inputValue.length > maxLength) {
-                    inputValue = inputValue.slice(0, maxLength);
-                    event.target.value = inputValue;
-                }
+                const nonNumReg = /[^0-9]/g;
+                inputValue = inputValue.replace(nonNumReg, "");
+                event.target.value = inputValue;
             }
-            setInputValue(event.target.value);
+            setInputValue(inputValue);
             onChange?.(event);
         };
 
@@ -230,7 +229,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                     onChange={handleChange}
                                     onFocus={() => setFocused(true)}
                                     onBlur={() => setFocused(false)}
-                                    type={type}
                                     maxLength={maxLength}
                                     ref={ref}
                                 />
