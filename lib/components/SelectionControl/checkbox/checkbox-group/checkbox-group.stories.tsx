@@ -5,7 +5,7 @@ const config = [
     {
         label: "Parent 1",
         id: 1,
-        showInfoIcon: true,
+        infoIconMessage: "info message of parent 1",
         children: [
             {
                 label: "Child 1",
@@ -35,7 +35,7 @@ const config = [
     {
         label: "Parent 3",
         id: 7,
-        showInfoIcon: true,
+        infoIconMessage: "info message of parent 3",
         checked: true,
     },
     {

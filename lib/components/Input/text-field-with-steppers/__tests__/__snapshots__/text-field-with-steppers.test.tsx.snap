@@ -18,6 +18,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
             <input
               class="input peer input__align--left input__size--md"
               placeholder="0.00"
+              type="text"
               value="undefined"
             />
           </div>
@@ -133,6 +134,7 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
             <input
               class="input peer input__align--left input__size--md"
               placeholder="0.00"
+              type="text"
               value="undefined"
             />
           </div>
@@ -219,6 +221,7 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
             <input
               class="input peer input__align--left input__size--md"
               placeholder="0.00"
+              type="text"
               value="undefined"
             />
             <span
@@ -299,6 +302,7 @@ exports[`TextFieldWithSteppers should handle the hover for outline variant 1`] =
   <input
     class="input peer input__align--left input__size--md"
     placeholder="Placeholder"
+    type="text"
     value="undefined"
   />
 </div>
@@ -322,6 +326,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
             <input
               class="input peer input__align--left input__size--md"
               placeholder="Enter text"
+              type="text"
               value="undefined"
             />
           </div>

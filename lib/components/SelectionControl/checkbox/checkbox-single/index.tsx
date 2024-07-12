@@ -17,6 +17,7 @@ import {
 import { TMediumSizes, TLeftOrRight } from "@types";
 import { Text } from "@components/Typography";
 import { KEY } from "@utils/common-utils";
+import Tooltip from "@components/Tooltip";
 
 export interface CheckboxProps
     extends Omit<
@@ -24,7 +25,7 @@ export interface CheckboxProps
         "placeholder" | "defaultChecked" | "size"
     > {
     indeterminate?: boolean;
-    showInfoIcon?: boolean;
+    infoIconMessage?: string;
     infoIconClassName?: string;
     size?: TMediumSizes;
     label: ReactNode;
@@ -44,7 +45,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             checked = false,
             disabled = false,
             indeterminate = false,
-            showInfoIcon = false,
+            infoIconMessage,
             infoIconClassName,
             size = "sm",
             label,
@@ -164,13 +165,18 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                         {label}
                     </Text>
                 </label>
-                {showInfoIcon && (
-                    <InfoIcon
-                        className={clsx(
-                            "quill-checkbox__info-icon",
-                            infoIconClassName,
-                        )}
-                    />
+                {infoIconMessage && (
+                    <Tooltip
+                        shouldCloseToolTipOnMouseLeave
+                        tooltipContent={infoIconMessage}
+                    >
+                        <InfoIcon
+                            className={clsx(
+                                "quill-checkbox__info-icon",
+                                infoIconClassName,
+                            )}
+                        />
+                    </Tooltip>
                 )}
             </div>
         );

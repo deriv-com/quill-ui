@@ -47,7 +47,6 @@ export const Tooltip = <T extends AsElement>({
     tooltipActionProps,
     hasArrow = true,
     children,
-    className,
     ...rest
 }: PropsWithChildren<TTooltipMenuIcon<T>>) => {
     const [showTooltip, setShowTooltip] = useState(false);
@@ -55,7 +54,7 @@ export const Tooltip = <T extends AsElement>({
     const onMouseEnter = () => setShowTooltip(true);
     const onMouseLeave = () => setShowTooltip(false);
 
-    const Tag = as as ElementType;
+    const Tag = as ? (as as ElementType) : "div";
 
     return (
         <Popover
@@ -135,7 +134,6 @@ export const Tooltip = <T extends AsElement>({
             }}
         >
             <Tag
-                className={clsx(className)}
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={shouldCloseToolTipOnMouseLeave && onMouseLeave}
                 {...rest}
@@ -147,3 +145,5 @@ export const Tooltip = <T extends AsElement>({
 };
 
 Tooltip.displayName = "Tooltip";
+
+export default Tooltip;
