@@ -144,4 +144,6 @@ export const Tooltip = <T extends AsElement>({
     );
 };
 
+Tooltip.displayName = "Tooltip";
+
 export default Tooltip;
