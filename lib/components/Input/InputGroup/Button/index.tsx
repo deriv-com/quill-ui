@@ -8,6 +8,7 @@ export interface InputGroupButtonProps
     buttonIconPosition?: "start" | "end";
     buttonLabel: React.ReactNode;
     buttonCallback?: () => void;
+    buttonDisabled?: boolean;
 }
 
 export const InputGroupButton = forwardRef<
@@ -22,6 +23,7 @@ export const InputGroupButton = forwardRef<
             value,
             label,
             buttonIconPosition,
+            buttonDisabled = false,
             buttonLabel,
             disabled,
             buttonCallback,
@@ -44,7 +46,7 @@ export const InputGroupButton = forwardRef<
 
         const InputButton = (
             <Button
-                disabled={isEmpty || disabled}
+                disabled={isEmpty || disabled || buttonDisabled}
                 color="black"
                 fullWidth={button_position === "bottom"}
                 variant="primary"

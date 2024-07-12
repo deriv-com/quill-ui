@@ -17,7 +17,6 @@ exports[`TextField should display message when provided 1`] = `
           <input
             class="input peer input__align--left input__size--md"
             placeholder=""
-            type="text"
             value=""
           />
         </div>
@@ -58,7 +57,6 @@ exports[`TextField should handle the hover for outline variant 1`] = `
   <input
     class="input peer input__align--left input__size--md"
     placeholder="Placeholder"
-    type="text"
     value=""
   />
 </div>
@@ -81,7 +79,6 @@ exports[`TextField should match snapshot 1`] = `
           <input
             class="input peer input__align--left input__size--md"
             placeholder="Enter text"
-            type="text"
             value=""
           />
         </div>
@@ -115,7 +112,6 @@ exports[`TextField should render with a left icon 1`] = `
           <input
             class="input peer input__align--left input__size--md"
             placeholder=""
-            type="text"
             value=""
           />
         </div>

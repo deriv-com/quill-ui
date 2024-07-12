@@ -1,8 +1,9 @@
 .dropdown-menu {
-    &__box{
-        padding-bottom:  var(--core-spacing-200);
+    &__box {
+        padding-bottom: var(--core-spacing-200);
     }
-    &__container{
+    &__container {
+        margin: var(--core-spacing-50);
         background-color: var(--component-dropdownList-bg);
         border-radius: var(--core-borderRadius-400);
         box-shadow: var(--semantic-elevation-shadow-card-hover);
@@ -14,7 +15,7 @@
         width: fit-content;
         overflow-y: auto;
     }
-    &__item{
+    &__item {
         display: flex;
         padding: var(--core-spacing-50) var(--core-spacing-600);
         align-items: center;
@@ -24,32 +25,30 @@
         color: var(--component-dropdownItem-label-color-default);
 
         &--size {
-           &-sm {
-            min-height: var(--core-borderRadius-1600);
-           }
-           &-md {
-            min-height: var(--core-borderRadius-1600);
-           }
-           &-lg {
-            min-height: var(--core-borderRadius-2400);
-           }
-           &-xl {
-            min-height: var(--core-borderRadius-2400);
-          }
+            &-sm {
+                min-height: var(--core-borderRadius-1600);
+            }
+            &-md {
+                min-height: var(--core-borderRadius-1600);
+            }
+            &-lg {
+                min-height: var(--core-borderRadius-2400);
+            }
+            &-xl {
+                min-height: var(--core-borderRadius-2400);
+            }
         }
 
-        &:hover{
+        &:hover {
             background-color: var(--component-dropdownItem-bg-hover);
-            cursor: pointer ;
-      
+            cursor: pointer;
         }
-        &--selected:not(:active):not(hover){
+        &--selected:not(:active):not(hover) {
             background-color: var(--component-dropdownItem-bg-selected);
-            color : var(--component-dropdownItem-label-color-selectedWhite);
+            color: var(--component-dropdownItem-label-color-selectedWhite);
         }
-        &--active{
+        &--active {
             background-color: var(--component-dropdownItem-bg-active);
-        
         }
     }
     &__transition {
@@ -58,6 +57,5 @@
             animation-timing-function: var(--core-motion-ease-400);
             animation-duration: var(--core-motion-duration-200);
         }
-
     }
 }

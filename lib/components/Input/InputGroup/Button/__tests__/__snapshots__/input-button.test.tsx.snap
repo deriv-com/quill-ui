@@ -6,7 +6,7 @@ exports[`InputGroupButton Component disables button when input is empty 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper-with_button-right--md quill-input__wrapper-with_button-right--md--no-label quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md quill-input__wrapper-with_button-right--md quill-input__wrapper-with_button-right--md--no-label"
     >
       <div
         class="quill-input-icons__wrapper"
@@ -18,7 +18,6 @@ exports[`InputGroupButton Component disables button when input is empty 1`] = `
             button_position="right"
             class="input peer input__align--left input__size--md"
             placeholder=""
-            type="text"
             value=""
           />
         </div>
@@ -32,7 +31,7 @@ exports[`InputGroupButton Component disables button when input is empty 1`] = `
           class="quill-button-label"
         >
           <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default black"
+            class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default black"
           >
             Submit
           </p>
@@ -49,7 +48,7 @@ exports[`InputGroupButton Component enables button when input is not empty 1`] =
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper-with_button-right--md quill-input__wrapper-with_button-right--md--has-label quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md quill-input__wrapper-with_button-right--md quill-input__wrapper-with_button-right--md--has-label"
     >
       <div
         class="quill-input-icons__wrapper"
@@ -62,7 +61,6 @@ exports[`InputGroupButton Component enables button when input is not empty 1`] =
             class="input peer input__align--left input__size--md"
             id="input"
             placeholder=""
-            type="text"
             value=""
           />
           <label
@@ -82,7 +80,7 @@ exports[`InputGroupButton Component enables button when input is not empty 1`] =
           class="quill-button-label"
         >
           <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default black"
+            class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default black"
           >
             Submit
           </p>
@@ -101,7 +99,6 @@ exports[`InputGroupButton Component should handle the hover for outline variant 
     button_position="right"
     class="input peer input__align--left input__size--md"
     placeholder="Placeholder"
-    type="text"
     value=""
   />
 </div>
@@ -113,7 +110,7 @@ exports[`InputGroupButton Component should render a default InputGroupButton 1`]
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper-with_button-right--md quill-input__wrapper-with_button-right--md--has-label quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md quill-input__wrapper-with_button-right--md quill-input__wrapper-with_button-right--md--has-label"
     >
       <div
         class="quill-input-icons__wrapper"
@@ -126,7 +123,6 @@ exports[`InputGroupButton Component should render a default InputGroupButton 1`]
             class="input peer input__align--left input__size--md"
             id="input"
             placeholder=""
-            type="text"
             value=""
           />
           <label
@@ -146,7 +142,7 @@ exports[`InputGroupButton Component should render a default InputGroupButton 1`]
           class="quill-button-label"
         >
           <p
-            class="quill-typography__body-text__size--sm__weight--bold__decoration--default black"
+            class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default black"
           >
             Submit
           </p>

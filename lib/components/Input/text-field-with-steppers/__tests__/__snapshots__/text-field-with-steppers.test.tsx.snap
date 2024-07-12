@@ -18,7 +18,6 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
             <input
               class="input peer input__align--left input__size--md"
               placeholder="0.00"
-              type="number"
               value="undefined"
             />
           </div>
@@ -127,14 +126,13 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
             class="quill-input-no-label__wrapper quill-input-label__wrapper--has-value"
           >
             <span
-              class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--disabled quill-input-label__label quill-input-label__label--left"
+              class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--disabled quill-input-label__label quill-input-label__label--left"
             >
               $
             </span>
             <input
               class="input peer input__align--left input__size--md"
               placeholder="0.00"
-              type="number"
               value="undefined"
             />
           </div>
@@ -221,11 +219,10 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
             <input
               class="input peer input__align--left input__size--md"
               placeholder="0.00"
-              type="number"
               value="undefined"
             />
             <span
-              class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-input-label__label quill-input-label__label--right"
+              class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-input-label__label quill-input-label__label--right"
             >
               USD
             </span>
@@ -302,7 +299,6 @@ exports[`TextFieldWithSteppers should handle the hover for outline variant 1`] =
   <input
     class="input peer input__align--left input__size--md"
     placeholder="Placeholder"
-    type="number"
     value="undefined"
   />
 </div>
@@ -326,7 +322,6 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
             <input
               class="input peer input__align--left input__size--md"
               placeholder="Enter text"
-              type="number"
               value="undefined"
             />
           </div>

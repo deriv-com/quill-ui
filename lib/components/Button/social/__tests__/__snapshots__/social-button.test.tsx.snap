@@ -33,7 +33,7 @@ exports[`Social Button Should render Apple Button 1`] = `
       </defs>
     </svg>
     <p
-      class="quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--apple--primary-color"
+      class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--apple--primary-color"
     >
       Apple
     </p>
@@ -80,7 +80,7 @@ exports[`Social Button Should render Facebook Button 1`] = `
       </defs>
     </svg>
     <p
-      class="quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--facebook--primary-color"
+      class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--facebook--primary-color"
     >
       Facebook
     </p>
@@ -133,7 +133,7 @@ exports[`Social Button Should render Google Button 1`] = `
       </defs>
     </svg>
     <p
-      class="quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--google--primary-color"
+      class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--google--primary-color"
     >
       Google
     </p>
@@ -174,7 +174,7 @@ exports[`Social Button Should render Primary Variant 1`] = `
       </defs>
     </svg>
     <p
-      class="quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--apple--primary-color"
+      class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--apple--primary-color"
     >
       Apple
     </p>
@@ -227,7 +227,7 @@ exports[`Social Button Should render Secondary Variant 1`] = `
       </defs>
     </svg>
     <p
-      class="quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--google--secondary-color"
+      class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--google--secondary-color"
     >
       Google
     </p>
@@ -322,7 +322,7 @@ exports[`Social Button Should render properly with fullWidth true 1`] = `
       </defs>
     </svg>
     <p
-      class="quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--facebook--primary-color"
+      class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default social-button__variant--facebook--primary-color"
     >
       Facebook
     </p>

@@ -47,9 +47,6 @@
         justify-content: center;
         align-items: center;
         flex-shrink: 0;
-        & > svg {
-            fill: var(--component-snackbar-icon);
-        }
     }
     &__message {
         display: -webkit-box;
@@ -60,7 +57,7 @@
         text-overflow: ellipsis;
         overflow: hidden;
         word-wrap: break-word; /* Text gets broken up into another line for long words */
-       
+
         @include breakpoint("sm") {
             -webkit-line-clamp: 1;
         }

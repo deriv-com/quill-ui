@@ -1,6 +1,6 @@
-
 .variant {
     &__number {
+        border: none;
         display: inline-flex;
         flex-direction: column;
         cursor: pointer;
@@ -10,6 +10,7 @@
         height: var(--component-pagination-height-number);
         width: var(--component-pagination-width-number);
         border-radius: var(--component-pagination-border-radius-button);
+        background-color: unset;
 
         &:hover {
             background-color: var(--component-pagination-bg-hover);
@@ -25,9 +26,11 @@
     }
 
     &__bullet {
-        width: var( --component-pagination-width-bullet);
-        height: var( --component-pagination-height-bullet);
-        border-radius: var( --component-pagination-border-radius-bullet);
+        padding: var(--core-spacing-50);
+        border: none;
+        width: var(--component-pagination-width-bullet);
+        height: var(--component-pagination-height-bullet);
+        border-radius: var(--component-pagination-border-radius-bullet);
         position: relative;
         background-color: var(--component-pagination-bg-default);
         cursor: pointer;
@@ -39,18 +42,22 @@
         &:active {
             background-color: var(--component-pagination-bg-active);
         }
-        &[aria-current=true] {
+        &[aria-current="true"] {
             background-color: var(--component-pagination-bg-selected);
         }
     }
 }
 
 .hidden_pages {
-    height: var( --component-pagination-height-number);
+    border: none;
+    padding: var(--core-spacing-50);
+    background-color: transparent;
+    height: var(--component-pagination-height-number);
     width: var(--component-pagination-width-number);
     border-radius: var(--component-pagination-border-radius-button);
 
     &-dots {
+        margin: var(--core-spacing-50);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -63,7 +70,6 @@
 }
 
 .number-text {
-    
     &[aria-current="true"] {
         font-weight: bold;
         color: var(--component-pagination-label-color-selected);

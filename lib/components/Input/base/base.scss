@@ -7,6 +7,11 @@
         flex-direction: column;
         gap: var(--component-field-spacing-gap-xs);
 
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+
         .message__container {
             display: flex;
             gap: var(--component-field-spacing-gap-sm);
@@ -55,6 +60,9 @@
         }
 
         .icon_wrapper {
+            background-color: transparent;
+            border: none;
+            padding: var(--core-spacing-50);
             display: flex;
             margin: auto;
         }
@@ -116,6 +124,7 @@
 
     &-no-label__wrapper {
         display: flex;
+        align-items: center;
         width: 100%;
     }
 
@@ -302,7 +311,7 @@
             &:hover {
                 color: var(--component-field-label-color-default);
             }
-            &:placeholder-shown {
+            &::placeholder {
                 color: var(--component-field-placeholder-color);
             }
             &:not(placeholder-shown) {

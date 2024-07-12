@@ -1,12 +1,12 @@
 import ReactDOM from "react-dom";
 import { useState, useEffect, useRef, HTMLAttributes } from "react";
 import clsx from "clsx";
-import "../modal.scss";
 import { useSwipeable } from "react-swipeable";
 import { Button } from "@components/Button";
 import { LabelPairedXmarkMdBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import { ModalHeader } from "./modal-header";
 import { ModalBody } from "./modal-body";
+import "../modal.scss";
 
 export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     isOpened?: boolean;

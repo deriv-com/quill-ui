@@ -12,6 +12,7 @@
                 background-color: var(--core-color-solid-coral-900);
             }
             &:disabled {
+                background-color: var(--core-color-solid-coral-700);
                 opacity: var(--core-opacity-600);
             }
         }
@@ -27,6 +28,7 @@
                 background-color: var(--core-color-opacity-black-800);
             }
             &:disabled {
+                background-color: var(--core-color-solid-slate-1400);
                 opacity: var(--core-opacity-600);
             }
         }
@@ -42,6 +44,7 @@
                 background-color: var(--core-color-opacity-white-700);
             }
             &:disabled {
+                background-color: var(--core-color-solid-slate-50);
                 opacity: var(--core-opacity-600);
             }
         }
@@ -57,6 +60,7 @@
                 background-color: var(--core-color-solid-emerald-900);
             }
             &:disabled {
+                background-color: var(--core-color-solid-emerald-700);
                 opacity: var(--core-opacity-600);
             }
         }
@@ -72,6 +76,7 @@
                 background-color: var(--core-color-solid-cherry-900);
             }
             &:disabled {
+                background-color: var(--core-color-solid-cherry-700);
                 opacity: var(--core-opacity-600);
             }
         }

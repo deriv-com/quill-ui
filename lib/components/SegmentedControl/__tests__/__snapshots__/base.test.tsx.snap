@@ -7,7 +7,7 @@ exports[`SegmentedControl renders correctly and matches snapshot 1`] = `
       class="item selected"
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Option 1
       </span>
@@ -16,7 +16,7 @@ exports[`SegmentedControl renders correctly and matches snapshot 1`] = `
       class="item"
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Option 2
       </span>
@@ -26,7 +26,7 @@ exports[`SegmentedControl renders correctly and matches snapshot 1`] = `
       disabled=""
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Option 3
       </span>
@@ -42,7 +42,7 @@ exports[`SegmentedControl renders with animation when hasAnimation is true 1`] =
       class="item selected"
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Option 1
       </span>
@@ -51,7 +51,7 @@ exports[`SegmentedControl renders with animation when hasAnimation is true 1`] =
       class="item"
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Option 2
       </span>
@@ -61,7 +61,7 @@ exports[`SegmentedControl renders with animation when hasAnimation is true 1`] =
       disabled=""
     >
       <span
-        class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
+        class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
       >
         Option 3
       </span>

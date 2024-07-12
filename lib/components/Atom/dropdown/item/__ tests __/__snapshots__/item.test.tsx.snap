@@ -17,7 +17,7 @@ exports[`DropdownItem component renders checkbox selected when provided 1`] = `
       />
     </svg>
     <p
-      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+      class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
     >
       Test Label
     </p>
@@ -42,7 +42,7 @@ exports[`DropdownItem component renders checkbox when provided 1`] = `
       />
     </svg>
     <p
-      class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+      class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
     >
       Test Label
     </p>

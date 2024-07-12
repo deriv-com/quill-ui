@@ -151,14 +151,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         };
 
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+            let inputValue = event.target.value;
             if (type === "number") {
-                let inputValue = event.target.value;
-                if (maxLength && inputValue.length > maxLength) {
-                    inputValue = inputValue.slice(0, maxLength);
-                    event.target.value = inputValue;
-                }
+                const nonNumReg = /[^0-9]/g;
+                inputValue = inputValue.replace(nonNumReg, "");
+                event.target.value = inputValue;
             }
-            setInputValue(event.target.value);
+            setInputValue(inputValue);
             onChange?.(event);
         };
 
@@ -166,13 +165,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             <div className="quill-input__container">
                 <div
                     className={clsx(
-                        className,
                         `quill-input__wrapper`,
                         inputValue.toString().length > 0 &&
                             `quill-input__wrapper--has-value`,
                         `quill-input__wrapper__variant--${variant}`,
                         `quill-input__wrapper__variant--${variant}--${status}`,
                         `quill-input__wrapper__size--${inputSize}`,
+                        className,
                     )}
                 >
                     {addOn}
@@ -230,7 +229,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                     onChange={handleChange}
                                     onFocus={() => setFocused(true)}
                                     onBlur={() => setFocused(false)}
-                                    type={type}
                                     maxLength={maxLength}
                                     ref={ref}
                                 />

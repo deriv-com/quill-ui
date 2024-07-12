@@ -28,7 +28,7 @@ exports[`Modal should render SVG if it was passed 1`] = `
           </svg>
         </div>
         <h4
-          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title-has-image"
+          class="quill-typography quill-typography__h4 quill-typography__color--prominent quill-modal__content-title-has-image"
         >
           Title
         </h4>
@@ -44,7 +44,7 @@ exports[`Modal should render SVG if it was passed 1`] = `
             class="quill-button-label"
           >
             <p
-              class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
             >
               Primary Button Label
             </p>
@@ -73,7 +73,7 @@ exports[`Modal should render container with image as a background if src was pas
           data-testid="dt_modal_image"
         />
         <h4
-          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title-has-image"
+          class="quill-typography quill-typography__h4 quill-typography__color--prominent quill-modal__content-title-has-image"
         >
           Title
         </h4>
@@ -89,7 +89,7 @@ exports[`Modal should render container with image as a background if src was pas
             class="quill-button-label"
           >
             <p
-              class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
             >
               Primary Button Label
             </p>
@@ -114,12 +114,12 @@ exports[`Modal should render secondary button if showSecondaryButton === true an
         class="quill-modal__content-wrapper"
       >
         <h4
-          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title"
+          class="quill-typography quill-typography__h4 quill-typography__color--prominent quill-modal__content-title"
         >
           Title
         </h4>
         <div
-          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal__content-body"
+          class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal__content-body"
         >
           This is some amazing placeholder.
         </div>
@@ -135,7 +135,7 @@ exports[`Modal should render secondary button if showSecondaryButton === true an
             class="quill-button-label"
           >
             <p
-              class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
             >
               Primary Button Label
             </p>
@@ -149,7 +149,7 @@ exports[`Modal should render secondary button if showSecondaryButton === true an
             class="quill-button-label"
           >
             <p
-              class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
             >
               Secondary Button Label
             </p>
@@ -174,12 +174,12 @@ exports[`Modal should render with default values if optional ones were not passe
         class="quill-modal__content-wrapper"
       >
         <h4
-          class="quill-typography__h4 quill-typography__color--prominent quill-modal__content-title"
+          class="quill-typography quill-typography__h4 quill-typography__color--prominent quill-modal__content-title"
         >
           Title
         </h4>
         <div
-          class="quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal__content-body"
+          class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-modal__content-body"
         >
           This is some amazing placeholder.
         </div>
@@ -195,7 +195,7 @@ exports[`Modal should render with default values if optional ones were not passe
             class="quill-button-label"
           >
             <p
-              class="quill-typography__body-text__size--md__weight--bold__decoration--default black"
+              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
             >
               Primary Button Label
             </p>
