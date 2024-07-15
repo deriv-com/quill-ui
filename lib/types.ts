@@ -31,6 +31,10 @@ export type Breakpoints = Extract<
     "sm" | "md" | "lg" | "xl" | "2xl"
 >;
 
+export type TRegularSizesWithExtraSmallandExtraLarge = Extract<
+    TGenericSizes,
+    "xs" | "sm" | "md" | "lg" | "xl" | "2xl"
+>;
 export type TRegularSizesWithExtraLarge = Extract<
     TGenericSizes,
     "sm" | "md" | "lg" | "xl"

@@ -1,0 +1,37 @@
+@keyframes skeleton-pulse {
+    0% {
+        background-color: var(
+            --semantic-color-monochrome-surface-normal-lowest
+        );
+    }
+    50% {
+        background-color: var(--semantic-color-monochrome-surface-normal-low);
+    }
+    100% {
+        background-color: var(
+            --semantic-color-monochrome-surface-normal-lowest
+        );
+    }
+}
+
+.quill-loader {
+    &__skeleton {
+        display: flex;
+        background-color: var(
+            --semantic-color-monochrome-surface-normal-lowest
+        );
+
+        &--animated {
+            animation: skeleton-pulse var(--core-motion-duration-600)
+                var(--motion-easing-inandout) infinite;
+        }
+
+        &--rounded {
+            border-radius: var(--core-borderRadius-400);
+        }
+
+        &--circle {
+            border-radius: 100%;
+        }
+    }
+}

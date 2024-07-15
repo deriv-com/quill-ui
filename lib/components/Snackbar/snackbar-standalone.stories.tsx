@@ -2,10 +2,14 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons/Standalone";
 import { Snackbar } from "./snackbar";
-import { LabelPairedPlaceholderCaptionBoldIcon } from "@deriv/quill-icons/LabelPaired";
 
 const icons: Record<string, object | null> = {
-    with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
+    with_icon: (
+        <StandalonePlaceholderRegularIcon
+            fill="var(--component-snackbar-icon)"
+            iconSize="sm"
+        />
+    ),
     none: null,
 };
 
@@ -15,7 +19,12 @@ const meta = {
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
     args: {
-        icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
+        icon: (
+            <StandalonePlaceholderRegularIcon
+                fill="var(--component-snackbar-icon)"
+                iconSize="sm"
+            />
+        ),
         isVisible: true,
         actionText: "",
         hasCloseButton: true,
