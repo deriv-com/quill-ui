@@ -1,9 +1,6 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-    StandalonePlaceholderRegularIcon,
-    StandaloneStarFillIcon,
-} from "@deriv/quill-icons/Standalone";
+import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons/Standalone";
 import { fn } from "@storybook/test";
 import { Snackbar } from "./snackbar";
 import { Button } from "@components/Button";
@@ -22,7 +19,7 @@ import { SnackbarProvider } from "@providers/snackbar/snackbarProvider";
 
 const icons: Record<string, object | null> = {
     with_icon: (
-        <StandaloneStarFillIcon
+        <StandalonePlaceholderRegularIcon
             fill="var(--component-snackbar-icon)"
             iconSize="sm"
         />
@@ -202,7 +199,12 @@ SnackbarWithMessageOnly.args = {
 export const SnackbarWithIcon = Template.bind(this) as Story;
 SnackbarWithIcon.args = {
     ...meta.args,
-    icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
+    icon: (
+        <StandalonePlaceholderRegularIcon
+            fill="var(--component-snackbar-icon)"
+            iconSize="sm"
+        />
+    ),
     hasCloseButton: false,
     actionText: "",
 };
