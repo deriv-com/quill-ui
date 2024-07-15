@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import "@deriv-com/quill-tokens/dist/quill.css";
-import Spinner from ".";
+import { Spinner } from ".";
 
 const meta = {
     title: "Components/Loader/Skeleton/Spinner",

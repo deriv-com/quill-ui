@@ -7,7 +7,7 @@ export interface SpinnerProps {
     size?: TRegularSizesWithExtraSmallandExtraLarge;
 }
 
-const Spinner = ({ size = "md" }: SpinnerProps) => {
+export const Spinner = ({ size = "md" }: SpinnerProps) => {
     return (
         <StandaloneLoaderRegularIcon
             className="quill-loader__spinner"
@@ -15,5 +15,3 @@ const Spinner = ({ size = "md" }: SpinnerProps) => {
         />
     );
 };
-
-export default Spinner;

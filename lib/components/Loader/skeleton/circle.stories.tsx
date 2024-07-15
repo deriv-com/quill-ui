@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Skeleton from ".";
+import { Skeleton } from ".";
 import "@deriv-com/quill-tokens/dist/quill.css";
 
 const meta = {

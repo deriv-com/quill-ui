@@ -17,5 +17,3 @@ export const Skeleton: LoaderType = ({
 
 Skeleton.Circle = Circle;
 Skeleton.Square = Square;
-
-export default Skeleton;
