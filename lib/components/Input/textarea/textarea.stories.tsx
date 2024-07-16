@@ -51,6 +51,10 @@ const meta = {
             },
             options: ["sm", "md"],
         },
+        id: {
+            control: "text",
+            description: "id to the input element",
+        },
         wrapperClassName: {
             description:
                 "Class to add to the textarea wrapper. example `wrapperClass` setting the width and height of the wrapper",

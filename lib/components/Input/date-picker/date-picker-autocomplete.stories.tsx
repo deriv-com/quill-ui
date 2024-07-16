@@ -37,6 +37,10 @@ const meta = {
         label: "",
     },
     argTypes: {
+        id: {
+            control: "text",
+            description: "id to the input element",
+        },
         disabled: {
             description: "To disable datepicker dropdown",
         },

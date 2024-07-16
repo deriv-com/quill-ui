@@ -19,6 +19,7 @@ import { Text } from "@components/Typography";
 import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import { PasswordStrengthValidation } from "@components/Atom";
 import { PatternFormat, PatternFormatProps } from "react-number-format";
+import useUniqueId from "@hooks/useUniqueId";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
@@ -64,6 +65,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     addOn?: ReactNode;
     addOnIcon?: ReactNode;
     formatProps?: PatternFormatProps;
+    id?: string;
 }
 
 const statusIconColors = {
@@ -113,6 +115,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             addOn,
             formatProps,
             addOnIcon,
+            id,
             ...rest
         },
         ref,
@@ -126,6 +129,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         useEffect(() => {
             setInputValue(value || "");
         }, [value]);
+
         if (isDropdownOpen) {
             hideMessage = true;
         }
@@ -134,6 +138,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             (status === "success" || status === "error") && !disabled
                 ? statusIcon[status]
                 : rightIcon;
+
+        const inputId = id || useUniqueId("quill-input");
 
         const commonProps = {
             readOnly,
@@ -147,7 +153,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 `input__size--${inputSize}`,
             ),
             disabled: !!disabled,
-            id: label?.toString(),
+            id: inputId,
         };
 
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -241,7 +247,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                         `label__status--${status}`,
                                         leftIcon && `label__hasIcon`,
                                     )}
-                                    htmlFor={label.toString()}
+                                    htmlFor={inputId}
                                 >
                                     {label}
                                     {fieldMarker && (
