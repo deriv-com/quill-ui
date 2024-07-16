@@ -1,19 +1,16 @@
 import React from "react";
-import SkeletonElement from "../base";
+import SkeletonElement, { SkeletonBaseProps } from "../base";
+import clsx from "clsx";
 
-export interface CircleProps {
-    className?: string;
-    style?: React.CSSProperties;
+export interface CircleProps extends SkeletonBaseProps {
     width?: number;
-    active?: boolean;
 }
 
-const Circle = ({ width = 100, ...rest }: CircleProps) => {
+const Circle = ({ width = 100, className, style, ...rest }: CircleProps) => {
     return (
         <SkeletonElement
-            shape="circle"
-            width={width}
-            height={width}
+            className={clsx("quill-loader__skeleton--circle", className)}
+            style={{ width, height: width, ...style }}
             {...rest}
         />
     );

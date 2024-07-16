@@ -16,7 +16,6 @@
 
 .quill-loader {
     &__skeleton {
-        display: flex;
         background-color: var(
             --semantic-color-monochrome-surface-normal-lowest
         );
@@ -32,6 +31,10 @@
 
         &--circle {
             border-radius: 100%;
+        }
+
+        &--full-width {
+            width: 100%;
         }
     }
 }
