@@ -42,6 +42,10 @@ const meta = {
         variant: "fill",
     },
     argTypes: {
+        id: {
+            control: "text",
+            description: "id to the input element",
+        },
         status: {
             options: ["neutral", "success", "error"],
             control: { type: "radio" },

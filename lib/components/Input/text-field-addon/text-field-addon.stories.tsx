@@ -39,6 +39,10 @@ const meta = {
             },
             options: ["sm", "md"],
         },
+        id: {
+            control: "text",
+            description: "id to the input element",
+        },
         fillAddonBorderColor: {
             control: {
                 type: "text",

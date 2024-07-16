@@ -44,6 +44,10 @@ const meta = {
         value: "",
     },
     argTypes: {
+        id: {
+            control: "text",
+            description: "id to the input element",
+        },
         status: {
             table: { type: { summary: `"neutral" | "success"| "error"` } },
             options: ["neutral", "success", "error"],

@@ -35,6 +35,10 @@ const meta = {
         },
     },
     argTypes: {
+        id: {
+            control: "text",
+            description: "id to the input element",
+        },
         isAutocomplete: {
             description:
                 "Determines whether the input supports autocomplete functionality. Default is false.",

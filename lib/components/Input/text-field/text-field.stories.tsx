@@ -50,6 +50,10 @@ const meta = {
         type: {
             control: "text",
         },
+        id: {
+            control: "text",
+            description: "id to the input element",
+        },
         inputSize: {
             control: {
                 type: "radio",
