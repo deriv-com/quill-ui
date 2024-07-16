@@ -19,6 +19,7 @@ import { Text } from "@components/Typography";
 import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import { PasswordStrengthValidation } from "@components/Atom";
 import { PatternFormat, PatternFormatProps } from "react-number-format";
+import { v4 as uuid } from "uuid";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
@@ -135,6 +136,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 ? statusIcon[status]
                 : rightIcon;
 
+        const id = uuid();
+
         const commonProps = {
             readOnly,
             required,
@@ -147,7 +150,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 `input__size--${inputSize}`,
             ),
             disabled: !!disabled,
-            id: label?.toString(),
+            id: id,
         };
 
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -241,7 +244,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                         `label__status--${status}`,
                                         leftIcon && `label__hasIcon`,
                                     )}
-                                    htmlFor={label.toString()}
+                                    htmlFor={id}
                                 >
                                     {label}
                                     {fieldMarker && (

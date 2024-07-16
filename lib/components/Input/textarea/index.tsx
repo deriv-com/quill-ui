@@ -8,6 +8,7 @@ import {
     StandaloneCircleCheckBoldIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons/Standalone";
+import { v4 as uuid } from "uuid";
 
 export interface TextAreaProps
     extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -66,6 +67,8 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                 ? statusIcon[status]
                 : rightIcon;
 
+        const id = uuid();
+
         return (
             <div className="quill-textarea__container">
                 <div
@@ -95,13 +98,13 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                             onChange?.(e);
                         }}
                         {...props}
-                        id={label?.toString()}
+                        id={id}
                         ref={ref}
                     />
                     {label && size === "md" && (
                         <label
                             className={clsx("label", `label--${status}`)}
-                            htmlFor={label.toString()}
+                            htmlFor={id}
                         >
                             {label}
                             {fieldMarker && (
