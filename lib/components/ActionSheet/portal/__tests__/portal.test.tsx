@@ -9,14 +9,14 @@ import userEvent from "@testing-library/user-event";
 import { RootPosition, RootProps } from "../../types";
 import ActionSheet from "@components/ActionSheet";
 
-const dialog_state = {
-    open: "open",
-    close: "close",
+const DIALOG_STATE = {
+    OPEN: "open",
+    CLOSE: "close",
 };
 
-const button_name = {
-    trigger: "Trigger",
-    close: "Close",
+const BUTTON_NAME = {
+    TRIGGER: "Trigger",
+    CLOSE: "Close",
 };
 
 const overlay = "dt-actionsheet-overlay";
@@ -47,45 +47,45 @@ describe("<ActionSheet.Portal/>", () => {
     it('should set the data-state attribute to "open" when the show is true', async () => {
         render(
             <>
-                <ActionSheet.Trigger>{button_name.trigger}</ActionSheet.Trigger>
+                <ActionSheet.Trigger>{BUTTON_NAME.TRIGGER}</ActionSheet.Trigger>
                 <ActionSheet.Portal>Portal</ActionSheet.Portal>
             </>,
         );
 
-        const trigger = screen.getByText(button_name.trigger);
+        const trigger = screen.getByText(BUTTON_NAME.TRIGGER);
         await act(async () => {
             await userEvent.click(trigger);
         });
         const state = screen.getByRole("dialog").getAttribute("data-state");
 
-        expect(state).toBe(dialog_state.open);
+        expect(state).toBe(DIALOG_STATE.OPEN);
     });
 
     it("should not render the component if show is false", async () => {
         render(
             <>
-                <ActionSheet.Trigger>{button_name.trigger}</ActionSheet.Trigger>
+                <ActionSheet.Trigger>{BUTTON_NAME.TRIGGER}</ActionSheet.Trigger>
                 <ActionSheet.Portal>
-                    <ActionSheet.Header closeIcon={button_name.close} />
+                    <ActionSheet.Header closeIcon={BUTTON_NAME.CLOSE} />
                 </ActionSheet.Portal>
             </>,
         );
 
-        const trigger = screen.getByText(button_name.trigger);
+        const trigger = screen.getByText(BUTTON_NAME.TRIGGER);
         await act(async () => {
             await userEvent.click(trigger);
         });
-        const close = screen.getByText(button_name.close);
+        const close = screen.getByText(BUTTON_NAME.CLOSE);
         await act(async () => {
             await userEvent.click(close);
         });
 
-        expect(screen.queryByText(button_name.close)).not.toBeInTheDocument();
+        expect(screen.queryByText(BUTTON_NAME.CLOSE)).not.toBeInTheDocument();
     });
     it("should render overlay when type prop is modal", async () => {
         render(
             <>
-                <ActionSheet.Trigger>{button_name.trigger}</ActionSheet.Trigger>
+                <ActionSheet.Trigger>{BUTTON_NAME.TRIGGER}</ActionSheet.Trigger>
                 <ActionSheet.Portal>Portal</ActionSheet.Portal>
             </>,
             {
@@ -95,7 +95,7 @@ describe("<ActionSheet.Portal/>", () => {
             },
         );
 
-        const trigger = screen.getByText(button_name.trigger);
+        const trigger = screen.getByText(BUTTON_NAME.TRIGGER);
         await act(async () => {
             await userEvent.click(trigger);
         });
@@ -106,7 +106,7 @@ describe("<ActionSheet.Portal/>", () => {
     it("should not render overlay when type prop is non-modal", async () => {
         render(
             <>
-                <ActionSheet.Trigger>{button_name.trigger}</ActionSheet.Trigger>
+                <ActionSheet.Trigger>{BUTTON_NAME.TRIGGER}</ActionSheet.Trigger>
                 <ActionSheet.Portal>Portal</ActionSheet.Portal>
             </>,
             {
@@ -116,7 +116,7 @@ describe("<ActionSheet.Portal/>", () => {
             },
         );
 
-        const trigger = screen.getByText(button_name.trigger);
+        const trigger = screen.getByText(BUTTON_NAME.TRIGGER);
         await act(async () => {
             await userEvent.click(trigger);
         });
@@ -127,12 +127,12 @@ describe("<ActionSheet.Portal/>", () => {
     it("should close the action sheet when user clicked on overlay", async () => {
         render(
             <>
-                <ActionSheet.Trigger>Trigger</ActionSheet.Trigger>
+                <ActionSheet.Trigger>{BUTTON_NAME.TRIGGER}</ActionSheet.Trigger>
                 <ActionSheet.Portal>Portal</ActionSheet.Portal>
             </>,
         );
 
-        const trigger = screen.getByText(button_name.trigger);
+        const trigger = screen.getByText(BUTTON_NAME.TRIGGER);
         await act(async () => {
             await userEvent.click(trigger);
         });
@@ -142,7 +142,7 @@ describe("<ActionSheet.Portal/>", () => {
         });
         const state = screen.getByRole("dialog").getAttribute("data-state");
 
-        expect(state).toBe(dialog_state.close);
+        expect(state).toBe(DIALOG_STATE.CLOSE);
     });
     it("should render handle bar when expandable prop is true", async () => {
         render(
@@ -154,7 +154,7 @@ describe("<ActionSheet.Portal/>", () => {
                 wrapperProps: { expandable: true },
             },
         );
-        const trigger = screen.getByText(button_name.trigger);
+        const trigger = screen.getByText(BUTTON_NAME.TRIGGER);
         await act(async () => {
             await userEvent.click(trigger);
         });
@@ -165,13 +165,13 @@ describe("<ActionSheet.Portal/>", () => {
     it("should not render handle bar when showHandlebar prop is false", async () => {
         render(
             <>
-                <ActionSheet.Trigger>Trigger</ActionSheet.Trigger>
+                <ActionSheet.Trigger>{BUTTON_NAME.TRIGGER}</ActionSheet.Trigger>
                 <ActionSheet.Portal showHandlebar={false}>
                     Portal
                 </ActionSheet.Portal>
             </>,
         );
-        const trigger = screen.getByText(button_name.trigger);
+        const trigger = screen.getByText(BUTTON_NAME.TRIGGER);
         await act(async () => {
             await userEvent.click(trigger);
         });

@@ -50,10 +50,10 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
             animationTimerRef.current = setTimeout(() => handleClose?.(), 300);
         };
 
-        useEffect(() => setIsVisible(show), [show]);
         useEffect(() => {
+            setIsVisible(show);
             return () => clearTimeout(animationTimerRef.current);
-        }, []);
+        }, [show]);
 
         if (!show) return null;
 

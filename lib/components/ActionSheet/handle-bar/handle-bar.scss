@@ -15,8 +15,8 @@
         height: var(--core-size-2400);
         width: 100%;
         position: absolute;
-        top: 0px;
-        left: 0px;
+        top: 0;
+        inset-inline-start: 0;
     }
 
     @include breakpoint("lg") {
