@@ -1,4 +1,11 @@
-import { ComponentProps, forwardRef, useContext } from "react";
+import {
+    ComponentProps,
+    forwardRef,
+    useContext,
+    useState,
+    useEffect,
+    useRef,
+} from "react";
 import { createPortal } from "react-dom";
 import HandleBar from "../handle-bar";
 import "./portal.scss";
@@ -35,6 +42,21 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
                 fullHeightOnOpen,
             });
 
+        const [isVisible, setIsVisible] = useState(show);
+        const animationTimerRef = useRef<ReturnType<typeof setTimeout>>();
+
+        const toggleHandler = () => {
+            setIsVisible(!isVisible);
+            animationTimerRef.current = setTimeout(() => handleClose?.(), 300);
+        };
+
+        useEffect(() => setIsVisible(show), [show]);
+        useEffect(() => {
+            return () => clearTimeout(animationTimerRef.current);
+        }, []);
+
+        if (!show) return null;
+
         return (
             <>
                 {createPortal(
@@ -42,23 +64,23 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
                         <div
                             className="quill-action-sheet--portal quill-action-sheet--portal--wrapper"
                             role="dialog"
-                            data-state={show ? "open" : "close"}
+                            data-state={isVisible ? "open" : "close"}
                             ref={ref}
                             {...restProps}
                         >
                             {type === "modal" && (
                                 <div
                                     data-testid="dt-actionsheet-overlay"
-                                    onClick={handleClose}
+                                    onClick={toggleHandler}
                                     className="quill-action-sheet--portal quill-action-sheet--portal__variant--modal"
                                 />
                             )}
                             <div
                                 className={clsx(
                                     "quill-action-sheet--root",
-                                    `quill-action-sheet--root__show--${show}`,
+                                    `quill-action-sheet--root__show--${isVisible}`,
                                     `quill-action-sheet--root__position--${position}`,
-                                    `quill-action-sheet--root__position--${position}__show--${show}`,
+                                    `quill-action-sheet--root__position--${position}__show--${isVisible}`,
                                     className,
                                 )}
                                 ref={containerRef}
