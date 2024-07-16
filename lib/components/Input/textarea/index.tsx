@@ -1,10 +1,4 @@
-import {
-    ReactNode,
-    TextareaHTMLAttributes,
-    forwardRef,
-    useEffect,
-    useState,
-} from "react";
+import { ReactNode, TextareaHTMLAttributes, forwardRef, useState } from "react";
 import { Status, Variants } from "../base";
 import "./textarea.scss";
 import clsx from "clsx";
@@ -14,6 +8,7 @@ import {
     StandaloneCircleCheckBoldIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons/Standalone";
+import useUniqueId from "@hooks/useUniqueId";
 
 export interface TextAreaProps
     extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -43,12 +38,6 @@ const statusIcon = {
     error: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
 };
 
-let idCounter = 0;
-const generateUniqueId = () => {
-    idCounter += 1;
-    return `quill-textarea-${idCounter}`;
-};
-
 export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     (props, ref) => {
         const {
@@ -74,18 +63,13 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         } = props;
 
         const [value, setValue] = useState(textvalue);
-        const [customId, setCustomId] = useState("");
-
-        useEffect(() => {
-            setCustomId(generateUniqueId());
-        }, []);
 
         const rightSideIcon =
             (status === "success" || status === "error") && !disabled
                 ? statusIcon[status]
                 : rightIcon;
 
-        const inputId = id || customId;
+        const inputId = id || useUniqueId("quill-textarea");
 
         return (
             <div className="quill-textarea__container">

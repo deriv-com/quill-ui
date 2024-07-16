@@ -19,6 +19,7 @@ import { Text } from "@components/Typography";
 import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import { PasswordStrengthValidation } from "@components/Atom";
 import { PatternFormat, PatternFormatProps } from "react-number-format";
+import useUniqueId from "@hooks/useUniqueId";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
@@ -78,12 +79,6 @@ const statusIcon = {
     error: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
 };
 
-let idCounter = 0;
-const generateUniqueId = () => {
-    idCounter += 1;
-    return `quill-input-${idCounter}`;
-};
-
 const Input = forwardRef<HTMLInputElement, InputProps>(
     (
         {
@@ -130,11 +125,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         }
         const [inputValue, setInputValue] = useState(value || "");
         const [focused, setFocused] = React.useState(false);
-        const [customId, setCustomId] = useState("");
-
-        useEffect(() => {
-            setCustomId(generateUniqueId());
-        }, []);
 
         useEffect(() => {
             setInputValue(value || "");
@@ -149,7 +139,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 ? statusIcon[status]
                 : rightIcon;
 
-        const inputId = id || customId;
+        const inputId = id || useUniqueId("quill-input");
 
         const commonProps = {
             readOnly,
