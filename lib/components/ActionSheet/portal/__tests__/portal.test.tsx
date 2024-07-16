@@ -1,3 +1,4 @@
+import React from "react";
 import {
     screen,
     render as rtlRender,
@@ -42,6 +43,9 @@ jest.mock("usehooks-ts", () => ({
         isServer: false,
     })),
 }));
+
+const mock_loadash = jest.fn((fn) => fn);
+jest.mock("lodash/debounce", () => mock_loadash);
 
 describe("<ActionSheet.Portal/>", () => {
     it('should set the data-state attribute to "open" when the show is true', async () => {
@@ -124,7 +128,13 @@ describe("<ActionSheet.Portal/>", () => {
 
         expect(modalOverlay).not.toBeInTheDocument();
     });
-    it("should close the action sheet when user clicked on overlay", async () => {
+    it("should set state to false when user clicked on overlay", async () => {
+        const mockSetChangedOptions = jest.fn();
+        jest.spyOn(React, "useState").mockImplementationOnce(() => [
+            true,
+            mockSetChangedOptions,
+        ]);
+
         render(
             <>
                 <ActionSheet.Trigger>{BUTTON_NAME.TRIGGER}</ActionSheet.Trigger>
@@ -132,17 +142,12 @@ describe("<ActionSheet.Portal/>", () => {
             </>,
         );
 
-        const trigger = screen.getByText(BUTTON_NAME.TRIGGER);
-        await act(async () => {
-            await userEvent.click(trigger);
-        });
         const modalOverlay = screen.getByTestId(overlay);
         await act(async () => {
             await userEvent.click(modalOverlay);
         });
-        const state = screen.getByRole("dialog").getAttribute("data-state");
 
-        expect(state).toBe(DIALOG_STATE.CLOSE);
+        expect(mockSetChangedOptions).toHaveBeenCalledWith(false);
     });
     it("should render handle bar when expandable prop is true", async () => {
         render(

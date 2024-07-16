@@ -3,6 +3,7 @@ import { useDrag } from "@use-gesture/react";
 import { useMediaQuery } from "usehooks-ts";
 
 interface SwipeBlockType {
+    expandable?: boolean;
     show?: boolean;
     onClose?: () => void;
     shouldCloseOnDrag?: boolean;
@@ -10,6 +11,7 @@ interface SwipeBlockType {
 }
 
 export const useSwipeBlock = ({
+    expandable,
     show,
     onClose,
     shouldCloseOnDrag,
@@ -77,7 +79,7 @@ export const useSwipeBlock = ({
                     return;
                 }
                 setHeight(`${draggingPoint}px`);
-            } else {
+            } else if (expandable) {
                 if (distance[1] === 0) return;
                 if (!isGoingDown) {
                     if (

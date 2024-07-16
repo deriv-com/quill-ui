@@ -1,3 +1,4 @@
+import React from "react";
 import {
     ComponentProps,
     forwardRef,
@@ -7,6 +8,7 @@ import {
     useRef,
 } from "react";
 import { createPortal } from "react-dom";
+import debounce from "lodash.debounce";
 import HandleBar from "../handle-bar";
 import "./portal.scss";
 import { useSwipeBlock } from "@hooks/useSwipeBlock";
@@ -19,6 +21,14 @@ interface PortalProps extends ComponentProps<"div"> {
     showHandlebar?: boolean;
     fullHeightOnOpen?: boolean;
 }
+
+type TCustomConstructor = React.JSXElementConstructor<{
+    handleClose: () => void;
+}>;
+type TChild = React.ReactElement<
+    { handleClose: () => void },
+    TCustomConstructor
+>;
 
 const Portal = forwardRef<HTMLDivElement, PortalProps>(
     (
@@ -34,21 +44,35 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
     ) => {
         const { show, handleClose, className, position, type, expandable } =
             useContext(ActionSheetContext);
-        const { height, containerRef, bindHandle, isScrolled, isLg } =
-            useSwipeBlock({
-                show,
-                onClose: handleClose,
-                shouldCloseOnDrag,
-                fullHeightOnOpen,
-            });
 
         const [isVisible, setIsVisible] = useState(show);
         const animationTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
-        const toggleHandler = () => {
+        const toggleHandler = debounce(() => {
             setIsVisible(!isVisible);
-            animationTimerRef.current = setTimeout(() => handleClose?.(), 300);
-        };
+            animationTimerRef.current = setTimeout(() => handleClose?.(), 500);
+        }, 200);
+
+        const childrenWithProps = React.Children.map(children, (child) => {
+            if (
+                React.isValidElement(child) &&
+                (child?.type as TCustomConstructor)?.name === "Footer"
+            ) {
+                return React.cloneElement(child as TChild, {
+                    handleClose: toggleHandler,
+                });
+            }
+            return child;
+        });
+
+        const { height, containerRef, bindHandle, isScrolled, isLg } =
+            useSwipeBlock({
+                expandable,
+                show,
+                onClose: toggleHandler,
+                shouldCloseOnDrag,
+                fullHeightOnOpen,
+            });
 
         useEffect(() => {
             setIsVisible(show);
@@ -100,7 +124,7 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
                                     />
                                 )}
 
-                                {children}
+                                {childrenWithProps}
                             </div>
                         </div>
                     </>,
