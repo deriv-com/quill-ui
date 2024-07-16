@@ -17,7 +17,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
           >
             <input
               class="input peer input__align--left input__size--md"
-              id="mock-uuid"
+              id="quill-input-5"
               placeholder="0.00"
               type="text"
               value="undefined"
@@ -134,7 +134,7 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
             </span>
             <input
               class="input peer input__align--left input__size--md"
-              id="mock-uuid"
+              id="quill-input-6"
               placeholder="0.00"
               type="text"
               value="undefined"
@@ -222,7 +222,7 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
           >
             <input
               class="input peer input__align--left input__size--md"
-              id="mock-uuid"
+              id="quill-input-7"
               placeholder="0.00"
               type="text"
               value="undefined"
@@ -304,7 +304,7 @@ exports[`TextFieldWithSteppers should handle the hover for outline variant 1`] =
 >
   <input
     class="input peer input__align--left input__size--md"
-    id="mock-uuid"
+    id="quill-input-4"
     placeholder="Placeholder"
     type="text"
     value="undefined"
@@ -329,7 +329,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
           >
             <input
               class="input peer input__align--left input__size--md"
-              id="mock-uuid"
+              id="quill-input-1"
               placeholder="Enter text"
               type="text"
               value="undefined"

@@ -37,7 +37,7 @@ exports[`DatePickerDropdown renders correctly 1`] = `
           >
             <input
               class="input peer input__align--left input__size--md"
-              id="mock-uuid"
+              id="quill-input-1"
               inputmode="numeric"
               placeholder=""
               readonly=""
@@ -46,7 +46,7 @@ exports[`DatePickerDropdown renders correctly 1`] = `
             />
             <label
               class="label label__status--neutral label__hasIcon"
-              for="mock-uuid"
+              for="quill-input-1"
             >
               Date
             </label>

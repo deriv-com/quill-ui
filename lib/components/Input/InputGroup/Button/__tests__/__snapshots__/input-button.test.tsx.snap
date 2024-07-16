@@ -17,7 +17,7 @@ exports[`InputGroupButton Component disables button when input is empty 1`] = `
           <input
             button_position="right"
             class="input peer input__align--left input__size--md"
-            id="mock-uuid"
+            id="quill-input-3"
             placeholder=""
             type="text"
             value=""
@@ -61,14 +61,14 @@ exports[`InputGroupButton Component enables button when input is not empty 1`] =
           <input
             button_position="right"
             class="input peer input__align--left input__size--md"
-            id="mock-uuid"
+            id="quill-input-4"
             placeholder=""
             type="text"
             value=""
           />
           <label
             class="label label__status--neutral"
-            for="mock-uuid"
+            for="quill-input-4"
           >
             input
           </label>
@@ -101,7 +101,7 @@ exports[`InputGroupButton Component should handle the hover for outline variant 
   <input
     button_position="right"
     class="input peer input__align--left input__size--md"
-    id="mock-uuid"
+    id="quill-input-2"
     placeholder="Placeholder"
     type="text"
     value=""
@@ -126,14 +126,14 @@ exports[`InputGroupButton Component should render a default InputGroupButton 1`]
           <input
             button_position="right"
             class="input peer input__align--left input__size--md"
-            id="mock-uuid"
+            id="quill-input-1"
             placeholder=""
             type="text"
             value=""
           />
           <label
             class="label label__status--neutral"
-            for="mock-uuid"
+            for="quill-input-1"
           >
             input
           </label>

@@ -19,7 +19,6 @@ import { Text } from "@components/Typography";
 import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import { PasswordStrengthValidation } from "@components/Atom";
 import { PatternFormat, PatternFormatProps } from "react-number-format";
-import { v4 as uuid } from "uuid";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
@@ -65,6 +64,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     addOn?: ReactNode;
     addOnIcon?: ReactNode;
     formatProps?: PatternFormatProps;
+    id?: string;
 }
 
 const statusIconColors = {
@@ -76,6 +76,12 @@ const statusIconColors = {
 const statusIcon = {
     success: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     error: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+};
+
+let idCounter = 0;
+const generateUniqueId = () => {
+    idCounter += 1;
+    return `quill-input-${idCounter}`;
 };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -114,6 +120,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             addOn,
             formatProps,
             addOnIcon,
+            id,
             ...rest
         },
         ref,
@@ -123,10 +130,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         }
         const [inputValue, setInputValue] = useState(value || "");
         const [focused, setFocused] = React.useState(false);
+        const [customId, setCustomId] = useState("");
+
+        useEffect(() => {
+            setCustomId(generateUniqueId());
+        }, []);
 
         useEffect(() => {
             setInputValue(value || "");
         }, [value]);
+
         if (isDropdownOpen) {
             hideMessage = true;
         }
@@ -136,7 +149,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 ? statusIcon[status]
                 : rightIcon;
 
-        const id = uuid();
+        const inputId = id || customId;
 
         const commonProps = {
             readOnly,
@@ -150,7 +163,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 `input__size--${inputSize}`,
             ),
             disabled: !!disabled,
-            id: id,
+            id: inputId,
         };
 
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -244,7 +257,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                         `label__status--${status}`,
                                         leftIcon && `label__hasIcon`,
                                     )}
-                                    htmlFor={id}
+                                    htmlFor={inputId}
                                 >
                                     {label}
                                     {fieldMarker && (
