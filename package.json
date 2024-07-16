@@ -123,8 +123,7 @@
     "jest": {
         "testEnvironment": "jest-environment-jsdom",
         "setupFilesAfterEnv": [
-            "<rootDir>/test/setup.test.js",
-            "<rootDir>/test/mock-uuid.js"
+            "<rootDir>/test/setup.test.js"
         ],
         "coveragePathIgnorePatterns": [
             "/node_modules/",

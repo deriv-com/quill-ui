@@ -1,4 +1,10 @@
-import { ReactNode, TextareaHTMLAttributes, forwardRef, useState } from "react";
+import {
+    ReactNode,
+    TextareaHTMLAttributes,
+    forwardRef,
+    useEffect,
+    useState,
+} from "react";
 import { Status, Variants } from "../base";
 import "./textarea.scss";
 import clsx from "clsx";
@@ -8,7 +14,6 @@ import {
     StandaloneCircleCheckBoldIcon,
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons/Standalone";
-import { v4 as uuid } from "uuid";
 
 export interface TextAreaProps
     extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -25,6 +30,7 @@ export interface TextAreaProps
     status?: Status;
     fieldMarker?: boolean;
     show_counter?: boolean;
+    id?: string;
 }
 
 const statusIconColors = {
@@ -35,6 +41,12 @@ const statusIconColors = {
 const statusIcon = {
     success: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     error: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+};
+
+let idCounter = 0;
+const generateUniqueId = () => {
+    idCounter += 1;
+    return `quill-textarea-${idCounter}`;
 };
 
 export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
@@ -58,16 +70,22 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             fieldMarker,
             required,
             resizable = true,
+            id,
         } = props;
 
         const [value, setValue] = useState(textvalue);
+        const [customId, setCustomId] = useState("");
+
+        useEffect(() => {
+            setCustomId(generateUniqueId());
+        }, []);
 
         const rightSideIcon =
             (status === "success" || status === "error") && !disabled
                 ? statusIcon[status]
                 : rightIcon;
 
-        const id = uuid();
+        const inputId = id || customId;
 
         return (
             <div className="quill-textarea__container">
@@ -98,13 +116,13 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                             onChange?.(e);
                         }}
                         {...props}
-                        id={id}
+                        id={inputId}
                         ref={ref}
                     />
                     {label && size === "md" && (
                         <label
                             className={clsx("label", `label--${status}`)}
-                            htmlFor={id}
+                            htmlFor={inputId}
                         >
                             {label}
                             {fieldMarker && (
