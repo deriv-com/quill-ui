@@ -22,12 +22,11 @@ interface PortalProps extends ComponentProps<"div"> {
     fullHeightOnOpen?: boolean;
 }
 
-type TCustomConstructor = React.JSXElementConstructor<{
-    handleClose: () => void;
-}>;
-type TChild = React.ReactElement<
-    { handleClose: () => void },
-    TCustomConstructor
+type TFooterChildProps = { handleClose: () => void };
+type TFooterJSXConstructor = React.JSXElementConstructor<TFooterChildProps>;
+type TFooterChild = React.ReactElement<
+    TFooterChildProps,
+    TFooterJSXConstructor
 >;
 
 const Portal = forwardRef<HTMLDivElement, PortalProps>(
@@ -56,9 +55,9 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
         const childrenWithProps = React.Children.map(children, (child) => {
             if (
                 React.isValidElement(child) &&
-                (child?.type as TCustomConstructor)?.name === "Footer"
+                (child?.type as TFooterJSXConstructor)?.name === "Footer"
             ) {
-                return React.cloneElement(child as TChild, {
+                return React.cloneElement(child as TFooterChild, {
                     handleClose: toggleHandler,
                 });
             }

@@ -44,8 +44,7 @@ jest.mock("usehooks-ts", () => ({
     })),
 }));
 
-const mock_loadash = jest.fn((fn) => fn);
-jest.mock("lodash/debounce", () => mock_loadash);
+jest.mock("lodash.debounce", () => jest.fn((fn) => fn));
 
 describe("<ActionSheet.Portal/>", () => {
     it('should set the data-state attribute to "open" when the show is true', async () => {
