@@ -3,6 +3,7 @@
 exports[`TextArea Component handles onChange correctly 1`] = `
 <textarea
   class="quill-textarea"
+  id="quill-textarea-2"
   placeholder="Test Placeholder"
 />
 `;
@@ -17,6 +18,7 @@ exports[`TextArea Component renders with the correct size 1`] = `
     >
       <textarea
         class="quill-textarea"
+        id="quill-textarea-4"
       />
     </div>
     <div

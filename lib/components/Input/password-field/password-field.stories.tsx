@@ -51,6 +51,10 @@ const meta = {
             },
             options: ["sm", "md"],
         },
+        id: {
+            control: "text",
+            description: "id to the input element",
+        },
         maxLength: {
             control: {
                 type: "number",

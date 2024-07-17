@@ -4,7 +4,8 @@ import userEvent from "@testing-library/user-event";
 import React from "react";
 
 describe("TextFieldWithSteppers", () => {
-    const setup = (props: Partial<TextFieldWithSteppersProps> = {}) => render(<TextFieldWithSteppers {...props} />);
+    const setup = (props: Partial<TextFieldWithSteppersProps> = {}) =>
+        render(<TextFieldWithSteppers {...props} />);
 
     it("should match snapshot", () => {
         const { container } = setup({ placeholder: "Enter text" });

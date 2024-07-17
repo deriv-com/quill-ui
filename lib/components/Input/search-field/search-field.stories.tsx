@@ -43,6 +43,10 @@ const meta = {
             },
             options: ["text", "email", "password"],
         },
+        id: {
+            control: "text",
+            description: "id to the input element",
+        },
         inputSize: {
             control: {
                 type: "radio",

@@ -52,7 +52,7 @@ const meta = {
         unitLeft: "$",
         unitRight: "USD",
         decimals: 2,
-        placeholder: '0.00',
+        placeholder: "0.00",
     },
     argTypes: {
         inputSize: {
@@ -60,6 +60,10 @@ const meta = {
                 type: "radio",
             },
             options: ["sm", "md"],
+        },
+        id: {
+            control: "text",
+            description: "id to the input element",
         },
         leftIcon: {
             options: Object.keys(icons),
