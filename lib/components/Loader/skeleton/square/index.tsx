@@ -28,7 +28,7 @@ const Square = ({
 
                 className,
             )}
-            style={{ width, height, ...style }}
+            style={{ width, minWidth: width, height, ...style }}
             {...rest}
         />
     );

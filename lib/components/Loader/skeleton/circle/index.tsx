@@ -10,7 +10,12 @@ const Circle = ({ width = 100, className, style, ...rest }: CircleProps) => {
     return (
         <SkeletonElement
             className={clsx("quill-loader__skeleton--circle", className)}
-            style={{ width, height: width, ...style }}
+            style={{
+                width,
+                minWidth: width,
+                height: width,
+                ...style,
+            }}
             {...rest}
         />
     );

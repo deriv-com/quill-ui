@@ -7,6 +7,7 @@ const meta = {
     component: Skeleton.Container,
     args: {
         direction: "row",
+        fullWidth: true,
     },
     argTypes: {
         direction: {
@@ -23,22 +24,41 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Example1: Story = {
+const Template: React.FC<React.ComponentProps<typeof Skeleton.Container>> = (
+    args,
+) => (
+    <Skeleton.Container {...args}>
+        <div>Hello</div>
+        <Skeleton.Container fullWidth>
+            <Skeleton.Circle />
+            <Skeleton.Container
+                skeletonHeight={50}
+                // skeletonWidth={200}
+                fullWidth
+                direction="row"
+            >
+                <Skeleton.Square height={20} />
+                <Skeleton.Square />
+            </Skeleton.Container>
+        </Skeleton.Container>
+
+        <Skeleton.Square />
+        <Skeleton.Square />
+    </Skeleton.Container>
+);
+
+export const Example1 = Template.bind(this) as Story;
+Example1.args = { ...meta.args };
+
+export const Example2: Story = {
     args: {
         children: (
             <>
-                <Skeleton.Container skeletonWidth={100} direction="column">
-                    <Skeleton.Circle />
-                    <Skeleton.Container skeletonWidth={200} direction="row">
-                        <Skeleton.Square height={20} />
-                        <Skeleton.Square height={20} />
-                    </Skeleton.Container>
+                <Skeleton.Container direction="column">
+                    <Skeleton.Square height={20} />
+                    <Skeleton.Square height={20} />
                 </Skeleton.Container>
-                <Skeleton.Container
-                    skeletonWidth={520}
-                    skeletonHeight={100}
-                    direction="row"
-                >
+                <Skeleton.Container skeletonHeight={100} direction="row">
                     <Skeleton.Square height={50} />
                     <Skeleton.Square />
                     <Skeleton.Square />
@@ -48,21 +68,17 @@ export const Example1: Story = {
     },
 };
 
-export const Example2: Story = {
+export const Example3: Story = {
     args: {
         children: (
             <>
-                <Skeleton.Container skeletonWidth={200} direction="column">
-                    <Skeleton.Square height={20} />
-                    <Skeleton.Square height={20} />
-                </Skeleton.Container>
-                <Skeleton.Container
-                    skeletonWidth={520}
-                    skeletonHeight={100}
-                    direction="row"
-                >
-                    <Skeleton.Square height={50} />
+                <Skeleton.Container direction="column">
+                    <Skeleton.Circle />
                     <Skeleton.Square />
+                    <Skeleton.Square />
+                </Skeleton.Container>
+                <Skeleton.Container skeletonHeight={100} direction="row">
+                    <Skeleton.Square height={50} />
                     <Skeleton.Square />
                 </Skeleton.Container>
             </>

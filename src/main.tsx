@@ -18,24 +18,14 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                     <Heading.H1 as="span">Quill UI - h1 as span</Heading.H1>
                     <Breakpoint />
                     <Skeleton.Container direction="row">
-                        <Skeleton.Container
-                            skeletonWidth={100}
-                            direction="column"
-                        >
+                        <Skeleton.Container direction="column">
                             <Skeleton.Circle />
-                            <Skeleton.Container
-                                skeletonWidth={200}
-                                direction="row"
-                            >
+                            <Skeleton.Container direction="row">
                                 <Skeleton.Square height={20} />
                                 <Skeleton.Square height={20} />
                             </Skeleton.Container>
                         </Skeleton.Container>
-                        <Skeleton.Container
-                            skeletonWidth={520}
-                            skeletonHeight={100}
-                            direction="row"
-                        >
+                        <Skeleton.Container direction="row">
                             <Skeleton.Square height={50} />
                             <Skeleton.Square />
                             <Skeleton.Square />

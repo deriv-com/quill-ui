@@ -11,6 +11,7 @@ export interface SkeletonContainerProps {
     gap?: number;
     skeletonWidth?: number | string;
     skeletonHeight?: number | string;
+    fullWidth?: boolean;
 }
 
 const Container = ({
@@ -21,16 +22,28 @@ const Container = ({
     children,
     skeletonWidth,
     skeletonHeight,
+    fullWidth = true,
     alignment = "left",
     ...rest
 }: SkeletonContainerProps) => {
+    // let enableWidth = true;
+
     const childrenWithProps = React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
+            const displayname = (child.type as React.ComponentType<ReactNode>)
+                ?.displayName;
             const props = child.props;
+
+            // if (props.width || skeletonWidth) enableWidth = false;
+
+            console.log(displayname);
+
+            // if (displayname === "Skeleton.Container") debugger;
 
             return React.cloneElement(child as ReactElement, {
                 width: !props.fullWidth && (props.width || skeletonWidth),
                 height: props.height || skeletonHeight,
+                fullWidth: displayname !== "Skeleton.Container",
                 ...props,
             });
         }
@@ -43,12 +56,16 @@ const Container = ({
                 "quill-skeleton-container",
                 `quill-skeleton-container__direction--${direction}`,
                 `quill-skeleton-container__alignment--${direction}-${alignment}`,
+                {
+                    "quill-skeleton-container__full-width": fullWidth,
+                },
                 className,
             )}
             style={{ gap: gap, ...style }}
             {...rest}
         >
             {childrenWithProps}
+            {/* {children} */}
         </div>
     );
 };

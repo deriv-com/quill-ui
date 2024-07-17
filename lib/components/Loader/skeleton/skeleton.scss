@@ -16,6 +16,7 @@
 
 .quill-loader {
     &__skeleton {
+        display: flex;
         background-color: var(
             --semantic-color-monochrome-surface-normal-lowest
         );

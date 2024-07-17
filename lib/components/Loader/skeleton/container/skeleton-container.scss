@@ -1,6 +1,10 @@
 .quill-skeleton-container {
     display: flex;
 
+    &__full-width {
+        width: 100%;
+    }
+
     &__direction {
         &--row {
             flex-direction: column;
