@@ -2,11 +2,22 @@
 
 .quill-action-sheet--handle-bar {
     position: sticky;
+    z-index: 1;
     display: flex;
     touch-action: none;
     align-items: center;
     justify-content: center;
     padding-block: var(--component-actionSheet-spacing-padding-sm);
+
+    &::before {
+        content: "";
+        display: block;
+        height: var(--core-size-2400);
+        width: 100%;
+        position: absolute;
+        top: 0;
+        inset-inline-start: 0;
+    }
 
     @include breakpoint("lg") {
         display: none;
