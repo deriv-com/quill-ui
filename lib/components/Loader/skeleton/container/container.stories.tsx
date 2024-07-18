@@ -28,14 +28,13 @@ const Template: React.FC<React.ComponentProps<typeof Skeleton.Container>> = (
     args,
 ) => (
     <Skeleton.Container {...args}>
-        <div>Hello</div>
-        <Skeleton.Container fullWidth>
+        <Skeleton.Container alignment="right">
             <Skeleton.Circle />
             <Skeleton.Container
                 skeletonHeight={50}
-                // skeletonWidth={200}
-                fullWidth
+                skeletonWidth="50%"
                 direction="row"
+                alignment="right"
             >
                 <Skeleton.Square height={20} />
                 <Skeleton.Square />

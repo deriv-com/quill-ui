@@ -26,24 +26,16 @@ const Container = ({
     alignment = "left",
     ...rest
 }: SkeletonContainerProps) => {
-    // let enableWidth = true;
-
     const childrenWithProps = React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
             const displayname = (child.type as React.ComponentType<ReactNode>)
                 ?.displayName;
             const props = child.props;
 
-            // if (props.width || skeletonWidth) enableWidth = false;
-
-            console.log(displayname);
-
-            // if (displayname === "Skeleton.Container") debugger;
-
             return React.cloneElement(child as ReactElement, {
                 width: !props.fullWidth && (props.width || skeletonWidth),
                 height: props.height || skeletonHeight,
-                fullWidth: displayname !== "Skeleton.Container",
+                // fullWidth: displayname !== "Skeleton.Container",
                 ...props,
             });
         }
@@ -65,7 +57,6 @@ const Container = ({
             {...rest}
         >
             {childrenWithProps}
-            {/* {children} */}
         </div>
     );
 };
