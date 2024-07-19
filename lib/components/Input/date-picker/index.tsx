@@ -23,6 +23,7 @@ export interface TDatePickerDropdownProps extends Omit<InputProps, "leftIcon"> {
     onSelectDate: (value: Date) => void;
     isAutocomplete?: boolean;
     datePickerProps?: DatePickerProps;
+    value?: string;
 }
 
 const dateFormat = "DD/MM/YYYY";
@@ -40,6 +41,7 @@ const DatePickerInput = forwardRef<HTMLInputElement, TDatePickerDropdownProps>(
             onSelectDate,
             onSearch,
             disabled,
+            value,
             ...rest
         },
         ref,
@@ -53,6 +55,10 @@ const DatePickerInput = forwardRef<HTMLInputElement, TDatePickerDropdownProps>(
             className: datePickerClassName,
             ...restDatePickerProps
         } = datePickerProps;
+
+        useEffect(() => {
+            setDate(value);
+        }, [value]);
 
         const handleDropdown = (e: React.MouseEvent<HTMLDivElement>) => {
             if (
