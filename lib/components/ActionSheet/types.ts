@@ -34,7 +34,6 @@ interface ActionType {
 export interface FooterProps
     extends ComponentPropsWithoutRef<"div">,
         actionSheetFooterCVA {
-    handleClose?: () => void;
     primaryAction?: ActionType;
     secondaryAction?: ActionType;
     shouldCloseOnPrimaryButtonClick?: boolean;

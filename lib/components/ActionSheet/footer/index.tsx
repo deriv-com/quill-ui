@@ -1,10 +1,11 @@
 import { FooterProps } from "../types";
+import { useContext } from "react";
+import { ActionSheetContext } from "../root";
 import clsx from "clsx";
 import "./footer.scss";
 import { Button } from "@components/Button";
 
 const Footer = ({
-    handleClose,
     primaryAction,
     secondaryAction,
     alignment,
@@ -15,6 +16,7 @@ const Footer = ({
     isSecondaryButtonDisabled,
     ...rest
 }: FooterProps) => {
+    const { handleClose } = useContext(ActionSheetContext);
     if (!primaryAction && !secondaryAction) return null;
 
     const primaryActionHandler = () => {
