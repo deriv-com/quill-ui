@@ -109,6 +109,12 @@ const meta: Meta = {
             mapping: icons,
             control: "radio",
         },
+        iconPosition: {
+            control: "radio",
+            options: ["left", "right"],
+            description:
+                "This prop controls icon position in `ActionSheet.Header`. Default value - 'right'",
+        },
         primaryAction: {
             control: false,
             description:

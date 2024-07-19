@@ -133,6 +133,12 @@ const meta: Meta = {
                 type: "radio",
             },
         },
+        iconPosition: {
+            control: "radio",
+            options: ["left", "right"],
+            description:
+                "This prop controls icon position in `ActionSheet.Header`. Default value - 'right'",
+        },
         alignment: {
             control: {
                 type: "radio",

@@ -42,7 +42,14 @@
             fill: var(--component-textIcon-normal-prominent);
             position: absolute;
             top: 0;
-            right: 0;
+
+            &--right {
+                right: 0;
+            }
+
+            &--left {
+                left: 0;
+            }
 
             @include breakpoint("lg") {
                 left: 0;
