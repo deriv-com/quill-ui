@@ -44,7 +44,12 @@ jest.mock("usehooks-ts", () => ({
     })),
 }));
 
-jest.mock("lodash.debounce", () => jest.fn((fn) => fn));
+jest.mock("react-transition-group", () => ({
+    ...jest.requireActual("react-transition-group"),
+    CSSTransition: jest.fn(({ children, ...props }) => {
+        return <div>{props.in ? children : null}</div>;
+    }),
+}));
 
 describe("<ActionSheet.Portal/>", () => {
     it('should set the data-state attribute to "open" when the show is true', async () => {
