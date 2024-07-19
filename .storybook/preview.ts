@@ -1,7 +1,6 @@
 import React from "react";
 import type { Preview } from "@storybook/react";
 import { withThemeByClassName } from "@storybook/addon-themes";
-import { QuillResetCssWrapper } from "../lib/components";
 import "./styles.scss";
 import "@styles/static.scss";
 
