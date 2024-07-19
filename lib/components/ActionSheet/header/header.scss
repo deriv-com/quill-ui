@@ -44,15 +44,15 @@
             top: 0;
 
             &--right {
-                right: 0;
+                inset-inline-end: 0;
             }
 
             &--left {
-                left: 0;
+                inset-inline-start: 0;
             }
 
             @include breakpoint("lg") {
-                left: 0;
+                inset-inline-start: 0;
             }
 
             &--close {
