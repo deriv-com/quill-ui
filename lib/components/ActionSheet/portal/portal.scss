@@ -19,6 +19,7 @@
 
         &__variant--modal {
             position: fixed;
+            z-index: 150;
             inset: var(--semantic-spacing-general-none);
             background-color: var(--core-color-opacity-black-500);
             pointer-events: auto;
