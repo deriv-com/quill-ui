@@ -28,14 +28,11 @@ const Container = ({
 }: SkeletonContainerProps) => {
     const childrenWithProps = React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-            const displayname = (child.type as React.ComponentType<ReactNode>)
-                ?.displayName;
             const props = child.props;
 
             return React.cloneElement(child as ReactElement, {
                 width: !props.fullWidth && (props.width || skeletonWidth),
                 height: props.height || skeletonHeight,
-                // fullWidth: displayname !== "Skeleton.Container",
                 ...props,
             });
         }

@@ -3,7 +3,7 @@ import SkeletonElement, { SkeletonBaseProps } from "../base";
 import clsx from "clsx";
 
 export interface CircleProps extends SkeletonBaseProps {
-    width?: number;
+    width?: number | string;
 }
 
 const Circle = ({ width = 100, className, style, ...rest }: CircleProps) => {

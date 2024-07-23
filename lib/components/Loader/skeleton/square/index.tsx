@@ -25,7 +25,6 @@ const Square = ({
                     "quill-loader__skeleton--rounded": rounded,
                     "quill-loader__skeleton--full-width": fullWidth,
                 },
-
                 className,
             )}
             style={{ width, minWidth: width, height, ...style }}

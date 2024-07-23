@@ -3,48 +3,35 @@ import { render } from "@testing-library/react";
 import SkeletonElement from "..";
 
 describe("SkeletonElement", () => {
-    test("renders with default props", () => {
+    test("renders correctly", () => {
         const { container } = render(<SkeletonElement />);
-        const skeleton = container.querySelector("span");
-
-        expect(skeleton).toHaveClass("quill-loader__skeleton");
-        expect(skeleton).toHaveClass("quill-loader__skeleton--animated");
-        expect(skeleton).not.toHaveClass("quill-loader__skeleton--rounded");
-        expect(skeleton).not.toHaveClass("quill-loader__skeleton--circle");
-
-        expect(skeleton).toHaveStyle("width: 100px");
-        expect(skeleton).toHaveStyle("height: 100px");
+        expect(container.firstChild).toHaveClass("quill-loader__skeleton");
     });
 
-    test("applies rounded and circle class based on props", () => {
-        const { container } = render(
-            <SkeletonElement rounded shape="circle" />,
+    test("applies active class when active is true", () => {
+        const { container } = render(<SkeletonElement active={true} />);
+        expect(container.firstChild).toHaveClass(
+            "quill-loader__skeleton--animated",
         );
-        const skeleton = container.querySelector("span");
-
-        expect(skeleton).toHaveClass("quill-loader__skeleton--rounded");
-        expect(skeleton).toHaveClass("quill-loader__skeleton--circle");
     });
 
-    test("applies fullWidth style correctly", () => {
-        const { container } = render(<SkeletonElement fullWidth />);
-        const skeleton = container.querySelector("span");
-
-        expect(skeleton).toHaveStyle("width: 100%");
-    });
-
-    test("applies custom width, height and className", () => {
-        const { container } = render(
-            <SkeletonElement
-                width={200}
-                height={150}
-                className="custom-class"
-            />,
+    test("does not apply active class when active is false", () => {
+        const { container } = render(<SkeletonElement active={false} />);
+        expect(container.firstChild).not.toHaveClass(
+            "quill-loader__skeleton--animated",
         );
-        const skeleton = container.querySelector("span");
+    });
 
-        expect(skeleton).toHaveStyle("width: 200px");
-        expect(skeleton).toHaveStyle("height: 150px");
-        expect(skeleton).toHaveClass("custom-class");
+    test("applies additional class names", () => {
+        const { container } = render(
+            <SkeletonElement className="additional-class" />,
+        );
+        expect(container.firstChild).toHaveClass("additional-class");
+    });
+
+    test("applies additional styles", () => {
+        const style = { backgroundColor: "red" };
+        const { container } = render(<SkeletonElement style={style} />);
+        expect(container.firstChild).toHaveStyle("background-color: red");
     });
 });

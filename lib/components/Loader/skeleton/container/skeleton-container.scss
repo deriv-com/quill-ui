@@ -1,9 +1,7 @@
 .quill-skeleton-container {
     display: flex;
-
-    &__full-width {
-        width: 100%;
-    }
+    width: 100%;
+    height: 100%;
 
     &__direction {
         &--row {
