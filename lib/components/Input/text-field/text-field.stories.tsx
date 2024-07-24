@@ -45,6 +45,7 @@ const meta = {
         fieldMarker: false,
         required: false,
         show_counter: false,
+        allowDecimals: false,
     },
     argTypes: {
         type: {
@@ -53,6 +54,9 @@ const meta = {
         id: {
             control: "text",
             description: "id to the input element",
+        },
+        allowDecimals: {
+            description: "input type number to allow decimal values",
         },
         inputSize: {
             control: {
