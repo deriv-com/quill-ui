@@ -27,7 +27,7 @@ export const useSwipeBlock = ({
             setHeight("100%");
         }
         if (!isLg && show) {
-            fullHeightOnOpen ? setHeight("90vh") : setHeight("auto");
+            fullHeightOnOpen ? setHeight("90dvh") : setHeight("auto");
         }
     }, [show, isLg]);
 
@@ -84,23 +84,23 @@ export const useSwipeBlock = ({
                         draggingPoint >= 0 &&
                         draggingPoint <= windowHeight * 0.3
                     ) {
-                        setHeight("30vh");
+                        setHeight("30dvh");
                     } else if (
                         draggingPoint >= windowHeight * 0.3 &&
                         draggingPoint <= windowHeight * 0.5
                     ) {
-                        setHeight("50vh");
+                        setHeight("50dvh");
                     } else {
-                        setHeight("90vh");
+                        setHeight("90dvh");
                     }
                 } else {
                     if (draggingPoint <= windowHeight * 0.3) {
                         setHeight("0px");
                         onClose?.();
                     } else if (draggingPoint <= windowHeight * 0.5) {
-                        setHeight("30vh");
+                        setHeight("30dvh");
                     } else {
-                        setHeight("50vh");
+                        setHeight("50dvh");
                     }
                 }
             }
