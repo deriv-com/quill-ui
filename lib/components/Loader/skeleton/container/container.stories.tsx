@@ -58,20 +58,21 @@ const Template2: React.FC<React.ComponentProps<typeof Skeleton.Container>> = (
 export const Example2 = Template2.bind(this) as Story;
 Example2.args = { ...meta.args };
 
-export const Example3: Story = {
-    args: {
-        children: (
-            <>
-                <Skeleton.Container direction="column">
-                    <Skeleton.Circle />
-                    <Skeleton.Square />
-                    <Skeleton.Square />
-                </Skeleton.Container>
-                <Skeleton.Container skeletonHeight={100} direction="row">
-                    <Skeleton.Square height={50} />
-                    <Skeleton.Square />
-                </Skeleton.Container>
-            </>
-        ),
-    },
-};
+const Template3: React.FC<React.ComponentProps<typeof Skeleton.Container>> = (
+    args,
+) => (
+    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        <Skeleton.Container {...args} direction="column">
+            <Skeleton.Circle />
+            <Skeleton.Square />
+            <Skeleton.Square />
+        </Skeleton.Container>
+        <Skeleton.Container skeletonHeight={100} direction="row" {...args}>
+            <Skeleton.Square height={50} />
+            <Skeleton.Square />
+        </Skeleton.Container>
+    </div>
+);
+
+export const Example3 = Template3.bind(this) as Story;
+Example3.args = { ...meta.args };
