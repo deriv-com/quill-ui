@@ -15,16 +15,14 @@
             align-items: flex-end;
             justify-content: center;
             overflow-x: hidden;
-
-            &[data-state="close"] {
-                visibility: hidden;
-            }
         }
 
         &__variant--modal {
+            position: fixed;
+            z-index: 150;
+            inset: var(--semantic-spacing-general-none);
             background-color: var(--core-color-opacity-black-500);
             pointer-events: auto;
-            z-index: -10;
         }
     }
 
@@ -37,7 +35,7 @@
         margin-left: auto;
         margin-right: auto;
         display: flex;
-        max-height: 90vh;
+        max-height: 90dvh;
         width: 100%;
         max-width: 800px;
         flex-direction: column;
@@ -45,9 +43,8 @@
         border-top-left-radius: var(--semantic-borderRadius-lg);
         border-top-right-radius: var(--semantic-borderRadius-lg);
         background-color: var(--component-actionSheet-bg);
-        transition-property: all;
-        transition-timing-function: var(--motion-easing-inandout);
-        transition-duration: var(--core-motion-duration-200);
+        transition: all var(--motion-easing-inandout)
+            var(--core-motion-duration-200);
 
         @include breakpoint("lg") {
             max-width: 360px;
@@ -55,31 +52,33 @@
             max-height: 100vh;
         }
 
+        &--enter,
+        &--exit {
+            transform: translateY(100%);
+            &:is(.position--right) {
+                @include breakpoint("lg") {
+                    transform: translateX(100%);
+                }
+            }
+            &:is(.position--left) {
+                @include breakpoint("lg") {
+                    transform: translateX(-100%);
+                }
+            }
+        }
+        &--enter-done {
+            transform: translate(0, 0);
+            transition: all var(--motion-easing-inandout)
+                var(--core-motion-duration-200);
+        }
+
         &__position {
             &--left {
-                &__show--false {
-                    visibility: hidden;
-                    transform: translateY(100%);
-
-                    @include breakpoint("lg") {
-                        transform: translateX(-100%);
-                    }
-                }
-
                 @include breakpoint("lg") {
                     margin-left: var(--semantic-spacing-general-none);
                 }
             }
             &--right {
-                &__show--false {
-                    visibility: hidden;
-                    transform: translateY(100%);
-
-                    @include breakpoint("lg") {
-                        transform: translateX(100%);
-                    }
-                }
-
                 @include breakpoint("lg") {
                     margin-right: var(--semantic-spacing-general-none);
                 }

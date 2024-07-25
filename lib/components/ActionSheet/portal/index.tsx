@@ -1,5 +1,6 @@
-import { ComponentProps, forwardRef, useContext } from "react";
+import React, { ComponentProps, forwardRef, useContext } from "react";
 import { createPortal } from "react-dom";
+import { CSSTransition } from "react-transition-group";
 import HandleBar from "../handle-bar";
 import "./portal.scss";
 import { useSwipeBlock } from "@hooks/useSwipeBlock";
@@ -38,50 +39,59 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
         return (
             <>
                 {createPortal(
-                    <>
-                        <div
-                            className="quill-action-sheet--portal quill-action-sheet--portal--wrapper"
-                            role="dialog"
-                            data-state={show ? "open" : "close"}
-                            ref={ref}
-                            {...restProps}
-                        >
-                            {type === "modal" && (
-                                <div
-                                    data-testid="dt-actionsheet-overlay"
-                                    onClick={handleClose}
-                                    className="quill-action-sheet--portal quill-action-sheet--portal__variant--modal"
-                                />
-                            )}
+                    <React.Fragment>
+                        {show && type === "modal" && (
                             <div
-                                className={clsx(
-                                    "quill-action-sheet--root",
-                                    `quill-action-sheet--root__show--${show}`,
-                                    `quill-action-sheet--root__position--${position}`,
-                                    `quill-action-sheet--root__position--${position}__show--${show}`,
-                                    className,
-                                )}
-                                ref={containerRef}
-                                style={{ height }}
-                                {...(shouldDetectSwipingOnContainer &&
-                                !isScrolled &&
-                                !isLg &&
-                                expandable
-                                    ? bindHandle()
-                                    : {})}
+                                data-testid="dt-actionsheet-overlay"
+                                onClick={handleClose}
+                                className="quill-action-sheet--portal__variant--modal"
+                            />
+                        )}
+                        <CSSTransition
+                            in={show}
+                            timeout={100}
+                            classNames={{
+                                appear: `quill-action-sheet--root--enter position--${position}`,
+                                enter: `quill-action-sheet--root--enter position--${position}`,
+                                enterDone: `quill-action-sheet--root--enter-done position--${position}`,
+                                exit: `quill-action-sheet--root--exit position--${position}`,
+                            }}
+                            unmountOnExit
+                        >
+                            <div
+                                className="quill-action-sheet--portal quill-action-sheet--portal--wrapper"
+                                role="dialog"
+                                data-state={show ? "open" : "close"}
+                                ref={ref}
+                                {...restProps}
                             >
-                                {showHandlebar && (
-                                    <HandleBar
-                                        {...(expandable || shouldCloseOnDrag
-                                            ? bindHandle()
-                                            : {})}
-                                    />
-                                )}
-
-                                {children}
+                                <div
+                                    className={clsx(
+                                        "quill-action-sheet--root",
+                                        `quill-action-sheet--root__position--${position}`,
+                                        className,
+                                    )}
+                                    ref={containerRef}
+                                    style={{ height }}
+                                    {...(shouldDetectSwipingOnContainer &&
+                                    !isScrolled &&
+                                    !isLg &&
+                                    expandable
+                                        ? bindHandle()
+                                        : {})}
+                                >
+                                    {showHandlebar && (
+                                        <HandleBar
+                                            {...(expandable || shouldCloseOnDrag
+                                                ? bindHandle()
+                                                : {})}
+                                        />
+                                    )}
+                                    {children}
+                                </div>
                             </div>
-                        </div>
-                    </>,
+                        </CSSTransition>
+                    </React.Fragment>,
                     document.body,
                 )}
             </>

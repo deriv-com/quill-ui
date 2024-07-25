@@ -99,6 +99,7 @@ export const TextFieldWithSteppers = forwardRef<
                 textAlignment={textAlignment}
                 triggerActionIcon={steppersSectionRight}
                 type="number"
+                allowDecimals={true}
                 value={`${value && getFormatValue(Number(value))}`}
             />
         </div>
