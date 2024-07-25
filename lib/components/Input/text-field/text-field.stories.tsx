@@ -104,6 +104,9 @@ const meta = {
                 type: "text",
             },
         },
+        value: {
+            type: "number",
+        },
     },
 } satisfies Meta<typeof TextField>;
 

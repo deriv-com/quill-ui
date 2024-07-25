@@ -105,7 +105,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             label,
             leftPlaceholder,
             rightPlaceholder,
-            value,
+            value = "",
             rightIcon,
             onChange,
             triggerActionIcon,
@@ -125,11 +125,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         if (value && maxLength && value.toString().length > maxLength) {
             value = value.toString().slice(0, maxLength);
         }
-        const [inputValue, setInputValue] = useState(value || "");
+        const [inputValue, setInputValue] = useState(value);
         const [focused, setFocused] = React.useState(false);
 
         useEffect(() => {
-            setInputValue(value || "");
+            setInputValue(value);
         }, [value]);
 
         if (isDropdownOpen) {
