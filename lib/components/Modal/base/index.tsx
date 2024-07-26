@@ -2,7 +2,7 @@ import ReactDOM from "react-dom";
 import { useState, useEffect, useRef, HTMLAttributes } from "react";
 import clsx from "clsx";
 import { useSwipeable } from "react-swipeable";
-import { Button } from "@components/Button";
+import { Button, IconButton } from "@components/Button";
 import { LabelPairedXmarkMdBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import { ModalHeader } from "./modal-header";
 import { ModalBody } from "./modal-body";
@@ -156,11 +156,10 @@ export const Modal = ({
                           />
                       )
                     : showCrossIcon && (
-                          <Button
+                          <IconButton
                               variant="tertiary"
-                              color="black"
+                              color="black-white"
                               size="lg"
-                              iconPosition="start"
                               className="quill-modal__close-icon"
                               onClick={toggleHandler}
                               icon={<LabelPairedXmarkMdBoldIcon />}
@@ -172,7 +171,7 @@ export const Modal = ({
                     <div className="quill-modal__button-wrapper">
                         {showPrimaryButton && (
                             <Button
-                                color="black"
+                                color="black-white"
                                 fullWidth
                                 size="lg"
                                 label={primaryButtonLabel}
@@ -182,7 +181,7 @@ export const Modal = ({
                         )}
                         {showSecondaryButton && (
                             <Button
-                                color="black"
+                                color="black-white"
                                 fullWidth
                                 size="lg"
                                 label={secondaryButtonLabel}

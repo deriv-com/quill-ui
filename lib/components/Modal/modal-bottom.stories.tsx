@@ -260,7 +260,7 @@ ModalBottomWithIconAndLongContent.args = {
         />
     ),
     style: {
-        backgroundColor: "var(--core-color-solid-green-100)",
+        backgroundColor: "var(--core-color-opacity-green-100)",
     },
     textContent: longTextContent,
 } as Story["args"];

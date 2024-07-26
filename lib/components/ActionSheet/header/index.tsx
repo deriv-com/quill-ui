@@ -49,7 +49,7 @@ const Header = ({
                 {title && <Heading.H5>{title}</Heading.H5>}
                 {CloseIcon && (
                     <IconButton
-                        color="black"
+                        color="black-white"
                         icon={CloseIcon}
                         className={clsx(
                             "quill-action-sheet--title--icon",

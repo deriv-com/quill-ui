@@ -8,11 +8,11 @@ import {
 import { Popover, ArrowContainer } from "react-tiny-popover";
 import clsx from "clsx";
 import { TPosition } from "@types";
-import { LabelPairedXmarkMdBoldIcon } from "@deriv/quill-icons/LabelPaired";
+import { LabelPairedXmarkSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import { CaptionText } from "@components/Typography";
 import { Link } from "@components/Link";
-import { Button, ButtonProps } from "@components/Button";
 import { LinkProps } from "@components/Link/types";
+import { Button, ButtonProps, IconButton } from "@components/Button";
 import "./tooltip.scss";
 
 type AsElement = "a" | "div" | "button";
@@ -81,12 +81,17 @@ export const Tooltip = <T extends AsElement>({
                                         >
                                             {title}
                                         </CaptionText>
-                                        <LabelPairedXmarkMdBoldIcon
-                                            fill="var(--component-textIcon-inverse-prominent)"
-                                            className="tooltip-content__variant-rich-icon"
+                                        <IconButton
+                                            icon={
+                                                <LabelPairedXmarkSmBoldIcon fill="var(--component-textIcon-inverse-prominent)" />
+                                            }
                                             onClick={() =>
                                                 setShowTooltip(false)
                                             }
+                                            className="tooltip-content__variant-rich-icon"
+                                            size="sm"
+                                            color="white-black"
+                                            variant="tertiary"
                                         />
                                     </div>
 
@@ -100,14 +105,14 @@ export const Tooltip = <T extends AsElement>({
                                         hasChevron
                                         children={actionText}
                                         {...(tooltipActionProps as LinkProps)}
-                                    ></Link>
+                                    />
                                 ) : (
                                     <Button
-                                        color="white"
+                                        color="white-black"
                                         variant="secondary"
                                         {...(tooltipActionProps as ButtonProps)}
                                         label={actionText}
-                                    ></Button>
+                                    />
                                 )}
                             </div>
                         ) : (

@@ -59,7 +59,15 @@ const meta = {
             control: "radio",
         },
         color: {
-            options: ["coral", "black", "white", "purchase", "sell"],
+            options: [
+                "coral",
+                "black",
+                "white",
+                "purchase",
+                "sell",
+                "black-white",
+                "white-black",
+            ],
             control: "radio",
         },
         onClick: {
@@ -155,3 +163,27 @@ export const ButtonWithFullWidthAndLoading = (
         {...args}
     />
 );
+
+export const BlackWhite: Story = {
+    args: {
+        color: "black-white",
+    },
+};
+
+const Example: React.FC<React.ComponentProps<typeof Button>> = (args) => (
+    <div
+        style={{
+            backgroundColor:
+                "var(--semantic-color-slate-solid-surface-inverse-lowest)",
+            padding: "20px",
+            borderRadius: "10px",
+        }}
+    >
+        <Button {...args} />
+    </div>
+);
+
+export const WhiteBlack = Example.bind(this) as Story;
+WhiteBlack.args = {
+    color: "white-black",
+};
