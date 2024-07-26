@@ -15,6 +15,9 @@ const meta = {
                 Hover to see tooltip
             </Text>
         ),
+        tooltipActionProps: {
+            size: "sm",
+        },
         as: "div",
         actionText: "label",
         title: "Title",

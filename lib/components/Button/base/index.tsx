@@ -75,6 +75,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 )}
                 disabled={disabled}
                 data-state={selected ? "selected" : ""}
+                data-loading={isLoading}
                 ref={ref}
                 {...rest}
             >

@@ -37,14 +37,15 @@ exports[`Modal should render SVG if it was passed 1`] = `
         class="quill-modal__button-wrapper"
       >
         <button
-          class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
+          class="quill-button quill-button__size--lg quill__color--primary-black-white quill-button__full-width"
+          data-loading="false"
           data-state=""
         >
           <span
             class="quill-button-label"
           >
             <p
-              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
+              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black-white"
             >
               Primary Button Label
             </p>
@@ -82,14 +83,15 @@ exports[`Modal should render container with image as a background if src was pas
         class="quill-modal__button-wrapper"
       >
         <button
-          class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
+          class="quill-button quill-button__size--lg quill__color--primary-black-white quill-button__full-width"
+          data-loading="false"
           data-state=""
         >
           <span
             class="quill-button-label"
           >
             <p
-              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
+              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black-white"
             >
               Primary Button Label
             </p>
@@ -128,28 +130,30 @@ exports[`Modal should render secondary button if showSecondaryButton === true an
         class="quill-modal__button-wrapper"
       >
         <button
-          class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
+          class="quill-button quill-button__size--lg quill__color--primary-black-white quill-button__full-width"
+          data-loading="false"
           data-state=""
         >
           <span
             class="quill-button-label"
           >
             <p
-              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
+              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black-white"
             >
               Primary Button Label
             </p>
           </span>
         </button>
         <button
-          class="quill-button quill-button__size--lg quill__color--secondary-black quill-modal__button quill-button__full-width"
+          class="quill-button quill-button__size--lg quill__color--secondary-black-white quill-modal__button quill-button__full-width"
+          data-loading="false"
           data-state=""
         >
           <span
             class="quill-button-label"
           >
             <p
-              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
+              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black-white"
             >
               Secondary Button Label
             </p>
@@ -188,14 +192,15 @@ exports[`Modal should render with default values if optional ones were not passe
         class="quill-modal__button-wrapper"
       >
         <button
-          class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
+          class="quill-button quill-button__size--lg quill__color--primary-black-white quill-button__full-width"
+          data-loading="false"
           data-state=""
         >
           <span
             class="quill-button-label"
           >
             <p
-              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
+              class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black-white"
             >
               Primary Button Label
             </p>
