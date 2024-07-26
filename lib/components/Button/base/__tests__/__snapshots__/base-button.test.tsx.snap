@@ -4,6 +4,7 @@ exports[`Button component Should render BasicButton with Icon 1`] = `
 <div>
   <button
     class="quill-button quill-button__size--md quill__color--primary-coral"
+    data-loading="false"
     data-state=""
   >
     <svg
@@ -20,7 +21,7 @@ exports[`Button component Should render BasicButton with Icon 1`] = `
       </g>
       <defs>
         <clippath
-          id="28ec2eb9afe325f2205d77afa7750df1__a"
+          id="d8560af4a57aac6788a44f4bd895971c__a"
         >
           <path
             d="M0 0h14v24H0z"
@@ -37,6 +38,7 @@ exports[`Button component Should render BasicButton with variant=primary 1`] = `
 <div>
   <button
     class="quill-button quill-button__size--md quill__color--primary-coral"
+    data-loading="false"
     data-state=""
   >
     Label
@@ -48,6 +50,7 @@ exports[`Button component Should render BasicButton with variant=secondary 1`] =
 <div>
   <button
     class="quill-button quill-button__size--md quill__color--secondary-coral"
+    data-loading="false"
     data-state=""
   >
     Label
@@ -59,6 +62,7 @@ exports[`Button component Should render BasicButton with variant=tertiary 1`] = 
 <div>
   <button
     class="quill-button quill-button__size--md quill__color--tertiary-coral"
+    data-loading="false"
     data-state=""
   >
     Label

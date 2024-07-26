@@ -6,14 +6,15 @@ exports[`<ActionSheet.Footer/> should render correctly with horizontal 1`] = `
   class="quill-action-sheet--footer quill-action-sheet--footer__variant--horizontal"
 >
   <button
-    class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
+    class="quill-button quill-button__size--lg quill__color--primary-black-white quill-button__full-width"
+    data-loading="false"
     data-state=""
   >
     <span
       class="quill-button-label"
     >
       <p
-        class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
+        class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black-white"
       >
         action
       </p>
@@ -28,14 +29,15 @@ exports[`<ActionSheet.Footer/> should render correctly with vertical 1`] = `
   class="quill-action-sheet--footer quill-action-sheet--footer__variant--vertical"
 >
   <button
-    class="quill-button quill-button__size--lg quill__color--primary-black quill-button__full-width"
+    class="quill-button quill-button__size--lg quill__color--primary-black-white quill-button__full-width"
+    data-loading="false"
     data-state=""
   >
     <span
       class="quill-button-label"
     >
       <p
-        class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black"
+        class="quill-typography quill-typography__body-text__size--md__weight--bold__decoration--default black-white"
       >
         action
       </p>
