@@ -20,6 +20,7 @@ const Square = ({
 }: SquareProps) => {
     return (
         <SkeletonElement
+            data-testid="square-skeleton"
             className={clsx(
                 {
                     "quill-loader__skeleton--rounded": rounded,

@@ -7,7 +7,6 @@ const meta = {
     component: Skeleton.Container,
     args: {
         direction: "row",
-        fullWidth: true,
     },
     argTypes: {
         direction: {
@@ -17,6 +16,7 @@ const meta = {
         },
         children: { control: false },
         className: { control: false },
+        rounded: { control: "boolean" },
     },
     tags: ["autodocs"],
 } satisfies Meta<typeof Skeleton.Container>;
@@ -27,13 +27,11 @@ type Story = StoryObj<typeof meta>;
 const Template: React.FC<React.ComponentProps<typeof Skeleton.Container>> = (
     args,
 ) => (
-    <>
-        <Skeleton.Container {...args}>
-            <Skeleton.Circle />
-            <Skeleton.Square height={20} width="50%" />
-            <Skeleton.Square height={50} />
-        </Skeleton.Container>
-    </>
+    <Skeleton.Container {...args}>
+        <Skeleton.Circle />
+        <Skeleton.Square height={20} width="50%" />
+        <Skeleton.Square height={50} />
+    </Skeleton.Container>
 );
 
 export const Example1 = Template.bind(this) as Story;

@@ -9,6 +9,7 @@ export interface CircleProps extends SkeletonBaseProps {
 const Circle = ({ width = 100, className, style, ...rest }: CircleProps) => {
     return (
         <SkeletonElement
+            data-testid="circle-skeleton"
             className={clsx("quill-loader__skeleton--circle", className)}
             style={{
                 width,

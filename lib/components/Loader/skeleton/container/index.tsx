@@ -12,6 +12,7 @@ export interface SkeletonContainerProps {
     skeletonWidth?: number | string;
     skeletonHeight?: number | string;
     fullWidth?: boolean;
+    rounded?: boolean;
 }
 
 const Container = ({
@@ -24,6 +25,7 @@ const Container = ({
     skeletonHeight,
     fullWidth = true,
     alignment = "left",
+    rounded,
     ...rest
 }: SkeletonContainerProps) => {
     const childrenWithProps = React.Children.map(children, (child) => {
@@ -33,9 +35,11 @@ const Container = ({
             return React.cloneElement(child as ReactElement, {
                 width: !props.fullWidth && (props.width || skeletonWidth),
                 height: props.height || skeletonHeight,
+                rounded: rounded,
                 ...props,
             });
         }
+
         return child;
     });
 
