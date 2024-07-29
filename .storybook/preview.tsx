@@ -1,6 +1,8 @@
+import React from "react";
 import type { Preview } from "@storybook/react";
 import { withThemeByClassName } from "@storybook/addon-themes";
 import "./styles.scss";
+import BreakpointProvider from "../lib/providers/breakpoint/breakpointProvider";
 import "@styles/static.scss";
 
 const preview: Preview = {
@@ -16,6 +18,11 @@ const preview: Preview = {
         },
     },
     decorators: [
+        (Story) => (
+            <BreakpointProvider>
+                <Story />
+            </BreakpointProvider>
+        ),
         withThemeByClassName({
             themes: {
                 light: "light",
