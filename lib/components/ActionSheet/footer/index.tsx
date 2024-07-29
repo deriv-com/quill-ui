@@ -41,7 +41,7 @@ const Footer = ({
             {primaryAction && (
                 <Button
                     onClick={primaryActionHandler}
-                    color="black"
+                    color="black-white"
                     size="lg"
                     label={primaryAction.content}
                     fullWidth
@@ -52,7 +52,7 @@ const Footer = ({
                 <Button
                     onClick={secondaryActionHandler}
                     variant="secondary"
-                    color="black"
+                    color="black-white"
                     size="lg"
                     label={secondaryAction.content}
                     fullWidth

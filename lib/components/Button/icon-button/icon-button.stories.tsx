@@ -43,7 +43,15 @@ const meta = {
             control: { type: "radio" },
         },
         color: {
-            options: ["coral", "black", "white", "purchase", "sell"],
+            options: [
+                "coral",
+                "black",
+                "white",
+                "purchase",
+                "sell",
+                "black-white",
+                "white-black",
+            ],
             control: { type: "radio" },
         },
         iconButton: { table: { disable: true } },

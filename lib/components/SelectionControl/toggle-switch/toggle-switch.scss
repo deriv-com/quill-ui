@@ -27,7 +27,7 @@ html.dark {
     height: var(--core-size-1400);
     border-width: var(--core-borderRadius-100);
 
-    &:focus {
+    &:focus-visible {
         outline: var(--core-borderRadius-100) solid
             var(--core-color-solid-blue-700);
         border-radius: var(--semantic-borderRadius-lg);

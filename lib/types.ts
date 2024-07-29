@@ -22,7 +22,13 @@ export type TGenericSizes =
     | "xl"
     | "xs";
 
-export type TDefaultColor = "coral" | "black" | "white";
+export type TDefaultColor =
+    | "coral"
+    | "black"
+    | "white"
+    | "black-white"
+    | "white-black";
+
 // Extracting regular sizes from TGenericSizes
 export type TRegularSizes = Extract<TGenericSizes, "sm" | "md" | "lg">;
 

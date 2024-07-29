@@ -38,31 +38,35 @@
 
         &__size {
             &--sm {
-                padding-inline: var(--core-spacing-400);
-                height: var(--core-size-1200);
-                border-radius: var(--core-borderRadius-400);
-                gap: var(--core-spacing-200);
+                padding-inline: var(--component-button-spacing-padding-sm);
+                height: var(--component-button-height-sm);
+                border-radius: var(--component-button-border-radius-sm);
+                gap: var(--component-button-spacing-gap-sm);
+                border-width: var(--component-button-border-width-sm);
             }
 
             &--md {
-                padding-inline: var(--core-spacing-600);
-                height: var(--core-size-1600);
-                border-radius: var(--core-borderRadius-600);
-                gap: var(--core-spacing-300);
+                padding-inline: var(--component-button-spacing-padding-md);
+                height: var(--component-button-height-md);
+                border-radius: var(--component-button-border-radius-md);
+                gap: var(--component-button-spacing-gap-md);
+                border-width: var(--component-button-border-width-sm);
             }
 
             &--lg {
-                padding-inline: var(--core-spacing-800);
-                height: var(--core-size-2400);
-                border-radius: var(--core-borderRadius-800);
-                gap: var(--core-spacing-400);
+                padding-inline: var(--component-button-spacing-padding-lg);
+                height: var(--component-button-height-lg);
+                border-radius: var(--component-button-border-radius-lg);
+                gap: var(--component-button-spacing-gap-lg);
+                border-width: var(--component-button-border-width-sm);
             }
 
             &--xl {
-                padding-inline: var(--core-spacing-1200);
-                height: var(--core-size-3200);
-                border-radius: var(--core-borderRadius-1200);
-                gap: var(--core-spacing-600);
+                padding-inline: var(--component-button-spacing-padding-xl);
+                height: var(--component-button-height-xl);
+                border-radius: var(--component-button-border-radius-xl);
+                gap: var(--component-button-spacing-gap-xl);
+                border-width: var(--component-button-border-width-md);
             }
         }
 

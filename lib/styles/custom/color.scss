@@ -1,243 +1,561 @@
 .quill {
     &__color {
-        &--primary-coral {
-            background-color: var(--core-color-solid-coral-700);
-            color: var(--core-color-solid-slate-50);
-            fill: var(--core-color-solid-slate-50);
-            border: none;
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-solid-coral-800);
+        &--primary {
+            &-coral {
+                background-color: var(
+                    --component-button-bg-coral-primary-default
+                );
+                color: var(--component-button-label-color-coral-primary);
+                fill: var(--component-button-label-color-coral-primary);
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-coral-primary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-coral-primary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-coral-primary-loading
+                    );
+                }
             }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-solid-coral-900);
+
+            &-black {
+                background-color: var(
+                    --component-button-bg-black-primary-default
+                );
+                color: var(--component-button-label-color-black-primary);
+                fill: var(--component-button-label-color-black-primary);
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-black-primary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-black-primary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-black-primary-loading
+                    );
+                }
             }
-            &:disabled {
-                background-color: var(--core-color-solid-coral-700);
-                opacity: var(--core-opacity-600);
+
+            &-white {
+                background-color: var(
+                    --component-button-bg-white-primary-default
+                );
+                color: var(--component-button-label-color-white-primary);
+                fill: var(--component-button-label-color-white-primary);
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-white-primary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-white-primary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-white-primary-loading
+                    );
+                }
             }
-        }
-        &--primary-black {
-            background-color: var(--core-color-solid-slate-1400);
-            color: var(--core-color-solid-slate-50);
-            fill: var(--core-color-solid-slate-50);
-            border: none;
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-opacity-black-700);
+
+            &-purchase {
+                background-color: var(
+                    --component-button-bg-buy-primary-default
+                );
+                color: var(--component-button-label-color-buy-primary);
+                fill: var(--component-button-label-color-buy-primary);
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-buy-primary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-buy-primary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-buy-primary-loading
+                    );
+                }
             }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-opacity-black-800);
+
+            &-sell {
+                background-color: var(
+                    --component-button-bg-sell-primary-default
+                );
+                color: var(--component-button-label-color-sell-primary);
+                fill: var(--component-button-label-color-sell-primary);
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-sell-primary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-sell-primary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-sell-primary-loading
+                    );
+                }
             }
-            &:disabled {
-                background-color: var(--core-color-solid-slate-1400);
-                opacity: var(--core-opacity-600);
+
+            &-black-white {
+                background-color: var(
+                    --component-button-bg-blackWhite-primary-default
+                );
+                color: var(--component-button-label-color-blackWhite-primary);
+                fill: var(--component-button-label-color-blackWhite-primary);
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-blackWhite-primary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-blackWhite-primary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-blackWhite-primary-loading
+                    );
+                }
             }
-        }
-        &--primary-white {
-            background-color: var(--core-color-solid-slate-50);
-            color: var(--core-color-solid-slate-1400);
-            fill: var(--core-color-solid-slate-1400);
-            border: none;
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-opacity-white-800);
-            }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-opacity-white-700);
-            }
-            &:disabled {
-                background-color: var(--core-color-solid-slate-50);
-                opacity: var(--core-opacity-600);
-            }
-        }
-        &--primary-purchase {
-            background-color: var(--core-color-solid-emerald-700);
-            color: var(--core-color-solid-slate-50);
-            fill: var(--core-color-solid-slate-50);
-            border: none;
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-solid-emerald-800);
-            }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-solid-emerald-900);
-            }
-            &:disabled {
-                background-color: var(--core-color-solid-emerald-700);
-                opacity: var(--core-opacity-600);
-            }
-        }
-        &--primary-sell {
-            background-color: var(--core-color-solid-cherry-700);
-            color: var(--core-color-solid-slate-50);
-            fill: var(--core-color-solid-slate-50);
-            border: none;
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-solid-cherry-800);
-            }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-solid-cherry-900);
-            }
-            &:disabled {
-                background-color: var(--core-color-solid-cherry-700);
-                opacity: var(--core-opacity-600);
-            }
-        }
-        &--secondary-coral {
-            background-color: transparent;
-            border-style: solid;
-            border-color: var(--core-color-solid-coral-700);
-            color: var(--core-color-solid-coral-700);
-            fill: var(--core-color-solid-coral-700);
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-opacity-coral-100);
-            }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-opacity-coral-200);
-            }
-            &:disabled {
-                opacity: var(--core-opacity-600);
-            }
-        }
-        &--secondary-black {
-            background-color: transparent;
-            border-style: solid;
-            border-color: var(--core-color-solid-black-1400);
-            color: var(--core-color-solid-black-1400);
-            fill: var(--core-color-solid-black-1400);
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-opacity-black-100);
-            }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-opacity-black-200);
-            }
-            &:disabled {
-                opacity: var(--core-opacity-600);
-            }
-        }
-        &--secondary-white {
-            background-color: transparent;
-            border-style: solid;
-            border-color: var(--core-color-solid-slate-50);
-            color: var(--core-color-solid-slate-50);
-            fill: var(--core-color-solid-slate-50);
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-opacity-white-200);
-            }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-opacity-white-100);
-            }
-            &:disabled {
-                opacity: var(--core-opacity-600);
-            }
-        }
-        &--secondary-purchase {
-            background-color: transparent;
-            border-style: solid;
-            border-color: var(--core-color-solid-emerald-700);
-            color: var(--core-color-solid-emerald-700);
-            fill: var(--core-color-solid-emerald-700);
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-solid-emerald-100);
-            }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-opacity-emerald-200);
-            }
-            &:disabled {
-                opacity: var(--core-opacity-600);
-            }
-        }
-        &--secondary-sell {
-            background-color: transparent;
-            border-style: solid;
-            border-color: var(--core-color-solid-cherry-700);
-            color: var(--core-color-solid-cherry-700);
-            fill: var(--core-color-solid-cherry-700);
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-solid-cherry-100);
-            }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-opacity-cherry-200);
-            }
-            &:disabled {
-                opacity: var(--core-opacity-600);
-            }
-        }
-        &--tertiary-coral {
-            background-color: transparent;
-            color: var(--core-color-solid-coral-700);
-            fill: var(--core-color-solid-coral-700);
-            text-decoration: underline;
-            border: none;
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-opacity-coral-100);
-            }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-opacity-coral-200);
-            }
-            &:disabled {
-                opacity: var(--core-opacity-600);
-            }
-        }
-        &--tertiary-black {
-            background-color: transparent;
-            color: var(--core-color-solid-black-1400);
-            fill: var(--component-textIcon-normal-prominent);
-            text-decoration: underline;
-            border: none;
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-opacity-black-100);
-            }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-opacity-black-200);
-            }
-            &:disabled {
-                opacity: var(--core-opacity-600);
+
+            &-white-black {
+                background-color: var(
+                    --component-button-bg-whiteBlack-primary-default
+                );
+                color: var(--component-button-label-color-whiteBlack-primary);
+                fill: var(--component-button-label-color-whiteBlack-primary);
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-whiteBlack-primary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-whiteBlack-primary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-whiteBlack-primary-loading
+                    );
+                }
             }
         }
-        &--tertiary-white {
-            background-color: transparent;
-            color: var(--component-button-label-color-blackWhite-primary);
-            fill: var(--component-textIcon-inverse-prominent);
-            text-decoration: underline;
-            border: none;
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-opacity-white-200);
+
+        &--secondary {
+            &-coral {
+                background-color: transparent;
+                border-style: solid;
+                border-color: var(--component-button-border-color-coral);
+                color: var(--component-button-label-color-coral-secondary);
+                fill: var(--component-button-label-color-coral-secondary);
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-coral-secondary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-coral-secondary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-coral-secondary-loading
+                    );
+                }
             }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-opacity-white-100);
+
+            &-black {
+                background-color: transparent;
+                border-style: solid;
+                border-color: var(--component-button-border-color-black);
+                color: var(--component-button-label-color-black-secondary);
+                fill: var(--component-button-label-color-black-secondary);
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-black-secondary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-black-secondary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-black-secondary-loading
+                    );
+                }
             }
-            &:disabled {
-                opacity: var(--core-opacity-600);
+
+            &-white {
+                background-color: transparent;
+                border-style: solid;
+                border-color: var(--component-button-border-color-white);
+                color: var(--component-button-label-color-white-secondary);
+                fill: var(--component-button-label-color-white-secondary);
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-white-secondary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-white-secondary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-white-secondary-loading
+                    );
+                }
+            }
+
+            &-purchase {
+                background-color: transparent;
+                border-style: solid;
+                border-color: var(--component-button-border-color-buy);
+                color: var(--component-button-label-color-buy-secondary);
+                fill: var(--component-button-label-color-buy-secondary);
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-buy-secondary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-buy-secondary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-buy-secondary-loading
+                    );
+                }
+            }
+
+            &-sell {
+                background-color: transparent;
+                border-style: solid;
+                border-color: var(--component-button-border-color-sell);
+                color: var(--component-button-label-color-sell-secondary);
+                fill: var(--component-button-label-color-sell-secondary);
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-sell-secondary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-sell-secondary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-sell-secondary-loading
+                    );
+                }
+            }
+
+            &-black-white {
+                background-color: transparent;
+                border-style: solid;
+                border-color: var(--component-button-border-color-blackWhite);
+                color: var(--component-button-label-color-blackWhite-secondary);
+                fill: var(--component-button-label-color-blackWhite-secondary);
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-blackWhite-secondary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-blackWhite-secondary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-blackWhite-secondary-loading
+                    );
+                }
+            }
+
+            &-white-black {
+                background-color: transparent;
+                border-style: solid;
+                border-color: var(--component-button-border-color-whiteBlack);
+                color: var(--component-button-label-color-whiteBlack-secondary);
+                fill: var(--component-button-label-color-whiteBlack-secondary);
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-whiteBlack-secondary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-whiteBlack-secondary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-whiteBlack-secondary-loading
+                    );
+                }
             }
         }
-        &--tertiary-purchase {
-            background-color: transparent;
-            color: var(--core-color-solid-emerald-700);
-            fill: var(--core-color-solid-emerald-700);
-            text-decoration: underline;
-            border: none;
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-opacity-emerald-100);
+
+        &--tertiary {
+            &-coral {
+                background-color: transparent;
+                color: var(--component-button-label-color-coral-tertiary);
+                fill: var(--component-button-label-color-coral-tertiary);
+                text-decoration: underline;
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-coral-tertiary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-coral-tertiary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-coral-tertiary-loading
+                    );
+                }
             }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-opacity-emerald-200);
+
+            &-black {
+                background-color: transparent;
+                color: var(--component-button-label-color-black-tertiary);
+                fill: var(--component-button-label-color-black-tertiary);
+                text-decoration: underline;
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-black-tertiary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-black-tertiary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-black-tertiary-loading
+                    );
+                }
             }
-            &:disabled {
-                opacity: var(--core-opacity-600);
+
+            &-white {
+                background-color: transparent;
+                color: var(--component-button-label-color-white-tertiary);
+                fill: var(--component-button-label-color-white-tertiary);
+                text-decoration: underline;
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-white-tertiary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-white-tertiary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-white-tertiary-loading
+                    );
+                }
             }
-        }
-        &--tertiary-sell {
-            background-color: transparent;
-            color: var(--core-color-solid-cherry-700);
-            fill: var(--core-color-solid-cherry-700);
-            text-decoration: underline;
-            border: none;
-            &:hover:not(:disabled) {
-                background-color: var(--core-color-solid-cherry-100);
+
+            &-purchase {
+                background-color: transparent;
+                color: var(--component-button-label-color-buy-tertiary);
+                fill: var(--component-button-label-color-buy-tertiary);
+                text-decoration: underline;
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-buy-tertiary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-buy-tertiary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-buy-tertiary-loading
+                    );
+                }
             }
-            &:active:not(:disabled) {
-                background-color: var(--core-color-opacity-cherry-200);
+
+            &-sell {
+                background-color: transparent;
+                color: var(--component-button-label-color-sell-tertiary);
+                fill: var(--component-button-label-color-sell-tertiary);
+                text-decoration: underline;
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-sell-tertiary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-sell-tertiary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-sell-tertiary-loading
+                    );
+                }
             }
-            &:disabled {
-                opacity: var(--core-opacity-600);
+
+            &-black-white {
+                background-color: transparent;
+                color: var(--component-button-label-color-blackWhite-tertiary);
+                fill: var(--component-button-label-color-blackWhite-tertiary);
+                text-decoration: underline;
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-blackWhite-tertiary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-blackWhite-tertiary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-blackWhite-tertiary-loading
+                    );
+                }
+            }
+
+            &-white-black {
+                background-color: transparent;
+                color: var(--component-button-label-color-whiteBlack-tertiary);
+                fill: var(--component-button-label-color-whiteBlack-tertiary);
+                text-decoration: underline;
+                border: none;
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-whiteBlack-tertiary-hover
+                    );
+                }
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-whiteBlack-tertiary-active
+                    );
+                }
+                &:disabled {
+                    opacity: var(--opacity-disabled);
+                }
+                &[data-loading="true"] {
+                    background-color: var(
+                        --component-button-bg-whiteBlack-tertiary-loading
+                    );
+                }
             }
         }
     }

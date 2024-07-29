@@ -9,6 +9,7 @@ interface HeaderProps extends Omit<ComponentPropsWithoutRef<"div">, "title"> {
     title?: ReactNode;
     description?: ReactNode;
     icon?: ReactNode;
+    iconPosition?: "right" | "left";
     closeIcon?: ReactNode;
 }
 
@@ -17,6 +18,7 @@ const Header = ({
     title,
     description,
     icon: Icon,
+    iconPosition = "right",
     closeIcon: CloseIcon,
     ...rest
 }: HeaderProps) => {
@@ -35,14 +37,19 @@ const Header = ({
         >
             <div className="quill-action-sheet--title">
                 {Icon && (
-                    <div className="quill-action-sheet--title--icon">
+                    <div
+                        className={clsx(
+                            "quill-action-sheet--title--icon",
+                            `quill-action-sheet--title--icon--${iconPosition}`,
+                        )}
+                    >
                         {Icon}
                     </div>
                 )}
                 {title && <Heading.H5>{title}</Heading.H5>}
                 {CloseIcon && (
                     <IconButton
-                        color="black"
+                        color="black-white"
                         icon={CloseIcon}
                         className={clsx(
                             "quill-action-sheet--title--icon",

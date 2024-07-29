@@ -20,6 +20,7 @@ export const ActionSheetExample = ({
     title,
     closeIcon,
     icon,
+    iconPosition,
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
     shouldCloseOnDrag,
@@ -51,6 +52,7 @@ export const ActionSheetExample = ({
                         description={description}
                         closeIcon={closeIcon}
                         icon={icon}
+                        iconPosition={iconPosition}
                     />
                     <ActionSheet.Content className="mock-action-sheet--content">
                         <Text size="sm">
@@ -96,6 +98,7 @@ export const ActionSheetExampleWithIconTrigger = ({
     title,
     closeIcon,
     icon,
+    iconPosition,
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
     shouldCloseOnDrag,
@@ -126,6 +129,7 @@ export const ActionSheetExampleWithIconTrigger = ({
                         description={description}
                         closeIcon={closeIcon}
                         icon={icon}
+                        iconPosition={iconPosition}
                     />
                     <ActionSheet.Content className="mock-action-sheet--content">
                         <Text size="sm">
@@ -221,6 +225,7 @@ export const ActionSheetExampleControlled = ({
     title,
     closeIcon,
     icon,
+    iconPosition,
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
     shouldCloseOnDrag,
@@ -247,6 +252,7 @@ export const ActionSheetExampleControlled = ({
                         description={description}
                         closeIcon={closeIcon}
                         icon={icon}
+                        iconPosition={iconPosition}
                     />
                     <ActionSheet.Content className="mock-action-sheet--content">
                         <Text size="sm">

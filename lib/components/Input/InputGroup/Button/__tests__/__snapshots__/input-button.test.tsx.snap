@@ -26,6 +26,7 @@ exports[`InputGroupButton Component disables button when input is empty 1`] = `
       </div>
       <button
         class="quill-button quill-button__size--md quill__color--primary-black"
+        data-loading="false"
         data-state=""
         disabled=""
       >
@@ -76,6 +77,7 @@ exports[`InputGroupButton Component enables button when input is not empty 1`] =
       </div>
       <button
         class="quill-button quill-button__size--md quill__color--primary-black"
+        data-loading="false"
         data-state=""
         disabled=""
       >
@@ -141,6 +143,7 @@ exports[`InputGroupButton Component should render a default InputGroupButton 1`]
       </div>
       <button
         class="quill-button quill-button__size--md quill__color--primary-black"
+        data-loading="false"
         data-state=""
         disabled=""
       >

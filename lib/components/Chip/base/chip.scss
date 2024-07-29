@@ -6,6 +6,7 @@
     border-width: var(--component-chip-border-width);
     border-color: var(--component-chip-border-color);
     border-radius: var(--component-chip-border-radius);
+    background-color: transparent;
 
     &:hover {
         background-color: var(--component-chip-bg-hover);

@@ -130,9 +130,9 @@ export const Notification = ({
             </div>
             {isBanner && hasCloseButton && (
                 <IconButton
-                    color="black"
+                    color="black-white"
                     icon={<LabelPairedXmarkSmRegularIcon />}
-                    className={clsx("icon", "close")}
+                    className="close"
                     aria-label="close"
                     onClick={handleClose}
                     size="sm"

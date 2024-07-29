@@ -21,15 +21,16 @@ export const ModalHeader = ({
     <>
         {src && (
             <div
-                style={{
-                    background: `url(${src}) 50% / cover no-repeat`,
-                    ...style,
-                }}
                 className={clsx(
                     "quill-modal__content-image",
                     height ? height : "quill-modal__content-image-size",
                     className,
                 )}
+                style={{
+                    background: `url(${src}) 50% / cover no-repeat`,
+                    backgroundColor: "var(--colour-green-opacity-100)",
+                    ...style,
+                }}
                 data-testid="dt_modal_image"
             />
         )}

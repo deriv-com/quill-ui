@@ -5,6 +5,7 @@ import {
     StandaloneTriangleExclamationBoldIcon,
 } from "@deriv/quill-icons";
 import { LabelPairedPlaceholderCaptionBoldIcon } from "@deriv/quill-icons/LabelPaired";
+import dayjs from "dayjs";
 
 const icons: Record<string, object | null> = {
     with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
@@ -36,6 +37,7 @@ const meta = {
         label: "",
         required: false,
         fieldMarker: false,
+        value: dayjs(Date.now()).format("DD/MM/YYYY"),
     },
     argTypes: {
         id: {

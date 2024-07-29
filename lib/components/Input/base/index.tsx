@@ -66,6 +66,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     addOnIcon?: ReactNode;
     formatProps?: PatternFormatProps;
     id?: string;
+    allowDecimals?: boolean;
 }
 
 const statusIconColors = {
@@ -104,7 +105,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             label,
             leftPlaceholder,
             rightPlaceholder,
-            value,
+            value = "",
             rightIcon,
             onChange,
             triggerActionIcon,
@@ -116,6 +117,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             formatProps,
             addOnIcon,
             id,
+            allowDecimals = false,
             ...rest
         },
         ref,
@@ -123,11 +125,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         if (value && maxLength && value.toString().length > maxLength) {
             value = value.toString().slice(0, maxLength);
         }
-        const [inputValue, setInputValue] = useState(value || "");
+        const [inputValue, setInputValue] = useState(value);
         const [focused, setFocused] = React.useState(false);
 
         useEffect(() => {
-            setInputValue(value || "");
+            setInputValue(value);
         }, [value]);
 
         if (isDropdownOpen) {
@@ -158,7 +160,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
             let inputValue = event.target.value;
-            if (type === "number") {
+            if (type === "number" && !allowDecimals) {
                 const nonNumReg = /[^0-9]/g;
                 inputValue = inputValue.replace(nonNumReg, "");
                 event.target.value = inputValue;
@@ -232,7 +234,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 <input
                                     {...rest}
                                     {...commonProps}
-                                    type={type === "number" ? "text" : type}
+                                    type={(type === "number" && !allowDecimals) ? "text" : type}
                                     onChange={handleChange}
                                     onFocus={() => setFocused(true)}
                                     onBlur={() => setFocused(false)}
