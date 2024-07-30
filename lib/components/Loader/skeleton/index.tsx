@@ -1,10 +1,12 @@
 import React from "react";
 import Circle from "./circle";
 import Square from "./square";
+import Container from "./container";
 
-interface LoaderType {
+export interface LoaderType {
     Circle: typeof Circle;
     Square: typeof Square;
+    Container: typeof Container;
 }
 
 export const Skeleton: LoaderType = ({
@@ -17,3 +19,4 @@ export const Skeleton: LoaderType = ({
 
 Skeleton.Circle = Circle;
 Skeleton.Square = Square;
+Skeleton.Container = Container;
