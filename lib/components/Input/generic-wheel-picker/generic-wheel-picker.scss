@@ -1,0 +1,36 @@
+.quill-generic-picker {
+    &__is-open {
+        &--true {
+            z-index: 100;
+        }
+    }
+
+    &__container {
+        position: relative;
+        max-width: 360px;
+    }
+
+    &__input {
+        & label {
+            pointer-events: none;
+            cursor: text;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        width: 100%;
+
+        --hide-scrollbar {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        
+        &--container {
+            position: relative;
+        }
+    }
+}

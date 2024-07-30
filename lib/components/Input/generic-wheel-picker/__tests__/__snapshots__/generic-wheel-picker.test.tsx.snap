@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenericWheelPicker renders correctly 1`] = `
+<div>
+  <div
+    class="quill-generic-picker__container quill-generic-picker__is-open--false"
+  >
+    <div>
+      <div
+        class="quill-input__container"
+      >
+        <div
+          class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md quill-generic-picker__input quill-generic-picker__input--hasValue--false"
+        >
+          <div
+            class="quill-input-icons__wrapper"
+          >
+            <div
+              class="quill-input-label__wrapper"
+            >
+              <input
+                autocomplete="off"
+                class="input peer input__align--left input__size--md"
+                data="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+                id="quill-input-1"
+                placeholder=""
+                type="text"
+                value=""
+              />
+              <label
+                class="label label__status--neutral"
+                for="quill-input-1"
+              >
+                test
+              </label>
+            </div>
+            <svg
+              class="quill-input__rotate quill-input__icon"
+              data-state="close"
+              height="24"
+              role="img"
+              viewBox="0 0 14 22"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="m6.535 14.715-5.25-5.25c-.273-.246-.273-.656 0-.93.246-.246.656-.246.93 0L7 13.348l4.785-4.786c.246-.273.656-.273.93 0a.644.644 0 0 1 0 .903l-5.277 5.25a.6.6 0 0 1-.903 0"
+                />
+              </g>
+              <defs>
+                <clippath
+                  id="b2fbae3ff4787741870694db3344c0c7__a"
+                >
+                  <path
+                    d="M0 0h14v22H0z"
+                  />
+                </clippath>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="quill-generic-picker__content--container"
+    />
+  </div>
+</div>
+`;

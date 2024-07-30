@@ -1,0 +1,66 @@
+@import "@deriv-com/quill-tokens/dist/breakpoints.scss";
+
+.quill-wheel-picker {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    background-color: var(--component-field-bg-outline-default);
+    padding: 0;
+    @include breakpoint("md") {
+        padding: var(--component-actionSheet-spacing-padding-sm);
+        border-radius: var(--core-borderRadius-400);
+        box-shadow: var(--semantic-elevation-shadow-card-hover);
+    }
+
+    &__container {
+        position: relative;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        scrollbar-width: none;
+        @include breakpoint("md") {
+            height: 240px;
+        }
+    }
+
+    &__data-items {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        padding: 0;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        transition: all var(--core-motion-duration-200)
+            var(--core-motion-ease-400);
+        &::before {
+            position: absolute;
+            content: "";
+            transform: translateY(-50%);
+            width: 100%;
+            height: 48px;
+            left: 0;
+            right: 0;
+            padding: 0;
+            background-color: var(--component-dropdownItem-bg-hover);
+            pointer-events: none;
+            border-radius: var(--core-borderRadius-200);
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__data-item {
+        padding: 0;
+        list-style-type: none;
+        width: 100%;
+        scroll-snap-align: center;
+        &:hover {
+            background: none;
+        }
+    }
+}

@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenericWheelPickerContainer renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    style="height: 240px;"
+  >
+    <div
+      class="quill-wheel-picker"
+    >
+      <div
+        class="quill-wheel-picker__container"
+      >
+        <ul
+          class="quill-wheel-picker__data-items"
+          role="listbox"
+          style="padding-top: 0px; padding-bottom: 0px;"
+        >
+          <li
+            class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--false quill-wheel-picker__data-item"
+            role="option"
+            tabindex="0"
+          >
+            <p
+              class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+            >
+              1
+            </p>
+          </li>
+          <li
+            class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+            role="option"
+            tabindex="0"
+          >
+            <p
+              class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+            >
+              2
+            </p>
+          </li>
+          <li
+            class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+            role="option"
+            tabindex="0"
+          >
+            <p
+              class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+            >
+              3
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="quill-wheel-picker__container"
+      >
+        <ul
+          class="quill-wheel-picker__data-items"
+          role="listbox"
+          style="padding-top: 0px; padding-bottom: 0px;"
+        >
+          <li
+            class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--false quill-wheel-picker__data-item"
+            role="option"
+            tabindex="0"
+          >
+            <p
+              class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+            >
+              4
+            </p>
+          </li>
+          <li
+            class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+            role="option"
+            tabindex="0"
+          >
+            <p
+              class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+            >
+              5
+            </p>
+          </li>
+          <li
+            class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+            role="option"
+            tabindex="0"
+          >
+            <p
+              class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+            >
+              6
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="quill-wheel-picker__container"
+      >
+        <ul
+          class="quill-wheel-picker__data-items"
+          role="listbox"
+          style="padding-top: 0px; padding-bottom: 0px;"
+        >
+          <li
+            class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--false quill-wheel-picker__data-item"
+            role="option"
+            tabindex="0"
+          >
+            <p
+              class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+            >
+              7
+            </p>
+          </li>
+          <li
+            class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+            role="option"
+            tabindex="0"
+          >
+            <p
+              class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+            >
+              8
+            </p>
+          </li>
+          <li
+            class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+            role="option"
+            tabindex="0"
+          >
+            <p
+              class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+            >
+              9
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    ,
+  </div>
+</DocumentFragment>
+`;
