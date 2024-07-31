@@ -20,6 +20,7 @@ import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired
 import { PasswordStrengthValidation } from "@components/Atom";
 import { PatternFormat, PatternFormatProps } from "react-number-format";
 import useUniqueId from "@hooks/useUniqueId";
+import { getFormatValue } from "@utils/common-utils";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
@@ -130,9 +131,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         const [inputValue, setInputValue] = useState(value);
         const [focused, setFocused] = React.useState(false);
 
-        const getFormatValue = (value: number) =>
-            parseFloat(value.toString()).toFixed(decimals);
-
         useEffect(() => {
             setInputValue(value);
         }, [value]);
@@ -172,7 +170,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             }
 
             const value = decimals
-                ? getFormatValue(Number(inputValue))
+                ? getFormatValue(Number(inputValue), decimals)
                 : inputValue;
 
             setInputValue(value);

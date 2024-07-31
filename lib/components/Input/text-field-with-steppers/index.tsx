@@ -6,6 +6,7 @@ import {
     LabelPairedPlusSmRegularIcon,
     LabelPairedMinusSmRegularIcon,
 } from "@deriv/quill-icons";
+import { getFormatValue } from "@utils/common-utils";
 
 export interface TextFieldWithSteppersProps
     extends ComponentProps<typeof Input> {
@@ -30,9 +31,6 @@ export const TextFieldWithSteppers = forwardRef<
         ...rest
     } = props;
 
-    const getFormatValue = (value: number) =>
-        parseFloat(value.toString()).toFixed(decimals);
-
     const steppersSectionRight = (
         <>
             {textAlignment !== "center" && (
@@ -40,7 +38,10 @@ export const TextFieldWithSteppers = forwardRef<
                     onClick={() => {
                         onChange?.({
                             target: {
-                                value: getFormatValue(Number(value) - 1),
+                                value: getFormatValue(
+                                    Number(value) - 1,
+                                    decimals,
+                                ),
                             },
                         } as unknown as React.ChangeEvent<HTMLInputElement>);
                     }}
@@ -54,7 +55,9 @@ export const TextFieldWithSteppers = forwardRef<
             <IconButton
                 onClick={() => {
                     onChange?.({
-                        target: { value: getFormatValue(Number(value) + 1) },
+                        target: {
+                            value: getFormatValue(Number(value) + 1, decimals),
+                        },
                     } as unknown as React.ChangeEvent<HTMLInputElement>);
                 }}
                 disabled={disabled}
@@ -70,7 +73,9 @@ export const TextFieldWithSteppers = forwardRef<
         <IconButton
             onClick={() => {
                 onChange?.({
-                    target: { value: getFormatValue(Number(value) - 1) },
+                    target: {
+                        value: getFormatValue(Number(value) - 1, decimals),
+                    },
                 } as unknown as React.ChangeEvent<HTMLInputElement>);
             }}
             disabled={disabled}
@@ -100,7 +105,7 @@ export const TextFieldWithSteppers = forwardRef<
                 triggerActionIcon={steppersSectionRight}
                 type="number"
                 allowDecimals={true}
-                value={`${value && getFormatValue(Number(value))}`}
+                value={`${value && getFormatValue(Number(value), decimals)}`}
                 inputMode="decimal"
             />
         </div>
