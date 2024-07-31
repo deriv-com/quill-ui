@@ -6,6 +6,7 @@ import {
 } from "@deriv/quill-icons";
 import { LabelPairedPlaceholderCaptionBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import dayjs from "dayjs";
+import InputDropdown from "../dropdown-field";
 
 const icons: Record<string, object | null> = {
     with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
@@ -95,6 +96,26 @@ const meta = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
+
+const Template: React.FC<React.ComponentProps<typeof DatePickerDropdown>> = (
+    args,
+) => (
+    <div style={{ display: "flex", gap: "10px" }}>
+        <DatePickerDropdown {...args} />
+
+        {/* <InputDropdown
+            options={[
+                { text: "Option 1", value: "option1" },
+                { text: "Option 2", value: "option2" },
+                { text: "Option 3", value: "option3" },
+            ]}
+            onSelectOption={() => null}
+        /> */}
+    </div>
+);
+
+export const Default = Template.bind(this) as Story;
+Default.args = { ...meta.args };
 
 export const DefaultLabellessDropdown: Story = {
     args: {},
