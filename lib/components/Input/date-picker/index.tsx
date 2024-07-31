@@ -100,7 +100,7 @@ const DatePickerInput = forwardRef<HTMLInputElement, TDatePickerDropdownProps>(
 
             inputRef.current.value = date;
         }, [isOpen]);
-        console.log("isMobile", isMobile);
+
         return (
             <div
                 className={clsx(
