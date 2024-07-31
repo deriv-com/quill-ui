@@ -1,15 +1,21 @@
+@import "@deriv-com/quill-tokens/dist/breakpoints.scss";
+
 .quill-date-picker {
     border: none;
-    padding: var(--component-actionSheet-spacing-padding-md);
     background-color: var(--semantic-color-slate-solid-surface-frame-low);
     width: unset;
 
+    @include breakpoint ("md") {
+        padding: var(--component-actionSheet-spacing-padding-md);
+    }
+
     &__wrapper {
         &--fixed-width {
-            width: var(--component-dropdownList-width-dateRangePicker-sm);
+                width: 100%;
 
-            @media (max-width: 330px) {
-                width: 290px;
+            @include breakpoint ("md") {
+                width: var(--component-dropdownList-width-dateRangePicker-sm);
+                
             }
         }
     }

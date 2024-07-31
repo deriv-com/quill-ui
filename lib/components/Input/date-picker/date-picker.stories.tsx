@@ -6,6 +6,7 @@ import {
 } from "@deriv/quill-icons";
 import { LabelPairedPlaceholderCaptionBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import dayjs from "dayjs";
+import BreakpointProvider from "@providers/breakpoint/breakpointProvider";
 
 const icons: Record<string, object | null> = {
     with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
@@ -96,98 +97,109 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const DefaultLabellessDropdown: Story = {
-    args: {},
+const Template: React.FC<React.ComponentProps<typeof DatePickerDropdown>> = (
+    args,
+) => (
+    <div style={{ display: "flex", gap: "10px" }}>
+        <BreakpointProvider>
+            <DatePickerDropdown {...args} />
+        </BreakpointProvider>
+    </div>
+);
+
+export const Default = Template.bind(this) as Story;
+
+Default.args = { ...meta.args };
+
+export const DisabledDropdown = Template.bind(this) as Story;
+DisabledDropdown.args = {
+    ...meta.args,
+    disabled: true,
 };
-export const DisabledDropdown: Story = {
-    args: {
-        disabled: true,
-    },
+export const LabellessSuccessDropdown = Template.bind(this) as Story;
+LabellessSuccessDropdown.args = {
+    ...meta.args,
+    status: "success",
+    rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+    variant: "outline",
 };
-export const LabellessSuccessDropdown: Story = {
-    args: {
-        status: "success",
-        rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
-        variant: "outline",
-    },
+export const LabellessErrorDropdown = Template.bind(this) as Story;
+LabellessErrorDropdown.args = {
+    ...meta.args,
+    rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+    status: "error",
+    variant: "outline",
 };
-export const LabellessErrorDropdown: Story = {
-    args: {
-        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-        status: "error",
-        variant: "outline",
-    },
+export const LabellessDropdownWithErrorMessage = Template.bind(this) as Story;
+LabellessDropdownWithErrorMessage.args = {
+    ...meta.args,
+    rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+    message: "This is an error message",
+    status: "error",
 };
-export const LabellessDropdownWithErrorMessage: Story = {
-    args: {
-        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-        message: "This is an error message",
-        status: "error",
-    },
+export const DefaultInputDropdownWithLabel = Template.bind(this) as Story;
+DefaultInputDropdownWithLabel.args = {
+    ...meta.args,
+    label: "Label",
+    required: true,
+    fieldMarker: true,
 };
-export const DefaultInputDropdownWithLabel: Story = {
-    args: {
-        label: "Label",
-        required: true,
-        fieldMarker: true,
-    },
+export const LabelledSuccessDropdown = Template.bind(this) as Story;
+LabelledSuccessDropdown.args = {
+    ...meta.args,
+    label: "Label",
+    required: true,
+    fieldMarker: true,
+    variant: "fill",
+    status: "success",
+    rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
 };
-export const LabelledSuccessDropdown: Story = {
-    args: {
-        label: "Label",
-        required: true,
-        fieldMarker: true,
-        variant: "fill",
-        status: "success",
-        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-    },
+export const LabelledDropdownOutlined = Template.bind(this) as Story;
+LabelledDropdownOutlined.args = {
+    ...meta.args,
+    label: "Label",
+    required: true,
+    fieldMarker: true,
+    variant: "outline",
+    status: "neutral",
+    rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
 };
-export const LabelledDropdownOutlined: Story = {
-    args: {
-        label: "Label",
-        required: true,
-        fieldMarker: true,
-        variant: "outline",
-        status: "neutral",
-        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-    },
+export const LabelledSuccessDropdownOutlined = Template.bind(this) as Story;
+LabelledSuccessDropdownOutlined.args = {
+    ...meta.args,
+    label: "Label",
+    required: true,
+    fieldMarker: true,
+    variant: "outline",
+    status: "success",
+    rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
 };
-export const LabelledSuccessDropdownOutlined: Story = {
-    args: {
-        label: "Label",
-        required: true,
-        fieldMarker: true,
-        variant: "outline",
-        status: "success",
-        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-    },
+export const LabelledErrorDropdownOutlined = Template.bind(this) as Story;
+LabelledErrorDropdownOutlined.args = {
+    ...meta.args,
+    label: "Label",
+    required: true,
+    fieldMarker: true,
+    variant: "outline",
+    status: "error",
+    rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
 };
-export const LabelledErrorDropdownOutlined: Story = {
-    args: {
-        label: "Label",
-        required: true,
-        fieldMarker: true,
-        variant: "outline",
-        status: "error",
-        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-    },
+export const LabelledErrorDropdown = Template.bind(this) as Story;
+LabelledErrorDropdown.args = {
+    ...meta.args,
+    label: "Label",
+    required: true,
+    fieldMarker: true,
+    status: "error",
+    rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
 };
-export const LabelledErrorDropdown: Story = {
-    args: {
-        label: "Label",
-        required: true,
-        fieldMarker: true,
-        status: "error",
-        rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
-    },
-};
-export const LabelledDropdownWithSuccessMessage: Story = {
-    args: {
-        label: "Label",
-        required: true,
-        fieldMarker: true,
-        status: "success",
-        message: "This is a success message",
-        rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
-    },
+export const LabelledDropdownWithSuccessMessage = Template.bind(this) as Story;
+LabelledDropdownWithSuccessMessage.args = {
+    ...meta.args,
+    label: "Label",
+    required: true,
+    fieldMarker: true,
+    status: "success",
+    message: "This is a success message",
+    rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
 };

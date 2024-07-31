@@ -1,3 +1,5 @@
+@import "@deriv-com/quill-tokens/dist/breakpoints.scss";
+
 .datepicker {
     &__input {
         & label {
@@ -20,12 +22,15 @@
     }
 
     &__container {
-        position: absolute;
         background-color: var(--component-dropdownList-bg);
-        border-radius: var(--core-borderRadius-400);
-        box-shadow: var(--semantic-elevation-shadow-card-hover);
-        margin-top: var(--core-size-200);
-        width: var(--temp-static-spacing-312);
+      
+        @include breakpoint ("md") {
+            position: absolute;
+            border-radius: var(--core-borderRadius-400);
+            box-shadow: var(--semantic-elevation-shadow-card-hover);
+            margin-top: var(--core-size-200);
+            width: var(--temp-static-spacing-312);
+        }
     }
 
     &-dropdown__menu {
