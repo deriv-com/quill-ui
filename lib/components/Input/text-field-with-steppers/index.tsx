@@ -12,6 +12,8 @@ export interface TextFieldWithSteppersProps
     extends ComponentProps<typeof Input> {
     unitLeft?: string;
     unitRight?: string;
+    minusDisabled?: boolean;
+    plusDisabled?: boolean;
 }
 
 export const TextFieldWithSteppers = forwardRef<
@@ -28,6 +30,8 @@ export const TextFieldWithSteppers = forwardRef<
         unitRight = "",
         inputSize = "md",
         decimals = 2,
+        minusDisabled,
+        plusDisabled,
         ...rest
     } = props;
 
@@ -45,7 +49,7 @@ export const TextFieldWithSteppers = forwardRef<
                             },
                         } as unknown as React.ChangeEvent<HTMLInputElement>);
                     }}
-                    disabled={disabled}
+                    disabled={disabled || minusDisabled}
                     variant="tertiary"
                     icon={<LabelPairedMinusSmRegularIcon />}
                     color="black"
@@ -60,7 +64,7 @@ export const TextFieldWithSteppers = forwardRef<
                         },
                     } as unknown as React.ChangeEvent<HTMLInputElement>);
                 }}
-                disabled={disabled}
+                disabled={disabled || plusDisabled}
                 variant="tertiary"
                 icon={<LabelPairedPlusSmRegularIcon />}
                 color="black"
@@ -78,7 +82,7 @@ export const TextFieldWithSteppers = forwardRef<
                     },
                 } as unknown as React.ChangeEvent<HTMLInputElement>);
             }}
-            disabled={disabled}
+            disabled={disabled || minusDisabled}
             variant="tertiary"
             icon={<LabelPairedMinusSmRegularIcon />}
             color="black"
