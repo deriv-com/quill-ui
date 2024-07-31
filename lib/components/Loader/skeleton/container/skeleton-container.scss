@@ -1,0 +1,46 @@
+.quill-skeleton-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    &__direction {
+        &--row {
+            flex-direction: column;
+        }
+
+        &--column {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__alignment {
+        &--row {
+            &-left {
+                align-items: flex-start;
+            }
+
+            &-center {
+                align-items: center;
+            }
+
+            &-right {
+                align-items: flex-end;
+            }
+        }
+
+        &--column {
+            &-left {
+                justify-content: flex-start;
+            }
+
+            &-center {
+                justify-content: center;
+            }
+
+            &-right {
+                justify-content: flex-end;
+            }
+        }
+    }
+}
