@@ -43,7 +43,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
             class="icon_wrapper"
           >
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -71,7 +71,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
               </svg>
             </button>
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -148,7 +148,7 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
             class="icon_wrapper"
           >
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -176,7 +176,7 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
               </svg>
             </button>
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -244,7 +244,7 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
             class="icon_wrapper"
           >
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -272,7 +272,7 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
               </svg>
             </button>
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -350,7 +350,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
             class="icon_wrapper"
           >
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -378,7 +378,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
               </svg>
             </button>
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >

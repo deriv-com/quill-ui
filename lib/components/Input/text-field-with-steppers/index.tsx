@@ -35,45 +35,7 @@ export const TextFieldWithSteppers = forwardRef<
         ...rest
     } = props;
 
-    const steppersSectionRight = (
-        <>
-            {textAlignment !== "center" && (
-                <IconButton
-                    onClick={() => {
-                        onChange?.({
-                            target: {
-                                value: getFormatValue(
-                                    Number(value) - 1,
-                                    decimals,
-                                ),
-                            },
-                        } as unknown as React.ChangeEvent<HTMLInputElement>);
-                    }}
-                    disabled={disabled || minusDisabled}
-                    variant="tertiary"
-                    icon={<LabelPairedMinusSmRegularIcon />}
-                    color="black"
-                    size={inputSize}
-                />
-            )}
-            <IconButton
-                onClick={() => {
-                    onChange?.({
-                        target: {
-                            value: getFormatValue(Number(value) + 1, decimals),
-                        },
-                    } as unknown as React.ChangeEvent<HTMLInputElement>);
-                }}
-                disabled={disabled || plusDisabled}
-                variant="tertiary"
-                icon={<LabelPairedPlusSmRegularIcon />}
-                color="black"
-                size={inputSize}
-            />
-        </>
-    );
-
-    const steppersSectionLeft = (
+    const SteppersSectionMinus = () => (
         <IconButton
             onClick={() => {
                 onChange?.({
@@ -85,9 +47,29 @@ export const TextFieldWithSteppers = forwardRef<
             disabled={disabled || minusDisabled}
             variant="tertiary"
             icon={<LabelPairedMinusSmRegularIcon />}
-            color="black"
+            color="black-white"
             size={inputSize}
         />
+    );
+
+    const steppersSectionRight = (
+        <>
+            {textAlignment !== "center" && <SteppersSectionMinus />}
+            <IconButton
+                onClick={() => {
+                    onChange?.({
+                        target: {
+                            value: getFormatValue(Number(value) + 1, decimals),
+                        },
+                    } as unknown as React.ChangeEvent<HTMLInputElement>);
+                }}
+                disabled={disabled || plusDisabled}
+                variant="tertiary"
+                icon={<LabelPairedPlusSmRegularIcon />}
+                color="black-white"
+                size={inputSize}
+            />
+        </>
     );
 
     return (
@@ -98,7 +80,9 @@ export const TextFieldWithSteppers = forwardRef<
                 ref={ref}
                 disabled={disabled}
                 inputSize={inputSize}
-                leftIcon={textAlignment === "center" && steppersSectionLeft}
+                leftIcon={
+                    textAlignment === "center" && <SteppersSectionMinus />
+                }
                 leftPlaceholder={unitLeft}
                 onChange={onChange}
                 placeholder={placeholder.toLocaleString("en", {
