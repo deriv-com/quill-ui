@@ -31,7 +31,7 @@ export const TextFieldWithSteppers = forwardRef<
     } = props;
 
     const getFormatValue = (value: number) =>
-        parseFloat(value.toFixed(decimals));
+        parseFloat(value.toString()).toFixed(decimals);
 
     const steppersSectionRight = (
         <>

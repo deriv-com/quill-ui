@@ -131,7 +131,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         const [focused, setFocused] = React.useState(false);
 
         const getFormatValue = (value: number) =>
-            parseFloat(value.toFixed(decimals));
+            parseFloat(value.toString()).toFixed(decimals);
 
         useEffect(() => {
             setInputValue(value);
