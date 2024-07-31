@@ -6,6 +6,7 @@ import {
 } from "@deriv/quill-icons";
 import { LabelPairedPlaceholderCaptionBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import dayjs from "dayjs";
+import BreakpointProvider from "@providers/breakpoint/breakpointProvider";
 
 const icons: Record<string, object | null> = {
     with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
@@ -96,9 +97,19 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const DefaultLabellessDropdown: Story = {
-    args: {},
-};
+const Template: React.FC<React.ComponentProps<typeof DatePickerDropdown>> = (
+    args,
+) => (
+    <div style={{ display: "flex", gap: "10px" }}>
+        <BreakpointProvider>
+            <DatePickerDropdown {...args} />
+        </BreakpointProvider>
+    </div>
+);
+
+export const Default = Template.bind(this) as Story;
+Default.args = { ...meta.args };
+
 export const DisabledDropdown: Story = {
     args: {
         disabled: true,

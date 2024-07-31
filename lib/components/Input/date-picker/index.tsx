@@ -3,6 +3,7 @@ import React, {
     forwardRef,
     useEffect,
     useRef,
+    ComponentProps,
     useState,
 } from "react";
 import clsx from "clsx";
@@ -12,9 +13,11 @@ import { DatePicker, DatePickerProps } from "@components/Atom";
 import { reactNodeToString } from "@utils/common-utils";
 import dayjs from "dayjs";
 import { useDropdown } from "@hooks/useDropdown";
+import useBreakpoints from "@hooks/useBreakpoints";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import { StandaloneCalendarRegularIcon } from "@deriv/quill-icons";
 import { DropdownProvider } from "@providers/dropdown/dropdownProvider";
+import ActionSheet from "@components/ActionSheet";
 
 dayjs.extend(customParseFormat);
 
@@ -24,6 +27,7 @@ export interface TDatePickerDropdownProps extends Omit<InputProps, "leftIcon"> {
     isAutocomplete?: boolean;
     datePickerProps?: DatePickerProps;
     value?: string;
+    actionSheetFooter?: ComponentProps<typeof ActionSheet.Footer>;
 }
 
 const dateFormat = "DD/MM/YYYY";
@@ -37,6 +41,7 @@ const DatePickerInput = forwardRef<HTMLInputElement, TDatePickerDropdownProps>(
             status = "neutral",
             isAutocomplete = false,
             className,
+            actionSheetFooter,
             datePickerProps = { selectRange: false },
             onSelectDate,
             onSearch,
@@ -49,7 +54,13 @@ const DatePickerInput = forwardRef<HTMLInputElement, TDatePickerDropdownProps>(
         const [date, setDate] = useState<string>();
         const inputRef = useRef<HTMLInputElement>(null);
         const dropdownRef = useRef<HTMLInputElement>(null);
-        const { isOpen, open, close } = useDropdown(dropdownRef);
+        const actionSheetRef = useRef<HTMLDivElement>(null);
+        const { isOpen, open, close } = useDropdown([
+            dropdownRef,
+            actionSheetRef,
+        ]);
+        const { isMobile } = useBreakpoints();
+
         const {
             selectRange,
             className: datePickerClassName,
@@ -89,7 +100,7 @@ const DatePickerInput = forwardRef<HTMLInputElement, TDatePickerDropdownProps>(
 
             inputRef.current.value = date;
         }, [isOpen]);
-
+        console.log("isMobile", isMobile);
         return (
             <div
                 className={clsx(
@@ -141,28 +152,73 @@ const DatePickerInput = forwardRef<HTMLInputElement, TDatePickerDropdownProps>(
                         `datepicker-dropdown__menu--${textAlignment}`,
                     )}
                 >
-                    {isOpen && (
-                        <DatePicker
-                            data-testid="calendar"
-                            value={date && dayjs(date, dateFormat).toDate()}
-                            hasFixedWidth
-                            onFormattedDate={(value) => {
-                                setDate(value);
-                                onSelectDate?.(
-                                    dayjs(value, dateFormat).toDate(),
-                                );
-                            }}
-                            onChange={(value) => {
-                                onSelectDate?.(value as Date);
-                                close();
-                            }}
-                            className={clsx(
-                                "datepicker__container",
-                                datePickerClassName,
-                            )}
-                            selectRange={selectRange}
-                            {...restDatePickerProps}
-                        />
+                    {!isMobile ? (
+                        isOpen && (
+                            <DatePicker
+                                data-testid="calendar"
+                                value={date && dayjs(date, dateFormat).toDate()}
+                                hasFixedWidth
+                                onFormattedDate={(value) => {
+                                    setDate(value);
+                                    onSelectDate?.(
+                                        dayjs(value, dateFormat).toDate(),
+                                    );
+                                }}
+                                onChange={(value) => {
+                                    onSelectDate?.(value as Date);
+                                    close();
+                                }}
+                                className={clsx(
+                                    "datepicker__container",
+                                    datePickerClassName,
+                                )}
+                                selectRange={selectRange}
+                                {...restDatePickerProps}
+                            />
+                        )
+                    ) : (
+                        <ActionSheet.Root
+                            isOpen={isOpen}
+                            onClose={() => close()}
+                        >
+                            <ActionSheet.Portal
+                                shouldCloseOnDrag={true}
+                                fullHeightOnOpen={true}
+                                ref={actionSheetRef}
+                            >
+                                {label && <ActionSheet.Header title={label} />}
+                                <ActionSheet.Content>
+                                    <DatePicker
+                                        data-testid="calendar"
+                                        value={
+                                            date &&
+                                            dayjs(date, dateFormat).toDate()
+                                        }
+                                        hasFixedWidth
+                                        onFormattedDate={(value) => {
+                                            setDate(value);
+                                            onSelectDate?.(
+                                                dayjs(
+                                                    value,
+                                                    dateFormat,
+                                                ).toDate(),
+                                            );
+                                        }}
+                                        onChange={(value) => {
+                                            onSelectDate?.(value as Date);
+                                            close();
+                                        }}
+                                        className={clsx(
+                                            "datepicker__container",
+                                            datePickerClassName,
+                                        )}
+                                        selectRange={selectRange}
+                                        {...restDatePickerProps}
+                                    />
+                                </ActionSheet.Content>
+                                <ActionSheet.Footer {...actionSheetFooter} />
+                            </ActionSheet.Portal>
+                        </ActionSheet.Root>
                     )}
                 </div>
             </div>
