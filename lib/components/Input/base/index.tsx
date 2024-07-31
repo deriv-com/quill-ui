@@ -67,6 +67,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     formatProps?: PatternFormatProps;
     id?: string;
     allowDecimals?: boolean;
+    decimals?: number;
 }
 
 const statusIconColors = {
@@ -118,6 +119,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             addOnIcon,
             id,
             allowDecimals = false,
+            decimals,
             ...rest
         },
         ref,
@@ -127,6 +129,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         }
         const [inputValue, setInputValue] = useState(value);
         const [focused, setFocused] = React.useState(false);
+
+        const getFormatValue = (value: number) =>
+            parseFloat(value.toFixed(decimals));
 
         useEffect(() => {
             setInputValue(value);
@@ -165,7 +170,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 inputValue = inputValue.replace(nonNumReg, "");
                 event.target.value = inputValue;
             }
-            setInputValue(inputValue);
+
+            const value = decimals
+                ? getFormatValue(Number(inputValue))
+                : inputValue;
+
+            setInputValue(value);
             onChange?.(event);
         };
 
@@ -234,7 +244,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 <input
                                     {...rest}
                                     {...commonProps}
-                                    type={(type === "number" && !allowDecimals) ? "text" : type}
+                                    type={
+                                        type === "number" && !allowDecimals
+                                            ? "text"
+                                            : type
+                                    }
                                     onChange={handleChange}
                                     onFocus={() => setFocused(true)}
                                     onBlur={() => setFocused(false)}

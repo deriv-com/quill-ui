@@ -9,7 +9,6 @@ import {
 
 export interface TextFieldWithSteppersProps
     extends ComponentProps<typeof Input> {
-    decimals?: number;
     unitLeft?: string;
     unitRight?: string;
 }
@@ -26,8 +25,8 @@ export const TextFieldWithSteppers = forwardRef<
         placeholder = 0,
         unitLeft = "",
         unitRight = "",
-        decimals = 2,
         inputSize = "md",
+        decimals = 2,
         ...rest
     } = props;
 
@@ -86,6 +85,7 @@ export const TextFieldWithSteppers = forwardRef<
         <div>
             <Input
                 {...rest}
+                decimals={decimals}
                 ref={ref}
                 disabled={disabled}
                 inputSize={inputSize}
