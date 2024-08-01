@@ -67,6 +67,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     formatProps?: PatternFormatProps;
     id?: string;
     allowDecimals?: boolean;
+    allowSign?: boolean;
 }
 
 const statusIconColors = {
@@ -118,6 +119,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             addOnIcon,
             id,
             allowDecimals = false,
+            allowSign = true,
             ...rest
         },
         ref,
@@ -157,12 +159,20 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             disabled: !!disabled,
             id: inputId,
         };
-
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
             let inputValue = event.target.value;
             if (type === "number" && !allowDecimals) {
                 const nonNumReg = /[^0-9]/g;
                 inputValue = inputValue.replace(nonNumReg, "");
+                event.target.value = inputValue;
+            }
+            if (type === "number" && allowDecimals && !allowSign) {
+                const nonNumReg = /[^0-9.]/g;
+                inputValue = inputValue.replace(nonNumReg, "");
+                const parts = inputValue.split('.');
+                if (parts.length > 1) {
+                    inputValue = parts[0] + '.' + parts.slice(1).join('');
+                }
                 event.target.value = inputValue;
             }
             setInputValue(inputValue);
@@ -234,7 +244,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                 <input
                                     {...rest}
                                     {...commonProps}
-                                    type={(type === "number" && !allowDecimals) ? "text" : type}
+                                    type={
+                                        (type === "number" && !allowDecimals) ||
+                                        (type == "number" &&
+                                            allowDecimals &&
+                                            !allowSign)
+                                            ? "text"
+                                            : type
+                                    }
                                     onChange={handleChange}
                                     onFocus={() => setFocused(true)}
                                     onBlur={() => setFocused(false)}
