@@ -3,9 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { LabelPairedPlaceholderCaptionBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import { GenericWheelPicker } from ".";
 import BreakpointProvider from "@providers/breakpoint/breakpointProvider";
-import {
-    StandaloneCircleCheckBoldIcon,
-} from "@deriv/quill-icons";
+import { StandaloneCircleCheckBoldIcon } from "@deriv/quill-icons";
 
 const icons: Record<string, object | null> = {
     with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
@@ -27,9 +25,15 @@ const meta = {
     args: {
         disabled: false,
         data: [
+            [
+                { value: "item-1" },
+                { value: "item-2" },
+                { value: "item-3" },
+                { value: "item-4" },
+                { value: "item-5" },
+                { value: "item-6" },
+            ],
             [{ value: "item-1" }, { value: "item-2" }, { value: "item-3" }],
-            [{ value: "item-1" }, { value: "item-2" }, { value: "item-3" }],
-            
         ],
         actionSheetFooter: {
             primaryAction: {
@@ -37,7 +41,7 @@ const meta = {
                 onAction: () => null,
             },
         },
-        values: ["item-1", "item-3"],
+        values: ["item-3", "item-1"],
         status: "neutral",
         placeholder: "Select",
         variant: "fill",

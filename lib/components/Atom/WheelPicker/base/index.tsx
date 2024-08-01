@@ -27,7 +27,7 @@ const WheelPicker = ({
     position,
     ...rest
 }: WheelPickerProps) => {
-    const dataRefs = useRef<HTMLDivElement[]>([]);
+    const itemsRefs = useRef<HTMLDivElement[]>([]);
     const dataItemsMap = useMemo(
         () =>
             data.reduce(
@@ -38,7 +38,7 @@ const WheelPicker = ({
     );
 
     const currentDataValue = useRef(dataItemsMap.get(selectedValue) ?? 0);
-    const dataItemsContRef = useRef<HTMLUListElement>(null);
+    const itemsContainerRef = useRef<HTMLUListElement>(null);
 
     const handleDataScroll = (event: Event) => {
         if (!event.target) return;
@@ -50,7 +50,7 @@ const WheelPicker = ({
             Math.max(Math.floor(scrollTop / 48), 0),
             data.length - 1,
         );
-        (dataRefs.current[selectedElement] as HTMLDivElement)?.focus({
+        (itemsRefs.current[selectedElement] as HTMLDivElement)?.focus({
             preventScroll: true,
         });
         setSelectedValue(data[selectedElement].value);
@@ -58,25 +58,25 @@ const WheelPicker = ({
 
     const resizeObserver = new ResizeObserver(() => {
         const index = Number(currentDataValue.current);
-        if (!dataItemsContRef?.current) return;
-        const divHeight = dataItemsContRef?.current.clientHeight;
-        dataItemsContRef.current.style.paddingTop = `${divHeight * 0.5}px`;
-        dataItemsContRef.current.style.paddingBottom = `${divHeight * 0.5}px`;
-        if (dataRefs.current[index]) {
-            (dataRefs.current[index] as HTMLDivElement).scrollIntoView({
+        if (!itemsContainerRef?.current) return;
+        const divHeight = itemsContainerRef?.current.clientHeight;
+        itemsContainerRef.current.style.paddingTop = `${divHeight * 0.5}px`;
+        itemsContainerRef.current.style.paddingBottom = `${divHeight * 0.5}px`;
+        if (itemsRefs.current[index]) {
+            (itemsRefs.current[index] as HTMLDivElement).scrollIntoView({
                 block: "center",
             });
         }
     });
 
     useEffect(() => {
-        if (!dataItemsContRef.current) return;
+        if (!itemsContainerRef.current) return;
         setSelectedValue(data[currentDataValue.current].value);
-        resizeObserver.observe(dataItemsContRef.current);
-        dataItemsContRef.current.addEventListener("scroll", handleDataScroll);
+        resizeObserver.observe(itemsContainerRef.current);
+        itemsContainerRef.current.addEventListener("scroll", handleDataScroll);
         return () => {
             resizeObserver.disconnect();
-            dataItemsContRef.current?.removeEventListener(
+            itemsContainerRef.current?.removeEventListener(
                 "scroll",
                 handleDataScroll,
             );
@@ -85,7 +85,7 @@ const WheelPicker = ({
 
     useEffect(() => {
         if (isFocused) {
-            dataRefs.current[dataItemsMap.get(selectedValue)]?.focus();
+            itemsRefs.current[dataItemsMap.get(selectedValue)]?.focus();
         }
     }, [isFocused]);
 
@@ -103,7 +103,7 @@ const WheelPicker = ({
                     listClassName,
                 )}
                 role="listbox"
-                ref={dataItemsContRef}
+                ref={itemsContainerRef}
             >
                 {data.map(({ value }, index) => {
                     return (
@@ -118,15 +118,15 @@ const WheelPicker = ({
                             role="option"
                             textAlignment="center"
                             ref={(node: HTMLDivElement) =>
-                                (dataRefs.current[index] = node)
+                                (itemsRefs.current[index] = node)
                             }
                             key={value}
                             onKeyDown={handleKeyDown}
                             onClick={() => {
-                                dataRefs.current[index]?.scrollIntoView({
+                                itemsRefs.current[index]?.scrollIntoView({
                                     block: "center",
                                 });
-                                dataRefs.current[index]?.focus();
+                                itemsRefs.current[index]?.focus();
                                 setSelectedValue(data[index].value);
                             }}
                             disabled={data[index].value !== selectedValue}
