@@ -1,14 +1,14 @@
 import { HTMLAttributes, useEffect, useMemo, useRef } from "react";
 import clsx from "clsx";
-import "./wheel-picker.scss";
 import { DropdownItem } from "@components/Atom/dropdown";
+import "./wheel-picker.scss";
 
 export interface WheelPickerProps extends HTMLAttributes<HTMLElement> {
     data: { value: string | number }[];
     selectedValue: string | number;
     setSelectedValue: (value: string | number) => void;
     handleKeyDown?: (e: React.KeyboardEvent) => void;
-    focus?: boolean;
+    isFocused?: boolean;
     dropDownItemClassName?: string;
     containerClassName?: string;
     listClassName?: string;
@@ -20,7 +20,7 @@ const WheelPicker = ({
     selectedValue,
     setSelectedValue,
     handleKeyDown,
-    focus,
+    isFocused,
     dropDownItemClassName,
     containerClassName,
     listClassName,
@@ -72,10 +72,7 @@ const WheelPicker = ({
     useEffect(() => {
         if (!dataItemsContRef.current) return;
         setSelectedValue(data[currentDataValue.current].value);
-        const divHeight = dataItemsContRef?.current.clientHeight;
-        resizeObserver.observe(dataItemsContRef.current);
-        dataItemsContRef.current.style.paddingTop = `${divHeight * 0.5}px`;
-        dataItemsContRef.current.style.paddingBottom = `${divHeight * 0.5}px`;
+         resizeObserver.observe(dataItemsContRef.current);
         dataItemsContRef.current.addEventListener("scroll", handleDataScroll);
         return () => {
             resizeObserver.disconnect();
@@ -87,10 +84,10 @@ const WheelPicker = ({
     }, []);
 
     useEffect(() => {
-        if (focus) {
+        if (isFocused) {
             dataRefs.current[dataItemsMap.get(selectedValue)]?.focus();
         }
-    }, [focus]);
+    }, [isFocused]);
 
     return (
         <div

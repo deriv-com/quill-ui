@@ -13,6 +13,7 @@ import clsx from "clsx";
 import { DropdownProvider } from "@providers/dropdown/dropdownProvider";
 import useBreakpoints from "@hooks/useBreakpoints";
 import ActionSheet from "@components/ActionSheet";
+import { KEY } from "@utils/common-utils";
 import WheelPickerContainer from "@components/Atom/WheelPicker";
 import "./generic-wheel-picker.scss";
 
@@ -48,7 +49,8 @@ const GenericWheelPickerContent = forwardRef<
         const containerRef = useRef<HTMLDivElement>(null);
         const actionSheetRef = useRef<HTMLDivElement>(null);
 
-        const [inputValues, setInputValues] = useState<(string | number)[]>(values);
+        const [inputValues, setInputValues] =
+            useState<(string | number)[]>(values);
         const [isPressed, setIsPressed] = useState(false);
 
         const handleMouseDown = () => {
@@ -89,7 +91,7 @@ const GenericWheelPickerContent = forwardRef<
         };
 
         const handleKeyDownEvent = (e: KeyboardEvent<HTMLDivElement>) => {
-            if (e.key === "ArrowDown") {
+            if (e.key === KEY.ARROW_DOWN) {
                 open();
             }
         };
@@ -153,10 +155,7 @@ const GenericWheelPickerContent = forwardRef<
                                 </div>
                             )
                         ) : (
-                            <ActionSheet.Root
-                                isOpen={isOpen}
-                                onClose={() => close()}
-                            >
+                            <ActionSheet.Root isOpen={isOpen} onClose={close}>
                                 <ActionSheet.Portal
                                     shouldCloseOnDrag={true}
                                     fullHeightOnOpen={true}

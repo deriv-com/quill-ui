@@ -1,6 +1,7 @@
 import { KeyboardEvent, useEffect, useState } from "react";
 import { InputProps } from "@components/Input/base";
 import WheelPicker from "./base";
+import { KEY } from "@utils/common-utils";
 
 export interface WheelPickerContainerProps extends InputProps {
     data: { value: string | number }[][];
@@ -36,7 +37,7 @@ const WheelPickerContainer = ({
     const handleKeyDown = (e: KeyboardEvent<Element>, index: number) => {
         setColRef(new Array(data.length).fill(false));
         switch (e.key) {
-            case "ArrowRight":
+            case KEY.ARROW_RIGHT:
                 if (index === 0) {
                     setColRef([false, true, false]);
                 } else if (index === 1) {
@@ -44,15 +45,15 @@ const WheelPickerContainer = ({
                 }
 
                 break;
-            case "ArrowLeft":
+            case KEY.ARROW_LEFT:
                 if (index === 2) {
                     setColRef([false, true, false]);
                 } else if (index === 1) {
                     setColRef([true, false, false]);
                 }
                 break;
-            case "Enter":
-            case "Escape":
+            case KEY.ENTER:
+            case KEY.ESCAPE:
                 close && close();
                 break;
             default:
@@ -60,12 +61,12 @@ const WheelPickerContainer = ({
         }
     };
 
-    const getPosition =(index: number) => {
-        if(data.length === 1) return;
-        if(index === 0 && data.length > 1) return 'first';
-        if(index === data.length -1 && data.length > 1) return 'last';
-        return 'center';
-    }
+    const getPosition = (index: number) => {
+        if (data.length === 1) return;
+        if (index === 0 && data.length > 1) return "first";
+        if (index === data.length - 1 && data.length > 1) return "last";
+        return "center";
+    };
     return (
         <div className="quill-wheel-picker">
             {data.map((item, index) => {
@@ -77,7 +78,7 @@ const WheelPickerContainer = ({
                         setSelectedValue={(value) =>
                             setInputValues(index, value)
                         }
-                        focus={colRef[index]}
+                        isFocused={colRef[index]}
                         handleKeyDown={(e) => handleKeyDown(e, index)}
                         position={getPosition(index)}
                         {...rest}

@@ -11,7 +11,6 @@ exports[`WheelPicker should match snapshot 1`] = `
       <ul
         class="quill-wheel-picker__data-items quill-wheel-picker__data-items-undefined"
         role="listbox"
-        style="padding-top: 0px; padding-bottom: 0px;"
       >
         <li
           class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--false quill-wheel-picker__data-item"
