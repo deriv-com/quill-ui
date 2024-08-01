@@ -46,6 +46,7 @@ const meta = {
         required: false,
         show_counter: false,
         allowDecimals: false,
+        allowSign: true,
     },
     argTypes: {
         type: {
@@ -57,6 +58,10 @@ const meta = {
         },
         allowDecimals: {
             description: "input type number to allow decimal values",
+        },
+        allowSign: {
+            description:
+                "input type number to allow negative and poisitive sign only on decimal value",
         },
         inputSize: {
             control: {
