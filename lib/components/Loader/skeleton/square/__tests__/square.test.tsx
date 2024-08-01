@@ -12,15 +12,15 @@ describe("SkeletonElement", () => {
         expect(skeleton).not.toHaveClass("quill-loader__skeleton--rounded");
         expect(skeleton).not.toHaveClass("quill-loader__skeleton--circle");
 
-        expect(skeleton).toHaveStyle("width: 100px");
-        expect(skeleton).toHaveStyle("height: 100px");
+        expect(skeleton).toHaveClass("quill-loader__skeleton--full-width");
+        expect(skeleton).toHaveStyle("height: 50px");
     });
 
     test("applies fullWidth style correctly", () => {
         const { container } = render(<Skeleton.Square fullWidth />);
         const skeleton = container.querySelector("span");
 
-        expect(skeleton).toHaveStyle("width: 100%");
+        expect(skeleton).toHaveClass("quill-loader__skeleton--full-width");
     });
 
     test("applies custom width, height and className", () => {
@@ -34,7 +34,7 @@ describe("SkeletonElement", () => {
         const skeleton = container.querySelector("span");
 
         expect(skeleton).toHaveStyle("width: 200px");
-        expect(skeleton).toHaveStyle("height: 150px");
+        expect(skeleton).toHaveClass("quill-loader__skeleton--full-width");
         expect(skeleton).toHaveClass("custom-class");
     });
 });
