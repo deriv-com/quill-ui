@@ -48,8 +48,24 @@ const GenericWheelPickerContent = forwardRef<
         const containerRef = useRef<HTMLDivElement>(null);
         const actionSheetRef = useRef<HTMLDivElement>(null);
 
-        const [daataValue, setDataValue] =
-            useState<(string | number)[]>(values);
+        const [dataValue, setDataValue] = useState<(string | number)[]>(values);
+        const [isPressed, setIsPressed] = useState(false);
+
+        const handleMouseDown = () => {
+            setIsPressed(true);
+        };
+
+        const handleMouseUp = () => {
+            setIsPressed(false);
+        };
+
+        const handleMouseLeave = () => {
+            setIsPressed(false);
+        };
+
+        const initialValues = values.reduce((previousValue, currentValue) => {
+            return `${previousValue ?? ""} ${currentValue ?? ""}`;
+        }, "") as string;
 
         const updateItemAtIndex = (
             index: number,
@@ -76,11 +92,10 @@ const GenericWheelPickerContent = forwardRef<
             if (e.key === "ArrowDown") {
                 open();
             }
-            
         };
 
         useEffect(() => {
-            if (onValueChange) onValueChange(daataValue);
+            if (onValueChange) onValueChange(dataValue);
         }, [selectedValue]);
 
         return (
@@ -89,20 +104,27 @@ const GenericWheelPickerContent = forwardRef<
                     ref={containerRef}
                     className={clsx(
                         "quill-generic-picker__container",
-                        `quill-generic-picker__is-open--${isOpen}`,
                         containerClassName,
                     )}
                 >
-                    <div ref={ref} onClick={handleInputClick} onKeyDown={handleKeyDownEvent}>
+                    <div
+                        ref={ref}
+                        onClick={handleInputClick}
+                        onKeyDown={handleKeyDownEvent}
+                        onMouseDown={handleMouseDown}
+                        onMouseUp={handleMouseUp}
+                        onMouseLeave={handleMouseLeave}
+                    >
                         <Input
                             dropdown
                             isDropdownOpen={isOpen}
-                            value={selectedValue}
+                            value={selectedValue ?? initialValues}
                             autoFocus={false}
                             autoComplete="off"
+                            readOnly={true}
                             className={clsx(
                                 "quill-generic-picker__input",
-                                `quill-generic-picker__input--hasValue--${!!selectedValue}`,
+                                `quill-generic-picker__input--is-open-${isOpen && !isPressed}--${rest.variant}--${rest.status}`,
                                 className,
                             )}
                             type="text"
@@ -117,7 +139,7 @@ const GenericWheelPickerContent = forwardRef<
                             isOpen && (
                                 <div className="quill-generic-picker__content">
                                     <WheelPickerContainer
-                                        dataValues={daataValue}
+                                        dataValues={dataValue}
                                         close={close}
                                         setSelectedValue={setSelectedValue}
                                         setdataValues={(
@@ -147,7 +169,7 @@ const GenericWheelPickerContent = forwardRef<
                                         <ActionSheet.Content className="quill-generic-picker__content--hide-scrollbar">
                                             <WheelPickerContainer
                                                 data={rest.data}
-                                                dataValues={daataValue}
+                                                dataValues={dataValue}
                                                 close={close}
                                                 setSelectedValue={
                                                     setSelectedValue

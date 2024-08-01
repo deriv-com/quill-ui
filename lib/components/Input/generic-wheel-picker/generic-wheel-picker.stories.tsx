@@ -27,8 +27,9 @@ const meta = {
     args: {
         disabled: false,
         data: [
-            [{ value: "1" }, { value: "2" }, { value: "3" }],
-            [{ value: "1" }, { value: "2" }, { value: "3" }],
+            [{ value: "item-1" }, { value: "item-2" }, { value: "item-3" }],
+            [{ value: "item-1" }, { value: "item-2" }, { value: "item-3" }],
+            
         ],
         actionSheetFooter: {
             primaryAction: {
@@ -36,7 +37,7 @@ const meta = {
                 onAction: () => null,
             },
         },
-        values: ["1", "3"],
+        values: ["item-1", "item-3"],
         status: "neutral",
         placeholder: "Select",
         variant: "fill",
@@ -96,10 +97,8 @@ DefaultLabellessGenericWheelPicker.args = {
     variant: "outline",
 };
 
-
 export const DefaultGenericWheelPickerWithLabel = Template.bind(this) as Story;
 DefaultGenericWheelPickerWithLabel.args = {
     label: "Label",
     required: true,
 };
-

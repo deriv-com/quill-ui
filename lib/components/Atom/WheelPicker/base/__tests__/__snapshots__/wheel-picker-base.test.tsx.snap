@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WheelPicker should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    style="height: 240px;"
+  >
+    <div
+      class="quill-wheel-picker__container"
+    >
+      <ul
+        class="quill-wheel-picker__data-items quill-wheel-picker__data-items-undefined"
+        role="listbox"
+        style="padding-top: 0px; padding-bottom: 0px;"
+      >
+        <li
+          class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--false quill-wheel-picker__data-item"
+          role="option"
+          tabindex="0"
+        >
+          <p
+            class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+          >
+            Option 1
+          </p>
+        </li>
+        <li
+          class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+          role="option"
+          tabindex="0"
+        >
+          <p
+            class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+          >
+            Option 2
+          </p>
+        </li>
+        <li
+          class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+          role="option"
+          tabindex="0"
+        >
+          <p
+            class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+          >
+            Option 3
+          </p>
+        </li>
+      </ul>
+    </div>
+    ,
+  </div>
+</DocumentFragment>
+`;

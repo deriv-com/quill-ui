@@ -12,7 +12,7 @@ exports[`GenericWheelPickerContainer renders correctly 1`] = `
         class="quill-wheel-picker__container"
       >
         <ul
-          class="quill-wheel-picker__data-items"
+          class="quill-wheel-picker__data-items quill-wheel-picker__data-items-first"
           role="listbox"
           style="padding-top: 0px; padding-bottom: 0px;"
         >
@@ -55,7 +55,7 @@ exports[`GenericWheelPickerContainer renders correctly 1`] = `
         class="quill-wheel-picker__container"
       >
         <ul
-          class="quill-wheel-picker__data-items"
+          class="quill-wheel-picker__data-items quill-wheel-picker__data-items-center"
           role="listbox"
           style="padding-top: 0px; padding-bottom: 0px;"
         >
@@ -98,7 +98,7 @@ exports[`GenericWheelPickerContainer renders correctly 1`] = `
         class="quill-wheel-picker__container"
       >
         <ul
-          class="quill-wheel-picker__data-items"
+          class="quill-wheel-picker__data-items quill-wheel-picker__data-items-last"
           role="listbox"
           style="padding-top: 0px; padding-bottom: 0px;"
         >

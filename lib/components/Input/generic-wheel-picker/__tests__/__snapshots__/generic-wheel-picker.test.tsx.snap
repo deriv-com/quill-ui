@@ -3,20 +3,20 @@
 exports[`GenericWheelPicker renders correctly 1`] = `
 <div>
   <div
-    class="quill-generic-picker__container quill-generic-picker__is-open--false"
+    class="quill-generic-picker__container"
   >
     <div>
       <div
         class="quill-input__container"
       >
         <div
-          class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md quill-generic-picker__input quill-generic-picker__input--hasValue--false"
+          class="quill-input__wrapper quill-input__wrapper--has-value quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md quill-generic-picker__input quill-generic-picker__input--is-open-false--undefined--undefined"
         >
           <div
             class="quill-input-icons__wrapper"
           >
             <div
-              class="quill-input-label__wrapper"
+              class="quill-input-label__wrapper quill-input-label__wrapper--has-value"
             >
               <input
                 autocomplete="off"
@@ -24,8 +24,9 @@ exports[`GenericWheelPicker renders correctly 1`] = `
                 data="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
                 id="quill-input-1"
                 placeholder=""
+                readonly=""
                 type="text"
-                value=""
+                value=" 1 4 7"
               />
               <label
                 class="label label__status--neutral"

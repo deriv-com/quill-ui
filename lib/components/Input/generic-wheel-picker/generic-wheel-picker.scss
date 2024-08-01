@@ -1,10 +1,4 @@
 .quill-generic-picker {
-    &__is-open {
-        &--true {
-            z-index: 100;
-        }
-    }
-
     &__container {
         position: relative;
         max-width: 360px;
@@ -15,11 +9,56 @@
             pointer-events: none;
             cursor: text;
         }
+
+        &--is-open-true {
+            &--outline {
+                border: var(--component-field-border-width) solid
+                    var(--component-field-border-color-focus);
+                border-radius: var(--component-field-border-radius-md);
+
+                &--neutral,
+                &--neutral:hover {
+                    border-color: var(--component-field-border-color-focus);
+                }
+                &--success,
+                &--success:hover {
+                    border-color: var(
+                        --component-field-border-color-successFocus
+                    );
+                }
+
+                &--error,
+                &--error:hover {
+                    border-color: var(--component-field-border-color-failFocus);
+                }
+            }
+
+            &--fill {
+                &--neutral {
+                    border: var(--component-field-border-width) solid
+                        var(--component-field-border-color-focus);
+                    border-radius: var(--component-field-border-radius-md);
+                }
+
+                &--success {
+                    border: var(--component-field-border-width) solid
+                        var(--component-field-border-color-successFocus);
+                    border-radius: var(--component-field-border-radius-md);
+                }
+
+                &--error {
+                    border: var(--component-field-border-width) solid
+                        var(--component-field-border-color-failFocus);
+                    border-radius: var(--component-field-border-radius-md);
+                }
+            }
+        }
     }
 
     &__content {
         position: absolute;
         width: 100%;
+        margin: var(--core-spacing-200);
 
         --hide-scrollbar {
             scrollbar-width: none;
@@ -28,7 +67,7 @@
                 display: none;
             }
         }
-        
+
         &--container {
             position: relative;
         }
