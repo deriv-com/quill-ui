@@ -53,18 +53,6 @@ const GenericWheelPickerContent = forwardRef<
             useState<(string | number)[]>(values);
         const [isPressed, setIsPressed] = useState(false);
 
-        const handleMouseDown = () => {
-            setIsPressed(true);
-        };
-
-        const handleMouseUp = () => {
-            setIsPressed(false);
-        };
-
-        const handleMouseLeave = () => {
-            setIsPressed(false);
-        };
-
         const initialValues = values.reduce((previousValue, currentValue) => {
             return `${previousValue ?? ""} ${currentValue ?? ""}`;
         }, "") as string;
@@ -97,7 +85,7 @@ const GenericWheelPickerContent = forwardRef<
         };
 
         useEffect(() => {
-            if (onValueChange) onValueChange(inputValues);
+            onValueChange?.(inputValues);
         }, [selectedValue]);
 
         return (
@@ -113,9 +101,9 @@ const GenericWheelPickerContent = forwardRef<
                         ref={ref}
                         onClick={handleInputClick}
                         onKeyDown={handleKeyDownEvent}
-                        onMouseDown={handleMouseDown}
-                        onMouseUp={handleMouseUp}
-                        onMouseLeave={handleMouseLeave}
+                        onMouseDown={() =>setIsPressed(true)}
+                        onMouseUp={() =>setIsPressed(false)}
+                        onMouseLeave={() =>setIsPressed(false)}
                     >
                         <Input
                             dropdown
@@ -123,7 +111,7 @@ const GenericWheelPickerContent = forwardRef<
                             value={selectedValue ?? initialValues}
                             autoFocus={false}
                             autoComplete="off"
-                            readOnly={true}
+                            readOnly
                             className={clsx(
                                 "quill-generic-picker__input",
                                 `quill-generic-picker__input--is-open-${isOpen && !isPressed}--${rest.variant}--${rest.status}`,
@@ -157,8 +145,8 @@ const GenericWheelPickerContent = forwardRef<
                         ) : (
                             <ActionSheet.Root isOpen={isOpen} onClose={close}>
                                 <ActionSheet.Portal
-                                    shouldCloseOnDrag={true}
-                                    fullHeightOnOpen={true}
+                                    shouldCloseOnDrag
+                                    fullHeightOnOpen
                                     ref={actionSheetRef}
                                 >
                                     {label && (

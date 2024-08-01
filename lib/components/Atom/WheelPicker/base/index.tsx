@@ -12,7 +12,7 @@ export interface WheelPickerProps extends HTMLAttributes<HTMLElement> {
     dropDownItemClassName?: string;
     containerClassName?: string;
     listClassName?: string;
-    position?: 'first' | 'center' | 'last' | undefined
+    position?: "first" | "center" | "last" | undefined;
 }
 
 const WheelPicker = ({
@@ -72,7 +72,7 @@ const WheelPicker = ({
     useEffect(() => {
         if (!dataItemsContRef.current) return;
         setSelectedValue(data[currentDataValue.current].value);
-         resizeObserver.observe(dataItemsContRef.current);
+        resizeObserver.observe(dataItemsContRef.current);
         dataItemsContRef.current.addEventListener("scroll", handleDataScroll);
         return () => {
             resizeObserver.disconnect();
