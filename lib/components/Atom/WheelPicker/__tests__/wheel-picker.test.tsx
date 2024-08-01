@@ -21,8 +21,8 @@ const renderComponent = () =>
         >
             <WheelPickerContainer
                 data={mockData}
-                dataValues={["1", "4", "7"]}
-                setdataValues={mockSetDataValues}
+                inputValues={["1", "4", "7"]}
+                setInputValues={mockSetDataValues}
                 close={mockClose}
                 setSelectedValue={mockSetSelectedValue}
             />

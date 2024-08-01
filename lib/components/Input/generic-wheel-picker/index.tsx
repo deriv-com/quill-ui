@@ -48,7 +48,7 @@ const GenericWheelPickerContent = forwardRef<
         const containerRef = useRef<HTMLDivElement>(null);
         const actionSheetRef = useRef<HTMLDivElement>(null);
 
-        const [dataValue, setDataValue] = useState<(string | number)[]>(values);
+        const [inputValues, setInputValues] = useState<(string | number)[]>(values);
         const [isPressed, setIsPressed] = useState(false);
 
         const handleMouseDown = () => {
@@ -71,7 +71,7 @@ const GenericWheelPickerContent = forwardRef<
             index: number,
             newValue: string | number,
         ) => {
-            setDataValue((prevItems) => {
+            setInputValues((prevItems) => {
                 const updatedItems = [...prevItems];
                 updatedItems[index] = newValue;
                 return updatedItems;
@@ -95,7 +95,7 @@ const GenericWheelPickerContent = forwardRef<
         };
 
         useEffect(() => {
-            if (onValueChange) onValueChange(dataValue);
+            if (onValueChange) onValueChange(inputValues);
         }, [selectedValue]);
 
         return (
@@ -139,10 +139,10 @@ const GenericWheelPickerContent = forwardRef<
                             isOpen && (
                                 <div className="quill-generic-picker__content">
                                     <WheelPickerContainer
-                                        dataValues={dataValue}
+                                        inputValues={inputValues}
                                         close={close}
                                         setSelectedValue={setSelectedValue}
-                                        setdataValues={(
+                                        setInputValues={(
                                             index: number,
                                             newValue: string | number,
                                         ) => updateItemAtIndex(index, newValue)}
@@ -169,12 +169,12 @@ const GenericWheelPickerContent = forwardRef<
                                         <ActionSheet.Content className="quill-generic-picker__content--hide-scrollbar">
                                             <WheelPickerContainer
                                                 data={rest.data}
-                                                dataValues={dataValue}
+                                                inputValues={inputValues}
                                                 close={close}
                                                 setSelectedValue={
                                                     setSelectedValue
                                                 }
-                                                setdataValues={(
+                                                setInputValues={(
                                                     index: number,
                                                     newValue: string | number,
                                                 ) =>

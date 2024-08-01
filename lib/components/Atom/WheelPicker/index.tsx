@@ -4,8 +4,8 @@ import WheelPicker from "./base";
 
 export interface WheelPickerContainerProps extends InputProps {
     data: { value: string | number }[][];
-    dataValues: (string | number)[];
-    setdataValues: (index: number, value: string | number) => void;
+    inputValues: (string | number)[];
+    setInputValues: (index: number, value: string | number) => void;
     children?: React.ReactNode;
     close?: () => void;
     setSelectedValue?: (value: string) => void;
@@ -13,8 +13,8 @@ export interface WheelPickerContainerProps extends InputProps {
 
 const WheelPickerContainer = ({
     data = [],
-    dataValues = [],
-    setdataValues,
+    inputValues = [],
+    setInputValues,
     close,
     setSelectedValue,
     ...rest
@@ -26,12 +26,12 @@ const WheelPickerContainer = ({
     useEffect(() => {
         if (setSelectedValue) {
             setSelectedValue(
-                dataValues.reduce((previousValue, currentValue) => {
+                inputValues.reduce((previousValue, currentValue) => {
                     return `${previousValue ?? ""} ${currentValue ?? ""}`;
                 }, "") as string,
             );
         }
-    }, [dataValues]);
+    }, [inputValues]);
 
     const handleKeyDown = (e: KeyboardEvent<Element>, index: number) => {
         setColRef(new Array(data.length).fill(false));
@@ -73,9 +73,9 @@ const WheelPickerContainer = ({
                     <WheelPicker
                         key={`wheel-picker__${index}`}
                         data={item}
-                        selectedValue={dataValues[index]}
+                        selectedValue={inputValues[index]}
                         setSelectedValue={(value) =>
-                            setdataValues(index, value)
+                            setInputValues(index, value)
                         }
                         focus={colRef[index]}
                         handleKeyDown={(e) => handleKeyDown(e, index)}
