@@ -24,16 +24,14 @@ jobs:
         uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
         with:
           node-version: '20'
+      - name: Clear dist Folder Cache
+        run: rm -rf ./dist/storybook
       - name: Update to latest npm (temporary fix for audit below)
         run: npm install --global npm
       - name: Install dependencies
         run: npm clean-install
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
-      - name: Clear GitHub Actions Cache
-        run: |
-            rm -rf ${{ runner.temp }}/_github_home
-            rm -rf ${{ runner.temp }}/_github_workflow
       - name: Prepublish
         run: npm run prepublish
       - name: Build Storybook
