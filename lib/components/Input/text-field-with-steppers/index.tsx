@@ -94,7 +94,6 @@ export const TextFieldWithSteppers = forwardRef<
                 type="number"
                 allowDecimals={true}
                 value={`${value && getFormatValue(Number(value), decimals)}`}
-                inputMode="decimal"
             />
         </div>
     );
