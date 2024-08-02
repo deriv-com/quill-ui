@@ -167,22 +167,22 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
             if (type === "number" || type === "tel") {
                 event.target.value = event.target.value.replace(",", ".");
-            }
 
-            if (type === "number" && !allowDecimals) {
-                const nonNumReg = /[^0-9]/g;
-                inputValue = inputValue.replace(nonNumReg, "");
-                event.target.value = inputValue;
-            }
-
-            if (type === "number" && allowDecimals && !allowSign) {
-                const nonNumReg = /[^0-9.]/g;
-                inputValue = inputValue.replace(nonNumReg, "");
-                const parts = inputValue.split(".");
-                if (parts.length > 1) {
-                    inputValue = parts[0] + "." + parts.slice(1).join("");
+                if (!allowDecimals) {
+                    const nonNumReg = /[^0-9]/g;
+                    inputValue = inputValue.replace(nonNumReg, "");
+                    event.target.value = inputValue;
                 }
-                event.target.value = inputValue;
+
+                if (allowDecimals && !allowSign) {
+                    const nonNumReg = /[^0-9.]/g;
+                    inputValue = inputValue.replace(nonNumReg, "");
+                    const parts = inputValue.split(".");
+                    if (parts.length > 1) {
+                        inputValue = parts[0] + "." + parts.slice(1).join("");
+                    }
+                    event.target.value = inputValue;
+                }
             }
 
             const value = decimals
@@ -190,7 +190,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 : inputValue;
 
             setInputValue(value);
-
             onChange?.(event);
         };
 
