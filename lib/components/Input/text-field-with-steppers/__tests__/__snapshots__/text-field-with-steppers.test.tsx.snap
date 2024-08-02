@@ -18,6 +18,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
             <input
               class="input peer input__align--left input__size--md"
               id="quill-input-5"
+              inputmode="decimal"
               placeholder="0.00"
               type="number"
               value="undefined"
@@ -42,7 +43,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
             class="icon_wrapper"
           >
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -70,7 +71,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
               </svg>
             </button>
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -137,6 +138,7 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
             <input
               class="input peer input__align--left input__size--md"
               id="quill-input-6"
+              inputmode="decimal"
               placeholder="0.00"
               type="number"
               value="undefined"
@@ -146,7 +148,7 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
             class="icon_wrapper"
           >
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -174,7 +176,7 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
               </svg>
             </button>
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -227,6 +229,7 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
             <input
               class="input peer input__align--left input__size--md"
               id="quill-input-7"
+              inputmode="decimal"
               placeholder="0.00"
               type="number"
               value="undefined"
@@ -241,7 +244,7 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
             class="icon_wrapper"
           >
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -269,7 +272,7 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
               </svg>
             </button>
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -311,6 +314,7 @@ exports[`TextFieldWithSteppers should handle the hover for outline variant 1`] =
   <input
     class="input peer input__align--left input__size--md"
     id="quill-input-4"
+    inputmode="decimal"
     placeholder="Placeholder"
     type="number"
     value="undefined"
@@ -336,6 +340,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
             <input
               class="input peer input__align--left input__size--md"
               id="quill-input-1"
+              inputmode="decimal"
               placeholder="Enter text"
               type="number"
               value="undefined"
@@ -345,7 +350,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
             class="icon_wrapper"
           >
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >
@@ -373,7 +378,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
               </svg>
             </button>
             <button
-              class="quill-button quill-icon-button__size--md quill__color--tertiary-black"
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
               data-loading="false"
               data-state=""
             >

@@ -20,6 +20,7 @@ import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired
 import { PasswordStrengthValidation } from "@components/Atom";
 import { PatternFormat, PatternFormatProps } from "react-number-format";
 import useUniqueId from "@hooks/useUniqueId";
+import { getFormatValue } from "@utils/common-utils";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
@@ -67,6 +68,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     formatProps?: PatternFormatProps;
     id?: string;
     allowDecimals?: boolean;
+    decimals?: number;
     allowSign?: boolean;
 }
 
@@ -119,6 +121,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             addOnIcon,
             id,
             allowDecimals = false,
+            decimals,
             allowSign = true,
             ...rest
         },
@@ -161,21 +164,32 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         };
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
             let inputValue = event.target.value;
-            if (type === "number" && !allowDecimals) {
-                const nonNumReg = /[^0-9]/g;
-                inputValue = inputValue.replace(nonNumReg, "");
-                event.target.value = inputValue;
-            }
-            if (type === "number" && allowDecimals && !allowSign) {
-                const nonNumReg = /[^0-9.]/g;
-                inputValue = inputValue.replace(nonNumReg, "");
-                const parts = inputValue.split('.');
-                if (parts.length > 1) {
-                    inputValue = parts[0] + '.' + parts.slice(1).join('');
+
+            if (type === "number" || type === "tel") {
+                event.target.value = event.target.value.replace(",", ".");
+
+                if (!allowDecimals) {
+                    const nonNumReg = /[^0-9]/g;
+                    inputValue = inputValue.replace(nonNumReg, "");
+                    event.target.value = inputValue;
                 }
-                event.target.value = inputValue;
+
+                if (allowDecimals && !allowSign) {
+                    const nonNumReg = /[^0-9.]/g;
+                    inputValue = inputValue.replace(nonNumReg, "");
+                    const parts = inputValue.split(".");
+                    if (parts.length > 1) {
+                        inputValue = parts[0] + "." + parts.slice(1).join("");
+                    }
+                    event.target.value = inputValue;
+                }
             }
-            setInputValue(inputValue);
+
+            const value = decimals
+                ? getFormatValue(Number(inputValue), decimals)
+                : inputValue;
+
+            setInputValue(value);
             onChange?.(event);
         };
 

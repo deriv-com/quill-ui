@@ -41,7 +41,7 @@ const meta = {
     },
     tags: ["autodocs"],
     args: {
-        type: "text",
+        type: "number",
         inputSize: "md",
         status: "neutral",
         disabled: false,

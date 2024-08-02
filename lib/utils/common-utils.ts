@@ -23,3 +23,7 @@ export const reactNodeToString = (reactNode: React.ReactNode): string => {
     }
     return string;
 };
+
+export const getFormatValue = (value: number, decimals: number) => {
+    return Number(value.toFixed(decimals));
+};
