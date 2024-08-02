@@ -69,6 +69,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     id?: string;
     allowDecimals?: boolean;
     decimals?: number;
+    allowSign?: boolean;
 }
 
 const statusIconColors = {
@@ -121,6 +122,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             id,
             allowDecimals = false,
             decimals,
+            allowSign = true,
             ...rest
         },
         ref,
@@ -160,7 +162,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             disabled: !!disabled,
             id: inputId,
         };
-
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
             let inputValue = event.target.value;
             if (type === "number" && !allowDecimals) {
@@ -169,11 +170,22 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 event.target.value = inputValue;
             }
 
+            if (type === "number" && allowDecimals && !allowSign) {
+                const nonNumReg = /[^0-9.]/g;
+                inputValue = inputValue.replace(nonNumReg, "");
+                const parts = inputValue.split(".");
+                if (parts.length > 1) {
+                    inputValue = parts[0] + "." + parts.slice(1).join("");
+                }
+                event.target.value = inputValue;
+            }
+
             const value = decimals
                 ? getFormatValue(Number(inputValue), decimals)
                 : inputValue;
 
             setInputValue(value);
+
             onChange?.(event);
         };
 
@@ -243,7 +255,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                     {...rest}
                                     {...commonProps}
                                     type={
-                                        type === "number" && !allowDecimals
+                                        (type === "number" && !allowDecimals) ||
+                                        (type == "number" &&
+                                            allowDecimals &&
+                                            !allowSign)
                                             ? "text"
                                             : type
                                     }
