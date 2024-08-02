@@ -1,3 +1,5 @@
+@import "@deriv-com/quill-tokens/dist/breakpoints.scss";
+
 .quill-generic-picker {
     &__container {
         position: relative;
@@ -58,7 +60,17 @@
     &__content {
         position: absolute;
         width: 100%;
-        margin: var(--core-spacing-200);
+        margin: var(--core-spacing-200) 0;
+        overflow: hidden;
+        height: 0;
+        transition: all var(--core-motion-duration-200)
+            var(--core-motion-ease-400);
+
+        &__is-open {
+            @include breakpoint("md") {
+                height: 240px;
+            }
+        }
 
         --hide-scrollbar {
             scrollbar-width: none;

@@ -47,15 +47,20 @@ const GenericWheelPickerContent = forwardRef<
         ref,
     ) => {
         const containerRef = useRef<HTMLDivElement>(null);
+        const contentRef = useRef<HTMLDivElement>(null);
         const actionSheetRef = useRef<HTMLDivElement>(null);
 
         const [inputValues, setInputValues] =
             useState<(string | number)[]>(values);
         const [isPressed, setIsPressed] = useState(false);
 
-        const initialValues = values.reduce((previousValue, currentValue) => {
-            return `${previousValue ?? ""} ${currentValue ?? ""}`;
-        }, "") as string;
+        const initialValues = values.reduce(
+            (previousValue, currentValue, index) => {
+                if (index === 0) return currentValue;
+                return `${previousValue ?? ""} ${currentValue ?? ""}`;
+            },
+            "",
+        ) as string;
 
         const updateItemAtIndex = (
             index: number,
@@ -88,6 +93,22 @@ const GenericWheelPickerContent = forwardRef<
             onValueChange?.(inputValues);
         }, [selectedValue]);
 
+        useEffect(() => {
+            if (!contentRef.current) return;
+            const contentRefrence = contentRef.current;
+            setTimeout(() => {
+                if (isOpen) {
+                    contentRefrence.classList.add(
+                        "quill-generic-picker__content__is-open",
+                    );
+                } else {
+                    contentRefrence.classList.remove(
+                        "quill-generic-picker__content__is-open",
+                    );
+                }
+            }, 100);
+        }, [isOpen]);
+
         return (
             <>
                 <div
@@ -101,9 +122,9 @@ const GenericWheelPickerContent = forwardRef<
                         ref={ref}
                         onClick={handleInputClick}
                         onKeyDown={handleKeyDownEvent}
-                        onMouseDown={() =>setIsPressed(true)}
-                        onMouseUp={() =>setIsPressed(false)}
-                        onMouseLeave={() =>setIsPressed(false)}
+                        onMouseDown={() => setIsPressed(true)}
+                        onMouseUp={() => setIsPressed(false)}
+                        onMouseLeave={() => setIsPressed(false)}
                     >
                         <Input
                             dropdown
@@ -127,7 +148,10 @@ const GenericWheelPickerContent = forwardRef<
                     <div className="quill-generic-picker__content--container">
                         {!isMobile ? (
                             isOpen && (
-                                <div className="quill-generic-picker__content">
+                                <div
+                                    ref={contentRef}
+                                    className="quill-generic-picker__content"
+                                >
                                     <WheelPickerContainer
                                         inputValues={inputValues}
                                         close={close}

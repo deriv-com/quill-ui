@@ -26,7 +26,7 @@ exports[`GenericWheelPicker renders correctly 1`] = `
                 placeholder=""
                 readonly=""
                 type="text"
-                value=" 1 4 7"
+                value="1 4 7"
               />
               <label
                 class="label label__status--neutral"

@@ -27,7 +27,8 @@ const WheelPickerContainer = ({
     useEffect(() => {
         if (setSelectedValue) {
             setSelectedValue(
-                inputValues.reduce((previousValue, currentValue) => {
+                inputValues.reduce((previousValue, currentValue, index) => {
+                    if(index === 0) return currentValue;
                     return `${previousValue ?? ""} ${currentValue ?? ""}`;
                 }, "") as string,
             );

@@ -22,9 +22,6 @@
         height: 100%;
         width: 100%;
         scrollbar-width: none;
-        @include breakpoint("md") {
-            height: 240px;
-        }
     }
 
     &__data-items {
@@ -38,9 +35,6 @@
         scrollbar-width: none;
         overflow-wrap: anywhere;
         text-overflow: ellipsis;
-
-        transition: all var(--core-motion-duration-200)
-            var(--core-motion-ease-400);
 
         &::before {
             position: absolute;
