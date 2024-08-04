@@ -47,7 +47,6 @@ const GenericWheelPickerContent = forwardRef<
         ref,
     ) => {
         const containerRef = useRef<HTMLDivElement>(null);
-        const contentRef = useRef<HTMLDivElement>(null);
         const actionSheetRef = useRef<HTMLDivElement>(null);
 
         const [inputValues, setInputValues] =
@@ -93,22 +92,6 @@ const GenericWheelPickerContent = forwardRef<
             onValueChange?.(inputValues);
         }, [selectedValue]);
 
-        useEffect(() => {
-            if (!contentRef.current) return;
-            const contentRefrence = contentRef.current;
-            setTimeout(() => {
-                if (isOpen) {
-                    contentRefrence.classList.add(
-                        "quill-generic-picker__content__is-open",
-                    );
-                } else {
-                    contentRefrence.classList.remove(
-                        "quill-generic-picker__content__is-open",
-                    );
-                }
-            }, 100);
-        }, [isOpen]);
-
         return (
             <>
                 <div
@@ -145,27 +128,34 @@ const GenericWheelPickerContent = forwardRef<
                             {...rest}
                         />
                     </div>
-                    <div className="quill-generic-picker__content--container">
+                    <div
+                        className={clsx(
+                            "quill-generic-picker__content--container",
+                            isOpen &&
+                                "quill-generic-picker__content--container__is-open",
+                        )}
+                    >
                         {!isMobile ? (
-                            isOpen && (
-                                <div
-                                    ref={contentRef}
-                                    className="quill-generic-picker__content"
+                            <div
+                                className={clsx(
+                                    "quill-generic-picker__content",
+                                    isOpen &&
+                                        "quill-generic-picker__content__is-open",
+                                )}
+                            >
+                                <WheelPickerContainer
+                                    inputValues={inputValues}
+                                    close={close}
+                                    setSelectedValue={setSelectedValue}
+                                    setInputValues={(
+                                        index: number,
+                                        newValue: string | number,
+                                    ) => updateItemAtIndex(index, newValue)}
+                                    {...rest}
                                 >
-                                    <WheelPickerContainer
-                                        inputValues={inputValues}
-                                        close={close}
-                                        setSelectedValue={setSelectedValue}
-                                        setInputValues={(
-                                            index: number,
-                                            newValue: string | number,
-                                        ) => updateItemAtIndex(index, newValue)}
-                                        {...rest}
-                                    >
-                                        {children}
-                                    </WheelPickerContainer>
-                                </div>
-                            )
+                                    {children}
+                                </WheelPickerContainer>
+                            </div>
                         ) : (
                             <ActionSheet.Root isOpen={isOpen} onClose={close}>
                                 <ActionSheet.Portal

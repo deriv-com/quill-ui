@@ -63,12 +63,14 @@
         margin: var(--core-spacing-200) 0;
         overflow: hidden;
         height: 0;
+        opacity: 0;
         transition: all var(--core-motion-duration-200)
             var(--core-motion-ease-400);
 
         &__is-open {
             @include breakpoint("md") {
                 height: 240px;
+                opacity: 1;
                 box-shadow: var(--semantic-elevation-shadow-card-hover);
             }
         }
@@ -83,6 +85,9 @@
 
         &--container {
             position: relative;
+            &__is-open {
+                z-index: 1;
+            }
         }
     }
 }
