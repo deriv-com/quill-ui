@@ -30,8 +30,8 @@ export const TextFieldWithSteppers = forwardRef<
         unitRight = "",
         inputSize = "md",
         decimals = 2,
-        minusDisabled,
-        plusDisabled,
+        minusDisabled = false,
+        plusDisabled = false,
         ...rest
     } = props;
 
@@ -73,29 +73,24 @@ export const TextFieldWithSteppers = forwardRef<
     );
 
     return (
-        <div>
-            <Input
-                {...rest}
-                decimals={decimals}
-                ref={ref}
-                disabled={disabled}
-                inputSize={inputSize}
-                leftIcon={
-                    textAlignment === "center" && <SteppersSectionMinus />
-                }
-                leftPlaceholder={unitLeft}
-                onChange={onChange}
-                placeholder={placeholder.toLocaleString("en", {
-                    minimumFractionDigits: decimals,
-                })}
-                rightPlaceholder={unitRight}
-                textAlignment={textAlignment}
-                triggerActionIcon={steppersSectionRight}
-                type="number"
-                allowDecimals={true}
-                value={`${value && getFormatValue(Number(value), decimals)}`}
-            />
-        </div>
+        <Input
+            {...rest}
+            decimals={decimals}
+            ref={ref}
+            disabled={disabled}
+            inputSize={inputSize}
+            leftIcon={textAlignment === "center" && <SteppersSectionMinus />}
+            leftPlaceholder={unitLeft}
+            onChange={onChange}
+            placeholder={placeholder.toLocaleString("en", {
+                minimumFractionDigits: decimals,
+            })}
+            rightPlaceholder={unitRight}
+            textAlignment={textAlignment}
+            triggerActionIcon={steppersSectionRight}
+            allowDecimals={true}
+            value={value && getFormatValue(value, decimals)}
+        />
     );
 });
 
