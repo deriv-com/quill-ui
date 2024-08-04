@@ -69,6 +69,7 @@
         &__is-open {
             @include breakpoint("md") {
                 height: 240px;
+                box-shadow: var(--semantic-elevation-shadow-card-hover);
             }
         }
 
