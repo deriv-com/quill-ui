@@ -14,7 +14,7 @@ import { DropdownProvider } from "@providers/dropdown/dropdownProvider";
 import useBreakpoints from "@hooks/useBreakpoints";
 import ActionSheet from "@components/ActionSheet";
 import { KEY } from "@utils/common-utils";
-import WheelPickerContainer from "@components/Atom/WheelPicker";
+import { WheelPickerContainer } from "@components/Atom";
 import "./generic-wheel-picker.scss";
 
 export interface TGenericWheelPickerContent extends InputProps {

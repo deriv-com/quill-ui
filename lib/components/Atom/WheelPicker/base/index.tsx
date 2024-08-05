@@ -1,7 +1,7 @@
 import { HTMLAttributes, useEffect, useMemo, useRef } from "react";
 import clsx from "clsx";
 import { DropdownItem } from "@components/Atom/dropdown";
-import "./wheel-picker.scss";
+import "./wheel-picker-base.scss";
 import { THorizontalPosition } from "@types";
 
 export interface WheelPickerProps extends HTMLAttributes<HTMLElement> {
@@ -16,7 +16,7 @@ export interface WheelPickerProps extends HTMLAttributes<HTMLElement> {
     position?: THorizontalPosition | undefined;
 }
 
-const WheelPicker = ({
+export const WheelPicker = ({
     data,
     selectedValue,
     setSelectedValue,
