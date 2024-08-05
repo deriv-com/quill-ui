@@ -57,6 +57,11 @@ const meta = {
         minusDisabled: false,
     },
     argTypes: {
+        regex: {
+            control: {
+                type: "text",
+            },
+        },
         inputSize: {
             control: {
                 type: "radio",
