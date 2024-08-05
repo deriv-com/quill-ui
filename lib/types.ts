@@ -1,5 +1,6 @@
 import { QuillSvgProps } from "@deriv/quill-icons";
 
+export type StringOrNumber = string | number;
 export type THorizontalPosition = "left" | "center" | "right";
 export type TVerticalPosition = "top" | "center" | "bottom";
 export type TPosition = THorizontalPosition | TVerticalPosition;
