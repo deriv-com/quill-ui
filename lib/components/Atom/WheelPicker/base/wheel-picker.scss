@@ -5,10 +5,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-
     height: 100%;
     background-color: var(--component-field-bg-outline-default);
     padding: 0;
+
     @include breakpoint("md") {
         padding: var(--component-actionSheet-spacing-padding-sm);
         background-color: var(--component-dropdownList-bg);
