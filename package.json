@@ -146,7 +146,7 @@
     },
     "dependencies": {
         "@deriv-com/quill-tokens": "^2.0.8",
-        "@deriv/quill-icons": "^1.22.10",
+        "@deriv/quill-icons": "^1.23.8",
         "@headlessui/react": "1.7.18",
         "dayjs": "^1.11.11",
         "react-calendar": "^5.0.0",
