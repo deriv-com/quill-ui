@@ -21,6 +21,7 @@ import { PasswordStrengthValidation } from "@components/Atom";
 import { PatternFormat, PatternFormatProps } from "react-number-format";
 import useUniqueId from "@hooks/useUniqueId";
 import { getFormatValue } from "@utils/common-utils";
+import { customHandlers, CustomTypeObject } from "./type-handlers";
 
 export type Variants = "fill" | "outline";
 export type Status = "neutral" | "success" | "error";
@@ -36,6 +37,8 @@ export type TValidationMessage = {
     validationMessage: ReactNode;
     status: Status;
 };
+
+export type CustomTypes = keyof typeof CustomTypeObject;
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type?: Types;
@@ -71,6 +74,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     decimals?: number;
     allowSign?: boolean;
     regex?: RegExp;
+    customType?: CustomTypes;
 }
 
 const statusIconColors = {
@@ -125,6 +129,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             decimals,
             allowSign = true,
             regex,
+            customType,
             ...rest
         },
         ref,
@@ -191,6 +196,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
             if (decimals) {
                 inputValue = getFormatValue(inputValue, decimals).toString();
+            }
+
+            if (customType) {
+                inputValue = customHandlers(customType, inputValue);
             }
 
             event.target.value = inputValue;
