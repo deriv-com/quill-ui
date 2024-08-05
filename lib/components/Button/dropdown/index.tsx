@@ -34,7 +34,7 @@ const Options = ({
             {({ selected, disabled, active }) => {
                 return (
                     <DropdownItem
-                        className={clsx(`dropdown-menu__item--${active}`)}
+                        className={clsx(`quill-dropdown-menu__item--${active}`)}
                         label={item.label}
                         disabled={disabled}
                         selected={selected}
@@ -82,7 +82,7 @@ export const DropdownButton = forwardRef<
                         <>
                             <Listbox.Button
                                 as="div"
-                                className="dropdown-menu__box"
+                                className="quill-dropdown-menu__box"
                             >
                                 <Button
                                     {...rest}
@@ -120,12 +120,12 @@ export const DropdownButton = forwardRef<
                             {!isLoading && (
                                 <Transition
                                     enter={clsx(
-                                        "dropdown-menu__transition--enter",
+                                        "quill-dropdown-menu__transition--enter",
                                     )}
                                 >
                                     <Listbox.Options
                                         className={clsx(
-                                            "dropdown-menu__container",
+                                            "quill-dropdown-menu__container",
                                         )}
                                     >
                                         <Options
