@@ -39,7 +39,7 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
             </g>
             <defs>
               <clippath
-                id="587cf7e7e60119518989fab94b491801__a"
+                id="be24f060112de157b63e626d37da1ab7__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -84,7 +84,7 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
             </g>
             <defs>
               <clippath
-                id="da506f78c7763b3ebdb9d689d83c9420__a"
+                id="9a0552813fdb1b997c98226bb2aebe8e__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -582,7 +582,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
             </g>
             <defs>
               <clippath
-                id="587cf7e7e60119518989fab94b491801__a"
+                id="be24f060112de157b63e626d37da1ab7__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -627,7 +627,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
             </g>
             <defs>
               <clippath
-                id="da506f78c7763b3ebdb9d689d83c9420__a"
+                id="9a0552813fdb1b997c98226bb2aebe8e__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -1162,7 +1162,7 @@ exports[`DatePicker should render calendar with range selection 1`] = `
             </g>
             <defs>
               <clippath
-                id="587cf7e7e60119518989fab94b491801__a"
+                id="be24f060112de157b63e626d37da1ab7__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -1207,7 +1207,7 @@ exports[`DatePicker should render calendar with range selection 1`] = `
             </g>
             <defs>
               <clippath
-                id="da506f78c7763b3ebdb9d689d83c9420__a"
+                id="9a0552813fdb1b997c98226bb2aebe8e__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -1698,7 +1698,7 @@ exports[`DatePicker should render calendar with selected value and call onFormat
             </g>
             <defs>
               <clippath
-                id="587cf7e7e60119518989fab94b491801__a"
+                id="be24f060112de157b63e626d37da1ab7__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -1743,7 +1743,7 @@ exports[`DatePicker should render calendar with selected value and call onFormat
             </g>
             <defs>
               <clippath
-                id="da506f78c7763b3ebdb9d689d83c9420__a"
+                id="9a0552813fdb1b997c98226bb2aebe8e__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -2692,7 +2692,7 @@ exports[`DatePicker should render with default values if optional ones were not 
             </g>
             <defs>
               <clippath
-                id="587cf7e7e60119518989fab94b491801__a"
+                id="be24f060112de157b63e626d37da1ab7__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -2737,7 +2737,7 @@ exports[`DatePicker should render with default values if optional ones were not 
             </g>
             <defs>
               <clippath
-                id="da506f78c7763b3ebdb9d689d83c9420__a"
+                id="9a0552813fdb1b997c98226bb2aebe8e__a"
               >
                 <path
                   d="M0 0h9v22H0z"

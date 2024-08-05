@@ -1,0 +1,93 @@
+@import "@deriv-com/quill-tokens/dist/breakpoints.scss";
+
+.quill-generic-picker {
+    &__container {
+        position: relative;
+        max-width: 360px;
+    }
+
+    &__input {
+        & label {
+            pointer-events: none;
+            cursor: text;
+        }
+
+        &--is-open-true {
+            &--outline {
+                border: var(--component-field-border-width) solid
+                    var(--component-field-border-color-focus);
+                border-radius: var(--component-field-border-radius-md);
+
+                &--neutral,
+                &--neutral:hover {
+                    border-color: var(--component-field-border-color-focus);
+                }
+                &--success,
+                &--success:hover {
+                    border-color: var(
+                        --component-field-border-color-successFocus
+                    );
+                }
+
+                &--error,
+                &--error:hover {
+                    border-color: var(--component-field-border-color-failFocus);
+                }
+            }
+
+            &--fill {
+                &--neutral {
+                    border: var(--component-field-border-width) solid
+                        var(--component-field-border-color-focus);
+                    border-radius: var(--component-field-border-radius-md);
+                }
+
+                &--success {
+                    border: var(--component-field-border-width) solid
+                        var(--component-field-border-color-successFocus);
+                    border-radius: var(--component-field-border-radius-md);
+                }
+
+                &--error {
+                    border: var(--component-field-border-width) solid
+                        var(--component-field-border-color-failFocus);
+                    border-radius: var(--component-field-border-radius-md);
+                }
+            }
+        }
+    }
+
+    &__content {
+        position: absolute;
+        width: 100%;
+        margin: var(--core-spacing-200) 0;
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+        transition: all var(--core-motion-duration-200)
+            var(--core-motion-ease-400);
+
+        &__is-open {
+            @include breakpoint("md") {
+                height: 240px;
+                opacity: 1;
+                box-shadow: var(--semantic-elevation-shadow-card-hover);
+            }
+        }
+
+        --hide-scrollbar {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &--container {
+            position: relative;
+            &__is-open {
+                z-index: 1;
+            }
+        }
+    }
+}

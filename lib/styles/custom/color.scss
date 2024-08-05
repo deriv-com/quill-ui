@@ -13,6 +13,11 @@
                         --component-button-bg-coral-primary-hover
                     );
                 }
+                &:focus:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-coral-primary-default
+                    );
+                }
                 &:active:not(:disabled) {
                     background-color: var(
                         --component-button-bg-coral-primary-active
@@ -38,6 +43,11 @@
                 &:hover:not(:disabled) {
                     background-color: var(
                         --component-button-bg-black-primary-hover
+                    );
+                }
+                &:focus:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-black-primary-default
                     );
                 }
                 &:active:not(:disabled) {
@@ -67,6 +77,11 @@
                         --component-button-bg-white-primary-hover
                     );
                 }
+                &:focus:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-white-primary-default
+                    );
+                }
                 &:active:not(:disabled) {
                     background-color: var(
                         --component-button-bg-white-primary-active
@@ -93,6 +108,12 @@
                     background-color: var(
                         --component-button-bg-buy-primary-hover
                     );
+                }
+                &:focus:not(:disabled) {
+                    background-color: var(
+                    --component-button-bg-buy-primary-default
+                );
+
                 }
                 &:active:not(:disabled) {
                     background-color: var(
@@ -121,6 +142,11 @@
                         --component-button-bg-sell-primary-hover
                     );
                 }
+                &:focus:not(:disabled) {
+                    background-color: var(
+                    --component-button-bg-sell-primary-default
+                );
+                }
                 &:active:not(:disabled) {
                     background-color: var(
                         --component-button-bg-sell-primary-active
@@ -148,6 +174,11 @@
                         --component-button-bg-blackWhite-primary-hover
                     );
                 }
+                &:focus:not(:disabled) {
+                    background-color: var(
+                    --component-button-bg-blackWhite-primary-default
+                );
+                }
                 &:active:not(:disabled) {
                     background-color: var(
                         --component-button-bg-blackWhite-primary-active
@@ -174,6 +205,11 @@
                     background-color: var(
                         --component-button-bg-whiteBlack-primary-hover
                     );
+                }
+                &:focus:not(:disabled) {
+                    background-color: var(
+                    --component-button-bg-whiteBlack-primary-default
+                );
                 }
                 &:active:not(:disabled) {
                     background-color: var(
@@ -203,6 +239,9 @@
                         --component-button-bg-coral-secondary-hover
                     );
                 }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
+                }
                 &:active:not(:disabled) {
                     background-color: var(
                         --component-button-bg-coral-secondary-active
@@ -228,6 +267,9 @@
                     background-color: var(
                         --component-button-bg-black-secondary-hover
                     );
+                }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
                 }
                 &:active:not(:disabled) {
                     background-color: var(
@@ -255,6 +297,9 @@
                         --component-button-bg-white-secondary-hover
                     );
                 }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
+                }
                 &:active:not(:disabled) {
                     background-color: var(
                         --component-button-bg-white-secondary-active
@@ -280,6 +325,9 @@
                     background-color: var(
                         --component-button-bg-buy-secondary-hover
                     );
+                }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
                 }
                 &:active:not(:disabled) {
                     background-color: var(
@@ -307,6 +355,9 @@
                         --component-button-bg-sell-secondary-hover
                     );
                 }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
+                }
                 &:active:not(:disabled) {
                     background-color: var(
                         --component-button-bg-sell-secondary-active
@@ -333,6 +384,9 @@
                         --component-button-bg-blackWhite-secondary-hover
                     );
                 }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
+                }
                 &:active:not(:disabled) {
                     background-color: var(
                         --component-button-bg-blackWhite-secondary-active
@@ -358,6 +412,9 @@
                     background-color: var(
                         --component-button-bg-whiteBlack-secondary-hover
                     );
+                }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
                 }
                 &:active:not(:disabled) {
                     background-color: var(
@@ -387,6 +444,9 @@
                         --component-button-bg-coral-tertiary-hover
                     );
                 }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
+                }
                 &:active:not(:disabled) {
                     background-color: var(
                         --component-button-bg-coral-tertiary-active
@@ -412,6 +472,9 @@
                     background-color: var(
                         --component-button-bg-black-tertiary-hover
                     );
+                }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
                 }
                 &:active:not(:disabled) {
                     background-color: var(
@@ -439,6 +502,9 @@
                         --component-button-bg-white-tertiary-hover
                     );
                 }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
+                }
                 &:active:not(:disabled) {
                     background-color: var(
                         --component-button-bg-white-tertiary-active
@@ -464,6 +530,9 @@
                     background-color: var(
                         --component-button-bg-buy-tertiary-hover
                     );
+                }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
                 }
                 &:active:not(:disabled) {
                     background-color: var(
@@ -491,6 +560,9 @@
                         --component-button-bg-sell-tertiary-hover
                     );
                 }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
+                }
                 &:active:not(:disabled) {
                     background-color: var(
                         --component-button-bg-sell-tertiary-active
@@ -517,6 +589,9 @@
                         --component-button-bg-blackWhite-tertiary-hover
                     );
                 }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
+                }
                 &:active:not(:disabled) {
                     background-color: var(
                         --component-button-bg-blackWhite-tertiary-active
@@ -542,6 +617,9 @@
                     background-color: var(
                         --component-button-bg-whiteBlack-tertiary-hover
                     );
+                }
+                &:focus:not(:disabled) {
+                    background-color: transparent;
                 }
                 &:active:not(:disabled) {
                     background-color: var(

@@ -92,10 +92,63 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
                   <path
                     d="M0 0h13v22H0z"
                   />
+<<<<<<< HEAD
                 </clippath>
               </defs>
             </svg>
           </button>
+=======
+                </g>
+                <defs>
+                  <clippath
+                    id="57b6ef223c6ac0b710a8df05efe5ffaa__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+            <button
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
+              data-loading="false"
+              data-state=""
+            >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="37a4ba571159e9956af0c424b127b909__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        class="message__container message__container--md message__container__status--error"
+      >
+        <span
+          class="message__container__text"
+        >
+          Error message
+>>>>>>> 131f0fdee094384ab8aff5c1bc91db3cc720195c
         </span>
       </div>
     </div>
@@ -129,7 +182,66 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
           <span
             class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--disabled quill-input-label__label quill-input-label__label--left"
           >
+<<<<<<< HEAD
             $
+=======
+            <button
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
+              data-loading="false"
+              data-state=""
+            >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="57b6ef223c6ac0b710a8df05efe5ffaa__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+            <button
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
+              data-loading="false"
+              data-state=""
+            >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="37a4ba571159e9956af0c424b127b909__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+>>>>>>> 131f0fdee094384ab8aff5c1bc91db3cc720195c
           </span>
           <input
             class="input peer input__align--left input__size--md"
@@ -229,7 +341,66 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
           <span
             class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-input-label__label quill-input-label__label--right"
           >
+<<<<<<< HEAD
             USD
+=======
+            <button
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
+              data-loading="false"
+              data-state=""
+            >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="57b6ef223c6ac0b710a8df05efe5ffaa__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+            <button
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
+              data-loading="false"
+              data-state=""
+            >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="37a4ba571159e9956af0c424b127b909__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+>>>>>>> 131f0fdee094384ab8aff5c1bc91db3cc720195c
           </span>
         </div>
         <span
@@ -326,6 +497,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
         <div
           class="quill-input-no-label__wrapper"
         >
+<<<<<<< HEAD
           <input
             class="input peer input__align--left input__size--md"
             id="quill-input-1"
@@ -333,6 +505,79 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
             type="text"
             value=""
           />
+=======
+          <div
+            class="quill-input-no-label__wrapper quill-input-label__wrapper--has-value"
+          >
+            <input
+              class="input peer input__align--left input__size--md"
+              id="quill-input-1"
+              placeholder="Enter text"
+              type="number"
+              value="undefined"
+            />
+          </div>
+          <span
+            class="icon_wrapper"
+          >
+            <button
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
+              data-loading="false"
+              data-state=""
+            >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M12.188 10.75a.45.45 0 0 1-.438.438H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h10.5a.47.47 0 0 1 .438.437"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="57b6ef223c6ac0b710a8df05efe5ffaa__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+            <button
+              class="quill-button quill-icon-button__size--md quill__color--tertiary-black-white"
+              data-loading="false"
+              data-state=""
+            >
+              <svg
+                height="22"
+                role="img"
+                viewBox="0 0 13 22"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M6.938 5.5v4.813h4.812a.47.47 0 0 1 .438.437.45.45 0 0 1-.438.438H6.938V16a.45.45 0 0 1-.438.438.43.43 0 0 1-.437-.438v-4.812H1.25a.43.43 0 0 1-.437-.438.45.45 0 0 1 .437-.437h4.813V5.5a.45.45 0 0 1 .437-.437.47.47 0 0 1 .438.437"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="37a4ba571159e9956af0c424b127b909__a"
+                  >
+                    <path
+                      d="M0 0h13v22H0z"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </span>
+>>>>>>> 131f0fdee094384ab8aff5c1bc91db3cc720195c
         </div>
         <span
           class="icon_wrapper"
