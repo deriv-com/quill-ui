@@ -8,28 +8,35 @@ type CustomTypeObjectType = {
 };
 
 export const barrierHandler: HandlerFunction = (value) => {
-    const clean = (input: StringOrNumber) => {
+    const clean = (input: StringOrNumber): string => {
+        const strInput = String(input);
+
         // Remove any character that isn't +, -, digit, or dot
-        let cleaned =
-            // Ensure + or - is only at the start
-            input + "".replace(/[^+\-\d.]/g, "").replace(/(?!^)[+-]/g, "");
-        // Ensure there is only one dot
-        const parts = cleaned.split(".");
-        if (parts.length > 2) {
+        let cleaned = strInput.replace(/[^+\-\d.]/g, "");
+
+        // Ensure + or - is only at the start
+        if (/^[+-]/.test(cleaned)) {
+            cleaned = cleaned.replace(/(?!^)[+-]/g, "");
+        }
+
+        // Ensure that if there is a dot, no additional dots are allowed
+        if (cleaned.includes(".")) {
+            const parts = cleaned.split(".");
             cleaned = parts.shift() + "." + parts.join("");
         }
+
         return cleaned;
     };
 
-    let cleanedInput = clean(value);
+    const cleanedInput = clean(value);
     const regex = /^[+-]?(\d+(\.\d*)?|\.\d+)?$/;
 
-    // Remove invalid trailing characters
-    while (cleanedInput && !regex.test(cleanedInput)) {
-        cleanedInput = clean(cleanedInput.slice(0, -1));
+    const match = cleanedInput.match(regex);
+    if (match) {
+        return match[0];
     }
 
-    return cleanedInput;
+    return "";
 };
 
 export const CustomTypeObject: CustomTypeObjectType = {
