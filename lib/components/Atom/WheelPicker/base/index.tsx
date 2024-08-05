@@ -2,6 +2,7 @@ import { HTMLAttributes, useEffect, useMemo, useRef } from "react";
 import clsx from "clsx";
 import { DropdownItem } from "@components/Atom/dropdown";
 import "./wheel-picker.scss";
+import { THorizontalPosition } from "@types";
 
 export interface WheelPickerProps extends HTMLAttributes<HTMLElement> {
     data: { value: string | number }[];
@@ -12,7 +13,7 @@ export interface WheelPickerProps extends HTMLAttributes<HTMLElement> {
     dropDownItemClassName?: string;
     containerClassName?: string;
     listClassName?: string;
-    position?: "first" | "center" | "last" | undefined;
+    position?: THorizontalPosition | undefined;
 }
 
 const WheelPicker = ({

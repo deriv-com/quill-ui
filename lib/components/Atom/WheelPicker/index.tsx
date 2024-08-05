@@ -64,8 +64,8 @@ const WheelPickerContainer = ({
 
     const getPosition = (index: number) => {
         if (data.length === 1) return;
-        if (index === 0 && data.length > 1) return "first";
-        if (index === data.length - 1 && data.length > 1) return "last";
+        if (index === 0 && data.length > 1) return "left";
+        if (index === data.length - 1 && data.length > 1) return "right";
         return "center";
     };
     return (

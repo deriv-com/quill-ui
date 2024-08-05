@@ -50,14 +50,14 @@
             pointer-events: none;
         }
 
-        &-first {
+        &-left {
             &::before {
                 border-radius: var(--core-borderRadius-200) 0 0
                     var(--core-borderRadius-200);
             }
         }
 
-        &-last {
+        &-right {
             &::before {
                 border-radius: 0 var(--core-borderRadius-200)
                     var(--core-borderRadius-200) 0;

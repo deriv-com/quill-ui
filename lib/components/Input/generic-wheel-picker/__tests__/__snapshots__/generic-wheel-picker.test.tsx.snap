@@ -76,7 +76,7 @@ exports[`GenericWheelPicker renders correctly 1`] = `
             class="quill-wheel-picker__container"
           >
             <ul
-              class="quill-wheel-picker__data-items quill-wheel-picker__data-items-first"
+              class="quill-wheel-picker__data-items quill-wheel-picker__data-items-left"
               role="listbox"
             >
               <li
@@ -160,7 +160,7 @@ exports[`GenericWheelPicker renders correctly 1`] = `
             class="quill-wheel-picker__container"
           >
             <ul
-              class="quill-wheel-picker__data-items quill-wheel-picker__data-items-last"
+              class="quill-wheel-picker__data-items quill-wheel-picker__data-items-right"
               role="listbox"
             >
               <li
