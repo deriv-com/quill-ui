@@ -1,6 +1,6 @@
 import { KeyboardEvent, useEffect, useState } from "react";
 import { InputProps } from "@components/Input/base";
-import WheelPicker from "./base";
+import WheelPicker from "../base";
 import { KEY } from "@utils/common-utils";
 
 export interface WheelPickerContainerProps extends InputProps {
@@ -12,7 +12,7 @@ export interface WheelPickerContainerProps extends InputProps {
     setSelectedValue?: (value: string) => void;
 }
 
-const WheelPickerContainer = ({
+export const WheelPickerContainer = ({
     data = [],
     inputValues = [],
     setInputValues,
