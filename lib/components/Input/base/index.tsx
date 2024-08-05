@@ -168,8 +168,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             let inputValue = event.target.value;
 
             if (regex) {
-                const newRegex = new RegExp(regex, "g");
-                inputValue = event.target.value.replace(newRegex, "");
+                inputValue = event.target.value.replace(regex, "");
             }
 
             if (type === "number" || type === "tel") {
