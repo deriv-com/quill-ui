@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenericWheelPicker renders correctly 1`] = `
+<div>
+  <div
+    class="quill-generic-picker__container"
+  >
+    <div>
+      <div
+        class="quill-input__container"
+      >
+        <div
+          class="quill-input__wrapper quill-input__wrapper--has-value quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md quill-generic-picker__input quill-generic-picker__input--is-open-false--undefined--undefined"
+        >
+          <div
+            class="quill-input-icons__wrapper"
+          >
+            <div
+              class="quill-input-label__wrapper quill-input-label__wrapper--has-value"
+            >
+              <input
+                autocomplete="off"
+                class="input peer input__align--left input__size--md"
+                data="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+                id="quill-input-1"
+                placeholder=""
+                readonly=""
+                type="text"
+                value="1 4 7"
+              />
+              <label
+                class="label label__status--neutral"
+                for="quill-input-1"
+              >
+                test
+              </label>
+            </div>
+            <svg
+              class="quill-input__rotate quill-input__icon"
+              data-state="close"
+              height="24"
+              role="img"
+              viewBox="0 0 14 22"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="m6.535 14.715-5.25-5.25c-.273-.246-.273-.656 0-.93.246-.246.656-.246.93 0L7 13.348l4.785-4.786c.246-.273.656-.273.93 0a.644.644 0 0 1 0 .903l-5.277 5.25a.6.6 0 0 1-.903 0"
+                />
+              </g>
+              <defs>
+                <clippath
+                  id="b2fbae3ff4787741870694db3344c0c7__a"
+                >
+                  <path
+                    d="M0 0h14v22H0z"
+                  />
+                </clippath>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="quill-generic-picker__content--container"
+    >
+      <div
+        class="quill-generic-picker__content"
+      >
+        <div
+          class="quill-wheel-picker"
+        >
+          <div
+            class="quill-wheel-picker__container"
+          >
+            <ul
+              class="quill-wheel-picker__data-items quill-wheel-picker__data-items-left"
+              role="listbox"
+            >
+              <li
+                class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--false quill-wheel-picker__data-item"
+                role="option"
+                tabindex="0"
+              >
+                <p
+                  class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+                >
+                  1
+                </p>
+              </li>
+              <li
+                class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+                role="option"
+                tabindex="0"
+              >
+                <p
+                  class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+                >
+                  2
+                </p>
+              </li>
+              <li
+                class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+                role="option"
+                tabindex="0"
+              >
+                <p
+                  class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+                >
+                  3
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="quill-wheel-picker__container"
+          >
+            <ul
+              class="quill-wheel-picker__data-items quill-wheel-picker__data-items-center"
+              role="listbox"
+            >
+              <li
+                class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--false quill-wheel-picker__data-item"
+                role="option"
+                tabindex="0"
+              >
+                <p
+                  class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+                >
+                  4
+                </p>
+              </li>
+              <li
+                class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+                role="option"
+                tabindex="0"
+              >
+                <p
+                  class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+                >
+                  5
+                </p>
+              </li>
+              <li
+                class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+                role="option"
+                tabindex="0"
+              >
+                <p
+                  class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+                >
+                  6
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="quill-wheel-picker__container"
+          >
+            <ul
+              class="quill-wheel-picker__data-items quill-wheel-picker__data-items-right"
+              role="listbox"
+            >
+              <li
+                class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--false quill-wheel-picker__data-item"
+                role="option"
+                tabindex="0"
+              >
+                <p
+                  class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
+                >
+                  7
+                </p>
+              </li>
+              <li
+                class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+                role="option"
+                tabindex="0"
+              >
+                <p
+                  class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+                >
+                  8
+                </p>
+              </li>
+              <li
+                class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-center quill-dropdown-item__selected--false__disabled--true quill-wheel-picker__data-item"
+                role="option"
+                tabindex="0"
+              >
+                <p
+                  class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label quill-typography__color--disabled"
+                >
+                  9
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

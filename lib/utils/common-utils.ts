@@ -3,9 +3,11 @@ import { isValidElement } from "react";
 export const KEY = {
     ARROW_LEFT: "ArrowLeft",
     ARROW_RIGHT: "ArrowRight",
+    ARROW_DOWN: "ArrowDown",
     ENTER: "Enter",
     SPACE: " ",
     TAB: "Tab",
+    ESCAPE: "Escape",
 };
 
 export const reactNodeToString = (reactNode: React.ReactNode): string => {
