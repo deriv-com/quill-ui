@@ -53,8 +53,15 @@ const meta = {
         unitRight: "USD",
         decimals: 2,
         placeholder: "0.00",
+        plusDisabled: false,
+        minusDisabled: false,
     },
     argTypes: {
+        regex: {
+            control: {
+                type: "text",
+            },
+        },
         inputSize: {
             control: {
                 type: "radio",

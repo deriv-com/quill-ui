@@ -112,6 +112,11 @@ const meta = {
         value: {
             type: "number",
         },
+        regex: {
+            control: {
+                type: "text",
+            },
+        },
     },
 } satisfies Meta<typeof TextField>;
 

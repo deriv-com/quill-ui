@@ -26,6 +26,18 @@ export const reactNodeToString = (reactNode: React.ReactNode): string => {
     return string;
 };
 
-export const getFormatValue = (value: number, decimals: number) => {
-    return Number(value.toFixed(decimals));
+export const getFormatValue = (value: number | string, decimals: number) => {
+    if (!value) return value;
+
+    const inputValue = value.toString();
+    const parts = inputValue.split(".");
+
+    if (parts.length < 2) return value;
+    if (parts[1].length < decimals) return value;
+
+    const numValue = Number(value);
+
+    if (isNaN(numValue)) return value;
+
+    return numValue.toFixed(decimals);
 };
