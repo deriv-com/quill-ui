@@ -27,6 +27,7 @@ export interface TDatePickerDropdownProps extends Omit<InputProps, "leftIcon"> {
     isAutocomplete?: boolean;
     datePickerProps?: DatePickerProps;
     value?: string;
+    fullHeightOnOpen?: boolean;
     actionSheetFooter?: ComponentProps<typeof ActionSheet.Footer>;
 }
 
@@ -40,6 +41,7 @@ const DatePickerInput = forwardRef<HTMLInputElement, TDatePickerDropdownProps>(
             inputSize = "md",
             status = "neutral",
             isAutocomplete = false,
+            fullHeightOnOpen = true,
             className,
             actionSheetFooter,
             datePickerProps = { selectRange: false },
@@ -183,7 +185,7 @@ const DatePickerInput = forwardRef<HTMLInputElement, TDatePickerDropdownProps>(
                         >
                             <ActionSheet.Portal
                                 shouldCloseOnDrag={true}
-                                fullHeightOnOpen={true}
+                                fullHeightOnOpen={fullHeightOnOpen}
                                 ref={actionSheetRef}
                             >
                                 {label && <ActionSheet.Header title={label} />}

@@ -18,6 +18,7 @@ export interface TCustomDropdown extends InputProps {
     onClickDropdown?: (e: React.MouseEvent<HTMLDivElement>) => void;
     containerClassName?: string;
     actionSheetFooter?: ComponentProps<typeof ActionSheet.Footer>;
+    fullHeightOnOpen?: boolean;
 }
 
 const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
@@ -28,6 +29,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             isAutocomplete = false,
             value,
             onClickDropdown,
+            fullHeightOnOpen = true,
             onChange,
             containerClassName,
             actionSheetFooter,
@@ -107,7 +109,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
                         >
                             <ActionSheet.Portal
                                 shouldCloseOnDrag={true}
-                                fullHeightOnOpen={true}
+                                fullHeightOnOpen={fullHeightOnOpen}
                                 ref={actionSheetRef}
                             >
                                 {label && <ActionSheet.Header title={label} />}
