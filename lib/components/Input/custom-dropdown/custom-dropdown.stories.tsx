@@ -23,6 +23,7 @@ const meta = {
         isAutocomplete: true,
         placeholder: "placeholder",
         label: "label",
+        fullHeightOnOpen: true,
         actionSheetFooter: {
             primaryAction: {
                 content: "123",

@@ -39,6 +39,7 @@ const meta = {
         required: false,
         fieldMarker: false,
         value: dayjs(Date.now()).format("DD/MM/YYYY"),
+        fullHeightOnOpen: true,
     },
     argTypes: {
         id: {
