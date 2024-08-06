@@ -64,16 +64,6 @@ export const Snackbar = ({
 
     id && useOnClickOutside(ref, () => removeSnackbar(id));
 
-    useEffect(() => {
-        if (id) {
-            window.addEventListener("scroll", () => removeSnackbar(id));
-
-            return () => {
-                window.removeEventListener("scroll", () => removeSnackbar(id));
-            };
-        }
-    }, []);
-
     if (standalone && !isVisible) return null;
 
     return (
