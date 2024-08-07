@@ -37,12 +37,12 @@ export function Base({ size = "sm", links = [], className }: BreadcrumbProps) {
     }, [links]);
 
     return (
-        <div className={clsx("breadcrumb--container", className)}>
+        <div className={clsx("quill-breadcrumb--container", className)}>
             {renderLinks.map(({ content, href }, lk) => (
                 <Fragment key={`breadcrumbs-${content}`}>
                     {hasExtra && lk === 1 && (
                         <select
-                            className="breadcrumb--dropdown"
+                            className="quill-breadcrumb--dropdown"
                             onChange={(
                                 e: React.ChangeEvent<HTMLSelectElement>,
                             ) => {
@@ -81,7 +81,7 @@ export function Base({ size = "sm", links = [], className }: BreadcrumbProps) {
                         hasChevron={isLastItem(lk)}
                         color="black"
                         disabled={!isLastItem(lk)}
-                        className="breadcrumb--item"
+                        className="quill-breadcrumb--item"
                     >
                         {content}
                     </Link>
