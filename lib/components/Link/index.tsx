@@ -13,6 +13,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
             disabled,
             color = "black",
             icon,
+            hasHoverEffect = true,
             hasChevron = false,
             children,
             target = "_blank",
@@ -31,6 +32,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
                     "link",
                     `link__color-${color}`,
                     disabled && "link--disabled",
+                    hasHoverEffect && "link--hover",
                     className,
                 )}
             >
