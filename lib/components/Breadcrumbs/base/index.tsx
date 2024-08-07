@@ -47,7 +47,14 @@ export function Base({ size = "sm", links = [], className }: BreadcrumbProps) {
                                 e: React.ChangeEvent<HTMLSelectElement>,
                             ) => {
                                 if (typeof window !== "undefined") {
-                                    window.location.href = e.target.value;
+                                    const url = e.target.value;
+
+                                    try {
+                                        new URL(url);
+                                        window.location.href = url;
+                                    } catch (err) {
+                                        console.error("Invalid URL:", url);
+                                    }
                                 }
                             }}
                         >
