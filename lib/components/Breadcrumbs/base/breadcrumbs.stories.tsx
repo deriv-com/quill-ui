@@ -8,6 +8,12 @@ const meta = {
     parameters: {
         layout: "centered",
     },
+    args: {
+        size: "md",
+    },
+    argTypes: {
+        size: { options: ["sm", "md"], control: { type: "radio" } },
+    },
 } satisfies Meta<typeof Base>;
 
 export default meta;
@@ -30,6 +36,7 @@ export const Default: Story = {
 
 export const Max: Story = {
     args: {
+        size: "md",
         links: [
             {
                 href: "",
