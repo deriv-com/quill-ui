@@ -38,7 +38,7 @@ export function Base({ size = "sm", links = [], className }: BreadcrumbProps) {
 
     return (
         <div className={clsx("quill-breadcrumb--container", className)}>
-            {renderLinks.map(({ content, href }, lk) => (
+            {renderLinks.map(({ content, href, target }, lk) => (
                 <Fragment key={`breadcrumbs-${content}`}>
                     {hasExtra && lk === 1 && (
                         <select
@@ -77,6 +77,7 @@ export function Base({ size = "sm", links = [], className }: BreadcrumbProps) {
                     <Link
                         size={size}
                         href={href}
+                        target={target}
                         hasHoverEffect={false}
                         hasChevron={isLastItem(lk)}
                         color="black"
