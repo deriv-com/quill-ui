@@ -29,6 +29,7 @@ export const Default: Story = {
             {
                 href: "",
                 content: "Trade",
+                target: "_blank",
             },
         ],
     },
@@ -45,6 +46,7 @@ export const Max: Story = {
             {
                 href: "/help-centre",
                 content: "Help Centre",
+                target: "_blank",
             },
             {
                 href: "/help-centre/account",
