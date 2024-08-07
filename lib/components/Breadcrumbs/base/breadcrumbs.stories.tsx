@@ -25,7 +25,6 @@ export const Default: Story = {
             {
                 href: "",
                 content: "Home",
-                target: "_self",
             },
             {
                 href: "",
@@ -43,7 +42,6 @@ export const Max: Story = {
             {
                 href: "",
                 content: "Home",
-                target: "_self",
             },
             {
                 href: "/help-centre",
@@ -53,17 +51,14 @@ export const Max: Story = {
             {
                 href: "/help-centre/account",
                 content: "Account",
-                target: "_blank",
             },
             {
                 href: "/help-centre/account/questions",
                 content: "Questions",
-                target: "_blank",
             },
             {
                 href: "",
                 content: "How to trade in Deriv",
-                target: "_blank",
             },
         ],
     },

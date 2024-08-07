@@ -77,7 +77,7 @@ export function Base({ size = "sm", links = [], className }: BreadcrumbProps) {
                     <Link
                         size={size}
                         href={href}
-                        target={target}
+                        target={target ? target : "_self"}
                         hasHoverEffect={false}
                         hasChevron={isLastItem(lk)}
                         color="black"
