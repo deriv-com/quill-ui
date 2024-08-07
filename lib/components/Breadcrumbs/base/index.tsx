@@ -48,9 +48,11 @@ export function Base({ size = "sm", links = [], className }: BreadcrumbProps) {
                             ) => {
                                 if (typeof window !== "undefined") {
                                     const url = e.target.value;
-
                                     try {
-                                        const sanitizedUrl = new URL(url);
+                                        const sanitizedUrl = new URL(
+                                            url,
+                                            window.location.origin,
+                                        );
                                         window.location.href =
                                             sanitizedUrl.href;
                                     } catch (err) {
