@@ -50,8 +50,9 @@ export function Base({ size = "sm", links = [], className }: BreadcrumbProps) {
                                     const url = e.target.value;
 
                                     try {
-                                        new URL(url);
-                                        window.location.href = url;
+                                        const sanitizedUrl = new URL(url);
+                                        window.location.href =
+                                            sanitizedUrl.href;
                                     } catch (err) {
                                         console.error("Invalid URL:", url);
                                     }
