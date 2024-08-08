@@ -7,10 +7,15 @@ const meta = {
     component: Skeleton.Square,
     args: {
         rounded: false,
-        fullWidth: false,
         active: true,
-        height: 100,
     },
+    decorators: [
+        (Story) => (
+            <div style={{ height: "100px", width: "100%" }}>
+                <Story />
+            </div>
+        ),
+    ],
     argTypes: {
         height: {
             description: "A prop to set the height of the skeleton.",
@@ -49,6 +54,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
-        width: 100,
+        width: "100%",
     },
 };
