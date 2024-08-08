@@ -1,48 +1,46 @@
-import { Fragment, forwardRef } from "react";
-import { useState } from "react";
-import { Listbox, Transition } from "@headlessui/react";
+import { ComponentProps, Fragment, forwardRef } from "react";
+import { Menu, MenuButton, MenuItem, Transition } from "@headlessui/react";
 import { ButtonProps } from "../types";
-import clsx from "clsx";
 import { Button } from "../base";
 import "./dropdown.scss";
-import { Text, CaptionText } from "@components/Typography";
-import { TRegularSizesWithExtraLarge } from "@types";
-import { DropdownItem } from "@components/Atom";
+import { TMediumSizes, TRegularSizesWithExtraLarge } from "@types";
+import { DropdownItem, ItemContainer } from "@components/Atom";
 
-export type TSingleSelectItem = {
-    value: number | string;
+export interface TSingleSelectItem
+    extends Omit<ComponentProps<"button">, "ref"> {
     label: string | React.ReactNode;
-};
+}
 
 export interface SingleSelectDropdownProps extends ButtonProps {
     options: TSingleSelectItem[];
-    defaultOption: TSingleSelectItem;
-    onSelectionChange?: (item: TSingleSelectItem) => void;
     size?: TRegularSizesWithExtraLarge;
 }
+
+const itemSize: Record<TRegularSizesWithExtraLarge, TMediumSizes> = {
+    sm: "sm",
+    md: "sm",
+    lg: "md",
+    xl: "md",
+};
 
 const Options = ({
     item,
     size,
+    ...rest
 }: {
     item: TSingleSelectItem;
     size: TRegularSizesWithExtraLarge;
 }) => {
-    const itemSize = size === "sm" ? "sm" : size === "md" ? "sm" : "md";
     return (
-        <Listbox.Option value={item} as={Fragment}>
-            {({ selected, disabled, active }) => {
-                return (
-                    <DropdownItem
-                        className={clsx(`dropdown-menu__item--${active}`)}
-                        label={item.label}
-                        disabled={disabled}
-                        selected={selected}
-                        size={itemSize}
-                    />
-                );
-            }}
-        </Listbox.Option>
+        <MenuItem as={Fragment}>
+            <DropdownItem
+                id={item.id}
+                label={item.label}
+                size={itemSize[size]}
+                as="button"
+                {...rest}
+            />
+        </MenuItem>
     );
 };
 
@@ -52,7 +50,6 @@ export const DropdownButton = forwardRef<
 >(
     (
         {
-            defaultOption,
             size = "md",
             icon,
             label,
@@ -61,29 +58,16 @@ export const DropdownButton = forwardRef<
             variant,
             disabled,
             options,
-            onSelectionChange,
             ...rest
         },
         ref,
     ) => {
-        const labelSize = size === "md" ? "sm" : size === "lg" ? "md" : "xl";
-        const [selectedItem, setSelectedItem] =
-            useState<TSingleSelectItem>(defaultOption);
-
-        const handleItemSelect = (item: TSingleSelectItem) => {
-            setSelectedItem(item);
-            onSelectionChange?.(item);
-        };
-
         return (
-            <div>
-                <Listbox value={selectedItem} onChange={handleItemSelect}>
+            <div className="quill__dropdown-button">
+                <Menu>
                     {({ open }) => (
                         <>
-                            <Listbox.Button
-                                as="div"
-                                className="dropdown-menu__box"
-                            >
+                            <MenuButton as={Fragment}>
                                 <Button
                                     {...rest}
                                     icon={icon}
@@ -94,57 +78,29 @@ export const DropdownButton = forwardRef<
                                     isLoading={isLoading}
                                     ref={ref}
                                     dropdown
-                                    selected={
-                                        selectedItem.value !==
-                                        defaultOption.value
-                                    }
                                     isDropdownOpen={open}
                                     disabled={disabled}
-                                >
-                                    {!isLoading &&
-                                        (size === "sm" ? (
-                                            <CaptionText color={color} bold>
-                                                {selectedItem.label}
-                                            </CaptionText>
-                                        ) : (
-                                            <Text
-                                                size={labelSize}
-                                                bold
-                                                color={color}
-                                            >
-                                                {selectedItem.label}
-                                            </Text>
-                                        ))}
-                                </Button>
-                            </Listbox.Button>
-                            {!isLoading && (
-                                <Transition
-                                    enter={clsx(
-                                        "dropdown-menu__transition--enter",
-                                    )}
-                                >
-                                    <Listbox.Options
-                                        className={clsx(
-                                            "dropdown-menu__container",
-                                        )}
+                                />
+                            </MenuButton>
+                            <Transition enter="dropdown-button__transition--enter">
+                                <div style={{ position: "relative" }}>
+                                    <ItemContainer
+                                        size={itemSize[size]}
+                                        height="sm"
                                     >
-                                        <Options
-                                            item={defaultOption}
-                                            size={size}
-                                        />
                                         {options.map((item) => (
                                             <Options
                                                 item={item}
-                                                key={item.value}
                                                 size={size}
+                                                key={item.id}
                                             />
                                         ))}
-                                    </Listbox.Options>
-                                </Transition>
-                            )}
+                                    </ItemContainer>
+                                </div>
+                            </Transition>
                         </>
                     )}
-                </Listbox>
+                </Menu>
             </div>
         );
     },

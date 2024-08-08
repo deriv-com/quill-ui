@@ -1,20 +1,4 @@
-.dropdown-menu {
-    &__box {
-        padding-bottom: var(--core-spacing-200);
-    }
-    &__container {
-        margin: var(--core-spacing-50);
-        background-color: var(--component-dropdownList-bg);
-        border-radius: var(--core-borderRadius-400);
-        box-shadow: var(--semantic-elevation-shadow-card-hover);
-        display: flex;
-        padding: var(--core-spacing-400);
-        flex-direction: column;
-        align-items: flex-start;
-        max-height: 258px;
-        width: fit-content;
-        overflow-y: auto;
-    }
+.quill__dropdown-button {
     &__item {
         display: flex;
         padding: var(--core-spacing-50) var(--core-spacing-600);
