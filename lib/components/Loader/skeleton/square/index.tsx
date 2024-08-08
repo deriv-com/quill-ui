@@ -14,7 +14,7 @@ const Square = ({
     rounded = false,
     width,
     fullWidth = true,
-    height = 50,
+    height = "100%",
     style,
     ...rest
 }: SquareProps) => {

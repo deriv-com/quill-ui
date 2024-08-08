@@ -19,7 +19,7 @@ describe("Skeleton Container", () => {
         expect(circle).toBeInTheDocument();
         expect(square).toBeInTheDocument();
         expect(circle).toHaveStyle("width: 100px");
-        expect(square).toHaveStyle("height: 50px");
+        expect(square).toHaveStyle("height: 100%");
     });
 
     test("Render with props with height and gap", async () => {
@@ -53,7 +53,7 @@ describe("Skeleton Container", () => {
 
         expect(skeletonContainer).toHaveStyle("gap: 10px");
         expect(circle).toHaveStyle("width: 20px; height: 20px");
-        expect(square).toHaveStyle("height: 50px; width: 20px");
+        expect(square).toHaveStyle("height: 100%; width: 20px");
     });
 
     test("Render with props with rounded", async () => {

@@ -13,7 +13,7 @@ describe("SkeletonElement", () => {
         expect(skeleton).not.toHaveClass("quill-loader__skeleton--circle");
 
         expect(skeleton).toHaveClass("quill-loader__skeleton--full-width");
-        expect(skeleton).toHaveStyle("height: 50px");
+        expect(skeleton).toHaveStyle("height: 100%");
     });
 
     test("applies fullWidth style correctly", () => {
