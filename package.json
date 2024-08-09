@@ -119,7 +119,7 @@
         ]
     },
     "optionalDependencies": {
-        "@rollup/rollup-linux-x64-gnu": "^4.9.6"
+        "@rollup/rollup-linux-x64-gnu": "^4.20.0"
     },
     "jest": {
         "testEnvironment": "jest-environment-jsdom",
