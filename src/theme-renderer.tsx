@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "../lib/main";
 
 type ThemeRendererPros = {
@@ -8,24 +8,9 @@ type ThemeRendererPros = {
 type Theme = "dark" | "light";
 
 const ThemeRenderer = ({ children }: ThemeRendererPros) => {
-    const [theme, setTheme] = useState<Theme>("dark");
+    const [theme] = useState<Theme>("light");
 
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setTheme("light");
-        }, 3000);
-
-        return () => {
-            clearTimeout(timeout);
-        };
-    }, []);
-
-    return (
-        <>
-            <h1>Current theme: {theme}</h1>
-            <ThemeProvider theme={theme}>{children}</ThemeProvider>
-        </>
-    );
+    return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
 export default ThemeRenderer;

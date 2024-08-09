@@ -5,11 +5,11 @@
 
     &__direction {
         &--row {
-            flex-direction: column;
+            flex-direction: row;
         }
 
         &--column {
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
         }
     }

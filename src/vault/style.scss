@@ -1,0 +1,116 @@
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.vault {
+    &-section {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+
+    }
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--semantic-color-slate-solid-surface-frame-mid);
+    }
+
+    &-header {
+        display: flex;
+        padding: var(--core-spacing-400);
+        background-color: var(--core-color-solid-slate-50);
+        position: relative;
+        z-index: 2;
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: var(--core-spacing-400);
+
+            .logo {
+
+                img,
+                svg {
+                    width: 64px;
+                    height: 64px;
+                }
+            }
+
+            .version-box {
+                display: flex;
+                flex-direction: column;
+                gap: var(--core-spacing-100);
+
+                .app-name {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    &-body {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    &-sidebar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        height: 100%;
+        border-right: solid 1px var(--core-color-solid-slate-50);
+        background-color: var(--semantic-color-slate-solid-surface-frame-low);
+        padding: var(--core-spacing-400);
+
+        .menu-option {
+            display: flex;
+            flex-direction: column;
+            padding: var(--core-spacing-400) 0;
+            gap: var(--core-spacing-400);
+            height: calc(100dvh - 140px);
+            overflow: auto;
+
+            .quill-dropdown__divider {
+                flex: none;
+            }
+
+            &::-webkit-scrollbar {
+                scrollbar-width: thin;
+                width: var(--core-size-200);
+                background-color: transparent;
+                border-radius: var(--core-borderRadius-500);
+            }
+            &::-webkit-scrollbar-track {
+                scrollbar-width: thin;
+                background-color: transparent !important;
+            }
+            // &:hover {
+            //     scrollbar-width: thin;
+            //     scrollbar-color: rgba(0, 0, 0, 0.08) transparent;
+            //     border-radius: var(--core-borderRadius-500);
+        
+            //     &::-webkit-scrollbar-thumb {
+            //         scrollbar-width: thin;
+            //         display: unset;
+            //         border-radius: var(--core-borderRadius-500);
+            //         background-color: rgba(0, 0, 0, 0.08);
+            //     } 
+            // }     
+        }
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+    }
+}

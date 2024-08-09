@@ -170,6 +170,10 @@
                 color: var(--component-dropdownItem-label-color-default);
                 position: relative;
 
+                &:disabled {
+
+                }
+
                 &.react-calendar__tile--hover,
                 &:enabled:hover,
                 &:enabled:focus {
