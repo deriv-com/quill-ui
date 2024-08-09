@@ -19,6 +19,7 @@ export interface TCustomDropdown extends InputProps {
     containerClassName?: string;
     actionSheetFooter?: ComponentProps<typeof ActionSheet.Footer>;
     fullHeightOnOpen?: boolean;
+    headComponent?: React.ReactNode;
 }
 
 const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
@@ -34,6 +35,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             containerClassName,
             actionSheetFooter,
             label,
+            headComponent,
             ...rest
         },
         ref,
@@ -78,22 +80,26 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
                 )}
             >
                 <div ref={ref} onClick={handleInputClick}>
-                    <Input
-                        dropdown
-                        ref={inputRef}
-                        isDropdownOpen={isOpen}
-                        readOnly={!isAutocomplete}
-                        value={selectedValue}
-                        className={clsx(
-                            "quill-custom-dropdown__input",
-                            `quill-custom-dropdown__input--hasValue--${!!selectedValue}`,
-                            className,
-                        )}
-                        onChange={handleOnChange}
-                        type="select"
-                        label={label}
-                        {...rest}
-                    />
+                    {!headComponent ? (
+                        <Input
+                            dropdown
+                            ref={inputRef}
+                            isDropdownOpen={isOpen}
+                            readOnly={!isAutocomplete}
+                            value={selectedValue}
+                            className={clsx(
+                                "quill-custom-dropdown__input",
+                                `quill-custom-dropdown__input--hasValue--${!!selectedValue}`,
+                                className,
+                            )}
+                            onChange={handleOnChange}
+                            type="select"
+                            label={label}
+                            {...rest}
+                        />
+                    ) : (
+                        headComponent
+                    )}
                 </div>
                 <div className="quill-custom-dropdown__content--container">
                     {!isMobile ? (

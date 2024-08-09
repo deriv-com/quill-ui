@@ -4,6 +4,8 @@
     width: 100%;
     cursor: pointer;
     border-radius: var(--component-dropdownItem-border-radius);
+    background-color: transparent;
+    border: none;
 
     &-label {
         flex-grow: 1;
