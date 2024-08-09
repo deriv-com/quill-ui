@@ -25,6 +25,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: var(--component-button-bg-coral-primary-default);
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -57,6 +58,9 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: var(
+                        --component-button-bg-black-primary-default
+                    );
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -89,6 +93,9 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: var(
+                        --component-button-bg-white-primary-default
+                    );
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -122,6 +129,9 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: var(
+                    --component-button-bg-buy-primary-default
+                );
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -154,6 +164,9 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: var(
+                    --component-button-bg-sell-primary-default
+                );
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -186,6 +199,9 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: var(
+                    --component-button-bg-blackWhite-primary-default
+                );
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -218,6 +234,9 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: var(
+                    --component-button-bg-whiteBlack-primary-default
+                );
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -249,6 +268,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -278,6 +298,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -305,8 +326,9 @@
                         --component-button-bg-white-secondary-active
                     );
                 }
-                &:disabled {
+                &:disabled  {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -336,6 +358,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -365,6 +388,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -394,6 +418,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -423,6 +448,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -454,6 +480,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -483,6 +510,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -512,6 +540,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -541,6 +570,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -570,6 +600,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -599,6 +630,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -628,6 +660,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
+                    background: transparent;
                 }
                 &[data-loading="true"] {
                     background-color: var(
