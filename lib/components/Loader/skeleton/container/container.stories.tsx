@@ -6,7 +6,7 @@ const meta = {
     title: "Components/Loader/Skeleton/Container",
     component: Skeleton.Container,
     args: {
-        direction: "row",
+        direction: "column",
     },
     argTypes: {
         direction: {
