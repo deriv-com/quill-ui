@@ -21,7 +21,7 @@ exports[`Button component Should render IconButton correctly 1`] = `
       </g>
       <defs>
         <clippath
-          id="28ec2eb9afe325f2205d77afa7750df1__a"
+          id="d8560af4a57aac6788a44f4bd895971c__a"
         >
           <path
             d="M0 0h14v24H0z"
@@ -55,7 +55,7 @@ exports[`Button component Should render IconButton with variant=primary 1`] = `
       </g>
       <defs>
         <clippath
-          id="28ec2eb9afe325f2205d77afa7750df1__a"
+          id="d8560af4a57aac6788a44f4bd895971c__a"
         >
           <path
             d="M0 0h14v24H0z"
@@ -88,7 +88,7 @@ exports[`Button component Should render IconButton with variant=secondary 1`] = 
       </g>
       <defs>
         <clippath
-          id="28ec2eb9afe325f2205d77afa7750df1__a"
+          id="d8560af4a57aac6788a44f4bd895971c__a"
         >
           <path
             d="M0 0h14v24H0z"
@@ -121,7 +121,7 @@ exports[`Button component Should render IconButton with variant=tertiary 1`] = `
       </g>
       <defs>
         <clippath
-          id="28ec2eb9afe325f2205d77afa7750df1__a"
+          id="d8560af4a57aac6788a44f4bd895971c__a"
         >
           <path
             d="M0 0h14v24H0z"

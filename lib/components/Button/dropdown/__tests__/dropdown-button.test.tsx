@@ -2,13 +2,13 @@ import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import DropdownButton from "../index";
 
-const mockOptions = [
-    { value: "1", label: "Sample Item 1" },
-    { value: "2", label: "Sample Item 2" },
-    { value: "3", label: "Sample Item 3" },
-    { value: "4", label: "Sample Item 4" },
-    { value: "5", label: "Sample Item 5" },
-];
+const generateItems = (length: number, onClick?: boolean) =>
+    Array.from({ length }, (_, index) => ({
+        id: index + 1,
+        value: (index + 1).toString(),
+        label: `Sample Item ${index + 1}`,
+        onClick: () => onClick && alert(`Item ${index + 1}`),
+    }));
 
 describe("DropdownButton component", () => {
     let onSelectionChange = jest.fn();
@@ -20,8 +20,7 @@ describe("DropdownButton component", () => {
             <DropdownButton
                 size="md"
                 onSelectionChange={onSelectionChange}
-                options={mockOptions}
-                defaultOption={mockOptions[0]}
+                options={generateItems(4)}
             />,
         );
         const label = screen.getByText("Sample Item 1");
@@ -32,8 +31,7 @@ describe("DropdownButton component", () => {
         render(
             <DropdownButton
                 onSelectionChange={null as unknown as typeof onSelectionChange}
-                options={mockOptions}
-                defaultOption={mockOptions[0]}
+                options={generateItems(4)}
             />,
         );
         const label = screen.getByText("Sample Item 1");
@@ -51,8 +49,7 @@ describe("DropdownButton component", () => {
         render(
             <DropdownButton
                 onSelectionChange={onSelectionChange}
-                options={mockOptions}
-                defaultOption={mockOptions[0]}
+                options={generateItems(4)}
             />,
         );
         const label = screen.getByText("Sample Item 1");

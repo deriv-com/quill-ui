@@ -39,7 +39,7 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
             </g>
             <defs>
               <clippath
-                id="be24f060112de157b63e626d37da1ab7__a"
+                id="587cf7e7e60119518989fab94b491801__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -84,7 +84,7 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
             </g>
             <defs>
               <clippath
-                id="9a0552813fdb1b997c98226bb2aebe8e__a"
+                id="da506f78c7763b3ebdb9d689d83c9420__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -244,7 +244,7 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -321,7 +321,7 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -582,7 +582,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
             </g>
             <defs>
               <clippath
-                id="be24f060112de157b63e626d37da1ab7__a"
+                id="587cf7e7e60119518989fab94b491801__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -627,7 +627,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
             </g>
             <defs>
               <clippath
-                id="9a0552813fdb1b997c98226bb2aebe8e__a"
+                id="da506f78c7763b3ebdb9d689d83c9420__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -813,7 +813,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -890,7 +890,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -1162,7 +1162,7 @@ exports[`DatePicker should render calendar with range selection 1`] = `
             </g>
             <defs>
               <clippath
-                id="be24f060112de157b63e626d37da1ab7__a"
+                id="587cf7e7e60119518989fab94b491801__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -1207,7 +1207,7 @@ exports[`DatePicker should render calendar with range selection 1`] = `
             </g>
             <defs>
               <clippath
-                id="9a0552813fdb1b997c98226bb2aebe8e__a"
+                id="da506f78c7763b3ebdb9d689d83c9420__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -1360,7 +1360,7 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -1437,7 +1437,7 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -1698,7 +1698,7 @@ exports[`DatePicker should render calendar with selected value and call onFormat
             </g>
             <defs>
               <clippath
-                id="be24f060112de157b63e626d37da1ab7__a"
+                id="587cf7e7e60119518989fab94b491801__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -1743,7 +1743,7 @@ exports[`DatePicker should render calendar with selected value and call onFormat
             </g>
             <defs>
               <clippath
-                id="9a0552813fdb1b997c98226bb2aebe8e__a"
+                id="da506f78c7763b3ebdb9d689d83c9420__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -1896,7 +1896,7 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__tile--now react-calendar__tile--active react-calendar__tile--range react-calendar__tile--rangeStart react-calendar__tile--rangeEnd react-calendar__tile--rangeBothEnds react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -1973,7 +1973,7 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__tile--now react-calendar__tile--active react-calendar__tile--range react-calendar__tile--rangeStart react-calendar__tile--rangeEnd react-calendar__tile--rangeBothEnds react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -2354,7 +2354,7 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -2431,7 +2431,7 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -2692,7 +2692,7 @@ exports[`DatePicker should render with default values if optional ones were not 
             </g>
             <defs>
               <clippath
-                id="be24f060112de157b63e626d37da1ab7__a"
+                id="587cf7e7e60119518989fab94b491801__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -2737,7 +2737,7 @@ exports[`DatePicker should render with default values if optional ones were not 
             </g>
             <defs>
               <clippath
-                id="9a0552813fdb1b997c98226bb2aebe8e__a"
+                id="da506f78c7763b3ebdb9d689d83c9420__a"
               >
                 <path
                   d="M0 0h9v22H0z"
@@ -2890,7 +2890,7 @@ exports[`DatePicker should render with default values if optional ones were not 
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -2967,7 +2967,7 @@ exports[`DatePicker should render with default values if optional ones were not 
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >

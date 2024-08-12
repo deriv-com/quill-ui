@@ -2,16 +2,21 @@ import React, {
     ChangeEvent,
     ComponentProps,
     forwardRef,
+    useContext,
     useEffect,
     useRef,
 } from "react";
 import Input, { InputProps } from "../base";
 import { useDropdown } from "@hooks/useDropdown";
 import clsx from "clsx";
-import { DropdownProvider } from "@providers/dropdown/dropdownProvider";
+import {
+    DropdownProvider,
+    TDropdownProvider,
+} from "@providers/dropdown/dropdownProvider";
 import "./custom-dropdown.scss";
 import useBreakpoints from "@hooks/useBreakpoints";
 import ActionSheet from "@components/ActionSheet";
+import { DropdownContext } from "@providers/dropdown/dropdownContext";
 
 export interface TCustomDropdown extends InputProps {
     isAutocomplete?: boolean;
@@ -20,6 +25,7 @@ export interface TCustomDropdown extends InputProps {
     actionSheetFooter?: ComponentProps<typeof ActionSheet.Footer>;
     fullHeightOnOpen?: boolean;
     headComponent?: React.ReactNode;
+    noActionSheet?: boolean;
 }
 
 const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
@@ -36,16 +42,26 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             actionSheetFooter,
             label,
             headComponent,
+            noActionSheet = false,
             ...rest
         },
         ref,
     ) => {
+        const context = useContext(DropdownContext);
+
+        if (!context) {
+            throw new Error(
+                "Custom dropdown must be used within a DropdownProvider",
+            );
+        }
+
         const inputRef = useRef<HTMLInputElement>(null);
         const containerRef = useRef<HTMLDivElement>(null);
+        const contentRef = useRef<HTMLDivElement>(null);
         const actionSheetRef = useRef<HTMLDivElement>(null);
 
         const { isOpen, open, close, selectedValue, setSelectedValue } =
-            useDropdown([containerRef, actionSheetRef]);
+            useDropdown([containerRef, actionSheetRef, contentRef]);
 
         const { isMobile } = useBreakpoints();
 
@@ -72,14 +88,18 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
 
         return (
             <div
-                ref={containerRef}
+                ref={ref}
                 className={clsx(
                     "quill-custom-dropdown__container",
                     `quill-custom-dropdown__is-open--${isOpen}`,
                     containerClassName,
                 )}
             >
-                <div ref={ref} onClick={handleInputClick}>
+                <div
+                    ref={containerRef}
+                    onClick={handleInputClick}
+                    className="quill-custom-dropdown__head"
+                >
                     {!headComponent ? (
                         <Input
                             dropdown
@@ -101,10 +121,13 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
                         headComponent
                     )}
                 </div>
-                <div className="quill-custom-dropdown__content--container">
-                    {!isMobile ? (
+                <div style={{ display: "flex" }}>
+                    {!isMobile || noActionSheet ? (
                         isOpen && (
-                            <div className="quill-custom-dropdown__content">
+                            <div
+                                className="quill-custom-dropdown__content"
+                                ref={contentRef}
+                            >
                                 {children}
                             </div>
                         )
@@ -132,14 +155,15 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
     },
 );
 
-export const CustomDropdown = forwardRef<HTMLDivElement, TCustomDropdown>(
-    ({ children, ...rest }, ref) => {
-        return (
-            <DropdownProvider>
-                <CustomDropdownContent ref={ref} {...rest}>
-                    {children}
-                </CustomDropdownContent>
-            </DropdownProvider>
-        );
-    },
-);
+export const CustomDropdown = forwardRef<
+    HTMLDivElement,
+    TCustomDropdown & TDropdownProvider
+>(({ children, onOpen, onClose, ...rest }, ref) => {
+    return (
+        <DropdownProvider onOpen={onOpen} onClose={onClose}>
+            <CustomDropdownContent ref={ref} {...rest}>
+                {children}
+            </CustomDropdownContent>
+        </DropdownProvider>
+    );
+});

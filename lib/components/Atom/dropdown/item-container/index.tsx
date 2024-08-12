@@ -12,7 +12,7 @@ export interface ItemContainerProps extends Omit<ComponentProps<"div">, "ref"> {
 
 export const ItemContainer = forwardRef<HTMLDivElement, ItemContainerProps>(
     (
-        { size = "md", height = "md", className, portalContainer, ...rest },
+        { size = "md", height = "sm", className, portalContainer, ...rest },
         ref,
     ) => {
         const content = (

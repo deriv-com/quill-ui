@@ -1,5 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { DropdownButton } from ".";
+import { LabelPairedBarsFilterMdRegularIcon } from "@deriv/quill-icons";
+
+const generateItems = (length: number, onClick?: boolean) =>
+    Array.from({ length }, (_, index) => ({
+        id: index + 1,
+        value: (index + 1).toString(),
+        label: `Sample Item ${index + 1}`,
+        onClick: () => onClick && alert(`Item ${index + 1}`),
+    }));
 
 const meta = {
     title: "Components/Button/Dropdown",
@@ -11,9 +20,20 @@ const meta = {
             },
         },
     },
+    decorators: [
+        (Story) => (
+            <div style={{ display: "flex" }}>
+                <Story />
+            </div>
+        ),
+    ],
     args: {
-        label: "Label",
         disabled: false,
+        closeContentOnClick: false,
+        checkbox: false,
+        onSelectionChange: (e) => {
+            console.log(e);
+        },
     },
     argTypes: {
         variant: {
@@ -65,30 +85,22 @@ type Story = StoryObj<typeof meta>;
 
 export const DropdownMenu: Story = {
     args: {
+        label: "Label",
         size: "md",
-        options: [
-            { value: "1", label: "Sample Item 1" },
-            {
-                value: "2",
-                label: "Sample Item 2",
-            },
-            { value: "3", label: "Sample Item 3" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-            { value: "4", label: "Sample Item 4" },
-        ],
+        options: generateItems(15, true),
+        onOpen: () => console.log("open"),
+        onClose: () => console.log("close"),
+    },
+};
+
+export const MenuIconButton: Story = {
+    args: {
+        size: "lg",
+        options: generateItems(15),
+        icon: <LabelPairedBarsFilterMdRegularIcon />,
+        checkbox: true,
+        contentTitle: "Title",
+        onOpen: () => console.log("open"),
+        onClose: () => console.log("close"),
     },
 };

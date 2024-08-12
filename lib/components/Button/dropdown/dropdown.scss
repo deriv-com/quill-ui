@@ -35,11 +35,12 @@
             background-color: var(--component-dropdownItem-bg-active);
         }
     }
-    &__transition {
-        &--enter {
-            transform-origin: top;
-            animation-timing-function: var(--core-motion-ease-400);
-            animation-duration: var(--core-motion-duration-200);
+
+    &__items-container {
+        position: relative;
+
+        &-component {
+            position: absolute;
         }
     }
 }

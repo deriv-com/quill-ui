@@ -75,7 +75,7 @@ exports[`NotificationItem should display correct content 1`] = `
             </g>
             <defs>
               <clippath
-                id="ca4746f18d0e0ddd1a72fa31c00c47c6__a"
+                id="ebb6eef1cacbbd7cd6c713ceea4cbb14__a"
               >
                 <path
                   d="M0 0h13v22H0z"
@@ -104,7 +104,7 @@ exports[`NotificationItem should display correct content 1`] = `
             </g>
             <defs>
               <clippath
-                id="640706f34b732e2135448448e6d0ada1__a"
+                id="e106cdc629defb9faca17b34459113d5__a"
               >
                 <path
                   d="M0 0h13v22H0z"
@@ -186,7 +186,7 @@ exports[`NotificationItem should display correct notification with a custom icon
             </g>
             <defs>
               <clippath
-                id="ca4746f18d0e0ddd1a72fa31c00c47c6__a"
+                id="ebb6eef1cacbbd7cd6c713ceea4cbb14__a"
               >
                 <path
                   d="M0 0h13v22H0z"
@@ -215,7 +215,7 @@ exports[`NotificationItem should display correct notification with a custom icon
             </g>
             <defs>
               <clippath
-                id="640706f34b732e2135448448e6d0ada1__a"
+                id="e106cdc629defb9faca17b34459113d5__a"
               >
                 <path
                   d="M0 0h13v22H0z"
@@ -305,7 +305,7 @@ exports[`NotificationItem should render correctly for mobile 1`] = `
             </g>
             <defs>
               <clippath
-                id="ca4746f18d0e0ddd1a72fa31c00c47c6__a"
+                id="ebb6eef1cacbbd7cd6c713ceea4cbb14__a"
               >
                 <path
                   d="M0 0h13v22H0z"
@@ -334,7 +334,7 @@ exports[`NotificationItem should render correctly for mobile 1`] = `
             </g>
             <defs>
               <clippath
-                id="640706f34b732e2135448448e6d0ada1__a"
+                id="e106cdc629defb9faca17b34459113d5__a"
               >
                 <path
                   d="M0 0h13v22H0z"
@@ -424,7 +424,7 @@ exports[`NotificationItem should render notification correctly based on the noti
             </g>
             <defs>
               <clippath
-                id="ca4746f18d0e0ddd1a72fa31c00c47c6__a"
+                id="ebb6eef1cacbbd7cd6c713ceea4cbb14__a"
               >
                 <path
                   d="M0 0h13v22H0z"
@@ -453,7 +453,7 @@ exports[`NotificationItem should render notification correctly based on the noti
             </g>
             <defs>
               <clippath
-                id="640706f34b732e2135448448e6d0ada1__a"
+                id="e106cdc629defb9faca17b34459113d5__a"
               >
                 <path
                   d="M0 0h13v22H0z"
@@ -540,7 +540,7 @@ exports[`NotificationItem should render notification correctly when status is 'r
             </g>
             <defs>
               <clippath
-                id="640706f34b732e2135448448e6d0ada1__a"
+                id="e106cdc629defb9faca17b34459113d5__a"
               >
                 <path
                   d="M0 0h13v22H0z"

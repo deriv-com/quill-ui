@@ -6,8 +6,8 @@
     }
 
     &__container {
-        position: relative;
-        max-width: 360px;
+        // display: flex;
+        // flex-grow: 1;
     }
 
     &__input {
@@ -17,12 +17,13 @@
         }
     }
 
+    &__head {
+        display: flex;
+    }
+
     &__content {
         position: absolute;
+        z-index: 100;
         width: 100%;
-
-        &--container {
-            position: relative;
-        }
     }
 }
