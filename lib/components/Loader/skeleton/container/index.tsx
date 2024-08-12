@@ -17,7 +17,7 @@ export interface SkeletonContainerProps {
 
 const Container = ({
     className,
-    direction = "column",
+    direction = "row",
     gap = 10,
     style,
     children,
