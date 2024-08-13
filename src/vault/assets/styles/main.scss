@@ -90,15 +90,17 @@ body,
                 background-color: transparent;
                 border-radius: var(--core-borderRadius-500);
             }
+
             &::-webkit-scrollbar-track {
                 scrollbar-width: thin;
                 background-color: transparent !important;
             }
+
             // &:hover {
             //     scrollbar-width: thin;
             //     scrollbar-color: rgba(0, 0, 0, 0.08) transparent;
             //     border-radius: var(--core-borderRadius-500);
-        
+
             //     &::-webkit-scrollbar-thumb {
             //         scrollbar-width: thin;
             //         display: unset;
@@ -110,7 +112,76 @@ body,
     }
 
     &-content {
+        width: 100%;
+        height: calc(100dvh - 85px);
         display: flex;
         flex-direction: column;
+        padding: var(--core-spacing-800);
+        gap: var(--core-size-600);
+        overflow: auto;
+
+        .demo-box {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            background: var(--core-color-opacity-white-600);
+
+            .margin-controller {
+                background-color: var(--core-color-opacity-white-200);
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: 1px dotted var(--core-color);
+                z-index: 8;
+            }
+
+            .padding-controller {
+                position: relative;
+                display: flex;
+                width: 100%;
+                height: 100px;
+                background-color: var(--core-color-opacity-yellow-200);
+                border: solid 1px var(--core-color-solid-slate-600);
+                border-radius: var(--core-borderRadius-100);
+                padding: 5px;
+                justify-content: center;
+                align-items: center;
+                z-index: 9;
+            }
+        }
+
+        .code-container {
+            background-color: var(--semantic-color-slate-solid-surface-frame-low);
+            display: flex;
+            width: 100%;
+            max-width: 500px;
+            padding: var(--core-size-600);
+            border-radius: var(--core-borderRadius-400);
+            height: fit-content;
+            min-height: 50px;
+
+            .code-body {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                padding: var(--core-size-600);
+                background-color: var(--core-color-opacity-yellow-100);
+                gap: var(--core-size-100);
+
+                .code-item {
+                    font-size: 14px;
+                    font-family: 'Courier New', Courier, monospace;
+
+                    &.comment {
+                        color: gray;
+                        font-size: 13px;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
     }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ThemeProvider } from "../lib/main";
+import { ThemeProvider } from "../../../lib/main";
 
 type ThemeRendererPros = {
     children: React.ReactNode;

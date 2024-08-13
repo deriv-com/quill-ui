@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import ThemeRenderer from "./theme-renderer";
+import ThemeRenderer from "./vault/layout/theme-renderer";
 import BreakpointProvider from "@providers/breakpoint/breakpointProvider";
 import Vault from "./vault";
+import "./vault/assets/styles/main.scss";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>

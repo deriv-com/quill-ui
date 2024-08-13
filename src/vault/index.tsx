@@ -1,38 +1,50 @@
 import React, { useEffect, useState } from "react";
-import {
-    Button,
-    Divider,
-    DropdownItem,
-    InputDropdown,
-    Skeleton,
-    Tab,
-    Text,
-} from "../../lib/main";
-import "./style.scss";
-import Logo from "./logo.svg";
+import { Button, Divider, DropdownItem, Skeleton, Tab } from "../../lib/main";
 import {
     StandaloneGlobeRegularIcon,
     StandaloneGrid2BoldIcon,
 } from "@deriv/quill-icons/Standalone";
 
-import { cleanAndConvertCamelCase, loadVersionData, TypeData } from "../utils";
-import tokenVersions from "../../scripts/token-data/versions.json";
+import {
+    cleanAndConvertCamelCase,
+    loadVersionData,
+    toCamelCase,
+    TypeData,
+} from "../utils";
+import BoxModelDemo from "./components/box-model-demo";
+import VaultHeader from "./layout/header";
+
+type currentTokenData = { core: string[]; semantic: string[] };
+
+const filterKeys = (
+    obj: Record<string, unknown>,
+    searchString: string,
+): currentTokenData => {
+    const core: string[] = [];
+    const semantic: string[] = [];
+
+    Object.keys(obj).forEach((key) => {
+        if (key.includes(searchString)) {
+            core.push(key);
+            if (key.includes("semantic")) {
+                semantic.push(key);
+            }
+        }
+    });
+
+    return { core, semantic };
+};
 
 const Vault = () => {
-    const [versions, setVersions] = useState<string[]>([]);
     const [variables, setVariables] = useState({});
     const [categories, setCategories] = useState([]);
     const [currentVersion, setCurrentVersion] = useState("");
     const [data, setData] = useState<TypeData | null>(null);
     const [selectedCategory, setSelectedCategory] = useState(0);
     const [selectedCategoryStyle, setSelectedCategoryStyle] = useState("");
-
-    useEffect(() => {
-        if (tokenVersions.length) {
-            setCurrentVersion(tokenVersions[0]);
-            setVersions(tokenVersions);
-        }
-    }, [tokenVersions]);
+    const [currentTokens, setCurrentTokens] = useState<currentTokenData | null>(
+        null,
+    );
 
     useEffect(() => {
         async function fetchData() {
@@ -72,36 +84,18 @@ const Vault = () => {
         }
     }, [selectedCategory, data]);
 
+    useEffect(() => {
+        console.log({ selectedCategoryStyle, variables });
+
+        const styleType = toCamelCase(selectedCategoryStyle);
+
+        setCurrentTokens(filterKeys(variables, styleType));
+    }, [selectedCategoryStyle]);
+
     return (
         <section className="vault-section">
             <div className="vault-container">
-                <div className="vault-header">
-                    <div className="brand">
-                        <span className="logo">
-                            <img src={Logo} alt="Quill Tokens" />
-                        </span>
-                        <div className="version-box">
-                            <Text className="app-name" size="sm" bold>
-                                Quill Tokens
-                            </Text>
-                            {versions.length > 0 && (
-                                <InputDropdown
-                                    label="Version"
-                                    onSelectOption={(e) => setCurrentVersion(e)}
-                                    inputSize="sm"
-                                    variant="fill"
-                                    options={versions.map((v) => ({
-                                        text: v,
-                                        value: v,
-                                    }))}
-                                    placeholder="Select"
-                                    status="neutral"
-                                    value={currentVersion}
-                                />
-                            )}
-                        </div>
-                    </div>
-                </div>
+                <VaultHeader onVersionChange={(e) => setCurrentVersion(e)} />
                 <div className="vault-body">
                     <div className="vault-sidebar">
                         <Tab.Container
@@ -200,7 +194,22 @@ const Vault = () => {
                                 />
                             </Skeleton.Container>
                         ) : (
-                            <></>
+                            <>
+                                <BoxModelDemo />
+                                <div className="code-container">
+                                    <div className="code-body">
+                                        <span className="code-item comment">
+                                            /* Core {selectedCategoryStyle}{" "}
+                                            Tokens */
+                                        </span>
+                                        {currentTokens?.core.map((token) => (
+                                            <span className="code-item">
+                                                {token}: {variables[token]}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </>
                         )}
                     </div>
                 </div>
