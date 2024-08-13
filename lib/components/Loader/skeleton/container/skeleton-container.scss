@@ -4,11 +4,11 @@
     height: 100%;
 
     &__direction {
-        &--row {
+        &--column {
             flex-direction: column;
         }
 
-        &--column {
+        &--row {
             flex-direction: row;
             align-items: center;
         }
