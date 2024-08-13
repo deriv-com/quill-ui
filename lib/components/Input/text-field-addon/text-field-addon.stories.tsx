@@ -31,6 +31,8 @@ const meta = {
         fieldMarker: false,
         required: false,
         show_counter: false,
+        fillAddonBorderColor:
+            "var(--semantic-color-slate-solid-surface-frame-mid)"
     },
     argTypes: {
         inputSize: {
@@ -110,8 +112,6 @@ export const LabelledFill: Story = {
         placeholder: "Placeholder",
         variant: "fill",
         message: message,
-        fillAddonBorderColor:
-            "var(--semantic-color-slate-solid-surface-frame-mid)",
     },
 };
 export const LabelledlessOutline: Story = {
@@ -125,7 +125,5 @@ export const LabelledlessFill: Story = {
         placeholder: "Placeholder",
         variant: "fill",
         message: message,
-        fillAddonBorderColor:
-            "var(--semantic-color-slate-solid-surface-frame-mid)",
     },
 };
