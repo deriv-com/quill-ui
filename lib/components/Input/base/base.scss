@@ -225,6 +225,9 @@
             }
 
             &--fill {
+                border-right: var(--component-field-border-width) solid transparent;
+                border-left: var(--component-field-border-width) solid transparent;
+
                 &:has(input:disabled) {
                     background-color: var(--component-field-bg-fill-default);
                 }
