@@ -144,6 +144,10 @@
                     --semantic-color-monochrome-surface-normal-low
                 );
             }
+            &:disabled {
+                background-color: unset;
+                color: var(--component-dropdownItem-label-color-disabled);
+            }
 
             &--range {
                 border-radius: unset;
