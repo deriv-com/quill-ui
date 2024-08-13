@@ -1,13 +1,7 @@
 .quill-custom-dropdown {
-    &__is-open {
-        &--true {
-            z-index: 100;
-        }
-    }
-
     &__container {
-        // display: flex;
-        // flex-grow: 1;
+        position: relative;
+        display: inline-block;
     }
 
     &__input {
@@ -17,13 +11,22 @@
         }
     }
 
-    &__head {
-        display: flex;
-    }
-
     &__content {
         position: absolute;
+        top: 100%;
         z-index: 100;
-        width: 100%;
+        min-width: 360px;
+
+        &-align {
+            &--left {
+                left: 0;
+                right: auto;
+            }
+
+            &--right {
+                right: 0;
+                left: auto;
+            }
+        }
     }
 }

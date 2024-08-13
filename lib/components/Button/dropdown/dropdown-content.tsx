@@ -1,11 +1,11 @@
 import {
     DropdownItem,
+    DropdownItemProps,
     DropdownTitle,
     ItemContainer,
     ItemContainerProps,
 } from "@components/Atom";
 import { useDropdown } from "@hooks/useDropdown";
-import clsx from "clsx";
 import { ButtonDropdownProps } from ".";
 import useBreakpoints from "@hooks/useBreakpoints";
 
@@ -19,15 +19,16 @@ const DropdownContent = ({
     checkbox,
     onItemClick,
     ...rest
-}: ButtonDropdownProps & ItemContainerProps) => {
+}: ButtonDropdownProps & ItemContainerProps & DropdownItemProps) => {
     const { close } = useDropdown();
     const { isMobile } = useBreakpoints();
 
     const Content = () => (
         <>
-            {label && <DropdownTitle label={label} size={size} />}
+            {!isMobile && label && <DropdownTitle label={label} size={size} />}
             {options.map((item) => {
-                const { id, selected, onClick, ...itemProps } = item;
+                const { id, selected, icon, onClick, ...itemProps } = item;
+
                 return (
                     <DropdownItem
                         size={size}
@@ -42,6 +43,7 @@ const DropdownContent = ({
                         as="button"
                         selected={checkbox && selected}
                         checkbox={checkbox}
+                        rightIcon={icon}
                         {...rest}
                         {...itemProps}
                     />
@@ -51,14 +53,11 @@ const DropdownContent = ({
     );
 
     return (
-        <div className="quill__dropdown-button__items-container">
+        <>
             {!isMobile ? (
                 <ItemContainer
                     size={size}
-                    className={clsx(
-                        "quill__dropdown-button__items-container-component",
-                        className,
-                    )}
+                    className={className}
                     height={height}
                 >
                     <Content />
@@ -66,7 +65,7 @@ const DropdownContent = ({
             ) : (
                 <Content />
             )}
-        </div>
+        </>
     );
 };
 

@@ -5,22 +5,29 @@ exports[`DropdownItem component renders checkbox selected when provided 1`] = `
   <li
     class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-left quill-dropdown-item-checkbox__selected--true__disabled--false"
   >
-    <svg
-      height="24"
-      role="img"
-      viewBox="0 0 32 32"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      class="quill-dropdown-item__icon"
     >
-      <path
-        d="M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5m10.664 6.914h-.039c.39-.351.39-.937 0-1.328a.92.92 0 0 0-1.29 0L14.75 17.71l-1.836-1.836c-.39-.39-.976-.39-1.328 0a.856.856 0 0 0 0 1.29l2.5 2.5c.351.39.937.39 1.328 0z"
-      />
-    </svg>
+      <svg
+        height="24"
+        role="img"
+        viewBox="0 0 32 32"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5m10.664 6.914h-.039c.39-.351.39-.937 0-1.328a.92.92 0 0 0-1.29 0L14.75 17.71l-1.836-1.836c-.39-.39-.976-.39-1.328 0a.856.856 0 0 0 0 1.29l2.5 2.5c.351.39.937.39 1.328 0z"
+        />
+      </svg>
+    </div>
     <p
       class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
     >
       Test Label
     </p>
+    <div
+      class="quill-dropdown-item__icon"
+    />
   </li>
 </div>
 `;
@@ -30,22 +37,29 @@ exports[`DropdownItem component renders checkbox when provided 1`] = `
   <li
     class="quill-dropdown-item quill-dropdown-item__size--md quill-dropdown-item__align-left quill-dropdown-item-checkbox__selected--false__disabled--false"
   >
-    <svg
-      height="24"
-      role="img"
-      viewBox="0 0 32 32"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      class="quill-dropdown-item__icon"
     >
-      <path
-        d="M22.25 9H9.75c-.703 0-1.25.586-1.25 1.25v12.5c0 .703.547 1.25 1.25 1.25h12.5c.664 0 1.25-.547 1.25-1.25v-12.5c0-.664-.586-1.25-1.25-1.25M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5"
-      />
-    </svg>
+      <svg
+        height="24"
+        role="img"
+        viewBox="0 0 32 32"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22.25 9H9.75c-.703 0-1.25.586-1.25 1.25v12.5c0 .703.547 1.25 1.25 1.25h12.5c.664 0 1.25-.547 1.25-1.25v-12.5c0-.664-.586-1.25-1.25-1.25M9.75 7.75h12.5c1.367 0 2.5 1.133 2.5 2.5v12.5c0 1.406-1.133 2.5-2.5 2.5H9.75a2.47 2.47 0 0 1-2.5-2.5v-12.5c0-1.367 1.094-2.5 2.5-2.5"
+        />
+      </svg>
+    </div>
     <p
       class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-dropdown-item-label"
     >
       Test Label
     </p>
+    <div
+      class="quill-dropdown-item__icon"
+    />
   </li>
 </div>
 `;

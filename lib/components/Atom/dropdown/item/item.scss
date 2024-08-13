@@ -6,6 +6,15 @@
     border-radius: var(--component-dropdownItem-border-radius);
     background-color: transparent;
     border: none;
+    position: relative;
+
+    &__icon {
+        width: var(--core-size-1200);
+        height: var(--core-size-1200);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     &-label {
         flex-grow: 1;

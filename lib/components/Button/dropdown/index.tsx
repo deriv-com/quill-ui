@@ -5,7 +5,7 @@ import {
     TRegularSizes,
     TRegularSizesWithExtraLarge,
 } from "@types";
-import { CustomDropdown } from "@components/Input";
+import { CustomDropdown, TCustomDropdown } from "@components/Input";
 import "./dropdown.scss";
 import DropdownContent from "./dropdown-content";
 import HeadComponent from "./dropdown-head";
@@ -15,6 +15,7 @@ export interface TSingleSelectItem
     id: number | string;
     label: string | React.ReactNode;
     selected?: boolean;
+    icon?: React.ReactNode;
 }
 
 export interface ButtonDropdownProps extends ButtonProps {
@@ -29,6 +30,9 @@ export interface ButtonDropdownProps extends ButtonProps {
     onItemClick?: (id: TSingleSelectItem["id"]) => void;
     onOpen?: () => void;
     onClose?: () => void;
+    contentAlign?: TCustomDropdown["contentAlign"];
+    actionSheetFooter?: TCustomDropdown["actionSheetFooter"];
+    contentCenter?: boolean;
 }
 
 const itemSize: Record<TRegularSizesWithExtraLarge, TMediumSizes> = {
@@ -50,10 +54,13 @@ export const DropdownButton = forwardRef<
             contentTitle,
             contentHeight = "sm",
             contentClass,
+            actionSheetFooter,
             size = "md",
             onSelectionChange,
             onOpen,
+            contentAlign,
             onClose,
+            contentCenter = false,
             ...rest
         },
         ref,
@@ -86,19 +93,21 @@ export const DropdownButton = forwardRef<
                 }
                 onOpen={onOpen}
                 onClose={onClose}
+                contentAlign={contentAlign}
+                actionSheetFooter={actionSheetFooter}
+                label={contentTitle}
             >
-                <div className="quill__dropdown-button">
-                    <DropdownContent
-                        checkbox={checkbox}
-                        closeContentOnClick={closeContentOnClick}
-                        label={contentTitle}
-                        height={contentHeight}
-                        size={itemSize[size]}
-                        className={contentClass}
-                        onItemClick={handleItemSelect}
-                        options={items}
-                    />
-                </div>
+                <DropdownContent
+                    checkbox={checkbox}
+                    closeContentOnClick={closeContentOnClick}
+                    label={contentTitle}
+                    height={contentHeight}
+                    size={itemSize[size]}
+                    className={contentClass}
+                    onItemClick={handleItemSelect}
+                    options={items}
+                    centered={contentCenter}
+                />
             </CustomDropdown>
         );
     },

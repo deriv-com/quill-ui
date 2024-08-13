@@ -2,7 +2,13 @@ import React from "react";
 
 import { Fragment, forwardRef } from "react";
 import { useState } from "react";
-import { Listbox, Transition } from "@headlessui/react";
+import {
+    Listbox,
+    ListboxButton,
+    ListboxOption,
+    ListboxOptions,
+    Transition,
+} from "@headlessui/react";
 import { Chip } from "../base";
 import type { TSingleSelectItem, SingleSelectChipProps } from "../types";
 import clsx from "clsx";
@@ -23,7 +29,7 @@ const Option = ({ item, size }: OptionsProps) => {
     };
 
     return (
-        <Listbox.Option value={item} as={Fragment} disabled={item.disabled}>
+        <ListboxOption value={item} as={Fragment} disabled={item.disabled}>
             {({ disabled, selected }) => (
                 <DropdownItem
                     label={item.label}
@@ -32,7 +38,7 @@ const Option = ({ item, size }: OptionsProps) => {
                     size={itemSize[size]}
                 />
             )}
-        </Listbox.Option>
+        </ListboxOption>
     );
 };
 
@@ -70,7 +76,7 @@ export const DropdownChipSingleSelect = forwardRef<
             >
                 {({ open }) => (
                     <>
-                        <Listbox.Button as="div">
+                        <ListboxButton as="div">
                             <Chip
                                 {...rest}
                                 icon={icon}
@@ -86,7 +92,7 @@ export const DropdownChipSingleSelect = forwardRef<
                                 disabled={disabled}
                                 label={selectedItem?.label}
                             />
-                        </Listbox.Button>
+                        </ListboxButton>
                         <Transition
                             enter="enter"
                             enterFrom="enter-from"
@@ -95,7 +101,7 @@ export const DropdownChipSingleSelect = forwardRef<
                             leaveFrom="enter-from"
                             leaveTo="leave-to"
                         >
-                            <Listbox.Options
+                            <ListboxOptions
                                 className={clsx(
                                     "dropdown",
                                     `dropdown__size--${size}`,
@@ -110,7 +116,7 @@ export const DropdownChipSingleSelect = forwardRef<
                                         size={size}
                                     />
                                 ))}
-                            </Listbox.Options>
+                            </ListboxOptions>
                         </Transition>
                     </>
                 )}

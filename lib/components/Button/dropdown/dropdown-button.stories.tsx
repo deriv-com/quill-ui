@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { DropdownButton } from ".";
-import { LabelPairedBarsFilterMdRegularIcon } from "@deriv/quill-icons";
+import {
+    LabelPairedBarsFilterMdRegularIcon,
+    LabelPairedPlaceholderCaptionBoldIcon,
+} from "@deriv/quill-icons";
 
 const generateItems = (length: number, onClick?: boolean) =>
     Array.from({ length }, (_, index) => ({
@@ -9,6 +12,11 @@ const generateItems = (length: number, onClick?: boolean) =>
         label: `Sample Item ${index + 1}`,
         onClick: () => onClick && alert(`Item ${index + 1}`),
     }));
+
+const icons: Record<string, object | null> = {
+    with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
+    none: null,
+};
 
 const meta = {
     title: "Components/Button/Dropdown",
@@ -22,7 +30,13 @@ const meta = {
     },
     decorators: [
         (Story) => (
-            <div style={{ display: "flex" }}>
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+            >
                 <Story />
             </div>
         ),
@@ -34,10 +48,35 @@ const meta = {
         onSelectionChange: (e) => {
             console.log(e);
         },
+        iconPosition: "start",
+        contentHeight: "sm",
+        contentTitle: "",
+        contentCenter: false,
     },
     argTypes: {
         variant: {
             options: ["primary", "secondary", "tertiary"],
+            control: { type: "radio" },
+        },
+        icon: {
+            description:
+                "This props allowed you to pass in icon into the button",
+            options: Object.keys(icons),
+            mapping: icons,
+            control: {
+                type: "radio",
+            },
+        },
+        iconPosition: {
+            options: ["start", "end"],
+            control: { type: "radio" },
+        },
+        contentAlign: {
+            options: ["left", "right"],
+            control: { type: "radio" },
+        },
+        contentHeight: {
+            options: ["lg", "md", "sm"],
             control: { type: "radio" },
         },
         "aria-label": {
@@ -49,7 +88,6 @@ const meta = {
             options: ["true", "false"],
             control: { type: "boolean" },
         },
-
         size: {
             options: ["sm", "md", "lg", "xl"],
             control: { type: "radio" },
