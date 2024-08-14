@@ -43,8 +43,6 @@ export const DropdownItem = React.forwardRef<HTMLElement, DropdownItemProps>(
         }: DropdownItemProps,
         ref,
     ) => {
-        const icon = checkbox || leftIcon || rightIcon;
-
         return React.createElement(
             as,
             {
@@ -60,7 +58,7 @@ export const DropdownItem = React.forwardRef<HTMLElement, DropdownItemProps>(
                 ),
                 ...rest,
             },
-            icon && (
+            (checkbox || centered || leftIcon) && (
                 <div className="quill-dropdown-item__icon">
                     {checkbox ? (
                         selected ? (
@@ -84,7 +82,7 @@ export const DropdownItem = React.forwardRef<HTMLElement, DropdownItemProps>(
             >
                 {label}
             </Text>,
-            icon && (
+            (centered || rightIcon) && (
                 <div className="quill-dropdown-item__icon">{rightIcon}</div>
             ),
         );

@@ -25,9 +25,6 @@ exports[`DropdownItem component renders checkbox selected when provided 1`] = `
     >
       Test Label
     </p>
-    <div
-      class="quill-dropdown-item__icon"
-    />
   </li>
 </div>
 `;
@@ -57,9 +54,6 @@ exports[`DropdownItem component renders checkbox when provided 1`] = `
     >
       Test Label
     </p>
-    <div
-      class="quill-dropdown-item__icon"
-    />
   </li>
 </div>
 `;

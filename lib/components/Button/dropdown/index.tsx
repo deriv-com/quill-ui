@@ -15,7 +15,8 @@ export interface TSingleSelectItem
     id: number | string;
     label: string | React.ReactNode;
     selected?: boolean;
-    icon?: React.ReactNode;
+    leftIcon?: React.ReactNode;
+    rightIcon?: React.ReactNode;
 }
 
 export interface ButtonDropdownProps extends ButtonProps {
@@ -96,6 +97,7 @@ export const DropdownButton = forwardRef<
                 contentAlign={contentAlign}
                 actionSheetFooter={actionSheetFooter}
                 label={contentTitle}
+                fullHeightOnOpen={false}
             >
                 <DropdownContent
                     checkbox={checkbox}

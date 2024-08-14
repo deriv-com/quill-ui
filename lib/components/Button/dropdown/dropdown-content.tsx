@@ -27,7 +27,7 @@ const DropdownContent = ({
         <>
             {!isMobile && label && <DropdownTitle label={label} size={size} />}
             {options.map((item) => {
-                const { id, selected, icon, onClick, ...itemProps } = item;
+                const { id, selected, onClick, ...itemProps } = item;
 
                 return (
                     <DropdownItem
@@ -43,7 +43,6 @@ const DropdownContent = ({
                         as="button"
                         selected={checkbox && selected}
                         checkbox={checkbox}
-                        rightIcon={icon}
                         {...rest}
                         {...itemProps}
                     />
