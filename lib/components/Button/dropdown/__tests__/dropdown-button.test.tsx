@@ -1,14 +1,12 @@
-import { act, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import DropdownButton from "../index";
 
-const mockOptions = [
-    { value: "1", label: "Sample Item 1" },
-    { value: "2", label: "Sample Item 2" },
-    { value: "3", label: "Sample Item 3" },
-    { value: "4", label: "Sample Item 4" },
-    { value: "5", label: "Sample Item 5" },
-];
+const generateItems = (length: number) =>
+    Array.from({ length }, (_, index) => ({
+        id: index + 1,
+        value: (index + 1).toString(),
+        label: `Sample Item ${index + 1}`,
+    }));
 
 describe("DropdownButton component", () => {
     let onSelectionChange = jest.fn();
@@ -20,11 +18,11 @@ describe("DropdownButton component", () => {
             <DropdownButton
                 size="md"
                 onSelectionChange={onSelectionChange}
-                options={mockOptions}
-                defaultOption={mockOptions[0]}
+                options={generateItems(4)}
+                label="label"
             />,
         );
-        const label = screen.getByText("Sample Item 1");
+        const label = screen.getByText("label");
         expect(label).toBeInTheDocument();
     });
 
@@ -32,17 +30,17 @@ describe("DropdownButton component", () => {
         render(
             <DropdownButton
                 onSelectionChange={null as unknown as typeof onSelectionChange}
-                options={mockOptions}
-                defaultOption={mockOptions[0]}
+                options={generateItems(4)}
+                label="label"
             />,
         );
-        const label = screen.getByText("Sample Item 1");
-        await act(async () => {
-            await userEvent.click(label);
+        const label = screen.getByText("label");
+        act(() => {
+            fireEvent.click(label);
         });
         const item = screen.getByText("Sample Item 3");
-        await act(async () => {
-            await userEvent.click(item);
+        act(() => {
+            fireEvent.click(item);
         });
         expect(onSelectionChange).not.toHaveBeenCalled();
     });
@@ -51,17 +49,19 @@ describe("DropdownButton component", () => {
         render(
             <DropdownButton
                 onSelectionChange={onSelectionChange}
-                options={mockOptions}
-                defaultOption={mockOptions[0]}
+                options={generateItems(4)}
+                label="label"
+                checkbox
             />,
         );
-        const label = screen.getByText("Sample Item 1");
-        await act(async () => {
-            await userEvent.click(label);
+        const label = screen.getByText("label");
+
+        act(() => {
+            fireEvent.click(label);
         });
         const item = screen.getByText("Sample Item 3");
-        await act(async () => {
-            await userEvent.click(item);
+        act(() => {
+            fireEvent.click(item);
         });
         expect(onSelectionChange).toHaveBeenCalled();
     });

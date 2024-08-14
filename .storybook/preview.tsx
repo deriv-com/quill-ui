@@ -1,7 +1,9 @@
 import type { Preview } from "@storybook/react";
 import { withThemeByClassName } from "@storybook/addon-themes";
+import { BreakpointProvider } from "../lib/providers/breakpoint/breakpointProvider";
 import "./styles.scss";
 import "@styles/static.scss";
+import React from "react";
 
 const preview: Preview = {
     tags: ["autodocs"],
@@ -16,6 +18,11 @@ const preview: Preview = {
         },
     },
     decorators: [
+        (Story) => (
+            <BreakpointProvider>
+                <Story />
+            </BreakpointProvider>
+        ),
         withThemeByClassName({
             themes: {
                 light: "light",

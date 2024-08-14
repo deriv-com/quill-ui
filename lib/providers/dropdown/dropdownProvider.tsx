@@ -3,16 +3,30 @@ import { DropdownContextValue, DropdownContext } from "./dropdownContext";
 
 export interface TDropdownProvider {
     children: ReactNode;
+    onOpen?: () => void;
+    onClose?: () => void;
 }
 
-export const DropdownProvider = ({ children }: TDropdownProvider) => {
+export const DropdownProvider = ({
+    children,
+    onOpen,
+    onClose,
+}: TDropdownProvider) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedValue, setSelectedValue] = useState<string | number>();
 
     const contextValue: DropdownContextValue = {
         isOpen,
-        open: useCallback(() => setIsOpen(true), []),
-        close: useCallback(() => setIsOpen(false), []),
+        open: () => {
+            if (isOpen) return;
+            setIsOpen(true);
+            onOpen?.();
+        },
+        close: () => {
+            if (!isOpen) return;
+            setIsOpen(false);
+            onClose?.();
+        },
         selectedValue,
         setSelectedValue: useCallback((value) => setSelectedValue(value), []),
     };

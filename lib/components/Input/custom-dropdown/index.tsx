@@ -2,23 +2,34 @@ import React, {
     ChangeEvent,
     ComponentProps,
     forwardRef,
+    useContext,
     useEffect,
     useRef,
 } from "react";
 import Input, { InputProps } from "../base";
 import { useDropdown } from "@hooks/useDropdown";
 import clsx from "clsx";
-import { DropdownProvider } from "@providers/dropdown/dropdownProvider";
+import {
+    DropdownProvider,
+    TDropdownProvider,
+} from "@providers/dropdown/dropdownProvider";
 import "./custom-dropdown.scss";
 import useBreakpoints from "@hooks/useBreakpoints";
 import ActionSheet from "@components/ActionSheet";
+import { DropdownContext } from "@providers/dropdown/dropdownContext";
 
-export interface TCustomDropdown extends InputProps {
+export interface TCustomDropdown
+    extends InputProps,
+        Omit<TDropdownProvider, "children"> {
     isAutocomplete?: boolean;
     onClickDropdown?: (e: React.MouseEvent<HTMLDivElement>) => void;
     containerClassName?: string;
+    contentClassName?: string;
     actionSheetFooter?: ComponentProps<typeof ActionSheet.Footer>;
     fullHeightOnOpen?: boolean;
+    headComponent?: React.ReactNode;
+    noActionSheet?: boolean;
+    contentAlign?: "left" | "right";
 }
 
 const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
@@ -32,18 +43,31 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             fullHeightOnOpen = true,
             onChange,
             containerClassName,
+            contentClassName,
             actionSheetFooter,
             label,
+            headComponent,
+            noActionSheet = false,
+            contentAlign = "left",
             ...rest
         },
         ref,
     ) => {
+        const context = useContext(DropdownContext);
+
+        if (!context) {
+            throw new Error(
+                "Custom dropdown must be used within a DropdownProvider",
+            );
+        }
+
         const inputRef = useRef<HTMLInputElement>(null);
         const containerRef = useRef<HTMLDivElement>(null);
         const actionSheetRef = useRef<HTMLDivElement>(null);
+        const contentRef = useRef<HTMLDivElement>(null);
 
         const { isOpen, open, close, selectedValue, setSelectedValue } =
-            useDropdown([containerRef, actionSheetRef]);
+            useDropdown([containerRef, actionSheetRef, contentRef]);
 
         const { isMobile } = useBreakpoints();
 
@@ -70,66 +94,75 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
 
         return (
             <div
-                ref={containerRef}
+                ref={ref}
                 className={clsx(
                     "quill-custom-dropdown__container",
-                    `quill-custom-dropdown__is-open--${isOpen}`,
                     containerClassName,
                 )}
             >
-                <div ref={ref} onClick={handleInputClick}>
-                    <Input
-                        dropdown
-                        ref={inputRef}
-                        isDropdownOpen={isOpen}
-                        readOnly={!isAutocomplete}
-                        value={selectedValue}
-                        className={clsx(
-                            "quill-custom-dropdown__input",
-                            `quill-custom-dropdown__input--hasValue--${!!selectedValue}`,
-                            className,
-                        )}
-                        onChange={handleOnChange}
-                        type="select"
-                        label={label}
-                        {...rest}
-                    />
-                </div>
-                <div className="quill-custom-dropdown__content--container">
-                    {!isMobile ? (
-                        isOpen && (
-                            <div className="quill-custom-dropdown__content">
-                                {children}
-                            </div>
-                        )
+                <div
+                    ref={containerRef}
+                    onClick={handleInputClick}
+                    className="quill-custom-dropdown__head"
+                >
+                    {!headComponent ? (
+                        <Input
+                            dropdown
+                            ref={inputRef}
+                            isDropdownOpen={isOpen}
+                            readOnly={!isAutocomplete}
+                            value={selectedValue}
+                            className={clsx(
+                                "quill-custom-dropdown__input",
+                                `quill-custom-dropdown__input--hasValue--${!!selectedValue}`,
+                                className,
+                            )}
+                            onChange={handleOnChange}
+                            type="select"
+                            label={label}
+                            {...rest}
+                        />
                     ) : (
-                        <ActionSheet.Root
-                            isOpen={isOpen}
-                            onClose={() => close()}
-                        >
-                            <ActionSheet.Portal
-                                shouldCloseOnDrag={true}
-                                fullHeightOnOpen={fullHeightOnOpen}
-                                ref={actionSheetRef}
-                            >
-                                {label && <ActionSheet.Header title={label} />}
-                                <ActionSheet.Content>
-                                    {children}
-                                </ActionSheet.Content>
-                                <ActionSheet.Footer {...actionSheetFooter} />
-                            </ActionSheet.Portal>
-                        </ActionSheet.Root>
+                        headComponent
                     )}
                 </div>
+                {!isMobile || noActionSheet ? (
+                    isOpen && (
+                        <div
+                            className={clsx(
+                                "quill-custom-dropdown__content",
+                                `quill-custom-dropdown__content-align--${contentAlign}`,
+                                contentClassName,
+                            )}
+                            ref={contentRef}
+                        >
+                            {children}
+                        </div>
+                    )
+                ) : (
+                    <ActionSheet.Root isOpen={isOpen} onClose={() => close()}>
+                        <ActionSheet.Portal
+                            shouldCloseOnDrag={true}
+                            fullHeightOnOpen={fullHeightOnOpen}
+                            ref={actionSheetRef}
+                        >
+                            {label && <ActionSheet.Header title={label} />}
+                            <ActionSheet.Content>
+                                {children}
+                            </ActionSheet.Content>
+                            <ActionSheet.Footer {...actionSheetFooter} />
+                        </ActionSheet.Portal>
+                    </ActionSheet.Root>
+                )}
             </div>
         );
     },
 );
 
 export const CustomDropdown = forwardRef<HTMLDivElement, TCustomDropdown>(
-    ({ children, ...rest }, ref) => {
+    ({ children, onOpen, onClose, ...rest }, ref) => {
         return (
-            <DropdownProvider>
+            <DropdownProvider onOpen={onOpen} onClose={onClose}>
                 <CustomDropdownContent ref={ref} {...rest}>
                     {children}
                 </CustomDropdownContent>

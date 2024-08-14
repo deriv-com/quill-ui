@@ -1,151 +1,117 @@
-import { Fragment, forwardRef } from "react";
-import { useState } from "react";
-import { Listbox, Transition } from "@headlessui/react";
+import { ComponentProps, forwardRef, useEffect, useState } from "react";
 import { ButtonProps } from "../types";
-import clsx from "clsx";
-import { Button } from "../base";
+import {
+    TMediumSizes,
+    TRegularSizes,
+    TRegularSizesWithExtraLarge,
+} from "@types";
+import { CustomDropdown, TCustomDropdown } from "@components/Input";
+import DropdownContent from "./dropdown-content";
+import HeadComponent from "./dropdown-head";
 import "./dropdown.scss";
-import { Text, CaptionText } from "@components/Typography";
-import { TRegularSizesWithExtraLarge } from "@types";
-import { DropdownItem } from "@components/Atom";
 
-export type TSingleSelectItem = {
-    value: number | string;
+export interface TSingleSelectItem
+    extends Omit<ComponentProps<"button">, "ref" | "id"> {
+    id: number | string;
     label: string | React.ReactNode;
-};
-
-export interface SingleSelectDropdownProps extends ButtonProps {
-    options: TSingleSelectItem[];
-    defaultOption: TSingleSelectItem;
-    onSelectionChange?: (item: TSingleSelectItem) => void;
-    size?: TRegularSizesWithExtraLarge;
+    selected?: boolean;
+    leftIcon?: React.ReactNode;
+    rightIcon?: React.ReactNode;
 }
 
-const Options = ({
-    item,
-    size,
-}: {
-    item: TSingleSelectItem;
-    size: TRegularSizesWithExtraLarge;
-}) => {
-    const itemSize = size === "sm" ? "sm" : size === "md" ? "sm" : "md";
-    return (
-        <Listbox.Option value={item} as={Fragment}>
-            {({ selected, disabled, active }) => {
-                return (
-                    <DropdownItem
-                        className={clsx(`dropdown-menu__item--${active}`)}
-                        label={item.label}
-                        disabled={disabled}
-                        selected={selected}
-                        size={itemSize}
-                    />
-                );
-            }}
-        </Listbox.Option>
-    );
+export interface ButtonDropdownProps extends ButtonProps {
+    options: TSingleSelectItem[];
+    size?: TRegularSizesWithExtraLarge;
+    checkbox?: boolean;
+    closeContentOnClick?: boolean;
+    contentTitle?: string | React.ReactNode;
+    contentHeight?: TRegularSizes;
+    contentClass?: string;
+    onSelectionChange?: (item: TSingleSelectItem[]) => void;
+    onItemClick?: (id: TSingleSelectItem["id"]) => void;
+    onOpen?: () => void;
+    onClose?: () => void;
+    contentAlign?: TCustomDropdown["contentAlign"];
+    actionSheetFooter?: TCustomDropdown["actionSheetFooter"];
+    contentCenter?: boolean;
+}
+
+const itemSize: Record<TRegularSizesWithExtraLarge, TMediumSizes> = {
+    sm: "sm",
+    md: "sm",
+    lg: "md",
+    xl: "md",
 };
 
 export const DropdownButton = forwardRef<
     HTMLButtonElement,
-    SingleSelectDropdownProps
+    ButtonDropdownProps
 >(
     (
         {
-            defaultOption,
-            size = "md",
-            icon,
-            label,
-            isLoading,
-            color = "coral",
-            variant,
-            disabled,
             options,
+            checkbox,
+            closeContentOnClick,
+            contentTitle,
+            contentHeight = "sm",
+            contentClass,
+            actionSheetFooter,
+            size = "md",
             onSelectionChange,
+            onOpen,
+            contentAlign,
+            onClose,
+            contentCenter = false,
             ...rest
         },
         ref,
     ) => {
-        const labelSize = size === "md" ? "sm" : size === "lg" ? "md" : "xl";
-        const [selectedItem, setSelectedItem] =
-            useState<TSingleSelectItem>(defaultOption);
+        const [items, setItems] = useState<TSingleSelectItem[]>(options);
 
-        const handleItemSelect = (item: TSingleSelectItem) => {
-            setSelectedItem(item);
-            onSelectionChange?.(item);
+        useEffect(() => {
+            setItems(options);
+        }, [options]);
+
+        const handleItemSelect = (id: TSingleSelectItem["id"]) => {
+            if (!checkbox) return;
+
+            setItems((items) => {
+                const updatedItems = items.map((item) =>
+                    item.id === id
+                        ? { ...item, selected: !item.selected }
+                        : item,
+                );
+
+                onSelectionChange?.(updatedItems);
+                return updatedItems;
+            });
         };
 
         return (
-            <div>
-                <Listbox value={selectedItem} onChange={handleItemSelect}>
-                    {({ open }) => (
-                        <>
-                            <Listbox.Button
-                                as="div"
-                                className="dropdown-menu__box"
-                            >
-                                <Button
-                                    {...rest}
-                                    icon={icon}
-                                    size={size}
-                                    color={color}
-                                    label={label}
-                                    variant={variant}
-                                    isLoading={isLoading}
-                                    ref={ref}
-                                    dropdown
-                                    selected={
-                                        selectedItem.value !==
-                                        defaultOption.value
-                                    }
-                                    isDropdownOpen={open}
-                                    disabled={disabled}
-                                >
-                                    {!isLoading &&
-                                        (size === "sm" ? (
-                                            <CaptionText color={color} bold>
-                                                {selectedItem.label}
-                                            </CaptionText>
-                                        ) : (
-                                            <Text
-                                                size={labelSize}
-                                                bold
-                                                color={color}
-                                            >
-                                                {selectedItem.label}
-                                            </Text>
-                                        ))}
-                                </Button>
-                            </Listbox.Button>
-                            {!isLoading && (
-                                <Transition
-                                    enter={clsx(
-                                        "dropdown-menu__transition--enter",
-                                    )}
-                                >
-                                    <Listbox.Options
-                                        className={clsx(
-                                            "dropdown-menu__container",
-                                        )}
-                                    >
-                                        <Options
-                                            item={defaultOption}
-                                            size={size}
-                                        />
-                                        {options.map((item) => (
-                                            <Options
-                                                item={item}
-                                                key={item.value}
-                                                size={size}
-                                            />
-                                        ))}
-                                    </Listbox.Options>
-                                </Transition>
-                            )}
-                        </>
-                    )}
-                </Listbox>
-            </div>
+            <CustomDropdown
+                headComponent={
+                    <HeadComponent size={size} {...rest} ref={ref} />
+                }
+                onOpen={onOpen}
+                onClose={onClose}
+                contentAlign={contentAlign}
+                actionSheetFooter={actionSheetFooter}
+                label={contentTitle}
+                fullHeightOnOpen={false}
+                contentClassName="quill__dropdown-button__content"
+            >
+                <DropdownContent
+                    checkbox={checkbox}
+                    closeContentOnClick={closeContentOnClick}
+                    label={contentTitle}
+                    height={contentHeight}
+                    size={itemSize[size]}
+                    className={contentClass}
+                    onItemClick={handleItemSelect}
+                    options={items}
+                    centered={contentCenter}
+                />
+            </CustomDropdown>
         );
     },
 );
