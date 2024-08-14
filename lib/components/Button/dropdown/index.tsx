@@ -6,9 +6,9 @@ import {
     TRegularSizesWithExtraLarge,
 } from "@types";
 import { CustomDropdown, TCustomDropdown } from "@components/Input";
-import "./dropdown.scss";
 import DropdownContent from "./dropdown-content";
 import HeadComponent from "./dropdown-head";
+import "./dropdown.scss";
 
 export interface TSingleSelectItem
     extends Omit<ComponentProps<"button">, "ref" | "id"> {
@@ -98,6 +98,7 @@ export const DropdownButton = forwardRef<
                 actionSheetFooter={actionSheetFooter}
                 label={contentTitle}
                 fullHeightOnOpen={false}
+                contentClassName="quill__dropdown-button__content"
             >
                 <DropdownContent
                     checkbox={checkbox}

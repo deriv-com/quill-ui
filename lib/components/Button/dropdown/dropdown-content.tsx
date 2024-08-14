@@ -18,6 +18,7 @@ const DropdownContent = ({
     className,
     checkbox,
     onItemClick,
+    centered,
     ...rest
 }: ButtonDropdownProps & ItemContainerProps & DropdownItemProps) => {
     const { close } = useDropdown();
@@ -25,7 +26,9 @@ const DropdownContent = ({
 
     const Content = () => (
         <>
-            {!isMobile && label && <DropdownTitle label={label} size={size} />}
+            {!isMobile && label && (
+                <DropdownTitle label={label} size={size} centered={centered} />
+            )}
             {options.map((item) => {
                 const { id, selected, onClick, ...itemProps } = item;
 
@@ -43,6 +46,7 @@ const DropdownContent = ({
                         as="button"
                         selected={checkbox && selected}
                         checkbox={checkbox}
+                        centered={centered}
                         {...rest}
                         {...itemProps}
                     />

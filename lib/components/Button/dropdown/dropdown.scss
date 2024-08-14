@@ -35,4 +35,8 @@
             background-color: var(--component-dropdownItem-bg-active);
         }
     }
+
+    &__content {
+        min-width: 360px;
+    }
 }

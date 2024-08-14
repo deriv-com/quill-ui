@@ -24,6 +24,7 @@ export interface TCustomDropdown
     isAutocomplete?: boolean;
     onClickDropdown?: (e: React.MouseEvent<HTMLDivElement>) => void;
     containerClassName?: string;
+    contentClassName?: string;
     actionSheetFooter?: ComponentProps<typeof ActionSheet.Footer>;
     fullHeightOnOpen?: boolean;
     headComponent?: React.ReactNode;
@@ -42,6 +43,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             fullHeightOnOpen = true,
             onChange,
             containerClassName,
+            contentClassName,
             actionSheetFooter,
             label,
             headComponent,
@@ -130,6 +132,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
                             className={clsx(
                                 "quill-custom-dropdown__content",
                                 `quill-custom-dropdown__content-align--${contentAlign}`,
+                                contentClassName,
                             )}
                             ref={contentRef}
                         >
