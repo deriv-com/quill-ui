@@ -1,9 +1,10 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { LabelPairedPlaceholderCaptionBoldIcon } from "@deriv/quill-icons/LabelPaired";
-import { GenericWheelPicker } from ".";
+import { TimeWheelPicker } from ".";
 import BreakpointProvider from "@providers/breakpoint/breakpointProvider";
 import { StandaloneCircleCheckBoldIcon } from "@deriv/quill-icons";
+import { TimeWheelPickerContainer } from "@components/Atom";
 
 const icons: Record<string, object | null> = {
     with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
@@ -11,8 +12,8 @@ const icons: Record<string, object | null> = {
 };
 
 const meta = {
-    title: "Components/Inputs/Generic Wheel Picker",
-    component: GenericWheelPicker,
+    title: "Components/Inputs/Time Wheel Picker",
+    component: TimeWheelPicker,
     parameters: {
         docs: {
             story: {
@@ -24,27 +25,23 @@ const meta = {
     tags: ["autodocs"],
     args: {
         disabled: false,
-        data: [
-            [
-                { value: "item-1" },
-                { value: "item-2" },
-                { value: "item-3" },
-                { value: "item-4" },
-                { value: "item-5" },
-                { value: "item-6" },
-            ],
-            [{ value: "item-1" }, { value: "item-2" }, { value: "item-3" }],
-        ],
         actionSheetFooter: {
             primaryAction: {
                 content: "Confirm",
                 onAction: () => null,
             },
         },
-        values: ["item-3", "item-1"],
         status: "neutral",
         placeholder: "Select",
         variant: "fill",
+        WheelPickerContainer: TimeWheelPickerContainer,
+        locale: "en",
+        is12Hour: true,
+        startTimeIn24Format: "00:00",
+        selectedTime: "1:00",
+        wheelType: "Time",
+        minutesInterval: 1,
+        hoursInterval: 1,
     },
     argTypes: {
         status: {
@@ -76,17 +73,17 @@ const meta = {
             mapping: icons,
         },
     },
-} satisfies Meta<typeof GenericWheelPicker>;
+} satisfies Meta<typeof TimeWheelPicker>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-type Template = React.ComponentProps<typeof GenericWheelPicker>;
+type Template = React.ComponentProps<typeof TimeWheelPicker>;
 
 const Template: React.FC<Template> = ({ ...args }: Template) => {
     return (
         <BreakpointProvider>
-            <GenericWheelPicker {...args}></GenericWheelPicker>
+            <TimeWheelPicker {...args}></TimeWheelPicker>
         </BreakpointProvider>
     );
 };
@@ -94,15 +91,18 @@ const Template: React.FC<Template> = ({ ...args }: Template) => {
 export const Default = Template.bind(this) as Story;
 Default.args = { ...meta.args };
 
-export const DefaultLabellessGenericWheelPicker = Template.bind(this) as Story;
-DefaultLabellessGenericWheelPicker.args = {
-    status: "success",
+export const Default12HourTimeWheelPicker = Template.bind(this) as Story;
+Default12HourTimeWheelPicker.args = {
+    status: "neutral",
     rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
     variant: "outline",
 };
 
-export const DefaultGenericWheelPickerWithLabel = Template.bind(this) as Story;
-DefaultGenericWheelPickerWithLabel.args = {
-    label: "Label",
-    required: true,
+export const Default24HourTimeWheelPicker = Template.bind(this) as Story;
+Default24HourTimeWheelPicker.args = {
+    status: "neutral",
+    rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
+    variant: "outline",
+    is12Hour: false,
+    startTimeIn24Format: "00:00",
 };

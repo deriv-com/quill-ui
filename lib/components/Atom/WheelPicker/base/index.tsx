@@ -1,20 +1,8 @@
-import { HTMLAttributes, useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
 import { DropdownItem } from "@components/Atom/dropdown";
 import "./wheel-picker-base.scss";
-import { THorizontalPosition } from "@types";
-
-export interface WheelPickerProps extends HTMLAttributes<HTMLElement> {
-    data: { value: string | number }[];
-    selectedValue: string | number;
-    setSelectedValue: (value: string | number) => void;
-    handleKeyDown?: (e: React.KeyboardEvent) => void;
-    isFocused?: boolean;
-    dropDownItemClassName?: string;
-    containerClassName?: string;
-    listClassName?: string;
-    position?: THorizontalPosition | undefined;
-}
+import { WheelPickerProps } from "../types";
 
 export const WheelPicker = ({
     data,
@@ -26,9 +14,11 @@ export const WheelPicker = ({
     containerClassName,
     listClassName,
     position,
+    containerHeight = "100%",
     ...rest
 }: WheelPickerProps) => {
     const itemsRefs = useRef<HTMLDivElement[]>([]);
+    const [inputData, setInputData] = useState(data);
     const dataItemsMap = useMemo(
         () =>
             data.reduce(
@@ -38,7 +28,9 @@ export const WheelPicker = ({
         [data],
     );
 
-    const currentDataValue = useRef(dataItemsMap.get(selectedValue) ?? 0);
+    const [currentDataValue, setCurrentValue] = useState(
+        dataItemsMap.get(selectedValue) ?? 0,
+    );
     const itemsContainerRef = useRef<HTMLUListElement>(null);
 
     const handleDataScroll = (event: Event) => {
@@ -49,16 +41,17 @@ export const WheelPicker = ({
         );
         const selectedElement = Math.min(
             Math.max(Math.floor(scrollTop / 48), 0),
-            data.length - 1,
+            inputData.length - 1,
         );
+
         (itemsRefs.current[selectedElement] as HTMLDivElement)?.focus({
             preventScroll: true,
         });
-        setSelectedValue(data[selectedElement].value);
+        setSelectedValue(inputData[selectedElement].value);
     };
 
     const resizeObserver = new ResizeObserver(() => {
-        const index = Number(currentDataValue.current);
+        const index = Number(currentDataValue);
         if (!itemsContainerRef?.current) return;
         const divHeight = itemsContainerRef?.current.clientHeight;
         itemsContainerRef.current.style.paddingTop = `${divHeight * 0.5}px`;
@@ -72,7 +65,7 @@ export const WheelPicker = ({
 
     useEffect(() => {
         if (!itemsContainerRef.current) return;
-        setSelectedValue(data[currentDataValue.current].value);
+        setSelectedValue(inputData[currentDataValue]?.value);
         resizeObserver.observe(itemsContainerRef.current);
         itemsContainerRef.current.addEventListener("scroll", handleDataScroll);
         return () => {
@@ -82,7 +75,12 @@ export const WheelPicker = ({
                 handleDataScroll,
             );
         };
-    }, []);
+    }, [inputData]);
+
+    useEffect(() => {
+        setInputData(data);
+        setCurrentValue(dataItemsMap.get(selectedValue) ?? 0);
+    }, [data]);
 
     useEffect(() => {
         if (isFocused) {
@@ -94,8 +92,10 @@ export const WheelPicker = ({
         <div
             className={clsx(
                 "quill-wheel-picker__container",
+                `quill-wheel-picker__container-disabled-${rest?.disabled}`,
                 containerClassName,
             )}
+            style={{ height: containerHeight }}
         >
             <ul
                 className={clsx(
@@ -105,17 +105,17 @@ export const WheelPicker = ({
                 )}
                 role="listbox"
                 ref={itemsContainerRef}
+                {...rest}
             >
-                {data.map(({ value }, index) => {
+                {inputData.map(({ value, label }, index) => {
                     return (
                         <DropdownItem
-                            {...rest}
                             className={clsx(
                                 "quill-wheel-picker__data-item",
                                 dropDownItemClassName,
                             )}
                             tabIndex={0}
-                            label={value}
+                            label={label ?? value}
                             role="option"
                             textAlignment="center"
                             ref={(node: HTMLDivElement) =>
@@ -126,11 +126,12 @@ export const WheelPicker = ({
                             onClick={() => {
                                 itemsRefs.current[index]?.scrollIntoView({
                                     block: "center",
+                                    behavior: "smooth",
+                                    inline: "nearest",
                                 });
                                 itemsRefs.current[index]?.focus();
-                                setSelectedValue(data[index].value);
                             }}
-                            disabled={data[index].value !== selectedValue}
+                            disabled={inputData[index].value !== selectedValue}
                         >
                             {value}
                         </DropdownItem>

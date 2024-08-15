@@ -6,32 +6,54 @@ import React, {
     useEffect,
     useRef,
     useState,
+    ReactNode,
 } from "react";
-import Input, { InputProps } from "../base";
+import Input, { InputProps } from "../../base";
 import { useDropdown } from "@hooks/useDropdown";
 import clsx from "clsx";
-import { DropdownProvider } from "@providers/dropdown/dropdownProvider";
 import useBreakpoints from "@hooks/useBreakpoints";
 import ActionSheet from "@components/ActionSheet";
-import { KEY } from "@utils/common-utils";
-import { WheelPickerContainer } from "@components/Atom";
-import "./generic-wheel-picker.scss";
+import { KEY, reactNodeToString } from "@utils/common-utils";
+import {
+    TimeWheelPickerContainer,
+    TimeWheelPickerContainerProps,
+    TypeOfWheel,
+    WheelPickerContainer as WheelPicker,
+    WheelPickerContainerProps,
+} from "@components/Atom";
+import "./wheel-picker.scss";
 
-export interface TGenericWheelPickerContent extends InputProps {
+type Container<T> = T extends "Generic"
+    ? WheelPickerContainerProps
+    : TimeWheelPickerContainerProps;
+
+type ConditionContent<T> = T extends "Generic"
+    ? TWheelPickerContent<"Generic">
+    : TWheelPickerContent<"Time">;
+
+interface BaseWheelPickerContent extends InputProps {
     onClickDropdown?: (e: React.MouseEvent<HTMLDivElement>) => void;
     containerClassName?: string;
     actionSheetFooter?: ComponentProps<typeof ActionSheet.Footer>;
-    data: { value: string | number }[][];
-    values: string[] | number[];
-    onValueChange?: (value: (string | number)[]) => void;
+    values?: (string | number)[];
+    wheelType: TypeOfWheel;
+    onValueChange?: (values: (string | number)[]) => void;
+    is12Hour?: boolean;
+    selectedTime?: string;
+    startTimeIn24Format?: string;
+    containerHeight?: string;
+    locale?: string;
+    hoursInterval?: number;
+    minutesInterval?: number;
+    WheelPickerContainer?: typeof TimeWheelPickerContainer | typeof WheelPicker;
 }
+export type TWheelPickerContent<T extends TypeOfWheel> =
+    BaseWheelPickerContent & Container<T>;
 
-const GenericWheelPickerContent = forwardRef<
-    HTMLDivElement,
-    TGenericWheelPickerContent
->(
-    (
+export const WheelPickerContent = forwardRef(
+    <T extends TypeOfWheel>(
         {
+            data,
             children,
             className,
             values = [],
@@ -42,9 +64,17 @@ const GenericWheelPickerContent = forwardRef<
             label,
             leftIcon,
             rightIcon,
+            wheelType = "Generic",
+            is12Hour = true,
+            startTimeIn24Format,
+            selectedTime: inputTime = "00:00",
+            WheelPickerContainer = WheelPicker,
+            containerHeight = "100%",
+            hoursInterval = 1,
+            minutesInterval = 1,
             ...rest
-        },
-        ref,
+        }: Omit<ConditionContent<T>, "inputValues" | "setInputValues">,
+        ref: React.ForwardedRef<HTMLDivElement>,
     ) => {
         const containerRef = useRef<HTMLDivElement>(null);
         const actionSheetRef = useRef<HTMLDivElement>(null);
@@ -52,30 +82,69 @@ const GenericWheelPickerContent = forwardRef<
         const [inputValues, setInputValues] =
             useState<(string | number)[]>(values);
         const [isPressed, setIsPressed] = useState(false);
+        const [selectedTime, setSelectedTime] = useState<string>(inputTime);
 
-        const initialValues = values.reduce(
-            (previousValue, currentValue, index) => {
-                if (index === 0) return currentValue;
-                return `${previousValue ?? ""} ${currentValue ?? ""}`;
-            },
-            "",
-        ) as string;
+        let initialValues;
 
         const updateItemAtIndex = (
             index: number,
             newValue: string | number,
         ) => {
-            setInputValues((prevItems) => {
-                const updatedItems = [...prevItems];
-                updatedItems[index] = newValue;
-                return updatedItems;
-            });
+            if (wheelType === "Generic")
+                setInputValues((prevItems) => {
+                    const updatedItems = [...prevItems];
+                    updatedItems[index] = newValue;
+                    return updatedItems;
+                });
         };
 
         const { isOpen, open, close, selectedValue, setSelectedValue } =
             useDropdown([containerRef, actionSheetRef]);
 
         const { isMobile } = useBreakpoints();
+
+        if (wheelType === "Generic") {
+            initialValues = values.reduce(
+                (previousValue, currentValue, index): string => {
+                    if (!data?.[index]) return previousValue as string;
+                    if (index === 0) {
+                        const selectedItem = data?.[index].find(
+                            (item) => item.value === currentValue,
+                        );
+
+                        return (reactNodeToString(selectedItem?.label) ||
+                            selectedItem?.value) as string;
+                    } else {
+                        const selectedItem = data?.[index].find(
+                            (item) => item.value === currentValue,
+                        );
+
+                        return `${previousValue ?? ""} ${reactNodeToString(selectedItem?.label) || selectedItem?.value}`;
+                    }
+                },
+                "",
+            ) as string;
+        }
+
+        if (wheelType === "Time") {
+            if (!is12Hour) {
+                initialValues = new Date(
+                    `1/1/1 ${selectedTime}`,
+                ).toLocaleTimeString(rest.locale || navigator.language, {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: false,
+                });
+            } else {
+                initialValues = new Date(
+                    `1/1/1 ${selectedTime}`,
+                ).toLocaleTimeString(rest.locale || navigator.language, {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                });
+            }
+        }
 
         const handleInputClick = (e: MouseEvent<HTMLDivElement>) => {
             onClickDropdown?.(e);
@@ -89,7 +158,13 @@ const GenericWheelPickerContent = forwardRef<
         };
 
         useEffect(() => {
-            onValueChange?.(inputValues);
+            if (wheelType === "Generic") {
+                onValueChange?.(inputValues);
+            }
+
+            if (wheelType === "Time") {
+                onValueChange?.([selectedValue || ""]);
+            }
         }, [selectedValue]);
 
         return (
@@ -144,13 +219,26 @@ const GenericWheelPickerContent = forwardRef<
                                 )}
                             >
                                 <WheelPickerContainer
+                                    data={
+                                        data as {
+                                            value: string | number;
+                                            label?: string | ReactNode;
+                                        }[][]
+                                    }
                                     inputValues={inputValues}
                                     close={close}
                                     setSelectedValue={setSelectedValue}
+                                    is12Hour={is12Hour}
                                     setInputValues={(
                                         index: number,
                                         newValue: string | number,
                                     ) => updateItemAtIndex(index, newValue)}
+                                    selectedTime={selectedTime ?? initialValues}
+                                    startTimeIn24Format={startTimeIn24Format}
+                                    setSelectedTime={setSelectedTime}
+                                    containerHeight={containerHeight}
+                                    hoursInterval={hoursInterval}
+                                    minutesInterval={minutesInterval}
                                     {...rest}
                                 >
                                     {children}
@@ -169,12 +257,20 @@ const GenericWheelPickerContent = forwardRef<
                                     {
                                         <ActionSheet.Content className="quill-generic-picker__content--hide-scrollbar">
                                             <WheelPickerContainer
-                                                data={rest.data}
+                                                data={
+                                                    data as {
+                                                        value: string | number;
+                                                        label?:
+                                                            | string
+                                                            | ReactNode;
+                                                    }[][]
+                                                }
                                                 inputValues={inputValues}
                                                 close={close}
                                                 setSelectedValue={
                                                     setSelectedValue
                                                 }
+                                                is12Hour={is12Hour}
                                                 setInputValues={(
                                                     index: number,
                                                     newValue: string | number,
@@ -184,6 +280,24 @@ const GenericWheelPickerContent = forwardRef<
                                                         newValue,
                                                     )
                                                 }
+                                                selectedTime={
+                                                    selectedTime ??
+                                                    initialValues
+                                                }
+                                                startTimeIn24Format={
+                                                    startTimeIn24Format
+                                                }
+                                                setSelectedTime={
+                                                    setSelectedTime
+                                                }
+                                                containerHeight={
+                                                    containerHeight
+                                                }
+                                                hoursInterval={hoursInterval}
+                                                minutesInterval={
+                                                    minutesInterval
+                                                }
+                                                {...rest}
                                             >
                                                 {children}
                                             </WheelPickerContainer>
@@ -201,18 +315,3 @@ const GenericWheelPickerContent = forwardRef<
         );
     },
 );
-
-export const GenericWheelPicker = forwardRef<
-    HTMLDivElement,
-    TGenericWheelPickerContent
->(({ children, ...rest }, ref) => {
-    return (
-        <DropdownProvider>
-            <GenericWheelPickerContent ref={ref} {...rest}>
-                {children}
-            </GenericWheelPickerContent>
-        </DropdownProvider>
-    );
-});
-
-export default GenericWheelPicker;

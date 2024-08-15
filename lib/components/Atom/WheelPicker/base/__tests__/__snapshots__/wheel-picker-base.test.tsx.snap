@@ -6,7 +6,8 @@ exports[`WheelPicker should match snapshot 1`] = `
     style="height: 240px;"
   >
     <div
-      class="quill-wheel-picker__container"
+      class="quill-wheel-picker__container quill-wheel-picker__container-disabled-undefined"
+      style="height: 100%;"
     >
       <ul
         class="quill-wheel-picker__data-items quill-wheel-picker__data-items-undefined"
