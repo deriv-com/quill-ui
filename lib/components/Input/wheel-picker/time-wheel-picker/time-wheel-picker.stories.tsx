@@ -40,7 +40,7 @@ const meta = {
         startTimeIn24Format: "00:00",
         selectedTime: "1:00",
         wheelType: "Time",
-        minutesInterval: 5,
+        minutesInterval: 1,
         hoursInterval: 1,
     },
     argTypes: {
