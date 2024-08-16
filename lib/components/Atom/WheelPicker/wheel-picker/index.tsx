@@ -2,6 +2,7 @@ import React, { KeyboardEvent, useEffect, useState } from "react";
 import WheelPicker from "../base";
 import { KEY, reactNodeToString } from "@utils/common-utils";
 import { WheelPickerContainerProps } from "../types";
+import { THorizontalPosition } from "@types";
 
 export const WheelPickerContainer = ({
     data = [],
@@ -21,19 +22,16 @@ export const WheelPickerContainer = ({
                 inputValues.reduce(
                     (previousValue, currentValue, index): string => {
                         if (!data[index]) return previousValue as string;
-                        if (index === 0) {
-                            const selectedItem = data[index].find(
-                                (item) => item.value === currentValue,
-                            );
+                        const selectedItem = data[index].find(
+                            (item) => item.value === currentValue,
+                        );
 
-                            return (reactNodeToString(selectedItem?.label) ||
-                                selectedItem?.value) as string;
-                        } else {
-                            const selectedItem = data[index].find(
-                                (item) => item.value === currentValue,
-                            );
-                            return `${previousValue ?? ""} ${reactNodeToString(selectedItem?.label) || selectedItem?.value}`;
-                        }
+                        return (
+                            index === 0
+                                ? reactNodeToString(selectedItem?.label) ||
+                                  selectedItem?.value
+                                : `${previousValue ?? ""} ${reactNodeToString(selectedItem?.label) || selectedItem?.value}`
+                        ) as string;
                     },
                     "",
                 ) as string,
@@ -68,7 +66,7 @@ export const WheelPickerContainer = ({
         }
     };
 
-    const getPosition = (index: number) => {
+    const getPosition = (index: number): THorizontalPosition | undefined => {
         if (data.length === 1) return;
         if (index === 0 && data.length > 1) return "left";
         if (index === data.length - 1 && data.length > 1) return "right";

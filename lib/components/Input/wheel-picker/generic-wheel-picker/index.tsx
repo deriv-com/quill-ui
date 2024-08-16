@@ -9,11 +9,7 @@ export const GenericWheelPicker = forwardRef<
 >(({ children, ...rest }, ref) => {
     return (
         <DropdownProvider>
-            <WheelPickerContent
-                ref={ref}
-                {...rest}
-                WheelPickerContainer={WheelPicker}
-            >
+            <WheelPickerContent ref={ref} {...rest} container={WheelPicker}>
                 {children}
             </WheelPickerContent>
         </DropdownProvider>

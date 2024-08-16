@@ -28,13 +28,17 @@ const meta = {
         data: [
             [
                 { value: "item-1", label: "Item 1" },
-                { value: "item-2" },
+                { value: "item-2", label: "Item 2" },
                 { value: "item-3" },
-                { value: "item-4" },
+                { value: "item-4", label: "Item 4" },
                 { value: "item-5" },
                 { value: "item-6" },
             ],
-            [{ value: "item-1" }, { value: "item-2" }, { value: "item-3" }],
+            [
+                { value: "item-1" },
+                { value: "item-2", label: "Item 2" },
+                { value: "item-3" },
+            ],
         ],
         actionSheetFooter: {
             primaryAction: {
@@ -42,11 +46,11 @@ const meta = {
                 onAction: () => null,
             },
         },
-        values: ["item-3", "item-1"],
+        values: ["item-3", "item-2"],
         status: "neutral",
         placeholder: "Select",
         variant: "fill",
-        WheelPickerContainer: WheelPickerContainer,
+        container: WheelPickerContainer,
         wheelType: "Generic",
     },
     argTypes: {

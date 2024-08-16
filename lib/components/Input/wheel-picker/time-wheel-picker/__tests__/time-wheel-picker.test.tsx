@@ -25,7 +25,7 @@ const renderComponent = () =>
     render(
         <DropdownProvider>
             <TimeWheelPicker
-                is12Hour={true}
+                is12Hour
                 label="test"
                 wheelType="Time"
                 onValueChange={mockOnValueChange}

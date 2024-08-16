@@ -13,7 +13,7 @@ export const TimeWheelPicker = forwardRef<
                 ref={ref}
                 {...rest}
                 wheelType="Time"
-                WheelPickerContainer={WheelPicker}
+                container={WheelPicker}
             >
                 {children}
             </WheelPickerContent>

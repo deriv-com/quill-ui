@@ -23,7 +23,7 @@
         width: 100%;
         scrollbar-width: none;
 
-        &-disabled-true {
+        &-disabled {
             pointer-events: none;
             opacity: var(--opacity-disabled);
             cursor: not-allowed;
@@ -58,7 +58,7 @@
 
         &__minute {
             &::before {
-                content: ':';
+                content: ":";
                 display: flex;
                 align-items: center;
                 color: var(--component-textIcon-normal-default);

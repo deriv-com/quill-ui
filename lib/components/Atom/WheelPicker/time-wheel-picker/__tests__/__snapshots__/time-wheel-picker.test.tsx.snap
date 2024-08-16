@@ -9,7 +9,7 @@ exports[`GenericTimeWheelPickerContainer renders correctly 1`] = `
       class="quill-wheel-picker"
     >
       <div
-        class="quill-wheel-picker__container quill-wheel-picker__container-disabled-undefined"
+        class="quill-wheel-picker__container"
         style="height: 100%;"
       >
         <ul
@@ -151,7 +151,7 @@ exports[`GenericTimeWheelPickerContainer renders correctly 1`] = `
         </ul>
       </div>
       <div
-        class="quill-wheel-picker__container quill-wheel-picker__container-disabled-undefined"
+        class="quill-wheel-picker__container"
         style="height: 100%;"
       >
         <ul
@@ -491,7 +491,7 @@ exports[`GenericTimeWheelPickerContainer renders correctly 1`] = `
         </ul>
       </div>
       <div
-        class="quill-wheel-picker__container quill-wheel-picker__container-disabled-undefined"
+        class="quill-wheel-picker__container"
         style="height: 100%;"
       >
         <ul

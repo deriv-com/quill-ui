@@ -1,8 +1,12 @@
 import { THorizontalPosition } from "@types";
 import { HTMLAttributes, ReactNode } from "react";
 
+export type TWheelTypeSelectItem = {
+    value: string | number;
+    label?: ReactNode;
+};
 export interface WheelPickerProps extends HTMLAttributes<HTMLElement> {
-    data: { value: string | number, label?: string |number| ReactNode }[];
+    data: TWheelTypeSelectItem[];
     selectedValue: string | number;
     setSelectedValue: (value: string | number) => void;
     handleKeyDown?: (e: React.KeyboardEvent) => void;
@@ -14,31 +18,36 @@ export interface WheelPickerProps extends HTMLAttributes<HTMLElement> {
     containerHeight?: string;
     disabled?: boolean;
 }
-
-export interface WheelPickerContainerProps extends Omit<WheelPickerProps, 'data' | 'setSelectedValue' | 'selectedValue'> {
-    data: { value: string | number, label?: string | ReactNode }[][];
+export interface WheelPickerContainerProps
+    extends Omit<
+        WheelPickerProps,
+        "data" | "setSelectedValue" | "selectedValue"
+    > {
+    data: TWheelTypeSelectItem[][];
     inputValues?: (string | number)[];
-    setInputValues?: (index: number,value: string | number ) => void;
+    setInputValues?: (index: number, value: string | number) => void;
     children?: React.ReactNode;
     close?: () => void;
-    setSelectedValue?: (value: string| number) => void;
+    setSelectedValue?: (value: string | number) => void;
     containerHeight?: string;
 }
-
-export interface TimeWheelPickerContainerProps extends Omit<WheelPickerProps, 'data' | 'setSelectedValue' | 'selectedValue'>  {
+export interface TimeWheelPickerContainerProps
+    extends Omit<
+        WheelPickerProps,
+        "data" | "setSelectedValue" | "selectedValue"
+    > {
     is12Hour: boolean;
     children?: React.ReactNode;
     minutesInterval?: number;
     hoursInterval?: number;
     locale?: string;
     close?: () => void;
-    setSelectedValue?: (value: string| number) => void;
+    setSelectedValue?: (value: string | number) => void;
     startTimeIn24Format?: string;
     endTimeIn24Format?: string;
     selectedTime?: string;
     setSelectedTime?: (value: string) => void;
-    data?: { value: string | number, label?: string | ReactNode }[][];
+    data?: TWheelTypeSelectItem[][];
     containerHeight?: string;
 }
-
-export type TypeOfWheel = 'Time' | 'Generic' | 'Date' ;
+export type TTypeOfWheel = "Time" | "Generic" | "Date";

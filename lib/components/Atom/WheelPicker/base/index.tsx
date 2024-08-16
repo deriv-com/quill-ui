@@ -92,7 +92,7 @@ export const WheelPicker = ({
         <div
             className={clsx(
                 "quill-wheel-picker__container",
-                `quill-wheel-picker__container-disabled-${rest?.disabled}`,
+                rest?.disabled && `quill-wheel-picker__container-disabled`,
                 containerClassName,
             )}
             style={{ height: containerHeight }}

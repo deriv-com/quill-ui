@@ -1,13 +1,12 @@
 import React, {
     KeyboardEvent,
-    ReactNode,
     useCallback,
     useEffect,
     useState,
 } from "react";
 import WheelPicker from "../base";
 import { KEY } from "@utils/common-utils";
-import { TimeWheelPickerContainerProps } from "../types";
+import { TimeWheelPickerContainerProps, TWheelTypeSelectItem } from "../types";
 import dayjs from "dayjs";
 import { debounce } from "lodash";
 
@@ -28,24 +27,15 @@ export const TimeWheelPickerContainer = ({
     const inputStartDate = dayjs(`1/1/1 ${startTimeIn24Format ?? "00:00"}`);
     const inputSelectedDate = dayjs(`1/1/1 ${selectedTime}`);
     const inputEndDate = dayjs(`1/1/1 ${endTimeIn24Format}`);
-    const [hourValue, setHourValue] = useState<{
-        label?: string | ReactNode;
-        value: string | number;
-    }>({
+    const [hourValue, setHourValue] = useState<TWheelTypeSelectItem>({
         label: "00",
         value: 0,
     });
-    const [minuteValue, setMinuteValue] = useState<{
-        label?: string | ReactNode;
-        value: string | number;
-    }>({
+    const [minuteValue, setMinuteValue] = useState<TWheelTypeSelectItem>({
         label: "00",
         value: 0,
     });
-    const [meridiemValue, setMeridiemValue] = useState<{
-        label?: string | ReactNode;
-        value: string | number;
-    }>({
+    const [meridiemValue, setMeridiemValue] = useState<TWheelTypeSelectItem>({
         label: "AM",
         value: "AM",
     });
@@ -54,24 +44,9 @@ export const TimeWheelPickerContainer = ({
         new Array(is12Hour ? 3 : 2).fill(false),
     );
 
-    const [minutes, setMinutes] = useState<
-        {
-            label?: string | ReactNode;
-            value: string | number;
-        }[]
-    >();
-    const [hours, setHours] = useState<
-        {
-            label?: string | ReactNode;
-            value: string | number;
-        }[]
-    >();
-    const [meridiem, setMeridiem] = useState<
-        {
-            label?: string | ReactNode;
-            value: string | number;
-        }[]
-    >();
+    const [minutes, setMinutes] = useState<TWheelTypeSelectItem[]>();
+    const [hours, setHours] = useState<TWheelTypeSelectItem[]>();
+    const [meridiem, setMeridiem] = useState<TWheelTypeSelectItem[]>();
 
     const getHoursArray = () => {
         const hoursData = [];
@@ -105,20 +80,17 @@ export const TimeWheelPickerContainer = ({
         };
 
         const formatter = new Intl.DateTimeFormat(locale, options);
-        const ampm = formatter
+        const dayPeriod = formatter
             .formatToParts(date)
             .find((part) => part.type === "dayPeriod")?.value;
 
-        return ampm ? ampm.toUpperCase() : "";
+        return dayPeriod ? dayPeriod.toUpperCase() : "";
     };
 
     const setMinutesArray = useCallback(
         debounce(
             (
-                minutesData: {
-                    label: string | ReactNode;
-                    value: string | number;
-                }[],
+                minutesData: TWheelTypeSelectItem[],
             ) => {
                 setMinutes([...minutesData]);
             },
@@ -237,23 +209,14 @@ export const TimeWheelPickerContainer = ({
 
         switch (e.key) {
             case KEY.ARROW_RIGHT:
-                if (index === 0) {
-                    setColRef([false, true, false]);
-                } else if (index === 1) {
-                    setColRef([false, false, true]);
-                }
-
+                setColRef([false, index === 0, index === 1]);
                 break;
             case KEY.ARROW_LEFT:
-                if (index === 2) {
-                    setColRef([false, true, false]);
-                } else if (index === 1) {
-                    setColRef([true, false, false]);
-                }
+                setColRef([index === 1, index === 2, false]);
                 break;
             case KEY.ENTER:
             case KEY.ESCAPE:
-                close && close();
+                close?.();
                 break;
             default:
                 break;
@@ -275,7 +238,7 @@ export const TimeWheelPickerContainer = ({
                         }}
                         isFocused={colRef[0]}
                         handleKeyDown={(e) => handleKeyDown(e, 0)}
-                        position={"left"}
+                        position="left"
                         disabled={disabled}
                     />
                 )}
@@ -309,7 +272,7 @@ export const TimeWheelPickerContainer = ({
                         }}
                         isFocused={colRef[2]}
                         handleKeyDown={(e) => handleKeyDown(e, 2)}
-                        position={"right"}
+                        position="right"
                         disabled={disabled}
                     />
                 )}

@@ -17,17 +17,18 @@ import { KEY, reactNodeToString } from "@utils/common-utils";
 import {
     TimeWheelPickerContainer,
     TimeWheelPickerContainerProps,
-    TypeOfWheel,
+    TTypeOfWheel,
+    TWheelTypeSelectItem,
     WheelPickerContainer as WheelPicker,
     WheelPickerContainerProps,
 } from "@components/Atom";
 import "./wheel-picker.scss";
 
-type Container<T> = T extends "Generic"
+type TContainer<T> = T extends "Generic"
     ? WheelPickerContainerProps
     : TimeWheelPickerContainerProps;
 
-type ConditionContent<T> = T extends "Generic"
+type TConditionContent<T> = T extends "Generic"
     ? TWheelPickerContent<"Generic">
     : TWheelPickerContent<"Time">;
 
@@ -36,7 +37,7 @@ interface BaseWheelPickerContent extends InputProps {
     containerClassName?: string;
     actionSheetFooter?: ComponentProps<typeof ActionSheet.Footer>;
     values?: (string | number)[];
-    wheelType: TypeOfWheel;
+    wheelType: TTypeOfWheel;
     onValueChange?: (values: (string | number)[]) => void;
     is12Hour?: boolean;
     selectedTime?: string;
@@ -45,13 +46,13 @@ interface BaseWheelPickerContent extends InputProps {
     locale?: string;
     hoursInterval?: number;
     minutesInterval?: number;
-    WheelPickerContainer?: typeof TimeWheelPickerContainer | typeof WheelPicker;
+    container?: typeof TimeWheelPickerContainer | typeof WheelPicker;
 }
-export type TWheelPickerContent<T extends TypeOfWheel> =
-    BaseWheelPickerContent & Container<T>;
+export type TWheelPickerContent<T extends TTypeOfWheel> =
+    BaseWheelPickerContent & TContainer<T>;
 
 export const WheelPickerContent = forwardRef(
-    <T extends TypeOfWheel>(
+    <T extends TTypeOfWheel>(
         {
             data,
             children,
@@ -68,12 +69,12 @@ export const WheelPickerContent = forwardRef(
             is12Hour = true,
             startTimeIn24Format,
             selectedTime: inputTime = "00:00",
-            WheelPickerContainer = WheelPicker,
+            container: Container = WheelPicker,
             containerHeight = "100%",
             hoursInterval = 1,
             minutesInterval = 1,
             ...rest
-        }: Omit<ConditionContent<T>, "inputValues" | "setInputValues">,
+        }: Omit<TConditionContent<T>, "inputValues" | "setInputValues">,
         ref: React.ForwardedRef<HTMLDivElement>,
     ) => {
         const containerRef = useRef<HTMLDivElement>(null);
@@ -107,43 +108,29 @@ export const WheelPickerContent = forwardRef(
             initialValues = values.reduce(
                 (previousValue, currentValue, index): string => {
                     if (!data?.[index]) return previousValue as string;
-                    if (index === 0) {
-                        const selectedItem = data?.[index].find(
-                            (item) => item.value === currentValue,
-                        );
+                    const selectedItem = data?.[index].find(
+                        (item) => item.value === currentValue,
+                    );
 
-                        return (reactNodeToString(selectedItem?.label) ||
-                            selectedItem?.value) as string;
-                    } else {
-                        const selectedItem = data?.[index].find(
-                            (item) => item.value === currentValue,
-                        );
-
-                        return `${previousValue ?? ""} ${reactNodeToString(selectedItem?.label) || selectedItem?.value}`;
-                    }
+                    return (
+                        index === 0
+                            ? reactNodeToString(selectedItem?.label) ||
+                              selectedItem?.value
+                            : `${previousValue ?? ""} ${reactNodeToString(selectedItem?.label) || selectedItem?.value}`
+                    ) as string;
                 },
                 "",
             ) as string;
         }
 
         if (wheelType === "Time") {
-            if (!is12Hour) {
-                initialValues = new Date(
-                    `1/1/1 ${selectedTime}`,
-                ).toLocaleTimeString(rest.locale || navigator.language, {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: false,
-                });
-            } else {
-                initialValues = new Date(
-                    `1/1/1 ${selectedTime}`,
-                ).toLocaleTimeString(rest.locale || navigator.language, {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: true,
-                });
-            }
+            initialValues = new Date(
+                `1/1/1 ${selectedTime}`,
+            ).toLocaleTimeString(rest.locale || navigator.language, {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: is12Hour,
+            });
         }
 
         const handleInputClick = (e: MouseEvent<HTMLDivElement>) => {
@@ -218,12 +205,9 @@ export const WheelPickerContent = forwardRef(
                                         "quill-generic-picker__content__is-open",
                                 )}
                             >
-                                <WheelPickerContainer
+                                <Container
                                     data={
-                                        data as {
-                                            value: string | number;
-                                            label?: string | ReactNode;
-                                        }[][]
+                                        data as TWheelTypeSelectItem[][]
                                     }
                                     inputValues={inputValues}
                                     close={close}
@@ -233,7 +217,7 @@ export const WheelPickerContent = forwardRef(
                                         index: number,
                                         newValue: string | number,
                                     ) => updateItemAtIndex(index, newValue)}
-                                    selectedTime={selectedTime ?? initialValues}
+                                    selectedTime={selectedTime}
                                     startTimeIn24Format={startTimeIn24Format}
                                     setSelectedTime={setSelectedTime}
                                     containerHeight={containerHeight}
@@ -242,7 +226,7 @@ export const WheelPickerContent = forwardRef(
                                     {...rest}
                                 >
                                     {children}
-                                </WheelPickerContainer>
+                                </Container>
                             </div>
                         ) : (
                             <ActionSheet.Root isOpen={isOpen} onClose={close}>
@@ -256,7 +240,7 @@ export const WheelPickerContent = forwardRef(
                                     )}
                                     {
                                         <ActionSheet.Content className="quill-generic-picker__content--hide-scrollbar">
-                                            <WheelPickerContainer
+                                            <Container
                                                 data={
                                                     data as {
                                                         value: string | number;
@@ -280,10 +264,7 @@ export const WheelPickerContent = forwardRef(
                                                         newValue,
                                                     )
                                                 }
-                                                selectedTime={
-                                                    selectedTime ??
-                                                    initialValues
-                                                }
+                                                selectedTime={selectedTime}
                                                 startTimeIn24Format={
                                                     startTimeIn24Format
                                                 }
@@ -300,7 +281,7 @@ export const WheelPickerContent = forwardRef(
                                                 {...rest}
                                             >
                                                 {children}
-                                            </WheelPickerContainer>
+                                            </Container>
                                         </ActionSheet.Content>
                                     }
                                     <ActionSheet.Footer
