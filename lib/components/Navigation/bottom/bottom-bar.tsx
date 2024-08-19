@@ -55,4 +55,6 @@ const BottomBar = ({
     );
 };
 
+BottomBar.displayName = "Navigation.BottomBar";
+
 export default BottomBar;

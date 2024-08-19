@@ -62,4 +62,6 @@ const BottomAction = (props: BottomActionProps) => {
     );
 };
 
+BottomAction.displayName = "Navigation.BottomAction";
+
 export default BottomAction;

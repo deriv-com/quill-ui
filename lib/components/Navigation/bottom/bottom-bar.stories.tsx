@@ -14,6 +14,7 @@ import BottomBar from "./bottom-bar";
 import BottomAction from "./bottom-action";
 import React from "react";
 import { Text } from "@components/Typography";
+import "@deriv-com/quill-tokens/dist/quill.css";
 
 type Template = React.ComponentProps<typeof BottomBar & typeof BottomAction>;
 

@@ -3,18 +3,13 @@
         display: flex;
         align-items: center;
 
-        height: 56px; //var(--component-navigationBar-sizing-body-heightBottom)
-        padding-inline: 16px; //var(--component-navigationBar-spacing-md)
-        gap: 8px; //var(--component-navigationBar-spacing-sm)
+        height: var(--component-navigationBar-sizing-body-heightBottom);
+        padding-inline: var(--component-navigationBar-spacing-md);
+        gap: var(--component-navigationBar-spacing-sm);
         border-top-style: solid;
-        background-color: #fff; //var(--component-navigationBar-bg-body)
-        border-top-width: 1px; //var(--component-navigationBar-border-width)
-        border-top-color: rgba(
-            0,
-            0,
-            0,
-            0.08
-        ); //var(--component-navigationBar-border-color)
+        background-color: var(--component-navigationBar-bg-body);
+        border-top-width: var(--component-navigationBar-border-width);
+        border-top-color: var(--component-navigationBar-border-color);
     }
 
     &__action {
@@ -28,25 +23,34 @@
             &--true {
                 & > .quill-navigation-bottom-bar__action-icon {
                     svg {
-                        fill: #000; //var(--component-navigationBar-label-color-selected);
+                        fill: var(
+                            --component-navigationBar-label-color-selected
+                        );
                     }
                 }
 
                 & > .quill-navigation-bottom-bar__action-label {
-                    color: #000; //var(--component-navigationBar-label-color-selected);
-                    font-size: 12px; //var(--component-navigationBar-label-typography-xs);
+                    color: var(--component-navigationBar-label-color-selected);
+                    font-size: var(
+                        --component-navigationBar-label-typography-xs
+                    );
+                }
+            }
+
+            &--false {
+                & > .quill-navigation-bottom-bar__action-icon {
+                    svg {
+                        fill: var(
+                            --component-navigationBar-label-color-selected
+                        );
+                    }
                 }
             }
         }
 
         &-label {
-            font-size: 12px; //var(--component-navigationBar-label-typography-xs)
-            color: rgba(
-                0,
-                0,
-                0,
-                0.72
-            ); //var(--component-navigationBar-label-color-default)
+            font-size: var(--component-navigationBar-label-typography-xs);
+            color: var(--component-navigationBar-label-color-default);
         }
     }
 }
