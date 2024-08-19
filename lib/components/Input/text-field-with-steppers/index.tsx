@@ -90,6 +90,7 @@ export const TextFieldWithSteppers = forwardRef<
             triggerActionIcon={steppersSectionRight}
             allowDecimals={true}
             value={value && getFormatValue(value, decimals)}
+            noStatusIcon
         />
     );
 });
