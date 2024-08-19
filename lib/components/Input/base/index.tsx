@@ -150,11 +150,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             hideMessage = true;
         }
 
-        rightIcon = noStatusIcon
-            ? rightIcon
-            : (status === "success" || status === "error") && !disabled
-              ? statusIcon[status]
-              : rightIcon;
+        rightIcon =
+            (status === "success" || status === "error") &&
+            !disabled &&
+            !noStatusIcon
+                ? statusIcon[status]
+                : rightIcon;
 
         const inputId = id || useUniqueId("quill-input");
 
