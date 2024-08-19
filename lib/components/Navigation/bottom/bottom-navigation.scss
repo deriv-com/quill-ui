@@ -31,18 +31,13 @@
 
                 & > .quill-navigation-bottom-bar__action-label {
                     color: var(--component-navigationBar-label-color-selected);
-                    font-size: var(
-                        --component-navigationBar-label-typography-xs
-                    );
                 }
             }
 
             &--false {
                 & > .quill-navigation-bottom-bar__action-icon {
                     svg {
-                        fill: var(
-                            --component-navigationBar-label-color-selected
-                        );
+                        fill: var(--component-navigationBar-icon-default);
                     }
                 }
             }
