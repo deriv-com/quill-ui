@@ -13,11 +13,6 @@
                         --component-button-bg-coral-primary-hover
                     );
                 }
-                &:focus:not(:disabled) {
-                    background-color: var(
-                        --component-button-bg-coral-primary-default
-                    );
-                }
                 &:active:not(:disabled) {
                     background-color: var(
                         --component-button-bg-coral-primary-active
@@ -25,7 +20,9 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
-                    background: var(--component-button-bg-coral-primary-default);
+                    background: var(
+                        --component-button-bg-coral-primary-default
+                    );
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -118,9 +115,8 @@
                 }
                 &:focus:not(:disabled) {
                     background-color: var(
-                    --component-button-bg-buy-primary-default
-                );
-
+                        --component-button-bg-buy-primary-default
+                    );
                 }
                 &:active:not(:disabled) {
                     background-color: var(
@@ -129,9 +125,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
-                    background: var(
-                    --component-button-bg-buy-primary-default
-                );
+                    background: var(--component-button-bg-buy-primary-default);
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -154,8 +148,8 @@
                 }
                 &:focus:not(:disabled) {
                     background-color: var(
-                    --component-button-bg-sell-primary-default
-                );
+                        --component-button-bg-sell-primary-default
+                    );
                 }
                 &:active:not(:disabled) {
                     background-color: var(
@@ -164,9 +158,7 @@
                 }
                 &:disabled {
                     opacity: var(--opacity-disabled);
-                    background: var(
-                    --component-button-bg-sell-primary-default
-                );
+                    background: var(--component-button-bg-sell-primary-default);
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -189,8 +181,8 @@
                 }
                 &:focus:not(:disabled) {
                     background-color: var(
-                    --component-button-bg-blackWhite-primary-default
-                );
+                        --component-button-bg-blackWhite-primary-default
+                    );
                 }
                 &:active:not(:disabled) {
                     background-color: var(
@@ -200,8 +192,8 @@
                 &:disabled {
                     opacity: var(--opacity-disabled);
                     background: var(
-                    --component-button-bg-blackWhite-primary-default
-                );
+                        --component-button-bg-blackWhite-primary-default
+                    );
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -224,8 +216,8 @@
                 }
                 &:focus:not(:disabled) {
                     background-color: var(
-                    --component-button-bg-whiteBlack-primary-default
-                );
+                        --component-button-bg-whiteBlack-primary-default
+                    );
                 }
                 &:active:not(:disabled) {
                     background-color: var(
@@ -235,8 +227,8 @@
                 &:disabled {
                     opacity: var(--opacity-disabled);
                     background: var(
-                    --component-button-bg-whiteBlack-primary-default
-                );
+                        --component-button-bg-whiteBlack-primary-default
+                    );
                 }
                 &[data-loading="true"] {
                     background-color: var(
@@ -326,7 +318,7 @@
                         --component-button-bg-white-secondary-active
                     );
                 }
-                &:disabled  {
+                &:disabled {
                     opacity: var(--opacity-disabled);
                     background: transparent;
                 }
