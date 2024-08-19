@@ -75,6 +75,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     allowSign?: boolean;
     regex?: RegExp;
     customType?: CustomTypes;
+    noStatusIcon?: boolean;
 }
 
 const statusIconColors = {
@@ -130,6 +131,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             allowSign = true,
             regex,
             customType,
+            noStatusIcon,
             ...rest
         },
         ref,
@@ -149,7 +151,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         }
 
         rightIcon =
-            (status === "success" || status === "error") && !disabled
+            (status === "success" || status === "error") &&
+            !disabled &&
+            !noStatusIcon
                 ? statusIcon[status]
                 : rightIcon;
 

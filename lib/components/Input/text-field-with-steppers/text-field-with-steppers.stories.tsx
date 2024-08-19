@@ -55,6 +55,7 @@ const meta = {
         placeholder: "0.00",
         plusDisabled: false,
         minusDisabled: false,
+        noStatusIcon: false,
     },
     argTypes: {
         regex: {
@@ -113,6 +114,9 @@ const meta = {
             control: {
                 type: "text",
             },
+        },
+        noStatusIcon: {
+            control: "boolean",
         },
     },
 } satisfies Meta<typeof TextFieldWithSteppers>;
