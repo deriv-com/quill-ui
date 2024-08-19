@@ -15,8 +15,6 @@ import BottomAction from "./bottom-action";
 import React from "react";
 import { Text } from "@components/Typography";
 
-const length = 4;
-
 type Template = React.ComponentProps<typeof BottomBar & typeof BottomAction>;
 
 const icons: Record<string, object> = {
@@ -67,7 +65,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const Template: React.FC<Template> = ({ ...args }: Template) => {
+const Template: React.FC<Template> = ({ length = 4, ...args }: Template) => {
     const { value, showLabels, customIcon, ...rest } = args;
     const [index, setIndex] = React.useState(value);
 
@@ -114,5 +112,10 @@ const Template: React.FC<Template> = ({ ...args }: Template) => {
     );
 };
 
-export const BottomNavigationBarDefault = Template.bind(this) as Story;
+const BottomNavigationBarDefault = Template.bind(this) as Story;
 BottomNavigationBarDefault.args = { ...meta.args };
+
+const BottomNavigationBarWithThreeItem = Template.bind(this) as Story;
+BottomNavigationBarWithThreeItem.args = { ...meta.args, length: 3 };
+
+export { BottomNavigationBarDefault, BottomNavigationBarWithThreeItem };
