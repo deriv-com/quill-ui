@@ -21,7 +21,6 @@ exports[`GenericWheelPicker renders correctly 1`] = `
               <input
                 autocomplete="off"
                 class="input peer input__align--left input__size--md"
-                data="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
                 id="quill-input-1"
                 placeholder=""
                 readonly=""
@@ -74,6 +73,7 @@ exports[`GenericWheelPicker renders correctly 1`] = `
         >
           <div
             class="quill-wheel-picker__container"
+            style="height: 100%;"
           >
             <ul
               class="quill-wheel-picker__data-items quill-wheel-picker__data-items-left"
@@ -116,6 +116,7 @@ exports[`GenericWheelPicker renders correctly 1`] = `
           </div>
           <div
             class="quill-wheel-picker__container"
+            style="height: 100%;"
           >
             <ul
               class="quill-wheel-picker__data-items quill-wheel-picker__data-items-center"
@@ -158,6 +159,7 @@ exports[`GenericWheelPicker renders correctly 1`] = `
           </div>
           <div
             class="quill-wheel-picker__container"
+            style="height: 100%;"
           >
             <ul
               class="quill-wheel-picker__data-items quill-wheel-picker__data-items-right"

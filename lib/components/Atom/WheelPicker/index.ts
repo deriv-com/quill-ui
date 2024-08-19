@@ -1,2 +1,4 @@
 export * from "./base";
-export * from "./generic-wheel-picker";
+export * from "./wheel-picker";
+export * from "./time-wheel-picker";
+export * from "./types";

@@ -10,6 +10,7 @@ exports[`GenericWheelPickerContainer renders correctly 1`] = `
     >
       <div
         class="quill-wheel-picker__container"
+        style="height: 100%;"
       >
         <ul
           class="quill-wheel-picker__data-items quill-wheel-picker__data-items-left"
@@ -52,6 +53,7 @@ exports[`GenericWheelPickerContainer renders correctly 1`] = `
       </div>
       <div
         class="quill-wheel-picker__container"
+        style="height: 100%;"
       >
         <ul
           class="quill-wheel-picker__data-items quill-wheel-picker__data-items-center"
@@ -94,6 +96,7 @@ exports[`GenericWheelPickerContainer renders correctly 1`] = `
       </div>
       <div
         class="quill-wheel-picker__container"
+        style="height: 100%;"
       >
         <ul
           class="quill-wheel-picker__data-items quill-wheel-picker__data-items-right"

@@ -1,24 +1,16 @@
-import { KeyboardEvent, useEffect, useState } from "react";
-import { InputProps } from "@components/Input/base";
+import React, { KeyboardEvent, useEffect, useState } from "react";
 import WheelPicker from "../base";
-import { KEY } from "@utils/common-utils";
-
-export interface WheelPickerContainerProps extends InputProps {
-    data: { value: string | number }[][];
-    inputValues: (string | number)[];
-    setInputValues: (index: number, value: string | number) => void;
-    children?: React.ReactNode;
-    close?: () => void;
-    setSelectedValue?: (value: string) => void;
-}
+import { KEY, reactNodeToString } from "@utils/common-utils";
+import { WheelPickerContainerProps } from "../types";
+import { THorizontalPosition } from "@types";
 
 export const WheelPickerContainer = ({
     data = [],
     inputValues = [],
-    setInputValues,
+    setInputValues = () => null,
     close,
     setSelectedValue,
-    ...rest
+    disabled,
 }: WheelPickerContainerProps) => {
     const [colRef, setColRef] = useState<boolean[]>(
         new Array(data.length).fill(false),
@@ -27,10 +19,22 @@ export const WheelPickerContainer = ({
     useEffect(() => {
         if (setSelectedValue) {
             setSelectedValue(
-                inputValues.reduce((previousValue, currentValue, index) => {
-                    if(index === 0) return currentValue;
-                    return `${previousValue ?? ""} ${currentValue ?? ""}`;
-                }, "") as string,
+                inputValues.reduce(
+                    (previousValue, currentValue, index): string => {
+                        if (!data[index]) return previousValue as string;
+                        const selectedItem = data[index].find(
+                            (item) => item.value === currentValue,
+                        );
+
+                        return (
+                            index === 0
+                                ? reactNodeToString(selectedItem?.label) ||
+                                  selectedItem?.value
+                                : `${previousValue ?? ""} ${reactNodeToString(selectedItem?.label) || selectedItem?.value}`
+                        ) as string;
+                    },
+                    "",
+                ) as string,
             );
         }
     }, [inputValues]);
@@ -62,7 +66,7 @@ export const WheelPickerContainer = ({
         }
     };
 
-    const getPosition = (index: number) => {
+    const getPosition = (index: number): THorizontalPosition | undefined => {
         if (data.length === 1) return;
         if (index === 0 && data.length > 1) return "left";
         if (index === data.length - 1 && data.length > 1) return "right";
@@ -82,7 +86,7 @@ export const WheelPickerContainer = ({
                         isFocused={colRef[index]}
                         handleKeyDown={(e) => handleKeyDown(e, index)}
                         position={getPosition(index)}
-                        {...rest}
+                        disabled={disabled}
                     />
                 );
             })}

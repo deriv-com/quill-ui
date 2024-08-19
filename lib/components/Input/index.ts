@@ -7,4 +7,4 @@ export * from "./textarea";
 export * from "./text-field-addon";
 export * from "./date-picker";
 export * from "./custom-dropdown";
-export * from "./generic-wheel-picker";
+export * from "./wheel-picker";

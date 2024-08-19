@@ -4,6 +4,7 @@ import { LabelPairedPlaceholderCaptionBoldIcon } from "@deriv/quill-icons/LabelP
 import { GenericWheelPicker } from ".";
 import BreakpointProvider from "@providers/breakpoint/breakpointProvider";
 import { StandaloneCircleCheckBoldIcon } from "@deriv/quill-icons";
+import { WheelPickerContainer } from "@components/Atom";
 
 const icons: Record<string, object | null> = {
     with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
@@ -26,14 +27,18 @@ const meta = {
         disabled: false,
         data: [
             [
-                { value: "item-1" },
-                { value: "item-2" },
+                { value: "item-1", label: "Item 1" },
+                { value: "item-2", label: "Item 2" },
                 { value: "item-3" },
-                { value: "item-4" },
+                { value: "item-4", label: "Item 4" },
                 { value: "item-5" },
                 { value: "item-6" },
             ],
-            [{ value: "item-1" }, { value: "item-2" }, { value: "item-3" }],
+            [
+                { value: "item-1" },
+                { value: "item-2", label: "Item 2" },
+                { value: "item-3" },
+            ],
         ],
         actionSheetFooter: {
             primaryAction: {
@@ -41,10 +46,12 @@ const meta = {
                 onAction: () => null,
             },
         },
-        values: ["item-3", "item-1"],
+        values: ["item-3", "item-2"],
         status: "neutral",
         placeholder: "Select",
         variant: "fill",
+        container: WheelPickerContainer,
+        wheelType: "Generic",
     },
     argTypes: {
         status: {
@@ -91,7 +98,7 @@ const Template: React.FC<Template> = ({ ...args }: Template) => {
     );
 };
 
-export const Default = Template.bind(this) as Story;
+export const Default = Template.bind(this) as unknown as Story;
 Default.args = { ...meta.args };
 
 export const DefaultLabellessGenericWheelPicker = Template.bind(this) as Story;

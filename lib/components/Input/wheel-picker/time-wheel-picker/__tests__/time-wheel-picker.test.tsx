@@ -1,29 +1,11 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { GenericWheelPicker } from "..";
+import { TimeWheelPicker } from "..";
 import { DropdownProvider } from "@providers/dropdown/dropdownProvider";
 import { useDropdown } from "@hooks/useDropdown";
 import useBreakpoints from "@hooks/useBreakpoints";
 import { act } from "react-dom/test-utils";
-
-const mockData = [
-    [
-        { value: "1" },
-        { value: "2" },
-        { value: "3" },
-    ],
-    [
-        { value: "4" },
-        { value: "5" },
-        { value: "6" },
-    ],
-    [
-        { value: "7"},
-        { value: "8"},
-        { value: "9"},
-    ],
-];
 
 jest.mock("@hooks/useDropdown", () => ({
     useDropdown: jest.fn(),
@@ -42,16 +24,16 @@ const mockOnValueChange = jest.fn();
 const renderComponent = () =>
     render(
         <DropdownProvider>
-            <GenericWheelPicker
-                data={mockData}
-                values={["1", "4", "7"]}
+            <TimeWheelPicker
+                is12Hour
                 label="test"
+                wheelType="Time"
                 onValueChange={mockOnValueChange}
             />
         </DropdownProvider>,
     );
 
-describe("GenericWheelPicker", () => {
+describe("TimeWheelPicker", () => {
     const mockOpen = jest.fn();
     const mockClose = jest.fn();
 
@@ -96,7 +78,7 @@ describe("GenericWheelPicker", () => {
         const input = screen.getByRole("textbox");
         await userEvent.type(input, "{arrowdown}");
 
-        expect(mockOnValueChange).toHaveBeenCalledWith(["1", "4", "7"]);
+        expect(mockOnValueChange).toHaveBeenCalledTimes(1);
     });
 
     it("should render ActionSheet in mobile view", async () => {
@@ -105,7 +87,7 @@ describe("GenericWheelPicker", () => {
             isOpen: true,
             open: mockOpen,
             close: mockClose,
-        })
+        });
 
         renderComponent();
 
@@ -113,6 +95,6 @@ describe("GenericWheelPicker", () => {
         await act(() => {
             userEvent.click(input);
         });
-        expect(screen.getByText("6")).toBeInTheDocument();
+        expect(screen.getAllByText("01")).toHaveLength(2);
     });
 });
