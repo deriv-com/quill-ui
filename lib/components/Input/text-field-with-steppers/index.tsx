@@ -32,6 +32,7 @@ export const TextFieldWithSteppers = forwardRef<
         decimals = 2,
         minusDisabled = false,
         plusDisabled = false,
+        noStatusIcon,
         ...rest
     } = props;
 
@@ -90,7 +91,7 @@ export const TextFieldWithSteppers = forwardRef<
             triggerActionIcon={steppersSectionRight}
             allowDecimals={true}
             value={value && getFormatValue(value, decimals)}
-            noStatusIcon
+            noStatusIcon={noStatusIcon}
         />
     );
 });
