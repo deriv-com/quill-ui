@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Heading, Skeleton } from "../lib/main";
+import { Heading, InputPhoneNumber, Skeleton, TextFieldAddon } from "../lib/main";
 import ThemeSwitcher from "./theme-switcher";
 import ThemeRenderer from "./theme-renderer";
 import BreakpointProvider from "@providers/breakpoint/breakpointProvider";
@@ -31,6 +31,27 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                             <Skeleton.Square />
                         </Skeleton.Container>
                     </Skeleton.Container>
+
+                    <div style={{ width: "20rem" }}>
+                        <InputPhoneNumber
+                            label="Phone Number"
+                            codeLabel="Code"
+                            status="success"
+                        />
+                        {/* <InputPhoneNumber
+                            label="Phone Number"
+                            variant="fill"
+                            codeLabel="Code"
+                            status="error"
+                            fillAddonBorderColor="var(--semantic-color-slate-solid-surface-frame-mid)"
+                        />
+                        <TextFieldAddon
+                            variant="fill"
+                            addonLabel="Label"
+                            fillAddonBorderColor="var(--semantic-color-slate-solid-surface-frame-mid)"
+                        />
+                        <InputPhoneNumber codeIcon={false} inputSize="sm" /> */}
+                    </div>
                 </div>
             </BreakpointProvider>
         </ThemeRenderer>
