@@ -115,7 +115,7 @@ const Template: React.FC<Template> = ({ length = 4, ...args }: Template) => {
 const BottomNavigationBarDefault = Template.bind(this) as Story;
 BottomNavigationBarDefault.args = { ...meta.args };
 
-const BottomNavigationBarWithThreeItem = Template.bind(this) as Story;
-BottomNavigationBarWithThreeItem.args = { ...meta.args, length: 3 };
+const BottomNavigationBarWithLabels = Template.bind(this) as Story;
+BottomNavigationBarWithLabels.args = { ...meta.args, showLabels: true };
 
-export { BottomNavigationBarDefault, BottomNavigationBarWithThreeItem };
+export { BottomNavigationBarDefault, BottomNavigationBarWithLabels };
