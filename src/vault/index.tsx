@@ -9,11 +9,14 @@ import {
     categorizeVariables,
     ProcessedObject,
 } from "./helpers/categorizer";
+import usePageQuery from "./hooks/usePageQuery";
+import PageContainer from "./components/page-container";
 
 const Vault = () => {
     const [variables, setVariables] = useState<Categories>({});
     const [currentVersion, setCurrentVersion] = useState("");
     const [data, setData] = useState<TypeData | null>(null);
+    const { currentPage, setPage } = usePageQuery();
 
     useEffect(() => {
         async function fetchData() {
@@ -39,12 +42,22 @@ const Vault = () => {
                         <div className="vault-sidebar">
                             <div className="sidebar-item-box">
                                 <Text bold>Introduction</Text>
-                                <Text size="sm" className="link">
-                                    Core Tokens
-                                </Text>
-                                <Text size="sm" className="link">
-                                    Semantic Tokens
-                                </Text>
+                                <span
+                                    onClick={() =>
+                                        setPage(["introduction", "core"])
+                                    }
+                                    className={`item-box ${currentPage[0] === "introduction" && currentPage[1] === "core" ? "active" : ""}`}
+                                >
+                                    <Text size="sm">Core Tokens</Text>
+                                </span>
+                                <span
+                                    onClick={() =>
+                                        setPage(["introduction", "semantic"])
+                                    }
+                                    className={`item-box ${currentPage[0] === "introduction" && currentPage[1] === "semantic" ? "active" : ""}`}
+                                >
+                                    <Text size="sm">Semantic Tokens</Text>
+                                </span>
                             </div>
                             {Object.keys(variables).map((varKeys) => {
                                 const categoryItems: ProcessedObject =
@@ -59,10 +72,22 @@ const Vault = () => {
                                             (itemKey) => {
                                                 const item =
                                                     categoryItems[itemKey];
+                                                const key = item.key;
+                                                const isActive =
+                                                    currentPage?.[0] ===
+                                                        varKeys &&
+                                                    currentPage?.[1] === key;
+
                                                 return (
                                                     <span
-                                                        className="item-box"
+                                                        className={`item-box ${isActive ? "active" : ""}`}
                                                         key={`${varKeys}-${itemKey}`}
+                                                        onClick={() =>
+                                                            setPage([
+                                                                varKeys,
+                                                                key,
+                                                            ])
+                                                        }
                                                     >
                                                         <Text size="sm">
                                                             {item.value}
@@ -88,45 +113,7 @@ const Vault = () => {
                             })}
                         </div>
                         <div className="vault-content">
-                            {!data ? (
-                                <Skeleton.Container>
-                                    <Skeleton.Square
-                                        rounded
-                                        height={100}
-                                        width={200}
-                                    />
-                                    <Skeleton.Square
-                                        rounded
-                                        height={100}
-                                        width={200}
-                                    />
-                                    <Skeleton.Square
-                                        rounded
-                                        height={100}
-                                        width={200}
-                                    />
-                                    <Skeleton.Square
-                                        rounded
-                                        height={100}
-                                        width={200}
-                                    />
-                                    <Skeleton.Square
-                                        rounded
-                                        height={100}
-                                        width={200}
-                                    />
-                                </Skeleton.Container>
-                            ) : (
-                                <>
-                                    <BoxModelDemo />
-                                    <div className="code-container">
-                                        <div className="code-body">
-                                            <span className="code-item comment"></span>
-                                            <span className="code-item"></span>
-                                        </div>
-                                    </div>
-                                </>
-                            )}
+                            <PageContainer />
                         </div>
                     </div>
                 </div>

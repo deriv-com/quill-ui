@@ -132,7 +132,7 @@
                 padding: var(--core-spacing-100) var(--core-spacing-400);
                 border-radius: var(--core-borderRadius-100);
 
-                &:hover {
+                &:hover,&.active {
                     cursor: pointer;
                     background: var(--semantic-color-slate-solid-surface-inverse-high);
 
@@ -219,6 +219,11 @@
                     }
                 }
             }
+        }
+
+        .page-container {
+            display: flex;
+            flex-direction: column;
         }
     }
 }

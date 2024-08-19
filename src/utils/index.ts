@@ -34,6 +34,12 @@ export async function loadVersionData(
     }
 }
 
+export const convertCamelToCapitalized = (str: string) => {
+    return str
+        .replace(/([a-z])([A-Z])/g, "$1 $2") // Add space between camelCase words
+        .replace(/^./, (match) => match.toUpperCase()); // Capitalize the first letter
+};
+
 export const cleanAndConvertCamelCase = (input: string) => {
     // Remove non-alphabet characters and split camelCase
     const cleaned = input

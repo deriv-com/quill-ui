@@ -1,3 +1,5 @@
+import { toCamelCase } from "../../utils";
+
 type TokensObject = { [key: string]: string };
 
 export interface ProcessedObject {
@@ -43,15 +45,15 @@ export const categorizeVariables = (obj: {
             : "generic";
 
         const existingObject = categories[targetCategory].find(
-            (item) => item.key === tokenKey,
+            (item) => item.key === toCamelCase(tokenKey),
         );
 
         if (existingObject) {
             existingObject.tokens[key] = obj[key];
         } else {
             const newProcessedObject: ProcessedObject = {
-                key: tokenKey,
-                value: keyName,
+                key: toCamelCase(tokenKey),
+                value: tokenKey,
                 tokens: { [key]: obj[key] },
             };
             categories[targetCategory].push(newProcessedObject);
