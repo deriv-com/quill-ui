@@ -23,32 +23,34 @@ const VaultHeader = ({ onVersionChange }: HeaderProps) => {
     }, [tokenVersions]);
     return (
         <div className="vault-header">
-            <div className="brand">
-                <span className="logo">
-                    <img src={Logo} alt="Quill Tokens" />
-                </span>
-                <div className="version-box">
-                    <Text className="app-name" size="sm" bold>
-                        Quill Tokens
-                    </Text>
-                    {versions.length > 0 && (
-                        <InputDropdown
-                            label="Version"
-                            onSelectOption={(e) => {
-                                onVersionChange?.(e);
-                                setCurrentVersion(e);
-                            }}
-                            inputSize="sm"
-                            variant="fill"
-                            options={versions.map((v) => ({
-                                text: v,
-                                value: v,
-                            }))}
-                            placeholder="Select"
-                            status="neutral"
-                            value={currentVersion}
-                        />
-                    )}
+            <div className="constrained-container">
+                <div className="brand">
+                    <span className="logo">
+                        <img src={Logo} alt="Quill Tokens" />
+                    </span>
+                    <div className="version-box">
+                        <Text className="app-name" size="sm" bold>
+                            Quill Tokens
+                        </Text>
+                        {versions.length > 0 && (
+                            <InputDropdown
+                                label="Version"
+                                onSelectOption={(e) => {
+                                    onVersionChange?.(e);
+                                    setCurrentVersion(e);
+                                }}
+                                inputSize="sm"
+                                variant="fill"
+                                options={versions.map((v) => ({
+                                    text: v,
+                                    value: v,
+                                }))}
+                                placeholder="Select"
+                                status="neutral"
+                                value={currentVersion}
+                            />
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
