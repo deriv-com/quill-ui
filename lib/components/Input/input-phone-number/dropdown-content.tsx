@@ -11,7 +11,7 @@ const DropdownContent = ({
 }: {
     options: TCountryCodes[];
     code: string;
-    elementRef?: HTMLDivElement;
+    elementRef: React.RefObject<HTMLDivElement>;
 }) => {
     const { isMobile } = useBreakpoints();
     const { isOpen } = useDropdown();
@@ -37,7 +37,7 @@ const DropdownContent = ({
                     size="md"
                     // className={className}
                     height="md"
-                    portalContainer={elementRef}
+                    portalContainer={elementRef.current!}
                 >
                     <Content />
                 </ItemContainer>

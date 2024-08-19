@@ -57,14 +57,10 @@ export const InputPhoneNumber = forwardRef<
         },
         ref,
     ) => {
-        const containerRef = useRef<HTMLDivElement>();
+        const containerRef = useRef<HTMLDivElement>(null);
         const phoneCode = selectedCode || countryCodes[0].phone_code;
-        console.log(containerRef.current);
-        const codeAddOn = ({
-            containerRef,
-        }: {
-            containerRef: HTMLDivElement;
-        }) => (
+
+        const codeAddOn = (
             <CustomDropdown
                 value={phoneCode}
                 label={codeLabel}
@@ -82,7 +78,7 @@ export const InputPhoneNumber = forwardRef<
                 <DropdownContent
                     options={countryCodes}
                     code={phoneCode}
-                    ref={containerRef}
+                    elementRef={containerRef}
                 />
             </CustomDropdown>
         );
@@ -91,7 +87,7 @@ export const InputPhoneNumber = forwardRef<
             <div ref={containerRef}>
                 <Input
                     type="tel"
-                    addOn={codeAddOn(containerRef.current)}
+                    addOn={codeAddOn}
                     inputSize={inputSize}
                     status={status}
                     variant={variant}
