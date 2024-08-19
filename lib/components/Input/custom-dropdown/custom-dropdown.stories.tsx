@@ -64,6 +64,14 @@ const meta = {
             description: "label of the dropdown",
             table: { type: { summary: "string" } },
         },
+        onOpen: {
+            description: "A callback function on dropdown content open",
+            table: { type: { summary: "() => void" } },
+        },
+        onClose: {
+            description: "A callback function on dropdown content close",
+            table: { type: { summary: "() => void" } },
+        },
     },
     parameters: {
         docs: {
@@ -101,6 +109,9 @@ The CustomDropdown component accepts the following props:
 - **onChange** ((e: React.ChangeEvent<'HTMLInputElement'>) => void): A callback function that is called when the input value changes.
 - **containerClassName** (string): ClassName applied to the dropdown container.
 - **actionSheetFooter** (ComponentProps<'typeof ActionSheet.Footer'>): Accept all the props from action sheet footer component.
+- **onOpen** (() => void): A callback function on dropdown content open.
+- **onClose** (() => void): A callback function on dropdown content close.
+- **fullHeightOnOpen** (boolean): Dropdown content on mobile screen size is action sheet. Use this prop to control is you want to open action sheet in full height(90vh) on open.
 - Additionally, it accepts all props from the Input component.
 
 ### Usage Example

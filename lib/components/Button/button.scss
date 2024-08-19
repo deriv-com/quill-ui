@@ -7,21 +7,25 @@
                 min-height: var(--component-button-height-sm);
                 min-width: var(--component-button-width-sm);
                 border-radius: var(--component-button-border-radius-sm);
+                border-width: var(--component-button-border-width-sm);
             }
             &--md {
                 min-height: var(--component-button-height-md);
                 min-width: var(--component-button-width-md);
                 border-radius: var(--component-button-border-radius-md);
+                border-width: var(--component-button-border-width-sm);
             }
             &--lg {
                 min-height: var(--component-button-height-lg);
                 min-width: var(--component-button-width-lg);
                 border-radius: var(--component-button-border-radius-lg);
+                border-width: var(--component-button-border-width-sm);
             }
             &--xl {
                 min-height: var(--component-button-height-xl);
                 min-width: var(--component-button-width-xl);
                 border-radius: var(--component-button-border-radius-xl);
+                border-width: var(--component-button-border-width-md);
             }
         }
     }

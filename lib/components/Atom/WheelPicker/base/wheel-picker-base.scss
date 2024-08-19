@@ -22,6 +22,12 @@
         height: 100%;
         width: 100%;
         scrollbar-width: none;
+
+        &-disabled {
+            pointer-events: none;
+            opacity: var(--opacity-disabled);
+            cursor: not-allowed;
+        }
     }
 
     &__data-items {
@@ -48,6 +54,15 @@
             background-color: var(--component-dropdownItem-bg-hover);
             border-radius: var(--core-borderRadius-200);
             pointer-events: none;
+        }
+
+        &__minute {
+            &::before {
+                content: ":";
+                display: flex;
+                align-items: center;
+                color: var(--component-textIcon-normal-default);
+            }
         }
 
         &-left {

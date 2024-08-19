@@ -1,13 +1,7 @@
 .quill-custom-dropdown {
-    &__is-open {
-        &--true {
-            z-index: 100;
-        }
-    }
-
     &__container {
         position: relative;
-        max-width: 360px;
+        display: inline-block;
     }
 
     &__input {
@@ -19,10 +13,20 @@
 
     &__content {
         position: absolute;
+        top: 100%;
+        z-index: 100;
         width: 100%;
 
-        &--container {
-            position: relative;
+        &-align {
+            &--left {
+                left: 0;
+                right: auto;
+            }
+
+            &--right {
+                right: 0;
+                left: auto;
+            }
         }
     }
 }

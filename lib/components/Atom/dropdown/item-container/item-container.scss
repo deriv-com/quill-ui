@@ -1,0 +1,33 @@
+.quill__item-container {
+    background-color: var(--component-dropdownList-bg);
+    box-shadow: var(--component-dropdownList-elevation-shadow);
+    border-radius: var(--component-dropdownList-border-radius);
+    border-width: var(--component-dropdownList-border-width);
+    border-color: var(--component-dropdownList-border-color);
+    margin-top: var(--core-spacing-200);
+    overflow-y: auto;
+
+    &--size {
+        &-sm {
+            padding: var(--component-dropdownList-spacing-padding-sm);
+        }
+
+        &-md {
+            padding: var(--component-dropdownList-spacing-padding-md);
+        }
+    }
+
+    &--height {
+        &-sm {
+            max-height: var(--component-dropdownList-height-item-sm);
+        }
+
+        &-md {
+            max-height: var(--component-dropdownList-height-item-md);
+        }
+
+        &-lg {
+            max-height: var(--component-dropdownList-height-item-lg);
+        }
+    }
+}
