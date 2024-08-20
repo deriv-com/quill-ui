@@ -23,6 +23,7 @@ export const TimeWheelPickerContainer = ({
     close,
     data,
     disabled,
+    containerHeight = "100%",
 }: TimeWheelPickerContainerProps) => {
     const inputStartDate = dayjs(`1/1/1 ${startTimeIn24Format ?? "00:00"}`);
     const inputSelectedDate = dayjs(`1/1/1 ${selectedTime}`);
@@ -240,6 +241,7 @@ export const TimeWheelPickerContainer = ({
                         handleKeyDown={(e) => handleKeyDown(e, 0)}
                         position="left"
                         disabled={disabled}
+                        containerHeight={containerHeight}
                     />
                 )}
                 {minutes?.length && (
@@ -258,6 +260,7 @@ export const TimeWheelPickerContainer = ({
                         position={is12Hour ? "center" : "right"}
                         listClassName="quill-wheel-picker__data-items__minute"
                         disabled={disabled}
+                        containerHeight={containerHeight}
                     />
                 )}
                 {meridiem && is12Hour && (
@@ -274,6 +277,7 @@ export const TimeWheelPickerContainer = ({
                         handleKeyDown={(e) => handleKeyDown(e, 2)}
                         position="right"
                         disabled={disabled}
+                        containerHeight={containerHeight}
                     />
                 )}
             </div>

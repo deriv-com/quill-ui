@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
 import { DropdownItem } from "@components/Atom/dropdown";
 import "./wheel-picker-base.scss";
-import { WheelPickerProps } from "../types";
+import { TWheelTypeSelectItem, WheelPickerProps } from "../types";
 
 export const WheelPicker = ({
     data,
@@ -18,7 +18,7 @@ export const WheelPicker = ({
     ...rest
 }: WheelPickerProps) => {
     const itemsRefs = useRef<HTMLDivElement[]>([]);
-    const [inputData, setInputData] = useState(data);
+    const [inputData, setInputData] = useState<TWheelTypeSelectItem[]>([]);
     const dataItemsMap = useMemo(
         () =>
             data.reduce(
@@ -89,7 +89,7 @@ export const WheelPicker = ({
     }, [isFocused]);
 
     return (
-        <div
+       inputData.length &&  <div
             className={clsx(
                 "quill-wheel-picker__container",
                 rest?.disabled && "quill-wheel-picker__container-disabled",
