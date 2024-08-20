@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { BottomAction, BottomBar } from "./bottom";
+import { BottomAction, BottomBar } from "./bottom-navigation";
 
 interface NavigationType {
     Bottom: typeof BottomBar;

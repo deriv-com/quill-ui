@@ -1,5 +1,5 @@
 import React from "react";
-import { BottomBarProps } from "./bottom-bar";
+import { BottomBarProps } from "../bottom-bar";
 import clsx from "clsx";
 import { CaptionText } from "@components/Typography";
 

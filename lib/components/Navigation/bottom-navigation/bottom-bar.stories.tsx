@@ -1,3 +1,4 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import {
     StandaloneGearFillIcon,
@@ -10,9 +11,7 @@ import {
     StandaloneUserRegularIcon,
 } from "@deriv/quill-icons";
 import Navigation from "..";
-import BottomBar from "./bottom-bar";
-import BottomAction from "./bottom-action";
-import React from "react";
+import { BottomBar, BottomAction } from ".";
 import { Text } from "@components/Typography";
 import "@deriv-com/quill-tokens/dist/quill.css";
 
@@ -39,7 +38,6 @@ const icons: Record<string, object> = {
 
 const meta = {
     title: "Components/Navigation/BottomBar",
-    tags: ["autodocs"],
     args: {
         label: "Label",
         icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
