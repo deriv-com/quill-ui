@@ -1,42 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Badge, IconButton, Skeleton, Text } from "../../lib/main";
-
-import { loadVersionData, TypeData } from "../utils";
-import BoxModelDemo from "./components/box-model-demo";
+import { Text } from "../../lib/main";
 import VaultHeader from "./layout/header";
-import {
-    Categories,
-    categorizeVariables,
-    ProcessedObject,
-} from "./helpers/categorizer";
+import { ProcessedObject } from "./helpers/categorizer";
 import usePageQuery from "./hooks/usePageQuery";
 import PageContainer from "./components/page-container";
+import { LabelPairedChevronDownSmBoldIcon } from "@deriv/quill-icons/LabelPaired";
+import { useVersion } from "./hooks/useVersion";
 
 const Vault = () => {
-    const [variables, setVariables] = useState<Categories>({});
-    const [currentVersion, setCurrentVersion] = useState("");
-    const [data, setData] = useState<TypeData | null>(null);
+    const [activeCollapse, setActiveCollapse] = useState(0);
     const { currentPage, setPage } = usePageQuery();
+    const { variables } = useVersion();
 
-    useEffect(() => {
-        async function fetchData() {
-            const loadedData = await loadVersionData(currentVersion);
-            setData(loadedData);
-        }
-        fetchData();
-    }, [currentVersion]);
-
-    useEffect(() => {
-        if (data) {
-            const categorizedVars = categorizeVariables(data.cssVariables);
-            setVariables(categorizedVars);
-        }
-    }, [data]);
+    const toggleCollapse = (e: number) =>
+        setActiveCollapse(activeCollapse === e ? -1 : e);
 
     return (
         <section className="vault-section">
             <div className="vault-container">
-                <VaultHeader onVersionChange={(e) => setCurrentVersion(e)} />
+                <VaultHeader />
                 <div className="constrained-container">
                     <div className="vault-body">
                         <div className="vault-sidebar">
@@ -44,22 +26,34 @@ const Vault = () => {
                                 <Text bold>Introduction</Text>
                                 <span
                                     onClick={() =>
-                                        setPage(["introduction", "core"])
+                                        setPage(["introduction-to-core-tokens"])
                                     }
-                                    className={`item-box ${currentPage[0] === "introduction" && currentPage[1] === "core" ? "active" : ""}`}
+                                    className={`item-box ${currentPage[0] === "introduction-to-core-tokens" ? "active" : ""}`}
                                 >
                                     <Text size="sm">Core Tokens</Text>
                                 </span>
                                 <span
                                     onClick={() =>
-                                        setPage(["introduction", "semantic"])
+                                        setPage([
+                                            "introduction-to-semantic-tokens",
+                                        ])
                                     }
-                                    className={`item-box ${currentPage[0] === "introduction" && currentPage[1] === "semantic" ? "active" : ""}`}
+                                    className={`item-box ${currentPage[0] === "introduction-to-semantic-tokens" ? "active" : ""}`}
                                 >
                                     <Text size="sm">Semantic Tokens</Text>
                                 </span>
+                                <span
+                                    onClick={() =>
+                                        setPage([
+                                            "introduction-to-component-tokens",
+                                        ])
+                                    }
+                                    className={`item-box ${currentPage[0] === "introduction-to-component-tokens" ? "active" : ""}`}
+                                >
+                                    <Text size="sm">Component Tokens</Text>
+                                </span>
                             </div>
-                            {Object.keys(variables).map((varKeys) => {
+                            {Object.keys(variables).map((varKeys, varIndex) => {
                                 const categoryItems: ProcessedObject =
                                     variables[varKeys];
                                 return (
@@ -67,47 +61,62 @@ const Vault = () => {
                                         className="sidebar-item-box"
                                         key={`category-${varKeys}`}
                                     >
-                                        <Text bold>{varKeys}</Text>
-                                        {Object.keys(categoryItems).map(
-                                            (itemKey) => {
-                                                const item =
-                                                    categoryItems[itemKey];
-                                                const key = item.key;
-                                                const isActive =
-                                                    currentPage?.[0] ===
-                                                        varKeys &&
-                                                    currentPage?.[1] === key;
+                                        <Text bold>
+                                            <span
+                                                className={`collapse-header ${varIndex === activeCollapse ? "active" : ""}`}
+                                                onClick={() =>
+                                                    toggleCollapse(varIndex)
+                                                }
+                                            >
+                                                {varKeys}
+                                                <LabelPairedChevronDownSmBoldIcon />
+                                            </span>
+                                        </Text>
+                                        <div
+                                            className={`collapse-body ${varIndex === activeCollapse ? "active" : ""}`}
+                                        >
+                                            {Object.keys(categoryItems).map(
+                                                (itemKey) => {
+                                                    const item =
+                                                        categoryItems[itemKey];
+                                                    const key = item.key;
+                                                    const isActive =
+                                                        currentPage?.[0] ===
+                                                            varKeys &&
+                                                        currentPage?.[1] ===
+                                                            key;
 
-                                                return (
-                                                    <span
-                                                        className={`item-box ${isActive ? "active" : ""}`}
-                                                        key={`${varKeys}-${itemKey}`}
-                                                        onClick={() =>
-                                                            setPage([
-                                                                varKeys,
-                                                                key,
-                                                            ])
-                                                        }
-                                                    >
-                                                        <Text size="sm">
-                                                            {item.value}
-                                                        </Text>
-                                                        <Text
-                                                            size="sm"
-                                                            className="item-count"
-                                                        >
-                                                            (
-                                                            {
-                                                                Object.keys(
-                                                                    item.tokens,
-                                                                ).length
+                                                    return (
+                                                        <span
+                                                            className={`item-box ${isActive ? "active" : ""}`}
+                                                            key={`${varKeys}-${itemKey}`}
+                                                            onClick={() =>
+                                                                setPage([
+                                                                    varKeys,
+                                                                    key,
+                                                                ])
                                                             }
-                                                            )
-                                                        </Text>
-                                                    </span>
-                                                );
-                                            },
-                                        )}
+                                                        >
+                                                            <Text size="sm">
+                                                                {item.value}
+                                                            </Text>
+                                                            <Text
+                                                                size="sm"
+                                                                className="item-count"
+                                                            >
+                                                                (
+                                                                {
+                                                                    Object.keys(
+                                                                        item.tokens,
+                                                                    ).length
+                                                                }
+                                                                )
+                                                            </Text>
+                                                        </span>
+                                                    );
+                                                },
+                                            )}
+                                        </div>
                                     </div>
                                 );
                             })}

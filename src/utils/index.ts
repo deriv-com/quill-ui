@@ -1,9 +1,4 @@
-// src/utils/loadVersionData.ts
-
-export interface TypeData {
-    cssVariables: { [key: string]: string };
-    variableCounts: { [key: string]: number };
-}
+import { TypeData } from "src/vault/types";
 
 export async function loadVersionData(
     version?: string,
@@ -51,6 +46,13 @@ export const cleanAndConvertCamelCase = (input: string) => {
         .split(" ")
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ");
+};
+
+export const unslugify = (text: string) => {
+    return text
+        .split("-") // Split the text by hyphens
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
+        .join(" "); // Join the words with spaces
 };
 
 export const toCamelCase = (str: string): string => {

@@ -60,5 +60,5 @@ export const categorizeVariables = (obj: {
         }
     });
 
-    return categories;
+    return { ...categories };
 };

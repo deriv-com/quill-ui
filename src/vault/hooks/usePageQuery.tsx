@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 type UsePageQueryResult = {
     currentPage: string[];
     setPage: (pageArray: string[]) => void;
+    mainPage: string;
 };
 
 const usePageQuery = (): UsePageQueryResult => {
@@ -24,8 +25,15 @@ const usePageQuery = (): UsePageQueryResult => {
         navigate({ search: params.toString() });
     };
 
+    const getLastPageItem = () => {
+        const page = getPageFromQuery();
+
+        return page[page.length - 1];
+    };
+
     return {
         currentPage: getPageFromQuery(),
+        mainPage: getLastPageItem(),
         setPage: updatePageQuery,
     };
 };

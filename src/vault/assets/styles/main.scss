@@ -1,3 +1,37 @@
+// Ultra-thin, semi-transparent scrollbars
+* {
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  
+    &:hover {
+      &::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+  
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+  
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+  
+      &::-webkit-scrollbar-thumb:active {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+  
+  
+
 .constrained-container {
     width: 100%;
     max-width: 1300px;
@@ -26,7 +60,8 @@
         display: flex;
         padding: var(--core-spacing-400);
         background-color: var(--core-color-solid-slate-50);
-        position: relative;
+        position: sticky;
+        top: 0;
         z-index: 2;
 
         .brand {
@@ -68,9 +103,12 @@
         flex-direction: column;
         width: 100%;
         max-width: 200px;
-        height: 100%;
+        height: fit-content;
         border-right: solid 1px var(--core-color-solid-slate-50);
         padding: var(--core-spacing-800);
+        position: sticky;
+        top: 80px;
+        z-index: 1;
 
         .menu-option {
             display: flex;
@@ -132,7 +170,8 @@
                 padding: var(--core-spacing-100) var(--core-spacing-400);
                 border-radius: var(--core-borderRadius-100);
 
-                &:hover,&.active {
+                &:hover,
+                &.active {
                     cursor: pointer;
                     background: var(--semantic-color-slate-solid-surface-inverse-high);
 
@@ -145,17 +184,46 @@
                     font-size: 12px;
                 }
             }
+
+            .collapse-header {
+                display: flex;
+                justify-content: space-between;
+                padding: var(--core-spacing-100) var(--core-spacing-400);
+                cursor: pointer;
+
+                svg {
+                    transition: all var(--motion-easing-inandout) var(--core-motion-duration-200);
+                }
+
+                &.active {
+                    svg {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            .collapse-body {
+                display: flex;
+                flex-direction: column;
+                height: fit-content;
+                max-height: 0px;
+                overflow: hidden;
+                transition: all var(--motion-easing-inandout) var(--core-motion-duration-200);
+
+                &.active {
+                    max-height: calc(100dvh - 420px);
+                    overflow: auto;
+                }
+            }
         }
     }
 
     &-content {
         width: 100%;
-        height: calc(100dvh - 85px);
         display: flex;
         flex-direction: column;
         padding: var(--core-spacing-800);
         gap: var(--core-size-600);
-        overflow: auto;
 
         .demo-box {
             display: flex;
@@ -224,6 +292,42 @@
         .page-container {
             display: flex;
             flex-direction: column;
+            gap: var(--core-spacing-800);
+
+            .innerpage-container {
+                display: flex;
+                flex-direction: column;
+                gap: var(--core-spacing-600);
+                margin-bottom: var(--core-spacing-800);
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0;
+                    list-style-type: none;
+                    gap: var(--core-spacing-400);
+
+                    .list-indent {
+                        display: flex;
+                        flex-direction: column;
+                        gap: var(--core-spacing-400);
+                        padding-left: var(--core-spacing-800);
+                    }
+                }
+            }
+
+            .quote {
+                display: inline-block;
+                width: fit-content;
+                padding: 0 var(--core-spacing-200);
+                margin: 0 var(--core-spacing-100);
+                font-family: var(--core-fontFamily-ibmPlex-mono);
+                font-size: 14px;
+                border-radius: var(--core-borderRadius-200);
+                background: var(--semantic-color-monochrome-surface-normal-lowest);
+                color: var(--semantic-color-red-solid-textIcon-static-high);
+                // color: var(--semantic-color-slate-solid-surface-normal-midHigh);
+            }
         }
     }
 }

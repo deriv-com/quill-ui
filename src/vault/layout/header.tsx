@@ -1,26 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { InputDropdown, Text } from "../../../lib/main";
-import tokenVersions from "../../../scripts/token-data/versions.json";
+
 import Logo from "../assets/images/logo.svg";
+import { useVersion } from "../hooks/useVersion";
 
 export type TVersions = string[];
 
-export interface HeaderProps {
-    onVersionChange?: (e: string) => void;
-}
-
-const VaultHeader = ({ onVersionChange }: HeaderProps) => {
-    const [versions, setVersions] = useState<TVersions>([]);
-    const [currentVersion, setCurrentVersion] = useState("");
-
-    useEffect(() => {
-        if (tokenVersions.length) {
-            const current = tokenVersions[0];
-            setCurrentVersion(current);
-            setVersions(tokenVersions);
-            onVersionChange?.(current);
-        }
-    }, [tokenVersions]);
+const VaultHeader = () => {
+    const { version, versions, setVersion } = useVersion();
     return (
         <div className="vault-header">
             <div className="constrained-container">
@@ -36,8 +23,7 @@ const VaultHeader = ({ onVersionChange }: HeaderProps) => {
                             <InputDropdown
                                 label="Version"
                                 onSelectOption={(e) => {
-                                    onVersionChange?.(e);
-                                    setCurrentVersion(e);
+                                    setVersion(e);
                                 }}
                                 inputSize="sm"
                                 variant="fill"
@@ -47,7 +33,7 @@ const VaultHeader = ({ onVersionChange }: HeaderProps) => {
                                 }))}
                                 placeholder="Select"
                                 status="neutral"
-                                value={currentVersion}
+                                value={version}
                             />
                         )}
                     </div>
