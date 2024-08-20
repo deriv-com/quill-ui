@@ -28,13 +28,8 @@ const BottomAction = (props: BottomActionProps) => {
     } = props;
 
     const handleChange = (event: React.ChangeEvent<HTMLElement>) => {
-        if (onChange) {
-            onChange(event, value);
-        }
-
-        if (onClick) {
-            onClick(event);
-        }
+        onChange?.(event, value);
+        onClick?.(event);
     };
 
     return (
