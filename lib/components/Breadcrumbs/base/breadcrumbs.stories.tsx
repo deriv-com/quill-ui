@@ -35,7 +35,7 @@ export const Default: Story = {
     },
 };
 
-export const Max: Story = {
+export const MaxMobile: Story = {
     args: {
         size: "md",
         links: [
@@ -59,6 +59,55 @@ export const Max: Story = {
             {
                 href: "",
                 content: "How to trade in Deriv",
+            },
+        ],
+    },
+};
+
+export const MaxDesktop: Story = {
+    args: {
+        size: "md",
+        links: [
+            {
+                href: "",
+                content: "Label ",
+            },
+            {
+                href: "",
+                content: "Label ",
+                target: "_blank",
+            },
+            {
+                href: "",
+                content: "Label ",
+            },
+            {
+                href: "",
+                content: "Label ",
+            },
+            {
+                href: "",
+                content: "Label ",
+            },
+            {
+                href: "",
+                content: "Label ",
+            },
+            {
+                href: "",
+                content: "Label ",
+            },
+            {
+                href: "",
+                content: "Label ",
+            },
+            {
+                href: "",
+                content: "Label ",
+            },
+            {
+                href: "",
+                content: "Label ",
             },
         ],
     },
