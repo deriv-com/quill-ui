@@ -52,6 +52,10 @@
     }
 }
 
+.quill-phone-input__container {
+    position: relative;
+}
+
 .quill-custom-dropdown__container {
     &:has(.quill-country-code) {
         display: flex;

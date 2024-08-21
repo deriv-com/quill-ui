@@ -9,7 +9,10 @@ import {
 } from "@deriv/quill-icons/Standalone";
 
 export interface CountryCodeAddonProps
-    extends Omit<InputPhoneNumberProps, keyof InputProps | "countryCodes"> {
+    extends Omit<
+        InputPhoneNumberProps,
+        keyof InputProps | "countryCodes" | "onCodeChange"
+    > {
     size: "md" | "sm"; //lg has to added in base
     addOnStatus?: Status;
     addOnVariant?: Variants;

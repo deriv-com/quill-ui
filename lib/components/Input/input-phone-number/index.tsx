@@ -13,31 +13,17 @@ export interface InputPhoneNumberProps
     fillAddonBorderColor?: string;
     codeLabel?: string;
     countryCodes: TCountryCodes[];
-    selectedCode?: string;
+    shortCode?: string;
+    onCodeChange?: (item: TCountryCodes) => void;
 }
 
-const dummyList: TCountryCodes[] = [
-    {
-        name: "United States",
-        short_code: "US",
-        phone_code: "+1",
-    },
-    {
-        name: "Canada",
-        short_code: "CA",
-        phone_code: "+1",
-    },
-    {
-        name: "United Kingdom",
-        short_code: "GB",
-        phone_code: "+44",
-    },
-    {
-        name: "Australia",
-        short_code: "AU",
-        phone_code: "+61",
-    },
-];
+const getPhoneCode = (countryCodes: TCountryCodes[], shortCode: string) => {
+    const country = countryCodes.find(
+        (c: TCountryCodes) =>
+            c.short_code.toLowerCase() === shortCode.toLowerCase(),
+    );
+    return country?.phone_code;
+};
 
 export const InputPhoneNumber = forwardRef<
     HTMLInputElement,
@@ -51,14 +37,29 @@ export const InputPhoneNumber = forwardRef<
             codeIcon = true,
             codeLabel,
             fillAddonBorderColor,
-            countryCodes = dummyList,
-            selectedCode = "+00",
+            countryCodes,
+            shortCode,
+            placeholder = "00 0000 0000",
+            formatProps = {
+                format: "## #### ####",
+            },
+            onCodeChange,
             ...rest
         },
         ref,
     ) => {
         const containerRef = useRef<HTMLDivElement>(null);
-        const phoneCode = selectedCode || countryCodes[0].phone_code;
+
+        const phoneCode = shortCode
+            ? getPhoneCode(countryCodes, shortCode)
+            : countryCodes[0].phone_code;
+
+        shortCode = shortCode || countryCodes[0].short_code;
+
+        const handleItemChange = (item: TCountryCodes) => {
+            console.log(item);
+            onCodeChange?.(item);
+        };
 
         const codeAddOn = (
             <CustomDropdown
@@ -77,20 +78,23 @@ export const InputPhoneNumber = forwardRef<
             >
                 <DropdownContent
                     options={countryCodes}
-                    code={phoneCode}
+                    code={shortCode}
                     elementRef={containerRef}
+                    onItemClick={handleItemChange}
                 />
             </CustomDropdown>
         );
 
         return (
-            <div ref={containerRef}>
+            <div ref={containerRef} className="quill-phone-input__container">
                 <Input
                     type="tel"
+                    placeholder={placeholder}
                     addOn={codeAddOn}
                     inputSize={inputSize}
                     status={status}
                     variant={variant}
+                    formatProps={formatProps}
                     {...rest}
                     ref={ref}
                 />

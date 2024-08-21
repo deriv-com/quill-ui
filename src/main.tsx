@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Heading, InputPhoneNumber, Skeleton, TextFieldAddon } from "../lib/main";
+import { Heading, Skeleton } from "../lib/main";
 import ThemeSwitcher from "./theme-switcher";
 import ThemeRenderer from "./theme-renderer";
 import BreakpointProvider from "@providers/breakpoint/breakpointProvider";
 import Breakpoint from "./breakpoint";
+import PhoneNumber from "./phone-number";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
@@ -33,24 +34,15 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                     </Skeleton.Container>
 
                     <div style={{ width: "20rem" }}>
-                        <InputPhoneNumber
-                            label="Phone Number"
-                            codeLabel="Code"
-                            status="success"
-                        />
+                        <PhoneNumber />
+
                         {/* <InputPhoneNumber
                             label="Phone Number"
                             variant="fill"
                             codeLabel="Code"
                             status="error"
                             fillAddonBorderColor="var(--semantic-color-slate-solid-surface-frame-mid)"
-                        />
-                        <TextFieldAddon
-                            variant="fill"
-                            addonLabel="Label"
-                            fillAddonBorderColor="var(--semantic-color-slate-solid-surface-frame-mid)"
-                        />
-                        <InputPhoneNumber codeIcon={false} inputSize="sm" /> */}
+                        /> */}
                     </div>
                 </div>
             </BreakpointProvider>
