@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { LabelPairedChevronRightSmRegularIcon } from "@deriv/quill-icons/LabelPaired";
 import { Text } from "@components/Typography";
 
-export function Base({ links = [], className }: BreadcrumbProps) {
+export function Base({ size, links = [], className }: BreadcrumbProps) {
     const [renderLinks, setRenderLinks] = useState<LinkProps[]>([]);
     const [dropdownLinks, setDropdownLinks] = useState<LinkProps[]>([]);
 
@@ -85,7 +85,7 @@ export function Base({ links = [], className }: BreadcrumbProps) {
                                 "quill-breadcrumb--item--disabled",
                         )}
                     >
-                        <Text>{content}</Text>
+                        <Text size={size}>{content}</Text>
                     </a>
                     <LabelPairedChevronRightSmRegularIcon
                         data-testid="dt-link-chevron"
