@@ -26,10 +26,11 @@ const dummyList: TCountryCodes[] = [
 ];
 
 const PhoneNumber = () => {
-    const [code, setCode] = useState("ca");
+    const [code, setCode] = useState("au");
 
     const handleOnChange = (item: TCountryCodes) => {
         console.log(item);
+        setCode(item.short_code);
     };
     return (
         <InputPhoneNumber

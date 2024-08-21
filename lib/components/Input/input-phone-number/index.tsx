@@ -1,6 +1,5 @@
-import React, { forwardRef, useRef } from "react";
+import React, { ChangeEvent, forwardRef, useRef } from "react";
 import Input from "../base";
-// import clsx from "clsx";
 import { CustomDropdown, TCustomDropdown } from "../custom-dropdown";
 import CountryCodeAddon from "./country-code-addon";
 import "./input-phone-number.scss";
@@ -15,15 +14,8 @@ export interface InputPhoneNumberProps
     countryCodes: TCountryCodes[];
     shortCode?: string;
     onCodeChange?: (item: TCountryCodes) => void;
+    onValueChange?: (phoneNumber: string) => void;
 }
-
-const getPhoneCode = (countryCodes: TCountryCodes[], shortCode: string) => {
-    const country = countryCodes.find(
-        (c: TCountryCodes) =>
-            c.short_code.toLowerCase() === shortCode.toLowerCase(),
-    );
-    return country?.phone_code;
-};
 
 export const InputPhoneNumber = forwardRef<
     HTMLInputElement,
@@ -44,21 +36,32 @@ export const InputPhoneNumber = forwardRef<
                 format: "## #### ####",
             },
             onCodeChange,
+            onChange,
             ...rest
         },
         ref,
     ) => {
         const containerRef = useRef<HTMLDivElement>(null);
 
-        const phoneCode = shortCode
-            ? getPhoneCode(countryCodes, shortCode)
-            : countryCodes[0].phone_code;
+        const getCountry = () => {
+            return (
+                countryCodes.find(
+                    (c: TCountryCodes) =>
+                        c.short_code.toLowerCase() === shortCode?.toLowerCase(),
+                ) || countryCodes[0]
+            );
+        };
 
-        shortCode = shortCode || countryCodes[0].short_code;
+        const phoneCode = getCountry().phone_code;
+        shortCode = getCountry().short_code;
 
         const handleItemChange = (item: TCountryCodes) => {
             console.log(item);
             onCodeChange?.(item);
+        };
+
+        const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+            onChange?.(event);
         };
 
         const codeAddOn = (
@@ -75,6 +78,7 @@ export const InputPhoneNumber = forwardRef<
                         fillAddonBorderColor={fillAddonBorderColor}
                     />
                 }
+                noAutoClose
             >
                 <DropdownContent
                     options={countryCodes}
@@ -95,6 +99,7 @@ export const InputPhoneNumber = forwardRef<
                     status={status}
                     variant={variant}
                     formatProps={formatProps}
+                    onChange={handleInputChange}
                     {...rest}
                     ref={ref}
                 />

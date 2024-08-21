@@ -122,3 +122,13 @@
         }
     }
 }
+
+.action-sheet--content {
+    &:has(.phone-code-search) {
+        padding-top: 0;
+    }
+    .phone-code-search {
+        padding-top: 8px;
+        padding-bottom: 16px;
+    }
+}

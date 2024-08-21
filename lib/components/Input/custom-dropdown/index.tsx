@@ -30,6 +30,7 @@ export interface TCustomDropdown
     headComponent?: React.ReactNode;
     noActionSheet?: boolean;
     contentAlign?: "left" | "right";
+    noAutoClose?: boolean;
 }
 
 const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
@@ -49,6 +50,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             headComponent,
             noActionSheet = false,
             contentAlign = "left",
+            noAutoClose = false,
             ...rest
         },
         ref,
@@ -67,7 +69,10 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
         const contentRef = useRef<HTMLDivElement>(null);
 
         const { isOpen, open, close, selectedValue, setSelectedValue } =
-            useDropdown([containerRef, actionSheetRef, contentRef]);
+            useDropdown(
+                [containerRef, actionSheetRef, contentRef],
+                noAutoClose,
+            );
 
         const { isMobile } = useBreakpoints();
 
