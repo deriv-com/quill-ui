@@ -36,7 +36,7 @@ export function Base({ size, links = [], className }: BreadcrumbProps) {
 
             setDropdownLinks(remainingLinks);
         }
-    }, [links]);
+    }, [links, isMobile]);
 
     return (
         <div className={clsx("quill-breadcrumb--container", className)}>
