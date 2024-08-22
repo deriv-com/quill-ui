@@ -56,6 +56,11 @@
     position: relative;
 }
 
+.quill-phone-input-addon {
+    display: flex;
+    height: 100%;
+}
+
 .quill-custom-dropdown__container {
     &:has(.quill-country-code) {
         display: flex;

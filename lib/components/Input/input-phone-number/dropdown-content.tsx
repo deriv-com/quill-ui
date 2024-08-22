@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { DropdownItem, ItemContainer } from "@components/Atom";
 import { useDropdown } from "@hooks/useDropdown";
 import useBreakpoints from "@hooks/useBreakpoints";
@@ -10,20 +10,25 @@ import { SearchField } from "@components/index.ts";
 const DropdownContent = ({
     options,
     code,
-    elementRef,
+    showFlags,
+    containerRef,
+    headcompRef,
     onItemClick,
 }: {
     options: TCountryCodes[];
     code: string;
-    elementRef: React.RefObject<HTMLDivElement>;
+    showFlags?: boolean;
+    containerRef: React.RefObject<HTMLDivElement>;
+    headcompRef: React.RefObject<HTMLDivElement>;
     onItemClick: (item: TCountryCodes) => void;
 }) => {
     const [searchKey, setSearchKey] = useState("");
     const { isMobile } = useBreakpoints();
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
     const { isOpen, close } = useDropdown();
 
-    !isMobile && isOpen && useOnClickOutside(elementRef, close);
+    !isMobile && isOpen && useOnClickOutside([headcompRef, dropdownRef], close);
 
     const getFlag = (shortCode: string) => {
         return FlagsMap[shortCode] ? FlagsMap[shortCode] : FlagsMap["XX"];
@@ -50,8 +55,9 @@ const DropdownContent = ({
                         onItemClick(country);
                         close();
                     }}
-                    leftIcon={getFlag(country.short_code.toUpperCase())}
-                    as="button"
+                    leftIcon={
+                        showFlags && getFlag(country.short_code.toUpperCase())
+                    }
                 />
             ))}
         </>
@@ -63,8 +69,9 @@ const DropdownContent = ({
                 <ItemContainer
                     size="md"
                     height="md"
-                    portalContainer={elementRef.current}
+                    portalContainer={containerRef.current}
                     className="quill-custom-dropdown__content"
+                    ref={dropdownRef}
                 >
                     <Content />
                 </ItemContainer>

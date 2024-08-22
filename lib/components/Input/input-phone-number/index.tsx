@@ -1,10 +1,18 @@
-import React, { ChangeEvent, forwardRef, useRef } from "react";
+import React, {
+    ChangeEvent,
+    forwardRef,
+    useEffect,
+    useRef,
+    useState,
+} from "react";
 import Input from "../base";
 import { CustomDropdown, TCustomDropdown } from "../custom-dropdown";
 import CountryCodeAddon from "./country-code-addon";
 import "./input-phone-number.scss";
 import { TCountryCodes } from "@types";
 import DropdownContent from "./dropdown-content";
+import { DropdownProvider } from "@providers/dropdown/dropdownProvider";
+import { useDropdown } from "@hooks/useDropdown";
 
 export interface InputPhoneNumberProps
     extends Omit<TCustomDropdown, "leftIcon"> {
@@ -15,9 +23,10 @@ export interface InputPhoneNumberProps
     shortCode?: string;
     onCodeChange?: (item: TCountryCodes) => void;
     onValueChange?: (phoneNumber: string) => void;
+    showFlags?: boolean;
 }
 
-export const InputPhoneNumber = forwardRef<
+const InputPhoneNumberContent = forwardRef<
     HTMLInputElement,
     InputPhoneNumberProps
 >(
@@ -36,13 +45,15 @@ export const InputPhoneNumber = forwardRef<
                 format: "## #### ####",
             },
             onCodeChange,
+            onValueChange,
+            showFlags = true,
+            value,
             onChange,
             ...rest
         },
         ref,
     ) => {
-        const containerRef = useRef<HTMLDivElement>(null);
-
+        const { isOpen } = useDropdown();
         const getCountry = () => {
             return (
                 countryCodes.find(
@@ -52,47 +63,64 @@ export const InputPhoneNumber = forwardRef<
             );
         };
 
-        const phoneCode = getCountry().phone_code;
+        const [phoneCode, setPhoneCode] = useState(getCountry().phone_code);
+        const [inputValue, setInputValue] = useState(value || "");
+
+        const containerRef = useRef<HTMLDivElement>(null);
+        const headcompRef = useRef<HTMLDivElement>(null);
+
         shortCode = getCountry().short_code;
 
+        useEffect(() => {
+            onValueChange?.(`${phoneCode}${inputValue}`);
+        }, [phoneCode, inputValue]);
+
         const handleItemChange = (item: TCountryCodes) => {
-            console.log(item);
+            setPhoneCode(item.phone_code);
             onCodeChange?.(item);
         };
 
         const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+            event.target.value = event.target.value.replace(/\s+/g, "");
+            setInputValue(event.target.value);
             onChange?.(event);
         };
 
         const codeAddOn = (
-            <CustomDropdown
-                value={phoneCode}
-                label={codeLabel}
-                headComponent={
-                    <CountryCodeAddon
-                        addOnVariant={variant}
-                        codeIcon={codeIcon}
-                        size={inputSize}
-                        codeLabel={codeLabel}
-                        addOnStatus={status}
-                        fillAddonBorderColor={fillAddonBorderColor}
+            <div className="quill-phone-input-addon" ref={headcompRef}>
+                <CustomDropdown
+                    value={phoneCode}
+                    label={codeLabel}
+                    headComponent={
+                        <CountryCodeAddon
+                            addOnVariant={variant}
+                            codeIcon={codeIcon}
+                            size={inputSize}
+                            codeLabel={codeLabel}
+                            addOnStatus={status}
+                            fillAddonBorderColor={fillAddonBorderColor}
+                        />
+                    }
+                    noAutoClose
+                    withProvider={false}
+                >
+                    <DropdownContent
+                        options={countryCodes}
+                        code={shortCode}
+                        showFlags={showFlags}
+                        containerRef={containerRef}
+                        headcompRef={headcompRef}
+                        onItemClick={handleItemChange}
                     />
-                }
-                noAutoClose
-            >
-                <DropdownContent
-                    options={countryCodes}
-                    code={shortCode}
-                    elementRef={containerRef}
-                    onItemClick={handleItemChange}
-                />
-            </CustomDropdown>
+                </CustomDropdown>
+            </div>
         );
 
         return (
             <div ref={containerRef} className="quill-phone-input__container">
                 <Input
                     type="tel"
+                    value={inputValue}
                     placeholder={placeholder}
                     addOn={codeAddOn}
                     inputSize={inputSize}
@@ -100,6 +128,7 @@ export const InputPhoneNumber = forwardRef<
                     variant={variant}
                     formatProps={formatProps}
                     onChange={handleInputChange}
+                    isDropdownOpen={isOpen}
                     {...rest}
                     ref={ref}
                 />
@@ -107,5 +136,16 @@ export const InputPhoneNumber = forwardRef<
         );
     },
 );
+
+export const InputPhoneNumber = forwardRef<
+    HTMLInputElement,
+    InputPhoneNumberProps
+>(({ ...rest }, ref) => {
+    return (
+        <DropdownProvider>
+            <InputPhoneNumberContent {...rest} ref={ref} />
+        </DropdownProvider>
+    );
+});
 
 export default InputPhoneNumber;

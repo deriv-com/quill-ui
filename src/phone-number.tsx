@@ -23,24 +23,35 @@ const dummyList: TCountryCodes[] = [
         short_code: "AU",
         phone_code: "+61",
     },
+    {
+        name: "Srilanka",
+        short_code: "LK",
+        phone_code: "+94",
+    },
 ];
 
 const PhoneNumber = () => {
     const [code, setCode] = useState("au");
 
     const handleOnChange = (item: TCountryCodes) => {
-        console.log(item);
         setCode(item.short_code);
     };
     return (
         <InputPhoneNumber
             label="Phone Number"
             codeLabel="Code"
-            status="success"
+            autoComplete="off"
             countryCodes={dummyList}
             shortCode={code}
-            value="1234"
+            // showFlags={false}
             onCodeChange={handleOnChange}
+            onChange={(e) => {
+                console.log(e.target.value);
+            }}
+            onValueChange={(val) => console.log(val)}
+            message="message here"
+            maxLength={10}
+            show_counter={true}
         />
     );
 };

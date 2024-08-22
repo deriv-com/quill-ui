@@ -31,6 +31,7 @@ export interface TCustomDropdown
     noActionSheet?: boolean;
     contentAlign?: "left" | "right";
     noAutoClose?: boolean;
+    withProvider?: boolean;
 }
 
 const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
@@ -165,13 +166,17 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
 );
 
 export const CustomDropdown = forwardRef<HTMLDivElement, TCustomDropdown>(
-    ({ children, onOpen, onClose, ...rest }, ref) => {
-        return (
+    ({ children, withProvider = true, onOpen, onClose, ...rest }, ref) => {
+        return withProvider ? (
             <DropdownProvider onOpen={onOpen} onClose={onClose}>
                 <CustomDropdownContent ref={ref} {...rest}>
                     {children}
                 </CustomDropdownContent>
             </DropdownProvider>
+        ) : (
+            <CustomDropdownContent ref={ref} {...rest}>
+                {children}
+            </CustomDropdownContent>
         );
     },
 );
