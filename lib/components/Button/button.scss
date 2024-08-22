@@ -35,6 +35,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        outline-offset: 3px;
 
         &:disabled {
             cursor: auto;
