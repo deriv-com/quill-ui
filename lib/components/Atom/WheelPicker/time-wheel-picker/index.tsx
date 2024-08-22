@@ -215,66 +215,60 @@ export const TimeWheelPickerContainer = ({
     };
 
     return (
-        <>
-            {minutes?.length && (
-                <div className="quill-wheel-picker">
-                    {hours && (
-                        <WheelPicker
-                            data={data?.[0] || hours}
-                            selectedValue={hourValue.value}
-                            setSelectedValue={(value) => {
-                                setHourValue(
-                                    hours.find(
-                                        (hour) => hour.value === value,
-                                    ) || hours[0],
-                                );
-                            }}
-                            isFocused={colRef[0]}
-                            handleKeyDown={(e) => handleKeyDown(e, 0)}
-                            position="left"
-                            disabled={disabled}
-                            containerHeight={containerHeight}
-                        />
-                    )}
-                    {minutes?.length && (
-                        <WheelPicker
-                            data={minutes}
-                            selectedValue={minuteValue.value}
-                            setSelectedValue={(value) => {
-                                setMinuteValue(
-                                    minutes.find(
-                                        (minute) => minute.value === value,
-                                    ) || minuteValue,
-                                );
-                            }}
-                            isFocused={colRef[1]}
-                            handleKeyDown={(e) => handleKeyDown(e, 1)}
-                            position={is12Hour ? "center" : "right"}
-                            listClassName="quill-wheel-picker__data-items__minute"
-                            disabled={disabled}
-                            containerHeight={containerHeight}
-                        />
-                    )}
-                    {meridiem && is12Hour && (
-                        <WheelPicker
-                            data={data?.[2] || meridiem}
-                            selectedValue={meridiemValue.value}
-                            setSelectedValue={(value) => {
-                                setMeridiemValue(
-                                    meridiem.find((m) => m.value === value) ||
-                                        meridiem[0],
-                                );
-                            }}
-                            isFocused={colRef[2]}
-                            handleKeyDown={(e) => handleKeyDown(e, 2)}
-                            position="right"
-                            disabled={disabled}
-                            containerHeight={containerHeight}
-                        />
-                    )}
-                </div>
+        <div className="quill-wheel-picker">
+            {hours && (
+                <WheelPicker
+                    data={data?.[0] || hours}
+                    selectedValue={hourValue.value}
+                    setSelectedValue={(value) => {
+                        setHourValue(
+                            hours.find((hour) => hour.value === value) ||
+                                hours[0],
+                        );
+                    }}
+                    isFocused={colRef[0]}
+                    handleKeyDown={(e) => handleKeyDown(e, 0)}
+                    position="left"
+                    disabled={disabled}
+                    containerHeight={containerHeight}
+                />
             )}
-        </>
+            {minutes?.length && (
+                <WheelPicker
+                    data={minutes}
+                    selectedValue={minuteValue.value}
+                    setSelectedValue={(value) => {
+                        setMinuteValue(
+                            minutes.find((minute) => minute.value === value) ||
+                                minuteValue,
+                        );
+                    }}
+                    isFocused={colRef[1]}
+                    handleKeyDown={(e) => handleKeyDown(e, 1)}
+                    position={is12Hour ? "center" : "right"}
+                    listClassName="quill-wheel-picker__data-items__minute"
+                    disabled={disabled}
+                    containerHeight={containerHeight}
+                />
+            )}
+            {meridiem && is12Hour && (
+                <WheelPicker
+                    data={data?.[2] || meridiem}
+                    selectedValue={meridiemValue.value}
+                    setSelectedValue={(value) => {
+                        setMeridiemValue(
+                            meridiem.find((m) => m.value === value) ||
+                                meridiem[0],
+                        );
+                    }}
+                    isFocused={colRef[2]}
+                    handleKeyDown={(e) => handleKeyDown(e, 2)}
+                    position="right"
+                    disabled={disabled}
+                    containerHeight={containerHeight}
+                />
+            )}
+        </div>
     );
 };
 
