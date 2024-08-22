@@ -100,11 +100,10 @@ export const DisabledDropdown: Story = {
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
     },
 };
-export const DropdownWithDefaultOption: Story = {
+export const LabellessSuccessDropdown: Story = {
     args: {
         leftIcon: <LabelPairedPlaceholderSmRegularIcon />,
         status: "success",
-        defaultOption: { text: "Option 3", value: "option3" },
         rightIcon: <StandaloneCircleCheckBoldIcon iconSize="sm" />,
         variant: "outline",
     },
