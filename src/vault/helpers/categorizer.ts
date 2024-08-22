@@ -15,6 +15,16 @@ export interface Categories {
     generic: ProcessedObject[];
 }
 
+export interface Colors {
+    [key: string]: string;
+}
+
+export type PageList = Colors;
+
+interface CategorizedColors {
+    [colorName: string]: Colors;
+}
+
 export const categorizeVariables = (obj: {
     [key: string]: string;
 }): Categories => {
@@ -61,4 +71,46 @@ export const categorizeVariables = (obj: {
     });
 
     return { ...categories };
+};
+
+export const categorizeSolidColors = (colors: Colors): CategorizedColors => {
+    return Object.keys(colors).reduce<CategorizedColors>((acc, key) => {
+        const match = key.match(/--core-color-solid-(\w+)-\d+/);
+        if (match) {
+            const colorName = match[1];
+            if (!acc[colorName]) {
+                acc[colorName] = {};
+            }
+            acc[colorName][key] = colors[key];
+        }
+        return acc;
+    }, {});
+};
+
+export const categorizeOpacityColors = (colors: Colors): CategorizedColors => {
+    return Object.keys(colors).reduce<CategorizedColors>((acc, key) => {
+        const match = key.match(/--core-color-opacity-(\w+)-\d+/);
+        if (match) {
+            const colorName = match[1];
+            if (!acc[colorName]) {
+                acc[colorName] = {};
+            }
+            acc[colorName][key] = colors[key];
+        }
+        return acc;
+    }, {});
+};
+
+export const categorizeGradientColors = (colors: Colors): CategorizedColors => {
+    return Object.keys(colors).reduce<CategorizedColors>((acc, key) => {
+        const match = key.match(/--core-color-gradient-(\w+)-\d+/);
+        if (match) {
+            const colorName = match[1];
+            if (!acc[colorName]) {
+                acc[colorName] = {};
+            }
+            acc[colorName][key] = colors[key];
+        }
+        return acc;
+    }, {});
 };

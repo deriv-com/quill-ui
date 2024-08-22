@@ -13,6 +13,7 @@ interface VersionContextType {
     setVersion: (version: string) => void;
     data: TypeData | null;
     variables: Categories;
+    getVariablesByPage: (page: string[]) => void;
 }
 
 const VersionContext = createContext<VersionContextType | undefined>(undefined);
@@ -40,6 +41,19 @@ const VersionProvider: React.FC<VersionProviderProps> = ({ children }) => {
         } else {
             console.error("Invalid version provided");
         }
+    };
+
+    const getVariablesByPage = (page = ["/"]) => {
+        let currentVar: any = null;
+
+        page.forEach((p, pIndex) => {
+            currentVar =
+                pIndex === 0
+                    ? variables?.[p]
+                    : currentVar?.find((e) => e.key === p);
+        });
+
+        return currentVar?.tokens;
     };
 
     useEffect(() => {
@@ -73,6 +87,7 @@ const VersionProvider: React.FC<VersionProviderProps> = ({ children }) => {
                 setVersion: updateCurrentVersion,
                 data,
                 variables,
+                getVariablesByPage,
             }}
         >
             {children}

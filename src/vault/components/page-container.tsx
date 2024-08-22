@@ -9,6 +9,7 @@ import SemanticTokenIntroduction from "../pages/semantic-token-intro";
 import ComponentTokenIntroduction from "../pages/component-token-intro";
 import Home from "../pages/home";
 import Color from "../pages/color";
+import BorderRadius from "../pages/border-radius";
 
 type TPageRouter = { [key: string]: ReactNode };
 
@@ -25,15 +26,6 @@ const PageContainer = () => {
             clearTimeout(loaderTimer);
         };
     }, []);
-
-    // <BoxModelDemo />
-    //                                 <div className="code-container">
-    //                                     <div className="code-body">
-    //                                         <span className="code-item comment"></span>
-    //                                         <span className="code-item"></span>
-    //                                     </div>
-    //                                 </div>
-    //                             </>
 
     if (!isMounted) {
         return (
@@ -69,6 +61,7 @@ const PageContainer = () => {
         "introduction-to-semantic-tokens": <SemanticTokenIntroduction />,
         "introduction-to-component-tokens": <ComponentTokenIntroduction />,
         color: <Color />,
+        borderRadius: <BorderRadius />,
     };
 
     return (

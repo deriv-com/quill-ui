@@ -5,27 +5,36 @@ const Home = () => {
     return (
         <div className="innerpage-container">
             <Heading.H3>Introduction to Quill Design System Tokens</Heading.H3>
-            <Text>
-                Design system tokens are fundamental building blocks used to
-                define and manage the visual properties of a user interface (UI)
-                in a consistent and scalable manner. Tokens serve as the single
-                source of truth for design values such as colors, typography,
-                spacing, and more. By abstracting these values into tokens,
-                design teams can ensure that their UI remains consistent across
-                different platforms, products, and environments.
-            </Text>
-            <Text>
-                Tokens are particularly valuable because they allow designers
-                and developers to work with a shared language. Instead of
-                hard-coding specific values (e.g.,{" "}
-                <span className="quote">#FF5733</span> for a color or 16px for
-                padding), teams use tokens like{" "}
-                <span className="quote">color.primary</span> or
-                <span className="quote">spacing.medium</span> This approach not
-                only makes the design system easier to maintain but also allows
-                for quick updates across the entire UI simply by modifying the
-                token values.
-            </Text>
+            <div className="text-image-container">
+                <img
+                    src="/vault/tokens-banner.png"
+                    alt="Logo"
+                    className="text-image"
+                />
+
+                <Text>
+                    Design system tokens are fundamental building blocks used to
+                    define and manage the visual properties of a user interface
+                    (UI) in a consistent and scalable manner. Tokens serve as
+                    the single source of truth for design values such as colors,
+                    typography, spacing, and more. By abstracting these values
+                    into tokens, design teams can ensure that their UI remains
+                    consistent across different platforms, products, and
+                    environments.
+                </Text>
+                <Text>
+                    Tokens are particularly valuable because they allow
+                    designers and developers to work with a shared language.
+                    Instead of hard-coding specific values (e.g.,{" "}
+                    <span className="quote">#FF5733</span> for a color or 16px
+                    for padding), teams use tokens like{" "}
+                    <span className="quote">color.primary</span> or
+                    <span className="quote">spacing.medium</span> This approach
+                    not only makes the design system easier to maintain but also
+                    allows for quick updates across the entire UI simply by
+                    modifying the token values.
+                </Text>
+            </div>
             <Text bold size="lg">
                 Guidelines and Conventions for Naming Design System Tokens
             </Text>

@@ -65,3 +65,54 @@ export const toCamelCase = (str: string): string => {
         )
         .join("");
 };
+
+export const hexToRgba = (hex: string): string => {
+    hex = hex.replace(/^#/, "");
+    let alpha = 1.0;
+
+    if (hex.length === 8) {
+        alpha = parseInt(hex.slice(-2), 16) / 255;
+        hex = hex.slice(0, 6);
+    } else if (hex.length === 6) {
+        // No alpha value in HEX string
+    } else {
+        throw new Error("Invalid HEX color");
+    }
+
+    const r = parseInt(hex.slice(0, 2), 16);
+    const g = parseInt(hex.slice(2, 4), 16);
+    const b = parseInt(hex.slice(4, 6), 16);
+
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+
+export const rgbaToHex = (rgba: string): string => {
+    const match = rgba.match(
+        /rgba?\((\d+),\s*(\d+),\s*(\d+),?\s*(\d*\.?\d*)?\)/,
+    );
+
+    if (!match) {
+        throw new Error("Invalid RGBA color");
+    }
+
+    const r = parseInt(match[1]).toString(16).padStart(2, "0");
+    const g = parseInt(match[2]).toString(16).padStart(2, "0");
+    const b = parseInt(match[3]).toString(16).padStart(2, "0");
+
+    const a = match[4]
+        ? Math.round(parseFloat(match[4]) * 255)
+              .toString(16)
+              .padStart(2, "0")
+        : "";
+
+    return `#${r}${g}${b}${a}`;
+};
+
+export const limitTextWithEllipsis = (
+    text: string,
+    maxLength: number,
+): string => {
+    return text.length > maxLength
+        ? `${text.slice(0, maxLength - 3)}...`
+        : text;
+};

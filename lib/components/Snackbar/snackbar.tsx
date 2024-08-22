@@ -80,7 +80,9 @@ export const Snackbar = ({
                 <Text
                     className="snackbar__message"
                     size="sm"
-                    style={{ color: "var(--component-snackbar-label-color)" }}
+                    style={{
+                        color: "var(--component-snackbar-label-color-neutral)",
+                    }}
                 >
                     {message}
                 </Text>
