@@ -11,6 +11,7 @@ export const WheelPickerContainer = ({
     close,
     setSelectedValue,
     disabled,
+    containerHeight='100%',
 }: WheelPickerContainerProps) => {
     const [colRef, setColRef] = useState<boolean[]>(
         new Array(data.length).fill(false),
@@ -87,6 +88,7 @@ export const WheelPickerContainer = ({
                         handleKeyDown={(e) => handleKeyDown(e, index)}
                         position={getPosition(index)}
                         disabled={disabled}
+                        containerHeight={containerHeight}
                     />
                 );
             })}
