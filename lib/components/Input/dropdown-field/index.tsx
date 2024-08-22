@@ -16,7 +16,6 @@ export interface TDropdownProps extends InputProps {
     onSelectOption: (value: string) => void;
     isAutocomplete?: boolean;
     options: TOptionList[];
-    defaultOption?: TOptionList;
     listHeight?: string;
 }
 
@@ -26,7 +25,6 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
             disabled,
             label,
             options,
-            defaultOption,
             textAlignment = "left",
             inputSize = "md",
             status = "neutral",
@@ -43,7 +41,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
         const [items, setItems] = useState<TOptionList[]>(options);
         const [shouldFilterList, setShouldFilterList] = useState(false);
         const [selectedItem, setSelectedItem] = useState<TOptionList | null>(
-            defaultOption ?? null,
+            null,
         );
         const [isAnimating, setIsAnimating] = useState(false);
 
@@ -62,7 +60,8 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
             openMenu,
             highlightedIndex,
         } = useCombobox({
-            defaultSelectedItem: defaultOption ?? null,
+            defaultSelectedItem:
+                options.find((item) => item.value === value) ?? null,
             items,
             itemToString(item) {
                 return item ? reactNodeToString(item.text) : "";
@@ -113,10 +112,8 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
                     (option) => option.value === value,
                 );
                 defaultItem && setSelectedItem(defaultItem);
-            } else if (defaultOption) {
-                setSelectedItem(defaultOption);
             }
-        }, [options, value, defaultOption]);
+        }, [options]);
 
         return (
             <div className="dropdown__wrapper" {...getToggleButtonProps()}>
@@ -136,9 +133,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
                     onKeyDown={() => setShouldFilterList(true)}
                     readOnly={!isAutocomplete}
                     type="select"
-                    value={
-                        selectedItem ? reactNodeToString(selectedItem.text) : ""
-                    }
+                    value={value}
                     {...getInputProps()}
                     {...rest}
                 />
