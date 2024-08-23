@@ -3,6 +3,7 @@ import { BottomBarProps } from "../bottom-bar";
 import clsx from "clsx";
 import { CaptionText } from "@components/Typography";
 import Badge from "@components/Badge";
+import "./bottom-action.scss";
 
 export interface BottomActionProps extends Omit<BottomBarProps, "showLabels"> {
     selected?: boolean;
@@ -51,6 +52,10 @@ const BottomAction = (props: BottomActionProps) => {
                 position="top-right"
                 size="sm"
                 variant="notification"
+                className={clsx(
+                    showLabel &&
+                        "quill-navigation-bottom-bar__action-badge-container",
+                )}
             >
                 {(icon || activeIcon) && (
                     <span className="quill-navigation-bottom-bar__action-icon">
@@ -63,7 +68,6 @@ const BottomAction = (props: BottomActionProps) => {
                     {label}
                 </CaptionText>
             )}
-
             {children}
         </Element>
     );
