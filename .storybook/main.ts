@@ -10,6 +10,9 @@ const config: StorybookConfig = {
         "@storybook/addon-interactions",
         "@storybook/addon-themes",
     ],
+    core: {
+        builder: "@storybook/builder-vite",
+    },
     framework: {
         name: "@storybook/react-vite",
         options: {},
