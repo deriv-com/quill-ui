@@ -2,6 +2,7 @@ import React from "react";
 import { BottomBarProps } from "../bottom-bar";
 import clsx from "clsx";
 import { CaptionText } from "@components/Typography";
+import Badge from "@components/Badge";
 
 export interface BottomActionProps extends Omit<BottomBarProps, "showLabels"> {
     selected?: boolean;
@@ -9,6 +10,7 @@ export interface BottomActionProps extends Omit<BottomBarProps, "showLabels"> {
     showLabel?: boolean;
     icon: React.ReactNode;
     activeIcon: React.ReactNode;
+    badge?: string;
 }
 
 const BottomAction = (props: BottomActionProps) => {
@@ -24,6 +26,7 @@ const BottomAction = (props: BottomActionProps) => {
         onChange,
         onClick,
         value,
+        badge,
         ...rest
     } = props;
 
@@ -42,16 +45,25 @@ const BottomAction = (props: BottomActionProps) => {
             onClick={handleChange}
             {...rest}
         >
-            {(icon || activeIcon) && (
-                <span className="quill-navigation-bottom-bar__action-icon">
-                    {selected ? activeIcon : icon}
-                </span>
-            )}
+            <Badge
+                color="danger"
+                label={badge}
+                position="top-right"
+                size="sm"
+                variant="notification"
+            >
+                {(icon || activeIcon) && (
+                    <span className="quill-navigation-bottom-bar__action-icon">
+                        {selected ? activeIcon : icon}
+                    </span>
+                )}
+            </Badge>
             {showLabel && (
                 <CaptionText color="quill-navigation-bottom-bar__action-label">
                     {label}
                 </CaptionText>
             )}
+
             {children}
         </Element>
     );

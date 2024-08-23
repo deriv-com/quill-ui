@@ -58,6 +58,7 @@ const meta = {
         showLabels: {
             control: "boolean",
         },
+        badge: { table: { disable: true } },
     },
 } satisfies Meta<typeof BottomBar & typeof BottomAction>;
 
@@ -67,6 +68,19 @@ type Story = StoryObj<typeof meta>;
 const Template: React.FC<Template> = ({ length = 4, ...args }: Template) => {
     const { value, showLabels, customIcon, ...rest } = args;
     const [index, setIndex] = React.useState(value);
+    const [notificationCount, setNotificationCount] = React.useState<number[]>([
+        3, 2, 1, 4,
+    ]);
+
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setNotificationCount((prevCounts) =>
+                prevCounts.map((prev) => Math.floor(Math.random() * 5) + prev),
+            );
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     const Content = () => (
         <div
@@ -83,6 +97,12 @@ const Template: React.FC<Template> = ({ length = 4, ...args }: Template) => {
         </div>
     );
 
+    const handleClick = (indexToReset: number) => {
+        setNotificationCount((prevCounts) =>
+            prevCounts.map((count, i) => (i === indexToReset ? 0 : count)),
+        );
+    };
+
     React.useEffect(() => {
         setIndex(value);
     }, [value]);
@@ -97,12 +117,18 @@ const Template: React.FC<Template> = ({ length = 4, ...args }: Template) => {
                     setIndex(newValue);
                 }}
             >
-                {Array.from({ length }, () => {
+                {Array.from({ length }, (_, index) => {
                     return (
                         <Navigation.BottomAction
                             {...rest}
                             activeIcon={customIcon.active}
                             icon={customIcon.default}
+                            badge={
+                                notificationCount[index] > 0
+                                    ? notificationCount[index].toString()
+                                    : undefined
+                            }
+                            onClick={() => handleClick(index)}
                         />
                     );
                 })}
@@ -112,7 +138,7 @@ const Template: React.FC<Template> = ({ length = 4, ...args }: Template) => {
 };
 
 const BottomNavigationBarDefault = Template.bind(this) as Story;
-BottomNavigationBarDefault.args = { ...meta.args };
+BottomNavigationBarDefault.args = { ...meta.args, badge: "1" };
 
 const BottomNavigationBarWithLabels = Template.bind(this) as Story;
 BottomNavigationBarWithLabels.args = { ...meta.args, showLabels: true };

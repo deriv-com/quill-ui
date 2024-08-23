@@ -16,8 +16,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         flex-grow: 1;
         cursor: pointer;
+        height: var(--component-navigationBar-sizing-item-md);
+        border-radius: var(--component-navigationBar-border-radius);
 
         &-selected {
             &--true {
