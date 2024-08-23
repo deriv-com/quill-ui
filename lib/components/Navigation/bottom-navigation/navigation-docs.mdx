@@ -59,6 +59,7 @@ import Content from "path-to-content";
 
 export const Example: React.FC = () => {
     const [index, setIndex] = React.useState(value);
+    const [notificationCount, setNotificationCount] = React.useState(0);
 
     React.useEffect(() => {
         // Example: Update notification count over time or based on events
