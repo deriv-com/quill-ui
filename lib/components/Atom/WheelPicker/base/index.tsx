@@ -19,6 +19,7 @@ export const WheelPicker = ({
 }: WheelPickerProps) => {
     const itemsRefs = useRef<HTMLDivElement[]>([]);
     const [inputData, setInputData] = useState<TWheelTypeSelectItem[]>([]);
+    const [selectedValueInternal, setSelectedValueInternal] = useState<string | number>(selectedValue)
     const dataItemsMap = useMemo(
         () =>
             data.reduce(
@@ -48,6 +49,7 @@ export const WheelPicker = ({
             preventScroll: true,
         });
         setSelectedValue(inputData[selectedElement].value);
+        setSelectedValueInternal(inputData[selectedElement].value);
     };
 
     const resizeObserver = new ResizeObserver(() => {
@@ -66,6 +68,7 @@ export const WheelPicker = ({
     useEffect(() => {
         if (!itemsContainerRef.current) return;
         setSelectedValue(inputData[currentDataValue]?.value);
+        setSelectedValueInternal(inputData[currentDataValue]?.value);
         resizeObserver.observe(itemsContainerRef.current);
         itemsContainerRef.current.addEventListener("scroll", handleDataScroll);
         return () => {
@@ -131,7 +134,7 @@ export const WheelPicker = ({
                                 });
                                 itemsRefs.current[index]?.focus();
                             }}
-                            disabled={inputData[index].value !== selectedValue}
+                            disabled={inputData[index].value !== selectedValueInternal}
                         >
                             {value}
                         </DropdownItem>
