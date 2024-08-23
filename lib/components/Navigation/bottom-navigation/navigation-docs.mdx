@@ -82,7 +82,7 @@ export const Example: React.FC = () => {
                 <Navigation.BottomAction
                 activeIcon={<StandalonePlaceholderFillIcon iconSize="sm" />}
                 icon={<StandalonePlaceholderRegularIcon iconSize="sm" />}
-                badge={notificationCount > 0 ?? notificationCount.toString()}
+                badge={notificationCount > 0 ? notificationCount.toString() : undefined}
                 label="Placeholder"
                 />
                 <Navigation.BottomAction
