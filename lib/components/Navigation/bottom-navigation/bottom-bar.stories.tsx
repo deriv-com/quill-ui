@@ -43,6 +43,7 @@ const meta = {
         icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
         activeIcon: <StandalonePlaceholderFillIcon iconSize="sm" />,
         showLabels: false,
+        showBadge: true,
         value: 0,
         customIcon: "home",
     },
@@ -55,6 +56,9 @@ const meta = {
                 type: "radio",
             },
         },
+        showBadge: {
+            control: "boolean",
+        },
         showLabels: {
             control: "boolean",
         },
@@ -65,14 +69,19 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const Template: React.FC<Template> = ({ length = 4, ...args }: Template) => {
+const Template: React.FC<Template> = ({
+    length = 4,
+    showBadge,
+    ...args
+}: Template) => {
     const { value, showLabels, customIcon, ...rest } = args;
     const [index, setIndex] = React.useState(value);
     const [notificationCount, setNotificationCount] = React.useState<number[]>([
-        3, 2, 1, 4,
+        0, 0, 0, 0,
     ]);
 
     React.useEffect(() => {
+        if (!showBadge) return;
         const interval = setInterval(() => {
             setNotificationCount((prevCounts) =>
                 prevCounts.map((prev) => Math.floor(Math.random() * 5) + prev),
@@ -80,7 +89,7 @@ const Template: React.FC<Template> = ({ length = 4, ...args }: Template) => {
         }, 5000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [showBadge]);
 
     const Content = () => (
         <div
@@ -98,6 +107,7 @@ const Template: React.FC<Template> = ({ length = 4, ...args }: Template) => {
     );
 
     const handleClick = (indexToReset: number) => {
+        if (!showBadge) return;
         setNotificationCount((prevCounts) =>
             prevCounts.map((count, i) => (i === indexToReset ? 0 : count)),
         );
@@ -124,7 +134,7 @@ const Template: React.FC<Template> = ({ length = 4, ...args }: Template) => {
                             activeIcon={customIcon.active}
                             icon={customIcon.default}
                             badge={
-                                notificationCount[index] > 0
+                                showBadge && notificationCount[index] > 0
                                     ? notificationCount[index].toString()
                                     : undefined
                             }
