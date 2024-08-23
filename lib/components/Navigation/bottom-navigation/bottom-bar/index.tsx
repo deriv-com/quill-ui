@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 import { BottomActionProps } from "../bottom-action";
-import "../bottom-navigation.scss";
+import "./bottom-bar.scss";
 
 export interface BottomBarProps
     extends React.ComponentProps<React.ElementType> {
