@@ -181,8 +181,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             }
 
             if (type === "number" || type === "tel") {
-                event.target.value = event.target.value.replace(",", ".");
-
                 if (!allowDecimals) {
                     const nonNumReg = /[^0-9]/g;
                     inputValue = inputValue.replace(nonNumReg, "");
