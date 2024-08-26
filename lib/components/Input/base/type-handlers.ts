@@ -39,8 +39,14 @@ export const barrierHandler: HandlerFunction = (value) => {
     return "";
 };
 
+export const commaRemovalHandler: HandlerFunction = (value) => {
+    const cleaned = String(value).replace(",", ".");
+    return barrierHandler(cleaned);
+};
+
 export const CustomTypeObject: CustomTypeObjectType = {
     barrier: barrierHandler,
+    commaRemoval: commaRemovalHandler,
 } as const;
 
 export const customHandlers = (
