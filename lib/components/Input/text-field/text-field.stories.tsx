@@ -67,7 +67,7 @@ const meta = {
             control: {
                 type: "radio",
             },
-            options: ["sm", "md"],
+            options: ["sm", "md", "lg"],
         },
         maxLength: {
             control: {

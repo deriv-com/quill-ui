@@ -298,6 +298,12 @@
                 border-radius: var(--component-field-border-radius-md);
                 gap: var(--core-spacing-800);
             }
+            &--lg {
+                padding-inline: var(--component-field-spacing-padding-md);
+                height: 40px;
+                border-radius: var(--component-field-border-radius-md);
+                gap: var(--component-field-spacing-gap-sm); 
+            }
         }
 
         .input {
@@ -374,6 +380,14 @@
                     );
                 }
                 &--md {
+                    font-size: var(
+                        --semantic-typography-body-md-regular-default-fontSize
+                    );
+                    line-height: var(
+                        --semantic-typography-body-md-regular-default-lineHeight
+                    );
+                }
+                &--lg {
                     font-size: var(
                         --semantic-typography-body-md-regular-default-fontSize
                     );
