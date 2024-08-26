@@ -1,19 +1,21 @@
 import { BreadcrumbProps, LinkProps } from "../types";
 import { Fragment, useEffect, useState } from "react";
-import { maxLinks } from "./constants";
+import { maxMobileLinks, maxDesktopLinks } from "./constants";
 import "./breadcrumbs.scss";
 import useBreakpoints from "@hooks/useBreakpoints";
 import clsx from "clsx";
-import Link from "@components/Link";
+import { LabelPairedChevronRightSmRegularIcon } from "@deriv/quill-icons/LabelPaired";
+import { Text } from "@components/Typography";
 
-export function Base({ size = "sm", links = [], className }: BreadcrumbProps) {
+export function Base({ size, links = [], className }: BreadcrumbProps) {
     const [renderLinks, setRenderLinks] = useState<LinkProps[]>([]);
     const [dropdownLinks, setDropdownLinks] = useState<LinkProps[]>([]);
 
     const isLastItem = (key: number) => renderLinks.length - 1 > key;
     const linksLen = links.length;
     const { isMobile } = useBreakpoints();
-    const hasExtra = isMobile && maxLinks < linksLen;
+    const maxLinks = isMobile ? maxMobileLinks : maxDesktopLinks;
+    const hasExtra = maxLinks < linksLen;
 
     useEffect(() => {
         setRenderLinks(links);
@@ -34,7 +36,7 @@ export function Base({ size = "sm", links = [], className }: BreadcrumbProps) {
 
             setDropdownLinks(remainingLinks);
         }
-    }, [links]);
+    }, [links, isMobile]);
 
     return (
         <div className={clsx("quill-breadcrumb--container", className)}>
@@ -74,18 +76,24 @@ export function Base({ size = "sm", links = [], className }: BreadcrumbProps) {
                         </select>
                     )}
 
-                    <Link
-                        size={size}
+                    <a
                         href={href}
                         target={target ? target : "_self"}
-                        hasHoverEffect={false}
-                        hasChevron={isLastItem(lk)}
-                        color="black"
-                        disabled={!isLastItem(lk)}
-                        className="quill-breadcrumb--item"
+                        className={clsx(
+                            "quill-breadcrumb--item",
+                            !isLastItem(lk) &&
+                                "quill-breadcrumb--item--disabled",
+                        )}
                     >
-                        {content}
-                    </Link>
+                        <Text size={size}>{content}</Text>
+                    </a>
+                    <LabelPairedChevronRightSmRegularIcon
+                        data-testid="dt-link-chevron"
+                        className={clsx(
+                            !isLastItem(lk) && "quill-breadcrumb--chevron",
+                        )}
+                        fill="var(--component-textIcon-normal-subtle)"
+                    />
                 </Fragment>
             ))}
         </div>

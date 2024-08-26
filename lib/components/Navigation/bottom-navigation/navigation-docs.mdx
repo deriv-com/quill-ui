@@ -40,6 +40,8 @@ Both Navigation.BottomBar and Navigation.BottomAction extend from `React.Compone
     {`
 | Prop         | Type                | Description                                                                                       |
 |--------------|---------------------|---------------------------------------------------------------------------------------------------|
+| as           | React.ElementType   | Specifies the element tag to be used, allowing for customization of the element type.                                |
+| badge        | string              | string that will pass into the notification badge. Leave it empty if no notification badge needed                               |
 | selected     | boolean             | Determines if the action is selected.                                                            |
 | label        | string or React.ReactNode | The text or content to display as the label. Can be a string or a React node.                  |
 | showLabel    | boolean             | Controls whether the label is displayed. If omitted, the label is displayed by default.         |
@@ -57,6 +59,17 @@ import Content from "path-to-content";
 
 export const Example: React.FC = () => {
     const [index, setIndex] = React.useState(value);
+    const [notificationCount, setNotificationCount] = React.useState(0);
+
+    React.useEffect(() => {
+        // Example: Update notification count over time or based on events
+        const interval = setInterval(() => {
+            setNotificationCount((prevCount) => (prevCount < 5 ? prevCount + 1 : prevCount));
+        }, 5000);
+
+        // Cleanup interval on component unmount
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <>
@@ -70,6 +83,7 @@ export const Example: React.FC = () => {
                 <Navigation.BottomAction
                 activeIcon={<StandalonePlaceholderFillIcon iconSize="sm" />}
                 icon={<StandalonePlaceholderRegularIcon iconSize="sm" />}
+                badge={notificationCount > 0 ? notificationCount.toString() : undefined}
                 label="Placeholder"
                 />
                 <Navigation.BottomAction

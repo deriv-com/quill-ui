@@ -120,4 +120,12 @@ describe("BottomAction", () => {
 
         expect(container.firstChild).toHaveClass("custom-class");
     });
+
+    it("applies badges", () => {
+        const { getByText } = render(
+            <BottomAction icon={<svg />} activeIcon={<svg />} badge="20" />,
+        );
+
+        expect(getByText("20")).toBeInTheDocument();
+    });
 });

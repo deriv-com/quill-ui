@@ -1,0 +1,12 @@
+.quill-navigation-bottom-bar__container {
+    display: flex;
+    align-items: center;
+
+    height: var(--component-navigationBar-sizing-body-heightBottom);
+    padding-inline: var(--component-navigationBar-spacing-md);
+    gap: var(--component-navigationBar-spacing-sm);
+    border-top-style: solid;
+    background-color: var(--component-navigationBar-bg-body);
+    border-top-width: var(--component-navigationBar-border-width);
+    border-top-color: var(--component-navigationBar-border-color);
+}
