@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useState } from "react";
 import Input, { InputProps } from "@components/Input/base";
-import { Button } from "@components/Button";
+import { Button, TButtonColor } from "@components/Button";
 import "./input-button.scss";
 
 export interface InputGroupButtonProps
@@ -9,6 +9,7 @@ export interface InputGroupButtonProps
     buttonLabel: React.ReactNode;
     buttonCallback?: () => void;
     buttonDisabled?: boolean;
+    buttonColor?: TButtonColor;
 }
 
 export const InputGroupButton = forwardRef<
@@ -21,6 +22,7 @@ export const InputGroupButton = forwardRef<
             button_position = "right",
             inputSize = "md",
             value,
+            buttonColor,
             label,
             buttonIconPosition,
             buttonDisabled = false,
@@ -47,7 +49,7 @@ export const InputGroupButton = forwardRef<
         const InputButton = (
             <Button
                 disabled={isEmpty || disabled || buttonDisabled}
-                color="black"
+                color={buttonColor ? buttonColor : "black"}
                 fullWidth={button_position === "bottom"}
                 variant="primary"
                 size={inputSize}
