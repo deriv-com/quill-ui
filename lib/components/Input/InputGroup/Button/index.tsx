@@ -22,7 +22,7 @@ export const InputGroupButton = forwardRef<
             button_position = "right",
             inputSize = "md",
             value,
-            buttonColor,
+            buttonColor = "black",
             label,
             buttonIconPosition,
             buttonDisabled = false,
@@ -49,7 +49,7 @@ export const InputGroupButton = forwardRef<
         const InputButton = (
             <Button
                 disabled={isEmpty || disabled || buttonDisabled}
-                color={buttonColor ? buttonColor : "black"}
+                color={buttonColor}
                 fullWidth={button_position === "bottom"}
                 variant="primary"
                 size={inputSize}

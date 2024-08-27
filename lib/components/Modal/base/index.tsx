@@ -47,7 +47,7 @@ export const Modal = ({
     children,
     showHandleBar,
     showCrossIcon,
-    buttonColor,
+    buttonColor = "black-white",
     showPrimaryButton = true,
     showSecondaryButton = false,
     shouldCloseOnPrimaryButtonClick = false,
@@ -173,9 +173,7 @@ export const Modal = ({
                     <div className="quill-modal__button-wrapper">
                         {showPrimaryButton && (
                             <Button
-                                color={
-                                    buttonColor ? buttonColor : "black-white"
-                                }
+                                color={buttonColor}
                                 fullWidth
                                 size="lg"
                                 label={primaryButtonLabel}
