@@ -1,0 +1,102 @@
+import { Canvas, Meta } from '@storybook/blocks';
+ 
+import * as InputPhoneNumberStories from './input-phone-number.stories';
+import { Markdown } from "@storybook/blocks";
+ 
+<Meta of={InputPhoneNumberStories} />
+ 
+# InputPhoneNumber
+
+`InputPhoneNumber` is a custom input component designed for entering phone numbers with a country code selector.
+
+## Props
+
+`InputPhoneNumberProps` extends `TCustomDropdown` with few customs props.
+
+### InputPhoneNumberProps
+
+<Markdown>
+{`
+| Name                   | Type                                             | Default                      | Description                                                   |
+| -------------------- | --------------------------------- | ----------------- | --------------------------------------------------------------------------- |
+| codeIcon           | boolean                        | true             | Shows the country code icon in the dropdown.                                |
+| fillAddonBorderColor | string                        |                 | Border color for the addon component.                                       |
+| codeLabel          | string                          |                 | Custom label for the country code dropdown.                                 |
+| countryCodes       | TCountryCodes[]                 |                 | List of country codes available in the dropdown.                            |
+| shortCode          | string                          |                 | Default country short code to be selected in the dropdown.                  |
+| onCodeChange       | (item: TCountryCodes) => void   |                 | Callback function called when the country code changes.                     |
+| onValueChange      | (phoneNumber: string) => void   |                 | Callback function called input or code values changed and returns phone number with code.|
+| showFlags          | boolean                         | true            | Determines if flags should be displayed in the dropdown.                    |
+| inputSize          | "sm", "md" ,"lg"                | "md"            | Sets the size of the input field.                                           |
+| variant            | "outline" ,"fill"               | "outline"       | Sets the variant style of the input.                                        |
+| status             | "neutral" ,"error" ,"success"   | "neutral"       | Sets the status style of the input.                                         |
+| placeholder        | string                          | "00 0000 0000"  | Placeholder text for the input field.                                       |
+| formatProps        | object                          | { format: "## #### ####" } | Props for formatting the input value.                                |
+| value              | string                          |                 | The current value of the input field.                                       |
+| disabled           | boolean                         | false           | Disables the input field.                                                   |
+| onChange           | (event: ChangeEvent<HTMLInputElement>) => void |  | Callback function for handling input changes.                        |
+`}
+
+</Markdown>
+
+### Example Usage:
+
+```javascript
+import React from "react";
+import { InputPhoneNumber } from "@deriv-com/quill-ui";
+
+export const Example: React.FC = () => {
+
+    const [code, setCode] = React.useState("au");
+
+    const handleOnChange = (item) => {
+        setCode(item.short_code);
+    };
+
+    const options = [
+        {
+            name: "United States",
+            short_code: "us", //short_code is required to map the country flags
+            phone_code: "+1",
+        },
+        {
+            name: "Canada",
+            short_code: "CA",
+            phone_code: "+1",
+        },
+        {
+            name: "United Kingdom",
+            short_code: "GB",
+            phone_code: "+44",
+        },
+        {
+            name: "Australia",
+            short_code: "AU",
+            phone_code: "+61",
+        },
+        {
+            name: "Srilanka",
+            short_code: "LK",
+            phone_code: "+94",
+        },
+    ]
+
+    return (
+        <InputPhoneNumber
+            label="Phone Number"
+            codeLabel="Code"
+            countryCodes={options}
+            shortCode={code}
+            onCodeChange={handleOnChange}
+            onChange={(e) => {
+                console.log(e.target.value);
+            }}
+            onValueChange={(val) => console.log(val)}
+            message="message here"
+            maxLength={10}
+            show_counter={true}
+        />
+    );
+
+};
+```

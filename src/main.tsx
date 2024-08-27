@@ -5,7 +5,6 @@ import ThemeSwitcher from "./theme-switcher";
 import ThemeRenderer from "./theme-renderer";
 import BreakpointProvider from "@providers/breakpoint/breakpointProvider";
 import Breakpoint from "./breakpoint";
-import PhoneNumber from "./phone-number";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
@@ -32,18 +31,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                             <Skeleton.Square />
                         </Skeleton.Container>
                     </Skeleton.Container>
-
-                    <div style={{ width: "20rem" }}>
-                        <PhoneNumber />
-
-                        {/* <InputPhoneNumber
-                            label="Phone Number"
-                            variant="fill"
-                            codeLabel="Code"
-                            status="error"
-                            fillAddonBorderColor="var(--semantic-color-slate-solid-surface-frame-mid)"
-                        /> */}
-                    </div>
                 </div>
             </BreakpointProvider>
         </ThemeRenderer>
