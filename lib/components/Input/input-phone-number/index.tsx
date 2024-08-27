@@ -48,6 +48,7 @@ const InputPhoneNumberContent = forwardRef<
             onValueChange,
             showFlags = true,
             value,
+            disabled,
             onChange,
             ...rest
         },
@@ -99,10 +100,12 @@ const InputPhoneNumberContent = forwardRef<
                             codeLabel={codeLabel}
                             addOnStatus={status}
                             fillAddonBorderColor={fillAddonBorderColor}
+                            disabled={disabled}
                         />
                     }
                     noAutoClose
                     withProvider={false}
+                    disabled={disabled}
                 >
                     <DropdownContent
                         options={countryCodes}
@@ -129,6 +132,7 @@ const InputPhoneNumberContent = forwardRef<
                     formatProps={formatProps}
                     onChange={handleInputChange}
                     isDropdownOpen={isOpen}
+                    disabled={disabled}
                     {...rest}
                     ref={ref}
                 />

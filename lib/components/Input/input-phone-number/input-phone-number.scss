@@ -75,6 +75,13 @@
     align-items: center;
     padding-inline: var(--component-field-spacing-padding-md);
 
+    &__disabled {
+        .quill-country-code__label,
+        .quill-country-code__value {
+            color: var(--component-field-input-color-disabled);
+        }
+    }
+
     &__variant {
         &--outline {
             border-right: var(--borderWidth-xs) solid

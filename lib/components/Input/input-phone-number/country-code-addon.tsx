@@ -16,6 +16,7 @@ export interface CountryCodeAddonProps
     size: "md" | "sm"; //lg has to added in base
     addOnStatus?: Status;
     addOnVariant?: Variants;
+    disabled?: boolean;
 }
 
 const CountryCodeAddon = ({
@@ -24,6 +25,7 @@ const CountryCodeAddon = ({
     codeIcon = true,
     size = "md",
     codeLabel,
+    disabled,
     fillAddonBorderColor,
 }: CountryCodeAddonProps) => {
     const { isOpen, selectedValue } = useDropdown();
@@ -38,6 +40,7 @@ const CountryCodeAddon = ({
                 `quill-country-code__variant--${addOnVariant}`,
                 `quill-country-code__size--${size}`,
                 isOpen && `quill-country-code__opened`,
+                disabled && `quill-country-code__disabled`,
             )}
             style={addOnStyle}
         >

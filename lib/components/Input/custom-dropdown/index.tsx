@@ -52,6 +52,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             noActionSheet = false,
             contentAlign = "left",
             noAutoClose = false,
+            disabled,
             ...rest
         },
         ref,
@@ -82,11 +83,13 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
         }, [value]);
 
         const handleInputClick = (e: React.MouseEvent<HTMLDivElement>) => {
-            const input = inputRef.current;
-            input && input?.focus();
-            if (isAutocomplete && isOpen) return;
-            onClickDropdown?.(e);
-            isOpen ? close() : open();
+            if (!disabled) {
+                const input = inputRef.current;
+                input && input?.focus();
+                if (isAutocomplete && isOpen) return;
+                onClickDropdown?.(e);
+                isOpen ? close() : open();
+            }
         };
 
         const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {

@@ -38,6 +38,7 @@ const PhoneNumber = () => {
     };
     return (
         <InputPhoneNumber
+            variant="fill"
             label="Phone Number"
             codeLabel="Code"
             autoComplete="off"
@@ -52,6 +53,7 @@ const PhoneNumber = () => {
             message="message here"
             maxLength={10}
             show_counter={true}
+            // disabled
         />
     );
 };
