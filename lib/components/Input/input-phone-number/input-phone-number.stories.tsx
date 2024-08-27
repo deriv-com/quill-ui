@@ -2,6 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import InputPhoneNumber from ".";
 import { StandaloneCircleUserRegularIcon } from "@deriv/quill-icons";
 import { TCountryCodes } from "@types";
+import React, { useState } from "react";
 
 const icons: Record<string, object | null> = {
     with_icon: (
@@ -13,7 +14,6 @@ const icons: Record<string, object | null> = {
     none: null,
 };
 
-const message = "message goes here";
 const dummyList: TCountryCodes[] = [
     {
         name: "United States",
@@ -44,7 +44,7 @@ const dummyList: TCountryCodes[] = [
 
 const meta = {
     title: "Components/Inputs/Input Phone Number",
-    component: InputPhoneNumber,
+    // component: InputPhoneNumber,
     tags: ["autodocs"],
     parameters: {
         docs: {
@@ -146,18 +146,27 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Outline: Story = {
-    args: {
-        label: "Outline",
-        placeholder: "Placeholder",
-        message: message,
-    },
+const Template: React.FC = ({ ...args }) => {
+    const [code, setCode] = useState("au");
+
+    const handleOnChange = (item: TCountryCodes) => {
+        setCode(item.short_code);
+    };
+
+    return (
+        <InputPhoneNumber
+            {...args}
+            countryCodes={dummyList}
+            onCodeChange={handleOnChange}
+            shortCode={code}
+        />
+    );
 };
-export const Fill: Story = {
-    args: {
-        label: "Fill",
-        placeholder: "Placeholder",
-        variant: "fill",
-        message: message,
-    },
-};
+
+const InputPhoneNumberOutline = Template.bind(this) as Story;
+InputPhoneNumberOutline.args = {};
+
+const InputPhoneNumberFill = Template.bind(this) as Story;
+InputPhoneNumberFill.args = { ...meta.args, variant: "fill" };
+
+export { InputPhoneNumberOutline, InputPhoneNumberFill };
