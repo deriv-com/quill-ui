@@ -1,5 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Base } from ".";
+import { Breadcrumbs } from "../index";
+import BreakpointProvider from "@providers/breakpoint/breakpointProvider";
+
+const links = [
+    {
+        href: "/",
+        content: "Home",
+    },
+    {
+        href: "/",
+        content: "Trade",
+    },
+];
 
 const meta = {
     title: "Components/Breadcrumbs/Default",
@@ -10,6 +23,7 @@ const meta = {
     },
     args: {
         size: "md",
+        links: links,
     },
     argTypes: {
         size: { options: ["sm", "md"], control: { type: "radio" } },
@@ -19,47 +33,37 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-    args: {
-        links: [
-            {
-                href: "",
-                content: "Home",
-            },
-            {
-                href: "",
-                content: "Trade",
-                target: "_blank",
-            },
-        ],
-    },
-};
+const Template: React.FC<React.ComponentProps<typeof Base>> = (args) => (
+    <div>
+        <BreakpointProvider>
+            <Breadcrumbs {...args} />
+        </BreakpointProvider>
+    </div>
+);
+export const Default = Template.bind(this) as Story;
 
-export const Max: Story = {
-    args: {
-        size: "md",
-        links: [
-            {
-                href: "",
-                content: "Home",
-            },
-            {
-                href: "/help-centre",
-                content: "Help Centre",
-                target: "_blank",
-            },
-            {
-                href: "/help-centre/account",
-                content: "Account",
-            },
-            {
-                href: "/help-centre/account/questions",
-                content: "Questions",
-            },
-            {
-                href: "",
-                content: "How to trade in Deriv",
-            },
-        ],
-    },
+Default.args = { ...meta.args };
+
+export const MaxLinks = Template.bind(this) as Story;
+MaxLinks.args = {
+    ...meta.args,
+    links: [
+        ...links,
+        {
+            href: "/",
+            content: "Help Centre",
+        },
+        {
+            href: "/",
+            content: "Account",
+        },
+        {
+            href: "/",
+            content: "Questions",
+        },
+        {
+            href: "/",
+            content: "How to trade in Deriv",
+        },
+    ],
 };

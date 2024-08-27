@@ -96,7 +96,7 @@
         width: 100%;
         scroll-snap-align: center;
         &:hover {
-            background: none;
+            background: none !important;
         }
     }
 }
