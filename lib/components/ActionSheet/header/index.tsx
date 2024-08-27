@@ -5,7 +5,8 @@ import { Heading, Text } from "@components/Typography";
 import { IconButton } from "@components/Button";
 import "./header.scss";
 
-interface HeaderProps extends Omit<ComponentPropsWithoutRef<"div">, "title"> {
+export interface HeaderProps
+    extends Omit<ComponentPropsWithoutRef<"div">, "title"> {
     title?: ReactNode;
     description?: ReactNode;
     icon?: ReactNode;

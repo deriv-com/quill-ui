@@ -1,7 +1,7 @@
 import { ComponentProps } from "react";
 import "./handle-bar.scss";
 
-type BarProps = ComponentProps<"div">;
+export type BarProps = ComponentProps<"div">;
 
 const HandleBar = (props: BarProps) => {
     return (

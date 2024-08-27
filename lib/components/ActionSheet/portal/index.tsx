@@ -7,7 +7,7 @@ import { useSwipeBlock } from "@hooks/useSwipeBlock";
 import { ActionSheetContext } from "../root";
 import clsx from "clsx";
 
-interface PortalProps extends ComponentProps<"div"> {
+export interface PortalProps extends ComponentProps<"div"> {
     shouldCloseOnDrag?: boolean;
     shouldDetectSwipingOnContainer?: boolean;
     showHandlebar?: boolean;
