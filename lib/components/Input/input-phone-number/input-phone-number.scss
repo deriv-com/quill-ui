@@ -140,7 +140,13 @@
         padding-top: 0;
     }
     .phone-code-search {
+        padding-block: 8px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--component-actionSheet-bg);
+    }
+    .dropdown-wrapper {
         padding-top: 8px;
-        padding-bottom: 16px;
     }
 }

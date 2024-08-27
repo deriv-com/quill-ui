@@ -43,7 +43,7 @@ const DropdownContent = ({
     );
 
     const Content = () => (
-        <>
+        <div className="dropdown-wrapper">
             {filteredCountries.map((country) => (
                 <DropdownItem
                     key={country.short_code}
@@ -60,7 +60,7 @@ const DropdownContent = ({
                     }
                 />
             ))}
-        </>
+        </div>
     );
 
     return (
