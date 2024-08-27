@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import clsx from "clsx";
 import { ButtonProps } from "../types";
 import {
@@ -52,6 +52,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             label,
             disabled,
             iconPosition = "start",
+            isOpaque,
             variant = "primary",
             iconButton = false,
             ...rest
@@ -63,55 +64,70 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         const labelSize = size === "md" ? "sm" : size === "lg" ? "md" : "xl";
         const DropdownIcon = dropdownIcons[size];
         const LoaderIcon = loaderIcons[size];
+        const Wrapper = isOpaque ? "span" : React.Fragment;
 
         return (
-            <button
-                className={clsx(
-                    "quill-button",
-                    iconButton ? iconButtonClass : ButtonSize[size],
-                    buttonColorClass,
-                    className,
-                    fullWidth && "quill-button__full-width",
-                )}
-                disabled={disabled}
-                data-state={selected ? "selected" : ""}
-                data-loading={isLoading}
-                ref={ref}
-                {...rest}
+            <Wrapper
+                {...(isOpaque
+                    ? {
+                          className: clsx(
+                              "quill-button",
+                              "quill-button__white-bg-wrapper",
+                              iconButton ? iconButtonClass : ButtonSize[size],
+                              fullWidth && "quill-button__full-width",
+                          ),
+                      }
+                    : {})}
             >
-                {iconPosition === "start" && icon && !isLoading && icon}
+                <button
+                    className={clsx(
+                        "quill-button",
+                        iconButton ? iconButtonClass : ButtonSize[size],
+                        buttonColorClass,
+                        className,
+                        fullWidth && "quill-button__full-width",
+                    )}
+                    disabled={disabled}
+                    data-state={selected ? "selected" : ""}
+                    data-loading={isLoading}
+                    ref={ref}
+                    {...rest}
+                >
+                    {iconPosition === "start" && icon && !isLoading && icon}
 
-                {isLoading && !disabled && (
-                    <LoaderIcon
-                        data-testid="button-loader"
-                        className="quill-button__loader-icon"
-                    />
-                )}
-                {children}
-                {label && !isLoading && (
-                    <span className="quill-button-label">
-                        {size === "sm" ? (
-                            <CaptionText color={color} bold>
-                                {label}
-                            </CaptionText>
-                        ) : (
-                            <Text size={labelSize} bold color={color}>
-                                {label}
-                            </Text>
-                        )}
-                    </span>
-                )}
-                {iconPosition === "end" && icon && !isLoading && icon}
-                {dropdown && DropdownIcon && !isLoading && (
-                    <DropdownIcon
-                        data-state={isDropdownOpen ? "open" : "close"}
-                        className={clsx(
-                            "quill-button__transform",
-                            isDropdownOpen && "quill-button__transform-rotate",
-                        )}
-                    />
-                )}
-            </button>
+                    {isLoading && !disabled && (
+                        <LoaderIcon
+                            data-testid="button-loader"
+                            className="quill-button__loader-icon"
+                        />
+                    )}
+                    {children}
+                    {label && !isLoading && (
+                        <span className="quill-button-label">
+                            {size === "sm" ? (
+                                <CaptionText color={color} bold>
+                                    {label}
+                                </CaptionText>
+                            ) : (
+                                <Text size={labelSize} bold color={color}>
+                                    {label}
+                                </Text>
+                            )}
+                        </span>
+                    )}
+                    {iconPosition === "end" && icon && !isLoading && icon}
+                    {dropdown && DropdownIcon && !isLoading && (
+                        <DropdownIcon
+                            data-state={isDropdownOpen ? "open" : "close"}
+                            className={clsx(
+                                "quill-button__transform",
+                                isDropdownOpen &&
+                                    "quill-button__transform-rotate",
+                            )}
+                        />
+                    )}
+                </button>
+            </Wrapper>
         );
     },
 );
