@@ -99,7 +99,10 @@
         &__full-width {
             width: 100%;
         }
-
+        &__white-bg-wrapper {
+            background-color: var(--core-color-solid-slate-50);
+            padding: unset;
+        }
         &-label {
             text-wrap: nowrap;
         }
