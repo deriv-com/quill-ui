@@ -300,7 +300,7 @@
             }
             &--lg {
                 padding-inline: var(--component-field-spacing-padding-md);
-                height: 40px;
+                height: var(--core-spacing-2000);
                 border-radius: var(--component-field-border-radius-md);
                 gap: var(--component-field-spacing-gap-sm); 
             }
