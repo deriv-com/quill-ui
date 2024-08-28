@@ -45,6 +45,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             children,
             isDropdownOpen,
             dropdown = false,
+            showChevron = true,
             selected,
             fullWidth = false,
             isLoading = false,
@@ -116,7 +117,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                         </span>
                     )}
                     {iconPosition === "end" && icon && !isLoading && icon}
-                    {dropdown && DropdownIcon && !isLoading && (
+                    {dropdown && showChevron && DropdownIcon && !isLoading && (
                         <DropdownIcon
                             data-state={isDropdownOpen ? "open" : "close"}
                             className={clsx(

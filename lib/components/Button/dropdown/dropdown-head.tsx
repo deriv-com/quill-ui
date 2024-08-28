@@ -17,7 +17,7 @@ const HeadComponent = forwardRef<HTMLButtonElement, ButtonProps>(
                         icon={icon}
                         iconPosition={iconPosition}
                         isDropdownOpen={isOpen}
-                        label={label}
+                        label={label}      
                         {...rest}
                     />
                 ) : (

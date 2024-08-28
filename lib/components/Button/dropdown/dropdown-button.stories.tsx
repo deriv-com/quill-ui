@@ -68,6 +68,7 @@ const meta = {
         isLoading: false,
         color: "coral",
         variant: "primary",
+        showChevron: true,
     },
     argTypes: {
         variant: {
@@ -173,6 +174,9 @@ const meta = {
             table: {
                 disable: true,
             },
+        },
+        showChevron: {
+            description: "To show/hide chevron icon"
         },
         disabled: {
             description: "To disable the dropdown button",
