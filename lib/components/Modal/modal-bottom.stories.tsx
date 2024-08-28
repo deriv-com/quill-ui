@@ -48,11 +48,13 @@ const meta = {
     args: {
         children: <div>{shortTextContent}</div>,
         isOpened: false,
+        isExpandable: true,
         disableCloseOnOverlay: false,
         showHandleBar: true,
         isMobile: true,
         showSecondaryButton: true,
         shouldCloseOnPrimaryButtonClick: false,
+        shouldCloseModalOnSwipeDown: false,
         toggleModal: fn(),
         primaryButtonLabel: primaryButtonLabel,
         primaryButtonCallback: fn(),
@@ -71,6 +73,13 @@ const meta = {
             table: { type: { summary: "boolean | undefined" } },
             options: ["true", "false"],
             description: "Controls the visibility of the modal",
+            control: { type: "boolean" },
+        },
+        isExpandable: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            description:
+                "Controls if modal is expandable or not. Equal to true by default.",
             control: { type: "boolean" },
         },
         className: {
@@ -108,6 +117,13 @@ const meta = {
                 "Flag for controlling modal behavior. If it's true, then the modal will be closed after user clicks on the primary button.",
             control: { type: "boolean" },
         },
+        shouldCloseModalOnSwipeDown: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            description:
+                "Flag for controlling modal behavior. If it's true, then the modal will be closed after user swipes down the handle bar.",
+            control: { type: "boolean" },
+        },
         toggleModal: {
             table: { type: { summary: "(isOpened: boolean) => void" } },
             description:
@@ -135,6 +151,11 @@ const meta = {
             table: { type: { summary: "ReactNode | undefined" } },
             description: "Label for the secondary button.",
             control: "text",
+        },
+        zIndex: {
+            table: { type: { summary: "number | undefined" } },
+            description: "z-index for handlebar",
+            control: "number",
         },
     },
 } satisfies Meta<typeof Modal>;
@@ -189,6 +210,13 @@ DisableCloseOnOverlay.args = {
     ...meta.args,
     disableCloseOnOverlay: true,
 };
+
+export const DisableExpandability = Template.bind(this) as Story;
+DisableExpandability.args = {
+    ...meta.args,
+    isExpandable: false,
+};
+
 export const ModalBottomWithoutButtons = Template.bind(this) as Story;
 ModalBottomWithoutButtons.args = {
     ...meta.args,
@@ -200,6 +228,13 @@ ModalBottomWithoutSecondaryButton.args = {
     ...meta.args,
     showSecondaryButton: false,
 };
+
+export const CloseModalOnSwipeDown = Template.bind(this) as Story;
+CloseModalOnSwipeDown.args = {
+    ...meta.args,
+    shouldCloseModalOnSwipeDown: true,
+    textContent: mediumTextContent,
+} as Story["args"];
 
 export const ClosingModalBottomOnPrimaryButtonClick = Template.bind(
     this,

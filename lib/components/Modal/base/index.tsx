@@ -10,6 +10,7 @@ import "../modal.scss";
 
 export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     isOpened?: boolean;
+    isExpandable?: boolean;
     className?: string;
     containerClassName?: string;
     showHandleBar?: boolean;
@@ -17,6 +18,7 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     showSecondaryButton?: boolean;
     shouldCloseOnPrimaryButtonClick?: boolean;
     shouldCloseOnSecondaryButtonClick?: boolean;
+    shouldCloseModalOnSwipeDown?: boolean;
     disableCloseOnOverlay?: boolean;
     toggleModal?: (isOpened: boolean) => void;
     portalId?: string;
@@ -30,6 +32,7 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     secondaryButtonLabel?: React.ReactNode;
     isMobile?: boolean;
     hasFooter?: boolean;
+    zIndex?: number;
 }
 
 const swipeConfig = {
@@ -43,6 +46,7 @@ const MAX_HEIGHT = 85;
 
 export const Modal = ({
     isOpened = false,
+    isExpandable = true,
     className,
     children,
     showHandleBar,
@@ -52,6 +56,7 @@ export const Modal = ({
     showSecondaryButton = false,
     shouldCloseOnPrimaryButtonClick = false,
     shouldCloseOnSecondaryButtonClick = false,
+    shouldCloseModalOnSwipeDown = false,
     toggleModal,
     disableCloseOnOverlay = false,
     isMobile,
@@ -63,6 +68,7 @@ export const Modal = ({
     primaryButtonCallback,
     secondaryButtonCallback,
     secondaryButtonLabel,
+    zIndex,
     ...rest
 }: React.PropsWithChildren<ModalProps>) => {
     const [isVisible, setIsVisible] = useState(isOpened);
@@ -116,9 +122,12 @@ export const Modal = ({
     };
 
     const swipeHandlers = useSwipeable({
-        onSwipedUp: () => (shouldExpand ? setIsExpanded(true) : null),
+        onSwipedUp: () =>
+            isExpandable && shouldExpand ? setIsExpanded(true) : null,
         onSwipedDown: () =>
-            shouldExpand ? setIsExpanded(false) : toggleHandler(),
+            isExpandable && shouldExpand && !shouldCloseModalOnSwipeDown
+                ? setIsExpanded(false)
+                : toggleHandler(),
         onSwipeStart: () => setIsSwiping(true),
         onSwiped: () =>
             (swipingTimerRef.current = setTimeout(
@@ -154,6 +163,7 @@ export const Modal = ({
                           <div
                               className="quill-modal__handle-bar"
                               data-testid="dt_handlebar"
+                              style={{ zIndex }}
                               {...swipeHandlers}
                           />
                       )

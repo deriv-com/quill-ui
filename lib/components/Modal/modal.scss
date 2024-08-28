@@ -14,11 +14,11 @@
         background-color: var(--core-color-opacity-black-600);
     }
     &__container {
-        &--mobile{
+        &--mobile {
             position: absolute;
             bottom: 0;
             width: 100%;
-            max-height: 90%;
+            max-height: 90dvh;
             min-height: var(--temp-static-spacing-289);
             overflow: hidden;
             display: flex;
@@ -27,12 +27,14 @@
             flex-direction: column;
             background-color: var(--component-modal-bg);
             border-top-left-radius: var(--component-modal-border-radius-bottom);
-            border-top-right-radius: var(--component-modal-border-radius-bottom);
+            border-top-right-radius: var(
+                --component-modal-border-radius-bottom
+            );
             opacity: var(--core-opacity-50);
             transform: translateY(100%);
             pointer-events: none;
             transition: all var(--core-motion-duration-300)
-                var(--motion-easing-linear); 
+                var(--motion-easing-linear);
         }
         &--desktop {
             position: relative;
@@ -44,9 +46,9 @@
             justify-content: space-evenly;
             flex-direction: column;
             background-color: var(--component-modal-bg);
-            margin : 0 auto;
+            margin: 0 auto;
         }
-       
+
         &--visible {
             opacity: var(--core-opacity-1300);
             transform: translateY(0%);
@@ -56,7 +58,7 @@
         &--expanded {
             min-height: 90%;
             max-height: 90%;
-        }  
+        }
     }
 
     &__handle-bar {
@@ -91,7 +93,7 @@
             overflow-y: scroll;
             &::-webkit-scrollbar {
                 display: none;
-              }
+            }
         }
 
         &-image {
@@ -99,43 +101,47 @@
             display: flex;
             justify-content: center;
             align-items: center;
-           
+
             &-size {
                 height: var(--temp-static-spacing-202);
                 @include breakpoint("lg") {
                     height: var(--temp-static-spacing-288);
                 }
             }
-           
 
             & + .quill-modal-bottom__content-title {
                 margin-top: var(--component-modal-spacing-overlay-padding-sm);
                 @include breakpoint("lg") {
-                    margin-top:  var(--component-modal-spacing-overlay-padding-sm);
+                    margin-top: var(
+                        --component-modal-spacing-overlay-padding-sm
+                    );
                 }
             }
         }
 
         &-title {
-                margin: var(--component-modal-spacing-bottom-padding-lg) var(--component-modal-spacing-overlay-padding-sm)
-                0;
+            margin: var(--component-modal-spacing-bottom-padding-lg)
+                var(--component-modal-spacing-overlay-padding-sm) 0;
+            @include breakpoint("lg") {
+                margin: var(--component-modal-spacing-overlay-padding-md);
+            }
+            &-has-image {
+                margin: var(--component-modal-spacing-overlay-padding-sm);
                 @include breakpoint("lg") {
-                    margin: var(--component-modal-spacing-overlay-padding-md);
+                    margin: var(--component-modal-spacing-overlay-padding-sm)
+                        var(--component-modal-spacing-overlay-padding-md)
+                        var(--component-modal-spacing-overlay-padding-md);
                 }
-                &-has-image {
-                    margin: var(--component-modal-spacing-overlay-padding-sm);
-                    @include breakpoint("lg") {
-                        margin: var(--component-modal-spacing-overlay-padding-sm) var(--component-modal-spacing-overlay-padding-md) var(--component-modal-spacing-overlay-padding-md);
-                    }
-                }
+            }
         }
 
         &-body {
             margin: var(--component-modal-spacing-overlay-padding-sm)
                 var(--component-modal-spacing-overlay-padding-sm);
-                @include breakpoint("lg") {
-                    margin: var(--component-modal-spacing-overlay-padding-sm) var(--component-modal-spacing-overlay-padding-md);
-                }
+            @include breakpoint("lg") {
+                margin: var(--component-modal-spacing-overlay-padding-sm)
+                    var(--component-modal-spacing-overlay-padding-md);
+            }
         }
     }
     &__button {
@@ -150,7 +156,8 @@
             flex-direction: column;
             gap: var(--semantic-spacing-gap-md);
             @include breakpoint("lg") {
-                padding: var(--component-modal-spacing-overlay-padding-sm) var(--component-modal-spacing-overlay-padding-md);
+                padding: var(--component-modal-spacing-overlay-padding-sm)
+                    var(--component-modal-spacing-overlay-padding-md);
             }
         }
     }
