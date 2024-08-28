@@ -1,3 +1,7 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Introduction" />
+
 # Quill UI
 
 **Overview**
@@ -32,7 +36,9 @@ import { ThemeProvider, BreakpointProvider, Button } from "@deriv-com/quill-ui";
 import { theme } from "./path-to-your-theme-handling";
 
 const App = () => (
-    <ThemeProvider theme={theme}> //dark or light
+    <ThemeProvider theme={theme}>
+        {" "}
+        //dark or light
         <BreakpointProvider>
             {/* Your components go here */}
             <Button>Your Button Text</Button>

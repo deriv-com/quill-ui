@@ -19,7 +19,7 @@ const config: StorybookConfig = {
     },
     docs: {
         autodocs: "tag",
-        defaultName: "Documentation",
+        defaultName: "Playground",
     },
 
     async viteFinal(config) {
