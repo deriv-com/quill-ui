@@ -14,6 +14,7 @@ const Footer = ({
     shouldCloseOnSecondaryButtonClick = true,
     isPrimaryButtonDisabled,
     isSecondaryButtonDisabled,
+    primaryButtonColor = "black-white",
     ...rest
 }: FooterProps) => {
     const { handleClose } = useContext(ActionSheetContext);
@@ -41,7 +42,7 @@ const Footer = ({
             {primaryAction && (
                 <Button
                     onClick={primaryActionHandler}
-                    color="black-white"
+                    color={primaryButtonColor}
                     size="lg"
                     label={primaryAction.content}
                     fullWidth
