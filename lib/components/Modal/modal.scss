@@ -14,51 +14,16 @@
         background-color: var(--core-color-opacity-black-600);
     }
     &__container {
-        &--mobile {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            max-height: 90%;
-            min-height: var(--temp-static-spacing-289);
-            overflow: hidden;
-            display: flex;
-            align-items: stretch;
-            justify-content: space-evenly;
-            flex-direction: column;
-            background-color: var(--component-modal-bg);
-            border-top-left-radius: var(--component-modal-border-radius-bottom);
-            border-top-right-radius: var(
-                --component-modal-border-radius-bottom
-            );
-            opacity: var(--core-opacity-50);
-            transform: translateY(100%);
-            pointer-events: none;
-            transition: all var(--core-motion-duration-300)
-                var(--motion-easing-linear);
-        }
-        &--desktop {
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            border-radius: var(--component-modal-border-radius-overlay);
-            width: var(--component-modal-width-overlay);
-            max-height: 720px;
-            justify-content: space-evenly;
-            flex-direction: column;
-            background-color: var(--component-modal-bg);
-            margin: 0 auto;
-        }
-
-        &--visible {
-            opacity: var(--core-opacity-1300);
-            transform: translateY(0%);
-            pointer-events: auto;
-        }
-
-        &--expanded {
-            min-height: 90%;
-            max-height: 90%;
-        }
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        border-radius: var(--component-modal-border-radius-overlay);
+        width: var(--component-modal-width-overlay);
+        max-height: 720px;
+        justify-content: space-evenly;
+        flex-direction: column;
+        background-color: var(--component-modal-bg);
+        margin: 0 auto;
     }
 
     &__handle-bar {

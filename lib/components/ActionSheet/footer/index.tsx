@@ -20,12 +20,12 @@ const Footer = ({
     if (!primaryAction && !secondaryAction) return null;
 
     const primaryActionHandler = () => {
-        primaryAction?.onAction();
+        primaryAction?.onAction && primaryAction?.onAction();
         if (shouldCloseOnPrimaryButtonClick) handleClose?.();
     };
 
     const secondaryActionHandler = () => {
-        secondaryAction?.onAction();
+        secondaryAction?.onAction && secondaryAction?.onAction();
         if (shouldCloseOnSecondaryButtonClick) handleClose?.();
     };
 

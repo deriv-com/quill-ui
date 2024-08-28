@@ -3,6 +3,7 @@ import { Modal } from "@components/Modal";
 import { ModalProps } from "../base";
 import { Button } from "@components/Button";
 import "@deriv-com/quill-tokens/dist/breakpoints.scss";
+import useBreakpoints from "@hooks/useBreakpoints";
 
 interface ModalExampleProps extends ModalProps {
     image?: React.ReactNode;
@@ -25,6 +26,7 @@ export const ModalExample = ({
     const titlePlaceHolderText = "Title";
 
     const [isOpen, setIsOpen] = useState(false);
+    const { isMobile } = useBreakpoints();
 
     return (
         <>
@@ -40,6 +42,7 @@ export const ModalExample = ({
                 primaryButtonLabel={primaryButtonLabel}
                 showSecondaryButton={showSecondaryButton}
                 secondaryButtonLabel={secondaryButtonLabel}
+                isMobile={isMobile}
             >
                 <Modal.Header
                     title={titlePlaceHolderText}

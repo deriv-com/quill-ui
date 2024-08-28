@@ -12,6 +12,7 @@ export interface HeaderProps
     icon?: ReactNode;
     iconPosition?: "right" | "left";
     closeIcon?: ReactNode;
+    centered?: boolean;
 }
 
 const Header = ({
@@ -21,6 +22,7 @@ const Header = ({
     icon: Icon,
     iconPosition = "right",
     closeIcon: CloseIcon,
+    centered = true,
     ...rest
 }: HeaderProps) => {
     const { expandable } = useContext(ActionSheetContext);
@@ -47,7 +49,14 @@ const Header = ({
                         {Icon}
                     </div>
                 )}
-                {title && <Heading.H5>{title}</Heading.H5>}
+                {title && (
+                    <Heading.H5
+                        centered={centered}
+                        className="quill-action-sheet--title-text"
+                    >
+                        {title}
+                    </Heading.H5>
+                )}
                 {CloseIcon && (
                     <IconButton
                         color="black-white"
@@ -63,7 +72,10 @@ const Header = ({
                 )}
             </div>
             {description && (
-                <Text className="quill-action-sheet--description">
+                <Text
+                    centered={centered}
+                    className="quill-action-sheet--description"
+                >
                     {description}
                 </Text>
             )}

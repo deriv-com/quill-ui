@@ -27,8 +27,8 @@ export interface RootProps
 export type RootPosition = RootProps["position"];
 
 interface ActionType {
-    content: React.ReactNode;
-    onAction: () => void;
+    content?: React.ReactNode;
+    onAction?: () => void;
 }
 
 export interface FooterProps
