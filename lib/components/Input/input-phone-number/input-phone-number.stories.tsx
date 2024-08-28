@@ -44,7 +44,6 @@ const dummyList: TCountryCodes[] = [
 
 const meta = {
     title: "Components/Inputs/Input Phone Number",
-    // component: InputPhoneNumber,
     tags: ["autodocs"],
     parameters: {
         docs: {
