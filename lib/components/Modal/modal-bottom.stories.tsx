@@ -79,7 +79,7 @@ const meta = {
             table: { type: { summary: "boolean | undefined" } },
             options: ["true", "false"],
             description:
-                "Controls if modal is expandable or not. Equal to true by default.",
+                "Controls if modal is expandable or not. Default value is true.",
             control: { type: "boolean" },
         },
         className: {
@@ -121,7 +121,7 @@ const meta = {
             table: { type: { summary: "boolean | undefined" } },
             options: ["true", "false"],
             description:
-                "Flag for controlling modal behavior. If it's true, then the modal will be closed after user swipes down the handle bar.",
+                "Flag for controlling modal behavior. If true, the modal will be closed after user swipes the handle bar down.",
             control: { type: "boolean" },
         },
         toggleModal: {
