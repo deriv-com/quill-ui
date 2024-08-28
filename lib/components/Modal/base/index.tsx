@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import { useState, useEffect, HTMLAttributes } from "react";
 import clsx from "clsx";
-import { Button, IconButton } from "@components/Button";
+import { Button, IconButton, TButtonColor } from "@components/Button";
 import { LabelPairedXmarkMdBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import { ModalHeader } from "./modal-header";
 import { ModalBody } from "./modal-body";
@@ -21,6 +21,7 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     disableCloseOnOverlay?: boolean;
     toggleModal?: (isOpened: boolean) => void;
     portalId?: string;
+    buttonColor?: TButtonColor;
     showPrimaryButton?: boolean;
     primaryButtonLabel?: React.ReactNode;
     isPrimaryButtonDisabled?: boolean;
@@ -54,6 +55,7 @@ export const Modal = (props: React.PropsWithChildren<ModalProps>) => {
         secondaryButtonLabel,
         showHandleBar,
         isMobile,
+        buttonColor: primaryButtonColor = "black-white",
         ...rest
     } = props;
     const [isVisible, setIsVisible] = useState(isOpened);
@@ -88,7 +90,7 @@ export const Modal = (props: React.PropsWithChildren<ModalProps>) => {
                 <div className="quill-modal__button-wrapper">
                     {showPrimaryButton && (
                         <Button
-                            color="black-white"
+                            color={primaryButtonColor}
                             fullWidth
                             size="lg"
                             label={primaryButtonLabel}

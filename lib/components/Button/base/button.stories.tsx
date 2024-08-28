@@ -25,6 +25,7 @@ const meta = {
         label: "Label",
         color: "coral",
         isLoading: false,
+        isOpaque: false,
         disabled: false,
         fullWidth: false,
         type: "button",
@@ -42,6 +43,10 @@ const meta = {
             },
         },
         isLoading: {
+            options: ["true", "false"],
+            control: "boolean",
+        },
+        isOpaque: {
             options: ["true", "false"],
             control: "boolean",
         },
@@ -116,6 +121,10 @@ const placeholder = {
     xl: <LabelPairedPlaceholderXlRegularIcon />,
 };
 
+const ExampleBasic: React.FC<React.ComponentProps<typeof Button>> = (args) => (
+    <Button {...args} />
+);
+
 export const ButtonWithLabelIconAtStart = (
     args: ComponentProps<typeof Button>,
 ) => (
@@ -144,6 +153,14 @@ export const ButtonDisabled = (args: ComponentProps<typeof Button>) => (
         {...args}
     />
 );
+
+export const ButtonDisabledOpaque = ExampleBasic.bind(this) as Story;
+ButtonDisabledOpaque.args = {
+    disabled: true,
+    isOpaque: true,
+    color: "black",
+};
+
 export const ButtonWithLoading = (args: ComponentProps<typeof Button>) => (
     <Button
         iconPosition="end"

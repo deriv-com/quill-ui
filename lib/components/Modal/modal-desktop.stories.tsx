@@ -119,6 +119,12 @@ export const ModalOverlayWithoutCrossIcon: Story = {
         textContent: shortTextContent,
     },
 };
+export const ModalOverlayWithButtonColorProp: Story = {
+    args: {
+        textContent: shortTextContent,
+        buttonColor: "coral",
+    },
+};
 export const ModalBottomWithoutButtons: Story = {
     args: {
         hasFooter: false,

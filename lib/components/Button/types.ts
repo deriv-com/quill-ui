@@ -27,6 +27,7 @@ export interface ButtonProps extends Omit<ComponentProps<"button">, "ref"> {
     fullWidth?: boolean;
     isLoading?: boolean;
     iconPosition?: "start" | "end";
+    isOpaque?: boolean;
     className?: string;
     label?: ReactNode;
     children?: ReactNode;
