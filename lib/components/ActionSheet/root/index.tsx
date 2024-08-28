@@ -34,7 +34,6 @@ const Root = ({
         onClose?.();
         setShow(false);
         document.body.style.overflow = "auto";
-        // console.log(isOpen);
     }, [onClose]);
 
     useEffect(() => {
