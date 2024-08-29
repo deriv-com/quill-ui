@@ -10,7 +10,7 @@ exports[`GenericWheelPicker renders correctly 1`] = `
         class="quill-input__container"
       >
         <div
-          class="quill-input__wrapper quill-input__wrapper--has-value quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md quill-generic-picker__input quill-generic-picker__input--is-open-false--undefined--undefined"
+          class="quill-input__wrapper quill-input__wrapper--has-value quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--lg quill-generic-picker__input quill-generic-picker__input--is-open-false--undefined--undefined"
         >
           <div
             class="quill-input-icons__wrapper"
@@ -20,7 +20,7 @@ exports[`GenericWheelPicker renders correctly 1`] = `
             >
               <input
                 autocomplete="off"
-                class="input peer input__align--left input__size--md"
+                class="input peer input__align--left input__size--lg"
                 id="quill-input-1"
                 placeholder=""
                 readonly=""

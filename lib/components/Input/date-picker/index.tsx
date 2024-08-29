@@ -38,7 +38,7 @@ const DatePickerInput = forwardRef<HTMLInputElement, TDatePickerDropdownProps>(
         {
             label,
             textAlignment = "left",
-            inputSize = "md",
+            inputSize = "lg",
             status = "neutral",
             isAutocomplete = false,
             fullHeightOnOpen = true,

@@ -20,7 +20,7 @@ export const TextFieldAddon = forwardRef<HTMLInputElement, TextFieldAddonProps>(
             fillAddonBorderColor,
             rightIcon,
             addonLabel,
-            inputSize = "md",
+            inputSize = "lg",
             disabled,
             ...rest
         },

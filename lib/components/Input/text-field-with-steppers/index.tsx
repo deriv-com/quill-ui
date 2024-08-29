@@ -7,13 +7,15 @@ import {
     LabelPairedMinusSmRegularIcon,
 } from "@deriv/quill-icons";
 import { getFormatValue } from "@utils/common-utils";
+import { TMediumSizes } from "@types";
 
 export interface TextFieldWithSteppersProps
-    extends ComponentProps<typeof Input> {
+    extends Omit<ComponentProps<typeof Input>, "inputSize"> {
     unitLeft?: string;
     unitRight?: string;
     minusDisabled?: boolean;
     plusDisabled?: boolean;
+    inputSize?: TMediumSizes;
 }
 
 export const TextFieldWithSteppers = forwardRef<
@@ -79,7 +81,7 @@ export const TextFieldWithSteppers = forwardRef<
             decimals={decimals}
             ref={ref}
             disabled={disabled}
-            inputSize={inputSize}
+            inputSize={inputSize === "md" ? "lg" : inputSize}
             leftIcon={textAlignment === "center" && <SteppersSectionMinus />}
             leftPlaceholder={unitLeft}
             onChange={onChange}

@@ -29,12 +29,7 @@ const meta = {
     tags: ["autodocs"],
     args: {
         type: "text",
-        inputSize: "md",
-        status: status.neutral,
         disabled: false,
-        variant: variants.fill,
-        textAlignment: "left",
-        message: "",
     },
     argTypes: {
         type: {
@@ -51,25 +46,37 @@ const meta = {
             control: {
                 type: "radio",
             },
-            options: ["sm", "md"],
+            options: ["sm", "md", "lg"],
+            table: {
+                defaultValue: { summary: "lg" },
+            },
         },
         status: {
             control: {
                 type: "radio",
             },
             options: Object.values(status),
+            table: {
+                defaultValue: { summary: "neutral" },
+            },
         },
         variant: {
             control: {
                 type: "radio",
             },
             options: Object.values(variants),
+            table: {
+                defaultValue: { summary: "outline" },
+            },
         },
         textAlignment: {
             control: {
                 type: "radio",
             },
             options: ["left", "center"],
+            table: {
+                defaultValue: { summary: "left" },
+            },
         },
         message: {
             control: {

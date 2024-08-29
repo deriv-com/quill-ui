@@ -26,7 +26,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
             label,
             options,
             textAlignment = "left",
-            inputSize = "md",
+            inputSize = "lg",
             status = "neutral",
             name,
             listHeight,
