@@ -1,13 +1,13 @@
 import ReactDOM from "react-dom";
+import React from "react";
 import { useState, useEffect, HTMLAttributes } from "react";
 import clsx from "clsx";
 import { Button, IconButton, TButtonColor } from "@components/Button";
 import { LabelPairedXmarkMdBoldIcon } from "@deriv/quill-icons/LabelPaired";
 import { ModalHeader } from "./modal-header";
 import { ModalBody } from "./modal-body";
-import "../modal.scss";
 import ActionSheet from "@components/ActionSheet";
-import React from "react";
+import "../modal.scss";
 
 export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     isOpened?: boolean;

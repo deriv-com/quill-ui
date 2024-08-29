@@ -46,7 +46,6 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
                 shouldCloseOnDrag,
                 fullHeightOnOpen,
             });
-
         const handleModalClose = () => {
             if (disableCloseOnOverlay) return;
             handleClose?.();

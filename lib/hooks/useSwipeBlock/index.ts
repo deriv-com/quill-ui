@@ -75,13 +75,14 @@ export const useSwipeBlock = ({
             }
 
             if (dragging) {
-                if (!shouldCloseOnDrag || !expandable) return;
+                if (!expandable) return;
                 if (isGoingDown) {
+                    if (!shouldCloseOnDrag) return;
                     cancel();
                     onClose?.();
-                    return;
+                } else {
+                    setHeight(`${draggingPoint}px`);
                 }
-                setHeight(`${draggingPoint}px`);
             } else {
                 if (distance[1] === 0) return;
                 if (!isGoingDown) {
