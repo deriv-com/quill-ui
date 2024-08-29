@@ -12,6 +12,7 @@ export interface PortalProps extends ComponentProps<"div"> {
     shouldDetectSwipingOnContainer?: boolean;
     showHandlebar?: boolean;
     handleBarPosition?: BarProps["position"];
+    handleBarIndex?: number;
     fullHeightOnOpen?: boolean;
     disableCloseOnOverlay?: boolean;
     portalId?: string;
@@ -27,6 +28,7 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
             fullHeightOnOpen = false,
             disableCloseOnOverlay = false,
             portalId,
+            handleBarIndex,
             handleBarPosition,
             ...restProps
         },
@@ -35,7 +37,7 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
         const actionSheetRoot =
             (portalId && document.getElementById(portalId)) || document.body;
 
-        const { show, handleClose, className, position, type, expandable } =
+        const { show, handleClose, className, position, type } =
             useContext(ActionSheetContext);
         const { height, containerRef, bindHandle, isScrolled, isLg } =
             useSwipeBlock({
@@ -88,18 +90,15 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
                                     ref={containerRef}
                                     style={{ height }}
                                     {...(shouldDetectSwipingOnContainer &&
-                                    !isScrolled &&
-                                    !isLg &&
-                                    expandable
-                                        ? bindHandle()
-                                        : {})}
+                                        !isScrolled &&
+                                        !isLg &&
+                                        bindHandle())}
                                 >
                                     {showHandlebar && (
                                         <HandleBar
-                                            {...(expandable || shouldCloseOnDrag
-                                                ? bindHandle()
-                                                : {})}
+                                            {...bindHandle()}
                                             position={handleBarPosition}
+                                            style={{ zIndex: handleBarIndex }}
                                         />
                                     )}
                                     {children}

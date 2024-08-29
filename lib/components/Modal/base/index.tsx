@@ -11,6 +11,7 @@ import React from "react";
 
 export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     isOpened?: boolean;
+    isNonExpandable?: boolean;
     className?: string;
     containerClassName?: string;
     showHandleBar?: boolean;
@@ -18,6 +19,7 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     showSecondaryButton?: boolean;
     shouldCloseOnPrimaryButtonClick?: boolean;
     shouldCloseOnSecondaryButtonClick?: boolean;
+    shouldCloseModalOnSwipeDown?: boolean;
     disableCloseOnOverlay?: boolean;
     toggleModal?: (isOpened: boolean) => void;
     portalId?: string;
@@ -31,6 +33,7 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     secondaryButtonLabel?: React.ReactNode;
     isMobile?: boolean;
     hasFooter?: boolean;
+    handleBarIndex?: number;
 }
 
 export const Modal = (props: React.PropsWithChildren<ModalProps>) => {
@@ -43,6 +46,7 @@ export const Modal = (props: React.PropsWithChildren<ModalProps>) => {
         showSecondaryButton = false,
         shouldCloseOnPrimaryButtonClick = false,
         shouldCloseOnSecondaryButtonClick = false,
+        shouldCloseModalOnSwipeDown = false,
         toggleModal,
         disableCloseOnOverlay = false,
         hasFooter = true,
@@ -55,7 +59,9 @@ export const Modal = (props: React.PropsWithChildren<ModalProps>) => {
         secondaryButtonLabel,
         showHandleBar,
         isMobile,
+        isNonExpandable = false,
         buttonColor: primaryButtonColor = "black-white",
+        handleBarIndex,
         ...rest
     } = props;
     const [isVisible, setIsVisible] = useState(isOpened);
@@ -146,13 +152,19 @@ export const Modal = (props: React.PropsWithChildren<ModalProps>) => {
             modalRoot,
         )
     ) : (
-        <ActionSheet.Root isOpen={isOpened} onClose={handleClose}>
+        <ActionSheet.Root
+            expandable={!isNonExpandable}
+            isOpen={isOpened}
+            onClose={handleClose}
+        >
             <ActionSheet.Portal
                 {...rest}
                 showHandlebar={showHandleBar}
                 handleBarPosition="absolute"
                 disableCloseOnOverlay={disableCloseOnOverlay}
                 portalId={portalId}
+                shouldCloseOnDrag={shouldCloseModalOnSwipeDown}
+                handleBarIndex={handleBarIndex}
             >
                 <ModalContent />
             </ActionSheet.Portal>
