@@ -61,6 +61,8 @@ const meta = {
     ],
     args: {
         codeLabel: "Code",
+        label: "Phone Number",
+        codeIcon: true,
         inputSize: "md",
         status: "neutral",
         disabled: false,
@@ -89,6 +91,12 @@ const meta = {
                 type: "radio",
             },
             options: ["sm", "md"],
+        },
+        textAlignment: {
+            control: {
+                type: "radio",
+            },
+            options: ["left", "center"],
         },
         countryCodes: {
             description:
