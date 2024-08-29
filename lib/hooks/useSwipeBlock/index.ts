@@ -59,7 +59,6 @@ export const useSwipeBlock = ({
 
     const bindHandle = useDrag(
         ({ dragging, distance, initial, xy, cancel }) => {
-            if (!show) return cancel();
             const windowHeight =
                 typeof window !== "undefined" ? window.innerHeight : 0;
 
@@ -77,7 +76,11 @@ export const useSwipeBlock = ({
 
             if (dragging) {
                 if (!shouldCloseOnDrag || !expandable) return;
-                if (isGoingDown) return onClose?.();
+                if (isGoingDown) {
+                    cancel();
+                    onClose?.();
+                    return;
+                }
                 setHeight(`${draggingPoint}px`);
             } else {
                 if (distance[1] === 0) return;
@@ -103,7 +106,6 @@ export const useSwipeBlock = ({
                             return setHeight("30dvh");
                         }
                         setHeight("0dvh");
-                        console.log("cancelled");
                         cancel();
                         onClose?.();
                     } else if (draggingPoint <= windowHeight * 0.5) {
