@@ -43,6 +43,7 @@ const InputPhoneNumberContent = forwardRef<
             placeholder = "00 0000 0000",
             formatProps = {
                 format: "## #### ####",
+                mask: "",
             },
             onCodeChange,
             onValueChange,
