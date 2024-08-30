@@ -1,7 +1,7 @@
 name: Generate Full Changelog
 
 on:
-  push:
+  pull_request:
     branches: [master]
   workflow_dispatch: # Allows manual triggering
 
