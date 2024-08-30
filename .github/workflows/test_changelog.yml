@@ -1,11 +1,12 @@
-name: Test Changelog Generation
+name: Generate Full Changelog
 
 on:
-  pull_request:
+  push:
     branches: [master]
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
-  update-changelog:
+  generate-changelog:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,9 +21,10 @@ jobs:
       - name: Install GREN (GitHub Release Notes)
         run: npm install -g github-release-notes
 
-      - name: Generate CHANGELOG.md
+      - name: Generate Full CHANGELOG.md
         run: |
-          gren changelog --generate
+          # Generate changelog from the initial version to the latest tag
+          gren changelog --generate --override --tags
         env:
           GREN_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -40,6 +42,6 @@ jobs:
               echo "No changes to commit"
             else
               git add CHANGELOG.md
-              git commit -m "chore: update CHANGELOG.md for testing"
+              git commit -m "chore: update CHANGELOG.md from scratch"
               git push
             fi
