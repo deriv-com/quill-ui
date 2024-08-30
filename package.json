@@ -1,167 +1,167 @@
 {
-  "name": "@deriv-com/quill-ui",
-  "private": false,
-  "version": "0.0.0-development",
-  "type": "module",
-  "module": "dist/main.js",
-  "main": "dist/main.cjs",
-  "files": [
-    "dist"
-  ],
-  "types": "./dist/main.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/main.js",
-      "require": "./dist/main.cjs",
-      "types": "./dist/main.d.ts"
+    "name": "@deriv-com/quill-ui",
+    "private": false,
+    "version": "0.0.0-development",
+    "type": "module",
+    "module": "dist/main.js",
+    "main": "dist/main.cjs",
+    "files": [
+        "dist"
+    ],
+    "types": "./dist/main.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/main.js",
+            "require": "./dist/main.cjs",
+            "types": "./dist/main.d.ts"
+        },
+        "./styles": {
+            "require": "./dist/assets/style.css"
+        }
     },
-    "./styles": {
-      "require": "./dist/assets/style.css"
+    "sideEffects": [
+        "**/*.css"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/deriv-com/quill-ui"
+    },
+    "scripts": {
+        "dev": "vite --port 4321 --open",
+        "build:es": "vite build --mode es",
+        "build:cjs": "vite build --mode cjs",
+        "merge-dist": "node merge-dist.js",
+        "build": "tsc -p ./tsconfig-build.json && npm run build:cjs && npm run build:es && npm run merge-dist",
+        "prepublish": "npm run build",
+        "generate:styles": "node scripts/transformer.js &&  npx prettier --write lib/styles",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "format": "npx prettier . --write",
+        "preview": "vite preview",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build --output-dir dist/storybook",
+        "test": "jest",
+        "test:update": "jest --updateSnapshot",
+        "test:staged": "jest --bail --findRelatedTests",
+        "prepare": "husky install"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.23.9",
+        "@babel/preset-react": "^7.23.3",
+        "@babel/preset-typescript": "^7.23.3",
+        "@chromatic-com/storybook": "^1.8.0",
+        "@commitlint/cli": "^19.1.0",
+        "@commitlint/config-conventional": "^19.2.2",
+        "@semantic-release/changelog": "^6.0.3",
+        "@semantic-release/github": "^10.0.2",
+        "@semantic-release/npm": "^12.0.0",
+        "@semantic-release/release-notes-generator": "^13.0.0",
+        "@storybook/addon-docs": "^8.2.9",
+        "@storybook/addon-essentials": "^8.2.9",
+        "@storybook/addon-interactions": "^8.2.9",
+        "@storybook/addon-links": "^8.2.9",
+        "@storybook/addon-mdx-gfm": "^8.2.9",
+        "@storybook/addon-onboarding": "^8.2.9",
+        "@storybook/addon-themes": "^8.2.9",
+        "@storybook/blocks": "^8.2.9",
+        "@storybook/react": "^8.2.9",
+        "@storybook/react-vite": "^8.2.9",
+        "@storybook/test": "^8.2.9",
+        "@tanstack/react-table": "^8.12.0",
+        "@testing-library/jest-dom": "^6.4.2",
+        "@testing-library/react": "^14.2.1",
+        "@testing-library/user-event": "^14.5.2",
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.10.7",
+        "@types/react": "18.2.43",
+        "@types/react-dom": "18.2.17",
+        "@types/react-transition-group": "^4.4.4",
+        "@typescript-eslint/eslint-plugin": "^6.14.0",
+        "@typescript-eslint/parser": "^6.14.0",
+        "@use-gesture/react": "^10.3.1",
+        "@vitejs/plugin-react": "^4.2.1",
+        "@zxcvbn-ts/core": "^3.0.4",
+        "@zxcvbn-ts/language-common": "^3.0.4",
+        "clsx": "^2.1.0",
+        "downshift": "^8.5.0",
+        "eslint": "^8.55.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-react-hooks": "^4.6.2",
+        "eslint-plugin-react-refresh": "^0.4.5",
+        "eslint-plugin-storybook": "^0.8.0",
+        "glob": "^10.3.10",
+        "husky": "8.0.0",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "lint-staged": "^15.2.2",
+        "mock-match-media": "^0.4.3",
+        "prettier": "3.2.5",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "rimraf": "^6.0.1",
+        "sass": "^1.69.7",
+        "sass-loader": "^13.3.3",
+        "semantic-release": "^23.0.6",
+        "storybook": "^8.2.9",
+        "ts-jest": "^29.1.2",
+        "typescript": "^5.2.2",
+        "vite": "^5.2.12",
+        "vite-plugin-classname": "^0.0.3",
+        "vite-plugin-dts": "^3.7.1",
+        "vite-plugin-lib-inject-css": "^2.1.1"
+    },
+    "eslintConfig": {
+        "env": {
+            "es6": true
+        },
+        "parserOptions": {
+            "sourceType": "module"
+        },
+        "extends": [
+            "plugin:storybook/recommended"
+        ]
+    },
+    "optionalDependencies": {
+        "@rollup/rollup-linux-x64-gnu": "^4.9.6"
+    },
+    "jest": {
+        "testEnvironment": "jest-environment-jsdom",
+        "setupFilesAfterEnv": [
+            "<rootDir>/test/setup.test.js"
+        ],
+        "coveragePathIgnorePatterns": [
+            "/node_modules/",
+            "types.ts"
+        ],
+        "testMatch": [
+            "<rootDir>/lib/**/*.(test|spec).{js,jsx,ts,tsx}"
+        ],
+        "moduleNameMapper": {
+            "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+            "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/__mocks__/fileMock.js",
+            "^@components(.*)$": "<rootDir>/lib/components$1",
+            "^@hooks(.*)$": "<rootDir>/lib/hooks$1",
+            "^@providers(.*)$": "<rootDir>/lib/providers$1",
+            "^@utils(.*)$": "<rootDir>/lib/utils$1",
+            "^@test-utils": "<rootDir>/lib/test-utils"
+        },
+        "globalSetup": "<rootDir>/globalSetup.js"
+    },
+    "dependencies": {
+        "@deriv-com/quill-tokens": "^2.0.10",
+        "@deriv/quill-icons": "^1.22.10",
+        "@headlessui/react": "1.7.18",
+        "dayjs": "^1.11.11",
+        "react-calendar": "^5.0.0",
+        "react-number-format": "^5.4.0",
+        "react-swipeable": "^6.2.1",
+        "react-tiny-popover": "^8.0.4",
+        "react-transition-group": "4.4.2",
+        "usehooks-ts": "^3.0.2",
+        "uuid": "^9.0.1"
+    },
+    "resolutions": {
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
     }
-  },
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/deriv-com/quill-ui"
-  },
-  "scripts": {
-    "dev": "vite --port 4321 --open",
-    "build:es": "vite build --mode es",
-    "build:cjs": "vite build --mode cjs",
-    "merge-dist": "node merge-dist.js",
-    "build": "tsc -p ./tsconfig-build.json && npm run build:cjs && npm run build:es && npm run merge-dist",
-    "prepublish": "npm run build",
-    "generate:styles": "node scripts/transformer.js &&  npx prettier --write lib/styles",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "format": "npx prettier . --write",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build --output-dir dist/storybook",
-    "test": "jest",
-    "test:update": "jest --updateSnapshot",
-    "test:staged": "jest --bail --findRelatedTests",
-    "prepare": "husky install"
-  },
-  "devDependencies": {
-    "@babel/preset-env": "^7.23.9",
-    "@babel/preset-react": "^7.23.3",
-    "@babel/preset-typescript": "^7.23.3",
-    "@chromatic-com/storybook": "^1.8.0",
-    "@commitlint/cli": "^19.1.0",
-    "@commitlint/config-conventional": "^19.2.2",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/github": "^10.0.2",
-    "@semantic-release/npm": "^12.0.0",
-    "@semantic-release/release-notes-generator": "^13.0.0",
-    "@storybook/addon-docs": "^8.2.9",
-    "@storybook/addon-essentials": "^8.2.9",
-    "@storybook/addon-interactions": "^8.2.9",
-    "@storybook/addon-links": "^8.2.9",
-    "@storybook/addon-mdx-gfm": "^8.2.9",
-    "@storybook/addon-onboarding": "^8.2.9",
-    "@storybook/addon-themes": "^8.2.9",
-    "@storybook/blocks": "^8.2.9",
-    "@storybook/react": "^8.2.9",
-    "@storybook/react-vite": "^8.2.9",
-    "@storybook/test": "^8.2.9",
-    "@tanstack/react-table": "^8.12.0",
-    "@testing-library/jest-dom": "^6.4.2",
-    "@testing-library/react": "^14.2.1",
-    "@testing-library/user-event": "^14.5.2",
-    "@types/jest": "^29.5.12",
-    "@types/node": "^20.10.7",
-    "@types/react": "18.2.43",
-    "@types/react-dom": "18.2.17",
-    "@types/react-transition-group": "^4.4.4",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
-    "@use-gesture/react": "^10.3.1",
-    "@vitejs/plugin-react": "^4.2.1",
-    "@zxcvbn-ts/core": "^3.0.4",
-    "@zxcvbn-ts/language-common": "^3.0.4",
-    "clsx": "^2.1.0",
-    "downshift": "^8.5.0",
-    "eslint": "^8.55.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "eslint-plugin-storybook": "^0.8.0",
-    "glob": "^10.3.10",
-    "husky": "8.0.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "lint-staged": "^15.2.2",
-    "mock-match-media": "^0.4.3",
-    "prettier": "3.2.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "rimraf": "^6.0.1",
-    "sass": "^1.69.7",
-    "sass-loader": "^13.3.3",
-    "semantic-release": "^23.0.6",
-    "storybook": "^8.2.9",
-    "ts-jest": "^29.1.2",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.12",
-    "vite-plugin-classname": "^0.0.3",
-    "vite-plugin-dts": "^3.7.1",
-    "vite-plugin-lib-inject-css": "^2.1.1"
-  },
-  "eslintConfig": {
-    "env": {
-      "es6": true
-    },
-    "parserOptions": {
-      "sourceType": "module"
-    },
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
-  },
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.9.6"
-  },
-  "jest": {
-    "testEnvironment": "jest-environment-jsdom",
-    "setupFilesAfterEnv": [
-      "<rootDir>/test/setup.test.js"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "types.ts"
-    ],
-    "testMatch": [
-      "<rootDir>/lib/**/*.(test|spec).{js,jsx,ts,tsx}"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy",
-      "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/__mocks__/fileMock.js",
-      "^@components(.*)$": "<rootDir>/lib/components$1",
-      "^@hooks(.*)$": "<rootDir>/lib/hooks$1",
-      "^@providers(.*)$": "<rootDir>/lib/providers$1",
-      "^@utils(.*)$": "<rootDir>/lib/utils$1",
-      "^@test-utils": "<rootDir>/lib/test-utils"
-    },
-    "globalSetup": "<rootDir>/globalSetup.js"
-  },
-  "dependencies": {
-    "@deriv-com/quill-tokens": "^2.0.10",
-    "@deriv/quill-icons": "^1.22.10",
-    "@headlessui/react": "1.7.18",
-    "dayjs": "^1.11.11",
-    "react-calendar": "^5.0.0",
-    "react-number-format": "^5.4.0",
-    "react-swipeable": "^6.2.1",
-    "react-tiny-popover": "^8.0.4",
-    "react-transition-group": "4.4.2",
-    "usehooks-ts": "^3.0.2",
-    "uuid": "^9.0.1"
-  },
-  "resolutions": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  }
 }

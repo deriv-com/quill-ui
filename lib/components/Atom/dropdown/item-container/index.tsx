@@ -7,7 +7,7 @@ import { createPortal } from "react-dom";
 export interface ItemContainerProps extends Omit<ComponentProps<"div">, "ref"> {
     size?: TMediumSizes;
     height?: TRegularSizes;
-    portalContainer?: Element | DocumentFragment;
+    portalContainer?: Element | DocumentFragment | null;
 }
 
 export const ItemContainer = forwardRef<HTMLDivElement, ItemContainerProps>(
