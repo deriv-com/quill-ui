@@ -4,12 +4,7 @@ import { StandalonePlaceholderRegularIcon } from "@deriv/quill-icons/Standalone"
 import { Snackbar } from "./snackbar";
 
 const icons: Record<string, object | null> = {
-    with_icon: (
-        <StandalonePlaceholderRegularIcon
-            fill="var(--component-snackbar-icon)"
-            iconSize="sm"
-        />
-    ),
+    with_icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
     none: null,
 };
 
@@ -19,12 +14,7 @@ const meta = {
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ["autodocs"],
     args: {
-        icon: (
-            <StandalonePlaceholderRegularIcon
-                fill="var(--component-snackbar-icon)"
-                iconSize="sm"
-            />
-        ),
+        icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
         isVisible: true,
         actionText: "",
         hasCloseButton: true,
