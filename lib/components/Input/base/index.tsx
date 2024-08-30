@@ -129,6 +129,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             allowDecimals = false,
             decimals,
             allowSign = true,
+            autoComplete,
             regex,
             customType,
             noStatusIcon,
@@ -162,6 +163,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         const commonProps = {
             readOnly,
             required,
+            autoComplete,
             value: inputValue,
             placeholder,
             className: clsx(
@@ -393,7 +395,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             </span>
                             {show_counter && maxLength && (
                                 <span className="message__container__text">
-                                    {inputValue.toString().length}/{maxLength}
+                                    {type === "tel"
+                                        ? inputValue
+                                              .toString()
+                                              .replace(/\s+/g, "").length
+                                        : inputValue.toString().length}
+                                    /{maxLength}
                                 </span>
                             )}
                         </div>
