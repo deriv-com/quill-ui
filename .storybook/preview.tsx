@@ -9,7 +9,6 @@ const preview: Preview = {
     tags: ["autodocs"],
     parameters: {
         docs: { source: { format: true } },
-        actions: { argTypesRegex: "^on[A-Z].*" },
         controls: {
             matchers: {
                 color: /(background|color)$/i,
