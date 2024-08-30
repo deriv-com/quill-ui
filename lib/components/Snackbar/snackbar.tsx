@@ -82,7 +82,7 @@ export const Snackbar = ({
                 <div className={clsx("quill-snackbar__icon--container")}>
                     {React.isValidElement(Icon) &&
                         React.cloneElement(Icon, {
-                            fill: `var(--component-snackbar-label-color-${status})`,
+                            fill: `var(--component-snackbar-icon-${status})`,
                             ...Icon.props,
                         })}
                 </div>
@@ -92,7 +92,7 @@ export const Snackbar = ({
                     className="quill-snackbar__message"
                     size="sm"
                     style={{
-                        color: `var(--component-snackbar-icon-${status})`,
+                        color: `var(--component-snackbar-label-color-${status})`,
                     }}
                 >
                     {message}
