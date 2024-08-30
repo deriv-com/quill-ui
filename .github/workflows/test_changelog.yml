@@ -21,10 +21,19 @@ jobs:
       - name: Install GREN (GitHub Release Notes)
         run: npm install -g github-release-notes
 
+      - name: Determine tags
+        id: get-tags
+        run: |
+          # Get the latest tag
+          LATEST_TAG=$(git describe --tags --abbrev=0)
+          # Get the first (oldest) tag
+          OLDEST_TAG=$(git tag --sort=creatordate | head -n 1)
+          echo "LATEST_TAG=$LATEST_TAG" >> $GITHUB_ENV
+          echo "OLDEST_TAG=$OLDEST_TAG" >> $GITHUB_ENV
+
       - name: Generate Full CHANGELOG.md
         run: |
-          # Generate changelog from the initial version to the latest tag
-          gren changelog --generate --override --tags
+          gren changelog --generate --tags ${{ env.OLDEST_TAG }}..${{ env.LATEST_TAG }} --override
         env:
           GREN_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
