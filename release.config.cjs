@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const transform = require("./release.utils.cjs");
 
 module.exports = {
@@ -69,6 +70,14 @@ module.exports = {
             "@semantic-release/npm",
             {
                 npmPublish: true,
+            },
+        ],
+        [
+            "@semantic-release/git",
+            {
+                assets: ["package.json", "package-lock.json", "CHANGELOG.md"],
+                message:
+                    "ci: release(version): Release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
             },
         ],
         "@semantic-release/github",
