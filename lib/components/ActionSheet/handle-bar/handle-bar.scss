@@ -1,13 +1,13 @@
 @import "@deriv-com/quill-tokens/dist/breakpoints.scss";
 
 .quill-action-sheet--handle-bar {
-    position: sticky;
     z-index: 1;
     display: flex;
     touch-action: none;
     align-items: center;
     justify-content: center;
     padding-block: var(--component-actionSheet-spacing-padding-sm);
+    cursor: pointer;
 
     &::before {
         content: "";
@@ -28,5 +28,14 @@
         width: var(--component-handle-width);
         border-radius: var(--component-handle-border-radius);
         background-color: var(--component-handle-bg);
+    }
+
+    &--absolute {
+        position: absolute;
+        width: 100%;
+    }
+
+    &--sticky {
+        position: sticky;
     }
 }

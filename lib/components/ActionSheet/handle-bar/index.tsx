@@ -1,14 +1,20 @@
 import { ComponentProps } from "react";
 import "./handle-bar.scss";
+import clsx from "clsx";
 
-type BarProps = ComponentProps<"div">;
+export interface BarProps extends ComponentProps<"div"> {
+    position?: "sticky" | "absolute";
+}
 
-const HandleBar = (props: BarProps) => {
+const HandleBar = ({ position = "sticky", ...rest }: BarProps) => {
     return (
         <div
-            className="quill-action-sheet--handle-bar"
+            className={clsx(
+                "quill-action-sheet--handle-bar",
+                `quill-action-sheet--handle-bar--${position}`,
+            )}
             data-testid="dt-actionsheet-handle-bar"
-            {...props}
+            {...rest}
         >
             <span className="quill-action-sheet--handle-bar--line" />
         </div>

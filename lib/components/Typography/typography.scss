@@ -3,10 +3,6 @@ $sizes: xl, lg, md, sm;
 $decorations: default, italic, underline, italic-underline;
 $weights: regular, bold;
 
-.quill-typography {
-    margin: 0;
-}
-
 @mixin styleWithSizes($type, $size, $weight, $decoration) {
     font-family: var(
         --semantic-typography-#{$type}-#{$size}-#{$weight}-#{$decoration}-fontFamily
@@ -89,6 +85,8 @@ $weights: regular, bold;
 }
 
 .quill-typography {
+    margin: 0;
+
     &__color {
         &--prominent {
             color: var(--component-textIcon-normal-prominent);
