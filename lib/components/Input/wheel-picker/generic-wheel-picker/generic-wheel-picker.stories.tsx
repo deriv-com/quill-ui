@@ -52,6 +52,7 @@ const meta = {
         variant: "fill",
         container: WheelPickerContainer,
         wheelType: "Generic",
+        inputSize: "lg",
     },
     argTypes: {
         status: {
@@ -63,7 +64,7 @@ const meta = {
             control: { type: "radio" },
         },
         inputSize: {
-            options: ["sm", "md"],
+            options: ["sm", "md", "lg"],
             control: { type: "radio" },
         },
         variant: {

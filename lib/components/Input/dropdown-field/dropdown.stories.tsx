@@ -42,6 +42,7 @@ const meta = {
         variant: "fill",
         label: "",
         value: "",
+        inputSize: "lg"
     },
     argTypes: {
         id: {
@@ -59,7 +60,7 @@ const meta = {
             control: { type: "radio" },
         },
         inputSize: {
-            options: ["sm", "md"],
+            options: ["sm", "md", "lg"],
             control: { type: "radio" },
         },
         variant: {

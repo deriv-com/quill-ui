@@ -34,12 +34,8 @@ const meta = {
     },
     tags: ["autodocs"],
     args: {
-        inputSize: "md",
-        status: "neutral",
         disabled: false,
         passwordLockIcon: true,
-        variant: "fill",
-        textAlignment: "left",
         fieldMarker: false,
         required: false,
         show_counter: false,
@@ -49,7 +45,10 @@ const meta = {
             control: {
                 type: "radio",
             },
-            options: ["sm", "md"],
+            options: ["sm", "md", "lg"],
+            table: {
+                defaultValue: { summary: "lg" },
+            },
         },
         id: {
             control: "text",
@@ -72,12 +71,18 @@ const meta = {
                 type: "radio",
             },
             options: ["neutral", "success", "error"],
+            table: {
+                defaultValue: { summary: "neutral" },
+            },
         },
         variant: {
             control: {
                 type: "radio",
             },
-            options: ["fill", "outline"],
+            options: ["outline", "fill"],
+            table: {
+                defaultValue: { summary: "outline" },
+            },
         },
         label: {
             control: {
@@ -89,6 +94,9 @@ const meta = {
                 type: "radio",
             },
             options: ["left", "center"],
+            table: {
+                defaultValue: { summary: "left" },
+            },
         },
         message: {
             control: {
