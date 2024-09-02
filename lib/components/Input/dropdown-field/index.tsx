@@ -17,6 +17,7 @@ export interface TDropdownProps extends InputProps {
     isAutocomplete?: boolean;
     options: TOptionList[];
     listHeight?: string;
+    wrapperClassName?: string;
 }
 
 export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
@@ -29,6 +30,7 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
             inputSize = "md",
             status = "neutral",
             name,
+            wrapperClassName,
             listHeight,
             onSearch,
             onSelectOption,
@@ -116,7 +118,10 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
         }, [options]);
 
         return (
-            <div className="dropdown__wrapper" {...getToggleButtonProps()}>
+            <div
+                className={clsx("dropdown__wrapper", wrapperClassName)}
+                {...getToggleButtonProps()}
+            >
                 <Input
                     ref={ref}
                     data-testid="dropdown-input"
