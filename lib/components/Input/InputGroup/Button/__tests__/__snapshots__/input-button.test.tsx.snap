@@ -18,7 +18,7 @@ exports[`InputGroupButton Component disables button when input is empty 1`] = `
             button_position="right"
             class="input peer input__align--left input__size--lg"
             id="quill-input-3"
-            placeholder=""
+            placeholder=" "
             type="text"
             value=""
           />
@@ -63,7 +63,7 @@ exports[`InputGroupButton Component enables button when input is not empty 1`] =
             button_position="right"
             class="input peer input__align--left input__size--lg"
             id="quill-input-4"
-            placeholder=""
+            placeholder=" "
             type="text"
             value=""
           />
@@ -129,7 +129,7 @@ exports[`InputGroupButton Component should render a default InputGroupButton 1`]
             button_position="right"
             class="input peer input__align--left input__size--lg"
             id="quill-input-1"
-            placeholder=""
+            placeholder=" "
             type="text"
             value=""
           />

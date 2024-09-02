@@ -104,7 +104,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             variant = "outline",
             hasPasswordStrengthValidation = false,
             validationMessages,
-            placeholder = "",
+            placeholder = " ",
             leftIcon,
             message,
             hideMessage = false,

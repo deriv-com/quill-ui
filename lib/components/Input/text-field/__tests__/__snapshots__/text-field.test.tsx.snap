@@ -17,7 +17,7 @@ exports[`TextField should display message when provided 1`] = `
           <input
             class="input peer input__align--left input__size--lg"
             id="quill-input-9"
-            placeholder=""
+            placeholder=" "
             type="text"
             value=""
           />
@@ -118,7 +118,7 @@ exports[`TextField should render with a left icon 1`] = `
           <input
             class="input peer input__align--left input__size--lg"
             id="quill-input-8"
-            placeholder=""
+            placeholder=" "
             type="text"
             value=""
           />
