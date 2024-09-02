@@ -67,7 +67,7 @@ const CountryCodeAddon = ({
                         "quill-country-code__value",
                         isOpen && `focus`,
                     )}
-                    size="md"
+                    size={size === "lg" ? "md" : size}
                 >
                     {selectedValue}
                 </Text>
