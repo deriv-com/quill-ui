@@ -23,23 +23,22 @@ const meta = {
     tags: ["autodocs"],
     args: {
         addonLabel: "Label",
-        addOnPosition: "left",
-        inputSize: "md",
-        status: "neutral",
         disabled: false,
-        variant: "outline",
         fieldMarker: false,
         required: false,
         show_counter: false,
         fillAddonBorderColor:
-            "var(--semantic-color-slate-solid-surface-frame-mid)"
+            "var(--semantic-color-slate-solid-surface-frame-mid)",
     },
     argTypes: {
         inputSize: {
             control: {
                 type: "radio",
             },
-            options: ["sm", "md"],
+            options: ["sm", "md", "lg"],
+            table: {
+                defaultValue: { summary: "lg" },
+            },
         },
         id: {
             control: "text",
@@ -57,6 +56,9 @@ const meta = {
                 type: "radio",
             },
             options: ["left", "right"],
+            table: {
+                defaultValue: { summary: "left" },
+            },
         },
         maxLength: {
             control: {
@@ -68,12 +70,18 @@ const meta = {
                 type: "radio",
             },
             options: ["neutral", "success", "error"],
+            table: {
+                defaultValue: { summary: "neutral" },
+            },
         },
         variant: {
             control: {
                 type: "radio",
             },
             options: ["fill", "outline"],
+            table: {
+                defaultValue: { summary: "outline" },
+            },
         },
         rightIcon: {
             options: Object.keys(icons),

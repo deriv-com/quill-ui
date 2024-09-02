@@ -56,8 +56,8 @@ const meta = {
         },
         inputSize: {
             description: "Size of the input",
-            table: { type: { summary: "sm | md" } },
-            options: ["sm", "md"],
+            table: { type: { summary: "sm | md | lg" } },
+            options: ["sm", "md", "lg"],
             control: "radio",
         },
         label: {

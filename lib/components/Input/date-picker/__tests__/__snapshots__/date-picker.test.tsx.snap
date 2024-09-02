@@ -11,7 +11,7 @@ exports[`DatePickerDropdown renders correctly 1`] = `
       class="quill-input__container"
     >
       <div
-        class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md datepicker__input"
+        class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--lg datepicker__input"
       >
         <div
           class="quill-input-icons__wrapper"
@@ -36,10 +36,10 @@ exports[`DatePickerDropdown renders correctly 1`] = `
             class="quill-input-label__wrapper"
           >
             <input
-              class="input peer input__align--left input__size--md"
+              class="input peer input__align--left input__size--lg"
               id="quill-input-1"
               inputmode="numeric"
-              placeholder=""
+              placeholder=" "
               readonly=""
               type="text"
               value=""

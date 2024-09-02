@@ -6,7 +6,7 @@ exports[`TextField should display message when provided 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--error quill-input__wrapper__size--md"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--error quill-input__wrapper__size--lg"
     >
       <div
         class="quill-input-icons__wrapper"
@@ -15,9 +15,9 @@ exports[`TextField should display message when provided 1`] = `
           class="quill-input-no-label__wrapper"
         >
           <input
-            class="input peer input__align--left input__size--md"
+            class="input peer input__align--left input__size--lg"
             id="quill-input-9"
-            placeholder=""
+            placeholder=" "
             type="text"
             value=""
           />
@@ -40,7 +40,7 @@ exports[`TextField should display message when provided 1`] = `
       </div>
     </div>
     <div
-      class="message__container message__container--md message__container__status--error"
+      class="message__container message__container--lg message__container__status--error"
     >
       <span
         class="message__container__text"
@@ -57,7 +57,7 @@ exports[`TextField should handle the hover for outline variant 1`] = `
   class="quill-input-no-label__wrapper"
 >
   <input
-    class="input peer input__align--left input__size--md"
+    class="input peer input__align--left input__size--lg"
     id="quill-input-7"
     placeholder="Placeholder"
     type="text"
@@ -72,7 +72,7 @@ exports[`TextField should match snapshot 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--lg"
     >
       <div
         class="quill-input-icons__wrapper"
@@ -81,7 +81,7 @@ exports[`TextField should match snapshot 1`] = `
           class="quill-input-no-label__wrapper"
         >
           <input
-            class="input peer input__align--left input__size--md"
+            class="input peer input__align--left input__size--lg"
             id="quill-input-1"
             placeholder="Enter text"
             type="text"
@@ -100,7 +100,7 @@ exports[`TextField should render with a left icon 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--lg"
     >
       <div
         class="quill-input-icons__wrapper"
@@ -116,9 +116,9 @@ exports[`TextField should render with a left icon 1`] = `
           class="quill-input-no-label__wrapper"
         >
           <input
-            class="input peer input__align--left input__size--md"
+            class="input peer input__align--left input__size--lg"
             id="quill-input-8"
-            placeholder=""
+            placeholder=" "
             type="text"
             value=""
           />
