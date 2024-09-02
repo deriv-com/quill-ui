@@ -63,12 +63,8 @@ const meta = {
         codeLabel: "Code",
         label: "Phone Number",
         codeIcon: true,
-        inputSize: "md",
-        status: "neutral",
         disabled: false,
-        variant: "outline",
         fieldMarker: false,
-        required: false,
         show_counter: false,
         shortCode: "au",
         fillAddonBorderColor:
@@ -90,13 +86,19 @@ const meta = {
             control: {
                 type: "radio",
             },
-            options: ["sm", "md"],
+            options: ["sm", "md", "lg"],
+            table: {
+                defaultValue: { summary: "lg" },
+            },
         },
         textAlignment: {
             control: {
                 type: "radio",
             },
             options: ["left", "center"],
+            table: {
+                defaultValue: { summary: "left" },
+            },
         },
         countryCodes: {
             description:
@@ -122,12 +124,18 @@ const meta = {
                 type: "radio",
             },
             options: ["neutral", "success", "error"],
+            table: {
+                defaultValue: { summary: "neutral" },
+            },
         },
         variant: {
             control: {
                 type: "radio",
             },
             options: ["fill", "outline"],
+            table: {
+                defaultValue: { summary: "outline" },
+            },
         },
         rightIcon: {
             options: Object.keys(icons),

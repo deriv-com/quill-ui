@@ -7,13 +7,14 @@ import {
     StandaloneChevronDownBoldIcon,
     StandaloneMobileNotchRegularIcon,
 } from "@deriv/quill-icons/Standalone";
+import { TRegularSizes } from "@types";
 
 export interface CountryCodeAddonProps
     extends Omit<
         InputPhoneNumberProps,
         keyof InputProps | "countryCodes" | "onCodeChange"
     > {
-    size: "md" | "sm"; //lg has to added in base
+    size: TRegularSizes;
     addOnStatus?: Status;
     addOnVariant?: Variants;
     disabled?: boolean;
@@ -51,7 +52,7 @@ const CountryCodeAddon = ({
                 />
             )}
             <div>
-                {codeLabel && size === "md" && (
+                {codeLabel && size === "lg" && (
                     <CaptionText
                         className={clsx(
                             "quill-country-code__label",
@@ -66,7 +67,7 @@ const CountryCodeAddon = ({
                         "quill-country-code__value",
                         isOpen && `focus`,
                     )}
-                    size={size}
+                    size="md"
                 >
                     {selectedValue}
                 </Text>

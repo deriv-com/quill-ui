@@ -32,7 +32,7 @@ const InputPhoneNumberContent = forwardRef<
 >(
     (
         {
-            inputSize = "md",
+            inputSize = "lg",
             variant = "outline",
             status = "neutral",
             codeIcon = true,

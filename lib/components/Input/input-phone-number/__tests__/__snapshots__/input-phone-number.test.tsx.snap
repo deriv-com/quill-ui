@@ -9,7 +9,7 @@ exports[`InputPhoneNumber Component should match the snapshot 1`] = `
       class="quill-input__container"
     >
       <div
-        class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+        class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--lg"
       >
         <div
           class="quill-phone-input-addon"
@@ -21,7 +21,7 @@ exports[`InputPhoneNumber Component should match the snapshot 1`] = `
               class="quill-custom-dropdown__head"
             >
               <div
-                class="quill-country-code quill-country-code__variant--outline quill-country-code__size--md"
+                class="quill-country-code quill-country-code__variant--outline quill-country-code__size--lg"
               >
                 <svg
                   class="mobile-icon"
@@ -66,7 +66,7 @@ exports[`InputPhoneNumber Component should match the snapshot 1`] = `
             class="quill-input-no-label__wrapper"
           >
             <input
-              class="input peer input__align--left input__size--md"
+              class="input peer input__align--left input__size--lg"
               id="quill-input-1"
               inputmode="numeric"
               placeholder="00 0000 0000"
