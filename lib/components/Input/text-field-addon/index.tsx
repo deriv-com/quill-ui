@@ -39,7 +39,7 @@ export const TextFieldAddon = forwardRef<HTMLInputElement, TextFieldAddonProps>(
                 style={addOnStyle}
             >
                 <Text
-                    size={inputSize}
+                    size={inputSize === 'lg' ? 'md' : inputSize}
                     className={clsx(disabled && "quill-addon__label--disabled")}
                 >
                     {addonLabel}
