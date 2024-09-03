@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { ThemeProvider } from "../lib/main";
-import useTheme from "@hooks/useTheme";
 
 type ThemeRendererPros = {
     children: React.ReactNode;
@@ -9,27 +8,22 @@ type ThemeRendererPros = {
 type Theme = "dark" | "light";
 
 const ThemeRenderer = ({ children }: ThemeRendererPros) => {
-    // const [theme, setTheme] = useState<Theme>("dark");
-    const { theme } = useTheme();
+    const [theme, setTheme] = useState<Theme>("dark");
 
-    // useEffect(() => {
-    //     const timeout = setTimeout(() => {
-    //         setTheme("light");
-    //     }, 3000);
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setTheme("light");
+        }, 3000);
 
-    //     return () => {
-    //         clearTimeout(timeout);
-    //     };
-    // }, []);
-
-    // const { theme } = useTheme();
-
-    console.log(theme);
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, []);
 
     return (
         <>
-            {/* <h1>Current theme: {theme}</h1> */}
-            <ThemeProvider>{children}</ThemeProvider>
+            <h1>Current theme: {theme}</h1>
+            <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </>
     );
 };
