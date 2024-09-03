@@ -150,7 +150,6 @@
         "@deriv-com/quill-tokens": "^2.0.10",
         "@deriv/quill-icons": "^1.22.10",
         "@headlessui/react": "1.7.18",
-        "@semantic-release/git": "^10.0.1",
         "dayjs": "^1.11.11",
         "react-calendar": "^5.0.0",
         "react-number-format": "^5.4.0",
