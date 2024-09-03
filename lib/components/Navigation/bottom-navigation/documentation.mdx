@@ -3,7 +3,7 @@ import { Canvas, Meta } from '@storybook/blocks';
 import * as BottomNavigationStories from './bottom-bar.stories';
 import { Markdown } from "@storybook/blocks";
  
-<Meta of={BottomNavigationStories} />
+<Meta name="Documentation" of={BottomNavigationStories} />
  
 # Bottom Navigation Bar
 
@@ -23,32 +23,24 @@ Both Navigation.BottomBar and Navigation.BottomAction extend from `React.Compone
 
 ### Navigation.Bottom props:
 
-<Markdown>
-    {`
-| Prop         | Type                | Description                                                                                                            |
-|--------------|---------------------|------------------------------------------------------------------------------------------------------------------------|
-| as           | React.ElementType   | Specifies the element tag to be used, allowing for customization of the element type.                                |
-| showLabels    | boolean             | Controls whether labels are displayed in Navigation.BottomAction. If a showLabel prop is provided in Navigation.BottomAction, it will override this setting for that specific action. |
-| value        | number              | Defines the active state for Navigation.BottomAction, starting from 0.                                               |
-| onChange     | (event: React.ChangeEvent<HTMLElement>, value: number) => void | Callback function triggered on change. It receives the change event and the updated value.                            |
-    `}
-</Markdown>
+| Prop       | Type                                                             | Description                                                                                                                                                                           |
+| ---------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| as         | `React.ElementType `                                             | Specifies the element tag to be used, allowing for customization of the element type.                                                                                                 |
+| showLabels | `boolean`                                                        | Controls whether labels are displayed in Navigation.BottomAction. If a showLabel prop is provided in Navigation.BottomAction, it will override this setting for that specific action. |
+| value      | `number`                                                         | Defines the active state for Navigation.BottomAction, starting from 0.                                                                                                                |
+| onChange   | `(event: React.ChangeEvent<HTMLElement>, value: number) => void` | Callback function triggered on change. It receives the change event and the updated value.                                                                                            |
 
 ### Navigation.BottomAction props:
 
-<Markdown>
-    {`
-| Prop         | Type                | Description                                                                                       |
-|--------------|---------------------|---------------------------------------------------------------------------------------------------|
-| as           | React.ElementType   | Specifies the element tag to be used, allowing for customization of the element type.                                |
-| badge        | string              | string that will pass into the notification badge. Leave it empty if no notification badge needed                               |
-| selected     | boolean             | Determines if the action is selected.                                                            |
-| label        | string or React.ReactNode | The text or content to display as the label. Can be a string or a React node.                  |
-| showLabel    | boolean             | Controls whether the label is displayed. If omitted, the label is displayed by default.         |
-| icon         | React.ReactNode     | The icon to display for the action.                                                               |
-| activeIcon   | React.ReactNode     | The icon to display when the action is active.                                                    |
-    `}
-</Markdown>
+| Prop       | Type                        | Description                                                                                       |
+| ---------- | --------------------------- | ------------------------------------------------------------------------------------------------- |
+| as         | `React.ElementType`         | Specifies the element tag to be used, allowing for customization of the element type.             |
+| badge      | `string`                    | string that will pass into the notification badge. Leave it empty if no notification badge needed |
+| selected   | `boolean`                   | Determines if the action is selected.                                                             |
+| label      | `string \| React.ReactNode` | The text or content to display as the label. Can be a string or a React node.                     |
+| showLabel  | `boolean`                   | Controls whether the label is displayed. If omitted, the label is displayed by default.           |
+| icon       | `React.ReactNode`           | The icon to display for the action.                                                               |
+| activeIcon | `React.ReactNode`           | The icon to display when the action is active.                                                    |
 
 ### Example Usage:
 
