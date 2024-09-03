@@ -42,7 +42,6 @@
         "test": "jest",
         "test:update": "jest --updateSnapshot",
         "test:staged": "jest --bail --findRelatedTests",
-        "test:report": "jest --collectCoverage",
         "prepare": "husky install"
     },
     "devDependencies": {
