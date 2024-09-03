@@ -35,6 +35,8 @@ jobs:
         run: npm audit signatures
       - name: Prepublish
         run: npm run prepublish
+      - name: Run tests and generate coverage report
+        run: npm run test:report
       - name: Release
         if: success()
         env:
