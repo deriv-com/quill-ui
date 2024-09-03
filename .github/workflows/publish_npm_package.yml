@@ -5,9 +5,6 @@ on:
     push:
         branches: [master]
 
-permissions:
-  contents: read # for checkout
-
 jobs:
   release:
     name: Release
