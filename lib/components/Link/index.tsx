@@ -29,15 +29,15 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
                 href={disabled ? "javascript:void(0)" : href}
                 {...rest}
                 className={clsx(
-                    "link",
-                    `link__color-${color}`,
-                    disabled && "link--disabled",
-                    hasHoverEffect && "link--hover",
+                    "quill-link",
+                    `quill-link__color-${color}`,
+                    disabled && "quill-link--disabled",
+                    hasHoverEffect && "quill-link--hover",
                     className,
                 )}
             >
                 {icon && (
-                    <span data-testid="dt-link-icon" className="link__icon">
+                    <span data-testid="dt-link-icon" className="quill-link__icon">
                         {icon}
                     </span>
                 )}
@@ -64,8 +64,8 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
                     <LabelPairedChevronRightSmRegularIcon
                         data-testid="dt-link-chevron"
                         className={clsx(
-                            `link__icon-color-${color}`,
-                            `link__icon-size-${size}`,
+                            `quill-link__icon-color-${color}`,
+                            `quill-link__icon-size-${size}`,
                         )}
                     />
                 )}

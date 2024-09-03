@@ -1,5 +1,5 @@
 import React, { HTMLAttributes, ReactNode } from "react";
-import { TLeftOrCenter, TMediumSizes } from "@types";
+import { TLeftOrCenter, TRegularSizes } from "@types";
 import "./item.scss";
 import clsx from "clsx";
 import { Text } from "@components/Typography";
@@ -12,7 +12,7 @@ export interface DropdownItemProps extends HTMLAttributes<HTMLElement> {
     as?: keyof HTMLElementTagNameMap;
     bold?: boolean;
     italic?: boolean;
-    size?: TMediumSizes;
+    size?: TRegularSizes;
     centered?: boolean;
     label: ReactNode;
     disabled?: boolean;

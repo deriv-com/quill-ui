@@ -68,6 +68,25 @@ const meta = {
             description:
                 "This prop controls if primary button is disabled or not.",
         },
+        isNonExpandable: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            description:
+                "Controls if modal is expandable or not. Default value is false.",
+            control: { type: "boolean" },
+        },
+        handleBarIndex: {
+            table: { type: { summary: "number | undefined" } },
+            description: "z-index for handlebar",
+            control: "number",
+        },
+        shouldCloseModalOnSwipeDown: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            description:
+                "Flag for controlling modal behavior. If true, the modal will be closed after user swipes the handle bar down.",
+            control: { type: "boolean" },
+        },
         isSecondaryButtonDisabled: {
             control: { type: "boolean" },
             description:
@@ -117,6 +136,12 @@ export const Default: Story = {
 export const ModalOverlayWithoutCrossIcon: Story = {
     args: {
         textContent: shortTextContent,
+    },
+};
+export const ModalOverlayWithButtonColorProp: Story = {
+    args: {
+        textContent: shortTextContent,
+        buttonColor: "coral",
     },
 };
 export const ModalBottomWithoutButtons: Story = {

@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Modal } from "@components/Modal";
 import { ModalProps } from "../base";
 import { Button } from "@components/Button";
 import "@deriv-com/quill-tokens/dist/breakpoints.scss";
+import useBreakpoints from "@hooks/useBreakpoints";
 
 interface ModalExampleProps extends ModalProps {
     image?: React.ReactNode;
@@ -25,21 +26,7 @@ export const ModalExample = ({
     const titlePlaceHolderText = "Title";
 
     const [isOpen, setIsOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
-    const handleResize = () => {
-        if (window.innerWidth < 720) {
-            setIsMobile(true);
-        } else {
-            setIsMobile(false);
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener("resize", handleResize);
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
+    const { isMobile } = useBreakpoints();
 
     return (
         <>
@@ -50,12 +37,12 @@ export const ModalExample = ({
             />
             <Modal
                 {...args}
-                isMobile={isMobile}
                 isOpened={isOpen}
                 toggleModal={setIsOpen}
                 primaryButtonLabel={primaryButtonLabel}
                 showSecondaryButton={showSecondaryButton}
                 secondaryButtonLabel={secondaryButtonLabel}
+                isMobile={isMobile}
             >
                 <Modal.Header
                     title={titlePlaceHolderText}

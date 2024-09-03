@@ -3,7 +3,7 @@
 exports[`Link should render correctly with caption size and color black 1`] = `
 <div>
   <a
-    class="link link__color-black link--hover"
+    class="quill-link quill-link__color-black quill-link--hover"
     target="_blank"
   >
     <p
@@ -19,7 +19,7 @@ exports[`Link should render correctly with caption size and color black 1`] = `
 exports[`Link should render correctly with caption size and color white 1`] = `
 <div>
   <a
-    class="link link__color-white link--hover"
+    class="quill-link quill-link__color-white quill-link--hover"
     target="_blank"
   >
     <p
@@ -51,7 +51,7 @@ exports[`Link should render correctly with disabled true 1`] = `
 exports[`Link should render correctly with lg size and color black 1`] = `
 <div>
   <a
-    class="link link__color-black link--hover"
+    class="quill-link quill-link__color-black quill-link--hover"
     target="_blank"
   >
     <p
@@ -67,7 +67,7 @@ exports[`Link should render correctly with lg size and color black 1`] = `
 exports[`Link should render correctly with lg size and color white 1`] = `
 <div>
   <a
-    class="link link__color-white link--hover"
+    class="quill-link quill-link__color-white quill-link--hover"
     target="_blank"
   >
     <p
@@ -83,7 +83,7 @@ exports[`Link should render correctly with lg size and color white 1`] = `
 exports[`Link should render correctly with md size and color black 1`] = `
 <div>
   <a
-    class="link link__color-black link--hover"
+    class="quill-link quill-link__color-black quill-link--hover"
     target="_blank"
   >
     <p
@@ -99,7 +99,7 @@ exports[`Link should render correctly with md size and color black 1`] = `
 exports[`Link should render correctly with md size and color white 1`] = `
 <div>
   <a
-    class="link link__color-white link--hover"
+    class="quill-link quill-link__color-white quill-link--hover"
     target="_blank"
   >
     <p
@@ -115,7 +115,7 @@ exports[`Link should render correctly with md size and color white 1`] = `
 exports[`Link should render correctly with sm size and color black 1`] = `
 <div>
   <a
-    class="link link__color-black link--hover"
+    class="quill-link quill-link__color-black quill-link--hover"
     target="_blank"
   >
     <p
@@ -131,7 +131,7 @@ exports[`Link should render correctly with sm size and color black 1`] = `
 exports[`Link should render correctly with sm size and color white 1`] = `
 <div>
   <a
-    class="link link__color-white link--hover"
+    class="quill-link quill-link__color-white quill-link--hover"
     target="_blank"
   >
     <p
@@ -147,7 +147,7 @@ exports[`Link should render correctly with sm size and color white 1`] = `
 exports[`Link should render correctly with xl size and color black 1`] = `
 <div>
   <a
-    class="link link__color-black link--hover"
+    class="quill-link quill-link__color-black quill-link--hover"
     target="_blank"
   >
     <p
@@ -163,7 +163,7 @@ exports[`Link should render correctly with xl size and color black 1`] = `
 exports[`Link should render correctly with xl size and color white 1`] = `
 <div>
   <a
-    class="link link__color-white link--hover"
+    class="quill-link quill-link__color-white quill-link--hover"
     target="_blank"
   >
     <p

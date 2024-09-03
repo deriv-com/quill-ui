@@ -18,6 +18,7 @@ export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     onCloseAction?: () => void;
     delay?: number;
     standalone?: boolean;
+    status?: "fail" | "neutral";
 }
 
 export const Snackbar = ({
@@ -31,6 +32,7 @@ export const Snackbar = ({
     hasCloseButton = true,
     delay,
     standalone = true,
+    status = "neutral",
     ...rest
 }: SnackbarProps) => {
     const { removeSnackbar } = useSnackbar();
@@ -70,18 +72,27 @@ export const Snackbar = ({
         <div
             {...rest}
             className={clsx(
-                "snackbar",
+                "quill-snackbar",
+                `quill-snackbar__status--${status}`,
                 isVisible ? "slide-up" : "slide-up slide-down",
             )}
             ref={ref}
         >
-            {Icon && <div className="snackbar__icon--container">{Icon}</div>}
-            <div className="snackbar__message--container">
+            {Icon && (
+                <div className={clsx("quill-snackbar__icon--container")}>
+                    {React.isValidElement(Icon) &&
+                        React.cloneElement(Icon, {
+                            fill: `var(--component-snackbar-icon-${status})`,
+                            ...Icon.props,
+                        })}
+                </div>
+            )}
+            <div className="quill-snackbar__message--container">
                 <Text
-                    className="snackbar__message"
+                    className="quill-snackbar__message"
                     size="sm"
                     style={{
-                        color: "var(--component-snackbar-label-color-neutral)",
+                        color: `var(--component-snackbar-label-color-${status})`,
                     }}
                 >
                     {message}

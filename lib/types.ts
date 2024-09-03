@@ -101,3 +101,9 @@ export type QuillIconComponent = React.ForwardRefExoticComponent<
 export type ExcludeAllNull<T> = {
     [K in keyof T]: Exclude<T[K], null>;
 };
+
+export type TCountryCodes = {
+    name: string;
+    short_code: string;
+    phone_code: string;
+};

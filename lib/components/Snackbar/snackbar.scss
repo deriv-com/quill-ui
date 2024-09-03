@@ -1,6 +1,6 @@
 @import "@deriv-com/quill-tokens/dist/breakpoints.scss";
 
-.snackbar {
+.quill-snackbar {
     display: flex;
     width: calc(100vw - var(--core-spacing-1600));
     max-width: 560px;
@@ -13,13 +13,21 @@
     border-radius: var(--component-snackbar-border-radius);
     border: var(--component-snackbar-border-width) solid
         var(--component-snackbar-border-color);
-    background: var(--component-snackbar-bg-neutral);
     box-shadow: var(--core-elevation-shadow-330);
     position: fixed;
     z-index: 999;
     bottom: -16px;
     transition: bottom var(--motion-duration-snappy)
         var(--motion-easing-inandout);
+
+    &__status {
+        &--neutral {
+            background-color: var(--component-snackbar-bg-neutral);
+        }
+        &--fail {
+            background-color: var(--component-snackbar-bg-fail);
+        }
+    }
 
     &--container {
         display: flex;
@@ -41,12 +49,14 @@
         width: var(--component-snackbar-width-max);
     }
 
-    &__icon--container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-shrink: 0;
+    &__icon {
+        &--container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
     }
     &__message {
         display: -webkit-box;

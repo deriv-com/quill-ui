@@ -1,1 +1,2 @@
-export const maxLinks = 3;
+export const maxMobileLinks = 3;
+export const maxDesktopLinks = 10;

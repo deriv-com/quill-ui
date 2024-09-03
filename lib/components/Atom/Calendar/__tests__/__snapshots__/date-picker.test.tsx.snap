@@ -60,7 +60,7 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
             <span
               class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
             >
-              Aug 2024
+              Sep 2024
             </span>
           </span>
         </button>
@@ -118,7 +118,7 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                 style="display: flex; flex-wrap: nowrap;"
               >
                 <div
-                  class="react-calendar__month-view__weekdays__weekday"
+                  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--current"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                 >
                   <abbr
@@ -129,7 +129,7 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   </abbr>
                 </div>
                 <div
-                  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--current"
+                  class="react-calendar__month-view__weekdays__weekday"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                 >
                   <abbr
@@ -200,45 +200,45 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                 style="display: flex; flex-wrap: wrap;"
               >
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-left: 42.857142857142854%; margin-inline-start: 42.857142857142854%; margin-inline-end: 0;"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-left: 85.71428571428571%; margin-inline-start: 85.71428571428571%; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 1, 2024"
+                    aria-label="September 1, 2024"
                   >
                     1
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 2, 2024"
+                    aria-label="September 2, 2024"
                   >
                     2
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 3, 2024"
+                    aria-label="September 3, 2024"
                   >
                     3
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 4, 2024"
+                    aria-label="September 4, 2024"
                   >
                     4
                   </abbr>
@@ -249,7 +249,7 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 5, 2024"
+                    aria-label="September 5, 2024"
                   >
                     5
                   </abbr>
@@ -260,29 +260,29 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 6, 2024"
+                    aria-label="September 6, 2024"
                   >
                     6
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 7, 2024"
+                    aria-label="September 7, 2024"
                   >
                     7
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 8, 2024"
+                    aria-label="September 8, 2024"
                   >
                     8
                   </abbr>
@@ -293,29 +293,29 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 9, 2024"
+                    aria-label="September 9, 2024"
                   >
                     9
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 10, 2024"
+                    aria-label="September 10, 2024"
                   >
                     10
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 11, 2024"
+                    aria-label="September 11, 2024"
                   >
                     11
                   </abbr>
@@ -326,7 +326,7 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 12, 2024"
+                    aria-label="September 12, 2024"
                   >
                     12
                   </abbr>
@@ -337,29 +337,29 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 13, 2024"
+                    aria-label="September 13, 2024"
                   >
                     13
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 14, 2024"
+                    aria-label="September 14, 2024"
                   >
                     14
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 15, 2024"
+                    aria-label="September 15, 2024"
                   >
                     15
                   </abbr>
@@ -370,29 +370,29 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 16, 2024"
+                    aria-label="September 16, 2024"
                   >
                     16
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 17, 2024"
+                    aria-label="September 17, 2024"
                   >
                     17
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 18, 2024"
+                    aria-label="September 18, 2024"
                   >
                     18
                   </abbr>
@@ -403,40 +403,40 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 19, 2024"
+                    aria-label="September 19, 2024"
                   >
                     19
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 20, 2024"
+                    aria-label="September 20, 2024"
                   >
                     20
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 21, 2024"
+                    aria-label="September 21, 2024"
                   >
                     21
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 22, 2024"
+                    aria-label="September 22, 2024"
                   >
                     22
                   </abbr>
@@ -447,29 +447,29 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 23, 2024"
+                    aria-label="September 23, 2024"
                   >
                     23
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 24, 2024"
+                    aria-label="September 24, 2024"
                   >
                     24
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 25, 2024"
+                    aria-label="September 25, 2024"
                   >
                     25
                   </abbr>
@@ -480,7 +480,7 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 26, 2024"
+                    aria-label="September 26, 2024"
                   >
                     26
                   </abbr>
@@ -491,29 +491,29 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 27, 2024"
+                    aria-label="September 27, 2024"
                   >
                     27
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 28, 2024"
+                    aria-label="September 28, 2024"
                   >
                     28
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 29, 2024"
+                    aria-label="September 29, 2024"
                   >
                     29
                   </abbr>
@@ -524,20 +524,9 @@ exports[`DatePicker should render calendar with double navigation if next2Label 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 30, 2024"
+                    aria-label="September 30, 2024"
                   >
                     30
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 31, 2024"
-                  >
-                    31
                   </abbr>
                 </button>
               </div>
@@ -603,7 +592,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
             <span
               class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
             >
-              Aug 2024
+              Sep 2024
             </span>
           </span>
         </button>
@@ -654,7 +643,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
                 style="display: flex; flex-wrap: nowrap;"
               >
                 <div
-                  class="react-calendar__month-view__weekdays__weekday"
+                  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--current"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                 >
                   <abbr
@@ -665,7 +654,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
                   </abbr>
                 </div>
                 <div
-                  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--current"
+                  class="react-calendar__month-view__weekdays__weekday"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                 >
                   <abbr
@@ -741,321 +730,13 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
                   type="button"
                 >
                   <abbr
-                    aria-label="July 29, 2024"
-                  >
-                    29
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="July 30, 2024"
-                  >
-                    30
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="July 31, 2024"
-                  >
-                    31
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 1, 2024"
-                  >
-                    1
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 2, 2024"
-                  >
-                    2
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 3, 2024"
-                  >
-                    3
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 4, 2024"
-                  >
-                    4
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 5, 2024"
-                  >
-                    5
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 6, 2024"
-                  >
-                    6
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 7, 2024"
-                  >
-                    7
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 8, 2024"
-                  >
-                    8
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 9, 2024"
-                  >
-                    9
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 10, 2024"
-                  >
-                    10
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 11, 2024"
-                  >
-                    11
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 12, 2024"
-                  >
-                    12
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 13, 2024"
-                  >
-                    13
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 14, 2024"
-                  >
-                    14
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 15, 2024"
-                  >
-                    15
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 16, 2024"
-                  >
-                    16
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 17, 2024"
-                  >
-                    17
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 18, 2024"
-                  >
-                    18
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 19, 2024"
-                  >
-                    19
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 20, 2024"
-                  >
-                    20
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 21, 2024"
-                  >
-                    21
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 22, 2024"
-                  >
-                    22
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 23, 2024"
-                  >
-                    23
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 24, 2024"
-                  >
-                    24
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 25, 2024"
-                  >
-                    25
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
                     aria-label="August 26, 2024"
                   >
                     26
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -1066,7 +747,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -1077,7 +758,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -1088,7 +769,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -1099,7 +780,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend react-calendar__month-view__days__day--neighboringMonth"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -1110,7 +791,7 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend react-calendar__month-view__days__day--neighboringMonth"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
@@ -1118,6 +799,391 @@ exports[`DatePicker should render calendar with neighboring month if showNeighbo
                     aria-label="September 1, 2024"
                   >
                     1
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 2, 2024"
+                  >
+                    2
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 3, 2024"
+                  >
+                    3
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 4, 2024"
+                  >
+                    4
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 5, 2024"
+                  >
+                    5
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 6, 2024"
+                  >
+                    6
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 7, 2024"
+                  >
+                    7
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 8, 2024"
+                  >
+                    8
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 9, 2024"
+                  >
+                    9
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 10, 2024"
+                  >
+                    10
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 11, 2024"
+                  >
+                    11
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 12, 2024"
+                  >
+                    12
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 13, 2024"
+                  >
+                    13
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 14, 2024"
+                  >
+                    14
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 15, 2024"
+                  >
+                    15
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 16, 2024"
+                  >
+                    16
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 17, 2024"
+                  >
+                    17
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 18, 2024"
+                  >
+                    18
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 19, 2024"
+                  >
+                    19
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 20, 2024"
+                  >
+                    20
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 21, 2024"
+                  >
+                    21
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 22, 2024"
+                  >
+                    22
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 23, 2024"
+                  >
+                    23
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 24, 2024"
+                  >
+                    24
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 25, 2024"
+                  >
+                    25
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 26, 2024"
+                  >
+                    26
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 27, 2024"
+                  >
+                    27
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 28, 2024"
+                  >
+                    28
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 29, 2024"
+                  >
+                    29
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="September 30, 2024"
+                  >
+                    30
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="October 1, 2024"
+                  >
+                    1
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="October 2, 2024"
+                  >
+                    2
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="October 3, 2024"
+                  >
+                    3
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="October 4, 2024"
+                  >
+                    4
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend react-calendar__month-view__days__day--neighboringMonth"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="October 5, 2024"
+                  >
+                    5
+                  </abbr>
+                </button>
+                <button
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend react-calendar__month-view__days__day--neighboringMonth"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
+                  type="button"
+                >
+                  <abbr
+                    aria-label="October 6, 2024"
+                  >
+                    6
                   </abbr>
                 </button>
               </div>
@@ -1183,7 +1249,7 @@ exports[`DatePicker should render calendar with range selection 1`] = `
             <span
               class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
             >
-              Aug 2024
+              Sep 2024
             </span>
           </span>
         </button>
@@ -1234,7 +1300,7 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                 style="display: flex; flex-wrap: nowrap;"
               >
                 <div
-                  class="react-calendar__month-view__weekdays__weekday"
+                  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--current"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                 >
                   <abbr
@@ -1245,7 +1311,7 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   </abbr>
                 </div>
                 <div
-                  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--current"
+                  class="react-calendar__month-view__weekdays__weekday"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                 >
                   <abbr
@@ -1316,45 +1382,45 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                 style="display: flex; flex-wrap: wrap;"
               >
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-left: 42.857142857142854%; margin-inline-start: 42.857142857142854%; margin-inline-end: 0;"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-left: 85.71428571428571%; margin-inline-start: 85.71428571428571%; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 1, 2024"
+                    aria-label="September 1, 2024"
                   >
                     1
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 2, 2024"
+                    aria-label="September 2, 2024"
                   >
                     2
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 3, 2024"
+                    aria-label="September 3, 2024"
                   >
                     3
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 4, 2024"
+                    aria-label="September 4, 2024"
                   >
                     4
                   </abbr>
@@ -1365,7 +1431,7 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   type="button"
                 >
                   <abbr
-                    aria-label="August 5, 2024"
+                    aria-label="September 5, 2024"
                   >
                     5
                   </abbr>
@@ -1376,29 +1442,29 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   type="button"
                 >
                   <abbr
-                    aria-label="August 6, 2024"
+                    aria-label="September 6, 2024"
                   >
                     6
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 7, 2024"
+                    aria-label="September 7, 2024"
                   >
                     7
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 8, 2024"
+                    aria-label="September 8, 2024"
                   >
                     8
                   </abbr>
@@ -1409,29 +1475,29 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   type="button"
                 >
                   <abbr
-                    aria-label="August 9, 2024"
+                    aria-label="September 9, 2024"
                   >
                     9
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 10, 2024"
+                    aria-label="September 10, 2024"
                   >
                     10
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 11, 2024"
+                    aria-label="September 11, 2024"
                   >
                     11
                   </abbr>
@@ -1442,7 +1508,7 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   type="button"
                 >
                   <abbr
-                    aria-label="August 12, 2024"
+                    aria-label="September 12, 2024"
                   >
                     12
                   </abbr>
@@ -1453,29 +1519,29 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   type="button"
                 >
                   <abbr
-                    aria-label="August 13, 2024"
+                    aria-label="September 13, 2024"
                   >
                     13
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 14, 2024"
+                    aria-label="September 14, 2024"
                   >
                     14
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 15, 2024"
+                    aria-label="September 15, 2024"
                   >
                     15
                   </abbr>
@@ -1486,29 +1552,29 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   type="button"
                 >
                   <abbr
-                    aria-label="August 16, 2024"
+                    aria-label="September 16, 2024"
                   >
                     16
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 17, 2024"
+                    aria-label="September 17, 2024"
                   >
                     17
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 18, 2024"
+                    aria-label="September 18, 2024"
                   >
                     18
                   </abbr>
@@ -1519,40 +1585,40 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   type="button"
                 >
                   <abbr
-                    aria-label="August 19, 2024"
+                    aria-label="September 19, 2024"
                   >
                     19
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 20, 2024"
+                    aria-label="September 20, 2024"
                   >
                     20
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 21, 2024"
+                    aria-label="September 21, 2024"
                   >
                     21
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 22, 2024"
+                    aria-label="September 22, 2024"
                   >
                     22
                   </abbr>
@@ -1563,29 +1629,29 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   type="button"
                 >
                   <abbr
-                    aria-label="August 23, 2024"
+                    aria-label="September 23, 2024"
                   >
                     23
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 24, 2024"
+                    aria-label="September 24, 2024"
                   >
                     24
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 25, 2024"
+                    aria-label="September 25, 2024"
                   >
                     25
                   </abbr>
@@ -1596,7 +1662,7 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   type="button"
                 >
                   <abbr
-                    aria-label="August 26, 2024"
+                    aria-label="September 26, 2024"
                   >
                     26
                   </abbr>
@@ -1607,29 +1673,29 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   type="button"
                 >
                   <abbr
-                    aria-label="August 27, 2024"
+                    aria-label="September 27, 2024"
                   >
                     27
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 28, 2024"
+                    aria-label="September 28, 2024"
                   >
                     28
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 29, 2024"
+                    aria-label="September 29, 2024"
                   >
                     29
                   </abbr>
@@ -1640,20 +1706,9 @@ exports[`DatePicker should render calendar with range selection 1`] = `
                   type="button"
                 >
                   <abbr
-                    aria-label="August 30, 2024"
+                    aria-label="September 30, 2024"
                   >
                     30
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 31, 2024"
-                  >
-                    31
                   </abbr>
                 </button>
               </div>
@@ -1719,7 +1774,7 @@ exports[`DatePicker should render calendar with selected value and call onFormat
             <span
               class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
             >
-              Aug 2024
+              Sep 2024
             </span>
           </span>
         </button>
@@ -1770,7 +1825,7 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                 style="display: flex; flex-wrap: nowrap;"
               >
                 <div
-                  class="react-calendar__month-view__weekdays__weekday"
+                  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--current"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                 >
                   <abbr
@@ -1781,7 +1836,7 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   </abbr>
                 </div>
                 <div
-                  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--current"
+                  class="react-calendar__month-view__weekdays__weekday"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                 >
                   <abbr
@@ -1852,45 +1907,45 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                 style="display: flex; flex-wrap: wrap;"
               >
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-left: 42.857142857142854%; margin-inline-start: 42.857142857142854%; margin-inline-end: 0;"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-left: 85.71428571428571%; margin-inline-start: 85.71428571428571%; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 1, 2024"
+                    aria-label="September 1, 2024"
                   >
                     1
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__tile--now react-calendar__tile--active react-calendar__tile--range react-calendar__tile--rangeStart react-calendar__tile--rangeEnd react-calendar__tile--rangeBothEnds react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 2, 2024"
+                    aria-label="September 2, 2024"
                   >
                     2
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 3, 2024"
+                    aria-label="September 3, 2024"
                   >
                     3
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 4, 2024"
+                    aria-label="September 4, 2024"
                   >
                     4
                   </abbr>
@@ -1901,7 +1956,7 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   type="button"
                 >
                   <abbr
-                    aria-label="August 5, 2024"
+                    aria-label="September 5, 2024"
                   >
                     5
                   </abbr>
@@ -1912,29 +1967,29 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   type="button"
                 >
                   <abbr
-                    aria-label="August 6, 2024"
+                    aria-label="September 6, 2024"
                   >
                     6
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 7, 2024"
+                    aria-label="September 7, 2024"
                   >
                     7
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 8, 2024"
+                    aria-label="September 8, 2024"
                   >
                     8
                   </abbr>
@@ -1945,29 +2000,29 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   type="button"
                 >
                   <abbr
-                    aria-label="August 9, 2024"
+                    aria-label="September 9, 2024"
                   >
                     9
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 10, 2024"
+                    aria-label="September 10, 2024"
                   >
                     10
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 11, 2024"
+                    aria-label="September 11, 2024"
                   >
                     11
                   </abbr>
@@ -1978,7 +2033,7 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   type="button"
                 >
                   <abbr
-                    aria-label="August 12, 2024"
+                    aria-label="September 12, 2024"
                   >
                     12
                   </abbr>
@@ -1989,29 +2044,29 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   type="button"
                 >
                   <abbr
-                    aria-label="August 13, 2024"
+                    aria-label="September 13, 2024"
                   >
                     13
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 14, 2024"
+                    aria-label="September 14, 2024"
                   >
                     14
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 15, 2024"
+                    aria-label="September 15, 2024"
                   >
                     15
                   </abbr>
@@ -2022,29 +2077,29 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   type="button"
                 >
                   <abbr
-                    aria-label="August 16, 2024"
+                    aria-label="September 16, 2024"
                   >
                     16
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 17, 2024"
+                    aria-label="September 17, 2024"
                   >
                     17
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 18, 2024"
+                    aria-label="September 18, 2024"
                   >
                     18
                   </abbr>
@@ -2055,40 +2110,40 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   type="button"
                 >
                   <abbr
-                    aria-label="August 19, 2024"
+                    aria-label="September 19, 2024"
                   >
                     19
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__tile--now react-calendar__tile--active react-calendar__tile--range react-calendar__tile--rangeStart react-calendar__tile--rangeEnd react-calendar__tile--rangeBothEnds react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 20, 2024"
+                    aria-label="September 20, 2024"
                   >
                     20
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 21, 2024"
+                    aria-label="September 21, 2024"
                   >
                     21
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 22, 2024"
+                    aria-label="September 22, 2024"
                   >
                     22
                   </abbr>
@@ -2099,29 +2154,29 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   type="button"
                 >
                   <abbr
-                    aria-label="August 23, 2024"
+                    aria-label="September 23, 2024"
                   >
                     23
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 24, 2024"
+                    aria-label="September 24, 2024"
                   >
                     24
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 25, 2024"
+                    aria-label="September 25, 2024"
                   >
                     25
                   </abbr>
@@ -2132,7 +2187,7 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   type="button"
                 >
                   <abbr
-                    aria-label="August 26, 2024"
+                    aria-label="September 26, 2024"
                   >
                     26
                   </abbr>
@@ -2143,29 +2198,29 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   type="button"
                 >
                   <abbr
-                    aria-label="August 27, 2024"
+                    aria-label="September 27, 2024"
                   >
                     27
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 28, 2024"
+                    aria-label="September 28, 2024"
                   >
                     28
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 29, 2024"
+                    aria-label="September 29, 2024"
                   >
                     29
                   </abbr>
@@ -2176,20 +2231,9 @@ exports[`DatePicker should render calendar with selected value and call onFormat
                   type="button"
                 >
                   <abbr
-                    aria-label="August 30, 2024"
+                    aria-label="September 30, 2024"
                   >
                     30
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 31, 2024"
-                  >
-                    31
                   </abbr>
                 </button>
               </div>
@@ -2228,7 +2272,7 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                 style="display: flex; flex-wrap: nowrap;"
               >
                 <div
-                  class="react-calendar__month-view__weekdays__weekday"
+                  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--current"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                 >
                   <abbr
@@ -2239,7 +2283,7 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   </abbr>
                 </div>
                 <div
-                  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--current"
+                  class="react-calendar__month-view__weekdays__weekday"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                 >
                   <abbr
@@ -2310,45 +2354,45 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                 style="display: flex; flex-wrap: wrap;"
               >
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-left: 42.857142857142854%; margin-inline-start: 42.857142857142854%; margin-inline-end: 0;"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-left: 85.71428571428571%; margin-inline-start: 85.71428571428571%; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 1, 2024"
+                    aria-label="September 1, 2024"
                   >
                     1
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 2, 2024"
+                    aria-label="September 2, 2024"
                   >
                     2
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 3, 2024"
+                    aria-label="September 3, 2024"
                   >
                     3
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 4, 2024"
+                    aria-label="September 4, 2024"
                   >
                     4
                   </abbr>
@@ -2359,7 +2403,7 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 5, 2024"
+                    aria-label="September 5, 2024"
                   >
                     5
                   </abbr>
@@ -2370,29 +2414,29 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 6, 2024"
+                    aria-label="September 6, 2024"
                   >
                     6
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 7, 2024"
+                    aria-label="September 7, 2024"
                   >
                     7
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 8, 2024"
+                    aria-label="September 8, 2024"
                   >
                     8
                   </abbr>
@@ -2403,29 +2447,29 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 9, 2024"
+                    aria-label="September 9, 2024"
                   >
                     9
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 10, 2024"
+                    aria-label="September 10, 2024"
                   >
                     10
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 11, 2024"
+                    aria-label="September 11, 2024"
                   >
                     11
                   </abbr>
@@ -2436,7 +2480,7 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 12, 2024"
+                    aria-label="September 12, 2024"
                   >
                     12
                   </abbr>
@@ -2447,29 +2491,29 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 13, 2024"
+                    aria-label="September 13, 2024"
                   >
                     13
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 14, 2024"
+                    aria-label="September 14, 2024"
                   >
                     14
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 15, 2024"
+                    aria-label="September 15, 2024"
                   >
                     15
                   </abbr>
@@ -2480,29 +2524,29 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 16, 2024"
+                    aria-label="September 16, 2024"
                   >
                     16
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 17, 2024"
+                    aria-label="September 17, 2024"
                   >
                     17
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 18, 2024"
+                    aria-label="September 18, 2024"
                   >
                     18
                   </abbr>
@@ -2513,40 +2557,40 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 19, 2024"
+                    aria-label="September 19, 2024"
                   >
                     19
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 20, 2024"
+                    aria-label="September 20, 2024"
                   >
                     20
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 21, 2024"
+                    aria-label="September 21, 2024"
                   >
                     21
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 22, 2024"
+                    aria-label="September 22, 2024"
                   >
                     22
                   </abbr>
@@ -2557,29 +2601,29 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 23, 2024"
+                    aria-label="September 23, 2024"
                   >
                     23
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 24, 2024"
+                    aria-label="September 24, 2024"
                   >
                     24
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 25, 2024"
+                    aria-label="September 25, 2024"
                   >
                     25
                   </abbr>
@@ -2590,7 +2634,7 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 26, 2024"
+                    aria-label="September 26, 2024"
                   >
                     26
                   </abbr>
@@ -2601,29 +2645,29 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 27, 2024"
+                    aria-label="September 27, 2024"
                   >
                     27
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 28, 2024"
+                    aria-label="September 28, 2024"
                   >
                     28
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 29, 2024"
+                    aria-label="September 29, 2024"
                   >
                     29
                   </abbr>
@@ -2634,20 +2678,9 @@ exports[`DatePicker should render calendar without navigation if showNavigation 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 30, 2024"
+                    aria-label="September 30, 2024"
                   >
                     30
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 31, 2024"
-                  >
-                    31
                   </abbr>
                 </button>
               </div>
@@ -2713,7 +2746,7 @@ exports[`DatePicker should render with default values if optional ones were not 
             <span
               class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default"
             >
-              Aug 2024
+              Sep 2024
             </span>
           </span>
         </button>
@@ -2764,7 +2797,7 @@ exports[`DatePicker should render with default values if optional ones were not 
                 style="display: flex; flex-wrap: nowrap;"
               >
                 <div
-                  class="react-calendar__month-view__weekdays__weekday"
+                  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--current"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                 >
                   <abbr
@@ -2775,7 +2808,7 @@ exports[`DatePicker should render with default values if optional ones were not 
                   </abbr>
                 </div>
                 <div
-                  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--current"
+                  class="react-calendar__month-view__weekdays__weekday"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                 >
                   <abbr
@@ -2846,45 +2879,45 @@ exports[`DatePicker should render with default values if optional ones were not 
                 style="display: flex; flex-wrap: wrap;"
               >
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-left: 42.857142857142854%; margin-inline-start: 42.857142857142854%; margin-inline-end: 0;"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-left: 85.71428571428571%; margin-inline-start: 85.71428571428571%; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 1, 2024"
+                    aria-label="September 1, 2024"
                   >
                     1
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 2, 2024"
+                    aria-label="September 2, 2024"
                   >
                     2
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 3, 2024"
+                    aria-label="September 3, 2024"
                   >
                     3
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 4, 2024"
+                    aria-label="September 4, 2024"
                   >
                     4
                   </abbr>
@@ -2895,7 +2928,7 @@ exports[`DatePicker should render with default values if optional ones were not 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 5, 2024"
+                    aria-label="September 5, 2024"
                   >
                     5
                   </abbr>
@@ -2906,29 +2939,29 @@ exports[`DatePicker should render with default values if optional ones were not 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 6, 2024"
+                    aria-label="September 6, 2024"
                   >
                     6
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 7, 2024"
+                    aria-label="September 7, 2024"
                   >
                     7
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 8, 2024"
+                    aria-label="September 8, 2024"
                   >
                     8
                   </abbr>
@@ -2939,29 +2972,29 @@ exports[`DatePicker should render with default values if optional ones were not 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 9, 2024"
+                    aria-label="September 9, 2024"
                   >
                     9
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 10, 2024"
+                    aria-label="September 10, 2024"
                   >
                     10
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 11, 2024"
+                    aria-label="September 11, 2024"
                   >
                     11
                   </abbr>
@@ -2972,7 +3005,7 @@ exports[`DatePicker should render with default values if optional ones were not 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 12, 2024"
+                    aria-label="September 12, 2024"
                   >
                     12
                   </abbr>
@@ -2983,29 +3016,29 @@ exports[`DatePicker should render with default values if optional ones were not 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 13, 2024"
+                    aria-label="September 13, 2024"
                   >
                     13
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 14, 2024"
+                    aria-label="September 14, 2024"
                   >
                     14
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 15, 2024"
+                    aria-label="September 15, 2024"
                   >
                     15
                   </abbr>
@@ -3016,29 +3049,29 @@ exports[`DatePicker should render with default values if optional ones were not 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 16, 2024"
+                    aria-label="September 16, 2024"
                   >
                     16
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 17, 2024"
+                    aria-label="September 17, 2024"
                   >
                     17
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 18, 2024"
+                    aria-label="September 18, 2024"
                   >
                     18
                   </abbr>
@@ -3049,40 +3082,40 @@ exports[`DatePicker should render with default values if optional ones were not 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 19, 2024"
+                    aria-label="September 19, 2024"
                   >
                     19
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__tile--now react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 20, 2024"
+                    aria-label="September 20, 2024"
                   >
                     20
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 21, 2024"
+                    aria-label="September 21, 2024"
                   >
                     21
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 22, 2024"
+                    aria-label="September 22, 2024"
                   >
                     22
                   </abbr>
@@ -3093,29 +3126,29 @@ exports[`DatePicker should render with default values if optional ones were not 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 23, 2024"
+                    aria-label="September 23, 2024"
                   >
                     23
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 24, 2024"
+                    aria-label="September 24, 2024"
                   >
                     24
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
+                  class="react-calendar__tile react-calendar__month-view__days__day"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 25, 2024"
+                    aria-label="September 25, 2024"
                   >
                     25
                   </abbr>
@@ -3126,7 +3159,7 @@ exports[`DatePicker should render with default values if optional ones were not 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 26, 2024"
+                    aria-label="September 26, 2024"
                   >
                     26
                   </abbr>
@@ -3137,29 +3170,29 @@ exports[`DatePicker should render with default values if optional ones were not 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 27, 2024"
+                    aria-label="September 27, 2024"
                   >
                     27
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 28, 2024"
+                    aria-label="September 28, 2024"
                   >
                     28
                   </abbr>
                 </button>
                 <button
-                  class="react-calendar__tile react-calendar__month-view__days__day"
+                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
                   style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
                   type="button"
                 >
                   <abbr
-                    aria-label="August 29, 2024"
+                    aria-label="September 29, 2024"
                   >
                     29
                   </abbr>
@@ -3170,20 +3203,9 @@ exports[`DatePicker should render with default values if optional ones were not 
                   type="button"
                 >
                   <abbr
-                    aria-label="August 30, 2024"
+                    aria-label="September 30, 2024"
                   >
                     30
-                  </abbr>
-                </button>
-                <button
-                  class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--weekend"
-                  style="flex-basis: 14.285714285714286%; flex-shrink: 0; flex-grow: 0; overflow: hidden; margin-inline-end: 0;"
-                  type="button"
-                >
-                  <abbr
-                    aria-label="August 31, 2024"
-                  >
-                    31
                   </abbr>
                 </button>
               </div>

@@ -1,14 +1,17 @@
 import { forwardRef, useEffect, useState } from "react";
 import Input, { InputProps } from "@components/Input/base";
-import { Button } from "@components/Button";
+import { Button, TButtonColor } from "@components/Button";
 import "./input-button.scss";
+import { TMediumSizes } from "@types";
 
 export interface InputGroupButtonProps
-    extends Omit<InputProps, "textAlignment"> {
+    extends Omit<InputProps, "textAlignment" | "inputSize"> {
     buttonIconPosition?: "start" | "end";
     buttonLabel: React.ReactNode;
     buttonCallback?: () => void;
     buttonDisabled?: boolean;
+    buttonColor?: TButtonColor;
+    inputSize?: TMediumSizes;
 }
 
 export const InputGroupButton = forwardRef<
@@ -21,6 +24,7 @@ export const InputGroupButton = forwardRef<
             button_position = "right",
             inputSize = "md",
             value,
+            buttonColor = "black",
             label,
             buttonIconPosition,
             buttonDisabled = false,
@@ -47,7 +51,7 @@ export const InputGroupButton = forwardRef<
         const InputButton = (
             <Button
                 disabled={isEmpty || disabled || buttonDisabled}
-                color="black"
+                color={buttonColor}
                 fullWidth={button_position === "bottom"}
                 variant="primary"
                 size={inputSize}
@@ -59,7 +63,7 @@ export const InputGroupButton = forwardRef<
 
         return (
             <Input
-                inputSize={inputSize}
+                inputSize={inputSize === "md" ? "lg" : inputSize}
                 className={InputButtonWrapperClassName}
                 label={label}
                 status={status}
