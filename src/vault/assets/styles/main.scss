@@ -30,6 +30,32 @@
     }
 }
 
+body {
+    background-color: var(--semantic-color-slate-solid-surface-frame-low);
+}
+
+html {
+    &.dark {
+        .for-light {
+            display: none;
+        }
+        .for-dark {
+            display: flex;
+        }
+        .token-tag {
+            color: var(--core-color-opacity-white-400)!important;
+        }
+    }
+    &.light {
+        .for-dark {
+            display: none;
+        }
+        .for-light {
+            display: flex;
+        }
+    }
+}
+
 .no-select {
     user-select: none; // Standard syntax
     -webkit-user-select: none; // For WebKit browsers (Safari, Chrome)
@@ -43,7 +69,7 @@
     max-width: 1300px;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 0 auto; 
 }
 
 .vault {
@@ -110,7 +136,7 @@
         width: 100%;
         max-width: 200px;
         height: fit-content;
-        border-right: solid 1px var(--core-color-solid-slate-50);
+        border-right: solid 5px var(--semantic-color-slate-solid-surface-frame-low);
         padding: var(--core-spacing-800);
         position: sticky;
         top: 80px;
@@ -189,6 +215,10 @@
                 .item-count {
                     font-size: 12px;
                 }
+            }
+
+            .caret-icon {
+                fill: var(--component-textIcon-normal-default);
             }
 
             .collapse-header {
@@ -311,7 +341,7 @@
                     display: flex;
                     padding: var(--core-spacing-600) 0 0 0;
                     width: 100%;
-                    border-top: solid 3px var(--component-textIcon-normal-prominent);
+                    border-top: solid 5px var(--semantic-color-slate-solid-surface-frame-low);
                 }
 
                 .text-image-container {
@@ -319,12 +349,13 @@
                     .text-image {
                         flex: none;
                         width: 100%;
-                        max-width: 200px;
+                        max-width: 700px;
                         float: left;
                         margin: 0 var(--core-spacing-400) var(--core-spacing-400) 0;
                     }
 
                     p {
+                        padding-top: var(--core-spacing-400);
                         margin-bottom: var(--core-spacing-400);
                     }
                 }
@@ -380,14 +411,50 @@
         border-bottom: solid 1px var(--semantic-color-slate-solid-surface-normal-midLow);
         align-items: center;
 
-       
+        &.lg {
+            height: 60px;
+        }
 
-        .color-bar {
+
+        .bar {
             width: 70px;
             height: 100%;
+            flex: none;
 
-            &.darker {
-                background-color: var(--semantic-color-slate-solid-surface-normal-low) !important;
+            &.color-bar {
+                &.darker {
+                    background-color: var(--semantic-color-slate-solid-surface-normal-low) !important;
+                }
+            }
+
+            &.box-bar {
+                border: solid 2px var(--semantic-color-slate-solid-surface-normal-midLow);
+                margin: var(--core-spacing-400);
+                height: 50px;
+                width: 50px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: scale-down;
+                    transform: scale(1.2);
+                }
+            }
+
+            &.small-bar {
+                height: 50px;
+                width: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--core-color-solid-slate-600);
+
+                img {
+                    width: 50%;
+                    height:50%;
+                    object-fit: scale-down;
+                }
             }
         }
 
@@ -395,7 +462,7 @@
             font-family: var(--core-fontFamily-ibmPlex-mono);
             font-size: 12px;
             width: 100%;
-            max-width: 220px;
+            max-width: 250px;
             cursor: pointer;
 
         }
@@ -434,3 +501,9 @@ div#react-tiny-popover-container {
     width: 100%;
     justify-content: center;
 }
+
+.dropdown-holder {
+    width: 100%;
+    max-width: 120px;
+}
+

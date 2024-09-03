@@ -57,19 +57,24 @@ const Color = () => {
                 background colors, borders, and other UI elements where specific
                 color values must remain constant.
             </Text>
-            <InputDropdown
-                defaultValue={solidTabSelected}
-                onSelectOption={(e) => setSolidTabSelected(e)}
-                options={Object.keys(solidColors).map((e, ek) => {
-                    return {
-                        text: e,
-                        value: ek,
-                    };
-                })}
-                status="neutral"
-                variant="fill"
-                inputSize="sm"
-            />
+
+            <div className="dropdown-holder">
+                {Object.keys(solidColors).length && (
+                    <InputDropdown
+                        value={solidTabSelected}
+                        onSelectOption={(e) => setSolidTabSelected(e)}
+                        options={Object.keys(solidColors).map((e, ek) => {
+                            return {
+                                text: e,
+                                value: ek,
+                            };
+                        })}
+                        status="neutral"
+                        variant="fill"
+                        inputSize="sm"
+                    />
+                )}
+            </div>
 
             <div className="token-table-container">
                 {Object.keys(solidColors).map((name, key) => {
@@ -83,7 +88,7 @@ const Color = () => {
                                     key={`color-solid-${c}`}
                                 >
                                     <span
-                                        className="color-bar"
+                                        className="bar color-bar"
                                         style={{
                                             backgroundColor: color,
                                         }}
@@ -92,14 +97,10 @@ const Color = () => {
                                         as="div"
                                         tooltipContent="Click to copy"
                                         tooltipPosition="top"
-                                        className="tooltip-container"
+                                        className="tooltip-container token-variable"
                                         onClick={() => copyToClipboard(c)}
                                     >
-                                        <Text
-                                            size="sm"
-                                            bold
-                                            className="token-variable"
-                                        >
+                                        <Text size="sm" bold>
                                             {c}
                                         </Text>
                                     </Tooltip>
@@ -159,19 +160,23 @@ const Color = () => {
                 designers and developers to apply the same color with different
                 levels of opacity depending on the use case.
             </Text>
-            <InputDropdown
-                defaultValue={opacityTabSelected}
-                onSelectOption={(e) => setOpacityTabSelected(e)}
-                options={Object.keys(opacityColors).map((e, ek) => {
-                    return {
-                        text: e,
-                        value: ek,
-                    };
-                })}
-                status="neutral"
-                variant="fill"
-                inputSize="sm"
-            />
+            <div className="dropdown-holder">
+                {Object.keys(opacityColors).length && (
+                    <InputDropdown
+                        value={opacityTabSelected}
+                        onSelectOption={(e) => setOpacityTabSelected(e)}
+                        options={Object.keys(opacityColors).map((e, ek) => {
+                            return {
+                                text: e,
+                                value: ek,
+                            };
+                        })}
+                        status="neutral"
+                        variant="fill"
+                        inputSize="sm"
+                    />
+                )}
+            </div>
 
             <div className="token-table-container">
                 {Object.keys(opacityColors).map((name, key) => {
@@ -185,9 +190,9 @@ const Color = () => {
                                     key={`color-opacity-${c}`}
                                 >
                                     <span
-                                        className="color-bar"
+                                        className="bar color-bar"
                                         style={{
-                                            backgroundColor: color,
+                                            background: color,
                                         }}
                                     />
                                     <Tooltip
@@ -223,19 +228,14 @@ const Color = () => {
                                         as="div"
                                         tooltipContent="Click to copy"
                                         tooltipPosition="top"
-                                        className="tooltip-container"
+                                        className="tooltip-container token-variable"
                                         onClick={() => copyToClipboard(color)}
                                     >
                                         <div className="token-group">
                                             <span className="token-tag">
                                                 RGBA
                                             </span>
-                                            <Text
-                                                size="sm"
-                                                className="token-variable"
-                                            >
-                                                {color}
-                                            </Text>
+                                            <Text size="sm">{color}</Text>
                                         </div>
                                     </Tooltip>
                                 </div>
@@ -253,19 +253,23 @@ const Color = () => {
                 helping to guide users' attention and create a more engaging
                 interface.
             </Text>
-            <InputDropdown
-                defaultValue={gradientTabSelected}
-                onSelectOption={(e) => setGradientTabSelected(e)}
-                options={Object.keys(gradientColors).map((e, ek) => {
-                    return {
-                        text: e,
-                        value: ek,
-                    };
-                })}
-                status="neutral"
-                variant="fill"
-                inputSize="sm"
-            />
+            <div className="dropdown-holder">
+                {Object.keys(gradientColors).length && (
+                    <InputDropdown
+                        value={gradientTabSelected}
+                        onSelectOption={(e) => setGradientTabSelected(e)}
+                        options={Object.keys(gradientColors).map((e, ek) => {
+                            return {
+                                text: e,
+                                value: ek,
+                            };
+                        })}
+                        status="neutral"
+                        variant="fill"
+                        inputSize="sm"
+                    />
+                )}
+            </div>
             <div className="token-table-container">
                 {Object.keys(gradientColors).map((name, key) => {
                     if (gradientTabSelected === key) {
@@ -278,7 +282,7 @@ const Color = () => {
                                     key={`color-opacity-${c}`}
                                 >
                                     <span
-                                        className="color-bar darker"
+                                        className="bar color-bar darker"
                                         style={{
                                             background: color,
                                         }}

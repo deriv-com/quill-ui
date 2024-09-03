@@ -7,9 +7,14 @@ const Home = () => {
             <Heading.H3>Introduction to Quill Design System Tokens</Heading.H3>
             <div className="text-image-container">
                 <img
-                    src="/vault/tokens-banner.png"
+                    src="/vault/tokens.png"
                     alt="Logo"
-                    className="text-image"
+                    className="text-image for-light"
+                />
+                <img
+                    src="/vault/tokens-dark.png"
+                    alt="Logo"
+                    className="text-image for-dark"
                 />
 
                 <Text>

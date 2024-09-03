@@ -7,46 +7,42 @@ import Tooltip from "@components/Tooltip";
 import copyToClipboard from "../helpers/copier";
 import Logo from "../assets/images/logo.svg";
 
-const BorderRadius = () => {
+const Elevation = () => {
     const { currentPage } = usePageQuery();
     const { variables, getVariablesByPage } = useVersion();
-    const [radiuses, setRadiuses] = useState<unknown>({});
+    const [elevations, setElevations] = useState<unknown>({});
 
     useEffect(() => {
         const pageTokens: PageList = getVariablesByPage(
             currentPage,
         ) as unknown as PageList;
 
-        setRadiuses(pageTokens);
+        setElevations(pageTokens);
     }, [variables]);
 
     return (
         <div className="innerpage-container">
-            <Heading.H3>Border Radius Tokens</Heading.H3>
+            <Heading.H3>Elevation Tokens</Heading.H3>
             <Text>
-                Border-radius tokens are key design tokens in our system that
-                define the curvature of element corners, allowing for
-                consistent, rounded edges across UI components. These tokens
-                help create a cohesive visual style, enhancing the overall look
-                and feel of the user interface by providing a smooth, polished
-                appearance to elements like buttons, cards, containers, and
-                more.
+                Elevation tokens are standardized values used in a design system
+                to define the visual depth of UI elements through shadows and
+                layering. These tokens help establish a consistent hierarchy and
+                visual separation between elements, enhancing the overall user
+                experience by creating a sense of depth and hierarchy.
             </Text>
             <div className="token-table-container">
-                {Object.keys(radiuses).map((name, r) => {
-                    const radius = radiuses[name];
+                {Object.keys(elevations).map((name, r) => {
+                    const elevation = elevations[name];
                     return (
-                        <div
-                            className="token-list lg"
-                            key={`border-radius-${r}`}
-                        >
-                            <span
-                                className="bar box-bar"
-                                style={{
-                                    borderRadius: radius,
-                                }}
-                            >
-                                <img src={Logo} alt="Demo Border Radius" />
+                        <div className="token-list lg" key={`elevation-${r}`}>
+                            <span className="bar small-bar">
+                                <img
+                                    src={Logo}
+                                    alt="Demo Elevation"
+                                    style={{
+                                        boxShadow: elevation,
+                                    }}
+                                />
                             </span>
                             <Tooltip
                                 as="div"
@@ -64,12 +60,12 @@ const BorderRadius = () => {
                                 tooltipContent="Click to copy"
                                 tooltipPosition="top"
                                 className="tooltip-container"
-                                onClick={() => copyToClipboard(radius)}
+                                onClick={() => copyToClipboard(elevation)}
                             >
                                 <div className="token-group">
                                     <span className="token-tag">CSS</span>
                                     <Text size="sm" className="token-variable">
-                                        {radius}
+                                        {elevation}
                                     </Text>
                                 </div>
                             </Tooltip>
@@ -81,4 +77,4 @@ const BorderRadius = () => {
     );
 };
 
-export default BorderRadius;
+export default Elevation;

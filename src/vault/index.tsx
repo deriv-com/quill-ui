@@ -28,7 +28,7 @@ const Vault = () => {
                                     onClick={() =>
                                         setPage(["introduction-to-core-tokens"])
                                     }
-                                    className={`item-box ${currentPage[0] === "introduction-to-core-tokens" ? "active" : ""}`}
+                                    className={`item-box ${currentPage[0] === "introduction-to-core-tokens" || currentPage[0] === "core" ? "active" : ""}`}
                                 >
                                     <Text size="sm">Core Tokens</Text>
                                 </span>
@@ -38,7 +38,7 @@ const Vault = () => {
                                             "introduction-to-semantic-tokens",
                                         ])
                                     }
-                                    className={`item-box ${currentPage[0] === "introduction-to-semantic-tokens" ? "active" : ""}`}
+                                    className={`item-box ${currentPage[0] === "introduction-to-semantic-tokens" || currentPage[0] === "semantic" ? "active" : ""}`}
                                 >
                                     <Text size="sm">Semantic Tokens</Text>
                                 </span>
@@ -48,7 +48,7 @@ const Vault = () => {
                                             "introduction-to-component-tokens",
                                         ])
                                     }
-                                    className={`item-box ${currentPage[0] === "introduction-to-component-tokens" ? "active" : ""}`}
+                                    className={`item-box ${currentPage[0] === "introduction-to-component-tokens" || currentPage[0] === "component" ? "active" : ""}`}
                                 >
                                     <Text size="sm">Component Tokens</Text>
                                 </span>
@@ -69,7 +69,7 @@ const Vault = () => {
                                                 }
                                             >
                                                 {varKeys}
-                                                <LabelPairedChevronDownSmBoldIcon />
+                                                <LabelPairedChevronDownSmBoldIcon className="caret-icon" />
                                             </span>
                                         </Text>
                                         <div

@@ -10,6 +10,8 @@ import ComponentTokenIntroduction from "../pages/component-token-intro";
 import Home from "../pages/home";
 import Color from "../pages/color";
 import BorderRadius from "../pages/border-radius";
+import BorderWidth from "../pages/border-width";
+import Elevation from "../pages/elevation";
 
 type TPageRouter = { [key: string]: ReactNode };
 
@@ -46,7 +48,7 @@ const PageContainer = () => {
         ...currentPage.map((page: string) => {
             return {
                 content: convertCamelToCapitalized(unslugify(page)),
-                href: `/page?=${page}`,
+                href: `/?page=${page}`,
             };
         }),
     ];
@@ -57,11 +59,16 @@ const PageContainer = () => {
 
     const pageRouter: TPageRouter = {
         undefined: <Home />,
+        core: <CoreTokenIntroduction />,
+        semantic: <SemanticTokenIntroduction />,
+        component: <ComponentTokenIntroduction />,
         "introduction-to-core-tokens": <CoreTokenIntroduction />,
         "introduction-to-semantic-tokens": <SemanticTokenIntroduction />,
         "introduction-to-component-tokens": <ComponentTokenIntroduction />,
         color: <Color />,
         borderRadius: <BorderRadius />,
+        borderWidth: <BorderWidth />,
+        elevation: <Elevation />,
     };
 
     return (

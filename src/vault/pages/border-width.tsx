@@ -7,22 +7,22 @@ import Tooltip from "@components/Tooltip";
 import copyToClipboard from "../helpers/copier";
 import Logo from "../assets/images/logo.svg";
 
-const BorderRadius = () => {
+const BorderWidth = () => {
     const { currentPage } = usePageQuery();
     const { variables, getVariablesByPage } = useVersion();
-    const [radiuses, setRadiuses] = useState<unknown>({});
+    const [widths, setWidths] = useState<unknown>({});
 
     useEffect(() => {
         const pageTokens: PageList = getVariablesByPage(
             currentPage,
         ) as unknown as PageList;
 
-        setRadiuses(pageTokens);
+        setWidths(pageTokens);
     }, [variables]);
 
     return (
         <div className="innerpage-container">
-            <Heading.H3>Border Radius Tokens</Heading.H3>
+            <Heading.H3>Border Width Tokens</Heading.H3>
             <Text>
                 Border-radius tokens are key design tokens in our system that
                 define the curvature of element corners, allowing for
@@ -33,17 +33,17 @@ const BorderRadius = () => {
                 more.
             </Text>
             <div className="token-table-container">
-                {Object.keys(radiuses).map((name, r) => {
-                    const radius = radiuses[name];
+                {Object.keys(widths).map((name, r) => {
+                    const width = widths[name];
                     return (
                         <div
                             className="token-list lg"
-                            key={`border-radius-${r}`}
+                            key={`border-width-${r}`}
                         >
                             <span
                                 className="bar box-bar"
                                 style={{
-                                    borderRadius: radius,
+                                    border: `solid black ${width}`,
                                 }}
                             >
                                 <img src={Logo} alt="Demo Border Radius" />
@@ -69,7 +69,7 @@ const BorderRadius = () => {
                                 <div className="token-group">
                                     <span className="token-tag">CSS</span>
                                     <Text size="sm" className="token-variable">
-                                        {radius}
+                                        {width}
                                     </Text>
                                 </div>
                             </Tooltip>
@@ -81,4 +81,4 @@ const BorderRadius = () => {
     );
 };
 
-export default BorderRadius;
+export default BorderWidth;
