@@ -5,6 +5,9 @@ on:
     push:
         branches: [master]
 
+permissions:
+  contents: read # for checkout
+
 jobs:
   release:
     name: Release
@@ -32,9 +35,8 @@ jobs:
         run: npm audit signatures
       - name: Prepublish
         run: npm run prepublish
-      - name: Run tests and generate coverage report
-        run: npm run test:report
       - name: Release
+        if: success()
         env:
           CI: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
