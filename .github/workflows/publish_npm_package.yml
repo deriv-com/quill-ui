@@ -35,7 +35,6 @@ jobs:
       - name: Run tests and generate coverage report
         run: npm run test:report
       - name: Release
-        if: success()
         env:
           CI: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
