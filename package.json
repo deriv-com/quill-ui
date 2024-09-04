@@ -43,7 +43,8 @@
         "test:update": "jest --updateSnapshot",
         "test:staged": "jest --bail --findRelatedTests",
         "test:report": "jest --collectCoverage",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "extract:var": "node scripts/extract-variables.js"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.23.9",
