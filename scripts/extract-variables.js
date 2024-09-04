@@ -27,7 +27,7 @@ const readCssFiles = (dir) => {
 // Function to extract variable names from var() functions in a CSS file
 const extractVariablesFromCss = (cssFilePath) => {
     const fileContent = fs.readFileSync(cssFilePath, "utf8");
-    const varPattern = /var\(\s*--([\w-]+)\s*\)/g; // Matches var(--variable-name)
+    const varPattern = /var\(\s*--([\w-]+)\s*\)/g;
     const variables = [];
     let match;
 
@@ -59,7 +59,7 @@ const variables = getAllVariablesFromCssFiles(cssDir);
 console.log(variables);
 
 // Optionally, save the result array to a JSON file
-const outputPath = path.join(__dirname, "../dist/variables.json");
+const outputPath = path.join(__dirname, "../variables.json");
 fs.writeFileSync(outputPath, JSON.stringify(variables, null, 2));
 
 console.log(`Extracted variables to variables.json`);
