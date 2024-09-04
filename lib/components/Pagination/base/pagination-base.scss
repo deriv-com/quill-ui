@@ -70,10 +70,10 @@
 }
 
 .number-text {
+    color: var(--component-pagination-label-color-default);
+
     &[aria-current="true"] {
         font-weight: bold;
         color: var(--component-pagination-label-color-selected);
     }
-
-    color: var(--component-pagination-label-color-default);
 }

@@ -1,6 +1,9 @@
 # Quill UI
 
-<img alt="NPM Version" src="https://img.shields.io/npm/v/@deriv-com/quill-ui"> <img alt="NPM Downloads" src="https://img.shields.io/npm/dw/@deriv-com/quill-ui"> <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="@deriv-com/quill-ui is released under the MIT license." /> [![Coverage Status](https://coveralls.io/repos/github/deriv-com/quill-ui/badge.svg?branch=master)](https://coveralls.io/github/deriv-com/quill-ui?branch=master)
+![NPM Version](https://img.shields.io/npm/v/@deriv-com/quill-ui)
+![NPM Downloads](https://img.shields.io/npm/dw/@deriv-com/quill-ui)
+![License](https://img.shields.io/badge/license-MIT-blue.svg "This package is released under the MIT license.")
+[![Coverage Status](https://coveralls.io/repos/github/deriv-com/quill-ui/badge.svg?branch=master)](https://coveralls.io/github/deriv-com/quill-ui?branch=master)
 
 **Overview**
 

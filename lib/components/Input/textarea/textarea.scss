@@ -180,13 +180,13 @@
             &--md {
                 min-height: var(--temp-static-spacing-128);
                 padding-inline: var(--core-spacing-2400);
+                padding-top: var(--core-spacing-800);
                 &.no-left-icon {
                     padding-left: var(--core-spacing-800);
                 }
                 &.no-right-icon {
                     padding-right: var(--core-spacing-800);
                 }
-                padding-top: var(--core-spacing-800);
                 .quill-textarea {
                     max-height: calc(100% - var(--core-spacing-800));
                     font-size: var(
@@ -283,10 +283,11 @@
                 line-height: var(--core-lineHeight-100);
                 font-size: var(--core-fontSize-50);
                 height: var(--core-size-600);
+                top: var(--core-spacing-300);
+
                 &--neutral {
                     color: var(--component-field-label-color-focus);
                 }
-                top: var(--core-spacing-300);
 
                 &-field-marker {
                     font-size: var(
