@@ -31,7 +31,7 @@
         "build:es": "vite build --mode es",
         "build:cjs": "vite build --mode cjs",
         "merge-dist": "node merge-dist.js",
-        "build": "tsc -p ./tsconfig-build.json && npm run build:cjs && npm run build:es && npm run merge-dist",
+        "build": "tsc -p ./tsconfig-build.json && npm run build:cjs && npm run build:es && npm run merge-dist && npm run extract:var",
         "prepublish": "npm run build",
         "generate:styles": "node scripts/transformer.js &&  npx prettier --write lib/styles",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -43,7 +43,8 @@
         "test:update": "jest --updateSnapshot",
         "test:staged": "jest --bail --findRelatedTests",
         "test:report": "jest --collectCoverage",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "extract:var": "node scripts/extract-variables.js"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.23.9",
