@@ -43,13 +43,15 @@ export const DropdownItem = React.forwardRef<HTMLElement, DropdownItemProps>(
         }: DropdownItemProps,
         ref,
     ) => {
+        const itemSize = size === "lg" ? "md" : size;
+
         return React.createElement(
             as,
             {
                 ref,
                 className: clsx(
                     "quill-dropdown-item",
-                    `quill-dropdown-item__size--${size}`,
+                    `quill-dropdown-item__size--${itemSize}`,
                     `quill-dropdown-item__align-${textAlignment}`,
                     checkbox
                         ? `quill-dropdown-item-checkbox__selected--${selected}__disabled--${disabled}`
@@ -72,7 +74,7 @@ export const DropdownItem = React.forwardRef<HTMLElement, DropdownItemProps>(
                 </div>
             ),
             <Text
-                size={size}
+                size={itemSize}
                 className={clsx(
                     "quill-dropdown-item-label",
                     disabled && "quill-typography__color--disabled",
