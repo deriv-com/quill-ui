@@ -9,7 +9,7 @@ import {
 } from "react";
 import "./base.scss";
 import React from "react";
-import { TLeftOrCenter, TMediumSizes, TRightOrBottom } from "@types";
+import { TLeftOrCenter, TRegularSizes, TRightOrBottom } from "@types";
 import {
     StandaloneCircleCheckBoldIcon,
     StandaloneLockRegularIcon,
@@ -44,7 +44,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type?: Types;
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
-    inputSize?: TMediumSizes;
+    inputSize?: TRegularSizes;
     status?: Status;
     hasPasswordStrengthValidation?: boolean;
     validationMessages?: TValidationMessage[];
@@ -93,7 +93,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     (
         {
             type = "text",
-            inputSize = "md",
+            inputSize = "lg",
             className,
             status = "neutral",
             dropdown = false,
@@ -104,7 +104,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             variant = "outline",
             hasPasswordStrengthValidation = false,
             validationMessages,
-            placeholder = "",
+            placeholder = " ",
             leftIcon,
             message,
             hideMessage = false,
@@ -129,6 +129,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             allowDecimals = false,
             decimals,
             allowSign = true,
+            autoComplete,
             regex,
             customType,
             noStatusIcon,
@@ -162,6 +163,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         const commonProps = {
             readOnly,
             required,
+            autoComplete,
             value: inputValue,
             placeholder,
             className: clsx(
@@ -290,7 +292,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                     ref={ref}
                                 />
                             )}
-                            {label && inputSize === "md" && (
+                            {label && inputSize === "lg" && (
                                 <label
                                     className={clsx(
                                         "label",
@@ -393,7 +395,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                             </span>
                             {show_counter && maxLength && (
                                 <span className="message__container__text">
-                                    {inputValue.toString().length}/{maxLength}
+                                    {type === "tel"
+                                        ? inputValue
+                                              .toString()
+                                              .replace(/\s+/g, "").length
+                                        : inputValue.toString().length}
+                                    /{maxLength}
                                 </span>
                             )}
                         </div>

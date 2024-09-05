@@ -6,7 +6,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--error quill-input__wrapper__size--md"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--error quill-input__wrapper__size--lg"
     >
       <div
         class="quill-input-icons__wrapper"
@@ -15,7 +15,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
           class="quill-input-no-label__wrapper"
         >
           <input
-            class="input peer input__align--left input__size--md"
+            class="input peer input__align--left input__size--lg"
             id="quill-input-5"
             placeholder="0.00"
             type="text"
@@ -100,7 +100,7 @@ exports[`TextFieldWithSteppers should display message when provided 1`] = `
       </div>
     </div>
     <div
-      class="message__container message__container--md message__container__status--error"
+      class="message__container message__container--lg message__container__status--error"
     >
       <span
         class="message__container__text"
@@ -118,7 +118,7 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--lg"
     >
       <div
         class="quill-input-icons__wrapper"
@@ -127,12 +127,12 @@ exports[`TextFieldWithSteppers should display unitLeft when provided 1`] = `
           class="quill-input-no-label__wrapper"
         >
           <span
-            class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--disabled quill-input-label__label quill-input-label__label--left"
+            class="quill-typography quill-typography__body-text__size--lg__weight--regular__decoration--default quill-typography__color--disabled quill-input-label__label quill-input-label__label--left"
           >
             $
           </span>
           <input
-            class="input peer input__align--left input__size--md"
+            class="input peer input__align--left input__size--lg"
             id="quill-input-6"
             placeholder="0.00"
             type="text"
@@ -211,7 +211,7 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--lg"
     >
       <div
         class="quill-input-icons__wrapper"
@@ -220,14 +220,14 @@ exports[`TextFieldWithSteppers should display unitRight when provided 1`] = `
           class="quill-input-no-label__wrapper"
         >
           <input
-            class="input peer input__align--left input__size--md"
+            class="input peer input__align--left input__size--lg"
             id="quill-input-7"
             placeholder="0.00"
             type="text"
             value=""
           />
           <span
-            class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-input-label__label quill-input-label__label--right"
+            class="quill-typography quill-typography__body-text__size--lg__weight--regular__decoration--default quill-typography__color--default quill-input-label__label quill-input-label__label--right"
           >
             USD
           </span>
@@ -303,7 +303,7 @@ exports[`TextFieldWithSteppers should handle the hover for outline variant 1`] =
   class="quill-input-no-label__wrapper"
 >
   <input
-    class="input peer input__align--left input__size--md"
+    class="input peer input__align--left input__size--lg"
     id="quill-input-4"
     placeholder="Placeholder"
     type="text"
@@ -318,7 +318,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
     class="quill-input__container"
   >
     <div
-      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--md"
+      class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--lg"
     >
       <div
         class="quill-input-icons__wrapper"
@@ -327,7 +327,7 @@ exports[`TextFieldWithSteppers should match snapshot 1`] = `
           class="quill-input-no-label__wrapper"
         >
           <input
-            class="input peer input__align--left input__size--md"
+            class="input peer input__align--left input__size--lg"
             id="quill-input-1"
             placeholder="Enter text"
             type="text"

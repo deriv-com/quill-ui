@@ -40,6 +40,11 @@
             padding-inline: var(--component-dropdownItem-spacing-padding-md);
             gap: var(--component-dropdownItem-spacing-gap-md);
         }
+        &--lg {
+            min-height: var(--component-dropdownItem-height-item-md);
+            padding-inline: var(--component-dropdownItem-spacing-padding-md);
+            gap: var(--component-dropdownItem-spacing-gap-md);
+        }
     }
 
     &__selected {

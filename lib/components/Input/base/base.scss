@@ -21,6 +21,7 @@
             display: flex;
             gap: var(--component-field-spacing-gap-sm);
             justify-content: space-between;
+            &--lg,
             &--md {
                 padding-inline: var(--component-field-spacing-padding-md);
             }
@@ -225,8 +226,10 @@
             }
 
             &--fill {
-                border-right: var(--component-field-border-width) solid transparent;
-                border-left: var(--component-field-border-width) solid transparent;
+                border-right: var(--component-field-border-width) solid
+                    transparent;
+                border-left: var(--component-field-border-width) solid
+                    transparent;
 
                 &:has(input:disabled) {
                     background-color: var(--component-field-bg-fill-default);
@@ -293,6 +296,12 @@
                 gap: var(--component-field-spacing-gap-sm);
             }
             &--md {
+                padding-inline: var(--component-field-spacing-padding-md);
+                height: var(--size-generic-lg);
+                border-radius: var(--component-field-border-radius-md);
+                gap: var(--core-spacing-800);
+            }
+            &--lg {
                 padding-inline: var(--component-field-spacing-padding-md);
                 height: var(--component-field-height-md);
                 border-radius: var(--component-field-border-radius-md);
@@ -373,7 +382,7 @@
                         --semantic-typography-body-sm-regular-default-lineHeight
                     );
                 }
-                &--md {
+                &--md, &--lg {
                     font-size: var(
                         --semantic-typography-body-md-regular-default-fontSize
                     );

@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useDrag } from "@use-gesture/react";
 import { useMediaQuery } from "usehooks-ts";
+import { ActionSheetContext } from "@components/ActionSheet/root";
 
 interface SwipeBlockType {
     show?: boolean;
@@ -21,6 +22,8 @@ export const useSwipeBlock = ({
 
     // TODO: replace this with useScreens when @aizad-deriv is done with it.
     const isLg = useMediaQuery("(min-width: 1024px)");
+
+    const { expandable } = useContext(ActionSheetContext);
 
     useEffect(() => {
         if (isLg) {
@@ -55,7 +58,7 @@ export const useSwipeBlock = ({
     }, [show]);
 
     const bindHandle = useDrag(
-        ({ dragging, distance, initial, xy }) => {
+        ({ dragging, distance, initial, xy, cancel }) => {
             const windowHeight =
                 typeof window !== "undefined" ? window.innerHeight : 0;
 
@@ -72,13 +75,17 @@ export const useSwipeBlock = ({
             }
 
             if (dragging) {
-                if (shouldCloseOnDrag && isGoingDown) {
+                if (isGoingDown) {
+                    if (!shouldCloseOnDrag) return;
+                    cancel();
                     onClose?.();
-                    return;
+                } else {
+                    if (!expandable) return;
+                    setHeight(`${draggingPoint}px`);
                 }
-                setHeight(`${draggingPoint}px`);
             } else {
                 if (distance[1] === 0) return;
+                if (!expandable) return;
                 if (!isGoingDown) {
                     if (
                         draggingPoint >= 0 &&
@@ -95,7 +102,12 @@ export const useSwipeBlock = ({
                     }
                 } else {
                     if (draggingPoint <= windowHeight * 0.3) {
-                        setHeight("0px");
+                        if (!shouldCloseOnDrag) {
+                            if (height === "auto") return;
+                            return setHeight("30dvh");
+                        }
+                        setHeight("0dvh");
+                        cancel();
                         onClose?.();
                     } else if (draggingPoint <= windowHeight * 0.5) {
                         setHeight("30dvh");
