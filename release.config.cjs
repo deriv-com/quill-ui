@@ -2,14 +2,6 @@
 const transform = require("./release.utils.cjs");
 
 module.exports = {
-    branches: [
-        "+([0-9])?(.{+([0-9]),x}).x",
-        "master",
-        "next",
-        "next-major",
-        { name: "beta", prerelease: true },
-        { name: "alpha", prerelease: true },
-    ],
     repositoryUrl: "git@github.com:deriv-com/quill-ui.git",
     plugins: [
         [
@@ -67,11 +59,12 @@ module.exports = {
         ],
         "@semantic-release/changelog",
         [
-            "@semantic-release/npm",
+            "@semantic-release/git",
             {
-                npmPublish: true,
+                assets: ["CHANGELOG.md"],
+                message: "chore(changelog): update changelog [skip ci]",
             },
         ],
-        "@semantic-release/github",
     ],
+    noCi: true,
 };
