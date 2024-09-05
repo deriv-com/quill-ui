@@ -55,9 +55,6 @@ const getAllVariablesFromCssFiles = (dir) => {
 const cssDir = path.join(__dirname, "../dist/assets");
 const variables = getAllVariablesFromCssFiles(cssDir);
 
-// Output the result array
-console.log(variables);
-
 // Optionally, save the result array to a JSON file
 const outputPath = path.join(__dirname, "../dist/variables.json");
 fs.writeFileSync(outputPath, JSON.stringify(variables, null, 2));
