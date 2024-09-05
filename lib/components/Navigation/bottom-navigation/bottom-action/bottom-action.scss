@@ -31,12 +31,28 @@
     }
 
     &-badge-container {
-        top: var(--core-size-50);
-        right: -9px;
+        top: -4px;
     }
 
     &-label {
         font-size: var(--component-navigationBar-label-typography-xs);
         color: var(--component-navigationBar-label-color-default);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &-container {
+            position: relative;
+            width: 100%;
+
+            &:before {
+                content: "&nbsp;";
+                visibility: hidden;
+            }
+        }
     }
 }
