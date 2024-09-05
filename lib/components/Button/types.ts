@@ -32,7 +32,7 @@ export interface ButtonProps extends Omit<ComponentProps<"button">, "ref"> {
     label?: ReactNode;
     children?: ReactNode;
     iconButton?: boolean;
-    showChevron?: boolean;
+    hideChevron?: boolean;
 }
 
 export interface SocialButtonProps extends ComponentProps<"button"> {
