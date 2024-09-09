@@ -23,6 +23,8 @@ export interface TDropdownProps extends InputProps {
     containerClassName?: string;
     fullHeightOnOpen?: boolean;
     closeOnItemClick?: boolean;
+    noActionSheet?: boolean;
+    actionSheetDropdown?: boolean;
 }
 
 const HeadComponent = ({
@@ -102,6 +104,8 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
             fullHeightOnOpen = false,
             closeOnItemClick = true,
             containerClassName,
+            noActionSheet,
+            actionSheetDropdown,
             ...rest
         },
         ref,
@@ -114,13 +118,14 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
             setItems(options);
         }, [options]);
 
-        const bodyClassname = !isMobile
-            ? clsx(
-                  "dropdown__container",
-                  listHeight ? listHeight : `dropdown__container--height`,
-                  `dropdown__container--size-${inputSize}`,
-              )
-            : undefined;
+        const bodyClassname =
+            !isMobile && !actionSheetDropdown
+                ? clsx(
+                      "dropdown__container",
+                      listHeight ? listHeight : `dropdown__container--height`,
+                      `dropdown__container--size-${inputSize}`,
+                  )
+                : undefined;
 
         return (
             <CustomDropdown
@@ -129,6 +134,8 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
                 ref={ref}
                 isAutocomplete={isAutocomplete}
                 containerClassName={containerClassName}
+                noActionSheet={noActionSheet}
+                actionSheetDropdown={actionSheetDropdown}
                 headComponent={
                     <HeadComponent
                         data-testid="dropdown-input"
