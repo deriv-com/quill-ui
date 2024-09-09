@@ -4,8 +4,9 @@ import clsx from "clsx";
 import { Button } from "@components/Button";
 import { LabelPairedXmarkSmBoldIcon } from "@deriv/quill-icons";
 import { useSnackbar } from "@hooks/useSnackbar";
-import "./snackbar.scss";
 import { useOnClickOutside } from "usehooks-ts";
+import { TDefaultColor } from "@types";
+import "./snackbar.scss";
 
 export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     icon?: ReactNode;
@@ -68,6 +69,13 @@ export const Snackbar = ({
 
     if (standalone && !isVisible) return null;
 
+    const color = {
+        neutral: "white-black",
+        fail: "white"
+    }
+
+    const buttonColor = color[status] as TDefaultColor;
+    
     return (
         <div
             {...rest}
@@ -102,7 +110,7 @@ export const Snackbar = ({
                 <Button
                     variant="tertiary"
                     label={actionText}
-                    color="white"
+                    color={buttonColor}
                     onClick={handleActionClick}
                 />
             )}
@@ -111,7 +119,7 @@ export const Snackbar = ({
                     variant="tertiary"
                     iconPosition="start"
                     icon={<LabelPairedXmarkSmBoldIcon />}
-                    color="white"
+                    color={buttonColor}
                     size="md"
                     onClick={() => handleClose(delay)}
                     data-testid="close-button"
