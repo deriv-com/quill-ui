@@ -8,7 +8,6 @@ import {
     LabelPairedPlaceholderCaptionBoldIcon,
     LabelPairedPlaceholderSmRegularIcon,
 } from "@deriv/quill-icons/LabelPaired";
-import "./test.scss";
 
 const icons: Record<string, object | null> = {
     with_icon: <LabelPairedPlaceholderCaptionBoldIcon />,
