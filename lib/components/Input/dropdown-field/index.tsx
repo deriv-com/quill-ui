@@ -1,10 +1,12 @@
-import React, { forwardRef, useCallback, useEffect, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import clsx from "clsx";
-import { useCombobox } from "downshift";
 import "./dropdown.scss";
 import Input, { InputProps } from "../base";
-import { DropdownItem } from "@components/Atom";
+import { DropdownItem, DropdownItemProps } from "@components/Atom";
 import { reactNodeToString } from "@utils/common-utils";
+import { CustomDropdown } from "../custom-dropdown";
+import { useDropdown } from "@hooks/useDropdown";
+import useBreakpoints from "@hooks/useBreakpoints";
 
 export type TOptionList = {
     text?: React.ReactNode;
@@ -13,12 +15,73 @@ export type TOptionList = {
 
 export interface TDropdownProps extends InputProps {
     onSearch?: (inputValue: string) => void;
-    onSelectOption: (value: string) => void;
+    onSelectOption?: (value: string) => void;
     isAutocomplete?: boolean;
     options: TOptionList[];
     listHeight?: string;
     wrapperClassName?: string;
+    containerClassName?: string;
+    fullHeightOnOpen?: boolean;
+    closeOnItemClick?: boolean;
 }
+
+const HeadComponent = ({
+    value,
+    selectedText,
+    ...rest
+}: InputProps & { selectedText?: string }) => {
+    const { isOpen, setSelectedValue } = useDropdown();
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        if (!value) return;
+        setSelectedValue(value);
+    }, [value]);
+
+    useEffect(() => {
+        if (isOpen) inputRef.current?.focus();
+    }, [isOpen]);
+
+    return (
+        <Input
+            ref={inputRef}
+            isDropdownOpen={isOpen}
+            value={selectedText}
+            {...rest}
+        />
+    );
+};
+
+const DropdownBody = ({
+    item,
+    onSelectOption,
+    setSelectedText,
+    closeOnItemClick,
+    ...props
+}: DropdownItemProps & {
+    item: TOptionList;
+    onSelectOption?: (value: string) => void;
+    setSelectedText: (text: string) => void;
+    closeOnItemClick?: boolean;
+}) => {
+    const { selectedValue, setSelectedValue, close } = useDropdown();
+
+    const handleClick = () => {
+        if (!item.value) return;
+        setSelectedValue(item.value);
+        setSelectedText(reactNodeToString(item.text));
+        onSelectOption?.(item.value);
+        if (closeOnItemClick) close();
+    };
+
+    return (
+        <DropdownItem
+            selected={selectedValue?.toString() === item.value}
+            onClick={handleClick}
+            {...props}
+        />
+    );
+};
 
 export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
     (
@@ -36,152 +99,83 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
             onSelectOption,
             value,
             isAutocomplete = false,
+            fullHeightOnOpen = false,
+            closeOnItemClick = true,
+            containerClassName,
             ...rest
         },
         ref,
     ) => {
         const [items, setItems] = useState<TOptionList[]>(options);
-        const [shouldFilterList, setShouldFilterList] = useState(false);
-        const [selectedItem, setSelectedItem] = useState<TOptionList | null>(
-            null,
-        );
-        const [isAnimating, setIsAnimating] = useState(false);
-
-        const clearFilter = useCallback(() => {
-            setShouldFilterList(false);
-            setItems(options);
-        }, [options]);
-
-        const {
-            closeMenu,
-            getInputProps,
-            getItemProps,
-            getMenuProps,
-            getToggleButtonProps,
-            isOpen,
-            openMenu,
-            highlightedIndex,
-        } = useCombobox({
-            defaultSelectedItem:
-                options.find((item) => item.value === value) ?? null,
-            items,
-            itemToString(item) {
-                return item ? reactNodeToString(item.text) : "";
-            },
-            onInputValueChange({ inputValue }) {
-                onSearch?.(inputValue ?? "");
-                if (isAutocomplete || shouldFilterList) {
-                    setItems(
-                        options.filter((item) =>
-                            reactNodeToString(item.text)
-                                .toLowerCase()
-                                .includes(inputValue?.toLowerCase() ?? ""),
-                        ),
-                    );
-                }
-            },
-            onIsOpenChange({ isOpen }) {
-                setIsAnimating(true);
-                setTimeout(() => {
-                    clearFilter();
-                    setIsAnimating(false);
-                }, 100);
-                if (!isOpen) {
-                    clearFilter();
-                }
-            },
-            onSelectedItemChange({ selectedItem }) {
-                onSelectOption(selectedItem?.value ?? "");
-                setSelectedItem(selectedItem ?? null);
-                closeMenu();
-            },
-        });
-
-        const handleInputClick = useCallback(() => {
-            if (isAutocomplete) setShouldFilterList(true);
-
-            if (isOpen) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        }, [closeMenu, isOpen, openMenu, isAutocomplete]);
+        const [selectedText, setSelectedText] = useState<string>("");
+        const { isMobile } = useBreakpoints();
 
         useEffect(() => {
             setItems(options);
-            if (value) {
-                const defaultItem = options.find(
-                    (option) => option.value === value,
-                );
-                defaultItem && setSelectedItem(defaultItem);
-            }
         }, [options]);
 
+        const bodyClassname = !isMobile
+            ? clsx(
+                  "dropdown__container",
+                  listHeight ? listHeight : `dropdown__container--height`,
+                  `dropdown__container--size-${inputSize}`,
+              )
+            : undefined;
+
         return (
-            <div
+            <CustomDropdown
                 className={clsx("dropdown__wrapper", wrapperClassName)}
-                {...getToggleButtonProps()}
+                fullHeightOnOpen={fullHeightOnOpen}
+                ref={ref}
+                isAutocomplete={isAutocomplete}
+                containerClassName={containerClassName}
+                headComponent={
+                    <HeadComponent
+                        data-testid="dropdown-input"
+                        disabled={disabled}
+                        label={reactNodeToString(label)}
+                        name={name}
+                        dropdown
+                        textAlignment={textAlignment}
+                        inputSize={inputSize}
+                        status={status}
+                        onChange={(e) => {
+                            const inputValue = e.target.value;
+                            const filteredItems = options.filter((item) =>
+                                item.value
+                                    ?.toLowerCase()
+                                    .includes(inputValue.toLowerCase()),
+                            );
+                            setItems(
+                                filteredItems.length > 0
+                                    ? filteredItems
+                                    : options,
+                            );
+                            onSearch?.(inputValue);
+                        }}
+                        readOnly={!isAutocomplete}
+                        type="select"
+                        value={value}
+                        selectedText={selectedText}
+                        {...rest}
+                    />
+                }
             >
-                <Input
-                    ref={ref}
-                    data-testid="dropdown-input"
-                    disabled={disabled}
-                    label={reactNodeToString(label)}
-                    name={name}
-                    dropdown
-                    textAlignment={textAlignment}
-                    inputSize={inputSize}
-                    status={status}
-                    isDropdownOpen={isOpen}
-                    onClickCapture={handleInputClick}
-                    onKeyUp={() => setShouldFilterList(true)}
-                    onKeyDown={() => setShouldFilterList(true)}
-                    readOnly={!isAutocomplete}
-                    type="select"
-                    value={value}
-                    {...getInputProps()}
-                    {...rest}
-                />
-                <ul
-                    {...getMenuProps()}
-                    className={clsx("deriv-dropdown__menu", {
-                        "deriv-dropdown__menu--open": isOpen && !isAnimating,
-                        "deriv-dropdown__menu--close": !isOpen && isAnimating,
-                    })}
-                >
-                    {isOpen && items.length > 0 && (
-                        <div
-                            className={clsx(
-                                "dropdown__container",
-                                listHeight
-                                    ? listHeight
-                                    : `dropdown__container--height`,
-                                `dropdown__container--size-${inputSize}`,
-                            )}
-                        >
-                            {items.map((item, index) => (
-                                <DropdownItem
-                                    className={clsx(
-                                        highlightedIndex === index &&
-                                            selectedItem?.value !==
-                                                item.value &&
-                                            "dropdown__item--active",
-                                    )}
-                                    key={item.value}
-                                    onClick={() => clearFilter()}
-                                    label={item.text}
-                                    selected={
-                                        selectedItem?.value === item.value
-                                    }
-                                    size={inputSize}
-                                    textAlignment={textAlignment}
-                                    {...getItemProps({ index, item })}
-                                />
-                            ))}
-                        </div>
-                    )}
-                </ul>
-            </div>
+                <div className={bodyClassname}>
+                    {items.map((item) => (
+                        <DropdownBody
+                            item={item}
+                            key={item.value}
+                            label={item.text}
+                            size={inputSize}
+                            setSelectedText={setSelectedText}
+                            textAlignment={textAlignment}
+                            onSelectOption={onSelectOption}
+                            closeOnItemClick={closeOnItemClick}
+                        />
+                    ))}
+                </div>
+            </CustomDropdown>
         );
     },
 );
