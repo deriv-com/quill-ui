@@ -42,7 +42,7 @@ const meta = {
         variant: "fill",
         label: "",
         value: "",
-        inputSize: "lg"
+        inputSize: "lg",
     },
     argTypes: {
         id: {
