@@ -5,21 +5,21 @@ import { Markdown } from "@storybook/blocks";
  
 <Meta of={BottomNavigationStories} />
  
-# Bottom Navigation
+# Bottom Navigation Bar
 
-This component showcases how to use the `Navigation.Bottom` from the `@deriv-com/quill-ui` library. The `Navigation.Bottom` dynamically updates the displayed content based on the selected index, which is determined by user interaction.
+This component showcases how to use the `Navigation.BottomBar` from the `@deriv-com/quill-ui` library. The `Navigation.BottomBar` dynamically updates the displayed content based on the selected index, which is determined by user interaction.
 
 To use this component effectively:
 
-1. **Wrap** multiple `Navigation.BottomAction` components inside the `Navigation.Bottom` component.
-2. **Manage State**: Use the `onChange` prop of `Navigation.Bottom` to handle updates when a user selects a different action. Update the state (e.g., `index`) based on the selected value.
-3. **Control Selection**: Pass the current value to the `value` prop of `Navigation.Bottom` to control the currently selected action.
+1. **Wrap** multiple `Navigation.BottomAction` components inside the `Navigation.BottomBar` component.
+2. **Manage State**: Use the `onChange` prop of `Navigation.BottomBar` to handle updates when a user selects a different action. Update the state (e.g., `index`) based on the selected value.
+3. **Control Selection**: Pass the current value to the `value` prop of `Navigation.BottomBar` to control the currently selected action.
 
-This setup allows the `Navigation.Bottom` to handle user selections and update the content or state accordingly.
+This setup allows the `Navigation.BottomBar` to handle user selections and update the content or state accordingly.
 
 ## Props
 
-Both Navigation.Bottom and Navigation.BottomAction extend from `React.ComponentProps<React.ElementType>`, which means they inherit the default props supported by React components. This allows them to accept any standard props that a React component can use.
+Both Navigation.BottomBar and Navigation.BottomAction extend from `React.ComponentProps<React.ElementType>`, which means they inherit the default props supported by React components. This allows them to accept any standard props that a React component can use.
 
 ### Navigation.Bottom props:
 
@@ -74,7 +74,7 @@ export const Example: React.FC = () => {
     return (
         <>
             <Content pageIndex={index}/>
-            <Navigation.Bottom
+            <Navigation.BottomBar
                 onChange={(_, value) => {
                     setIndex(value);
                 }}
@@ -101,7 +101,7 @@ export const Example: React.FC = () => {
                 icon={<StandaloneGearRegularIcon iconSize="sm" />}
                 label="Settings"
                 />
-            </Navigation.Bottom>
+            </Navigation.BottomBar>
         </>
     );
 
