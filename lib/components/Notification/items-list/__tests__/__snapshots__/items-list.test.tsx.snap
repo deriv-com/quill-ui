@@ -80,7 +80,7 @@ exports[`NotificationItemsList should render all notification items 1`] = `
               </g>
               <defs>
                 <clippath
-                  id="ebb6eef1cacbbd7cd6c713ceea4cbb14__a"
+                  id="6be65d813442534067ee112f37a70324__a"
                 >
                   <path
                     d="M0 0h13v22H0z"
@@ -109,7 +109,7 @@ exports[`NotificationItemsList should render all notification items 1`] = `
               </g>
               <defs>
                 <clippath
-                  id="e106cdc629defb9faca17b34459113d5__a"
+                  id="e42a0431289682bb4c1db2c2832c419e__a"
                 >
                   <path
                     d="M0 0h13v22H0z"
@@ -186,7 +186,7 @@ exports[`NotificationItemsList should render all notification items 1`] = `
               </g>
               <defs>
                 <clippath
-                  id="ebb6eef1cacbbd7cd6c713ceea4cbb14__a"
+                  id="6be65d813442534067ee112f37a70324__a"
                 >
                   <path
                     d="M0 0h13v22H0z"
@@ -215,7 +215,7 @@ exports[`NotificationItemsList should render all notification items 1`] = `
               </g>
               <defs>
                 <clippath
-                  id="e106cdc629defb9faca17b34459113d5__a"
+                  id="e42a0431289682bb4c1db2c2832c419e__a"
                 >
                   <path
                     d="M0 0h13v22H0z"
@@ -309,7 +309,7 @@ exports[`NotificationItemsList should render notifications correctly for mobile 
               </g>
               <defs>
                 <clippath
-                  id="ebb6eef1cacbbd7cd6c713ceea4cbb14__a"
+                  id="6be65d813442534067ee112f37a70324__a"
                 >
                   <path
                     d="M0 0h13v22H0z"
@@ -338,7 +338,7 @@ exports[`NotificationItemsList should render notifications correctly for mobile 
               </g>
               <defs>
                 <clippath
-                  id="e106cdc629defb9faca17b34459113d5__a"
+                  id="e42a0431289682bb4c1db2c2832c419e__a"
                 >
                   <path
                     d="M0 0h13v22H0z"
@@ -415,7 +415,7 @@ exports[`NotificationItemsList should render notifications correctly for mobile 
               </g>
               <defs>
                 <clippath
-                  id="ebb6eef1cacbbd7cd6c713ceea4cbb14__a"
+                  id="6be65d813442534067ee112f37a70324__a"
                 >
                   <path
                     d="M0 0h13v22H0z"
@@ -444,7 +444,7 @@ exports[`NotificationItemsList should render notifications correctly for mobile 
               </g>
               <defs>
                 <clippath
-                  id="e106cdc629defb9faca17b34459113d5__a"
+                  id="e42a0431289682bb4c1db2c2832c419e__a"
                 >
                   <path
                     d="M0 0h13v22H0z"
