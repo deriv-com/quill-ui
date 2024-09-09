@@ -122,7 +122,7 @@ exports[`Tag Should render Custom with Icon 1`] = `
         </g>
         <defs>
           <clippath
-            id="0ee400fb24afa784382b5304f2c9559d__a"
+            id="31eff3c593617c252d6c6561d6f61a5f__a"
           >
             <path
               d="M0 0h14v22H0z"
@@ -162,7 +162,7 @@ exports[`Tag Should render Error Tag Fill 1`] = `
         </g>
         <defs>
           <clippath
-            id="6a411c02e5bb7a456eb09a0bd9d53e4f__a"
+            id="e9ec013840d6507c9365cea6c5f67056__a"
           >
             <path
               d="M0 0h14v22H0z"
@@ -202,7 +202,7 @@ exports[`Tag Should render Error Tag Outline 1`] = `
         </g>
         <defs>
           <clippath
-            id="6a411c02e5bb7a456eb09a0bd9d53e4f__a"
+            id="e9ec013840d6507c9365cea6c5f67056__a"
           >
             <path
               d="M0 0h14v22H0z"
@@ -242,7 +242,7 @@ exports[`Tag Should render Info Tag Fill 1`] = `
         </g>
         <defs>
           <clippath
-            id="a3e8725006d6df0e5887663f5b3f2bea__a"
+            id="d2fef7cf46ce6d2c65413192f0f444b8__a"
           >
             <path
               d="M0 0h14v22H0z"
@@ -282,7 +282,7 @@ exports[`Tag Should render Info Tag Outline 1`] = `
         </g>
         <defs>
           <clippath
-            id="a3e8725006d6df0e5887663f5b3f2bea__a"
+            id="d2fef7cf46ce6d2c65413192f0f444b8__a"
           >
             <path
               d="M0 0h14v22H0z"
@@ -322,7 +322,7 @@ exports[`Tag Should render Success Tag Fill 1`] = `
         </g>
         <defs>
           <clippath
-            id="0ee400fb24afa784382b5304f2c9559d__a"
+            id="31eff3c593617c252d6c6561d6f61a5f__a"
           >
             <path
               d="M0 0h14v22H0z"
@@ -362,7 +362,7 @@ exports[`Tag Should render Success Tag Outline 1`] = `
         </g>
         <defs>
           <clippath
-            id="0ee400fb24afa784382b5304f2c9559d__a"
+            id="31eff3c593617c252d6c6561d6f61a5f__a"
           >
             <path
               d="M0 0h14v22H0z"
@@ -402,7 +402,7 @@ exports[`Tag Should render Tag Default 1`] = `
         </g>
         <defs>
           <clippath
-            id="0ee400fb24afa784382b5304f2c9559d__a"
+            id="31eff3c593617c252d6c6561d6f61a5f__a"
           >
             <path
               d="M0 0h14v22H0z"
@@ -442,7 +442,7 @@ exports[`Tag Should render Warning Tag Fill 1`] = `
         </g>
         <defs>
           <clippath
-            id="a7600b9cb9a6e770365967925572ddab__a"
+            id="2c89bc91b841a05da2a7d346fa49e39d__a"
           >
             <path
               d="M0 0h14v22H0z"
@@ -482,7 +482,7 @@ exports[`Tag Should render Warning Tag Outline 1`] = `
         </g>
         <defs>
           <clippath
-            id="a7600b9cb9a6e770365967925572ddab__a"
+            id="2c89bc91b841a05da2a7d346fa49e39d__a"
           >
             <path
               d="M0 0h14v22H0z"
