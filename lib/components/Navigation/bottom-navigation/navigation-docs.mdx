@@ -1,0 +1,101 @@
+import { Canvas, Meta } from '@storybook/blocks';
+ 
+import * as BottomNavigationStories from './bottom-bar.stories';
+import { Markdown } from "@storybook/blocks";
+ 
+<Meta of={BottomNavigationStories} />
+ 
+# Bottom Navigation Bar
+
+This component showcases how to use the `Navigation.BottomBar` from the `@deriv-com/quill-ui` library. The `Navigation.BottomBar` dynamically updates the displayed content based on the selected index, which is determined by user interaction.
+
+To use this component effectively:
+
+1. **Wrap** multiple `Navigation.BottomAction` components inside the `Navigation.BottomBar` component.
+2. **Manage State**: Use the `onChange` prop of `Navigation.BottomBar` to handle updates when a user selects a different action. Update the state (e.g., `index`) based on the selected value.
+3. **Control Selection**: Pass the current value to the `value` prop of `Navigation.BottomBar` to control the currently selected action.
+
+This setup allows the `Navigation.BottomBar` to handle user selections and update the content or state accordingly.
+
+## Props
+
+Both Navigation.BottomBar and Navigation.BottomAction extend from `React.ComponentProps<React.ElementType>`, which means they inherit the default props supported by React components. This allows them to accept any standard props that a React component can use.
+
+### Navigation.Bottom props:
+
+| Prop       | Type                                                             | Description                                                                                                                                                                           |
+| ---------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| as         | `React.ElementType`                                              | Specifies the element tag to be used, allowing for customization of the element type.                                                                                                 |
+| showLabels | `boolean`                                                        | Controls whether labels are displayed in Navigation.BottomAction. If a showLabel prop is provided in Navigation.BottomAction, it will override this setting for that specific action. |
+| value      | `number`                                                         | Defines the active state for Navigation.BottomAction, starting from 0.                                                                                                                |
+| onChange   | `(event: React.ChangeEvent<HTMLElement>, value: number) => void` | Callback function triggered on change. It receives the change event and the updated value.                                                                                            |
+
+### Navigation.BottomAction props:
+
+| Prop       | Type                        | Description                                                                                       |
+| ---------- | --------------------------- | ------------------------------------------------------------------------------------------------- |
+| as         | `React.ElementType`         | Specifies the element tag to be used, allowing for customization of the element type.             |
+| badge      | `string`                    | string that will pass into the notification badge. Leave it empty if no notification badge needed |
+| selected   | `boolean`                   | Determines if the action is selected.                                                             |
+| label      | `string \| React.ReactNode` | The text or content to display as the label. Can be a string or a React node.                     |
+| showLabel  | `boolean`                   | Controls whether the label is displayed. If omitted, the label is displayed by default.           |
+| icon       | `React.ReactNode`           | The icon to display for the action.                                                               |
+| activeIcon | `React.ReactNode`           | The icon to display when the action is active.                                                    |
+
+### Example Usage:
+
+```javascript
+import React from "react";
+import { Navigation } from "@deriv-com/quill-ui";
+import Content from "path-to-content";
+
+export const Example: React.FC = () => {
+    const [index, setIndex] = React.useState(value);
+    const [notificationCount, setNotificationCount] = React.useState(0);
+
+    React.useEffect(() => {
+        // Example: Update notification count over time or based on events
+        const interval = setInterval(() => {
+            setNotificationCount((prevCount) => (prevCount < 5 ? prevCount + 1 : prevCount));
+        }, 5000);
+
+        // Cleanup interval on component unmount
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <>
+            <Content pageIndex={index}/>
+            <Navigation.BottomBar
+                onChange={(_, value) => {
+                    setIndex(value);
+                }}
+                value={index}
+            >
+                <Navigation.BottomAction
+                activeIcon={<StandalonePlaceholderFillIcon iconSize="sm" />}
+                icon={<StandalonePlaceholderRegularIcon iconSize="sm" />}
+                badge={notificationCount > 0 ? notificationCount.toString() : undefined}
+                label="Placeholder"
+                />
+                <Navigation.BottomAction
+                activeIcon={<StandaloneHouseBlankFillIcon iconSize="sm" />}
+                icon={<StandaloneHouseBlankRegularIcon iconSize="sm" />}
+                label="Home"
+                />
+                <Navigation.BottomAction
+                activeIcon={<StandaloneUserFillIcon iconSize="sm" />}
+                icon={<StandaloneUserRegularIcon iconSize="sm" />}
+                label="Profile"
+                />
+                <Navigation.BottomAction
+                activeIcon={<StandaloneGearFillIcon iconSize="sm" />}
+                icon={<StandaloneGearRegularIcon iconSize="sm" />}
+                label="Settings"
+                />
+            </Navigation.BottomBar>
+        </>
+    );
+
+};
+```
