@@ -9,3 +9,4 @@ export * from "./date-picker";
 export * from "./custom-dropdown";
 export * from "./wheel-picker";
 export * from "./input-phone-number";
+export * from "./password-field";

@@ -33,6 +33,6 @@ jobs:
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
       - name: Prepublish
-        run: npm run prepublish
+        run: npm run build
       - name: Build Storybook
         run: npm run build-storybook
