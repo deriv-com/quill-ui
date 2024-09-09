@@ -118,6 +118,15 @@ export const InputDropdown = forwardRef<HTMLInputElement, TDropdownProps>(
             setItems(options);
         }, [options]);
 
+        useEffect(() => {
+            if (value) {
+                const selectedItem = items.find((item) => item.value === value);
+                if (selectedItem) {
+                    setSelectedText(reactNodeToString(selectedItem.text));
+                }
+            }
+        }, [value]);
+
         const bodyClassname =
             !isMobile && !actionSheetDropdown
                 ? clsx(
