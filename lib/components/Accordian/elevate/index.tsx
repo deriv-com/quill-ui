@@ -7,11 +7,7 @@ export const Elevate = ({ className, ...otherProps }: AccordionProps) => {
     return (
         <Base
             {...otherProps}
-            className={clsx(
-                "rounded-1200 bg-opacity-white-800 shadow-330",
-                className,
-            )}
-            expandedColor="white"
+            className={clsx("quill-accordion-elevate", className)}
             divider="none"
         />
     );

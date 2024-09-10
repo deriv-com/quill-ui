@@ -1,6 +1,27 @@
 .quill-accordion {
     &-container {
         overflow: hidden;
+        
+        &-divider {
+            &-both {
+                border: var(--core-borderWidth-100) solid var(--semantic-color-monochrome-border-normal-mid);
+            
+            }
+            &-bottom {
+                border-block: var(--core-borderWidth-100) solid var(--semantic-color-monochrome-border-normal-mid);
+               
+            }
+            &-none {
+                border: none;
+            }
+        }
+        &-disabled {
+            pointer-events: none;
+            fill: var(--component-accordion-icon-disabled);
+        }
+        &-expanded-color {
+            background-color:  var(--component-accordion-bg-expand);
+        }
     }
     &-base {
 
@@ -10,9 +31,7 @@
         justify-content: space-between;
         gap: var(--component-accordion-spacing-lg);
         padding: var(--component-accordion-spacing-lg);
-        overflow: hidden;
         border-color: var(--semantic-color-monochrome-border-normal-mid);
-        background-color: var(--component-accordion-bg-default);
 
         &:hover {
             background-color: var(--component-accordion-bg-hover);
@@ -23,26 +42,15 @@
         }
 
         &-disabled {
-            background-color: var(--component-accordion-icon-disabled);
+            pointer-events: none;
         }
-        &-expanded {
-            &-gray {
-                background-color:  var(--component-accordion-bg-expand);
-            }
-            &-white {
-                background-color: var(--component-accordion-bg-default);
-            }
-           
-        }
-
-
-    }
-    &-radius {
-        border-radius: 24px;
     }
 
     &-icon {
-        display: flex;
+  
+        &-disabled {
+            fill: var(--component-accordion-icon-disabled);
+        }   
     }
 
     &-header {

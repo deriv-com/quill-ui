@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { Text } from "@components/Typography";
 import { StandaloneChevronDownRegularIcon } from "@deriv/quill-icons/Standalone";
 import { AccordionProps } from "../types";
-import "./accordian-base.scss";
+import "./accordion-base.scss";
 
 export const Base = ({
     id,
@@ -14,10 +14,8 @@ export const Base = ({
     expanded = false,
     textSize = "md",
     icon,
-    isFlush = false,
     divider = "none",
     disabled = false,
-    expandedColor = "gray",
     customContent: CustomContent,
     contentClassname,
     onExpand,
@@ -37,7 +35,6 @@ export const Base = ({
         }
     }, [isExpanded, onExpand, title]);
 
-    // Handle Collapse via Keyboard
     const handleKeyUp = useCallback(
         (e: KeyboardEvent) => {
             if (e.code === "Enter" || e.key === "Enter") {
@@ -49,7 +46,6 @@ export const Base = ({
         [toggleCollapse],
     );
 
-    // Scroll to expanded item
     const scrollToExpanded = (delay = 1000) => {
         const accElement = accordionElement.current;
 
@@ -63,7 +59,6 @@ export const Base = ({
         }
     };
 
-    // Handle auto expand and auto scroll on hash targets
     useEffect(() => {
         const hashWithoutSymbol =
             typeof window !== "undefined" && window.location.hash.slice(1);
@@ -93,23 +88,16 @@ export const Base = ({
             tabIndex={0}
             className={clsx(
                 "quill-accordion-container",
-                `quill-accordion-base-expanded-${expandedColor}`,
-                !isFlush && "quill-accordion-radius",
-                {
-                    divider,
-                    className,
-                    disabled,
-                },
+                `quill-accordion-container-divider-${divider}`,
+                disabled && `quill-accordion-container-${disabled}`,
+                className,
+                isExpanded && "quill-accordion-container-expanded-color",
             )}
         >
             <div
                 className={clsx(
-                    !isFlush && !isExpanded && "quill-accordion-radius",
                     "quill-accordion-base",
                     disabled && "quill-accordion-base-disabled",
-                    expandedColor &&
-                        isExpanded &&
-                        `quill-accordion-base-expanded-${expandedColor}`,
                     contentClassname,
                 )}
                 onClick={() => toggleCollapse()}
@@ -121,7 +109,9 @@ export const Base = ({
                     <>
                         {icon && (
                             <div
-                                className="quill-accordion-base-icon"
+                                className={clsx(
+                                    disabled && "quill-accordion-icon-disabled",
+                                )}
                                 data-testid="accordion-icon"
                             >
                                 {icon}
@@ -133,7 +123,7 @@ export const Base = ({
                                     "quill-accordion-base-header-title-color",
                                     `quill-accordion-base-header-title-${textSize}`,
                                     disabled &&
-                                        "quill-accordion-base-header-title-disabled",
+                                        "quill-accordion-header-title-disabled",
                                 )}
                             >
                                 {title}
@@ -144,7 +134,7 @@ export const Base = ({
                                         "quill-accordion-header-subtitle-color",
                                         `quill-accordion-base-header-subtitle-${textSize}`,
                                         disabled &&
-                                            "quill-accordion-base-header-subtitle-disabled",
+                                            "quill-accordion-header-subtitle-disabled",
                                     )}
                                 >
                                     {subtitle}
@@ -158,7 +148,14 @@ export const Base = ({
                     data-state={isExpanded || isAutoExpand ? "open" : "close"}
                     data-testid="chevron"
                 >
-                    <StandaloneChevronDownRegularIcon iconSize="sm" />
+                    <StandaloneChevronDownRegularIcon
+                        iconSize="sm"
+                        fill={
+                            disabled
+                                ? "var(--component-accordion-icon-disabled)"
+                                : "var(--component-textIcon-normal-prominent)"
+                        }
+                    />
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 .quill-accordion-elevate {
-  border-radius: 24px;
+  border-radius: var(--core-borderRadius-1200);
   background-color: var(--component-accordion-bg-default);
-  box-shadow: var(var(--core-elevation-shadow-330));
+  box-shadow: var(--core-elevation-shadow-330);
 }

@@ -14,13 +14,11 @@ export type AccordionProps = {
     divider?: AccordionDivider;
     disabled?: boolean;
     contentClassname?: string;
-    expandedColor?: TExpandedColor;
     content?: () => ReactNode;
     customContent?: () => ReactNode;
-    isFlush?: boolean;
     onExpand?: (e: boolean, i: string) => void;
 };
-type TExpandedColor = "white" | "gray";
+
 export interface AccordionTabProps extends Omit<AccordionProps, "content"> {
     tab?: Tab;
     className?: string;
