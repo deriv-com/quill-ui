@@ -32,6 +32,7 @@ export interface TCustomDropdown
     contentAlign?: "left" | "right";
     noAutoClose?: boolean;
     withProvider?: boolean;
+    actionSheetDropdown?: boolean;
 }
 
 const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
@@ -53,6 +54,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             contentAlign = "left",
             noAutoClose = false,
             disabled,
+            actionSheetDropdown = false,
             ...rest
         },
         ref,
@@ -135,7 +137,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
                         headComponent
                     )}
                 </div>
-                {!isMobile || noActionSheet ? (
+                {!actionSheetDropdown && (!isMobile || noActionSheet) ? (
                     isOpen && (
                         <div
                             className={clsx(

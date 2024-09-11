@@ -52,10 +52,10 @@ const BottomAction = (props: BottomActionProps) => {
                 position="top-right"
                 size="sm"
                 variant="notification"
-                className={clsx(
-                    showLabel &&
-                        "quill-navigation-bottom-bar__action-badge-container",
-                )}
+                className={clsx({
+                    "quill-navigation-bottom-bar__action-badge-container":
+                        showLabel && label,
+                })}
             >
                 {(icon || activeIcon) && (
                     <span className="quill-navigation-bottom-bar__action-icon">
@@ -63,10 +63,15 @@ const BottomAction = (props: BottomActionProps) => {
                     </span>
                 )}
             </Badge>
-            {showLabel && (
-                <CaptionText color="quill-navigation-bottom-bar__action-label">
-                    {label}
-                </CaptionText>
+            {label && showLabel && (
+                <div className="quill-navigation-bottom-bar__action-label-container">
+                    <CaptionText
+                        centered
+                        color="quill-navigation-bottom-bar__action-label"
+                    >
+                        {label}
+                    </CaptionText>
+                </div>
             )}
             {children}
         </Element>

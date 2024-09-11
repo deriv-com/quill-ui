@@ -85,8 +85,8 @@ export const useSwipeBlock = ({
                 }
             } else {
                 if (distance[1] === 0) return;
+                if (!expandable) return;
                 if (!isGoingDown) {
-                    if (!expandable) return;
                     if (
                         draggingPoint >= 0 &&
                         draggingPoint <= windowHeight * 0.3

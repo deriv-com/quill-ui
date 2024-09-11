@@ -5,7 +5,7 @@ import { DatePicker } from "../index";
 import dayjs from "dayjs";
 
 describe("DatePicker", () => {
-    const currentDate = new Date();
+    const currentDate = new Date("2024-09-05");
     const defaultDateFormatter = currentDate.toLocaleString(
         navigator.languages,
         {

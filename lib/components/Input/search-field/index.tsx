@@ -41,7 +41,7 @@ export const SearchField = forwardRef<HTMLInputElement, SearchFieldProps>(
             <Input
                 leftIcon={
                     <StandaloneSearchRegularIcon
-                        fill="var(--core-color-opacity-black-600)"
+                        fill="var(--component-textIcon-normal-default)"
                         iconSize="sm"
                     />
                 }

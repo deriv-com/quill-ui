@@ -14,6 +14,7 @@ import Navigation from "..";
 import { BottomBar, BottomAction } from ".";
 import { Text } from "@components/Typography";
 import "@deriv-com/quill-tokens/dist/quill.css";
+import { Button } from "@components/Button";
 
 type Template = React.ComponentProps<typeof BottomBar & typeof BottomAction>;
 
@@ -69,7 +70,7 @@ const Template: React.FC<Template> = ({ length = 4, ...args }: Template) => {
     const { value, showLabels, customIcon, ...rest } = args;
     const [index, setIndex] = React.useState(value);
     const [notificationCount, setNotificationCount] = React.useState<number[]>([
-        3, 2, 1, 4,
+        100, 2, 1, 4,
     ]);
 
     React.useEffect(() => {
@@ -82,6 +83,10 @@ const Template: React.FC<Template> = ({ length = 4, ...args }: Template) => {
         return () => clearInterval(interval);
     }, []);
 
+    const handleClickButton = (value: number) => {
+        setNotificationCount([value, value, value, value]);
+    };
+
     const Content = () => (
         <div
             style={{
@@ -89,11 +94,22 @@ const Template: React.FC<Template> = ({ length = 4, ...args }: Template) => {
                     "var(--semantic-color-slate-solid-surface-frame-low)",
                 height: "500px",
                 display: "flex",
+                flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
             }}
         >
             <Text>This is content in Menu {index + 1}</Text>
+            <div>
+                <Button
+                    onClick={() => handleClickButton(100)}
+                    label="Click Here set notification to 99+"
+                />
+                <Button
+                    onClick={() => handleClickButton(1)}
+                    label="Click Here set notification to 1"
+                />
+            </div>
         </div>
     );
 

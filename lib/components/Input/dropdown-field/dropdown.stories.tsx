@@ -41,8 +41,8 @@ const meta = {
         placeholder: "Select",
         variant: "fill",
         label: "",
-        value: "",
-        inputSize: "lg"
+        value: "option1",
+        inputSize: "lg",
     },
     argTypes: {
         id: {

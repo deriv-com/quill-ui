@@ -31,8 +31,7 @@
         "build:es": "vite build --mode es",
         "build:cjs": "vite build --mode cjs",
         "merge-dist": "node merge-dist.js",
-        "build": "tsc -p ./tsconfig-build.json && npm run build:cjs && npm run build:es && npm run merge-dist",
-        "prepublish": "npm run build",
+        "build": "tsc -p ./tsconfig-build.json && npm run build:cjs && npm run build:es && npm run merge-dist && npm run extract:var",
         "generate:styles": "node scripts/transformer.js &&  npx prettier --write lib/styles",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "format": "npx prettier . --write",
@@ -43,7 +42,8 @@
         "test:update": "jest --updateSnapshot",
         "test:staged": "jest --bail --findRelatedTests",
         "test:report": "jest --collectCoverage",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "extract:var": "node scripts/extract-variables.js"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.23.9",
@@ -150,7 +150,6 @@
         "@deriv-com/quill-tokens": "^2.0.10",
         "@deriv/quill-icons": "^1.22.10",
         "@headlessui/react": "1.7.18",
-        "@semantic-release/git": "^10.0.1",
         "dayjs": "^1.11.11",
         "react-calendar": "^5.0.0",
         "react-number-format": "^5.4.0",
