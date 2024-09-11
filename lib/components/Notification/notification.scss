@@ -1,17 +1,17 @@
 .quill-notification {
-    &:link,
-    &:visited,
-    &:hover,
-    &:active {
-        text-decoration: none;
-    }
-
     position: relative;
     display: flex;
     width: 100%;
     cursor: pointer;
     height: fit-content;
     background-color: var(--component-modal-bg);
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        text-decoration: none;
+    }
 
     .icon {
         position: relative;

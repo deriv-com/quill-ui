@@ -16,29 +16,28 @@ import { Markdown } from "@storybook/blocks";
 ### InputPhoneNumberProps
 
 <Markdown>
-{`
-| Name                   | Type                                             | Default                      | Description                                                   |
-| -------------------- | --------------------------------- | ----------------- | --------------------------------------------------------------------------- |
-| codeIcon           | boolean                        | true             | Shows the country code icon in the dropdown.                                |
-| fillAddonBorderColor | string                        |                 | Border color for the addon component.                                       |
-| codeLabel          | string                          |                 | Custom label for the country code dropdown.                                 |
-| label              | string                          |                 | Label for the input element.                                 |
-| textAlignment      | "left", "center"                | "left"          | Input value alignment                                 |
-| countryCodes       | TCountryCodes[]                 |                 | List of country codes available in the dropdown.                            |
-| shortCode          | string                          |                 | Default country short code to be selected in the dropdown.                  |
-| onCodeChange       | (item: TCountryCodes) => void   |                 | Callback function called when the country code changes.                     |
-| onValueChange      | (phoneNumber: string) => void   |                 | Callback function called input or code values changed and returns phone number with code.|
-| showFlags          | boolean                         | true            | Determines if flags should be displayed in the dropdown.                    |
-| inputSize          | "sm", "md" ,"lg"                | "md"            | Sets the size of the input field.                                           |
-| variant            | "outline" ,"fill"               | "outline"       | Sets the variant style of the input.                                        |
-| status             | "neutral" ,"error" ,"success"   | "neutral"       | Sets the status style of the input.                                         |
-| placeholder        | string                          | "00 0000 0000"  | Placeholder text for the input field.                                       |
-| formatProps        | object                          | { format: "## #### ####" } | Props for formatting the input value.                                |
-| value              | string                          |                 | The current value of the input field.                                       |
-| disabled           | boolean                         | false           | Disables the input field.                                                   |
-| onChange           | (event: ChangeEvent<HTMLInputElement>) => void |  | Callback function for handling input changes.                        |
+    {`
+| Name                 | Type                                           | Default                    | Description                                                                               |
+| -------------------- | ---------------------------------------------- | -------------------------- | ----------------------------------------------------------------------------------------- |
+| codeIcon             | boolean                                        | true                       | Shows the country code icon in the dropdown.                                              |
+| fillAddonBorderColor | string                                         |                            | Border color for the addon component.                                                     |
+| codeLabel            | string                                         |                            | Custom label for the country code dropdown.                                               |
+| label                | string                                         |                            | Label for the input element.                                                              |
+| textAlignment        | "left", "center"                               | "left"                     | Input value alignment                                                                     |
+| countryCodes         | TCountryCodes[]                                |                            | List of country codes available in the dropdown.                                          |
+| shortCode            | string                                         |                            | Default country short code to be selected in the dropdown.                                |
+| onCodeChange         | (item: TCountryCodes) => void                  |                            | Callback function called when the country code changes.                                   |
+| onValueChange        | (phoneNumber: string) => void                  |                            | Callback function called input or code values changed and returns phone number with code. |
+| showFlags            | boolean                                        | true                       | Determines if flags should be displayed in the dropdown.                                  |
+| inputSize            | "sm", "md" ,"lg"                               | "lg"                       | Sets the size of the input field.                                                         |
+| variant              | "outline" ,"fill"                              | "outline"                  | Sets the variant style of the input.                                                      |
+| status               | "neutral" ,"error" ,"success"                  | "neutral"                  | Sets the status style of the input.                                                       |
+| placeholder          | string                                         | "00 0000 0000"             | Placeholder text for the input field.                                                     |
+| formatProps          | object                                         | { format: "## #### ####" } | Props for formatting the input value.                                                     |
+| value                | string                                         |                            | The current value of the input field.                                                     |
+| disabled             | boolean                                        | false                      | Disables the input field.                                                                 |
+| onChange             | (event: ChangeEvent<HTMLInputElement>) => void |                            | Callback function for handling input changes.                                             |
 `}
-
 </Markdown>
 
 ### Example Usage:

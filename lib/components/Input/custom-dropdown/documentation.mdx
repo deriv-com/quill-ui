@@ -1,0 +1,138 @@
+import { Canvas, Meta } from "@storybook/blocks";
+
+import * as CustomDropdownStories from "./custom-dropdown.stories";
+
+<Meta name="Documentation" of={CustomDropdownStories} />
+
+# CustomDropdown Component
+
+The CustomDropdown component is a versatile dropdown input that supports autocomplete functionality and manages its open state internally. It leverages the useDropdown hook and DropdownProvider to provide an efficient dropdown experience.
+
+## How to Use CustomDropdown Component
+
+The CustomDropdown component manages the open state for its children using the `useDropdown` hook. The `useDropdown` hook returns an object with the following properties:
+
+-   **selectedValue**: The current selected value from the dropdown.
+-   **isOpen**: A boolean indicating whether the dropdown is currently open. This state is typically managed internally by the children of the CustomDropdown and is not used directly.
+-   **open**: A function to open the dropdown.
+-   **close**: A function to close the dropdown.
+-   **setSelectedValue**: A function to set the selected value in the dropdown.
+
+### CustomDropdown Props
+
+The `CustomDropdown` component accepts the following props:
+
+| Prop Name                   | Type                                               | Description                                                                                                                                            | Default Value |
+| --------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
+| **`isAutocomplete`**        | `boolean`                                          | Determines whether the input supports autocomplete functionality.                                                                                      | `false`       |
+| **`onClickDropdown`**       | `(e: React.MouseEvent<HTMLDivElement>) => void`    | A callback function that is called when the dropdown is clicked.                                                                                       | N/A           |
+| **`value`**                 | `string \| number`                                 | The current value of the dropdown input.                                                                                                               | N/A           |
+| **`onChange`**              | `(e: React.ChangeEvent<HTMLInputElement>) => void` | A callback function that is called when the input value changes.                                                                                       | N/A           |
+| **`containerClassName`**    | `string`                                           | ClassName applied to the dropdown container.                                                                                                           | N/A           |
+| **`actionSheetFooter`**     | `ComponentProps<typeof ActionSheet.Footer>`        | Accepts all the props from the `ActionSheet.Footer` component.                                                                                         | N/A           |
+| **`onOpen`**                | `() => void`                                       | A callback function triggered when the dropdown content opens.                                                                                         | N/A           |
+| **`onClose`**               | `() => void`                                       | A callback function triggered when the dropdown content closes.                                                                                        | N/A           |
+| **`fullHeightOnOpen`**      | `boolean`                                          | Controls whether the action sheet opens in full height (90vh) on mobile screens.                                                                       | `true`        |
+| **`headComponent`**         | `React.ReactNode`                                  | This is the head component that you want to have dropdown content. By default it is Input component.                                                   | N/A           |
+| **`noAutoClose`**           | `boolean`                                          | A prop to control content should close dropdown content on click outside. Set to `true` if you want to disable close dropdown content on click outside | `false`       |
+| **`Input Component Props`** | `All props from Input component`                   | The component also accepts all properties available in the `Input` component.                                                                          | N/A           |
+
+### Usage Example
+
+Here is an example of how to use the CustomDropdown component:
+
+```javascript
+import React from "react";
+import { DropdownItem, CustomDropdown, useDropdown } from "@deriv-com/quill-ui";
+
+const data = [
+{ value: "1", text: 1 },
+{ value: "2", text: 2 },
+{ value: "3", text: 3 },
+{ value: "4", text: 4 },
+{ value: "5", text: 5 },
+];
+
+const Content = () => {
+    const { close, selectedValue, setSelectedValue } = useDropdown();
+
+    const handleClick = (value: string) => {
+        setSelectedValue(value);
+        close();
+    };
+
+    return data.map(({ value, text }) => {
+        return (
+            <DropdownItem
+                onClick={() => handleClick(value)}
+                label={text}
+                selected={selectedValue == value}
+            >
+                {text}
+            </DropdownItem>
+        );
+    });
+};
+
+const Dropdown = () => {
+    return (
+        <CustomDropdown isAutoComplete inputSize="md" placeholder="placeholder">
+            <Content />
+        </CustomDropdown>
+    );
+};
+
+export default Dropdown;
+```
+
+Here is an example of how to use the CustomDropdown component with headComponent:
+
+```javascript
+import React from "react";
+import { DropdownItem, CustomDropdown, useDropdown, Button } from "@deriv-com/quill-ui";
+
+const data = [
+{ value: "1", text: 1 },
+{ value: "2", text: 2 },
+{ value: "3", text: 3 },
+{ value: "4", text: 4 },
+{ value: "5", text: 5 },
+];
+
+const HeadComponent = () => {
+    const { close } = useDropdown();
+
+    return <Button onClick={close} label="label" />;
+};
+
+const Content = () => {
+    const { close, selectedValue, setSelectedValue } = useDropdown();
+
+    const handleClick = (value: string) => {
+        setSelectedValue(value);
+        close();
+    };
+
+    return data.map(({ value, text }) => {
+        return (
+            <DropdownItem
+                onClick={() => handleClick(value)}
+                label={text}
+                selected={selectedValue == value}
+            >
+                {text}
+            </DropdownItem>
+        );
+    });
+};
+
+const Dropdown = () => {
+    return (
+        <CustomDropdown headComponent={<HeadComponent />}>
+            <Content />
+        </CustomDropdown>
+    );
+};
+
+export default Dropdown;
+```
