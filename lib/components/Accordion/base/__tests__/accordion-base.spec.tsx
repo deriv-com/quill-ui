@@ -1,8 +1,7 @@
-import { render, screen } from "@testing-library/react";
-
+import { render, screen, act } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import Base from "../index";
 import { StandaloneAndroidIcon } from "@deriv/quill-icons/Standalone";
-import userEvent from "@testing-library/user-event";
 import H2 from "@components/Typography/heading/h2";
 
 const title = "Accordion Title";
@@ -31,11 +30,11 @@ describe("Accordion - Base", () => {
     });
 
     it("should render content correctly", () => {
-        const content = screen.getByRole("heading", {
+        const contentElement = screen.getByRole("heading", {
             name: "Content",
             level: 2,
         });
-        expect(content).toBeInTheDocument();
+        expect(contentElement).toBeInTheDocument();
     });
 
     it("should render icon correctly", () => {
@@ -47,10 +46,12 @@ describe("Accordion - Base", () => {
     });
 
     it("should expand the accordion on click", async () => {
-        const click = screen.getByTestId("toggle-expand");
+        const toggleButton = screen.getByTestId("toggle-expand");
 
-        await userEvent.click(click);
+        await act(async () => {
+            await userEvent.click(toggleButton);
+        });
 
-        expect(screen.getByTestId("expanded-content"));
+        expect(screen.getByTestId("expanded-content")).toBeInTheDocument();
     });
 });

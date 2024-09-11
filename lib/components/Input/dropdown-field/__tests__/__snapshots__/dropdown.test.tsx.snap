@@ -69,7 +69,7 @@ exports[`InputDropdown component should render a TextField with error status 1`]
             </g>
             <defs>
               <clippath
-                id="089cb08a4a23034cce0572ced2f706b6__a"
+                id="b2fbae3ff4787741870694db3344c0c7__a"
               >
                 <path
                   d="M0 0h14v22H0z"
@@ -159,7 +159,7 @@ exports[`InputDropdown component should render a TextField with success status 1
             </g>
             <defs>
               <clippath
-                id="089cb08a4a23034cce0572ced2f706b6__a"
+                id="b2fbae3ff4787741870694db3344c0c7__a"
               >
                 <path
                   d="M0 0h14v22H0z"
