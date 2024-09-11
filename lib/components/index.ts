@@ -1,4 +1,5 @@
 export * from "./ActionSheet";
+export * from "./Accordion";
 export * from "./Atom";
 export * from "./Button";
 export * from "./Badge";

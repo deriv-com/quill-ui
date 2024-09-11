@@ -20,7 +20,6 @@ export type AccordionProps = {
 };
 
 export interface AccordionTabProps extends Omit<AccordionProps, "content"> {
-    tab?: Tab;
     className?: string;
     variant?: keyof AccordionVariants;
     content: {
@@ -29,17 +28,5 @@ export interface AccordionTabProps extends Omit<AccordionProps, "content"> {
     };
     multiCollapse?: boolean;
 }
-
-export type Tab = {
-    align?: TabAlign;
-    data: TabData[];
-};
-
-export type TabData = {
-    id: number;
-    title: string;
-};
-
-export type TabAlign = "center" | "end";
 
 export type AccordionDivider = "none" | "both" | "bottom";
