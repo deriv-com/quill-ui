@@ -29,6 +29,7 @@
             button:enabled:focus,
             button:disabled {
                 background-color: unset;
+                opacity: var(--opacity-disabled);
             }
 
             button:enabled:focus:is(.react-calendar__navigation__arrow),
