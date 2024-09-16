@@ -1,0 +1,74 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Hooks/useTheme" />
+
+# `useTheme` - Quill UI
+
+## Overview
+
+The `useTheme` custom hook is part of the `quill-ui` library, designed to streamline theme management in your React applications. This hook provides a simple API to access and toggle between light and dark themes, ensuring your UI can easily adapt to different user preferences or system settings.
+
+### Provider: `ThemeProvider`
+
+Before using the `useTheme` hook, you must wrap your application (or specific parts of it) with the `ThemeProvider` from `quill-ui`. This provider manages the theme context, allowing the `useTheme` hook to access and modify the current theme.
+
+#### Example usage:
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.tsx';
+import { ThemeProvider } from "@deriv-com/quill-ui";
+import theme from "path-to-your-theme";
+import './index.css';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <ThemeProvider theme={theme}> //theme prop is optional
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>
+);
+```
+
+## `ThemeProvider` Details
+
+`ThemeProvider` uses the `ThemeContext` to manage the current theme and apply it across your application. It supports both light and dark themes and can automatically adapt to the user's system preferences. Additionally, we allow consumers to pass in their own custom themes via the `theme` prop.
+
+### Key Features
+
+-   **Automatic Theme Detection**: Automatically selects the theme based on the user's system preferences.
+-   **Theme Toggle**: Easily toggle between light and dark themes.
+-   **Custom Themes**: Consumers can pass in their own theme using the `theme` prop, enabling more flexibility and customization.
+
+### Available Themes
+
+-   **`light`**: The light theme, typically used in well-lit environments.
+-   **`dark`**: The dark theme, ideal for low-light environments.
+
+## Hook: `useTheme`
+
+The `useTheme` hook allows you to access the current theme and provides a method to toggle between themes within any functional component in your `quill-ui`-based application.
+
+#### Example usage:
+
+```javascript
+import React from "react";
+import { useTheme, Text, Button } from "@deriv-com/quill-ui";
+
+const MyComponent = () => {
+    const { theme, toggleTheme } = useTheme();
+
+    return (
+        <>
+            <Text>Current theme: {theme}</Text>
+            <Button
+                onClick={() => toggleTheme()}
+                label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            />
+        </>
+    );
+};
+
+export default MyComponent;
+```
