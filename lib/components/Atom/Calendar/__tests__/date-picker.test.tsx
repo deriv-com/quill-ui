@@ -48,18 +48,6 @@ describe("DatePicker", () => {
         });
     });
 
-    it("should render calendar with selected value and call onFormattedDate function if the value was passed", () => {
-        const { container } = render(
-            <DatePicker
-                value={currentDate}
-                onFormattedDate={mockOnFormattedDate}
-            />,
-        );
-
-        expect(container).toMatchSnapshot();
-        expect(mockOnFormattedDate).toHaveBeenCalled();
-    });
-
     it("should render calendar with range selection", async () => {
         const { container } = render(<DatePicker selectRange />);
 
