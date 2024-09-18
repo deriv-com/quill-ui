@@ -30,6 +30,9 @@ export interface TCustomDropdown
     headComponent?: React.ReactNode;
     noActionSheet?: boolean;
     contentAlign?: "left" | "right";
+    noAutoClose?: boolean;
+    withProvider?: boolean;
+    actionSheetDropdown?: boolean;
 }
 
 const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
@@ -49,6 +52,9 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
             headComponent,
             noActionSheet = false,
             contentAlign = "left",
+            noAutoClose = false,
+            disabled,
+            actionSheetDropdown = false,
             ...rest
         },
         ref,
@@ -67,7 +73,10 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
         const contentRef = useRef<HTMLDivElement>(null);
 
         const { isOpen, open, close, selectedValue, setSelectedValue } =
-            useDropdown([containerRef, actionSheetRef, contentRef]);
+            useDropdown(
+                [containerRef, actionSheetRef, contentRef],
+                noAutoClose,
+            );
 
         const { isMobile } = useBreakpoints();
 
@@ -76,11 +85,13 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
         }, [value]);
 
         const handleInputClick = (e: React.MouseEvent<HTMLDivElement>) => {
-            const input = inputRef.current;
-            input && input?.focus();
-            if (isAutocomplete && isOpen) return;
-            onClickDropdown?.(e);
-            isOpen ? close() : open();
+            if (!disabled) {
+                const input = inputRef.current;
+                input && input?.focus();
+                if (isAutocomplete && isOpen) return;
+                onClickDropdown?.(e);
+                isOpen ? close() : open();
+            }
         };
 
         const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -126,7 +137,7 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
                         headComponent
                     )}
                 </div>
-                {!isMobile || noActionSheet ? (
+                {!actionSheetDropdown && (!isMobile || noActionSheet) ? (
                     isOpen && (
                         <div
                             className={clsx(
@@ -160,13 +171,17 @@ const CustomDropdownContent = forwardRef<HTMLDivElement, TCustomDropdown>(
 );
 
 export const CustomDropdown = forwardRef<HTMLDivElement, TCustomDropdown>(
-    ({ children, onOpen, onClose, ...rest }, ref) => {
-        return (
+    ({ children, withProvider = true, onOpen, onClose, ...rest }, ref) => {
+        return withProvider ? (
             <DropdownProvider onOpen={onOpen} onClose={onClose}>
                 <CustomDropdownContent ref={ref} {...rest}>
                     {children}
                 </CustomDropdownContent>
             </DropdownProvider>
+        ) : (
+            <CustomDropdownContent ref={ref} {...rest}>
+                {children}
+            </CustomDropdownContent>
         );
     },
 );

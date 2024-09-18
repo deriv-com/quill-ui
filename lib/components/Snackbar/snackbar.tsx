@@ -4,8 +4,9 @@ import clsx from "clsx";
 import { Button } from "@components/Button";
 import { LabelPairedXmarkSmBoldIcon } from "@deriv/quill-icons";
 import { useSnackbar } from "@hooks/useSnackbar";
-import "./snackbar.scss";
 import { useOnClickOutside } from "usehooks-ts";
+import { TDefaultColor } from "@types";
+import "./snackbar.scss";
 
 export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     icon?: ReactNode;
@@ -18,6 +19,7 @@ export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     onCloseAction?: () => void;
     delay?: number;
     standalone?: boolean;
+    status?: "fail" | "neutral";
 }
 
 export const Snackbar = ({
@@ -31,6 +33,7 @@ export const Snackbar = ({
     hasCloseButton = true,
     delay,
     standalone = true,
+    status = "neutral",
     ...rest
 }: SnackbarProps) => {
     const { removeSnackbar } = useSnackbar();
@@ -66,21 +69,39 @@ export const Snackbar = ({
 
     if (standalone && !isVisible) return null;
 
+    const color = {
+        neutral: "white-black",
+        fail: "white"
+    }
+
+    const buttonColor = color[status] as TDefaultColor;
+    
     return (
         <div
             {...rest}
             className={clsx(
-                "snackbar",
+                "quill-snackbar",
+                `quill-snackbar__status--${status}`,
                 isVisible ? "slide-up" : "slide-up slide-down",
             )}
             ref={ref}
         >
-            {Icon && <div className="snackbar__icon--container">{Icon}</div>}
-            <div className="snackbar__message--container">
+            {Icon && (
+                <div className={clsx("quill-snackbar__icon--container")}>
+                    {React.isValidElement(Icon) &&
+                        React.cloneElement(Icon, {
+                            fill: `var(--component-snackbar-icon-${status})`,
+                            ...Icon.props,
+                        })}
+                </div>
+            )}
+            <div className="quill-snackbar__message--container">
                 <Text
-                    className="snackbar__message"
+                    className="quill-snackbar__message"
                     size="sm"
-                    style={{ color: "var(--component-snackbar-label-color)" }}
+                    style={{
+                        color: `var(--component-snackbar-label-color-${status})`,
+                    }}
                 >
                     {message}
                 </Text>
@@ -89,7 +110,7 @@ export const Snackbar = ({
                 <Button
                     variant="tertiary"
                     label={actionText}
-                    color="white"
+                    color={buttonColor}
                     onClick={handleActionClick}
                 />
             )}
@@ -98,7 +119,7 @@ export const Snackbar = ({
                     variant="tertiary"
                     iconPosition="start"
                     icon={<LabelPairedXmarkSmBoldIcon />}
-                    color="white"
+                    color={buttonColor}
                     size="md"
                     onClick={() => handleClose(delay)}
                     data-testid="close-button"

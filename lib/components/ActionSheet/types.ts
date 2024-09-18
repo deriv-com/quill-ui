@@ -1,5 +1,6 @@
 import { ComponentPropsWithoutRef } from "react";
 import { ExcludeAllNull, TLeftOrRight } from "../../types";
+import { TButtonColor } from "@components/Button";
 
 interface OpenType {
     isOpen?: boolean | undefined;
@@ -40,6 +41,7 @@ export interface FooterProps
     shouldCloseOnSecondaryButtonClick?: boolean;
     isPrimaryButtonDisabled?: boolean;
     isSecondaryButtonDisabled?: boolean;
+    primaryButtonColor?: TButtonColor;
 }
 
 export type FooterAlignment = FooterProps["alignment"];

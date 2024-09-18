@@ -18,12 +18,7 @@ import { useSnackbar } from "@hooks/useSnackbar";
 import { SnackbarProvider } from "@providers/snackbar/snackbarProvider";
 
 const icons: Record<string, object | null> = {
-    with_icon: (
-        <StandalonePlaceholderRegularIcon
-            fill="var(--component-snackbar-icon)"
-            iconSize="sm"
-        />
-    ),
+    with_icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
     none: null,
 };
 
@@ -156,13 +151,7 @@ const { addSnackbar } = useSnackbar();
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const Template = ({
-    icon,
-    message,
-    actionText,
-    onActionClick,
-    hasCloseButton,
-}: React.ComponentProps<typeof Snackbar>) => {
+const Template = ({ ...rest }: React.ComponentProps<typeof Snackbar>) => {
     const { addSnackbar } = useSnackbar();
 
     return (
@@ -173,11 +162,7 @@ const Template = ({
                 style={{ margin: "0 auto" }}
                 onClick={() => {
                     addSnackbar({
-                        message: message,
-                        icon: icon,
-                        hasCloseButton: hasCloseButton,
-                        actionText: actionText,
-                        onActionClick: onActionClick,
+                        ...rest,
                     });
                 }}
             />
@@ -199,12 +184,7 @@ SnackbarWithMessageOnly.args = {
 export const SnackbarWithIcon = Template.bind(this) as Story;
 SnackbarWithIcon.args = {
     ...meta.args,
-    icon: (
-        <StandalonePlaceholderRegularIcon
-            fill="var(--component-snackbar-icon)"
-            iconSize="sm"
-        />
-    ),
+    icon: <StandalonePlaceholderRegularIcon iconSize="sm" />,
     hasCloseButton: false,
     actionText: "",
 };

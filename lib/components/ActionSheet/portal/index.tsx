@@ -1,17 +1,21 @@
 import React, { ComponentProps, forwardRef, useContext } from "react";
 import { createPortal } from "react-dom";
 import { CSSTransition } from "react-transition-group";
-import HandleBar from "../handle-bar";
+import HandleBar, { BarProps } from "../handle-bar";
 import "./portal.scss";
 import { useSwipeBlock } from "@hooks/useSwipeBlock";
 import { ActionSheetContext } from "../root";
 import clsx from "clsx";
 
-interface PortalProps extends ComponentProps<"div"> {
+export interface PortalProps extends ComponentProps<"div"> {
     shouldCloseOnDrag?: boolean;
     shouldDetectSwipingOnContainer?: boolean;
     showHandlebar?: boolean;
+    handleBarPosition?: BarProps["position"];
+    handleBarIndex?: number;
     fullHeightOnOpen?: boolean;
+    disableCloseOnOverlay?: boolean;
+    portalId?: string;
 }
 
 const Portal = forwardRef<HTMLDivElement, PortalProps>(
@@ -22,11 +26,18 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
             shouldDetectSwipingOnContainer = false,
             showHandlebar = true,
             fullHeightOnOpen = false,
+            disableCloseOnOverlay = false,
+            portalId,
+            handleBarIndex,
+            handleBarPosition,
             ...restProps
         },
         ref,
     ) => {
-        const { show, handleClose, className, position, type, expandable } =
+        const actionSheetRoot =
+            (portalId && document.getElementById(portalId)) || document.body;
+
+        const { show, handleClose, className, position, type } =
             useContext(ActionSheetContext);
         const { height, containerRef, bindHandle, isScrolled, isLg } =
             useSwipeBlock({
@@ -35,6 +46,10 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
                 shouldCloseOnDrag,
                 fullHeightOnOpen,
             });
+        const handleModalClose = () => {
+            if (disableCloseOnOverlay) return;
+            handleClose?.();
+        };
 
         return (
             <>
@@ -43,7 +58,7 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
                         {show && type === "modal" && (
                             <div
                                 data-testid="dt-actionsheet-overlay"
-                                onClick={handleClose}
+                                onClick={handleModalClose}
                                 className="quill-action-sheet--portal__variant--modal"
                             />
                         )}
@@ -74,17 +89,15 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
                                     ref={containerRef}
                                     style={{ height }}
                                     {...(shouldDetectSwipingOnContainer &&
-                                    !isScrolled &&
-                                    !isLg &&
-                                    expandable
-                                        ? bindHandle()
-                                        : {})}
+                                        !isScrolled &&
+                                        !isLg &&
+                                        bindHandle())}
                                 >
                                     {showHandlebar && (
                                         <HandleBar
-                                            {...(expandable || shouldCloseOnDrag
-                                                ? bindHandle()
-                                                : {})}
+                                            {...bindHandle()}
+                                            position={handleBarPosition}
+                                            style={{ zIndex: handleBarIndex }}
                                         />
                                     )}
                                     {children}
@@ -92,7 +105,7 @@ const Portal = forwardRef<HTMLDivElement, PortalProps>(
                             </div>
                         </CSSTransition>
                     </React.Fragment>,
-                    document.body,
+                    actionSheetRoot,
                 )}
             </>
         );

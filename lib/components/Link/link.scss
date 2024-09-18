@@ -1,11 +1,12 @@
 @import "@styles/static.scss";
 
-.link {
+.quill-link {
     display: inline-flex;
     gap: var(--core-borderRadius-400);
     text-decoration: none;
     cursor: pointer;
     align-items: center;
+    color: var(--component-textIcon-normal-prominent);
 
     &__color {
         &-black {
@@ -16,8 +17,6 @@
             color: var(--component-textIcon-inverse-prominent);
         }
     }
-
-    color: var(--component-textIcon-normal-prominent);
 
     &--hover {
         text-decoration: var(--core-fontDecoration-underline);

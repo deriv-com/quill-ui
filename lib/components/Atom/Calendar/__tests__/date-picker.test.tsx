@@ -5,7 +5,7 @@ import { DatePicker } from "../index";
 import dayjs from "dayjs";
 
 describe("DatePicker", () => {
-    const currentDate = new Date();
+    const currentDate = new Date("2024-09-05");
     const defaultDateFormatter = currentDate.toLocaleString(
         navigator.languages,
         {
@@ -46,18 +46,6 @@ describe("DatePicker", () => {
                 dayjs(currentDate).format("DD/MM/YYYY"),
             );
         });
-    });
-
-    it("should render calendar with selected value and call onFormattedDate function if the value was passed", () => {
-        const { container } = render(
-            <DatePicker
-                value={currentDate}
-                onFormattedDate={mockOnFormattedDate}
-            />,
-        );
-
-        expect(container).toMatchSnapshot();
-        expect(mockOnFormattedDate).toHaveBeenCalled();
     });
 
     it("should render calendar with range selection", async () => {

@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputPhoneNumber Component should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="quill-phone-input__container"
+  >
+    <div
+      class="quill-input__container"
+    >
+      <div
+        class="quill-input__wrapper quill-input__wrapper__variant--outline quill-input__wrapper__variant--outline--neutral quill-input__wrapper__size--lg"
+      >
+        <div
+          class="quill-phone-input-addon"
+        >
+          <div
+            class="quill-custom-dropdown__container"
+          >
+            <div
+              class="quill-custom-dropdown__head"
+            >
+              <div
+                class="quill-country-code quill-country-code__variant--outline quill-country-code__size--lg"
+              >
+                <svg
+                  class="mobile-icon"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18.5 7.75v.625c0 .703-.586 1.25-1.25 1.25h-2.5c-.703 0-1.25-.547-1.25-1.25V7.75h-1.25C11.547 7.75 11 8.336 11 9v15c0 .703.547 1.25 1.25 1.25h7.5c.664 0 1.25-.547 1.25-1.25V9c0-.664-.586-1.25-1.25-1.25zm-1.25 0h-2.5v.625h2.5zM9.75 9c0-1.367 1.094-2.5 2.5-2.5h7.5c1.367 0 2.5 1.133 2.5 2.5v15c0 1.406-1.133 2.5-2.5 2.5h-7.5a2.47 2.47 0 0 1-2.5-2.5z"
+                  />
+                </svg>
+                <div>
+                  <p
+                    class="quill-typography quill-typography__body-text__size--md__weight--regular__decoration--default quill-typography__color--default quill-country-code__value"
+                  >
+                    +1
+                  </p>
+                </div>
+                <svg
+                  class="dropdown__transform"
+                  data-state="close"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m15.336 22.164-7.5-7.5c-.39-.351-.39-.937 0-1.328.351-.352.937-.352 1.328 0L16 20.21l6.836-6.836c.352-.39.937-.39 1.328 0a.92.92 0 0 1 0 1.29l-7.539 7.5a.856.856 0 0 1-1.29 0"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="quill-input-icons__wrapper"
+        >
+          <div
+            class="quill-input-no-label__wrapper"
+          >
+            <input
+              class="input peer input__align--left input__size--lg"
+              id="quill-input-1"
+              inputmode="numeric"
+              placeholder="00 0000 0000"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -9,19 +9,13 @@ export const SnackbarController = () => {
 
     return createPortal(
         <div className="snackbar--container">
-            {queue.slice(0, 1).map((item: SnackbarProps) => (
-                <Snackbar
-                    id={item.id}
-                    isVisible={item.isVisible}
-                    message={item.message}
-                    actionText={item.actionText}
-                    hasCloseButton={item.hasCloseButton}
-                    key={item.id}
-                    icon={item.icon}
-                    onActionClick={item.onActionClick}
-                    standalone={false}
-                />
-            ))}
+            {queue.slice(0, 1).map((item: SnackbarProps) => {
+                const { id, ...rest } = item;
+
+                return (
+                    <Snackbar id={id} key={id} standalone={false} {...rest} />
+                );
+            })}
         </div>,
         document.body,
     );

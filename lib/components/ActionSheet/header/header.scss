@@ -4,7 +4,6 @@
     &--header {
         display: flex;
         flex-direction: column;
-        text-align: center;
 
         &__expandable {
             &--true {
@@ -30,6 +29,10 @@
         @include breakpoint("lg") {
             margin: var(--component-actionSheet-spacing-padding-md)
                 var(--component-actionSheet-spacing-padding-lg);
+        }
+
+        &-text {
+            flex-grow: 1;
         }
 
         &--icon {

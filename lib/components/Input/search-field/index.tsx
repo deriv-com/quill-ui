@@ -27,7 +27,7 @@ export const SearchField = forwardRef<HTMLInputElement, SearchFieldProps>(
                 }}
             >
                 <StandaloneCircleXmarkFillIcon
-                    fill="var(--core-color-opacity-black-400)"
+                    fill="var(--component-textIcon-normal-default)"
                     iconSize="sm"
                 />
             </button>
@@ -41,7 +41,7 @@ export const SearchField = forwardRef<HTMLInputElement, SearchFieldProps>(
             <Input
                 leftIcon={
                     <StandaloneSearchRegularIcon
-                        fill="var(--core-color-opacity-black-600)"
+                        fill="var(--component-textIcon-normal-default)"
                         iconSize="sm"
                     />
                 }

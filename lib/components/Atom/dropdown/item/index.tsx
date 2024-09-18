@@ -1,5 +1,5 @@
 import React, { HTMLAttributes, ReactNode } from "react";
-import { TLeftOrCenter, TMediumSizes } from "@types";
+import { TLeftOrCenter, TRegularSizes } from "@types";
 import "./item.scss";
 import clsx from "clsx";
 import { Text } from "@components/Typography";
@@ -12,7 +12,7 @@ export interface DropdownItemProps extends HTMLAttributes<HTMLElement> {
     as?: keyof HTMLElementTagNameMap;
     bold?: boolean;
     italic?: boolean;
-    size?: TMediumSizes;
+    size?: TRegularSizes;
     centered?: boolean;
     label: ReactNode;
     disabled?: boolean;
@@ -43,13 +43,15 @@ export const DropdownItem = React.forwardRef<HTMLElement, DropdownItemProps>(
         }: DropdownItemProps,
         ref,
     ) => {
+        const itemSize = size === "lg" ? "md" : size;
+
         return React.createElement(
             as,
             {
                 ref,
                 className: clsx(
                     "quill-dropdown-item",
-                    `quill-dropdown-item__size--${size}`,
+                    `quill-dropdown-item__size--${itemSize}`,
                     `quill-dropdown-item__align-${textAlignment}`,
                     checkbox
                         ? `quill-dropdown-item-checkbox__selected--${selected}__disabled--${disabled}`
@@ -72,7 +74,7 @@ export const DropdownItem = React.forwardRef<HTMLElement, DropdownItemProps>(
                 </div>
             ),
             <Text
-                size={size}
+                size={itemSize}
                 className={clsx(
                     "quill-dropdown-item-label",
                     disabled && "quill-typography__color--disabled",

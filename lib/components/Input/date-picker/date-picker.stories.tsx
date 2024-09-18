@@ -40,6 +40,7 @@ const meta = {
         fieldMarker: false,
         value: dayjs(Date.now()).format("DD/MM/YYYY"),
         fullHeightOnOpen: true,
+        inputSize: "lg"
     },
     argTypes: {
         id: {
@@ -60,8 +61,8 @@ const meta = {
             control: { type: "radio" },
         },
         inputSize: {
-            table: { type: { summary: "sm | md" } },
-            options: ["sm", "md"],
+            table: { type: { summary: "sm | md | lg" } },
+            options: ["sm", "md", "lg"],
             control: { type: "radio" },
         },
         variant: {

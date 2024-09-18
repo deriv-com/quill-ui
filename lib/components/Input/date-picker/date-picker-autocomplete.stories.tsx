@@ -36,6 +36,7 @@ const meta = {
         required: false,
         fieldMarker: false,
         label: "",
+        inputSize: "lg"
     },
     argTypes: {
         id: {
@@ -56,8 +57,8 @@ const meta = {
             control: { type: "radio" },
         },
         inputSize: {
-            table: { type: { summary: "sm | md" } },
-            options: ["sm", "md"],
+            table: { type: { summary: "sm | md | lg" } },
+            options: ["sm", "md", "lg"],
             control: { type: "radio" },
         },
         variant: {

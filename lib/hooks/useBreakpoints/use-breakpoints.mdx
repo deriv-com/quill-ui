@@ -1,0 +1,72 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Hooks/useBreakPoints" />
+
+# `useBreakpoints` - Quill UI
+
+## Overview
+
+`useBreakpoints` custom hook is part of the `quill-ui` library, designed to simplify responsive design within your React applications. This hook provides an intuitive API to detect and respond to various screen sizes, ensuring your UI components adapt seamlessly across different devices.
+
+### Provider: `BreakpointProvider`
+
+Before using the useBreakpoints hook, you must wrap your application (or specific parts of it) with the BreakpointProvider from quill-ui. This provider enables the context that useBreakpoints relies on to determine and expose the current screen's breakpoint.
+
+#### Example usage:
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.tsx';
+import { BreakpointProvider } from "@deriv-com/quill-ui";
+import './index.css';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <BreakpointProvider>
+        <App />
+    </BreakpointProvider>
+  </React.StrictMode>
+);
+```
+
+## `BreakpointProvider` Details
+
+`BreakpointProvider` uses media queries to track various screen sizes (breakpoints) and provides this information to all components within its context. These breakpoints are aligned with common responsive design standards, making it easier to create adaptive UIs.
+
+### Available Breakpoints
+
+-   **`isXs`**: `(max-width: 640px)` — Extra small screens, such as mobile devices.
+-   **`isSm`**: `(min-width: 640px)` — Small screens, such as small tablets.
+-   **`isMd`**: `(min-width: 768px)` — Medium screens, such as tablets.
+-   **`isLg`**: `(min-width: 1024px)` — Large screens, such as laptops.
+-   **`isXl`**: `(min-width: 1280px)` — Extra large screens, such as desktops.
+-   **`is2xl`**: `(min-width: 1440px)` — Double extra large screens, such as large desktops.
+-   **`isMobile`**: `(max-width: 768px)` — Screens considered mobile (`xs`, `sm`).
+-   **`isTablet`**: `(min-width: 768px and max-width: 1024px)` — Screens considered tablets (`md`).
+-   **`isDesktop`**: `(min-width: 1024px)` — Screens considered desktops and larger (`lg`, `xl`, `2xl`).
+
+## Hook: `useBreakpoints`
+
+The `useBreakpoints` hook allows you to access the current breakpoint values within any functional component in your `quill-ui`-based application.
+
+#### Example usage:
+
+```javascript
+import React from "react";
+import { useBreakpoints } from "quill-ui";
+
+const MyComponent = () => {
+    const { isMobile, isDesktop, isLg } = useBreakpoints();
+
+    return (
+        <div>
+            {isMobile && <p>This is displayed on mobile devices.</p>}
+            {isDesktop && <p>This is displayed on desktop devices.</p>}
+            {isLg && <p>This is displayed on large screens.</p>}
+        </div>
+    );
+};
+
+export default MyComponent;
+```

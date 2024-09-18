@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const transform = require("./release.utils.cjs");
 
 module.exports = {

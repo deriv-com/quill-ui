@@ -96,10 +96,15 @@
             }
         }
 
+        &__white-bg-wrapper {
+            background-color: var(--core-color-solid-slate-50);
+            padding: unset;
+            height: fit-content;
+            width: fit-content;
+        }
         &__full-width {
             width: 100%;
         }
-
         &-label {
             text-wrap: nowrap;
         }

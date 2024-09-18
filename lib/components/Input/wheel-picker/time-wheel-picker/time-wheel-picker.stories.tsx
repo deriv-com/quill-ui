@@ -42,6 +42,7 @@ const meta = {
         wheelType: "Time",
         minutesInterval: 1,
         hoursInterval: 1,
+        inputSize: "lg",
     },
     argTypes: {
         status: {
@@ -53,7 +54,7 @@ const meta = {
             control: { type: "radio" },
         },
         inputSize: {
-            options: ["sm", "md"],
+            options: ["sm", "md", "lg"],
             control: { type: "radio" },
         },
         variant: {

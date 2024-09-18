@@ -52,7 +52,9 @@ export const Segment = forwardRef<HTMLButtonElement, SegmentProps>(
                 !allowFocus &&
                 (ref as RefObject<HTMLButtonElement>)?.current
             ) {
-                (ref as RefObject<HTMLButtonElement>)?.current?.focus();
+                (ref as RefObject<HTMLButtonElement>)?.current?.focus({
+                    preventScroll: true,
+                });
             }
         }, [isSelected]);
 

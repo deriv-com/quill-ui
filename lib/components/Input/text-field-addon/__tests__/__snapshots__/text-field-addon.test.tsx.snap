@@ -25,7 +25,7 @@ exports[`TextFieldAddon component should render correctly with default props 1`]
         <input
           class="input peer input__align--left input__size--md"
           id="quill-input-1"
-          placeholder=""
+          placeholder=" "
           type="text"
           value=""
         />
@@ -63,7 +63,7 @@ exports[`TextFieldAddon component should render with a different variant 1`] = `
         <input
           class="input peer input__align--left input__size--md"
           id="quill-input-3"
-          placeholder=""
+          placeholder=" "
           type="text"
           value=""
         />
@@ -101,7 +101,7 @@ exports[`TextFieldAddon component should render with a right icon 1`] = `
         <input
           class="input peer input__align--left input__size--md"
           id="quill-input-4"
-          placeholder=""
+          placeholder=" "
           type="text"
           value=""
         />
@@ -145,7 +145,7 @@ exports[`TextFieldAddon component should render with the addon on the right 1`] 
         <input
           class="input peer input__align--left input__size--md"
           id="quill-input-2"
-          placeholder=""
+          placeholder=" "
           type="text"
           value=""
         />
