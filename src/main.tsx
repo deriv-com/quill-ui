@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Heading, Skeleton } from "../lib/main";
+import { Heading, Skeleton, TimeWheelPickerContainer } from "../lib/main";
 import ThemeSwitcher from "./theme-switcher";
 import ThemeRenderer from "./theme-renderer";
 import BreakpointProvider from "@providers/breakpoint/breakpointProvider";
@@ -12,6 +12,12 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <BreakpointProvider>
                 <div className="quill__background--primary__type--base">
                     <ThemeSwitcher />
+                    <div style={{ height: "300" }}>
+                        <TimeWheelPickerContainer
+                            containerHeight="300"
+                            is12Hour
+                        />
+                    </div>
                     <Heading.Hero>Quill UI</Heading.Hero>
                     <Heading.H1>Quill UI</Heading.H1>
                     <Heading.H1 as="div">Quill UI - h1 as div</Heading.H1>

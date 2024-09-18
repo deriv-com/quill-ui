@@ -522,6 +522,12 @@ DatePickerWithNeighboringMonth.args = {
     showNeighboringMonth: true,
 };
 
+export const DatePickerWithDisableCurrentDayMarker = Template.bind(this) as Story;
+DatePickerWithDisableCurrentDayMarker.args = {
+    ...meta.args,
+    disableCurrentDayMarker: true,
+};
+
 export const DatePickerWithCustomActiveStartDate = Template.bind(this) as Story;
 DatePickerWithCustomActiveStartDate.args = {
     ...meta.args,

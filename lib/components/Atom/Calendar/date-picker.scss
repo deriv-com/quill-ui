@@ -5,18 +5,20 @@
     background-color: var(--semantic-color-slate-solid-surface-frame-low);
     width: unset;
 
-    @include breakpoint ("md") {
+    @include breakpoint("md") {
         padding: var(--component-actionSheet-spacing-padding-md);
     }
 
     &__wrapper {
         &--fixed-width {
-                width: 100%;
+            width: 100%;
 
-            @include breakpoint ("md") {
+            @include breakpoint("md") {
                 width: var(--component-dropdownList-width-dateRangePicker-sm);
-                
             }
+        }
+        .no-current-day-marker.react-calendar__tile--now:after {
+            display: none;
         }
     }
 
