@@ -21,7 +21,7 @@ exports[`Button component Should render BasicButton with Icon 1`] = `
       </g>
       <defs>
         <clippath
-          id="f75bef18c44013cfaca444f03a436670__a"
+          id="28ec2eb9afe325f2205d77afa7750df1__a"
         >
           <path
             d="M0 0h14v24H0z"
