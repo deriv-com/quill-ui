@@ -288,7 +288,7 @@ exports[`RadioButton component should render info icon when hasInfo is true 1`] 
       </g>
       <defs>
         <clippath
-          id="230a139623e85e5dcad83c0ffb7fa75e__a"
+          id="540564f39e66a9c0f1d272efa62420ed__a"
         >
           <path
             d="M0 0h16v24H0z"

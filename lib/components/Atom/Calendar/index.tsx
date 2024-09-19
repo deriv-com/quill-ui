@@ -28,7 +28,6 @@ export interface DatePickerProps
     onFormattedDate?: (value: string) => void;
     startDate?: Date;
     wrapperClassName?: string;
-    disableCurrentDayMarker?: boolean;
 }
 
 type ValuePiece = Date | null;
@@ -67,7 +66,6 @@ export const DatePicker = ({
     tileClassName,
     value,
     wrapperClassName,
-    disableCurrentDayMarker = false,
     ...rest
 }: DatePickerProps) => {
     const formatLocaleString = (date: Date) => dayjs(date).format("DD/MM/YYYY");
@@ -88,14 +86,6 @@ export const DatePicker = ({
             onFormattedDate?.(formatSelectedDate(defaultValue as Value));
     }, [value, defaultValue]);
 
-    const isToday = (date: Date) => {
-        const today = new Date();
-        return (
-            date.getDate() === today.getDate() &&
-            date.getMonth() === today.getMonth() &&
-            date.getFullYear() === today.getFullYear()
-        );
-    };
     return (
         <div
             className={clsx(
@@ -128,12 +118,7 @@ export const DatePicker = ({
                 selectRange={selectRange}
                 showNavigation={showNavigation}
                 showNeighboringMonth={showNeighboringMonth}
-                tileClassName={({ date }) =>
-                    clsx(tileClassName, {
-                        "no-current-day-marker":
-                            disableCurrentDayMarker && isToday(date),
-                    })
-                }
+                tileClassName={tileClassName}
                 value={value}
             />
         </div>

@@ -528,12 +528,6 @@ DatePickerWithCustomActiveStartDate.args = {
     startDate: new Date("01/01/2017"),
 };
 
-export const DatePickerWithDisableCurrentDayMarker = Template.bind(this) as Story;
-DatePickerWithDisableCurrentDayMarker.args = {
-    ...meta.args,
-    disableCurrentDayMarker: true,
-};
-
 export const DatePickerGregoryType = Template.bind(this) as Story;
 DatePickerGregoryType.args = {
     ...meta.args,
