@@ -28,7 +28,7 @@ exports[`Modal should render SVG if it was passed 1`] = `
           </g>
           <defs>
             <clippath
-              id="862778728fa93d18e26607d369402e6d__a"
+              id="3980a9e132bdef5ac447baaa0250f5c5__a"
             >
               <path
                 d="M0 0h12v24H0z"
@@ -113,7 +113,7 @@ exports[`Modal should render container with image as a background if src was pas
           </g>
           <defs>
             <clippath
-              id="862778728fa93d18e26607d369402e6d__a"
+              id="3980a9e132bdef5ac447baaa0250f5c5__a"
             >
               <path
                 d="M0 0h12v24H0z"
@@ -187,7 +187,7 @@ exports[`Modal should render secondary button if showSecondaryButton === true an
           </g>
           <defs>
             <clippath
-              id="862778728fa93d18e26607d369402e6d__a"
+              id="3980a9e132bdef5ac447baaa0250f5c5__a"
             >
               <path
                 d="M0 0h12v24H0z"
@@ -277,7 +277,7 @@ exports[`Modal should render with default values if optional ones were not passe
           </g>
           <defs>
             <clippath
-              id="862778728fa93d18e26607d369402e6d__a"
+              id="3980a9e132bdef5ac447baaa0250f5c5__a"
             >
               <path
                 d="M0 0h12v24H0z"
