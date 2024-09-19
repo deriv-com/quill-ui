@@ -77,7 +77,7 @@ export const RadioButton = ({
             return (
                 <StandaloneCircleDotFillIcon
                     data-testid={`dt_checked_icon_${value}_${disabled}`}
-                    fill={disabled ? "#b8b8b8" : "#000000"}
+                    fill={disabled ? "var(--component-textIcon-normal-disabled)" : "var(--component-textIcon-normal-prominent)"}
                     iconSize={size}
                 />
             );
@@ -85,7 +85,7 @@ export const RadioButton = ({
             return (
                 <StandaloneCircleRegularIcon
                     data-testid={`dt_unchecked_icon_${value}_${disabled}`}
-                    fill={disabled ? "#b8b8b8" : "#7e7e7e"}
+                    fill={disabled ? "var(--component-textIcon-normal-disabled)" : "var(--component-textIcon-normal-subtle)"}
                     iconSize={size}
                     tabIndex={0}
                 />
