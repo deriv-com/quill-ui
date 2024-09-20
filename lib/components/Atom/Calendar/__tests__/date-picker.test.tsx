@@ -19,6 +19,15 @@ describe("DatePicker", () => {
     const mockOnFormattedDate = jest.fn();
     const mockOnChange = jest.fn();
 
+    beforeAll(() => {
+        jest.useFakeTimers();
+        jest.setSystemTime(new Date("2024-09-19"));
+    });
+
+    afterAll(() => {
+        jest.useRealTimers();
+    });
+
     it("should render with default values if optional ones were not passed", () => {
         const { container } = render(<DatePicker />);
 
