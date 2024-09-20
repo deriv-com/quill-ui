@@ -21,7 +21,7 @@ exports[`NotificationItemsList should render all notification items 1`] = `
             class="icon info"
           >
             <svg
-              fill="#1789E1"
+              fill="var(--component-textIcon-statusInverse-information)"
               height="24"
               role="img"
               viewBox="0 0 32 32"
@@ -250,7 +250,7 @@ exports[`NotificationItemsList should render notifications correctly for mobile 
             class="icon info"
           >
             <svg
-              fill="#1789E1"
+              fill="var(--component-textIcon-statusInverse-information)"
               height="24"
               role="img"
               viewBox="0 0 32 32"

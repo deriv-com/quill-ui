@@ -78,7 +78,7 @@ exports[`NotificationBanner should display correct content 1`] = `
         class="icon info"
       >
         <svg
-          fill="#1789E1"
+          fill="var(--component-textIcon-statusInverse-information)"
           height="24"
           role="img"
           viewBox="0 0 32 32"
@@ -151,7 +151,7 @@ exports[`NotificationBanner should hide after autohideTimeout + 240ms of animati
         class="icon info"
       >
         <svg
-          fill="#1789E1"
+          fill="var(--component-textIcon-statusInverse-information)"
           height="24"
           role="img"
           viewBox="0 0 32 32"
@@ -224,7 +224,7 @@ exports[`NotificationBanner should render correctly for mobile - without close b
         class="icon info"
       >
         <svg
-          fill="#1789E1"
+          fill="var(--component-textIcon-statusInverse-information)"
           height="24"
           role="img"
           viewBox="0 0 32 32"
@@ -268,7 +268,7 @@ exports[`NotificationBanner should render notification correctly based on the no
         class="icon warning"
       >
         <svg
-          fill="#E18D00"
+          fill="var(--component-textIcon-statusInverse-warning)"
           height="24"
           role="img"
           viewBox="0 0 32 32"

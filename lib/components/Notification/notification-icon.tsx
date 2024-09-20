@@ -14,19 +14,19 @@ interface NotificationIconProps {
 const icons = {
     [TYPE.INFO]: {
         component: StandaloneCircleInfoBoldIcon,
-        fillColor: "#1789E1",
+        fillColor: "var(--component-textIcon-statusInverse-information)",
     },
     [TYPE.ERROR]: {
         component: StandaloneCircleExclamationBoldIcon,
-        fillColor: "#DB0800",
+        fillColor: "var(--component-textIcon-statusInverse-danger)",
     },
     [TYPE.SUCCESS]: {
         component: StandaloneCircleCheckBoldIcon,
-        fillColor: "#00822A",
+        fillColor: "var(--component-textIcon-statusInverse-success)",
     },
     [TYPE.WARNING]: {
         component: StandaloneTriangleExclamationBoldIcon,
-        fillColor: "#E18D00",
+        fillColor: "var(--component-textIcon-statusInverse-warning)",
     },
 };
 
