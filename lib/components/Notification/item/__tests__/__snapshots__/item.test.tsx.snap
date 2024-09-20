@@ -16,7 +16,7 @@ exports[`NotificationItem should display correct content 1`] = `
           class="icon info"
         >
           <svg
-            fill="#1789E1"
+            fill="var(--component-textIcon-statusInverse-information)"
             height="24"
             role="img"
             viewBox="0 0 32 32"
@@ -246,7 +246,7 @@ exports[`NotificationItem should render correctly for mobile 1`] = `
           class="icon info"
         >
           <svg
-            fill="#1789E1"
+            fill="var(--component-textIcon-statusInverse-information)"
             height="24"
             role="img"
             viewBox="0 0 32 32"
@@ -365,7 +365,7 @@ exports[`NotificationItem should render notification correctly based on the noti
           class="icon success"
         >
           <svg
-            fill="#00822A"
+            fill="var(--component-textIcon-statusInverse-success)"
             height="24"
             role="img"
             viewBox="0 0 32 32"
@@ -484,7 +484,7 @@ exports[`NotificationItem should render notification correctly when status is 'r
           class="icon info"
         >
           <svg
-            fill="#1789E1"
+            fill="var(--component-textIcon-statusInverse-information)"
             height="24"
             role="img"
             viewBox="0 0 32 32"

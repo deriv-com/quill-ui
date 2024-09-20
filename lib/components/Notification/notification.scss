@@ -4,7 +4,7 @@
     width: 100%;
     cursor: pointer;
     height: fit-content;
-    background-color: var(--component-modal-bg);
+    background-color: var(--component-notification-bg-banner);
 
     &:link,
     &:visited,
@@ -25,16 +25,16 @@
         cursor: pointer;
 
         &.info {
-            background-color: var(--core-color-opacity-blue-100);
+            background-color: var(--semantic-color-blue-opacity-surface-midHigh)
         }
         &.error {
-            background-color: var(--core-color-opacity-red-100);
+            background-color: var(--semantic-color-red-opacity-surface-midHigh);
         }
         &.success {
-            background-color: var(--core-color-opacity-green-100);
+            background-color: var(--semantic-color-green-opacity-surface-midHigh)
         }
         &.warning {
-            background-color: var(--core-color-opacity-yellow-100);
+            background-color: var(--semantic-color-yellow-opacity-surface-midHigh)
         }
 
         .badge-unread {
@@ -84,6 +84,16 @@
         transition: transform var(--motion-duration-snappy)
             var(--motion-easing-inandout);
 
+        .details {
+            .title {
+                color: var(--component-notification-title-color-banner);
+            }
+
+            .message {
+                color: var(--component-notification-message-color-banner);
+            }
+        }
+
         &.hidden {
             transform: translateY(100vh);
         }
@@ -104,6 +114,16 @@
         inset-block-end: var(--semantic-spacing-general-sm);
         inset-inline-start: var(--semantic-spacing-general-sm);
         z-index: 6;
+
+        .details {
+            .title {
+                color: var(--component-notification-title-color-banner);
+            }
+
+            .message {
+                color: var(--component-notification-message-color-banner);
+            }
+        }
 
         &--mobile {
             width: calc(100% - var(--semantic-spacing-general-md));
