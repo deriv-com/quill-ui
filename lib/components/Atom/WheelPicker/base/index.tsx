@@ -91,8 +91,8 @@ export const WheelPicker = ({
         }
     }, [isFocused]);
 
-    return (
-       inputData.length &&  <div
+    return inputData.length ?  (
+       <div
             className={clsx(
                 "quill-wheel-picker__container",
                 rest?.disabled && "quill-wheel-picker__container-disabled",
@@ -142,7 +142,7 @@ export const WheelPicker = ({
                 })}
             </ul>
         </div>
-    );
+    ): null;
 };
 
 export default WheelPicker;
