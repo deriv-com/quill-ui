@@ -19,7 +19,9 @@ export const WheelPicker = ({
 }: WheelPickerProps) => {
     const itemsRefs = useRef<HTMLDivElement[]>([]);
     const [inputData, setInputData] = useState<TWheelTypeSelectItem[]>([]);
-    const [selectedValueInternal, setSelectedValueInternal] = useState<string | number>(selectedValue)
+    const [selectedValueInternal, setSelectedValueInternal] = useState<
+        string | number
+    >(selectedValue);
     const dataItemsMap = useMemo(
         () =>
             data.reduce(
@@ -91,8 +93,8 @@ export const WheelPicker = ({
         }
     }, [isFocused]);
 
-    return (
-       inputData.length &&  <div
+    return inputData.length > 0 ? (
+        <div
             className={clsx(
                 "quill-wheel-picker__container",
                 rest?.disabled && "quill-wheel-picker__container-disabled",
@@ -134,7 +136,9 @@ export const WheelPicker = ({
                                 });
                                 itemsRefs.current[index]?.focus();
                             }}
-                            disabled={inputData[index].value !== selectedValueInternal}
+                            disabled={
+                                inputData[index].value !== selectedValueInternal
+                            }
                         >
                             {value}
                         </DropdownItem>
@@ -142,7 +146,7 @@ export const WheelPicker = ({
                 })}
             </ul>
         </div>
-    );
+    ) : null;
 };
 
 export default WheelPicker;
