@@ -17,7 +17,7 @@
                 width: var(--component-dropdownList-width-dateRangePicker-sm);
             }
             .no-current-day-marker.react-calendar__tile--now:after {
-                display: none;
+                display: none !important;
             }
         }
     }
