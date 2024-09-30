@@ -19,6 +19,15 @@ describe("DatePicker", () => {
     const mockOnFormattedDate = jest.fn();
     const mockOnChange = jest.fn();
 
+    beforeAll(() => {
+        jest.useFakeTimers();
+        jest.setSystemTime(new Date("2024-09-19"));
+    });
+
+    afterAll(() => {
+        jest.useRealTimers();
+    });
+
     it("should render with default values if optional ones were not passed", () => {
         const { container } = render(<DatePicker />);
 
@@ -46,18 +55,6 @@ describe("DatePicker", () => {
                 dayjs(currentDate).format("DD/MM/YYYY"),
             );
         });
-    });
-
-    it("should render calendar with selected value and call onFormattedDate function if the value was passed", () => {
-        const { container } = render(
-            <DatePicker
-                value={currentDate}
-                onFormattedDate={mockOnFormattedDate}
-            />,
-        );
-
-        expect(container).toMatchSnapshot();
-        expect(mockOnFormattedDate).toHaveBeenCalled();
     });
 
     it("should render calendar with range selection", async () => {

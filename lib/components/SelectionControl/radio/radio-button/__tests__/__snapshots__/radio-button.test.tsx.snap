@@ -19,7 +19,7 @@ exports[`RadioButton component should be checked by default if defaultChecked is
     >
       <svg
         data-testid="dt_checked_icon_option1_false"
-        fill="#000000"
+        fill="var(--component-textIcon-normal-prominent)"
         height="32"
         role="img"
         viewBox="0 0 32 32"
@@ -59,7 +59,7 @@ exports[`RadioButton component should be disabled if disabled is true 1`] = `
     >
       <svg
         data-testid="dt_unchecked_icon_option3_true"
-        fill="#b8b8b8"
+        fill="var(--component-textIcon-normal-disabled)"
         height="32"
         role="img"
         tabindex="0"
@@ -99,7 +99,7 @@ exports[`RadioButton component should not be checked by default if defaultChecke
     >
       <svg
         data-testid="dt_unchecked_icon_option2_false"
-        fill="#7e7e7e"
+        fill="var(--component-textIcon-normal-subtle)"
         height="32"
         role="img"
         tabindex="0"
@@ -137,7 +137,7 @@ exports[`RadioButton component should not render info icon when hasInfo is false
     >
       <svg
         data-testid="dt_unchecked_icon_undefined_false"
-        fill="#7e7e7e"
+        fill="var(--component-textIcon-normal-subtle)"
         height="32"
         role="img"
         tabindex="0"
@@ -178,7 +178,7 @@ exports[`RadioButton component should not trigger click event on input when info
     >
       <svg
         data-testid="dt_unchecked_icon_option4_true"
-        fill="#b8b8b8"
+        fill="var(--component-textIcon-normal-disabled)"
         height="32"
         role="img"
         tabindex="0"
@@ -216,7 +216,7 @@ exports[`RadioButton component should render correctly with default props 1`] = 
     >
       <svg
         data-testid="dt_unchecked_icon_undefined_false"
-        fill="#7e7e7e"
+        fill="var(--component-textIcon-normal-subtle)"
         height="32"
         role="img"
         tabindex="0"
@@ -254,7 +254,7 @@ exports[`RadioButton component should render info icon when hasInfo is true 1`] 
     >
       <svg
         data-testid="dt_unchecked_icon_undefined_false"
-        fill="#7e7e7e"
+        fill="var(--component-textIcon-normal-subtle)"
         height="32"
         role="img"
         tabindex="0"
@@ -288,7 +288,7 @@ exports[`RadioButton component should render info icon when hasInfo is true 1`] 
       </g>
       <defs>
         <clippath
-          id="230a139623e85e5dcad83c0ffb7fa75e__a"
+          id="540564f39e66a9c0f1d272efa62420ed__a"
         >
           <path
             d="M0 0h16v24H0z"
@@ -316,7 +316,7 @@ exports[`RadioButton component should render with a custom className 1`] = `
     >
       <svg
         data-testid="dt_unchecked_icon_undefined_false"
-        fill="#7e7e7e"
+        fill="var(--component-textIcon-normal-subtle)"
         height="32"
         role="img"
         tabindex="0"

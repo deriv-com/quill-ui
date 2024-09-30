@@ -20,7 +20,7 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
       >
         <svg
           data-testid="dt_unchecked_icon_option1_false"
-          fill="#7e7e7e"
+          fill="var(--component-textIcon-normal-subtle)"
           height="32"
           role="img"
           tabindex="0"
@@ -54,7 +54,7 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
       >
         <svg
           data-testid="dt_unchecked_icon_option2_false"
-          fill="#7e7e7e"
+          fill="var(--component-textIcon-normal-subtle)"
           height="32"
           role="img"
           tabindex="0"
@@ -89,7 +89,7 @@ exports[`RadioGroup component calls onToggle when a radio button is selected 1`]
       >
         <svg
           data-testid="dt_checked_icon_option3_false"
-          fill="#000000"
+          fill="var(--component-textIcon-normal-prominent)"
           height="32"
           role="img"
           viewBox="0 0 32 32"
@@ -132,7 +132,7 @@ exports[`RadioGroup component renders radio buttons with correct labels 1`] = `
       >
         <svg
           data-testid="dt_checked_icon_option1_false"
-          fill="#000000"
+          fill="var(--component-textIcon-normal-prominent)"
           height="32"
           role="img"
           viewBox="0 0 32 32"
@@ -165,7 +165,7 @@ exports[`RadioGroup component renders radio buttons with correct labels 1`] = `
       >
         <svg
           data-testid="dt_unchecked_icon_option2_false"
-          fill="#7e7e7e"
+          fill="var(--component-textIcon-normal-subtle)"
           height="32"
           role="img"
           tabindex="0"
@@ -199,7 +199,7 @@ exports[`RadioGroup component renders radio buttons with correct labels 1`] = `
       >
         <svg
           data-testid="dt_unchecked_icon_option3_false"
-          fill="#7e7e7e"
+          fill="var(--component-textIcon-normal-subtle)"
           height="32"
           role="img"
           tabindex="0"
@@ -243,7 +243,7 @@ exports[`RadioGroup component should not call onToggle when a disabled radio but
       >
         <svg
           data-testid="dt_checked_icon_option1_false"
-          fill="#000000"
+          fill="var(--component-textIcon-normal-prominent)"
           height="32"
           role="img"
           viewBox="0 0 32 32"
@@ -277,7 +277,7 @@ exports[`RadioGroup component should not call onToggle when a disabled radio but
       >
         <svg
           data-testid="dt_unchecked_icon_option2_true"
-          fill="#b8b8b8"
+          fill="var(--component-textIcon-normal-disabled)"
           height="32"
           role="img"
           tabindex="0"
@@ -311,7 +311,7 @@ exports[`RadioGroup component should not call onToggle when a disabled radio but
       >
         <svg
           data-testid="dt_unchecked_icon_option3_false"
-          fill="#7e7e7e"
+          fill="var(--component-textIcon-normal-subtle)"
           height="32"
           role="img"
           tabindex="0"
