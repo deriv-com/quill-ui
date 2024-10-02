@@ -14,6 +14,7 @@ export * from "./Pagination";
 export * from "./SectionMessage";
 export * from "./SegmentedControl";
 export * from "./SelectionControl";
+export * from "./Stepper";
 export * from "./Snackbar";
 export * from "./Tab";
 export * from "./Tag";
