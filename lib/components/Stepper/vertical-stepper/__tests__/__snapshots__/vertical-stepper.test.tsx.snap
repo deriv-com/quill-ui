@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BasicStepper component matches snapshot 1`] = `
+<div>
+  <div
+    class="steps-container"
+  >
+    <div
+      class="step"
+    >
+      <div
+        class="step-circle__pointer"
+      >
+        <div
+          class="step-circle step-circle__size-sm step-circle--active"
+          data-testid="dt-step-circle"
+        >
+          <svg
+            fill="var(--semantic-color-slate-solid-surface-frame-low)"
+            height="24"
+            role="img"
+            viewBox="0 0 14 24"
+            width="11"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M13.688 7.313a.964.964 0 0 1 0 1.406l-8 8a.964.964 0 0 1-1.407 0l-4-4a.964.964 0 0 1 0-1.406.964.964 0 0 1 1.406 0L5 14.593l7.281-7.28a.964.964 0 0 1 1.406 0"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="24498f3e3cdcc3012813186d8185f82c__a"
+              >
+                <path
+                  d="M0 0h14v24H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </div>
+        <div
+          class="step-line step-line--size-md"
+          data-testid="dt-step-line"
+        />
+      </div>
+      <span
+        class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default step-circle__label-sm"
+      >
+        Step 1
+      </span>
+    </div>
+    <div
+      class="step"
+    >
+      <div
+        class="step-circle__pointer"
+      >
+        <div
+          class="step-circle step-circle__size-sm step-circle--inactive"
+          data-testid="dt-step-circle"
+        />
+      </div>
+      <span
+        class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default step-circle__label-sm"
+      >
+        Step 2
+      </span>
+    </div>
+  </div>
+</div>
+`;
