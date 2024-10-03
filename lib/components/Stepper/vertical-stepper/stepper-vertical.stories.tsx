@@ -61,31 +61,33 @@ const meta: Meta<typeof Stepper.Vertical> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const commonArgs = {
-    labels: ['Step 1', 'Step 2', 'Step 3'],
-    allSteps: Steps,
-    size: "md",
-    lineSize: "md",
-};
-
 export const Default: Story = {
     args: {
-        ...commonArgs,
         currentStep: 0,
+        labels: ['Step 1', 'Step 2', 'Step 3'],
+        allSteps: stepsArray,
+        size: "md",
+        lineSize: "md",
     },
 };
 
 export const OneStepCompleted: Story = {
     args: {
-        ...commonArgs,
         currentStep: 1,
+        labels: ['Step 1', 'Step 2', 'Step 3'],
+        allSteps: stepsArray,
+        size: "md",
+        lineSize: "md",
     },
 };
 
 export const AllStepsCompleted: Story = {
     args: {
-        ...commonArgs,
         currentStep: 2,
+        labels: ['Step 1', 'Step 2', 'Step 3'],
+        allSteps: stepsArray,
+        size: "md",
+        lineSize: "md",
     },
 };
 
