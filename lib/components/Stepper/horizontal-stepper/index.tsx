@@ -1,7 +1,7 @@
 import React from 'react';
 import { BasicStepper } from '../../index';
-import { Steps, TBasicStepperProps } from '../types';
+import { TBasicStepperProps } from '../types';
 
-export const HorizontalStepper = <T extends number | Steps>(props: TBasicStepperProps<T>) => {
+export const HorizontalStepper = (props: TBasicStepperProps) => {
     return <BasicStepper {...props} orientation="vertical" />;
 };

@@ -3,7 +3,7 @@ import clsx from "clsx";
 import "./stepper.scss";
 import { LabelPairedCheckMdFillIcon } from "@deriv/quill-icons";
 import { Text } from "@components/Typography";
-import { Steps, TBasicStepperProps } from "./types";
+import { TBasicStepperProps } from "./types";
 import { VerticalStepper } from './vertical-stepper';
 import { HorizontalStepper } from './horizontal-stepper';
 import { TypographyProps } from "@components/Typography/base";
@@ -15,14 +15,14 @@ const IconOk = ({ size }: { size: TypographyProps['size'] }) => (
     />
 );
 
-export const BasicStepper = <T extends number | Steps>({
+export const BasicStepper = ({
     currentStep,
     Icon = IconOk,
     size = "md",
     labels = [],
-    allSteps = [],
+    allSteps,
     lineSize = "md",
-}: TBasicStepperProps<T>) => {
+}: TBasicStepperProps) => {
     const steps = Object.values(allSteps).filter(
         (value) => typeof value === "number"
     );

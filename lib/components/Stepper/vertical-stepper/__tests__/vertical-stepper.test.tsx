@@ -23,7 +23,7 @@ describe("BasicStepper component", () => {
     });
 
     it("disables future steps correctly", () => {
-        render(<BasicStepper {...props} currentStep={0} size={"sm"} />);
+        render(<BasicStepper {...props} currentStep={0} size="sm" />);
         const futureStep = screen.getAllByTestId("dt-step-line")[0];
         screen.debug()
         expect(futureStep).toHaveClass("step-line--disabled");
@@ -31,12 +31,12 @@ describe("BasicStepper component", () => {
 
     it("renders custom icons correctly", () => {
         const CustomIcon = () => <div data-testid="custom-icon">Custom</div>;
-        render(<BasicStepper {...props} Icon={CustomIcon} size={"sm"} />);
+        render(<BasicStepper {...props} Icon={CustomIcon} size="sm" />);
         expect(screen.getByTestId("custom-icon")).toBeInTheDocument();
     });
 
     it("matches snapshot", () => {
-        const { container } = render(<BasicStepper {...props} size={"sm"} />);
+        const { container } = render(<BasicStepper {...props} size="sm" />);
         expect(container).toMatchSnapshot();
     });
 

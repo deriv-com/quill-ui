@@ -9,6 +9,7 @@ const icons: Record<string, object | null> = {
     with_icon: <LabelPairedCheckMdFillIcon />,
     none: null,
 };
+const stepsArray = Object.values(Steps).filter((value) => typeof value === "number");
 
 const meta: Meta<typeof Stepper.Vertical> = {
     title: "Components/Stepper/VerticalStepper",
@@ -26,12 +27,12 @@ const meta: Meta<typeof Stepper.Vertical> = {
         labels: {
             options: ["Step 1", "Step 2", "Step 3"],
             control: {
-                type: "array",
+                type: "object",
             },
             description: "To select the labels of the stepper",
         },
         allSteps: {
-            options: Steps,
+            options: stepsArray,
             control: {
                 type: "object",
             },
@@ -89,18 +90,17 @@ export const AllStepsCompleted: Story = {
 };
 
 const commonProps = {
-    currentStep: 1,
+    currentStep: Steps.StepOne,
     labels: ['Step 1', 'Step 2', 'Step 3'],
     allSteps: Steps,
-    lineSize: 'md',
 };
 
 export const SmallSize: Story = {
-    render: () => (<Stepper.Vertical {...commonProps} size="sm" lineSize="md" />),
+    render: () => (<Stepper.Vertical {...commonProps} size="sm" />),
 };
 
 export const MiddleSize: Story = {
-    render: () => (<Stepper.Vertical {...commonProps} size="md" />),
+    render: () => (<Stepper.Vertical {...commonProps} />),
 };
 
 export const LargeSize: Story = {
