@@ -1,11 +1,11 @@
 import { TypographyProps } from "@components/Typography/base";
 
 export type TBasicStepperProps = {
-    currentStep: Steps;
+    currentStep: Steps.StepOne | Steps.StepTwo | Steps.StepThree;
     Icon?: ({ size }: { size: TypographyProps['size']; }) => React.ReactNode;
     size?: TypographyProps['size'];
     labels: string[];
-    allSteps: Steps;
+    allSteps: Steps[];
     lineSize?: string;
     orientation?: string;
 };

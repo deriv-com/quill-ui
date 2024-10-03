@@ -90,9 +90,9 @@ export const AllStepsCompleted: Story = {
 };
 
 const commonProps = {
-    currentStep: Steps.StepOne,
+    currentStep: 1 as Steps,
     labels: ['Step 1', 'Step 2', 'Step 3'],
-    allSteps: Steps,
+    allSteps: stepsArray,
 };
 
 export const SmallSize: Story = {
