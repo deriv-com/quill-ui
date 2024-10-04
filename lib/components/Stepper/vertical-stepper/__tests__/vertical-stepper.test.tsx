@@ -1,13 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import { BasicStepper } from "../../index";
-import { Steps } from "../../types";
 
 describe("BasicStepper component", () => {
 
     const props = {
-        currentStep: Steps.StepTwo,
+        currentStep: 1,
         labels: ['Step 1', 'Step 2', 'Step 3'],
-        allSteps: [Steps.StepOne, Steps.StepTwo, Steps.StepThree],
     };
 
     it("renders steps correctly", () => {

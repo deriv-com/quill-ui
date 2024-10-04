@@ -8,7 +8,7 @@
         var(--semantic-typography-body-#{$size}-bold-default-lineHeight)) !important;
 }
 
-.steps-container {
+.quill-steps-container {
     display: flex;
     flex-direction: column;
 }
@@ -91,15 +91,15 @@
         }
 
         &--size-sm {
-            height: 8px;
+            height: calc((var(--component-stepper-track-height-sm) + var(--component-stepper-track-height-sm)) * 2)
         }
 
         &--size-md {
-            height: 16px;
+            height: calc(var(--component-stepper-track-height-md) + var(--component-stepper-track-height-md))
         }
 
         &--size-lg {
-            height: 26px;
+            height: calc(var(--component-stepper-track-height-md) + var(--component-stepper-track-height-md) + 10px);
         }
     }
 }

@@ -2,14 +2,12 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import "@deriv-com/quill-tokens/dist/quill.css";
 import Stepper from "../index";
-import { Steps } from "../types";
 import { LabelPairedCheckMdFillIcon } from "@deriv/quill-icons";
 
 const icons: Record<string, object | null> = {
     with_icon: <LabelPairedCheckMdFillIcon />,
     none: null,
 };
-const stepsArray = Object.values(Steps).filter((value) => typeof value === "number");
 
 const meta: Meta<typeof Stepper.Vertical> = {
     title: "Components/Stepper/VerticalStepper",
@@ -30,13 +28,6 @@ const meta: Meta<typeof Stepper.Vertical> = {
                 type: "object",
             },
             description: "To select the labels of the stepper",
-        },
-        allSteps: {
-            options: stepsArray,
-            control: {
-                type: "object",
-            },
-            description: "To pass the all steps for the stepper",
         },
         Icon: {
             options: Object.keys(icons),
@@ -65,7 +56,6 @@ export const Default: Story = {
     args: {
         currentStep: 0,
         labels: ['Step 1', 'Step 2', 'Step 3'],
-        allSteps: stepsArray,
         size: "md",
         lineSize: "md",
     },
@@ -75,7 +65,6 @@ export const OneStepCompleted: Story = {
     args: {
         currentStep: 1,
         labels: ['Step 1', 'Step 2', 'Step 3'],
-        allSteps: stepsArray,
         size: "md",
         lineSize: "md",
     },
@@ -85,20 +74,18 @@ export const AllStepsCompleted: Story = {
     args: {
         currentStep: 2,
         labels: ['Step 1', 'Step 2', 'Step 3'],
-        allSteps: stepsArray,
         size: "md",
         lineSize: "md",
     },
 };
 
 const commonProps = {
-    currentStep: 1 as Steps,
+    currentStep: 1,
     labels: ['Step 1', 'Step 2', 'Step 3'],
-    allSteps: stepsArray,
 };
 
 export const SmallSize: Story = {
-    render: () => (<Stepper.Vertical {...commonProps} size="sm" />),
+    render: () => (<Stepper.Vertical {...commonProps} size="sm" lineSize="sm" />),
 };
 
 export const MiddleSize: Story = {

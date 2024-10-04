@@ -3,7 +3,7 @@
 exports[`BasicStepper component matches snapshot 1`] = `
 <div>
   <div
-    class="steps-container"
+    class="quill-steps-container"
   >
     <div
       class="step"
