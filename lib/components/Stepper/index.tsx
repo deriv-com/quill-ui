@@ -54,8 +54,6 @@ export const BasicStepper = ({
                                 as="span"
                                 bold
                                 size={size}
-                                // color="var(--component-stepper-label-color-active)"
-                                // color="var(--semantic-color-slate-solid-surface-frame-low)"
                                 className={clsx(`step-circle__label-${size}`, {
                                     "step-circle__label--disabled": isPreviousInactive
                                 })}>
