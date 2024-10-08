@@ -1,4 +1,10 @@
-import { ReactNode, TextareaHTMLAttributes, forwardRef, useState } from "react";
+import {
+    ReactNode,
+    TextareaHTMLAttributes,
+    forwardRef,
+    useEffect,
+    useState,
+} from "react";
 import { Status, Variants } from "../base";
 import "./textarea.scss";
 import clsx from "clsx";
@@ -14,7 +20,7 @@ export interface TextAreaProps
     extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     label?: ReactNode;
     variant?: Variants;
-    textvalue?: string;
+    textValue?: string;
     size?: TMediumSizes;
     wrapperClassName?: string;
     textAreaClassName?: string;
@@ -54,7 +60,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             maxLength,
             show_counter = true,
             status = "neutral",
-            textvalue = "",
+            textValue = "",
             onChange,
             fieldMarker,
             required,
@@ -62,7 +68,11 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             id,
         } = props;
 
-        const [value, setValue] = useState(textvalue);
+        const [value, setValue] = useState(textValue);
+
+        useEffect(() => {
+            setValue(value);
+        }, [textValue]);
 
         const rightSideIcon =
             (status === "success" || status === "error") && !disabled
@@ -93,6 +103,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                             value && "has-value",
                         )}
                         placeholder={placeholder}
+                        value={value}
                         disabled={!!disabled}
                         onChange={(e) => {
                             setValue(e.target.value);
@@ -101,9 +112,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                         {...props}
                         id={inputId}
                         ref={ref}
-                    >
-                        {value}
-                    </textarea>
+                    />
                     {label && size === "md" && (
                         <label
                             className={clsx("label", `label--${status}`)}

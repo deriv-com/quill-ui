@@ -22,7 +22,7 @@ describe("TextArea Component", () => {
 
     it("displays character counter when show_counter is true", () => {
         const { getByText } = render(
-            <TextArea maxLength={50} show_counter={true} textvalue="Test" />,
+            <TextArea maxLength={50} show_counter={true} textValue="Test" />,
         );
         expect(getByText("4/50")).toBeInTheDocument();
     });
