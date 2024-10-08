@@ -9,5 +9,5 @@ export type TBasicStepperProps = {
     size?: TTypographySizes;
     labels: string[];
     lineSize?: string;
-    orientation?: string;
+    orientation?: 'vertical' | 'horizontal';
 };
