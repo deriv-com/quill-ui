@@ -23,7 +23,6 @@ describe("BasicStepper component", () => {
     it("disables future steps correctly", () => {
         render(<BasicStepper {...props} currentStep={0} size="sm" />);
         const futureStep = screen.getAllByTestId("dt-step-line")[0];
-        screen.debug()
         expect(futureStep).toHaveClass("step-line--disabled");
     });
 
