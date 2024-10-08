@@ -97,9 +97,5 @@
         &--size-md {
             height: calc(var(--component-stepper-track-height-md) + var(--component-stepper-track-height-md))
         }
-
-        &--size-lg {
-            height: calc(var(--component-stepper-track-height-md) + var(--component-stepper-track-height-md) + 10px);
-        }
     }
 }

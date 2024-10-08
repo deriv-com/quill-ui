@@ -1,19 +1,21 @@
 import React from "react";
 import clsx from "clsx";
 import "./stepper.scss";
-import { LabelPairedCheckMdFillIcon } from "@deriv/quill-icons";
+import { LabelPairedCheckLgFillIcon, LabelPairedCheckMdFillIcon, LabelPairedCheckSmFillIcon } from "@deriv/quill-icons";
 import { Text } from "@components/Typography";
-import { TBasicStepperProps } from "./types";
+import { TBasicStepperProps, TTypographySizes } from "./types";
 import { VerticalStepper } from './vertical-stepper';
 import { HorizontalStepper } from './horizontal-stepper';
-import { TypographyProps } from "@components/Typography/base";
 
-const IconOk = ({ size }: { size: TypographyProps['size'] }) => (
-    <LabelPairedCheckMdFillIcon
-        fill="var(--semantic-color-slate-solid-surface-frame-low)"
-        width={size === "sm" ? 11 : size === "md" ? 13 : 14}
-    />
-);
+const fillColor = "var(--semantic-color-slate-solid-surface-frame-low)";
+
+const icon = {
+    sm: <LabelPairedCheckSmFillIcon fill={fillColor} />,
+    md: <LabelPairedCheckMdFillIcon fill={fillColor} />,
+    lg: <LabelPairedCheckLgFillIcon fill={fillColor} />,
+};
+
+const IconOk = ({ size }: { size: TTypographySizes }) => (<>{icon[size]}</>);
 
 export const BasicStepper = ({
     currentStep,

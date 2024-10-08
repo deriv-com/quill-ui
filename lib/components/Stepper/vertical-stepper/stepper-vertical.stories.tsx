@@ -38,7 +38,7 @@ const meta: Meta<typeof Stepper.Vertical> = {
             description: "To choose the icon of the stepper",
         },
         lineSize: {
-            options: ["sm", "md", "lg"],
+            options: ["sm", "md"],
             control: "radio",
             description: "To select the line size of the stepper",
         }
@@ -93,6 +93,6 @@ export const MiddleSize: Story = {
 };
 
 export const LargeSize: Story = {
-    render: () => (<Stepper.Vertical {...commonProps} size="lg" lineSize="lg" />),
+    render: () => (<Stepper.Vertical {...commonProps} size="lg" />),
 };
 
