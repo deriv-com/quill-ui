@@ -93,7 +93,6 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                             value && "has-value",
                         )}
                         placeholder={placeholder}
-                        value={value}
                         disabled={!!disabled}
                         onChange={(e) => {
                             setValue(e.target.value);
@@ -102,7 +101,9 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                         {...props}
                         id={inputId}
                         ref={ref}
-                    />
+                    >
+                        {value}
+                    </textarea>
                     {label && size === "md" && (
                         <label
                             className={clsx("label", `label--${status}`)}
