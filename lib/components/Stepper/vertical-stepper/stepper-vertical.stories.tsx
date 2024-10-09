@@ -55,7 +55,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     args: {
         currentStep: 0,
-        labels: ['Step 1', 'Step 2', 'Step 3'],
+        labels: ['Default', 'Step 1', 'Step 2'],
         size: "md",
         lineSize: "md",
     },
@@ -64,7 +64,7 @@ export const Default: Story = {
 export const OneStepCompleted: Story = {
     args: {
         currentStep: 1,
-        labels: ['Step 1', 'Step 2', 'Step 3'],
+        labels: ['Default', 'Step 1', 'Step 2'],
         size: "md",
         lineSize: "md",
     },
@@ -73,7 +73,7 @@ export const OneStepCompleted: Story = {
 export const AllStepsCompleted: Story = {
     args: {
         currentStep: 2,
-        labels: ['Step 1', 'Step 2', 'Step 3'],
+        labels: ['Default', 'Step 1', 'Step 2'],
         size: "md",
         lineSize: "md",
     },
@@ -81,7 +81,7 @@ export const AllStepsCompleted: Story = {
 
 const commonProps = {
     currentStep: 1,
-    labels: ['Step 1', 'Step 2', 'Step 3'],
+    labels: ['Default', 'Step 1', 'Step 2'],
 };
 
 export const SmallSize: Story = {

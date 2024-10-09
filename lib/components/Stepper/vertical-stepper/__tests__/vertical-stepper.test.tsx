@@ -5,7 +5,7 @@ describe("BasicStepper component", () => {
 
     const props = {
         currentStep: 1,
-        labels: ['Step 1', 'Step 2', 'Step 3'],
+        labels: ['Default', 'Step 1', 'Step 2'],
     };
 
     it("renders steps correctly", () => {

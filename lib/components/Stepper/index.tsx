@@ -44,7 +44,7 @@ export const BasicStepper = ({
                                 >
                                     {isActive && <Icon size={size} />}
                                 </div>
-                                {index !== labels.length - 1 && (
+                                {index < labels.length - 1 && (
                                     <div
                                         className={clsx("step-line", `step-line--size-${lineSize}`, {
                                             "step-line--disabled": index > currentStep,
@@ -59,7 +59,7 @@ export const BasicStepper = ({
                                 className={clsx(`step-circle__label-${size}`, {
                                     "step-circle__label--disabled": isPreviousInactive
                                 })}>
-                                {labels[index - 1]}
+                                {labels[index]}
                             </Text>
                         </div>
                     </React.Fragment>
