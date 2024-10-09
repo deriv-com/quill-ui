@@ -107,3 +107,5 @@ export type TCountryCodes = {
     short_code: string;
     phone_code: string;
 };
+
+export type TOrientation =  'vertical' | 'horizontal';
