@@ -74,6 +74,10 @@ const InputPhoneNumberContent = forwardRef<
         shortCode = getCountry().short_code;
 
         useEffect(() => {
+            setInputValue(value || "");
+        }, [value]);
+
+        useEffect(() => {
             onValueChange?.(`${phoneCode}${inputValue}`);
         }, [phoneCode, inputValue]);
 

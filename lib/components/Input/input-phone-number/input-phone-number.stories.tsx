@@ -71,6 +71,7 @@ const meta = {
             "var(--semantic-color-slate-solid-surface-frame-mid)",
         countryCodes: dummyList,
         showFlags: true,
+        value: "0123456789",
         onCodeChange: (item) => {
             console.log("selected: ", item);
         },
