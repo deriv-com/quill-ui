@@ -56,7 +56,11 @@ const meta = {
         },
         onCloseAction: {
             description:
-                "Optional. Only for standalone snackbar when you pass funciton for close button `onClick`.",
+                "Optional. Only for standalone snackbar when you pass function for close button `onClick`.",
+        },
+        onSnackbarRemove: {
+            description:
+                "Optional. Callback for removing snackbar, will be triggered on close button click, on action text click, on timeout expiry and on dismissing the snackbar.",
         },
         hasCloseButton: {
             control: "boolean",
@@ -85,5 +89,13 @@ export const WithActionButton: Story = {
     args: {
         message: "Message goes here",
         actionText: "Action",
+    },
+};
+
+export const WithRemoveCallback: Story = {
+    args: {
+        message: "Please, open the console",
+        actionText: "Action",
+        onSnackbarRemove: () => console.log("onSnackbarRemove was called"),
     },
 };

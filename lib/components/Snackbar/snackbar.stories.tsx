@@ -68,6 +68,10 @@ const meta = {
             description:
                 "Optional. Must be included if we have actionText to trigger action and close snackbar.",
         },
+        onSnackbarRemove: {
+            description:
+                "Optional. Callback for removing snackbar, will be triggered on close button click, on action text click, on timeout expiry and on dismissing the snackbar.",
+        },
         hasCloseButton: {
             control: "boolean",
             description: "Optional. Set to true by default.",
@@ -237,4 +241,11 @@ SnackbarWithTwoLinesMessageWithActionButtonMobileOnly.args = {
     actionText: "Action",
     hasCloseButton: false,
     onActionClick: fn(),
+};
+
+export const SnackbarWithRemoveCallback = Template.bind(this) as Story;
+SnackbarWithRemoveCallback.args = {
+    ...meta.args,
+    message: "Please, open the console",
+    onSnackbarRemove: () => console.log("onSnackbarRemove was called"),
 };
