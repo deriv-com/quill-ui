@@ -1,10 +1,4 @@
-import {
-    ReactNode,
-    TextareaHTMLAttributes,
-    forwardRef,
-    useEffect,
-    useState,
-} from "react";
+import { ReactNode, TextareaHTMLAttributes, forwardRef } from "react";
 import { Status, Variants } from "../base";
 import "./textarea.scss";
 import clsx from "clsx";
@@ -20,7 +14,6 @@ export interface TextAreaProps
     extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     label?: ReactNode;
     variant?: Variants;
-    textValue?: string;
     size?: TMediumSizes;
     wrapperClassName?: string;
     textAreaClassName?: string;
@@ -60,19 +53,13 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             maxLength,
             show_counter = true,
             status = "neutral",
-            textValue = "",
+            value = "",
             onChange,
             fieldMarker,
             required,
             resizable = true,
             id,
         } = props;
-
-        const [value, setValue] = useState(textValue);
-
-        useEffect(() => {
-            setValue(value);
-        }, [textValue]);
 
         const rightSideIcon =
             (status === "success" || status === "error") && !disabled
@@ -100,13 +87,11 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                         className={clsx(
                             "quill-textarea",
                             textAreaClassName,
-                            value && "has-value",
+                            value.toString().length > 0 && "has-value",
                         )}
                         placeholder={placeholder}
-                        value={value}
                         disabled={!!disabled}
                         onChange={(e) => {
-                            setValue(e.target.value);
                             onChange?.(e);
                         }}
                         {...props}
