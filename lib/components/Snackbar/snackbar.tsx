@@ -15,8 +15,10 @@ export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     message: ReactNode;
     actionText?: string;
     hasCloseButton?: boolean;
+    hasFixedHeight?: boolean;
     onActionClick?: () => void;
     onCloseAction?: () => void;
+    onSnackbarRemove?: () => void;
     delay?: number;
     standalone?: boolean;
     status?: "fail" | "neutral";
@@ -30,7 +32,9 @@ export const Snackbar = ({
     actionText,
     onActionClick,
     onCloseAction,
+    onSnackbarRemove,
     hasCloseButton = true,
+    hasFixedHeight = true,
     delay,
     standalone = true,
     status = "neutral",
@@ -38,16 +42,28 @@ export const Snackbar = ({
 }: SnackbarProps) => {
     const { removeSnackbar } = useSnackbar();
     const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-    const snackbarDelayedRemove = (id: string, delay: number = 4000) => {
+    const snackbarDelayedRemove = ({
+        id,
+        onSnackbarRemove,
+        delay = 4000,
+    }: {
+        id: string;
+        onSnackbarRemove?: () => void;
+        delay?: number;
+    }) => {
         return setTimeout(() => {
-            removeSnackbar(id);
+            removeSnackbar(id, onSnackbarRemove);
         }, delay);
     };
 
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        id && (timerRef.current = snackbarDelayedRemove(id));
+        id &&
+            (timerRef.current = snackbarDelayedRemove({
+                id,
+                onSnackbarRemove,
+            }));
 
         return () => {
             clearTimeout(timerRef.current ?? "");
@@ -57,7 +73,7 @@ export const Snackbar = ({
     const handleClose = (delay: number = 100) => {
         onCloseAction?.();
         if (timerRef) clearTimeout(timerRef.current ?? "");
-        id && snackbarDelayedRemove(id, delay);
+        id && snackbarDelayedRemove({ id, onSnackbarRemove, delay });
     };
 
     const handleActionClick = () => {
@@ -65,17 +81,17 @@ export const Snackbar = ({
         handleClose();
     };
 
-    id && useOnClickOutside(ref, () => removeSnackbar(id));
+    id && useOnClickOutside(ref, () => removeSnackbar(id, onSnackbarRemove));
 
     if (standalone && !isVisible) return null;
 
     const color = {
         neutral: "white-black",
-        fail: "white"
-    }
+        fail: "white",
+    };
 
     const buttonColor = color[status] as TDefaultColor;
-    
+
     return (
         <div
             {...rest}
@@ -97,7 +113,11 @@ export const Snackbar = ({
             )}
             <div className="quill-snackbar__message--container">
                 <Text
-                    className="quill-snackbar__message"
+                    className={clsx(
+                        "quill-snackbar__message",
+                        hasFixedHeight &&
+                            "quill-snackbar__message--has-fix-height",
+                    )}
                     size="sm"
                     style={{
                         color: `var(--component-snackbar-label-color-${status})`,

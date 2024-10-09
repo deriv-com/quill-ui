@@ -56,9 +56,17 @@ const meta = {
         },
         onCloseAction: {
             description:
-                "Optional. Only for standalone snackbar when you pass funciton for close button `onClick`.",
+                "Optional. Only for standalone snackbar when you pass function for close button `onClick`.",
+        },
+        onSnackbarRemove: {
+            description:
+                "Optional. Callback for removing snackbar, will be triggered on close button click, on action text click, on timeout expiry and on dismissing the snackbar.",
         },
         hasCloseButton: {
+            control: "boolean",
+            description: "Optional. Set to true by default.",
+        },
+        hasFixedHeight: {
             control: "boolean",
             description: "Optional. Set to true by default.",
         },
@@ -85,5 +93,22 @@ export const WithActionButton: Story = {
     args: {
         message: "Message goes here",
         actionText: "Action",
+    },
+};
+
+export const WithRemoveCallback: Story = {
+    args: {
+        message: "Please, open the console",
+        actionText: "Action",
+        onSnackbarRemove: () => console.log("onSnackbarRemove was called"),
+    },
+};
+
+export const WithoutFixedHeight: Story = {
+    args: {
+        icon: undefined,
+        hasFixedHeight: false,
+        message:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit, leo sed viverra consequat, quam nulla maximus est, et faucibus nunc urna sit amet ex. Donec sagittis fermentum finibus.",
     },
 };

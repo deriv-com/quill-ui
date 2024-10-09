@@ -13,3 +13,5 @@ exports[`Snackbar renders correctly without action button 1`] = `<div />`;
 exports[`Snackbar renders correctly without close button 1`] = `<div />`;
 
 exports[`Snackbar renders with default props 1`] = `<div />`;
+
+exports[`Snackbar renders without specific className if hasFixedHeight === false 1`] = `<div />`;
