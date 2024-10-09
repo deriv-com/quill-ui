@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BasicStepper component matches snapshot 1`] = `
+<div>
+  <div
+    class="quill-steps-container"
+  >
+    <div
+      class="step"
+    >
+      <div
+        class="step-circle__pointer"
+      >
+        <div
+          class="step-circle step-circle__size-sm step-circle--active"
+          data-testid="dt-step-circle"
+        >
+          <svg
+            fill="var(--semantic-color-slate-solid-surface-frame-low)"
+            height="22"
+            role="img"
+            viewBox="0 0 13 22"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M12.352 6.648a.843.843 0 0 1 0 1.23l-7 7a.843.843 0 0 1-1.23 0l-3.5-3.5a.843.843 0 0 1 0-1.23.843.843 0 0 1 1.23 0L4.75 13.02l6.371-6.372a.843.843 0 0 1 1.23 0"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="f7b009abed7a4282fcd9f017460d7cb4__a"
+              >
+                <path
+                  d="M0 0h13v22H0z"
+                />
+              </clippath>
+            </defs>
+          </svg>
+        </div>
+        <div
+          class="step-line step-line--size-md"
+          data-testid="dt-step-line"
+        />
+      </div>
+      <span
+        class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default step-circle__label-sm"
+      >
+        Step 1
+      </span>
+    </div>
+    <div
+      class="step"
+    >
+      <div
+        class="step-circle__pointer"
+      >
+        <div
+          class="step-circle step-circle__size-sm step-circle--inactive"
+          data-testid="dt-step-circle"
+        />
+      </div>
+      <span
+        class="quill-typography quill-typography__body-text__size--sm__weight--bold__decoration--default quill-typography__color--default step-circle__label-sm"
+      >
+        Step 2
+      </span>
+    </div>
+  </div>
+</div>
+`;
