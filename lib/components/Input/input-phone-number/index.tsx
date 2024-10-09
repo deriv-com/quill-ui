@@ -23,7 +23,6 @@ export interface InputPhoneNumberProps
     shortCode?: string;
     onCodeChange?: (item: TCountryCodes) => void;
     onValueChange?: (phoneNumber: string) => void;
-    phoneNumberValue?: string;
     showFlags?: boolean;
 }
 
@@ -51,7 +50,6 @@ const InputPhoneNumberContent = forwardRef<
             showFlags = true,
             value,
             disabled,
-            phoneNumberValue,
             onChange,
             ...rest
         },
@@ -74,6 +72,10 @@ const InputPhoneNumberContent = forwardRef<
         const headcompRef = useRef<HTMLDivElement>(null);
 
         shortCode = getCountry().short_code;
+
+        useEffect(() => {
+            setInputValue(value || "");
+        }, [value]);
 
         useEffect(() => {
             onValueChange?.(`${phoneCode}${inputValue}`);
@@ -126,7 +128,7 @@ const InputPhoneNumberContent = forwardRef<
             <div ref={containerRef} className="quill-phone-input__container">
                 <Input
                     type="tel"
-                    value={phoneNumberValue || inputValue}
+                    value={inputValue}
                     placeholder={placeholder}
                     addOn={codeAddOn}
                     inputSize={inputSize}
