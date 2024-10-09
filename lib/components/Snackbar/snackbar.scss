@@ -59,9 +59,11 @@
         }
     }
     &__message {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
+        &--has-fix-height {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
         flex: 1 0 0;
 
         text-overflow: ellipsis;

@@ -76,6 +76,10 @@ const meta = {
             control: "boolean",
             description: "Optional. Set to true by default.",
         },
+        hasFixedHeight: {
+            control: "boolean",
+            description: "Optional. Set to true by default.",
+        },
         onCloseAction: {
             table: { disable: true },
         },
@@ -241,6 +245,14 @@ SnackbarWithTwoLinesMessageWithActionButtonMobileOnly.args = {
     actionText: "Action",
     hasCloseButton: false,
     onActionClick: fn(),
+};
+
+export const SnackbarWithoutFixedHeight = Template.bind(this) as Story;
+SnackbarWithoutFixedHeight.args = {
+    ...meta.args,
+    hasFixedHeight: false,
+    message:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit, leo sed viverra consequat, quam nulla maximus est, et faucibus nunc urna sit amet ex. Donec sagittis fermentum finibus.",
 };
 
 export const SnackbarWithRemoveCallback = Template.bind(this) as Story;

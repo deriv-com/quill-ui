@@ -40,6 +40,9 @@ describe("Snackbar", () => {
         const { container } = renderComponent();
 
         expect(screen.getByText(testMessage)).toBeInTheDocument();
+        expect(screen.getByText(testMessage)).toHaveClass(
+            "quill-snackbar__message--has-fix-height",
+        );
         expect(screen.getByText("Action")).toBeInTheDocument();
         expect(container).toMatchSnapshot();
     });
@@ -59,6 +62,17 @@ describe("Snackbar", () => {
         });
         const { container } = renderComponent();
         expect(screen.queryByText("Action")).not.toBeInTheDocument();
+        expect(container).toMatchSnapshot();
+    });
+    it("renders without specific className if hasFixedHeight === false", () => {
+        defaultProps.hasFixedHeight = false;
+        (useSnackbar as jest.Mock).mockReturnValue({
+            queue: [{ ...defaultProps }],
+        });
+        const { container } = renderComponent();
+        expect(screen.getByText(testMessage)).not.toHaveClass(
+            "quill-snackbar__message--has-fix-height",
+        );
         expect(container).toMatchSnapshot();
     });
     it("renders correctly without close button", () => {

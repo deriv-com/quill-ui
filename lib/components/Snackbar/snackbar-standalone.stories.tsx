@@ -66,6 +66,10 @@ const meta = {
             control: "boolean",
             description: "Optional. Set to true by default.",
         },
+        hasFixedHeight: {
+            control: "boolean",
+            description: "Optional. Set to true by default.",
+        },
     },
 } satisfies Meta<typeof Snackbar>;
 
@@ -97,5 +101,14 @@ export const WithRemoveCallback: Story = {
         message: "Please, open the console",
         actionText: "Action",
         onSnackbarRemove: () => console.log("onSnackbarRemove was called"),
+    },
+};
+
+export const WithoutFixedHeight: Story = {
+    args: {
+        icon: undefined,
+        hasFixedHeight: false,
+        message:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit, leo sed viverra consequat, quam nulla maximus est, et faucibus nunc urna sit amet ex. Donec sagittis fermentum finibus.",
     },
 };

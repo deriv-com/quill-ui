@@ -15,6 +15,7 @@ export interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
     message: ReactNode;
     actionText?: string;
     hasCloseButton?: boolean;
+    hasFixedHeight?: boolean;
     onActionClick?: () => void;
     onCloseAction?: () => void;
     onSnackbarRemove?: () => void;
@@ -33,6 +34,7 @@ export const Snackbar = ({
     onCloseAction,
     onSnackbarRemove,
     hasCloseButton = true,
+    hasFixedHeight = true,
     delay,
     standalone = true,
     status = "neutral",
@@ -111,7 +113,11 @@ export const Snackbar = ({
             )}
             <div className="quill-snackbar__message--container">
                 <Text
-                    className="quill-snackbar__message"
+                    className={clsx(
+                        "quill-snackbar__message",
+                        hasFixedHeight &&
+                            "quill-snackbar__message--has-fix-height",
+                    )}
                     size="sm"
                     style={{
                         color: `var(--component-snackbar-label-color-${status})`,
