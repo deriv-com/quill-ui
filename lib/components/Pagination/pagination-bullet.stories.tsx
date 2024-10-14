@@ -40,6 +40,10 @@ const meta = {
             control: false,
             description: "Styles to be applied to Pagination body",
         },
+        initialPage: {
+            control: { type: "number", min: 1 },
+            description: "Optional. Set initial page number, minimum value: 1",
+        },
         onClickPagination: {
             description: "Callback function when pagination is triggered",
             table: {
@@ -64,6 +68,17 @@ export const BulletPagination: Story = {
 export const BulletPaginationWithoutChevron: Story = {
     args: {
         contentPerPage: 20,
+        variant: "bullet",
+        hideChevron: true,
+        contentLength: MOCK_DATA.length,
+        onClickPagination: () => {},
+    },
+};
+
+export const BulletPaginationWithInitialPage: Story = {
+    args: {
+        contentPerPage: 20,
+        initialPage: 2,
         variant: "bullet",
         hideChevron: true,
         contentLength: MOCK_DATA.length,
