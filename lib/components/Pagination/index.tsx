@@ -36,7 +36,7 @@ export const Pagination = ({
 
     useEffect(() => {
         onClickPagination?.({ currentPage, totalPageCount });
-    }, [currentPage, totalPageCount]);
+    }, [currentPage]);
 
     const goToNextPage = () => setCurrentPage((page) => page + 1);
 
