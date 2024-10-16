@@ -23,6 +23,7 @@ export interface RootProps
     onClose?: () => void;
     type?: "modal" | "non-modal";
     expandable?: boolean;
+    shouldBlurOnClose?: boolean;
 }
 
 export type RootPosition = RootProps["position"];
