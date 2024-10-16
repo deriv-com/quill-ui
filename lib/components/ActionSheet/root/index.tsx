@@ -19,6 +19,7 @@ const Root = ({
     position = "right",
     type = "modal",
     expandable = true,
+    shouldBlurOnClose = false,
     onOpen,
     onClose,
 }: RootProps) => {
@@ -34,7 +35,8 @@ const Root = ({
         onClose?.();
         setShow(false);
         document.body.style.overflow = "auto";
-    }, [onClose]);
+        if (shouldBlurOnClose) (document?.activeElement as HTMLElement)?.blur();
+    }, [onClose, shouldBlurOnClose]);
 
     useEffect(() => {
         if (!isOpen) {

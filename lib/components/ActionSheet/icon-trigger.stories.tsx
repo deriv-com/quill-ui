@@ -32,6 +32,7 @@ const meta: Meta = {
         shouldCloseOnPrimaryButtonClick: true,
         shouldCloseOnSecondaryButtonClick: true,
         fullHeightOnOpen: false,
+        shouldBlurOnClose: false,
     },
     argTypes: {
         isOpen: { table: { disable: true } },
@@ -123,6 +124,13 @@ const meta: Meta = {
             control: { type: "boolean" },
             description:
                 "This prop controls if Action Sheet should be closed or not when secondary button was clicked. Default value: true",
+        },
+        shouldBlurOnClose: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            control: { type: "boolean" },
+            description:
+                "This prop controls if focus should be removed after Action Sheet will be closed. Default value: false",
         },
         icon: {
             description:
