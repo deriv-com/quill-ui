@@ -13,11 +13,12 @@ import "./pagination.scss";
 export const Pagination = ({
     contentPerPage,
     contentLength,
+    initialPage,
     onClickPagination,
     variant = "number",
     hideChevron,
 }: PaginationProps) => {
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(initialPage ?? 1);
     const totalPageCount = useMemo(() => {
         const dataToDisplay = contentPerPage ?? 1;
         return Math.ceil((contentLength ?? 0) / dataToDisplay);
@@ -30,8 +31,12 @@ export const Pagination = ({
     });
 
     useEffect(() => {
-        onClickPagination({ currentPage, totalPageCount });
-    }, [currentPage, onClickPagination, totalPageCount]);
+        if (initialPage) setCurrentPage(initialPage);
+    }, [initialPage]);
+
+    useEffect(() => {
+        onClickPagination?.({ currentPage, totalPageCount });
+    }, [currentPage]);
 
     const goToNextPage = () => setCurrentPage((page) => page + 1);
 
