@@ -261,3 +261,14 @@ SnackbarWithRemoveCallback.args = {
     message: "Please, open the console",
     onSnackbarRemove: () => console.log("onSnackbarRemove was called"),
 };
+
+export const VictorClicksHere = Template.bind(this) as Story;
+VictorClicksHere.args = {
+    ...meta.args,
+    hasFixedHeight: false,
+    message:
+        "Hi Victor! This is a hardcoded snackbar, it will disappear in 8s. For implementing it, we need to fix Quill component first, but I've almost did it.",
+    delay: 8000,
+    actionText: "View",
+    onActionClick: () => window.open("https://theuselessweb.com/"),
+};
