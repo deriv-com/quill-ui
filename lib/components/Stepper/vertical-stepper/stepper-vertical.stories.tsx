@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import "@deriv-com/quill-tokens/dist/quill.css";
-import Stepper from "../index";
+import VerticalStepper from "./index";
 import { LabelPairedCheckMdFillIcon } from "@deriv/quill-icons";
 
 const icons: Record<string, object | null> = {
@@ -9,9 +9,9 @@ const icons: Record<string, object | null> = {
     none: null,
 };
 
-const meta: Meta<typeof Stepper.Vertical> = {
+const meta: Meta<typeof VerticalStepper> = {
     title: "Components/Stepper/VerticalStepper",
-    component: Stepper.Vertical,
+    component: VerticalStepper,
     argTypes: {
         size: {
             options: ["sm", "md", "lg"],
@@ -41,7 +41,7 @@ const meta: Meta<typeof Stepper.Vertical> = {
             options: ["sm", "md"],
             control: "radio",
             description: "To select the line size of the stepper",
-        }
+        },
     },
     tags: ["autodocs"],
     parameters: {
@@ -55,7 +55,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     args: {
         currentStep: 0,
-        labels: ['Default', 'Step 1', 'Step 2'],
+        labels: ["Default", "Step 1", "Step 2"],
         size: "md",
         lineSize: "md",
     },
@@ -64,7 +64,7 @@ export const Default: Story = {
 export const OneStepCompleted: Story = {
     args: {
         currentStep: 1,
-        labels: ['Default', 'Step 1', 'Step 2'],
+        labels: ["Default", "Step 1", "Step 2"],
         size: "md",
         lineSize: "md",
     },
@@ -73,7 +73,7 @@ export const OneStepCompleted: Story = {
 export const AllStepsCompleted: Story = {
     args: {
         currentStep: 2,
-        labels: ['Default', 'Step 1', 'Step 2'],
+        labels: ["Default", "Step 1", "Step 2"],
         size: "md",
         lineSize: "md",
     },
@@ -81,18 +81,17 @@ export const AllStepsCompleted: Story = {
 
 const commonProps = {
     currentStep: 1,
-    labels: ['Default', 'Step 1', 'Step 2'],
+    labels: ["Default", "Step 1", "Step 2"],
 };
 
 export const SmallSize: Story = {
-    render: () => (<Stepper.Vertical {...commonProps} size="sm" lineSize="sm" />),
+    render: () => <VerticalStepper {...commonProps} size="sm" lineSize="sm" />,
 };
 
 export const MiddleSize: Story = {
-    render: () => (<Stepper.Vertical {...commonProps} />),
+    render: () => <VerticalStepper {...commonProps} />,
 };
 
 export const LargeSize: Story = {
-    render: () => (<Stepper.Vertical {...commonProps} size="lg" />),
+    render: () => <VerticalStepper {...commonProps} size="lg" />,
 };
-

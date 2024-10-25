@@ -1,11 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import { BasicStepper } from "../../index";
+import { BasicStepper } from "../../base";
 
 describe("BasicStepper component", () => {
-
     const props = {
         currentStep: 1,
-        labels: ['Default', 'Step 1', 'Step 2'],
+        labels: ["Default", "Step 1", "Step 2"],
     };
 
     it("renders steps correctly", () => {
@@ -36,5 +35,4 @@ describe("BasicStepper component", () => {
         const { container } = render(<BasicStepper {...props} size="sm" />);
         expect(container).toMatchSnapshot();
     });
-
 });
