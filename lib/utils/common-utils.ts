@@ -26,6 +26,9 @@ export const reactNodeToString = (reactNode: React.ReactNode): string => {
     return string;
 };
 
+const toFixedWithoutRounding = (value: number, decimals: number) =>
+    Math.floor(Math.pow(10, decimals) * value) / Math.pow(10, decimals);
+
 export const getFormatValue = (value: number | string, decimals: number) => {
     if (!value) return value;
 
@@ -39,5 +42,5 @@ export const getFormatValue = (value: number | string, decimals: number) => {
 
     if (isNaN(numValue)) return value;
 
-    return numValue.toFixed(decimals);
+    return toFixedWithoutRounding(numValue, decimals);
 };
