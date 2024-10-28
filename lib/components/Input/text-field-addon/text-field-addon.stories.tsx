@@ -27,6 +27,7 @@ const meta = {
         fieldMarker: false,
         required: false,
         show_counter: false,
+        shouldRound: true,
         fillAddonBorderColor:
             "var(--semantic-color-slate-solid-surface-frame-mid)",
     },
@@ -73,6 +74,9 @@ const meta = {
             table: {
                 defaultValue: { summary: "neutral" },
             },
+        },
+        shouldRound: {
+            control: "boolean",
         },
         variant: {
             control: {
@@ -133,5 +137,14 @@ export const LabelledlessFill: Story = {
         placeholder: "Placeholder",
         variant: "fill",
         message: message,
+    },
+};
+export const WithoutRounding: Story = {
+    args: {
+        type: "number",
+        allowDecimals: true,
+        decimals: 2,
+        message: message,
+        shouldRound: false,
     },
 };

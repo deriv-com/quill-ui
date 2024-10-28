@@ -41,6 +41,7 @@ const meta = {
         fieldMarker: false,
         required: false,
         show_counter: false,
+        shouldRound: true,
         allowDecimals: false,
     },
     argTypes: {
@@ -87,6 +88,9 @@ const meta = {
             table: {
                 defaultValue: { summary: "neutral" },
             },
+        },
+        shouldRound: {
+            control: "boolean",
         },
         variant: {
             control: {
@@ -199,5 +203,14 @@ export const StatusMessageWithCharacterCounter: Story = {
         message,
         show_counter: true,
         maxLength: 15,
+    },
+};
+
+export const WithoutRounding: Story = {
+    args: {
+        type: "number",
+        allowDecimals: true,
+        decimals: 2,
+        shouldRound: false,
     },
 };
