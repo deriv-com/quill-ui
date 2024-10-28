@@ -62,6 +62,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     triggerActionIcon?: ReactNode;
     fieldMarker?: boolean;
     showInputButton?: boolean;
+    shouldRound?: boolean;
     button_position?: TRightOrBottom;
     inputButton?: ReactNode;
     leftPlaceholder?: string;
@@ -121,6 +122,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             fieldMarker = false,
             required = false,
             showInputButton,
+            shouldRound = true,
             inputButton: InputButton,
             addOn,
             formatProps,
@@ -199,7 +201,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             }
 
             if (decimals) {
-                inputValue = getFormatValue(inputValue, decimals).toString();
+                inputValue = getFormatValue(
+                    inputValue,
+                    decimals,
+                    shouldRound,
+                ).toString();
             }
 
             if (customType) {

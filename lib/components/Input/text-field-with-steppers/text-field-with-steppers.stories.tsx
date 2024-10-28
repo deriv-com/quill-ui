@@ -44,6 +44,7 @@ const meta = {
         type: "number",
         inputSize: "md",
         status: "neutral",
+        shouldRound: true,
         disabled: false,
         variant: "outline",
         textAlignment: "left",
@@ -116,6 +117,9 @@ const meta = {
             },
         },
         noStatusIcon: {
+            control: "boolean",
+        },
+        shouldRound: {
             control: "boolean",
         },
     },
@@ -193,4 +197,9 @@ ErrorMessageTextFieldWithIcons.args = {
     status: status.error,
     message,
     rightIcon: <StandaloneTriangleExclamationBoldIcon iconSize="sm" />,
+};
+
+export const TextFieldWithoutRounding = Template.bind({}) as Story;
+TextFieldWithoutRounding.args = {
+    shouldRound: false,
 };
