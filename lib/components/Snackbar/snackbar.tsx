@@ -63,6 +63,7 @@ export const Snackbar = ({
             (timerRef.current = snackbarDelayedRemove({
                 id,
                 onSnackbarRemove,
+                delay,
             }));
 
         return () => {
