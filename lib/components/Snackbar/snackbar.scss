@@ -15,7 +15,7 @@
         var(--component-snackbar-border-color);
     box-shadow: var(--core-elevation-shadow-330);
     position: fixed;
-    z-index: 999;
+    z-index: 149;
     bottom: -16px;
     transition: bottom var(--motion-duration-snappy)
         var(--motion-easing-inandout);
