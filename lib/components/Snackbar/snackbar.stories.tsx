@@ -261,3 +261,11 @@ SnackbarWithRemoveCallback.args = {
     message: "Please, open the console",
     onSnackbarRemove: () => console.log("onSnackbarRemove was called"),
 };
+
+export const SnackbarWithLongDelay = Template.bind(this) as Story;
+SnackbarWithLongDelay.args = {
+    ...meta.args,
+    hasFixedHeight: false,
+    message: "This is a snackbar with prolonged delay",
+    delay: 10000,
+};
