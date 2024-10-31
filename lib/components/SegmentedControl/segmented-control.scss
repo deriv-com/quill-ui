@@ -56,7 +56,9 @@
                 background: var(
                     --component-segmentedControl-bg-single-item-selected
                 );
-                color:(--component-segmentedControl-label-single-color-selected);
+                color: var(
+                    --component-segmentedControl-label-single-color-selected
+                );
             }
             &.animated::before {
                 content: "";
@@ -79,16 +81,18 @@
                 justify-content: center;
 
                 svg {
-                    fill:  var(--component-segmentedControl-icon-single-default);
+                    fill: var(--component-segmentedControl-icon-single-default);
                 }
             }
             &.selected:not(:disabled),
             &.animated {
                 * {
-                    color: var(--component-segmentedControl-label-single-color-selected);
+                    color: var(
+                        --component-segmentedControl-label-single-color-selected
+                    );
                 }
                 svg {
-                    fill:  var(--component-segmentedControl-icon-single-default);
+                    fill: var(--component-segmentedControl-icon-single-default);
                 }
             }
         }
