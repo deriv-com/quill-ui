@@ -26,8 +26,14 @@ export const reactNodeToString = (reactNode: React.ReactNode): string => {
     return string;
 };
 
-const toFixedWithoutRounding = (value: number, decimals: number) =>
-    Math.floor(Math.pow(10, decimals) * value) / Math.pow(10, decimals);
+const toFixedWithoutRounding = (value: number, decimals: number) => {
+    const stringifiedValue = value.toString();
+    const result = stringifiedValue.slice(
+        0,
+        stringifiedValue.indexOf(".") + decimals + 1,
+    );
+    return Number(result);
+};
 
 export const getFormatValue = (
     value: number | string,
