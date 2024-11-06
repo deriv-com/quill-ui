@@ -27,10 +27,10 @@ export const reactNodeToString = (reactNode: React.ReactNode): string => {
 };
 
 const toFixedWithoutRounding = (value: number, decimals: number) => {
-    const stringified_value = value.toString();
-    const result = stringified_value.slice(
+    const stringifiedValue = value.toString();
+    const result = stringifiedValue.slice(
         0,
-        stringified_value.indexOf(".") + decimals + 1,
+        stringifiedValue.indexOf(".") + decimals + 1,
     );
     return Number(result);
 };
