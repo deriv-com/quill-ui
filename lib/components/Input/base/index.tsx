@@ -269,7 +269,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                                         {leftPlaceholder}
                                     </Text>
                                 )}
-                            {formatProps ? (
+                            {formatProps?.format ? (
                                 <PatternFormat
                                     {...commonProps}
                                     {...formatProps}

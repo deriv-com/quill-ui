@@ -67,6 +67,10 @@ const meta = {
         fieldMarker: false,
         show_counter: false,
         shortCode: "au",
+        formatProps: {
+            format: "",
+            mask: "",
+        },
         fillAddonBorderColor:
             "var(--semantic-color-slate-solid-surface-frame-mid)",
         countryCodes: dummyList,

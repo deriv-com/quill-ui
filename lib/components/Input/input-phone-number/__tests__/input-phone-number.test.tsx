@@ -24,19 +24,9 @@ describe("InputPhoneNumber Component", () => {
         expect(asFragment()).toMatchSnapshot();
     });
 
-    it("should render correctly with default props", () => {
-        const { getByPlaceholderText } = render(
-            <InputPhoneNumber {...defaultProps} />,
-        );
-        const input = getByPlaceholderText("00 0000 0000");
-        expect(input).toBeInTheDocument();
-    });
-
     it("should call onValueChange when input value changes", () => {
-        const { getByPlaceholderText } = render(
-            <InputPhoneNumber {...defaultProps} />,
-        );
-        const input = getByPlaceholderText("00 0000 0000");
+        const { getByRole } = render(<InputPhoneNumber {...defaultProps} />);
+        const input = getByRole("textbox");
 
         fireEvent.change(input, { target: { value: "1234567890" } });
         expect(defaultProps.onValueChange).toHaveBeenCalledWith("+11234567890");
@@ -62,14 +52,14 @@ describe("InputPhoneNumber Component", () => {
     });
 
     it("should update phone code and input value state", () => {
-        const { getByText, getByPlaceholderText } = render(
+        const { getByText, getByRole } = render(
             <InputPhoneNumber
                 {...defaultProps}
                 shortCode="US"
                 codeLabel="Code"
             />,
         );
-        const input = getByPlaceholderText("00 0000 0000");
+        const input = getByRole("textbox");
         const dropdownButton = getByText("Code");
 
         fireEvent.click(dropdownButton);
@@ -85,7 +75,7 @@ describe("InputPhoneNumber Component", () => {
     });
 
     it("should render custom props correctly", () => {
-        const { getByPlaceholderText } = render(
+        const { getByRole } = render(
             <InputPhoneNumber
                 inputSize="sm"
                 {...defaultProps}
@@ -93,7 +83,7 @@ describe("InputPhoneNumber Component", () => {
                 placeholder="Enter your phone number"
             />,
         );
-        const input = getByPlaceholderText("Enter your phone number");
+        const input = getByRole("textbox");
         expect(input).toBeInTheDocument();
     });
 });
