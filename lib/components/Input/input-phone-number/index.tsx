@@ -123,6 +123,7 @@ const InputPhoneNumberContent = forwardRef<
             <div ref={containerRef} className="quill-phone-input__container">
                 <Input
                     type="tel"
+                    inputMode="numeric"
                     value={inputValue}
                     addOn={codeAddOn}
                     inputSize={inputSize}
