@@ -40,11 +40,6 @@ const InputPhoneNumberContent = forwardRef<
             fillAddonBorderColor,
             countryCodes,
             shortCode,
-            placeholder = "00 0000 0000",
-            formatProps = {
-                format: "## #### ####",
-                mask: "",
-            },
             onCodeChange,
             onValueChange,
             showFlags = true,
@@ -128,13 +123,12 @@ const InputPhoneNumberContent = forwardRef<
             <div ref={containerRef} className="quill-phone-input__container">
                 <Input
                     type="tel"
+                    inputMode="numeric"
                     value={inputValue}
-                    placeholder={placeholder}
                     addOn={codeAddOn}
                     inputSize={inputSize}
                     status={status}
                     variant={variant}
-                    formatProps={formatProps}
                     onChange={handleInputChange}
                     isDropdownOpen={isOpen}
                     disabled={disabled}

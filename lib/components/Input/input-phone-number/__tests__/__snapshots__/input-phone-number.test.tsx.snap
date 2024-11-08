@@ -69,8 +69,8 @@ exports[`InputPhoneNumber Component should match the snapshot 1`] = `
               class="input peer input__align--left input__size--lg"
               id="quill-input-1"
               inputmode="numeric"
-              placeholder="00 0000 0000"
-              type="text"
+              placeholder=" "
+              type="tel"
               value=""
             />
           </div>
