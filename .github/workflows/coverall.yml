@@ -29,4 +29,4 @@ jobs:
         - name: Test
           run: JEST_MAX_WORKERS=95% npm run test:report
         - name: Coveralls
-          uses: coverallsapp/github-action@3dfc5567390f6fa9267c0ee9c251e4c8c3f18949
+          uses: coverallsapp/github-action@cfd0633edbd2411b532b808ba7a8b5e04f76d2c8
