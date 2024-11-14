@@ -24,6 +24,7 @@ export interface InputPhoneNumberProps
     onCodeChange?: (item: TCountryCodes) => void;
     onValueChange?: (phoneNumber: string) => void;
     showFlags?: boolean;
+    showSearchBar?: boolean;
 }
 
 const InputPhoneNumberContent = forwardRef<
@@ -48,6 +49,7 @@ const InputPhoneNumberContent = forwardRef<
             onCodeChange,
             onValueChange,
             showFlags = true,
+            showSearchBar = false,
             value,
             disabled,
             onChange,
@@ -116,6 +118,7 @@ const InputPhoneNumberContent = forwardRef<
                         options={countryCodes}
                         code={shortCode}
                         showFlags={showFlags}
+                        showSearchBar={showSearchBar}
                         containerRef={containerRef}
                         headcompRef={headcompRef}
                         onItemClick={handleItemChange}
