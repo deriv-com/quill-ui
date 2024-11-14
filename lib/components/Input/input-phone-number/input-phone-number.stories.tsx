@@ -138,6 +138,11 @@ const meta = {
                 defaultValue: { summary: "outline" },
             },
         },
+        showSearchBar: {
+            control: {
+                type: "boolean",
+            },
+        },
         rightIcon: {
             options: Object.keys(icons),
             mapping: icons,

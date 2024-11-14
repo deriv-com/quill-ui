@@ -14,12 +14,14 @@ const DropdownContent = ({
     containerRef,
     headcompRef,
     onItemClick,
+    showSearchBar = false,
 }: {
     options: TCountryCodes[];
     code: string;
     showFlags?: boolean;
     containerRef: React.RefObject<HTMLDivElement>;
     headcompRef: React.RefObject<HTMLDivElement>;
+    showSearchBar?: boolean;
     onItemClick: (item: TCountryCodes) => void;
 }) => {
     const [searchKey, setSearchKey] = useState("");
@@ -73,6 +75,19 @@ const DropdownContent = ({
                     className="quill-custom-dropdown__content"
                     ref={dropdownRef}
                 >
+                    {showSearchBar && (
+                        <div className="phone-code-search">
+                            <SearchField
+                                inputSize="sm"
+                                variant="fill"
+                                autoComplete="off"
+                                value={searchKey}
+                                onChange={(e) => {
+                                    setSearchKey(e.target.value);
+                                }}
+                            />
+                        </div>
+                    )}
                     <Content />
                 </ItemContainer>
             ) : (
