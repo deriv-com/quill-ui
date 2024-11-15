@@ -59,22 +59,25 @@ export const Snackbar = ({
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        id &&
-            (timerRef.current = snackbarDelayedRemove({
-                id,
-                onSnackbarRemove,
-                delay,
-            }));
+        if (id) {
+            if (status === "neutral" || !hasCloseButton || delay !== undefined) {
+                timerRef.current = snackbarDelayedRemove({
+                    id,
+                    onSnackbarRemove,
+                    delay: delay || 4000,
+                });
+            }
+        }
 
         return () => {
-            clearTimeout(timerRef.current ?? "");
+            if (timerRef.current) clearTimeout(timerRef.current);
         };
-    }, [message]);
+    }, [message, status, hasCloseButton, delay, id, onSnackbarRemove]);
 
     const handleClose = () => {
         onCloseAction?.();
-        if (timerRef) clearTimeout(timerRef.current ?? "");
-        id && snackbarDelayedRemove({ id, onSnackbarRemove, delay: 100 });
+        if (timerRef.current) clearTimeout(timerRef.current);
+        id && removeSnackbar(id, onSnackbarRemove);
     };
 
     const handleActionClick = () => {
