@@ -54,8 +54,9 @@ const DropdownContent = ({
                 if (selectedItem) {
                     if (isMobile) {
                         // Get the search bar height
-                        const searchBar =
-                            document.querySelector(".phone-code-search");
+                        const searchBar = document.querySelector(
+                            ".input-phone-number-search",
+                        );
                         const searchBarHeight = searchBar?.clientHeight || 0;
 
                         // Scroll with offset for the sticky search bar
@@ -129,7 +130,7 @@ const DropdownContent = ({
                     ref={dropdownRef}
                 >
                     {showSearchBar && (
-                        <div className="phone-code-search">
+                        <div className="phone-code-search input-phone-number-search">
                             <SearchField
                                 inputSize="sm"
                                 variant="fill"
@@ -145,7 +146,7 @@ const DropdownContent = ({
                 </ItemContainer>
             ) : (
                 <>
-                    <div className="phone-code-search">
+                    <div className="phone-code-search input-phone-number-search">
                         <SearchField
                             inputSize="sm"
                             variant="fill"
