@@ -59,31 +59,55 @@ const DropdownContent = ({
                         );
                         const searchBarHeight = searchBar?.clientHeight || 0;
 
-                        // Scroll with offset for the sticky search bar
-                        selectedItem.scrollIntoView({
-                            block: "start",
-                            behavior: "auto",
-                        });
+                        // Get the container
+                        const container = selectedItem.closest(
+                            ".action-sheet--content",
+                        );
 
-                        // Adjust scroll position to account for sticky search bar
-                        if (searchBarHeight) {
-                            const container = selectedItem.closest(
-                                ".action-sheet--content",
-                            );
-                            if (container) {
+                        if (container) {
+                            // Calculate if item is near the bottom
+                            const containerHeight = container.clientHeight;
+                            const itemTop = selectedItem.offsetTop;
+                            const itemHeight = selectedItem.offsetHeight;
+
+                            // If item is in the last containerHeight worth of space,
+                            // scroll to show it at the bottom
+                            if (itemTop > containerHeight - itemHeight) {
+                                container.scrollTop =
+                                    itemTop -
+                                    containerHeight +
+                                    itemHeight +
+                                    searchBarHeight;
+                            } else {
+                                // Otherwise, scroll to top with searchbar offset
+                                selectedItem.scrollIntoView({
+                                    block: "start",
+                                    behavior: "auto",
+                                });
                                 container.scrollTop -= searchBarHeight;
                             }
                         }
                     } else {
+                        // Get the search bar height
+                        const searchBar = document.querySelector(
+                            ".input-phone-number-search",
+                        );
+                        const searchBarHeight = searchBar?.clientHeight || 0;
+
                         // Desktop dropdown scrolling logic
                         const container = dropdownRef.current;
                         if (container) {
                             const containerHeight = container.clientHeight;
                             const itemTop = selectedItem.offsetTop;
+                            const itemHeight = selectedItem.offsetHeight;
+
                             const maxScroll =
-                                container.scrollHeight - containerHeight;
+                                container.scrollHeight -
+                                containerHeight +
+                                itemHeight;
                             const desiredScroll = Math.min(itemTop, maxScroll);
-                            container.scrollTop = desiredScroll;
+                            container.scrollTop =
+                                desiredScroll - searchBarHeight;
                         }
                     }
                 }

@@ -68,6 +68,19 @@
     }
 }
 
+.quill-custom-dropdown__content {
+    &:has(.input-phone-number-search) {
+        padding-top: 0;
+    }
+    .input-phone-number-search {
+        padding-block: 8px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--component-actionSheet-bg);
+    }
+}
+
 .quill-country-code {
     display: flex;
     gap: var(--component-field-spacing-gap-sm);
@@ -86,9 +99,7 @@
         &--outline {
             border-right: var(--borderWidth-xs) solid
                 var(--component-field-border-color-default);
-            background-color: var(
-                --component-field-bg-outline-default
-            );
+            background-color: var(--component-field-bg-outline-default);
         }
         &--fill {
             border-right: var(--borderWidth-sm) solid;
