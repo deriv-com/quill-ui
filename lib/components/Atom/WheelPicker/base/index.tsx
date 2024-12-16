@@ -54,20 +54,19 @@ export const WheelPicker = ({
         setSelectedValueInternal(inputData[selectedElement].value);
     };
 
-    const resizeObserver = new ResizeObserver(() => {
-        const index = Number(currentDataValue);
-        if (!itemsContainerRef?.current) return;
-        const divHeight = itemsContainerRef?.current.clientHeight;
-        itemsContainerRef.current.style.paddingTop = `${divHeight * 0.5}px`;
-        itemsContainerRef.current.style.paddingBottom = `${divHeight * 0.5}px`;
-        if (itemsRefs.current[index]) {
-            (itemsRefs.current[index] as HTMLDivElement).scrollIntoView({
-                block: "center",
-            });
-        }
-    });
-
     useEffect(() => {
+        const resizeObserver = new ResizeObserver(() => {
+            const index = Number(currentDataValue);
+            if (!itemsContainerRef?.current) return;
+            const divHeight = itemsContainerRef?.current.clientHeight;
+            itemsContainerRef.current.style.paddingTop = `${divHeight * 0.5}px`;
+            itemsContainerRef.current.style.paddingBottom = `${divHeight * 0.5}px`;
+            if (itemsRefs.current[index]) {
+                (itemsRefs.current[index] as HTMLDivElement).scrollIntoView({
+                    block: "center",
+                });
+            }
+        });
         if (!itemsContainerRef.current) return;
         setSelectedValue(inputData[currentDataValue]?.value);
         setSelectedValueInternal(inputData[currentDataValue]?.value);
