@@ -55,17 +55,23 @@ export const WheelPicker = ({
     };
 
     useEffect(() => {
+        let resizeTimeout: NodeJS.Timeout | null = null;
         const resizeObserver = new ResizeObserver(() => {
-            const index = Number(currentDataValue);
-            if (!itemsContainerRef?.current) return;
-            const divHeight = itemsContainerRef?.current.clientHeight;
-            itemsContainerRef.current.style.paddingTop = `${divHeight * 0.5}px`;
-            itemsContainerRef.current.style.paddingBottom = `${divHeight * 0.5}px`;
-            if (itemsRefs.current[index]) {
-                (itemsRefs.current[index] as HTMLDivElement).scrollIntoView({
-                    block: "center",
-                });
+            if (resizeTimeout) {
+                clearTimeout(resizeTimeout);
             }
+            resizeTimeout = setTimeout(() => {
+                const index = Number(currentDataValue);
+                if (!itemsContainerRef?.current || index < 0 || index >= inputData.length) return;
+                const divHeight = itemsContainerRef.current.clientHeight;
+                itemsContainerRef.current.style.paddingTop = `${divHeight * 0.5}px`;
+                itemsContainerRef.current.style.paddingBottom = `${divHeight * 0.5}px`;
+                if (itemsRefs.current[index]) {
+                    (itemsRefs.current[index] as HTMLDivElement).scrollIntoView({
+                        block: "center",
+                    });
+                }
+            }, 0); 
         });
         if (!itemsContainerRef.current) return;
         setSelectedValue(inputData[currentDataValue]?.value);
