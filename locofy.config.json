@@ -1,0 +1,19 @@
+{
+  "components": {
+    "source": "lib/components",
+    "output": "dist/storybook"
+  },
+  "assets": {
+    "source": "lib/styles",
+    "output": "dist/assets"
+  },
+  "github": {
+    "repository": "deriv-com/quill-ui",
+    "branch": "main"
+  },
+  "exportConfig": {
+    "typescript": true,
+    "includeStories": true,
+    "includeDocs": true
+  }
+}
