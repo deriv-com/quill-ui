@@ -1,6 +1,11 @@
 {
   "components": {
-    "source": "lib/components",
+    "include": [
+      "lib/components/Button/**/*.tsx",
+      "!lib/components/Button/**/*.stories.tsx",
+      "!lib/components/Button/**/*.test.tsx",
+      "!lib/components/Button/**/*.spec.tsx"
+    ],
     "output": "dist/storybook"
   },
   "assets": {
@@ -9,7 +14,7 @@
   },
   "github": {
     "repository": "deriv-com/quill-ui",
-    "branch": "main"
+    "branch": "export-to-locofy"
   },
   "exportConfig": {
     "typescript": true,
