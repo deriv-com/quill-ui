@@ -381,7 +381,7 @@ exports[`Checkbox should render info icon if showInfoIcon === true 1`] = `
         </g>
         <defs>
           <clippath
-            id="17fb9addd41675d1b46542803d502216__a"
+            id="415144cb3f72342026d522ca273170f2__a"
           >
             <path
               d="M0 0h14v22H0z"
