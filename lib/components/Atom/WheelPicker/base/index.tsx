@@ -55,7 +55,7 @@ export const WheelPicker = ({
     };
 
     useEffect(() => {
-        let resizeTimeout: NodeJS.Timeout | null = null;
+        let resizeTimeout: ReturnType<typeof setTimeout> | null = null;
         const resizeObserver = new ResizeObserver(() => {
             if (resizeTimeout) {
                 clearTimeout(resizeTimeout);

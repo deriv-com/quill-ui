@@ -36,7 +36,7 @@ class ResizeObserver {
     disconnect() {}
 }
 
-global.ResizeObserver = ResizeObserver;
+globalThis.ResizeObserver = ResizeObserver;
 const mockOnValueChange = jest.fn();
 
 const renderComponent = () =>

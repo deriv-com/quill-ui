@@ -60,7 +60,7 @@ describe("CheckboxGroup", () => {
         ],
     };
     beforeAll(() => {
-        global.structuredClone = jest.fn((val) =>
+        globalThis.structuredClone = jest.fn((val) =>
             JSON.parse(JSON.stringify(val)),
         );
     });

@@ -24,7 +24,7 @@ const renderComponent = (args: TimeWheelPickerContainerProps) =>
         </div>,
     );
 describe("GenericTimeWheelPickerContainer", () => {
-    global.ResizeObserver = class {
+    globalThis.ResizeObserver = class {
         observe() {}
         unobserve() {}
         disconnect() {}

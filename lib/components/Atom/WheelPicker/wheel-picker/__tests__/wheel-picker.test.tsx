@@ -42,7 +42,7 @@ const renderComponent = () =>
         </div>,
     );
 describe("GenericWheelPickerContainer", () => {
-    global.ResizeObserver = class {
+    globalThis.ResizeObserver = class {
         observe() {}
         unobserve() {}
         disconnect() {}

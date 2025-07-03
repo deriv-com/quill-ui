@@ -84,13 +84,17 @@ export const SegmentedControl = ({
     };
 
     useEffect(() => {
-        let timeoutId: ReturnType<typeof setTimeout>;
+        let timeoutId: ReturnType<typeof setTimeout> | undefined;
         if (selectedRef?.current && hasAnimation) {
             timeoutId = setTimeout(() => {
                 selectedRef.current?.style.removeProperty("--x");
             }, 150);
         }
-        return () => timeoutId && clearTimeout(timeoutId);
+        return () => {
+            if (timeoutId !== undefined) {
+                clearTimeout(timeoutId);
+            }
+        };
     }, [options]);
 
     return (

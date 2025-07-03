@@ -30,7 +30,7 @@ describe("WheelPicker", () => {
     const observe = jest.fn();
     beforeEach(() => {
         setSelectedValue = jest.fn();
-        global.ResizeObserver = jest.fn(() => ({
+        globalThis.ResizeObserver = jest.fn(() => ({
             observe,
             unobserve: jest.fn(),
             disconnect: jest.fn(),
