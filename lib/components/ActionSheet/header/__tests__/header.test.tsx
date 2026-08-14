@@ -40,11 +40,11 @@ describe("<ActionSheet.Header/>", () => {
                 title="Duration"
                 closeAction={{
                     icon: <LabelPairedXmarkCaptionBoldIcon />,
-                    label: "Close",
+                    ariaLabel: "Close",
                 }}
                 saveAction={{
                     icon: <LabelPairedCheckCaptionBoldIcon />,
-                    label: "Confirm",
+                    ariaLabel: "Confirm",
                 }}
             />,
         );
@@ -61,6 +61,49 @@ describe("<ActionSheet.Header/>", () => {
         expect(
             screen.getByRole("button", { name: "Confirm" }),
         ).toBeInTheDocument();
+    });
+
+    it("should render built-in icons and accessible names when the actions are empty", () => {
+        render(
+            <ActionSheet.Header
+                title="Stake"
+                closeAction={{}}
+                saveAction={{}}
+            />,
+        );
+
+        // Consumers should not have to import the X / check glyphs.
+        expect(
+            screen.getByTestId("dt-actionsheet-header-close-action"),
+        ).toContainElement(document.querySelector("svg"));
+        expect(
+            screen.getByRole("button", { name: "Close" }),
+        ).toBeInTheDocument();
+        expect(
+            screen.getByRole("button", { name: "Save" }),
+        ).toBeInTheDocument();
+    });
+
+    it("should let icon and ariaLabel be overridden", () => {
+        render(
+            <ActionSheet.Header
+                title="Stake"
+                closeAction={{
+                    icon: (
+                        <LabelPairedXmarkCaptionBoldIcon data-testid="back" />
+                    ),
+                    ariaLabel: "Back",
+                }}
+            />,
+        );
+
+        expect(screen.getByTestId("back")).toBeInTheDocument();
+        expect(
+            screen.getByRole("button", { name: "Back" }),
+        ).toBeInTheDocument();
+        expect(
+            screen.queryByRole("button", { name: "Close" }),
+        ).not.toBeInTheDocument();
     });
 
     it("should not render any action button when neither action is passed", () => {
@@ -96,7 +139,7 @@ describe("<ActionSheet.Header/>", () => {
                 title="Duration"
                 saveAction={{
                     icon: <LabelPairedCheckCaptionBoldIcon />,
-                    label: "Confirm",
+                    ariaLabel: "Confirm",
                     onAction,
                 }}
             />,
@@ -112,11 +155,11 @@ describe("<ActionSheet.Header/>", () => {
                 title="Stake"
                 closeAction={{
                     icon: <LabelPairedXmarkCaptionBoldIcon />,
-                    label: "Close",
+                    ariaLabel: "Close",
                 }}
                 saveAction={{
                     icon: <LabelPairedCheckCaptionBoldIcon />,
-                    label: "Confirm",
+                    ariaLabel: "Confirm",
                 }}
             />,
         );
@@ -136,11 +179,11 @@ describe("<ActionSheet.Header/>", () => {
                 isSaveActionDisabled
                 closeAction={{
                     icon: <LabelPairedXmarkCaptionBoldIcon />,
-                    label: "Close",
+                    ariaLabel: "Close",
                 }}
                 saveAction={{
                     icon: <LabelPairedCheckCaptionBoldIcon />,
-                    label: "Confirm",
+                    ariaLabel: "Confirm",
                 }}
             />,
         );
@@ -155,7 +198,7 @@ describe("<ActionSheet.Header/>", () => {
                 title="Stake"
                 saveAction={{
                     icon: <LabelPairedCheckCaptionBoldIcon />,
-                    label: "Confirm",
+                    ariaLabel: "Confirm",
                 }}
             />,
         );
@@ -172,7 +215,7 @@ describe("<ActionSheet.Header/>", () => {
                     shouldCloseOnSaveActionClick={false}
                     saveAction={{
                         icon: <LabelPairedCheckCaptionBoldIcon />,
-                        label: "Confirm",
+                        ariaLabel: "Confirm",
                         onAction,
                     }}
                 />
@@ -193,7 +236,7 @@ describe("<ActionSheet.Header/>", () => {
                 isSaveActionDisabled
                 saveAction={{
                     icon: <LabelPairedCheckCaptionBoldIcon />,
-                    label: "Confirm",
+                    ariaLabel: "Confirm",
                     onAction,
                 }}
             />,

@@ -43,8 +43,12 @@ interface ActionType {
  * on `HeaderProps` - see `isSaveActionDisabled` and `shouldCloseOnSaveActionClick`.
  */
 export interface HeaderActionType {
-    /** Icon rendered inside the icon-only button, e.g. `<LabelPairedXmarkCaptionBoldIcon />`. */
-    icon: ReactNode;
+    /**
+     * Overrides the built-in glyph - an X for `closeAction`, a check for
+     * `saveAction`. Only pass this when the design calls for something else,
+     * e.g. a back arrow in a multi-step sheet.
+     */
+    icon?: ReactNode;
     /**
      * Runs only when the button itself is clicked. Dismissing the sheet through
      * the overlay, the handlebar or the close action closes it without invoking
@@ -52,8 +56,13 @@ export interface HeaderActionType {
      * same contract as the footer's `primaryAction`.
      */
     onAction?: () => void;
-    /** Accessible name for the icon-only button. */
-    label?: string;
+    /**
+     * Accessible name for the icon-only button - maps to `aria-label`, so it
+     * renders nothing visually. Note this is NOT `ButtonProps.label`, which
+     * renders visible text. Defaults to "Close"/"Save"; pass a localised
+     * string to translate it.
+     */
+    ariaLabel?: string;
     size?: TRegularSizesWithExtraLarge;
 }
 

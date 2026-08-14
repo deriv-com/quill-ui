@@ -199,10 +199,10 @@ describe("<ActionSheet.Portal/>", () => {
                 <ActionSheet.Portal showHandlebar={false}>
                     <ActionSheet.Header
                         title="Duration"
-                        closeAction={{ icon: "x", label: "Close" }}
+                        closeAction={{ icon: "x", ariaLabel: "Close" }}
                         saveAction={{
                             icon: "check",
-                            label: "Confirm",
+                            ariaLabel: "Confirm",
                             onAction: onConfirm,
                         }}
                     />
@@ -236,7 +236,7 @@ describe("<ActionSheet.Portal/>", () => {
                         title="Duration"
                         saveAction={{
                             icon: "check",
-                            label: "Confirm",
+                            ariaLabel: "Confirm",
                             onAction: onConfirm,
                         }}
                     />

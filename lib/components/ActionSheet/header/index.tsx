@@ -3,8 +3,25 @@ import { ActionSheetContext } from "../root";
 import clsx from "clsx";
 import { Heading, Text } from "@components/Typography";
 import { IconButton } from "@components/Button";
+import {
+    LabelPairedCheckCaptionBoldIcon,
+    LabelPairedXmarkCaptionBoldIcon,
+} from "@deriv/quill-icons/LabelPaired";
 import { HeaderActionType } from "../types";
 import "./header.scss";
+
+// Both glyphs are fixed by the design, so consumers should not have to import
+// them. Overridable via `HeaderActionType.icon`.
+const ACTION_DEFAULTS = {
+    close: {
+        icon: <LabelPairedXmarkCaptionBoldIcon />,
+        ariaLabel: "Close",
+    },
+    save: {
+        icon: <LabelPairedCheckCaptionBoldIcon />,
+        ariaLabel: "Save",
+    },
+} as const;
 
 export interface HeaderProps
     extends Omit<ComponentPropsWithoutRef<"div">, "title"> {
@@ -54,7 +71,13 @@ const Header = ({
     ) => {
         if (!hasActions) return null;
 
-        const { icon, onAction, label, size = "md" } = action ?? {};
+        const defaults = ACTION_DEFAULTS[kind];
+        const {
+            icon = defaults.icon,
+            onAction,
+            ariaLabel = defaults.ariaLabel,
+            size = "md",
+        } = action ?? {};
         const isSave = kind === "save";
 
         const actionHandler = () => {
@@ -75,7 +98,7 @@ const Header = ({
             >
                 {action && (
                     <IconButton
-                        aria-label={label}
+                        aria-label={ariaLabel}
                         className={clsx(
                             "quill-action-sheet--title--action-button",
                             `quill-action-sheet--title--action-button__color--${

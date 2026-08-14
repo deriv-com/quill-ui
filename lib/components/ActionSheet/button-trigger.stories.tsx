@@ -2,9 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { ActionSheetExample } from "./mocks/example";
 import {
-    LabelPairedCheckCaptionBoldIcon,
+    LabelPairedArrowLeftCaptionBoldIcon,
     LabelPairedPlaceholderCaptionBoldIcon,
-    LabelPairedXmarkCaptionBoldIcon,
     LabelPairedXmarkMdBoldIcon,
 } from "@deriv/quill-icons";
 
@@ -121,7 +120,7 @@ const meta: Meta = {
         closeAction: {
             control: { type: "object" },
             description:
-                "This prop is meant for `ActionSheet.Header`. It renders an icon-only dismiss button on the leading edge of the title row. Accepts `icon`, `onAction`, `label` (accessible name) and `size` (default `md`). It has no enabled/disabled state and always closes the sheet without committing anything.",
+                "This prop is meant for `ActionSheet.Header`. It renders an icon-only dismiss button on the leading edge of the title row. All fields are optional: `icon` defaults to a built-in X (a check for `saveAction`), `ariaLabel` defaults to `Close`/`Save` (maps to `aria-label`; renders nothing visually), plus `onAction` and `size` (default `md`). It has no enabled/disabled state and always closes the sheet without committing anything.",
         },
         saveAction: {
             control: { type: "object" },
@@ -208,16 +207,9 @@ const headerActionArgs = {
     description: undefined,
     closeIcon: undefined,
     showHandlebar: false,
-    closeAction: {
-        icon: <LabelPairedXmarkCaptionBoldIcon />,
-        label: "Close",
-        onAction: () => null,
-    },
-    saveAction: {
-        icon: <LabelPairedCheckCaptionBoldIcon />,
-        label: "Save",
-        onAction: () => null,
-    },
+    // No `icon` needed - the X and check are built in.
+    closeAction: {},
+    saveAction: { onAction: () => null },
     alignment: "vertical",
     shouldBlurOnClose: false,
 } satisfies Partial<Parameters<typeof ActionSheetExample>[0]>;
@@ -238,5 +230,19 @@ export const HeaderActionsActive: Story = {
     args: {
         ...headerActionArgs,
         isSaveActionDisabled: false,
+    },
+};
+
+/**
+ * `icon` is only needed to override a built-in glyph - here a back arrow for a
+ * multi-step sheet. `ariaLabel` should be overridden alongside it.
+ */
+export const HeaderActionsCustomIcon: Story = {
+    args: {
+        ...headerActionArgs,
+        closeAction: {
+            icon: <LabelPairedArrowLeftCaptionBoldIcon />,
+            ariaLabel: "Back",
+        },
     },
 };
