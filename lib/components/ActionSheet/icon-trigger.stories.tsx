@@ -147,6 +147,28 @@ const meta: Meta = {
             description:
                 "This prop controls icon position in `ActionSheet.Header`. Default value - 'right'",
         },
+        closeAction: {
+            control: { type: "object" },
+            description:
+                "This prop is meant for `ActionSheet.Header`. It renders an icon-only dismiss button on the leading edge of the title row. Accepts `icon`, `onAction`, `label` (accessible name) and `size` (default `md`). It has no enabled/disabled state and always closes the sheet without committing anything.",
+        },
+        saveAction: {
+            control: { type: "object" },
+            description:
+                "Same shape as `closeAction`, rendered on the trailing edge of the title row. Like `primaryAction`, its `onAction` runs **only** when the button is clicked: dismissing the sheet by clicking the overlay, dragging the handlebar or pressing `closeAction` closes it without committing anything.",
+        },
+        isSaveActionDisabled: {
+            control: { type: "boolean" },
+            description:
+                "This prop controls if the header save action is disabled or not - the counterpart of `isPrimaryButtonDisabled`. Pass `!hasChanges` so it stays disabled and neutral until there is something to save; once enabled it turns coral.",
+        },
+        shouldCloseOnSaveActionClick: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            control: { type: "boolean" },
+            description:
+                "This prop controls if Action Sheet should be closed or not when the header save action was clicked. Default value: true",
+        },
         alignment: {
             control: {
                 type: "radio",

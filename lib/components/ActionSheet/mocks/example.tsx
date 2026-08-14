@@ -21,6 +21,10 @@ export const ActionSheetExample = ({
     closeIcon,
     icon,
     iconPosition,
+    closeAction,
+    saveAction,
+    isSaveActionDisabled,
+    shouldCloseOnSaveActionClick,
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
     shouldCloseOnDrag,
@@ -53,6 +57,12 @@ export const ActionSheetExample = ({
                         closeIcon={closeIcon}
                         icon={icon}
                         iconPosition={iconPosition}
+                        closeAction={closeAction}
+                        saveAction={saveAction}
+                        isSaveActionDisabled={isSaveActionDisabled}
+                        shouldCloseOnSaveActionClick={
+                            shouldCloseOnSaveActionClick
+                        }
                     />
                     <ActionSheet.Content className="mock-action-sheet--content">
                         <Text size="sm">
@@ -99,6 +109,10 @@ export const ActionSheetExampleWithIconTrigger = ({
     closeIcon,
     icon,
     iconPosition,
+    closeAction,
+    saveAction,
+    isSaveActionDisabled,
+    shouldCloseOnSaveActionClick,
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
     shouldCloseOnDrag,
@@ -130,6 +144,12 @@ export const ActionSheetExampleWithIconTrigger = ({
                         closeIcon={closeIcon}
                         icon={icon}
                         iconPosition={iconPosition}
+                        closeAction={closeAction}
+                        saveAction={saveAction}
+                        isSaveActionDisabled={isSaveActionDisabled}
+                        shouldCloseOnSaveActionClick={
+                            shouldCloseOnSaveActionClick
+                        }
                     />
                     <ActionSheet.Content className="mock-action-sheet--content">
                         <Text size="sm">
@@ -226,6 +246,10 @@ export const ActionSheetExampleControlled = ({
     closeIcon,
     icon,
     iconPosition,
+    closeAction,
+    saveAction,
+    isSaveActionDisabled,
+    shouldCloseOnSaveActionClick,
     shouldCloseOnPrimaryButtonClick,
     shouldCloseOnSecondaryButtonClick,
     shouldCloseOnDrag,
@@ -253,6 +277,12 @@ export const ActionSheetExampleControlled = ({
                         closeIcon={closeIcon}
                         icon={icon}
                         iconPosition={iconPosition}
+                        closeAction={closeAction}
+                        saveAction={saveAction}
+                        isSaveActionDisabled={isSaveActionDisabled}
+                        shouldCloseOnSaveActionClick={
+                            shouldCloseOnSaveActionClick
+                        }
                     />
                     <ActionSheet.Content className="mock-action-sheet--content">
                         <Text size="sm">

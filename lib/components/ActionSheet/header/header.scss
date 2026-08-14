@@ -35,6 +35,89 @@
             flex-grow: 1;
         }
 
+        &__has-actions {
+            justify-content: space-between;
+
+            .quill-action-sheet--title-text {
+                min-width: 0;
+            }
+        }
+
+        &--action {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            min-width: var(--component-button-width-md);
+
+            &--start {
+                justify-content: flex-start;
+            }
+
+            &--end {
+                justify-content: flex-end;
+            }
+
+            // Every rule below is chained with `.quill-button` so it outweighs
+            // the transparent surface of the tertiary button variant.
+            &-button.quill-button {
+                border-radius: var(--semantic-borderRadius-pill);
+                text-decoration: none;
+            }
+
+            // A disabled primary action falls back to the neutral surface, so
+            // the colour itself communicates whether there is anything to commit.
+            &-button__color--monochrome.quill-button,
+            &-button__color--monochrome.quill-button:disabled,
+            &-button__color--primary.quill-button:disabled {
+                background-color: var(
+                    --semantic-color-monochrome-surface-normal-low
+                );
+            }
+
+            &-button__color--monochrome.quill-button {
+                &:hover:not(:disabled),
+                &:focus:not(:disabled) {
+                    background-color: var(
+                        --semantic-color-monochrome-surface-normal-midLow
+                    );
+                }
+
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --semantic-color-monochrome-surface-normal-midHigh
+                    );
+                }
+            }
+
+            &-button__color--primary.quill-button {
+                &:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-coral-primary-default
+                    );
+                    color: var(--component-button-label-color-coral-primary);
+                    fill: var(--component-button-label-color-coral-primary);
+                }
+
+                &:focus:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-coral-primary-default
+                    );
+                }
+
+                &:hover:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-coral-primary-hover
+                    );
+                }
+
+                &:active:not(:disabled) {
+                    background-color: var(
+                        --component-button-bg-coral-primary-active
+                    );
+                }
+            }
+        }
+
         &--icon {
             display: flex;
             width: var(--component-button-height-lg);
