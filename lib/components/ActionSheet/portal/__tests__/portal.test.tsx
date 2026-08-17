@@ -189,6 +189,77 @@ describe("<ActionSheet.Portal/>", () => {
         expect(handleBar).not.toBeInTheDocument();
     });
 
+    it("should close without invoking the header saveAction when the overlay is clicked", async () => {
+        const onConfirm = jest.fn();
+        const onClose = jest.fn();
+
+        render(
+            <>
+                <ActionSheet.Trigger>{BUTTON_NAME.TRIGGER}</ActionSheet.Trigger>
+                <ActionSheet.Portal showHandlebar={false}>
+                    <ActionSheet.Header
+                        title="Duration"
+                        closeAction={{ icon: "x", ariaLabel: "Close" }}
+                        saveAction={{
+                            icon: "check",
+                            ariaLabel: "Confirm",
+                            onAction: onConfirm,
+                        }}
+                    />
+                </ActionSheet.Portal>
+            </>,
+            { wrapperProps: { type: "modal", onClose } },
+        );
+
+        const trigger = screen.getByText(BUTTON_NAME.TRIGGER);
+        await act(async () => {
+            await userEvent.click(trigger);
+        });
+
+        await act(async () => {
+            await userEvent.click(screen.getByTestId(overlay));
+        });
+
+        expect(onClose).toHaveBeenCalled();
+        expect(onConfirm).not.toHaveBeenCalled();
+        expect(screen.queryByText("Duration")).not.toBeInTheDocument();
+    });
+
+    it("should invoke the header saveAction and close only when it is clicked", async () => {
+        const onConfirm = jest.fn();
+
+        render(
+            <>
+                <ActionSheet.Trigger>{BUTTON_NAME.TRIGGER}</ActionSheet.Trigger>
+                <ActionSheet.Portal showHandlebar={false}>
+                    <ActionSheet.Header
+                        title="Duration"
+                        saveAction={{
+                            icon: "check",
+                            ariaLabel: "Confirm",
+                            onAction: onConfirm,
+                        }}
+                    />
+                </ActionSheet.Portal>
+            </>,
+            { wrapperProps: { type: "modal" } },
+        );
+
+        const trigger = screen.getByText(BUTTON_NAME.TRIGGER);
+        await act(async () => {
+            await userEvent.click(trigger);
+        });
+
+        await act(async () => {
+            await userEvent.click(
+                screen.getByRole("button", { name: "Confirm" }),
+            );
+        });
+
+        expect(onConfirm).toHaveBeenCalledTimes(1);
+        expect(screen.queryByText("Duration")).not.toBeInTheDocument();
+    });
+
     const positions: RootPosition[] = ["left", "right"];
     positions.forEach((position) => {
         it(`should render correctly with position ${position}`, () => {

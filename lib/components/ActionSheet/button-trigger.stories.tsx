@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { ActionSheetExample } from "./mocks/example";
 import {
+    LabelPairedArrowLeftCaptionBoldIcon,
     LabelPairedPlaceholderCaptionBoldIcon,
     LabelPairedXmarkMdBoldIcon,
 } from "@deriv/quill-icons";
@@ -116,6 +117,28 @@ const meta: Meta = {
             description:
                 "This prop controls icon position in `ActionSheet.Header`. Default value - 'right'",
         },
+        closeAction: {
+            control: { type: "object" },
+            description:
+                "This prop is meant for `ActionSheet.Header`. It renders an icon-only dismiss button on the leading edge of the title row. All fields are optional: `icon` defaults to a built-in X (a check for `saveAction`), `ariaLabel` defaults to `Close`/`Save` (maps to `aria-label`; renders nothing visually), plus `onAction` and `size` (default `md`). It has no enabled/disabled state and always closes the sheet without committing anything.",
+        },
+        saveAction: {
+            control: { type: "object" },
+            description:
+                "Same shape as `closeAction`, rendered on the trailing edge of the title row. Like `primaryAction`, its `onAction` runs **only** when the button is clicked: dismissing the sheet by clicking the overlay, dragging the handlebar or pressing `closeAction` closes it without committing anything.",
+        },
+        isSaveActionDisabled: {
+            control: { type: "boolean" },
+            description:
+                "This prop controls if the header save action is disabled or not - the counterpart of `isPrimaryButtonDisabled`. Pass `!hasChanges` so it stays disabled and neutral until there is something to save; once enabled it turns coral.",
+        },
+        shouldCloseOnSaveActionClick: {
+            table: { type: { summary: "boolean | undefined" } },
+            options: ["true", "false"],
+            control: { type: "boolean" },
+            description:
+                "This prop controls if Action Sheet should be closed or not when the header save action was clicked. Default value: true",
+        },
         primaryAction: {
             control: false,
             description:
@@ -173,5 +196,53 @@ export const ButtonTrigger: Story = {
         },
         alignment: "vertical",
         shouldBlurOnClose: false,
+    },
+};
+
+const headerActionArgs = {
+    expandable: true,
+    type: "modal",
+    position: "right",
+    title: "Stake",
+    description: undefined,
+    closeIcon: undefined,
+    showHandlebar: false,
+    // No `icon` needed - the X and check are built in.
+    closeAction: {},
+    saveAction: { onAction: () => null },
+    alignment: "vertical",
+    shouldBlurOnClose: false,
+} satisfies Partial<Parameters<typeof ActionSheetExample>[0]>;
+
+/**
+ * Nothing has changed yet, so the save action stays disabled and neutral -
+ * `isSaveActionDisabled={!hasChanges}`. The close action has no such state.
+ */
+export const HeaderActionsDisabled: Story = {
+    args: {
+        ...headerActionArgs,
+        isSaveActionDisabled: true,
+    },
+};
+
+/** Once a value changes the save action becomes enabled and turns coral. */
+export const HeaderActionsActive: Story = {
+    args: {
+        ...headerActionArgs,
+        isSaveActionDisabled: false,
+    },
+};
+
+/**
+ * `icon` is only needed to override a built-in glyph - here a back arrow for a
+ * multi-step sheet. `ariaLabel` should be overridden alongside it.
+ */
+export const HeaderActionsCustomIcon: Story = {
+    args: {
+        ...headerActionArgs,
+        closeAction: {
+            icon: <LabelPairedArrowLeftCaptionBoldIcon />,
+            ariaLabel: "Back",
+        },
     },
 };

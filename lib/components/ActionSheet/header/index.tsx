@@ -3,7 +3,25 @@ import { ActionSheetContext } from "../root";
 import clsx from "clsx";
 import { Heading, Text } from "@components/Typography";
 import { IconButton } from "@components/Button";
+import {
+    LabelPairedCheckCaptionBoldIcon,
+    LabelPairedXmarkCaptionBoldIcon,
+} from "@deriv/quill-icons/LabelPaired";
+import { HeaderActionType } from "../types";
 import "./header.scss";
+
+// Both glyphs are fixed by the design, so consumers should not have to import
+// them. Overridable via `HeaderActionType.icon`.
+const ACTION_DEFAULTS = {
+    close: {
+        icon: <LabelPairedXmarkCaptionBoldIcon />,
+        ariaLabel: "Close",
+    },
+    save: {
+        icon: <LabelPairedCheckCaptionBoldIcon />,
+        ariaLabel: "Save",
+    },
+} as const;
 
 export interface HeaderProps
     extends Omit<ComponentPropsWithoutRef<"div">, "title"> {
@@ -13,6 +31,18 @@ export interface HeaderProps
     iconPosition?: "right" | "left";
     closeIcon?: ReactNode;
     centered?: boolean;
+    /**
+     * Dismiss action on the leading edge of the title row. It has no
+     * enabled/disabled state and always closes the sheet without committing.
+     */
+    closeAction?: HeaderActionType;
+    /**
+     * Save action on the trailing edge of the title row. Its enabled/disabled
+     * state is driven by `isSaveActionDisabled`.
+     */
+    saveAction?: HeaderActionType;
+    isSaveActionDisabled?: boolean;
+    shouldCloseOnSaveActionClick?: boolean;
 }
 
 const Header = ({
@@ -23,10 +53,72 @@ const Header = ({
     iconPosition = "right",
     closeIcon: CloseIcon,
     centered = true,
+    closeAction,
+    saveAction,
+    isSaveActionDisabled,
+    shouldCloseOnSaveActionClick = true,
     ...rest
 }: HeaderProps) => {
     const { expandable } = useContext(ActionSheetContext);
     const { handleClose } = useContext(ActionSheetContext);
+    const hasActions = !!closeAction || !!saveAction;
+
+    // The opposite side is still rendered as an empty slot so the title stays
+    // optically centred when only one action is provided.
+    const renderAction = (
+        action: HeaderActionType | undefined,
+        kind: "close" | "save",
+    ) => {
+        if (!hasActions) return null;
+
+        const defaults = ACTION_DEFAULTS[kind];
+        const {
+            icon = defaults.icon,
+            onAction,
+            ariaLabel = defaults.ariaLabel,
+            size = "md",
+        } = action ?? {};
+        const isSave = kind === "save";
+
+        const actionHandler = () => {
+            onAction?.();
+            // The close action always dismisses - that is what it is for. Only
+            // the save action can keep the sheet open.
+            if (!isSave || shouldCloseOnSaveActionClick) handleClose?.();
+        };
+
+        return (
+            <div
+                className={clsx(
+                    "quill-action-sheet--title--action",
+                    `quill-action-sheet--title--action--${
+                        isSave ? "end" : "start"
+                    }`,
+                )}
+            >
+                {action && (
+                    <IconButton
+                        aria-label={ariaLabel}
+                        className={clsx(
+                            "quill-action-sheet--title--action-button",
+                            `quill-action-sheet--title--action-button__color--${
+                                isSave ? "primary" : "monochrome"
+                            }`,
+                        )}
+                        color="black-white"
+                        data-testid={`dt-actionsheet-header-${kind}-action`}
+                        // Only the save action carries state; the close action
+                        // stays neutral and always enabled.
+                        disabled={isSave ? isSaveActionDisabled : undefined}
+                        icon={icon}
+                        onClick={actionHandler}
+                        size={size}
+                        variant="tertiary"
+                    />
+                )}
+            </div>
+        );
+    };
 
     return (
         <div
@@ -38,7 +130,13 @@ const Header = ({
             data-testid="action-sheet-header"
             {...rest}
         >
-            <div className="quill-action-sheet--title">
+            <div
+                className={clsx(
+                    "quill-action-sheet--title",
+                    hasActions && "quill-action-sheet--title__has-actions",
+                )}
+            >
+                {renderAction(closeAction, "close")}
                 {Icon && (
                     <div
                         className={clsx(
@@ -70,6 +168,7 @@ const Header = ({
                         variant="tertiary"
                     />
                 )}
+                {renderAction(saveAction, "save")}
             </div>
             {description && (
                 <Text
