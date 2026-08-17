@@ -149,69 +149,69 @@ const COMMIT_HASH_LENGTH = 7;
  * @return {Object} the transformed commit.
  */
 const customTransform = (commit, context) => {
-    if (commit.notes) {
-        commit.notes.forEach((note) => {
-            note.title = "Breaking changes";
-        });
-    }
+    const typeConfig = types.types[commit.type];
 
     if (
-        types.types[commit.type] &&
-        (types.types[commit.type].changelog ||
-            (commit.notes && commit.notes.length > 0))
+        !typeConfig ||
+        !(typeConfig.changelog || (commit.notes && commit.notes.length > 0))
     ) {
-        commit.type = `${
-            types.types[commit.type].emoji ? types.types[commit.type].emoji : ""
-        } \t ${types.types[commit.type].title}`;
-    } else {
         return null;
     }
 
+    // conventional-changelog-writer now freezes the commit. Return a patch
+    // instead of mutating the original object.
+    const patch = {
+        type: `${typeConfig.emoji ? typeConfig.emoji : ""} \t ${typeConfig.title}`,
+    };
+
+    if (commit.notes) {
+        patch.notes = commit.notes.map((note) => ({
+            ...note,
+            title: "Breaking changes",
+        }));
+    }
+
     if (commit.scope === "*") {
-        commit.scope = "";
+        patch.scope = "";
     }
 
     if (typeof commit.hash === "string") {
-        commit.shortHash = commit.hash.slice(0, COMMIT_HASH_LENGTH);
+        patch.shortHash = commit.hash.slice(0, COMMIT_HASH_LENGTH);
     }
 
-    const references = [];
+    const referencedIssues = [];
 
     if (typeof commit.subject === "string") {
+        let subject = commit.subject;
         let url = context.repository
             ? `${context.host}/${context.owner}/${context.repository}`
             : context.repoUrl;
 
         if (url) {
             url += "/issues/";
-            // Issue URLs.
-            commit.subject = commit.subject.replace(/#(\d+)/g, (_, issue) => {
-                references.push(issue);
+            subject = subject.replace(/#(\d+)/g, (_, issue) => {
+                referencedIssues.push(issue);
                 return `[#${issue}](${url}${issue})`;
             });
         }
 
         if (context.host) {
-            // User URLs.
-            commit.subject = commit.subject.replace(
+            subject = subject.replace(
                 /\B@([a-z0-9](?:-?[a-z0-9]){0,38})/g,
                 `[@$1](${context.host}/$1)`,
             );
         }
+
+        patch.subject = subject;
     }
 
     if (commit.references) {
-        // Remove references that already appear in the subject
-        commit.references = commit.references.filter((reference) => {
-            if (!references.includes(reference.issue)) {
-                return true;
-            }
-
-            return false;
-        });
+        patch.references = commit.references.filter(
+            (reference) => !referencedIssues.includes(reference.issue),
+        );
     }
 
-    return commit;
+    return patch;
 };
 
 module.exports = customTransform;
