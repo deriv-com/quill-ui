@@ -36,11 +36,11 @@
 # ================================================
 
 #  ali-hosseini-deriv
-#  yashim-deriv
-#  wojciech-deriv
-#  markwylde-deriv
 #  prince-deriv
 #  balakrishna-deriv
+#  nijil-deriv
+#  farabi-deriv
+#  matin-deriv
 
 ######################################################################################################
 #
@@ -60,5 +60,5 @@
 # (in case no pattern matches a path in a PR - this should be treated as a bug and result in adding the path to CODEOWNERS)
 # ==============================================================
 
-*                                                               @ali-hosseini-deriv @yashim-deriv @wojciech-deriv @markwylde-deriv @prince-deriv @balakrishna-deriv
+*                                                               @ali-hosseini-deriv @prince-deriv @balakrishna-deriv @nijil-deriv @farabi-deriv @matin-deriv
 
