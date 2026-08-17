@@ -15,18 +15,20 @@ jobs:
       contents: write # to be able to publish a GitHub release
       issues: write # to be able to comment on released issues
       pull-requests: write # to be able to comment on released pull requests
-      id-token: write # to enable use of OIDC for npm provenance
+      id-token: write # required for npm trusted publishing (OIDC) and provenance
     steps:
       - name: Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 0
+      # Do not set registry-url here: setup-node would write an empty
+      # _authToken into .npmrc and break OIDC trusted publishing.
       - name: Setup Node.js
         uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
         with:
-          node-version: '20'
-      - name: Update to latest npm (temporary fix for audit below)
-        run: npm install --global npm
+          node-version: '24'
+      - name: Update npm for trusted publishing
+        run: npm install --global npm@latest
       - name: Install dependencies
         run: npm clean-install
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
