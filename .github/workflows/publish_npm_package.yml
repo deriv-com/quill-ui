@@ -1,13 +1,11 @@
 name: Release
 on:
-    release:
-        types: [published]
-    push:
-        branches: [master]
-
+  release:
+    types: [published]
+  push:
+    branches: [master]
 permissions:
   contents: read # for checkout
-
 jobs:
   release:
     name: Release
@@ -42,5 +40,4 @@ jobs:
         env:
           CI: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN}}
         run: npx semantic-release
