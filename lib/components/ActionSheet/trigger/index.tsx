@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { ActionSheetContext } from "../root";
 import { IconSize } from "@deriv/quill-icons";
 import { QuillIconComponent } from "@types";
-import { Button, ButtonProps } from "@components/Button";
+import { Button } from "@components/Button/base";
+import type { ButtonProps } from "@components/Button/types";
 
 interface ButtonTriggerProps extends Omit<ButtonProps, "ref"> {
     iconComponent?: never;
@@ -35,7 +36,9 @@ const Trigger = ({
             </Button>
         );
     }
-    return <Button onClick={handleOpen} {...(restProps as ButtonTriggerProps)} />;
+    return (
+        <Button onClick={handleOpen} {...(restProps as ButtonTriggerProps)} />
+    );
 };
 
 Trigger.displayName = "Trigger";

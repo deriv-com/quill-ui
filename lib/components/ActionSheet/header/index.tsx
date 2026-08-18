@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, ReactNode, useContext } from "react";
 import { ActionSheetContext } from "../root";
 import clsx from "clsx";
 import { Heading, Text } from "@components/Typography";
-import { IconButton } from "@components/Button";
+import { IconButton } from "@components/Button/icon-button";
 import {
     LabelPairedCheckCaptionBoldIcon,
     LabelPairedXmarkCaptionBoldIcon,

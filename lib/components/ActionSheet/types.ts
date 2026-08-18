@@ -4,7 +4,7 @@ import {
     TLeftOrRight,
     TRegularSizesWithExtraLarge,
 } from "../../types";
-import { TButtonColor } from "@components/Button";
+import type { TButtonColor } from "@components/Button/types";
 
 interface OpenType {
     isOpen?: boolean | undefined;
