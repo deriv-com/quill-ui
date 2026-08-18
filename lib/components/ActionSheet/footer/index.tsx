@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { ActionSheetContext } from "../root";
 import clsx from "clsx";
 import "./footer.scss";
-import { Button } from "@components/Button";
+import { Button } from "@components/Button/base";
 
 const Footer = ({
     primaryAction,
