@@ -35,6 +35,17 @@
             flex-grow: 1;
         }
 
+        // `core.fontFamily` has no `inter` entry yet, so the family is a
+        // literal until the token package ships one. Chained with the
+        // typography class because `.quill-action-sheet--title-text` alone
+        // would only tie with `.quill-typography__h5` and the winner would
+        // then depend on bundle order. Family only - size, weight, line
+        // height and colour stay on the heading token.
+        &-text.quill-typography__h5 {
+            font-family: "Inter", var(--core-fontFamily-ibmPlex-sans),
+                sans-serif;
+        }
+
         &__has-actions {
             justify-content: space-between;
 
@@ -47,7 +58,9 @@
             display: flex;
             flex-shrink: 0;
             align-items: center;
-            min-width: var(--component-button-width-md);
+            // Matches the default 40px control so the empty slot on the
+            // opposite side reserves exactly as much room as a real one.
+            min-inline-size: var(--core-size-2000);
 
             &--start {
                 justify-content: flex-start;
@@ -62,6 +75,16 @@
             &-button.quill-button {
                 border-radius: var(--semantic-borderRadius-pill);
                 text-decoration: none;
+            }
+
+            // The design calls for a 40px control, which the shared button
+            // scale cannot express - there is no `component-button-height`
+            // step at that value (sm 24 / md 32 / lg 48 / xl 64), so the box
+            // comes from `--core-size-2000` (40px) instead. Scoped to the
+            // header, and only applied when the consumer omits `size`.
+            &-button__size--default.quill-button {
+                min-inline-size: var(--core-size-2000);
+                min-block-size: var(--core-size-2000);
             }
 
             // A disabled primary action falls back to the neutral surface, so

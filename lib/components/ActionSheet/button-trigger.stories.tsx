@@ -120,7 +120,7 @@ const meta: Meta = {
         closeAction: {
             control: { type: "object" },
             description:
-                "This prop is meant for `ActionSheet.Header`. It renders an icon-only dismiss button on the leading edge of the title row. All fields are optional: `icon` defaults to a built-in X (a check for `saveAction`), `ariaLabel` defaults to `Close`/`Save` (maps to `aria-label`; renders nothing visually), plus `onAction` and `size` (default `md`). It has no enabled/disabled state and always closes the sheet without committing anything.",
+                "This prop is meant for `ActionSheet.Header`. It renders an icon-only dismiss button on the leading edge of the title row. All fields are optional: `icon` defaults to a built-in X (a check for `saveAction`), `ariaLabel` defaults to `Close`/`Save` (maps to `aria-label`; renders nothing visually), plus `onAction` and `size`. Omit `size` for the 40px design default, or pass one to opt into the shared button scale (24/32/48/64px). It has no enabled/disabled state and always closes the sheet without committing anything.",
         },
         saveAction: {
             control: { type: "object" },
@@ -225,11 +225,32 @@ export const HeaderActionsDisabled: Story = {
     },
 };
 
-/** Once a value changes the save action becomes enabled and turns coral. */
+/**
+ * Once a value changes the save action becomes enabled and turns coral.
+ *
+ * This is also the reference for the header's default presentation: with no
+ * `size` passed, both controls are a 40px pill, the empty slot on either side
+ * reserves the same 40px so the title stays centred, and the title renders in
+ * Inter rather than the Ubuntu the shared heading style resolves to.
+ */
 export const HeaderActionsActive: Story = {
     args: {
         ...headerActionArgs,
         isSaveActionDisabled: false,
+    },
+};
+
+/**
+ * Passing `size` opts a control out of the 40px default and back onto the
+ * shared button scale - `lg` is 48px here. Only pass it when a design calls
+ * for one of those steps.
+ */
+export const HeaderActionsExplicitSize: Story = {
+    args: {
+        ...headerActionArgs,
+        isSaveActionDisabled: false,
+        closeAction: { size: "lg" },
+        saveAction: { onAction: () => null, size: "lg" },
     },
 };
 

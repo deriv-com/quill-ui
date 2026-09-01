@@ -172,6 +172,38 @@ describe("<ActionSheet.Header/>", () => {
         );
     });
 
+    it("should size both actions to the header default when no size is passed", () => {
+        render(
+            <ActionSheet.Header
+                title="Stake"
+                closeAction={{}}
+                saveAction={{}}
+            />,
+        );
+
+        expect(screen.getByRole("button", { name: "Close" })).toHaveClass(
+            "quill-action-sheet--title--action-button__size--default",
+        );
+        expect(screen.getByRole("button", { name: "Save" })).toHaveClass(
+            "quill-action-sheet--title--action-button__size--default",
+        );
+    });
+
+    it("should drop the header default when the consumer passes a size", () => {
+        render(
+            <ActionSheet.Header
+                title="Stake"
+                saveAction={{ ariaLabel: "Confirm", size: "lg" }}
+            />,
+        );
+
+        const saveAction = screen.getByRole("button", { name: "Confirm" });
+        expect(saveAction).toHaveClass("quill-icon-button__size--lg");
+        expect(saveAction).not.toHaveClass(
+            "quill-action-sheet--title--action-button__size--default",
+        );
+    });
+
     it("should disable only the save action when isSaveActionDisabled is set", () => {
         render(
             <ActionSheet.Header

@@ -76,7 +76,7 @@ const Header = ({
             icon = defaults.icon,
             onAction,
             ariaLabel = defaults.ariaLabel,
-            size = "md",
+            size,
         } = action ?? {};
         const isSave = kind === "save";
 
@@ -104,6 +104,12 @@ const Header = ({
                             `quill-action-sheet--title--action-button__color--${
                                 isSave ? "primary" : "monochrome"
                             }`,
+                            // The design size is 40px, which the shared scale
+                            // has no step for, so it comes from the header's
+                            // own stylesheet. Passing `size` opts back out to
+                            // the shared scale.
+                            !size &&
+                                "quill-action-sheet--title--action-button__size--default",
                         )}
                         color="black-white"
                         data-testid={`dt-actionsheet-header-${kind}-action`}
@@ -112,7 +118,7 @@ const Header = ({
                         disabled={isSave ? isSaveActionDisabled : undefined}
                         icon={icon}
                         onClick={actionHandler}
-                        size={size}
+                        size={size ?? "md"}
                         variant="tertiary"
                     />
                 )}

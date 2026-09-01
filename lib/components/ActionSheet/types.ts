@@ -63,6 +63,12 @@ export interface HeaderActionType {
      * string to translate it.
      */
     ariaLabel?: string;
+    /**
+     * Opts the control out of the header's 40px design default and onto the
+     * shared button scale (sm 24px, md 32px, lg 48px, xl 64px). Leave it unset
+     * unless a specific design calls for one of those steps - the 40px default
+     * is what the approved action sheet design specifies.
+     */
     size?: TRegularSizesWithExtraLarge;
 }
 

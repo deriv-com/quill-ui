@@ -121,7 +121,7 @@ const meta: Meta = {
         closeAction: {
             control: { type: "object" },
             description:
-                "This prop is meant for `ActionSheet.Header`. It renders an icon-only dismiss button on the leading edge of the title row. All fields are optional: `icon` defaults to a built-in X (a check for `saveAction`), `ariaLabel` defaults to `Close`/`Save` (maps to `aria-label`; renders nothing visually), plus `onAction` and `size` (default `md`). It has no enabled/disabled state and always closes the sheet without committing anything.",
+                "This prop is meant for `ActionSheet.Header`. It renders an icon-only dismiss button on the leading edge of the title row. All fields are optional: `icon` defaults to a built-in X (a check for `saveAction`), `ariaLabel` defaults to `Close`/`Save` (maps to `aria-label`; renders nothing visually), plus `onAction` and `size`. Omit `size` for the 40px design default, or pass one to opt into the shared button scale (24/32/48/64px). It has no enabled/disabled state and always closes the sheet without committing anything.",
         },
         saveAction: {
             control: { type: "object" },
