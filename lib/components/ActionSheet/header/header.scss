@@ -35,12 +35,8 @@
             flex-grow: 1;
         }
 
-        // `core.fontFamily` has no `inter` entry yet, so the family is a
-        // literal until the token package ships one. Chained with the
-        // typography class because `.quill-action-sheet--title-text` alone
-        // would only tie with `.quill-typography__h5` and the winner would
-        // then depend on bundle order. Family only - size, weight, line
-        // height and colour stay on the heading token.
+        // Literal until `core.fontFamily` ships an `inter` entry. Chained
+        // with the typography class to break the specificity tie.
         &-text.quill-typography__h5 {
             font-family: "Inter", var(--core-fontFamily-ibmPlex-sans),
                 sans-serif;
@@ -58,8 +54,7 @@
             display: flex;
             flex-shrink: 0;
             align-items: center;
-            // Matches the default 40px control so the empty slot on the
-            // opposite side reserves exactly as much room as a real one.
+            // Empty slot reserves the same width as a real control.
             min-inline-size: var(--core-size-2000);
 
             &--start {
@@ -77,18 +72,15 @@
                 text-decoration: none;
             }
 
-            // The design calls for a 40px control, which the shared button
-            // scale cannot express - there is no `component-button-height`
-            // step at that value (sm 24 / md 32 / lg 48 / xl 64), so the box
-            // comes from `--core-size-2000` (40px) instead. Scoped to the
-            // header, and only applied when the consumer omits `size`.
+            // The shared button scale has no 40px step (24/32/48/64), so the
+            // design size comes from `--core-size-2000` instead.
             &-button__size--default.quill-button {
                 min-inline-size: var(--core-size-2000);
                 min-block-size: var(--core-size-2000);
             }
 
-            // A disabled primary action falls back to the neutral surface, so
-            // the colour itself communicates whether there is anything to commit.
+            // Disabled save drops to neutral: colour signals whether there is
+            // anything to commit.
             &-button__color--monochrome.quill-button,
             &-button__color--monochrome.quill-button:disabled,
             &-button__color--primary.quill-button:disabled {

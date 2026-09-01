@@ -10,8 +10,8 @@ import {
 import { HeaderActionType } from "../types";
 import "./header.scss";
 
-// Both glyphs are fixed by the design, so consumers should not have to import
-// them. Overridable via `HeaderActionType.icon`.
+// Fixed by the design so consumers need not import them; override via
+// `HeaderActionType.icon`.
 const ACTION_DEFAULTS = {
     close: {
         icon: <LabelPairedXmarkCaptionBoldIcon />,
@@ -63,8 +63,7 @@ const Header = ({
     const { handleClose } = useContext(ActionSheetContext);
     const hasActions = !!closeAction || !!saveAction;
 
-    // The opposite side is still rendered as an empty slot so the title stays
-    // optically centred when only one action is provided.
+    // The opposite side renders an empty slot to keep the title centred.
     const renderAction = (
         action: HeaderActionType | undefined,
         kind: "close" | "save",
@@ -82,8 +81,7 @@ const Header = ({
 
         const actionHandler = () => {
             onAction?.();
-            // The close action always dismisses - that is what it is for. Only
-            // the save action can keep the sheet open.
+            // Only the save action can keep the sheet open.
             if (!isSave || shouldCloseOnSaveActionClick) handleClose?.();
         };
 
@@ -104,17 +102,14 @@ const Header = ({
                             `quill-action-sheet--title--action-button__color--${
                                 isSave ? "primary" : "monochrome"
                             }`,
-                            // The design size is 40px, which the shared scale
-                            // has no step for, so it comes from the header's
-                            // own stylesheet. Passing `size` opts back out to
-                            // the shared scale.
+                            // 40px has no step on the shared scale, so it
+                            // comes from header.scss; `size` opts back out.
                             !size &&
                                 "quill-action-sheet--title--action-button__size--default",
                         )}
                         color="black-white"
                         data-testid={`dt-actionsheet-header-${kind}-action`}
-                        // Only the save action carries state; the close action
-                        // stays neutral and always enabled.
+                        // Only the save action carries state.
                         disabled={isSave ? isSaveActionDisabled : undefined}
                         icon={icon}
                         onClick={actionHandler}
