@@ -67,6 +67,6 @@ _If a reviewer picks (b):_ drop task 3.2, remove `size` from `HeaderActionType`,
 
 ## 8. Findings and handoff
 
-- [x] 8.1 Record two `report-upstream` findings against `@deriv-com/quill-tokens` in the project's upstream-issues doc (create it if absent), in the format from `.buildwright/framework/findings.md`: (a) `component.button.height` has no 40px step although `core.size.2000` is 40px; (b) `core.fontFamily` has no `inter` entry although the approved design uses Inter
+- [ ] 8.1 (doc removed - not tracked in this repo) Record two `report-upstream` findings against `@deriv-com/quill-tokens` in the project's upstream-issues doc (create it if absent), in the format from `.buildwright/framework/findings.md`: (a) `component.button.height` has no 40px step although `core.size.2000` is 40px; (b) `core.fontFamily` has no `inter` entry although the approved design uses Inter
 - [x] 8.2 In the PR body, cite the red lines from task 2.3, and declare explicitly that the 40px box and the Inter rendering were verified manually in Storybook (tasks 7.5-7.6) because jsdom maps SCSS to `identity-obj-proxy` and cannot assert either
 - [x] 8.3 Link the PR to [derivatives-trader#1298](https://github.com/deriv-com/derivatives-trader/issues/1298) and note that the downstream fix is a version bump only — no local override and no `packages/core/src/index.html` font entry are needed, since `lib/styles/index.scss` now requests Inter
