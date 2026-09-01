@@ -54,8 +54,28 @@
             display: flex;
             flex-shrink: 0;
             align-items: center;
-            // Empty slot reserves the same width as a real control.
-            min-inline-size: var(--core-size-2000);
+            // Each slot reserves the width of the control it holds, or - when
+            // empty - of the one opposite it, so the title stays centred at
+            // every size.
+            &__size--default {
+                min-inline-size: var(--core-size-2000);
+            }
+
+            &__size--sm {
+                min-inline-size: var(--component-button-height-sm);
+            }
+
+            &__size--md {
+                min-inline-size: var(--component-button-height-md);
+            }
+
+            &__size--lg {
+                min-inline-size: var(--component-button-height-lg);
+            }
+
+            &__size--xl {
+                min-inline-size: var(--component-button-height-xl);
+            }
 
             &--start {
                 justify-content: flex-start;

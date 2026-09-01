@@ -204,6 +204,35 @@ describe("<ActionSheet.Header/>", () => {
         );
     });
 
+    it("should size an empty slot to match the control opposite it", () => {
+        const { container } = render(
+            <ActionSheet.Header title="Stake" saveAction={{ size: "lg" }} />,
+        );
+
+        // The empty leading slot has to reserve the trailing control's 48px,
+        // not the 40px default, or the title sits off centre.
+        expect(
+            container.querySelector(
+                ".quill-action-sheet--title--action--start",
+            ),
+        ).toHaveClass("quill-action-sheet--title--action__size--lg");
+        expect(
+            container.querySelector(".quill-action-sheet--title--action--end"),
+        ).toHaveClass("quill-action-sheet--title--action__size--lg");
+    });
+
+    it("should size both slots to the default when no size is passed", () => {
+        const { container } = render(
+            <ActionSheet.Header title="Stake" saveAction={{}} />,
+        );
+
+        expect(
+            container.querySelector(
+                ".quill-action-sheet--title--action--start",
+            ),
+        ).toHaveClass("quill-action-sheet--title--action__size--default");
+    });
+
     it("should disable only the save action when isSaveActionDisabled is set", () => {
         render(
             <ActionSheet.Header

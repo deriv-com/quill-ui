@@ -85,12 +85,20 @@ const Header = ({
             if (!isSave || shouldCloseOnSaveActionClick) handleClose?.();
         };
 
+        // An empty slot has to mirror the control opposite it, not itself, or
+        // the title drifts off centre when that control opts out of the 40px
+        // default.
+        const mirroredSize = (isSave ? closeAction : saveAction)?.size;
+
         return (
             <div
                 className={clsx(
                     "quill-action-sheet--title--action",
                     `quill-action-sheet--title--action--${
                         isSave ? "end" : "start"
+                    }`,
+                    `quill-action-sheet--title--action__size--${
+                        (action ? size : mirroredSize) ?? "default"
                     }`,
                 )}
             >
