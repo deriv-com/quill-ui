@@ -162,7 +162,7 @@
         "react-tiny-popover": "^8.0.4",
         "react-transition-group": "4.4.2",
         "usehooks-ts": "^3.0.2",
-        "uuid": "^9.0.1"
+        "uuid": "^14.0.0"
     },
     "resolutions": {
         "react": "18.2.0",
