@@ -172,6 +172,101 @@ describe("<ActionSheet.Header/>", () => {
         );
     });
 
+    it("should size both actions to the header default when no size is passed", () => {
+        render(
+            <ActionSheet.Header
+                title="Stake"
+                closeAction={{}}
+                saveAction={{}}
+            />,
+        );
+
+        expect(screen.getByRole("button", { name: "Close" })).toHaveClass(
+            "quill-action-sheet--title--action-button__size--default",
+        );
+        expect(screen.getByRole("button", { name: "Save" })).toHaveClass(
+            "quill-action-sheet--title--action-button__size--default",
+        );
+    });
+
+    it("should drop the header default when the consumer passes a size", () => {
+        render(
+            <ActionSheet.Header
+                title="Stake"
+                saveAction={{ ariaLabel: "Confirm", size: "lg" }}
+            />,
+        );
+
+        const saveAction = screen.getByRole("button", { name: "Confirm" });
+        expect(saveAction).toHaveClass("quill-icon-button__size--lg");
+        expect(saveAction).not.toHaveClass(
+            "quill-action-sheet--title--action-button__size--default",
+        );
+    });
+
+    const slotClasses = (container: HTMLElement) =>
+        [
+            ".quill-action-sheet--title--action--start",
+            ".quill-action-sheet--title--action--end",
+        ].map((selector) => container.querySelector(selector)?.className);
+
+    it("should size an empty slot to match the control opposite it", () => {
+        const { container } = render(
+            <ActionSheet.Header title="Stake" saveAction={{ size: "lg" }} />,
+        );
+
+        // The empty leading slot has to reserve the trailing control's 48px,
+        // not the 40px default, or the title sits off centre.
+        slotClasses(container).forEach((className) =>
+            expect(className).toContain(
+                "quill-action-sheet--title--action__size--lg",
+            ),
+        );
+    });
+
+    it("should reserve the wider control on both slots when the sizes disagree", () => {
+        const { container } = render(
+            <ActionSheet.Header
+                title="Stake"
+                closeAction={{}}
+                saveAction={{ size: "lg" }}
+            />,
+        );
+
+        // A 40px close beside a 48px save: both slots take the wider 48px, or
+        // `space-between` pushes the title off centre.
+        slotClasses(container).forEach((className) =>
+            expect(className).toContain(
+                "quill-action-sheet--title--action__size--lg",
+            ),
+        );
+    });
+
+    it("should mirror a lone control narrower than the default", () => {
+        const { container } = render(
+            <ActionSheet.Header title="Stake" saveAction={{ size: "sm" }} />,
+        );
+
+        // The absent action must not widen the pair back to the 40px default.
+        slotClasses(container).forEach((className) =>
+            expect(className).toContain(
+                "quill-action-sheet--title--action__size--sm",
+            ),
+        );
+    });
+
+    it("should size both slots to the default when no size is passed", () => {
+        const { container } = render(
+            <ActionSheet.Header title="Stake" saveAction={{}} />,
+        );
+
+        expect(
+            container.querySelector(
+                ".quill-action-sheet--title--action--start",
+            ),
+        ).toHaveClass("quill-action-sheet--title--action__size--default");
+    });
+
     it("should disable only the save action when isSaveActionDisabled is set", () => {
         render(
             <ActionSheet.Header

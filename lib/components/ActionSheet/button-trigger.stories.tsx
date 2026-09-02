@@ -120,7 +120,7 @@ const meta: Meta = {
         closeAction: {
             control: { type: "object" },
             description:
-                "This prop is meant for `ActionSheet.Header`. It renders an icon-only dismiss button on the leading edge of the title row. All fields are optional: `icon` defaults to a built-in X (a check for `saveAction`), `ariaLabel` defaults to `Close`/`Save` (maps to `aria-label`; renders nothing visually), plus `onAction` and `size` (default `md`). It has no enabled/disabled state and always closes the sheet without committing anything.",
+                "This prop is meant for `ActionSheet.Header`. It renders an icon-only dismiss button on the leading edge of the title row. All fields are optional: `icon` defaults to a built-in X (a check for `saveAction`), `ariaLabel` defaults to `Close`/`Save` (maps to `aria-label`; renders nothing visually), plus `onAction` and `size`. Omit `size` for the 40px design default, or pass one to opt into the shared button scale (24/32/48/64px). It has no enabled/disabled state and always closes the sheet without committing anything.",
         },
         saveAction: {
             control: { type: "object" },
@@ -225,11 +225,61 @@ export const HeaderActionsDisabled: Story = {
     },
 };
 
-/** Once a value changes the save action becomes enabled and turns coral. */
+/**
+ * Once a value changes the save action becomes enabled and turns coral.
+ *
+ * This is also the reference for the header's default presentation: with no
+ * `size` passed, both controls are a 40px pill and the title renders in Inter
+ * rather than the Ubuntu the shared heading style resolves to. Both slots are
+ * filled here, so the reserved-spacer behaviour is not visible - see
+ * `HeaderActionsSaveOnly` for that.
+ */
 export const HeaderActionsActive: Story = {
     args: {
         ...headerActionArgs,
         isSaveActionDisabled: false,
+    },
+};
+
+/**
+ * Passing `size` opts a control out of the 40px default and back onto the
+ * shared button scale - `lg` is 48px here. Only pass it when a design calls
+ * for one of those steps.
+ */
+export const HeaderActionsExplicitSize: Story = {
+    args: {
+        ...headerActionArgs,
+        isSaveActionDisabled: false,
+        closeAction: { size: "lg" },
+        saveAction: { onAction: () => null, size: "lg" },
+    },
+};
+
+/**
+ * Only `saveAction` is passed, so the leading slot renders empty as a spacer
+ * that reserves the same width as the control opposite it. This is the story
+ * to check the title is optically centred - the ones with both actions filled
+ * cannot show it.
+ */
+export const HeaderActionsSaveOnly: Story = {
+    args: {
+        ...headerActionArgs,
+        isSaveActionDisabled: false,
+        closeAction: undefined,
+    },
+};
+
+/**
+ * The two actions disagree about size - a 40px default beside a 48px `lg`.
+ * Both slots reserve the wider of the two, so the title stays centred instead
+ * of drifting toward the narrower side.
+ */
+export const HeaderActionsMixedSizes: Story = {
+    args: {
+        ...headerActionArgs,
+        isSaveActionDisabled: false,
+        closeAction: {},
+        saveAction: { onAction: () => null, size: "lg" },
     },
 };
 

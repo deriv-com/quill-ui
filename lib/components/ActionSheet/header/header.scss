@@ -35,6 +35,13 @@
             flex-grow: 1;
         }
 
+        // Literal until `core.fontFamily` ships an `inter` entry. Chained
+        // with the typography class to break the specificity tie.
+        &-text.quill-typography__h5 {
+            font-family: "Inter", var(--core-fontFamily-ibmPlex-sans),
+                sans-serif;
+        }
+
         &__has-actions {
             justify-content: space-between;
 
@@ -47,7 +54,28 @@
             display: flex;
             flex-shrink: 0;
             align-items: center;
-            min-width: var(--component-button-width-md);
+            // Both slots reserve the width of the widest control present, so
+            // the title stays centred. Width - not height - tokens, to track
+            // the same family the icon button sizes itself from.
+            &__size--default {
+                min-inline-size: var(--core-size-2000);
+            }
+
+            &__size--sm {
+                min-inline-size: var(--component-button-width-sm);
+            }
+
+            &__size--md {
+                min-inline-size: var(--component-button-width-md);
+            }
+
+            &__size--lg {
+                min-inline-size: var(--component-button-width-lg);
+            }
+
+            &__size--xl {
+                min-inline-size: var(--component-button-width-xl);
+            }
 
             &--start {
                 justify-content: flex-start;
@@ -64,8 +92,15 @@
                 text-decoration: none;
             }
 
-            // A disabled primary action falls back to the neutral surface, so
-            // the colour itself communicates whether there is anything to commit.
+            // The shared button scale has no 40px step (24/32/48/64), so the
+            // design size comes from `--core-size-2000` instead.
+            &-button__size--default.quill-button {
+                min-inline-size: var(--core-size-2000);
+                min-block-size: var(--core-size-2000);
+            }
+
+            // Disabled save drops to neutral: colour signals whether there is
+            // anything to commit.
             &-button__color--monochrome.quill-button,
             &-button__color--monochrome.quill-button:disabled,
             &-button__color--primary.quill-button:disabled {
