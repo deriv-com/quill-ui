@@ -33,14 +33,24 @@ A consumer SHALL be able to opt a header action out of the 40px default by speci
 - **WHEN** a header action is supplied as an empty object
 - **THEN** the control renders and no size-related error or warning is raised
 
-### Requirement: The reserved action slot matches the default control
+### Requirement: Both action slots reserve the width of the widest control
 
-Each side of the title row SHALL reserve at least the width of a default-size control, including the side whose action was not supplied, so the title stays optically centred whether one or both actions are present.
+Both sides of the title row SHALL reserve the same width - that of the widest control actually supplied - including a side whose action was not supplied, so the title stays optically centred whether one or both actions are present and whichever sizes they use. The reserved width SHALL be sourced from the same token family the control derives its own width from.
 
 #### Scenario: Only one action is supplied
 
 - **WHEN** a header is rendered with `saveAction` but no `closeAction`
-- **THEN** the leading slot is still rendered, is empty, and reserves at least 40px of width
+- **THEN** the leading slot is still rendered, is empty, and reserves the width of the supplied control
+
+#### Scenario: A lone control is narrower than the default
+
+- **WHEN** a header is rendered with a single action at the small size
+- **THEN** both slots reserve the small width, not the 40px default
+
+#### Scenario: The two actions disagree about size
+
+- **WHEN** a header is rendered with one default-size action and one large action
+- **THEN** both slots reserve the large width, so the title stays centred
 
 #### Scenario: Neither action is supplied
 

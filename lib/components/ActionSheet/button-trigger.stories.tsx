@@ -229,9 +229,10 @@ export const HeaderActionsDisabled: Story = {
  * Once a value changes the save action becomes enabled and turns coral.
  *
  * This is also the reference for the header's default presentation: with no
- * `size` passed, both controls are a 40px pill, the empty slot on either side
- * reserves the same 40px so the title stays centred, and the title renders in
- * Inter rather than the Ubuntu the shared heading style resolves to.
+ * `size` passed, both controls are a 40px pill and the title renders in Inter
+ * rather than the Ubuntu the shared heading style resolves to. Both slots are
+ * filled here, so the reserved-spacer behaviour is not visible - see
+ * `HeaderActionsSaveOnly` for that.
  */
 export const HeaderActionsActive: Story = {
     args: {
@@ -250,6 +251,34 @@ export const HeaderActionsExplicitSize: Story = {
         ...headerActionArgs,
         isSaveActionDisabled: false,
         closeAction: { size: "lg" },
+        saveAction: { onAction: () => null, size: "lg" },
+    },
+};
+
+/**
+ * Only `saveAction` is passed, so the leading slot renders empty as a spacer
+ * that reserves the same width as the control opposite it. This is the story
+ * to check the title is optically centred - the ones with both actions filled
+ * cannot show it.
+ */
+export const HeaderActionsSaveOnly: Story = {
+    args: {
+        ...headerActionArgs,
+        isSaveActionDisabled: false,
+        closeAction: undefined,
+    },
+};
+
+/**
+ * The two actions disagree about size - a 40px default beside a 48px `lg`.
+ * Both slots reserve the wider of the two, so the title stays centred instead
+ * of drifting toward the narrower side.
+ */
+export const HeaderActionsMixedSizes: Story = {
+    args: {
+        ...headerActionArgs,
+        isSaveActionDisabled: false,
+        closeAction: {},
         saveAction: { onAction: () => null, size: "lg" },
     },
 };

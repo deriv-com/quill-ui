@@ -6,7 +6,7 @@
 
 - **Header action controls render at 40px by default.** The close/save icon buttons get a 40px box driven by `--core-size-2000`, scoped to `ActionSheet.Header` so the global button scale (sm 24 / md 32 / lg 48 / xl 64) is untouched.
 - **`HeaderActionType.size` becomes an explicit opt-out, not the source of the default.** Omitting `size` yields the 40px design default; passing `size` keeps the existing base-scale behaviour for consumers that need it. Not breaking — no currently-valid prop value changes meaning.
-- **The empty action slot matches the 40px control.** `.quill-action-sheet--title--action` reserves `--core-size-2000` instead of `--component-button-width-md`, so a single-action header stays optically centred.
+- **Both action slots reserve the widest control.** `.quill-action-sheet--title--action` carries a size modifier resolving to `--core-size-2000` at the 40px default or `--component-button-width-*` on the shared scale, applied equally to both slots, so the header stays optically centred with one action or with two of differing sizes.
 - **The sheet title renders in Inter.** `.quill-action-sheet--title-text` overrides the Ubuntu heading family; the Inter webfont is requested at weight 700 (the only weight `Heading.H5` uses) alongside the existing Ubuntu / IBM Plex requests in `lib/styles/index.scss`.
 - **Scope stays on the title.** Non-title sheet text (labels, values, chips, helper line, footer) keeps its current family — see Open Questions in `tasks.md`.
 - **Storybook `argTypes` prose for `closeAction` / `saveAction` is corrected** in all three ActionSheet story files, which currently document "`size` (default `md`)".
