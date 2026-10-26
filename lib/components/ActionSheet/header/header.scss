@@ -40,7 +40,7 @@
         // Literal until `core.fontFamily` ships an `inter` entry. Chained
         // with the typography class to break the specificity tie.
         &-text.quill-typography__h5 {
-            font-family: "Inter", var(--core-fontFamily-ibmPlex-sans),
+            font-family: "Inter", var(--core-fontFamily-inter),
                 sans-serif;
         }
 

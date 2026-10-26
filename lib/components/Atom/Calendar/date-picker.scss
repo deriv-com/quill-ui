@@ -85,7 +85,7 @@
                 height: var(--core-size-2400);
                 color: var(--component-textIcon-normal-disabled);
                 text-transform: none;
-                font-family: var(--core-fontFamily-ibmPlex-sans);
+                font-family: var(--core-fontFamily-inter);
                 font-size: var(--core-fontSize-100);
                 font-weight: var(--core-fontWeight-regular);
                 line-height: var(--core-lineHeight-300);
@@ -138,7 +138,7 @@
         }
 
         &__tile {
-            font-family: var(--core-fontFamily-ibmPlex-sans);
+            font-family: var(--core-fontFamily-inter);
             font-size: inherit;
 
             &:enabled:hover,
