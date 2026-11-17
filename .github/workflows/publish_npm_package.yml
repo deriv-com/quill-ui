@@ -26,7 +26,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
         with:
-          node-version: '24'
+          node-version: '24.22.3'
       - name: Update npm for trusted publishing
         run: npm install --global npm@latest
       - name: Install dependencies
